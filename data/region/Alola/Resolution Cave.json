@@ -1,0 +1,77 @@
+{
+    "pokemon": [
+        {
+            "name": "Golbat",
+            "field": "Walking",
+            "min_level": 54,
+            "max_level": 59,
+            "rarity": [
+                70,
+                70
+            ],
+            "sos": [
+                {
+                    "name": "Golbat",
+                    "chance": 50
+                },
+                {
+                    "name": "Crobat",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Dugtrio",
+            "field": "Walking",
+            "min_level": 54,
+            "max_level": 59,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Dugtrio",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Druddigon",
+            "field": "Walking",
+            "min_level": 56,
+            "max_level": 59,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Golbat",
+                    "chance": 50,
+                    "time": "night"
+                },
+                {
+                    "name": "Druddigon",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Noivern",
+            "field": "Walking",
+            "min_level": 56,
+            "max_level": 59,
+            "rarity": [
+                40,
+                40
+            ],
+            "sos": [
+                {
+                    "name": "Noivern",
+                    "chance": 100
+                }
+            ]
+        }
+    ]
+}

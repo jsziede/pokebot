@@ -1,0 +1,167 @@
+{
+    "pokemon": [
+        {
+            "name": "Rattata",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                0,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Rattata",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Eevee",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                5,
+                5
+            ],
+            "sos": [
+                {
+                    "name": "Umbreon",
+                    "chance": 25,
+                    "time": "day"
+                },
+                {
+                    "name": "Espeon",
+                    "chance": 25,
+                    "time": "day"
+                },
+                {
+                    "name": "Eevee",
+                    "chance": 75
+                }
+            ]
+        },
+        {
+            "name": "Igglybuff",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                20,
+                0
+            ],
+            "sos": [
+                {
+                    "name": "Igglybuff",
+                    "chance": 25
+                },
+                {
+                    "name": "Happiny",
+                    "chance": 25
+                },
+                {
+                    "name": "Jigglypuff",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Lillipup",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Lillipup",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Pikipek",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                15,
+                25
+            ],
+            "sos": [
+                {
+                    "name": "Pikipek",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Yungoos",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                10,
+                0
+            ],
+            "sos": [
+                {
+                    "name": "Yungoos",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Grubbin",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Grubbin",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Mudbray",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Mudbray",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Crabrawler",
+            "field": "Walking",
+            "min_level": 11,
+            "max_level": 14,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Crabrawler",
+                    "chance": 100
+                }
+            ],
+            "pile": true
+        }
+    ]
+}

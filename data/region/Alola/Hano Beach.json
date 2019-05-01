@@ -1,0 +1,111 @@
+{
+    "pokemon": [
+        {
+            "name": "Staryu",
+            "field": "Walking",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                80,
+                80
+            ],
+            "sos": [
+                {
+                    "name": "Staryu",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Sandygast",
+            "field": "Walking",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Sandygast",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Tentacool",
+            "field": "Surfing",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Tentacool",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Wingull",
+            "field": "Surfing",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Wingull",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Finneon",
+            "field": "Surfing",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Finneon",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Pyukumuku",
+            "field": "Surfing",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Pyukumuku",
+                    "chance": 100,
+                    "time": "day"
+                },
+                {
+                    "name": "Wingull",
+                    "chance": 20,
+                    "time": "night"
+                },
+                {
+                    "name": "Pyukumuku",
+                    "chance": 80,
+                    "time": "night"
+                }
+            ]
+        }
+    ]
+}

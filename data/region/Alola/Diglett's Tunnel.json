@@ -1,0 +1,56 @@
+{
+    "pokemon": [
+        {
+            "name": "Diglett",
+            "field": "Walking",
+            "min_level": 19,
+            "max_level": 23,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Diglett",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Zubat",
+            "field": "Walking",
+            "min_level": 19,
+            "max_level": 23,
+            "rarity": [
+                70,
+                70
+            ],
+            "sos": [
+                {
+                    "name": "Zubat",
+                    "chance": 50
+                },
+                {
+                    "name": "Golbat",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Larvitar",
+            "field": "Walking",
+            "min_level": 20,
+            "max_level": 23,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Torkoal",
+                    "chance": 100
+                }
+            ]
+        }
+    ]
+}

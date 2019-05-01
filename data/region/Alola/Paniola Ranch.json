@@ -1,0 +1,92 @@
+{
+    "pokemon": [
+        {
+            "name": "Tauros",
+            "field": "Walking",
+            "min_level": 12,
+            "max_level": 15,
+            "rarity": [
+                5,
+                5
+            ],
+            "sos": [
+                {
+                    "name": "Tauros",
+                    "chance": 50
+                },
+                {
+                    "name": "Miltank",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Miltank",
+            "field": "Walking",
+            "min_level": 12,
+            "max_level": 15,
+            "rarity": [
+                5,
+                5
+            ],
+            "sos": [
+                {
+                    "name": "Miltank",
+                    "chance": 50
+                },
+                {
+                    "name": "Tauros",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Lillipup",
+            "field": "Walking",
+            "min_level": 12,
+            "max_level": 15,
+            "rarity": [
+                40,
+                40
+            ],
+            "sos": [
+                {
+                    "name": "Lillipup",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Mudbray",
+            "field": "Walking",
+            "min_level": 12,
+            "max_level": 15,
+            "rarity": [
+                50,
+                50
+            ],
+            "sos": [
+                {
+                    "name": "Mudbray",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Mareep",
+            "field": "Walking",
+            "min_level": 12,
+            "max_level": 15,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Mareep",
+                    "chance": 100
+                }
+            ]
+        }
+    ]
+}

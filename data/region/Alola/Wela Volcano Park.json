@@ -1,0 +1,104 @@
+{
+    "pokemon": [
+        {
+            "name": "Cubone",
+            "field": "Walking",
+            "min_level": 16,
+            "max_level": 19,
+            "rarity": [
+                24,
+                24
+            ],
+            "sos": [
+                {
+                    "name": "Kangaskhan",
+                    "chance": 25
+                },
+                {
+                    "name": "Cubone",
+                    "chance": 75
+                }
+            ]
+        },
+        {
+            "name": "Kangaskhan",
+            "field": "Walking",
+            "min_level": 16,
+            "max_level": 19,
+            "rarity": [
+                1,
+                1
+            ],
+            "sos": [
+                {
+                    "name": "Kangaskhan",
+                    "chance": 100
+                }
+            ]
+        },
+        {
+            "name": "Magby",
+            "field": "Walking",
+            "min_level": 16,
+            "max_level": 19,
+            "rarity": [
+                15,
+                15
+            ],
+            "sos": [
+                {
+                    "name": "Magby",
+                    "chance": 25
+                },
+                {
+                    "name": "Happiny",
+                    "chance": 25
+                },
+                {
+                    "name": "Magmar",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Fletchling",
+            "field": "Walking",
+            "min_level": 16,
+            "max_level": 19,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Fletchling",
+                    "chance": 50
+                },
+                {
+                    "name": "Fletchinder",
+                    "chance": 50
+                }
+            ]
+        },
+        {
+            "name": "Salandit",
+            "field": "Walking",
+            "min_level": 16,
+            "max_level": 19,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Salazzle",
+                    "chance": 25
+                },
+                {
+                    "name": "Salandit",
+                    "chance": 75
+                }
+            ]
+        }
+    ]
+}
