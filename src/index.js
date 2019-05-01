@@ -1,4 +1,9 @@
 /*
+//  Pokébot - A simulation of the Pokémon video games that runs in the Discord environment.
+//  Copyright (C) 2019 Joshua Sziede
+*/
+
+/*
 //  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
 */
 
