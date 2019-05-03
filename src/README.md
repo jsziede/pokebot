@@ -84,4 +84,4 @@ Major features still in the work:
 
 Along with the dependencies, this project contains some files that were not created by me and will be noted below.
 
-All region.json files in the `data/region` directory (but not within the regional subdirectories) are from the [oakdex-pokedex](https://github.com/jalyna/oakdex-pokedex) project. All Pokémon models found inside the `gfx/models` and `gfx/models/shiny` directories were retrived from [Pokémon Showdown](https://pokemonshowdown.com/).
+Most files in the `data` directory, with the exception of the regional subdirectories within `data/region`, are from the [oakdex-pokedex](https://github.com/jalyna/oakdex-pokedex) project. All Pokémon models found inside the `gfx/models` and `gfx/models/shiny` directories were retrived from [Pokémon Showdown](https://pokemonshowdown.com/).
