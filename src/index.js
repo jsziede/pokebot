@@ -45,13 +45,6 @@ var dollar;
 var birb;
 
 /*
-//  Channel ids to send messages to.
-//  @todo Check channels on a per server basis.
-*/
-var spamChannel = "412184281151176704";
-var mainChannel = "412176149154627585";
-
-/*
 //  Debug Tools
 */
 var enableSpam = false;     //default = false
@@ -290,6 +283,19 @@ schedule.scheduleJob({minute: 0, second: 5}, function(){
 });
 
 /*
+//  Triggers upon joining a server.
+//  Send welcome message to first text channel with send permissions.
+*/
+client.on("guildCreate", async guild => {
+    for (let channel of guild.channels) {
+        if (channel[1].type === 'text' && channel[1].permissionsFor(guild.me).has(`SEND_MESSAGES`)) {
+            await client.channels.get(channel[0]).send(`Hello, thank you for adding me to your guild. My default command prefix is \`!pb\`. To enable commands, go to the channel that you want me to read from and run the \`!pb activate\` command. The command channel can be changed at any time by running the activate command in whichever channel you want, as long as I have message sending permissions in it.`);
+            break;
+        }
+    }
+})
+
+/*
 //  Triggers every time any user sends a message.
 */
 client.on('message', async (message) => {
@@ -297,12 +303,18 @@ client.on('message', async (message) => {
     if (message.author.bot) {
         return;
     }
-    
+
+    if (message.content.trim() === `!pb activate`) {
+        await setBotChannel(message);
+        return;
+    }
+
     var currentCommand = null;
     var sentCommand = false;
     
-    //if message was sent in the spam channel
-    if (await isBotChannel(message.channel.id, message.guild.id)) {
+    //only read messages from bot channel
+    let readMessage = await isBotChannel(message);
+    if (readMessage) {
         //splits message into an array of strings based on spaces
         var input = message.content.trim().split(/ +/g);
         //the first word in the message
@@ -401,17 +413,6 @@ client.on('message', async (message) => {
                 return;
             }
             var bag = printBag(message);
-            return;
-            
-            
-        } else if (command === "bulba") {
-            sentCommand = true;
-            input = input.join(' ');
-            var foundInfo = await getBulbaArticle(message, input);
-            if (foundInfo == null) {
-                var image = '.\\delet\\ptemf.png';
-                message.channel.send("Article not found!", {files: [image]});
-            }
             return;
             
             
@@ -1080,12 +1081,86 @@ client.on('message', async (message) => {
                 });
 
                 message.react(kukui.id);
-                client.channels.get(spamChannel).send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
+                message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
                 return;
             }
         }).catch((err) => setImmediate(() => { console.log(err); }));
     }
 });
+
+/*
+//  Sets the current channel as the channel that Pokebot reads from for the current guild.
+*/
+async function setBotChannel(message) {
+    let query = "SELECT * FROM guilds WHERE guild_id = ?";
+    con.query(query, [message.guild.id], async function (err, rows) {
+        if (err) {
+            console.log(err);
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        // if guild doesn't exist in database
+        } else if (rows.length === 0) {
+            let guild = {
+                guild_id: message.guild.id,
+                prefix: `!pb`,
+                last_message_sent: moment().format(),
+                last_user: message.author.id,
+                channel: message.channel.id
+            }
+            //insert guild into database
+            let query = "INSERT INTO guilds SET ?";
+            con.query(query, [guild], async function (err) {
+                if (err) {
+                    console.log(err);
+                    return new Promise(function(resolve) {
+                        resolve(false);
+                    });
+                } else {
+                    await message.channel.send(`I will now be reading commands from this channel. Type \`!pb begin\` to start your adventure!`);
+                }
+            });
+        // if guild is in database
+        } else {
+            //update the channel
+            let query = "UPDATE guilds SET guilds.channel = ? WHERE guilds.guild_id = ?";
+            con.query(query, [message.channel.id, message.guild.id], async function (err) {
+                if (err) {
+                    console.log(err);
+                    return new Promise(function(resolve) {
+                        resolve(false);
+                    });
+                } else {
+                    await message.channel.send(`I will now be reading commands from this channel.`);
+                }
+            });
+        }
+    });
+    
+
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Checks if message sent from user was in the bot channel.
+*/
+async function isBotChannel(message) {
+    return new Promise(function(resolve, reject) {
+        let query = "SELECT * FROM guilds WHERE guilds.guild_id = ? AND guilds.channel = ?";
+        con.query(query, [message.guild.id, message.channel.id], function (err, rows) {
+            if (err) {
+                console.log(err);
+                resolve(false);
+            } else if (rows.length > 0) {
+                resolve(true);
+            } else {
+                resolve(false);
+            }
+        });
+    });
+}
 
 //checks if a user is currently running a command
 function isInTransaction(userID) {
@@ -1267,9 +1342,9 @@ function generateModelLink(name, shiny, gender, form) {
     }
     
     //if pokemon is shiny
-    var dir = ".//models";
+    var dir = "../gfx/models";
     if (shiny === 1) {
-        dir = ".//models//shiny";
+        dir = "../gfx/models/shiny";
     }
     
     //gen 6 and 7 models have different links
@@ -1363,7 +1438,7 @@ function generateSpriteLink(name, gender, form) {
 
 //generates a file path to a location's image file
 function generateLocationImagePath(region, location) {
-    var path = '.\\maps\\' + region + '\\' + location + '.png';
+    var path = '../gfx/maps/' + region + '/' + location + '.png';
     return path;
 }
 
@@ -1415,7 +1490,7 @@ function generatePokemonJSONPath(name) {
         lower = "jangmo_o";
     }
 
-    var path = '.\\data\\pokemon\\' + lower + '.json';
+    var path = '../data/pokemon/' + lower + '.json';
     return path;
 }
 
@@ -1423,7 +1498,7 @@ function generatePokemonJSONPath(name) {
 function generateNatureJSONPath(nature) {
     var lower = nature.toLowerCase();
     
-    var path = '.\\data\\nature\\' + lower + '.json';
+    var path = '../data/nature/' + lower + '.json';
     return path;
 }
 
@@ -1431,7 +1506,7 @@ function generateNatureJSONPath(nature) {
 function generateRegionJSONPath(region) {
     var lower = region.toLowerCase();
     
-    var path = '.\\data\\region\\' + lower + '.json';
+    var path = '../data/region/' + lower + '.json';
     return path;
 }
 
@@ -1439,7 +1514,7 @@ function generateRegionJSONPath(region) {
 function generateLocationJSONPath(region, location) {
     var lower = region.toLowerCase();
     var lowerLoc = location.toLowerCase();
-    var path = '.\\data\\region\\' + lower + "\\" + lowerLoc + '.json';
+    var path = '../data/region/' + lower + "/" + lowerLoc + '.json';
     return path;
 }
 
@@ -1588,7 +1663,7 @@ async function confirmStarter(message) {
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -1636,7 +1711,7 @@ async function selectStarter(message, userID, region) {
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -1764,7 +1839,7 @@ async function selectRegion(message, userID) {
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -2446,7 +2521,7 @@ async function setField(message, field) {
             message.channel.send(string);
 
             while (cancel == false) {
-                await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+                await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
                 .then(collected => {
                     input = collected.first().content.toString().toLowerCase();
                 })
@@ -2463,7 +2538,7 @@ async function setField(message, field) {
                         cancel = true;
                         input = (num - 1);
                     } else {
-                        client.channels.get(spamChannel).send("Number is out of range. " + string);
+                        message.channel.send("Number is out of range. " + string);
                         input = null;
                     }
                 } else if (input != null) {
@@ -2477,7 +2552,7 @@ async function setField(message, field) {
                         }
                     }
                     if (!match) {
-                        client.channels.get(spamChannel).send("Choice not recognized. " + string);
+                        message.channel.send("Choice not recognized. " + string);
                         input = null;
                     }
                 } else {
@@ -2531,11 +2606,11 @@ async function setField(message, field) {
 
 //prompts the sender to enter a nickname and sets the response as the pokemon's nickname
 async function nicknamePokemon(message, name) {
-    client.channels.get(spamChannel).send(message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name.");
+    message.channel.send(message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name.");
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -2551,7 +2626,7 @@ async function nicknamePokemon(message, name) {
             cancel = true;
             input = 1;
         } else if (input != null) {
-            client.channels.get(spamChannel).send(message.author.username + ", your response was not recognized. Type \"Yes\" to enter a nickname for " + name + " or \"No\" to keep its current name.");
+            message.channel.send(message.author.username + ", your response was not recognized. Type \"Yes\" to enter a nickname for " + name + " or \"No\" to keep its current name.");
             input = null;
         } else {
             input = 0;
@@ -2559,15 +2634,15 @@ async function nicknamePokemon(message, name) {
     }
     
     if (input < 1) {
-        client.channels.get(spamChannel).send(message.author.username + " decided not to nickname their " + name + ".");
+        message.channel.send(message.author.username + " decided not to nickname their " + name + ".");
         return name;
     }
     
-    client.channels.get(spamChannel).send(message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
+    message.channel.send(message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
     cancel = false;
     input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString();
         })
@@ -2579,12 +2654,12 @@ async function nicknamePokemon(message, name) {
         if (input != null) {
             input = input.trim();
             if (input === name) {
-                client.channels.get(spamChannel).send(message.author.username + " decided not to nickname their " + name + ".");
+                message.channel.send(message.author.username + " decided not to nickname their " + name + ".");
                 cancel = true;
             } else if (input.length > 0 && input.length <= 20) {
                 cancel = true;
             } else if (input.length <= 0 || input.length > 20) {
-                client.channels.get(spamChannel).send(message.author.username + ", your nickname was not valid. Enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
+                message.channel.send(message.author.username + ", your nickname was not valid. Enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
                 input = null;
             } else {
                 input = null;
@@ -2595,7 +2670,7 @@ async function nicknamePokemon(message, name) {
     if (input == null) {
         return name;
     } else {
-        client.channels.get(spamChannel).send(message.author.username + " nicknamed their " + name + " '" + input + "'.");
+        message.channel.send(message.author.username + " nicknamed their " + name + " '" + input + "'.");
         return input;
     }
 }
@@ -2868,7 +2943,7 @@ async function giveItem(message, item) {
         var cancel = false;
         var input = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
             })
@@ -2968,7 +3043,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -2993,7 +3068,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3012,7 +3087,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3035,7 +3110,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3060,7 +3135,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3083,7 +3158,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3105,7 +3180,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3126,7 +3201,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3143,7 +3218,7 @@ async function useItem(message, item) {
         } else {
             return false;
         }
-        client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
@@ -3158,7 +3233,7 @@ async function useItem(message, item) {
             } else {
                 return false;
             }
-            client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
+            message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
             evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
             await addEvolutionToPokemon(lead);
             disposedItem = item;
@@ -3217,16 +3292,16 @@ async function useItem(message, item) {
                     }
                     if ((moves[0].name === '---' || moves[0].name === null) && !alreadyKnowsMove) {
                         moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if ((moves[1].name === '---' || moves[1].name === null) && !alreadyKnowsMove) {
                         moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if ((moves[2].name === '---' || moves[2].name === null) && !alreadyKnowsMove) {
                         moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if ((moves[3].name === '---' || moves[3].name === null) && !alreadyKnowsMove) {
                         moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if (!alreadyKnowsMove) {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                         moves = await teachNewMove(message, lead, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
@@ -3252,16 +3327,16 @@ async function useItem(message, item) {
                     }
                     if ((moves[0].name === '---' || moves[0].name === null) && !alreadyKnowsMove) {
                         moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if ((moves[1].name === '---' || moves[1].name === null) && !alreadyKnowsMove) {
                         moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if ((moves[2].name === '---' || moves[2].name === null) && !alreadyKnowsMove) {
                         moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if ((moves[3].name === '---' || moves[3].name === null) && !alreadyKnowsMove) {
                         moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     } else if (!alreadyKnowsMove) {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                         moves = await teachNewMove(message, lead, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
@@ -3342,7 +3417,7 @@ async function tradeOffer(message, tradeTo) {
     var cancl = false;
     while(cancl == false) {
         inp = null;
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 inp = collected.first().content;
             })
@@ -3395,7 +3470,7 @@ async function tradeOffer(message, tradeTo) {
         var cancel = false;
         var name = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 name = collected.first().content.toString().toLowerCase();
             })
@@ -3452,7 +3527,7 @@ async function tradeOffer(message, tradeTo) {
             cancel = false;
             var input = null;
             while(cancel == false) {
-                await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+                await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
                 .then(collected => {
                     input = collected.first().content.toString().toLowerCase();
                 })
@@ -3470,11 +3545,11 @@ async function tradeOffer(message, tradeTo) {
                         cancel = true;
                         input = (num - 1);
                     } else {
-                        client.channels.get(spamChannel).send("Number is out of range. " + string);
+                        message.channel.send("Number is out of range. " + string);
                         input = -1;
                     }
                 } else if (input != null) {
-                    client.channels.get(spamChannel).send("Command not recognized. " + string);
+                    message.channel.send("Command not recognized. " + string);
                     input = -1;
                 } else {
                     input = null;
@@ -3513,7 +3588,7 @@ async function tradeOffer(message, tradeTo) {
         cancel = false;
         name = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 name = collected.first().content.toString().toLowerCase();
             })
@@ -3570,7 +3645,7 @@ async function tradeOffer(message, tradeTo) {
             cancel = false;
             input = null;
             while(cancel == false) {
-                await client.channels.get(spamChannel).awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
+                await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
                 .then(collected => {
                     input = collected.first().content.toString().toLowerCase();
                 })
@@ -3588,11 +3663,11 @@ async function tradeOffer(message, tradeTo) {
                         cancel = true;
                         input = (num - 1);
                     } else {
-                        client.channels.get(spamChannel).send("Number is out of range. " + string);
+                        message.channel.send("Number is out of range. " + string);
                         input = -1;
                     }
                 } else if (input != null) {
-                    client.channels.get(spamChannel).send("Command not recognized. " + string);
+                    message.channel.send("Command not recognized. " + string);
                     input = -1;
                 } else {
                     input = null;
@@ -3635,7 +3710,7 @@ async function tradeOffer(message, tradeTo) {
     var tinputConfirm = null;
     while((accept == null || taccept == null) && i < 60) {
         i++;
-        const response = await client.channels.get(spamChannel).awaitMessages(msg => {
+        const response = await message.channel.awaitMessages(msg => {
             if (msg.author.id === message.author.id) {
                 inputConfirm = msg.content.toLowerCase();
             }
@@ -3778,7 +3853,7 @@ async function tradeOffer(message, tradeTo) {
             }
             
             if (evolveTo != null) {
-                client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + tselectedPokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
+                message.channel.send("<@" + message.author.id + "> your " + tselectedPokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
                 query = "UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?";
                 con.query(query, [tselectedPokemon.pokemon_id], function (err) {
                     if (err) {
@@ -3847,7 +3922,7 @@ async function tradeOffer(message, tradeTo) {
             }
             
             if (evolveTo != null) {
-                client.channels.get(spamChannel).send("<@" + tradeTo.id + "> your " + selectedPokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
+                message.channel.send("<@" + tradeTo.id + "> your " + selectedPokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
                 query = "UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?";
                 con.query(query, [selectedPokemon.pokemon_id], function (err) {
                     if (err) {
@@ -4053,9 +4128,9 @@ async function evolve(message) {
     }
     
     if (evo.to === "Malamar") {
-        client.channels.get(spamChannel).send("¡ɹɐɯɐlɐW oʇuᴉ pǝʌloʌǝ sɐɥ ʎɐʞuI s," + flipString(message.author.username));
+        message.channel.send("¡ɹɐɯɐlɐW oʇuᴉ pǝʌloʌǝ sɐɥ ʎɐʞuI s," + flipString(message.author.username));
     } else {
-        client.channels.get(spamChannel).send(message.author.username + "'s " + evo.from + " has evolved into " + evo.to + "!");
+        message.channel.send(message.author.username + "'s " + evo.from + " has evolved into " + evo.to + "!");
     }
     
     removeEvolution(message.author.id);
@@ -4087,19 +4162,19 @@ async function evolve(message) {
                 if (evolvingPokemon.move_1 === "---" || evolvingPokemon.move_1 === null) {
                     evolvingPokemon.move_1 = evoMove[x];
                     evoevolvingPokemonlving.move_1_pp = getMovePP(evoMove[x]);
-                    client.channels.get(spamChannel).send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
+                    message.channel.send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
                 } else if (evolvingPokemon.move_2 === "---" || evolvingPokemon.move_2 === null) {
                     evolvingPokemon.move_2 = evoMove[x];
                     evolvingPokemon.move_2_pp = getMovePP(evoMove[x]);
-                    client.channels.get(spamChannel).send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
+                    message.channel.send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
                 } else if (evolvingPokemon.move_3 === "---" || evolvingPokemon.move_3 === null) {
                     evolvingPokemon.move_3 = evoMove[x];
                     evolvingPokemon.move_3_pp = getMovePP(evoMove[x]);
-                    client.channels.get(spamChannel).send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
+                    message.channel.send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
                 } else if (evolvingPokemon.move_4 === "---" || evolvingPokemon.move_4 === null) {
                     evolvingPokemon.move_4 = evoMove[x];
                     evolvingPokemon.move_4_pp = getMovePP(evoMove[x]);
-                    client.channels.get(spamChannel).send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
+                    message.channel.send(message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!");
                 } else {
                     transactions[transactions.length] = new Transaction(message.author.id, ("teaching your " + evo.to + " " + evoMove[x]));
                     evolvingMoves = await teachNewMove(message, evolvingPokemon, evoMove[x]);
@@ -4189,7 +4264,7 @@ async function cancelEvolve(message) {
                     console.log(err);
                     return false;
                 }
-                client.channels.get(spamChannel).send(message.author.username + " has canceled " + user.pokemon[i].name + "'s evolution.");
+                message.channel.send(message.author.username + " has canceled " + user.pokemon[i].name + "'s evolution.");
                 removeEvolution(message.author.id);
                 return true;
             });
@@ -4579,25 +4654,25 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                     moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[1].name === '---' || moves[1].name == null) && !alreadyKnowsMove) {
                     moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[2].name === '---' || moves[2].name == null) && !alreadyKnowsMove) {
                     moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[3].name === '---' || moves[3].name == null) && !alreadyKnowsMove) {
                     moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
@@ -4628,25 +4703,25 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                     moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[1].name === '---' || moves[1].name == null) && !alreadyKnowsMove) {
                     moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[2].name === '---' || moves[2].name == null) && !alreadyKnowsMove) {
                     moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[3].name === '---' || moves[3].name == null) && !alreadyKnowsMove) {
                     moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
@@ -4677,25 +4752,25 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                     moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[1].name === '---' || moves[1].name == null) && !alreadyKnowsMove) {
                     moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[2].name === '---' || moves[2].name == null) && !alreadyKnowsMove) {
                     moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[3].name === '---' || moves[3].name == null) && !alreadyKnowsMove) {
                     moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
@@ -4726,25 +4801,25 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                     moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[1].name === '---' || moves[1].name == null) && !alreadyKnowsMove) {
                     moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[2].name === '---' || moves[2].name == null) && !alreadyKnowsMove) {
                     moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                 } else if ((moves[3].name === '---' || moves[3].name == null) && !alreadyKnowsMove) {
                     moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
                     moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
                     if (askForResponse) {
-                        client.channels.get(spamChannel).send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
                     }
                     
                 } else if (!alreadyKnowsMove) {
@@ -4882,12 +4957,12 @@ async function teachNewMove(message, pokemon, moveName) {
         "fields": fields
     };
     
-    var mssg = await client.channels.get(spamChannel).send({ embed, files: [{ attachment: modelLink, name: (pokemon.name + '.gif') }] });
+    var mssg = await message.channel.send({ embed, files: [{ attachment: modelLink, name: (pokemon.name + '.gif') }] });
     
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 300000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 300000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -4912,8 +4987,8 @@ async function teachNewMove(message, pokemon, moveName) {
             cancel = true;
             input = 4;
         } else if (input != null) {
-            client.channels.get(spamChannel).send("Command not recognized.");
-            client.channels.get(spamChannel).send({ embed, files: [{ attachment: modelLink, name: (pokemon.name + '.gif') }] });
+            message.channel.send("Command not recognized.");
+            message.channel.send({ embed, files: [{ attachment: modelLink, name: (pokemon.name + '.gif') }] });
             input = 0;
         } else {
             input = 0;
@@ -4921,25 +4996,25 @@ async function teachNewMove(message, pokemon, moveName) {
     }
 
     if (input === 0) {
-        client.channels.get(spamChannel).send(message.author.username + " cancelled teaching " + name + " the move " + moveName + ".");
+        message.channel.send(message.author.username + " cancelled teaching " + name + " the move " + moveName + ".");
         return moves;
     } else if (input === 1) {
-        client.channels.get(spamChannel).send(message.author.username + "'s " + name + " forgot " + moves[0].name + " and learned " + moveName + ".");
+        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[0].name + " and learned " + moveName + ".");
         moves[0].name = moveName;
         moves[0].pp = getMovePP(moveName);
         return moves;
     } else if (input === 2) {
-        client.channels.get(spamChannel).send(message.author.username + "'s " + name + " forgot " + moves[1].name + " and learned " + moveName + ".");
+        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[1].name + " and learned " + moveName + ".");
         moves[1].name = moveName;
         moves[1].pp = getMovePP(moveName);
         return moves;
     } else if (input === 3) {
-        client.channels.get(spamChannel).send(message.author.username + "'s " + name + " forgot " + moves[2].name + " and learned " + moveName + ".");
+        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[2].name + " and learned " + moveName + ".");
         moves[2].name = moveName;
         moves[2].pp = getMovePP(moveName);
         return moves;
     } else if (input === 4) {
-        client.channels.get(spamChannel).send(message.author.username + "'s " + name + " forgot " + moves[3].name + " and learned " + moveName + ".");
+        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[3].name + " and learned " + moveName + ".");
         moves[3].name = moveName;
         moves[3].pp = getMovePP(moveName);
         return moves;
@@ -5165,7 +5240,7 @@ async function giveXP(message, amount) {
                 });
             }
             
-            client.channels.get(spamChannel).send(message.author.username + " your " + pokemon.name + " reached level " + pokemon.level_current + "!\nHP +" + (statsAfter[0] - statsBefore[0]) + "\nAttack +" + (statsAfter[1] - statsBefore[1]) + "\nDefense +" + (statsAfter[2] - statsBefore[2]) + "\nSp. Attack +" + (statsAfter[3] - statsBefore[3]) + "\nSp. Defense +" + (statsAfter[4] - statsBefore[4]) + "\nSpeed +" + (statsAfter[5] - statsBefore[5]));
+            message.channel.send(message.author.username + " your " + pokemon.name + " reached level " + pokemon.level_current + "!\nHP +" + (statsAfter[0] - statsBefore[0]) + "\nAttack +" + (statsAfter[1] - statsBefore[1]) + "\nDefense +" + (statsAfter[2] - statsBefore[2]) + "\nSp. Attack +" + (statsAfter[3] - statsBefore[3]) + "\nSp. Defense +" + (statsAfter[4] - statsBefore[4]) + "\nSpeed +" + (statsAfter[5] - statsBefore[5]));
             var moves = [
                 {
                     name: pokemon.move_1,
@@ -5201,9 +5276,9 @@ async function giveXP(message, amount) {
         } else {
             if (isInEvolution(message.author.id) === false && evolveTo != null) {
                 if (evolveTo === "Malamar") {
-                    client.channels.get(spamChannel).send("˙ʇdǝɔɔɐ oʇ ,,∀,,  ɹo lǝɔuɐɔ oʇ ,,q,, ǝdʎ┴ ¡ɹɐɯɐlɐW oʇuᴉ ƃuᴉʌloʌǝ sᴉ ʎɐʞuI ɹnoʎ <@" + message.author.id + ">");
+                    message.channel.send("˙ʇdǝɔɔɐ oʇ ,,∀,,  ɹo lǝɔuɐɔ oʇ ,,q,, ǝdʎ┴ ¡ɹɐɯɐlɐW oʇuᴉ ƃuᴉʌloʌǝ sᴉ ʎɐʞuI ɹnoʎ <@" + message.author.id + ">");
                 } else {
-                    client.channels.get(spamChannel).send("<@" + message.author.id + "> your " + pokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
+                    message.channel.send("<@" + message.author.id + "> your " + pokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
                 }
                 pokemon.evolving = 1;
                 evolving[evolving.length] = new Evolution(message.author.id, pokemon.name, evolveTo);
@@ -5320,7 +5395,7 @@ async function giveDayCareXP(message) {
 function getTotalXpAtLevel(rate, currentLevel) {
     var xpData;
     try {
-        xpData = fs.readFileSync("xp.json", "utf8");
+        xpData = fs.readFileSync("../data/xp.json", "utf8");
     } catch (err) {
         console.log(err);
         return null;
@@ -5357,7 +5432,7 @@ function getXpToNextLevel(name, currentTotalXp, currentLevel) {
     
     var xpData;
     try {
-        xpData = fs.readFileSync('xp.json', "utf8");
+        xpData = fs.readFileSync('../data/xp.json', "utf8");
     } catch (err) {
         console.log(err);
         return null;
@@ -5810,7 +5885,7 @@ async function setActivePokemon(message, name) {
                         console.log(err);
                         return false;
                     }
-                    client.channels.get(spamChannel).send(message.author.username + " stopped surfing on their " + lead.name + " and is now walking.");
+                    message.channel.send(message.author.username + " stopped surfing on their " + lead.name + " and is now walking.");
                 });
             }
         }
@@ -5853,7 +5928,7 @@ async function setActivePokemon(message, name) {
         var cancel = false;
         var input = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
             })
@@ -5871,11 +5946,11 @@ async function setActivePokemon(message, name) {
                     cancel = true;
                     input = (num - 1);
                 } else {
-                    client.channels.get(spamChannel).send("Number is out of range. " + string);
+                    message.channel.send("Number is out of range. " + string);
                     input = null;
                 }
             } else if (input != null) {
-                client.channels.get(spamChannel).send("Command not recognized. " + string);
+                message.channel.send("Command not recognized. " + string);
                 input = null;
             } else {
                 input = null;
@@ -5894,7 +5969,7 @@ async function setActivePokemon(message, name) {
                             console.log(err);
                             return false;
                         }
-                        client.channels.get(spamChannel).send(message.author.username + " stopped surfing on their " + lead.name + " and is now walking.");
+                        message.channel.send(message.author.username + " stopped surfing on their " + lead.name + " and is now walking.");
                     });
                 }
             }
@@ -5932,37 +6007,37 @@ async function dayCare(message) {
 
     if (user.region === "Kanto") {
         if (user.location != "Route 5" && user.location != "Four Island") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Route 5 or Four Island in the Kanto region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 5 or Four Island in the Kanto region. " + duck);
             return true;
         }
     } else  if (user.region === "Johto") {
         if (user.location != "Route 34") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Route 34 in the Johto region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 34 in the Johto region. " + duck);
             return true;
         }
     } else  if (user.region === "Hoenn") {
         if (user.location != "Route 117" && user.location != "Battle Resort") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Route 117 or the Battle Resort in the Hoenn region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 117 or the Battle Resort in the Hoenn region. " + duck);
             return true;
         }
     } else  if (user.region === "Sinnoh") {
         if (user.location != "Solaceon Town") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Solaceon Town in the Sinnoh region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Solaceon Town in the Sinnoh region. " + duck);
             return true;
         }
     } else  if (user.region === "Unova") {
         if (user.location != "Route 3") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Route 3 in the Unova region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 3 in the Unova region. " + duck);
             return true;
         }
     } else  if (user.region === "Kalos") {
         if (user.location != "Route 7 (Rivière Walk)") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Route 7 (Rivière Walk) in the Kalos region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 7 (Rivière Walk) in the Kalos region. " + duck);
             return true;
         }
     } else  if (user.region === "Alola") {
         if (user.location != "Paniola Ranch") {
-            client.channels.get(spamChannel).send(message.author.username + " there is no Day Care here. You may find one at Paniola Ranch in the Alola region. " + duck);
+            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Paniola Ranch in the Alola region. " + duck);
             return true;
         }
     }
@@ -5975,7 +6050,7 @@ async function dayCare(message) {
         var input = null;
         var cancel = false;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
             })
@@ -5992,11 +6067,11 @@ async function dayCare(message) {
                     cancel = true;
                     input = (num - 1);
                 } else {
-                    client.channels.get(spamChannel).send("Number is out of range. " + string);
+                    message.channel.send("Number is out of range. " + string);
                     input = null;
                 }
             } else if (input != null) {
-                client.channels.get(spamChannel).send("Command not recognized. " + string);
+                message.channel.send("Command not recognized. " + string);
                 input = null;
             } else {
                 input = null;
@@ -6018,7 +6093,7 @@ async function dayCare(message) {
                 cancel = false;
                 var name = null;
                 while(cancel == false) {
-                    await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 60000, errors: ['time'] })
+                    await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 60000, errors: ['time'] })
                     .then(collected => {
                         name = collected.first().content.toString().toLowerCase();
                     })
@@ -6042,7 +6117,7 @@ async function dayCare(message) {
             await pickUpFromDayCare(message);
             await message.channel.send(message.author.username + " is there anything else you would like to do? " + string);
         } else if (input == 3 || input == null) {
-            await client.channels.get(spamChannel).send(message.author.username + " left the Day Care.");
+            await message.channel.send(message.author.username + " left the Day Care.");
             visitingDaycare = false;
         }
     }
@@ -6056,7 +6131,7 @@ async function pickUpFromDayCare(message) {
     var user = await getUser(message.author.id);
     var daycarePokemon = await getDaycare(message.author.id);
     if (daycarePokemon.length < 1) {
-        await client.channels.get(spamChannel).send(message.author.username + " you have no Pokémon currently in the Day Care.");
+        await message.channel.send(message.author.username + " you have no Pokémon currently in the Day Care.");
         return new Promise(function(resolve) {
             resolve(true);
         });
@@ -6066,8 +6141,8 @@ async function pickUpFromDayCare(message) {
         while(cancel == false) {
             await viewDayCare(message);
             var string = message.author.username + " select the number of the Pokémon shown above that you want to retrieve from the Day Care, or type \"Cancel\" to go back.";
-            await client.channels.get(spamChannel).send(string);
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.send(string);
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
             })
@@ -6079,23 +6154,23 @@ async function pickUpFromDayCare(message) {
             if (input === "cancel") {
                 cancel = true;
                 input = 0;
-                await client.channels.get(spamChannel).send(message.author.username + " decided to leave their Pokémon in the Day Care.");
+                await message.channel.send(message.author.username + " decided to leave their Pokémon in the Day Care.");
             } else if (/^\d+$/.test(input)) {
                 var num = Number(input);
                 if (num > 0 && num <= daycarePokemon.length) {
                     var cost = 100 + ((daycarePokemon[(num - 1)].level_current - daycarePokemon[(num - 1)].level_at_daycare) * 100);
                     if (user.money < cost) {
-                        await client.channels.get(spamChannel).send("You cannot afford to retrieve that Pokémon.");
+                        await message.channel.send("You cannot afford to retrieve that Pokémon.");
                     } else {
                         cancel = true;
                         input = (num - 1);
                     }
                 } else {
-                    client.channels.get(spamChannel).send("Number is out of range. " + string);
+                    message.channel.send("Number is out of range. " + string);
                     input = null;
                 }
             } else if (input != null) {
-                client.channels.get(spamChannel).send("Command not recognized. " + string);
+                message.channel.send("Command not recognized. " + string);
                 input = null;
             } else {
                 input = null;
@@ -6118,7 +6193,7 @@ async function pickUpFromDayCare(message) {
                 }
             });
 
-            await client.channels.get(spamChannel).send(message.author.username + " picked up their " + daycarePokemon[input].name + " from the Day Care.");
+            await message.channel.send(message.author.username + " picked up their " + daycarePokemon[input].name + " from the Day Care.");
             if (daycarePokemon.length > 1) {
                 var otherIndex;
                 if (input == 1) {
@@ -6127,11 +6202,11 @@ async function pickUpFromDayCare(message) {
                     otherIndex = 1;
                 }
                 cost = 100 + ((daycarePokemon[otherIndex].level_current - daycarePokemon[otherIndex].level_at_daycare) * 100);
-                await client.channels.get(spamChannel).send("Would you like to pick up your other Pokémon as well? It will cost you " + dollar + cost + ". Type \"Yes\" or \"No\".");
+                await message.channel.send("Would you like to pick up your other Pokémon as well? It will cost you " + dollar + cost + ". Type \"Yes\" or \"No\".");
                 cancel = false;
                 input = null;
                 while(cancel == false) {
-                    await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+                    await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
                     .then(collected => {
                         input = collected.first().content.toString().toLowerCase();
                     })
@@ -6142,11 +6217,11 @@ async function pickUpFromDayCare(message) {
                     
                     if (input === "no") {
                         cancel = true;
-                        await client.channels.get(spamChannel).send(message.author.username + " decided to leave their other Pokémon in the Day Care.");
+                        await message.channel.send(message.author.username + " decided to leave their other Pokémon in the Day Care.");
                     } else if (input === "yes") {
                         cancel = true;
                         if (user.money < cost) {
-                            await client.channels.get(spamChannel).send("You cannot afford to retrieve that Pokémon.");
+                            await message.channel.send("You cannot afford to retrieve that Pokémon.");
                         } else {
                             query = "UPDATE pokemon SET pokemon.storage = ?, pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
                             con.query(query, [null, null, null, daycarePokemon[otherIndex].pokemon_id], function (err) {
@@ -6161,10 +6236,10 @@ async function pickUpFromDayCare(message) {
                                     });
                                 }
                             });
-                            await client.channels.get(spamChannel).send(message.author.username + " picked up their " + daycarePokemon[otherIndex].name + " from the Day Care.");
+                            await message.channel.send(message.author.username + " picked up their " + daycarePokemon[otherIndex].name + " from the Day Care.");
                         }
                     } else if (input != null) {
-                        client.channels.get(spamChannel).send("Command not recognized. " + string);
+                        message.channel.send("Command not recognized. " + string);
                         input = null;
                     } else {
                         input = null;
@@ -6239,7 +6314,7 @@ async function placeInDaycare(message, name) {
     }
     
     if (pokemon.length === 1) {
-        client.channels.get(spamChannel).send(message.author.username + " you cannot send your only Pokémon to the day care! " + duck);
+        message.channel.send(message.author.username + " you cannot send your only Pokémon to the day care! " + duck);
         return new Promise(function(resolve) {
             resolve(true);
         });
@@ -6259,7 +6334,7 @@ async function placeInDaycare(message, name) {
     var confirm = false;
     
     if (matchedIndexes.length < 1) {
-        client.channels.get(spamChannel).send(message.author.username + " failed to send any Pokémon to the daycare. " + duck);
+        message.channel.send(message.author.username + " failed to send any Pokémon to the daycare. " + duck);
         return new Promise(function(resolve) {
             resolve(true);
         });
@@ -6267,7 +6342,7 @@ async function placeInDaycare(message, name) {
         if (matchedIndexes[0].index === 0) {
             confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return new Promise(function(resolve) {
                     resolve(true);
                 });
@@ -6308,12 +6383,12 @@ async function placeInDaycare(message, name) {
                     });
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-            client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
+            message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
+            message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
         } else {
             confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return false;
             }
             var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
@@ -6352,14 +6427,14 @@ async function placeInDaycare(message, name) {
                     });
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-            client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[matchedIndexes[0].index].name + " to the day care." + birb);
+            message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
+            message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[0].index].name + " to the day care." + birb);
         }
     } else if (matchedIndexes.length === 1 && !onlyOptionIsLead) {
         if (matchedIndexes[0].index === 0) {
             confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return new Promise(function(resolve) {
                     resolve(true);
                 });
@@ -6373,11 +6448,11 @@ async function placeInDaycare(message, name) {
                     });
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
+            message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
         } else {
             confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return false;
             }
             var query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
@@ -6389,7 +6464,7 @@ async function placeInDaycare(message, name) {
                     });
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[matchedIndexes[0].index].name + " to the day care." + birb);
+            message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[0].index].name + " to the day care." + birb);
         }
     } else if (matchedIndexes.length > 1) {
         var string = message.author.username + " you have multiple " + matchedIndexes[0].pkmn.name + ". Please select which one you would like to release by typing its number as shown in the list, or type \"Cancel\" to keep your Pokémon.\n```";
@@ -6407,7 +6482,7 @@ async function placeInDaycare(message, name) {
         var cancel = false;
         var input = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
             })
@@ -6425,11 +6500,11 @@ async function placeInDaycare(message, name) {
                     cancel = true;
                     input = (num - 1);
                 } else {
-                    client.channels.get(spamChannel).send("Number is out of range. " + string);
+                    message.channel.send("Number is out of range. " + string);
                     input = null;
                 }
             } else if (input != null) {
-                client.channels.get(spamChannel).send("Command not recognized. " + string);
+                message.channel.send("Command not recognized. " + string);
                 input = null;
             } else {
                 input = null;
@@ -6437,14 +6512,14 @@ async function placeInDaycare(message, name) {
         }
 
         if (input < 0 || input == null) {
-            client.channels.get(spamChannel).send(message.author.username + " failed to send a Pokémon to the day care. " + duck);
+            message.channel.send(message.author.username + " failed to send a Pokémon to the day care. " + duck);
             return false;
         } else {
             if (pokemon[matchedIndexes[input].index].lead === 1) {
                 if (matchedIndexes[input].index === 0) {
                     confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return new Promise(function(resolve) {
                             resolve(true);
                         });
@@ -6485,12 +6560,12 @@ async function placeInDaycare(message, name) {
                             });
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-                    client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
+                    message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
+                    message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
                 } else {
                     confirm = await confirmDayCare(message, pokemon[matchedIndexes[input].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return new Promise(function(resolve) {
                             resolve(true);
                         });
@@ -6531,14 +6606,14 @@ async function placeInDaycare(message, name) {
                             });
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-                    client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[matchedIndexes[input].index].name + " to the day care." + birb);
+                    message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
+                    message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[input].index].name + " to the day care." + birb);
                 }
             } else {
                 if (matchedIndexes[input].index === 0) {
                     confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return new Promise(function(resolve) {
                             resolve(true);
                         });
@@ -6552,11 +6627,11 @@ async function placeInDaycare(message, name) {
                             });
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
+                    message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
                 } else {
                     confirm = await confirmDayCare(message, pokemon[matchedIndexes[input].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return new Promise(function(resolve) {
                             resolve(true);
                         });
@@ -6570,7 +6645,7 @@ async function placeInDaycare(message, name) {
                             });
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " sent their " + pokemon[matchedIndexes[input].index].name + " to the day care." + birb);
+                    message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[input].index].name + " to the day care." + birb);
                 }   
             }
         }
@@ -6596,7 +6671,7 @@ async function releasePokemon(message, name) {
     }
     
     if (pokemon.length === 1) {
-        client.channels.get(spamChannel).send(message.author.username + " you cannot release your only Pokémon! " + duck);
+        message.channel.send(message.author.username + " you cannot release your only Pokémon! " + duck);
         return false;
     }
     
@@ -6614,13 +6689,13 @@ async function releasePokemon(message, name) {
     var confirm = false;
     
     if (matchedIndexes.length < 1) {
-        client.channels.get(spamChannel).send(message.author.username + " failed to release any Pokémon. " + duck);
+        message.channel.send(message.author.username + " failed to release any Pokémon. " + duck);
         return false;
     } else if (matchedIndexes.length === 1 && onlyOptionIsLead) {
         if (matchedIndexes[0].index === 0) {
             confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return false;
             }
             var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
@@ -6647,12 +6722,12 @@ async function releasePokemon(message, name) {
                     return reject(err);
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-            client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[0].name + "." + tail);
+            message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
+            message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
         } else {
             confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return false;
             }
             var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
@@ -6679,14 +6754,14 @@ async function releasePokemon(message, name) {
                     return reject(err);
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-            client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[matchedIndexes[0].index].name + "." + tail);
+            message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
+            message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[0].index].name + "." + tail);
         }
     } else if (matchedIndexes.length === 1 && !onlyOptionIsLead) {
         if (matchedIndexes[0].index === 0) {
             confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return false;
             }
             var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
@@ -6695,11 +6770,11 @@ async function releasePokemon(message, name) {
                     return reject(err);
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[0].name + "." + tail);
+            message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
         } else {
             confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
             if (confirm === false) {
-                client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                 return false;
             }
             var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
@@ -6708,7 +6783,7 @@ async function releasePokemon(message, name) {
                     return reject(err);
                 }
             });
-            client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[matchedIndexes[0].index].name + "." + tail);
+            message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[0].index].name + "." + tail);
         }
     } else if (matchedIndexes.length > 1) {
         var string = message.author.username + " you have multiple " + matchedIndexes[0].pkmn.name + ". Please select which one you would like to release by typing its number as shown in the list, or type \"Cancel\" to keep your Pokémon.\n```";
@@ -6726,7 +6801,7 @@ async function releasePokemon(message, name) {
         var cancel = false;
         var input = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
             })
@@ -6744,11 +6819,11 @@ async function releasePokemon(message, name) {
                     cancel = true;
                     input = (num - 1);
                 } else {
-                    client.channels.get(spamChannel).send("Number is out of range. " + string);
+                    message.channel.send("Number is out of range. " + string);
                     input = null;
                 }
             } else if (input != null) {
-                client.channels.get(spamChannel).send("Command not recognized. " + string);
+                message.channel.send("Command not recognized. " + string);
                 input = null;
             } else {
                 input = null;
@@ -6756,14 +6831,14 @@ async function releasePokemon(message, name) {
         }
 
         if (input < 0 || input == null) {
-            client.channels.get(spamChannel).send(message.author.username + " failed to release any Pokémon. " + duck);
+            message.channel.send(message.author.username + " failed to release any Pokémon. " + duck);
             return false;
         } else {
             if (pokemon[matchedIndexes[input].index].lead === 1) {
                 if (matchedIndexes[input].index === 0) {
                     confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return false;
                     }
                     var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
@@ -6790,12 +6865,12 @@ async function releasePokemon(message, name) {
                             return reject(err);
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-                    client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[0].name + "." + tail);
+                    message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
+                    message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
                 } else {
                     confirm = await confirmRelease(message, pokemon[matchedIndexes[input].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return false;
                     }
                     var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
@@ -6822,14 +6897,14 @@ async function releasePokemon(message, name) {
                             return reject(err);
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-                    client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[matchedIndexes[input].index].name + "." + tail);
+                    message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
+                    message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[input].index].name + "." + tail);
                 }
             } else {
                 if (matchedIndexes[input].index === 0) {
                     confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return false;
                     }
                     var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
@@ -6838,11 +6913,11 @@ async function releasePokemon(message, name) {
                             return reject(err);
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[0].name + "." + tail);
+                    message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
                 } else {
                     confirm = await confirmRelease(message, pokemon[matchedIndexes[input].index]);
                     if (confirm === false) {
-                        client.channels.get(spamChannel).send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
+                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
                         return false;
                     }
                     var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
@@ -6851,7 +6926,7 @@ async function releasePokemon(message, name) {
                             return reject(err);
                         }
                     });
-                    client.channels.get(spamChannel).send(message.author.username + " released their " + pokemon[matchedIndexes[input].index].name + "." + tail);
+                    message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[input].index].name + "." + tail);
                 }   
             }
         }
@@ -6872,7 +6947,7 @@ async function confirmDayCare(message, pkmn) {
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -6888,7 +6963,7 @@ async function confirmDayCare(message, pkmn) {
             cancel = true;
             input = true;
         } else if (input != null) {
-            client.channels.get(spamChannel).send("Command not recognized. " + string);
+            message.channel.send("Command not recognized. " + string);
             await displayAnOwnedPkmn(pkmn, message);
             input = null;
         } else {
@@ -6919,7 +6994,7 @@ async function confirmRelease(message, pkmn) {
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -6935,7 +7010,7 @@ async function confirmRelease(message, pkmn) {
             cancel = true;
             input = true;
         } else if (input != null) {
-            client.channels.get(spamChannel).send("Command not recognized. " + string);
+            message.channel.send("Command not recognized. " + string);
             await displayAnOwnedPkmn(pkmn, message);
             input = null;
         } else {
@@ -7341,7 +7416,7 @@ async function catchPokemon(message, wild, user, lead) {
 
     var i;
     
-    client.channels.get(spamChannel).send("<@" + message.author.id + ">, a wild " + wild.name + " appeared!");
+    message.channel.send("<@" + message.author.id + ">, a wild " + wild.name + " appeared!");
     
     var numTurns = 0;
     var encounter = true;
@@ -7361,13 +7436,13 @@ async function catchPokemon(message, wild, user, lead) {
 
         string += "```Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.";
 
-        await client.channels.get(spamChannel).send(string);
+        await message.channel.send(string);
         numTurns++;
         var mes;
         var cancel = false;
         var input = null;
         while(cancel == false) {
-            await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 180000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 180000, errors: ['time'] })
             .then(collected => {
                 input = collected.first().content.toString().toLowerCase();
                 mes = collected.first();
@@ -7386,7 +7461,7 @@ async function catchPokemon(message, wild, user, lead) {
             } else if (/^\d+$/.test(input)) {
                 var num = Number(input) - 1;
                 if (Balls.length < 1) {
-                    client.channels.get(spamChannel).send(message.author.username + " you are out of balls!");
+                    message.channel.send(message.author.username + " you are out of balls!");
                     i = 0;
                     input = -1;
                 } else if (num >= 0 && num < Balls.length) {
@@ -7394,7 +7469,7 @@ async function catchPokemon(message, wild, user, lead) {
                     cancel = true;
                     i = 1800;
                 } else {
-                    client.channels.get(spamChannel).send(message.author.username + ", your number was not in range. Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.");
+                    message.channel.send(message.author.username + ", your number was not in range. Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.");
                     i = 0;
                     input = -1;
                 }
@@ -7406,7 +7481,7 @@ async function catchPokemon(message, wild, user, lead) {
                     input += " ball";
                 }
                 if (Balls.length < 1) {
-                    client.channels.get(spamChannel).send(message.author.username + " you are out of balls!");
+                    message.channel.send(message.author.username + " you are out of balls!");
                     i = 0;
                     input = -1;
                 } else {
@@ -7419,7 +7494,7 @@ async function catchPokemon(message, wild, user, lead) {
                         input = doesUserHaveIt;
                         i = 60;
                     } else {
-                        client.channels.get(spamChannel).send(message.author.username + ", your response was not recognized. Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.");
+                        message.channel.send(message.author.username + ", your response was not recognized. Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.");
                         i = 0;
                         input = -1;
                     }
@@ -7433,10 +7508,10 @@ async function catchPokemon(message, wild, user, lead) {
         var catchRate = pkmn.catch_rate;
         
         if (input === -2) {
-            client.channels.get(spamChannel).send(message.author.username + " ran away from the wild " + wild.name + ".");
+            message.channel.send(message.author.username + " ran away from the wild " + wild.name + ".");
             encounter = false;
         } else if (input === -1) {
-            client.channels.get(spamChannel).send(message.author.username + " the wild " + wild.name + " fled!");
+            message.channel.send(message.author.username + " the wild " + wild.name + " fled!");
             encounter = false;
         } else { //threw ball
             ballUsed = Balls[input].name;
@@ -7617,19 +7692,19 @@ async function catchPokemon(message, wild, user, lead) {
                 }
             }
             if (shakes === 0) {
-                await client.channels.get(spamChannel).send("Oh no! The Pokémon broke free!");
+                await message.channel.send("Oh no! The Pokémon broke free!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
             } else if (shakes === 1) {
-                await client.channels.get(spamChannel).send("	Aww! It appeared to be caught!");
+                await message.channel.send("	Aww! It appeared to be caught!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
             } else if (shakes === 2) {
-                await client.channels.get(spamChannel).send("Aargh! Almost had it!");
+                await message.channel.send("Aargh! Almost had it!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
             } else if (shakes === 3) {
-                await client.channels.get(spamChannel).send("Gah! It was so close, too!");
+                await message.channel.send("Gah! It was so close, too!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
             } else if (shakes === 4) {
-                await client.channels.get(spamChannel).send("Gotcha! " + wild.name + " was caught!");
+                await message.channel.send("Gotcha! " + wild.name + " was caught!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
                 wild.ot = message.author.username;
                 wild.otid = message.author.id;
@@ -7709,7 +7784,7 @@ async function displayAWildPkmn(pkmn, message) {
         movesString += "\n" + pkmn.moves[3];
     }
 
-    client.channels.get(spamChannel).send({
+    message.channel.send({
         "embed": {
             "author": {
                 "name": name,
@@ -7854,7 +7929,7 @@ async function displayAnOwnedPkmn(pkmn) {
         movesString += "\n" + pkmn.move_4;
     }
     
-    client.channels.get(spamChannel).send({
+    message.channel.send({
         "embed": {
             "author": {
                 "name": nick,
@@ -7989,7 +8064,7 @@ function displayHiddenStats(pkmn) {
 
     var type_icon = client.emojis.find("name", hiddenPow);
     
-    client.channels.get(spamChannel).send({
+    message.channel.send({
         "embed": {
             "author": {
                 "name": nick,
@@ -8512,7 +8587,7 @@ async function printPossibleEncounters(message) {
         embed = ":caa:";
     }
     
-    var msg = await client.channels.get(spamChannel).send({ embed });
+    var msg = await message.channel.send({ embed });
     
     var reacting = true;
     var didReact = false;
@@ -8583,7 +8658,7 @@ async function getDexInfo(message, name, form) {
             return null;
         }
     }
-    var path = ".\\data\\pokedex.json";
+    var path = "../data/pokedex.json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -9032,7 +9107,7 @@ async function getDexInfo(message, name, form) {
 
     var embed = infoEmbed;
     
-    var msg = await client.channels.get(spamChannel).send({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+    var msg = await message.channel.send({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
     
     var reacting = true;
     var didReact = false;
@@ -9139,7 +9214,7 @@ function getMoveInfo(name) {
         pp = "---"
     }
     
-    client.channels.get(spamChannel).send({
+    message.channel.send({
         "embed": {
             "author": {
                 "name": move.names.en,
@@ -9198,7 +9273,7 @@ function getAbilityInfo(name) {
     
     var ability = JSON.parse(data);
     
-    client.channels.get(spamChannel).send({
+    message.channel.send({
         "embed": {
             "author": {
                 "name": ability.names.en
@@ -9291,7 +9366,7 @@ async function printPokemon(message, otherUser) {
         "fields": [fields[fieldCount]]
     };
 
-    var msg = await client.channels.get(spamChannel).send({embed});
+    var msg = await message.channel.send({embed});
     var reacting = true;
     var didReact = false;
     while (reacting) {
@@ -9405,7 +9480,7 @@ async function printDex(message) {
         "fields": [fields[fieldCount * 2], fields[(fieldCount * 2) + 1]]
     };
 
-    var msg = await client.channels.get(spamChannel).send({embed});
+    var msg = await message.channel.send({embed});
     var reacting = true;
     var didReact = false;
     while (reacting) {
@@ -9482,7 +9557,7 @@ async function printBag(message) {
     var bag = await getBag(message.author.id);
     
     if (bag.length < 1) {
-        client.channels.get(spamChannel).send("```" + message.author.username + "'s Bag:\nMoney: ₽" + user.money.toString() + "\n\nNo items.```");
+        message.channel.send("```" + message.author.username + "'s Bag:\nMoney: ₽" + user.money.toString() + "\n\nNo items.```");
         return true;
     }
 
@@ -9535,7 +9610,7 @@ async function printBag(message) {
     }
     string += "```";
     
-    client.channels.get(spamChannel).send(string);
+    message.channel.send(string);
 }
 
 //prompts the user to buy items from the poke mart
@@ -9602,7 +9677,7 @@ async function buyItems(message) {
     var cancel = false;
     var input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -9654,19 +9729,19 @@ async function buyItems(message) {
         message.channel.send(message.author.username + " left the Poké Mart.");
         return false;
     } else if (input === 1) {
-        path = '.\\data\\items\\items.json';
+        path = '../data/items/items.json';
     } else if (input === 2) {
-        path = '.\\data\\items\\evolution.json';
+        path = '../data/items/evolution.json';
     } else if (input === 3) {
-        path = '.\\data\\items\\balls.json';
+        path = '../data/items/balls.json';
     } else if (input === 4) {
-        path = '.\\data\\items\\medicine.json';
+        path = '../data/items/medicine.json';
     } else if (input === 5) {
-        path = '.\\data\\items\\TMs1.json';
+        path = '../data/items/TMs1.json';
     } else if (input === 6) {
-        path = '.\\data\\items\\TMs2.json';
+        path = '../data/items/TMs2.json';
     } else if (input === 7) {
-        path = '.\\data\\items\\keys.json';
+        path = '../data/items/keys.json';
     } else {
         return false;
     }
@@ -9692,7 +9767,7 @@ async function buyItems(message) {
     cancel = false;
     input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -9718,14 +9793,14 @@ async function buyItems(message) {
                             input = null;
                         }
                     } else {
-                       client.channels.get(spamChannel).send(message.author.username + " you cannot have more than one of that item. Enter the name of the item or its number as shown in the list to select an item to buy, or type \"Cancel\" to exit the Poké Mart."); 
+                       message.channel.send(message.author.username + " you cannot have more than one of that item. Enter the name of the item or its number as shown in the list to select an item to buy, or type \"Cancel\" to exit the Poké Mart."); 
                     }
                 } else {
                     cancel = true;
                     input = (num - 1);
                 }
             } else {
-                client.channels.get(spamChannel).send("Number is out of range. Enter the name of the item or its number as shown in the list to select an item to buy, or type \"Cancel\" to exit the Poké Mart.");
+                message.channel.send("Number is out of range. Enter the name of the item or its number as shown in the list to select an item to buy, or type \"Cancel\" to exit the Poké Mart.");
                 input = null;
             }
         } else if (input != null) {
@@ -9747,7 +9822,7 @@ async function buyItems(message) {
                                 input = null;
                             }
                         } else {
-                           client.channels.get(spamChannel).send(message.author.username + " you cannot have more than one of that item. Enter the name of the item or its number as shown in the list to select an item to buy, or type \"Cancel\" to exit the Poké Mart."); 
+                           message.channel.send(message.author.username + " you cannot have more than one of that item. Enter the name of the item or its number as shown in the list to select an item to buy, or type \"Cancel\" to exit the Poké Mart."); 
                         }
                     } else {
                         cancel = true;
@@ -9802,7 +9877,7 @@ async function buyItems(message) {
     cancel = false;
     input = null;
     while(cancel == false) {
-        await client.channels.get(spamChannel).awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
@@ -9857,11 +9932,11 @@ async function buyItems(message) {
                     message.channel.send(message.author.username + " you cannot afford that! Please enter the amount that you want to buy, or type \"Cancel\" to exit the Poké Mart.");
                 }
             } else {
-                client.channels.get(spamChannel).send("Input was out of range. Please enter a number less than 100 and greater than 0, or type \"Cancel\" to exit the Poké Mart.");
+                message.channel.send("Input was out of range. Please enter a number less than 100 and greater than 0, or type \"Cancel\" to exit the Poké Mart.");
                 input = null;
             }
         } else if ((/^\d+$/.test(input)) === false) {
-            client.channels.get(spamChannel).send("Input was not a number. Please enter a number less than 100 and greater than 0, or type \"Cancel\" to exit the Poké Mart.");
+            message.channel.send("Input was not a number. Please enter a number less than 100 and greater than 0, or type \"Cancel\" to exit the Poké Mart.");
             input = null;
         }
     }
@@ -11132,7 +11207,7 @@ async function getWeather(message) {
         season = "Winter";
     }
 
-    var seasonImgLink = ".\\icons\\seasons\\" + season + ".png";
+    var seasonImgLink = "../gfx/icons/seasons/" + season + ".png";
 
     var authorString = "Weather Report for the " + moment().format('Do') + " of " + season;
     var rainEmbed = {
@@ -11320,7 +11395,7 @@ async function getWeather(message) {
 
     var embed = rainEmbed;
     
-    var msg = await client.channels.get(spamChannel).send({ embed, files: [{ attachment: seasonImgLink, name: (season + '.png') }] });
+    var msg = await message.channel.send({ embed, files: [{ attachment: seasonImgLink, name: (season + '.png') }] });
     var reacting = true;
     var didReact = false;
     while (reacting) {
