@@ -1,0 +1,2629 @@
+{
+  "names": {
+    "fr": "Dynavolt",
+    "de": "Frizelbliz",
+    "it": "Electrike",
+    "en": "Electrike"
+  },
+  "national_id": 309,
+  "types": [
+    "Electric"
+  ],
+  "abilities": [
+    {
+      "name": "Static"
+    },
+    {
+      "name": "Lightning Rod"
+    },
+    {
+      "name": "Minus",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 120,
+  "egg_groups": [
+    "Field"
+  ],
+  "hatch_time": [
+    5355,
+    5609
+  ],
+  "height_us": "2'00\"",
+  "height_eu": "0.6 m",
+  "weight_us": "33.5 lbs.",
+  "weight_eu": "15.2 kg",
+  "base_exp_yield": 59,
+  "leveling_rate": "Slow",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 1
+  },
+  "color": "Green",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 40,
+    "atk": 45,
+    "def": 40,
+    "sp_atk": 65,
+    "sp_def": 40,
+    "speed": 65
+  },
+  "evolutions": [
+    {
+      "to": "Manectric",
+      "level": 26
+    }
+  ],
+  "categories": {
+    "en": "Lightning Pokémon",
+    "de": "Gewitter"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": 80,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 73,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Ruby": {
+      "en": "Electrike stores electricity in its long body hair. This Pokémon stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
+      "de": "Frizelbliz speichert Elektrizität in seiner langen Körperbehaarung. Dieses Pokémon stimuliert seine Beinmuskulatur durch Stromstöße. Dadurch ist es in der Lage, explosiv zu beschleunigen."
+    },
+    "Sapphire": {
+      "en": "Electrike runs faster than the human eye can follow. The friction from running is converted into electricity, which is then stored in this Pokémon's fur.",
+      "de": "Frizelbliz rennt so schnell, dass das menschliche Auge es nicht wahrnehmen kann. Die Reibung, die dabei entsteht, wandelt es in Elektrizität um, die es in seinem Fell speichert."
+    },
+    "Emerald": {
+      "en": "It generates electricity using friction from the atmosphere. In seasons with especially arid air, its entire body blazes with violent showers of sparks.",
+      "de": "Aus der Reibung der Atmosphäre generiert es Elektrizität. Wenn die Luft besonders trocken ist, glüht sein ganzer Körper vor elektrischen Funken."
+    },
+    "FireRed": {
+      "en": "It stores static electricity in its fur for discharging. It gives off sparks if a storm approaches.",
+      "de": "In seinem Fell speichert es statische Elektrizität für spätere Entladungen. Braut sich ein Sturm zusammen, entlädt es Funken."
+    },
+    "LeafGreen": {
+      "en": "It stores static electricity in its fur for discharging. It gives off sparks if a storm approaches.",
+      "de": "In seinem Fell speichert es statische Elektrizität für spätere Entladungen. Braut sich ein Sturm zusammen, entlädt es Funken."
+    },
+    "Diamond": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "Pearl": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "Platinum": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "HeartGold": {
+      "en": "It stores electricity in its fur. It gives off sparks from all over its body in seasons when the air is dry.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "SoulSilver": {
+      "en": "It stores electricity in its fur. It gives off sparks from all over its body in seasons when the air is dry.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "Black": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "White": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "Black 2": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "White 2": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "X": {
+      "en": "Using electricity stored in its fur, it stimulates its muscles to heighten its reaction speed.",
+      "de": "Die Elektrizität, die es im Fell speichert, nutzt es, um seine Muskeln zu stimulieren."
+    },
+    "Y": {
+      "en": "It stores static electricity in its fur for discharging. It gives off sparks if a storm approaches.",
+      "de": "In seinem Fell speichert es statische Elektrizität für spätere Entladungen. Braut sich ein Sturm zusammen, entlädt es Funken."
+    },
+    "Omega Ruby": {
+      "en": "Electrike stores electricity in its long body hair. This Pokémon stimulates its leg muscles with electric charges. These jolts of power give its legs explosive acceleration performance.",
+      "de": "Frizelbliz speichert Elektrizität in seiner langen Körperbehaarung. Dieses Pokémon stimuliert seine Beinmuskulatur durch Stromstöße. Dadurch ist es in der Lage, explosiv zu beschleunigen."
+    },
+    "Alpha Sapphire": {
+      "en": "Electrike runs faster than the human eye can follow. The friction from running is converted into electricity, which is then stored in this Pokémon’s fur.",
+      "de": "Frizelbliz rennt so schnell, dass das menschliche Auge es nicht wahrnehmen kann. Die Reibung, die dabei entsteht, wandelt es in Elektrizität um, die es in seinem Fell speichert."
+    },
+    "Ultra Sun": {
+      "en": "Friction between the air and its fur produces static electricity. When Electrike runs, it makes a crackling sound.",
+      "de": "Durch die Reibung zwischen seinem Fell und der Luft entsteht Elektrizität. Wenn es rennt, verursacht es ein knisterndes Geräusch."
+    },
+    "Ultra Moon": {
+      "en": "Static electricity builds up all over its body as strands of its long fur rub together. This Pokémon boasts incredible speed.",
+      "de": "Durch das Aneinanderreiben seiner langen Haare speichert sein ganzer Körper Elektrizität. Es ist besonders stolz auf seine Schnelligkeit."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      4,
+      5
+    ],
+    "power": [
+      2,
+      3
+    ],
+    "stamina": [
+      2,
+      3
+    ],
+    "skill": [
+      2,
+      4
+    ],
+    "jump": [
+      2,
+      4
+    ]
+  },
+  "ultra_alola_id": 114,
+  "move_learnsets": [
+    {
+      "games": [
+        "Ruby",
+        "Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Roar",
+          "level": 28
+        },
+        {
+          "move": "Bite",
+          "level": 33
+        },
+        {
+          "move": "Thunder",
+          "level": 36
+        },
+        {
+          "move": "Charge",
+          "level": 41
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Flash",
+          "tm": "HM5"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "FireRed",
+        "LeafGreen"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Roar",
+          "level": 28
+        },
+        {
+          "move": "Bite",
+          "level": 33
+        },
+        {
+          "move": "Thunder",
+          "level": 36
+        },
+        {
+          "move": "Charge",
+          "level": 41
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Flash",
+          "tm": "HM5"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Emerald"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Roar",
+          "level": 28
+        },
+        {
+          "move": "Bite",
+          "level": 33
+        },
+        {
+          "move": "Thunder",
+          "level": 36
+        },
+        {
+          "move": "Charge",
+          "level": 41
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Flash",
+          "tm": "HM5"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Diamond",
+        "Pearl"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Bite",
+          "level": 28
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 33
+        },
+        {
+          "move": "Roar",
+          "level": 36
+        },
+        {
+          "move": "Discharge",
+          "level": 41
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Thunder",
+          "level": 49
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Platinum"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Bite",
+          "level": 28
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 33
+        },
+        {
+          "move": "Roar",
+          "level": 36
+        },
+        {
+          "move": "Discharge",
+          "level": 41
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Thunder",
+          "level": 49
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "HeartGold",
+        "SoulSilver"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Bite",
+          "level": 28
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 33
+        },
+        {
+          "move": "Roar",
+          "level": 36
+        },
+        {
+          "move": "Discharge",
+          "level": 41
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Thunder",
+          "level": 49
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Bite",
+          "level": 28
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 33
+        },
+        {
+          "move": "Roar",
+          "level": 36
+        },
+        {
+          "move": "Discharge",
+          "level": 41
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Wild Charge",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 52
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Electro Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Burst",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Shock Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Bite",
+          "level": 28
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 33
+        },
+        {
+          "move": "Roar",
+          "level": 36
+        },
+        {
+          "move": "Discharge",
+          "level": 41
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Wild Charge",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 52
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Electro Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Burst",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Shock Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 4
+        },
+        {
+          "move": "Leer",
+          "level": 9
+        },
+        {
+          "move": "Howl",
+          "level": 12
+        },
+        {
+          "move": "Quick Attack",
+          "level": 17
+        },
+        {
+          "move": "Spark",
+          "level": 20
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 25
+        },
+        {
+          "move": "Bite",
+          "level": 28
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 33
+        },
+        {
+          "move": "Roar",
+          "level": 36
+        },
+        {
+          "move": "Discharge",
+          "level": 41
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Wild Charge",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 52
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Eerie Impulse",
+          "egg_move": true
+        },
+        {
+          "move": "Electro Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Burst",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Shock Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 4
+        },
+        {
+          "move": "Howl",
+          "level": 7
+        },
+        {
+          "move": "Quick Attack",
+          "level": 10
+        },
+        {
+          "move": "Spark",
+          "level": 13
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 16
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 19
+        },
+        {
+          "move": "Bite",
+          "level": 24
+        },
+        {
+          "move": "Discharge",
+          "level": 29
+        },
+        {
+          "move": "Roar",
+          "level": 34
+        },
+        {
+          "move": "Wild Charge",
+          "level": 39
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Thunder",
+          "level": 49
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Eerie Impulse",
+          "egg_move": true
+        },
+        {
+          "move": "Electro Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Burst",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Shock Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 4
+        },
+        {
+          "move": "Howl",
+          "level": 7
+        },
+        {
+          "move": "Quick Attack",
+          "level": 10
+        },
+        {
+          "move": "Spark",
+          "level": 13
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 16
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 19
+        },
+        {
+          "move": "Bite",
+          "level": 24
+        },
+        {
+          "move": "Discharge",
+          "level": 29
+        },
+        {
+          "move": "Roar",
+          "level": 34
+        },
+        {
+          "move": "Wild Charge",
+          "level": 39
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Thunder",
+          "level": 49
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Eerie Impulse",
+          "egg_move": true
+        },
+        {
+          "move": "Electro Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Burst",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Shock Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 4
+        },
+        {
+          "move": "Howl",
+          "level": 7
+        },
+        {
+          "move": "Quick Attack",
+          "level": 10
+        },
+        {
+          "move": "Spark",
+          "level": 13
+        },
+        {
+          "move": "Odor Sleuth",
+          "level": 16
+        },
+        {
+          "move": "Thunder Fang",
+          "level": 19
+        },
+        {
+          "move": "Bite",
+          "level": 24
+        },
+        {
+          "move": "Discharge",
+          "level": 29
+        },
+        {
+          "move": "Roar",
+          "level": 34
+        },
+        {
+          "move": "Wild Charge",
+          "level": 39
+        },
+        {
+          "move": "Charge",
+          "level": 44
+        },
+        {
+          "move": "Thunder",
+          "level": 49
+        },
+        {
+          "move": "Crunch",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Discharge",
+          "egg_move": true
+        },
+        {
+          "move": "Eerie Impulse",
+          "egg_move": true
+        },
+        {
+          "move": "Electro Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Burst",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Shock Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Fang",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

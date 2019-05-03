@@ -1,0 +1,110 @@
+{
+  "index_number": 547,
+  "pp": 10,
+  "max_pp": 16,
+  "power": 75,
+  "accuracy": 100,
+  "category": "special",
+  "priority": 0,
+  "target": "adjacent_foes_all",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": false,
+  "names": {
+    "fr": "Chant Antique",
+    "de": "Urgesang",
+    "it": "Cantoantico",
+    "en": "Relic Song"
+  },
+  "type": "Normal",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Beautiful"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Beautiful"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Beautiful"
+    }
+  ],
+  "pokedex_entries": {
+    "Black": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of those listening. It may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Gegner in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "White": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of those listening. It may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Gegner in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "Black 2": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of those listening. It may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Gegner in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "White 2": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of those listening. It may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Gegner in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "X": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "Y": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "O.Ruby": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "Moon": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "Ultra Sun": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "Ultra Moon": {
+      "en": "The user sings an ancient song and attacks by appealing to the hearts of the listening opposing Pokémon. This may also induce sleep.",
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein."
+    },
+    "Omega Ruby": {
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Anwender greift mit Urgesang an, der Ziele in der Nähe im tiefsten Inneren anspricht. Diese schlafen eventuell ein.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "sleep",
+        "probability": 10
+      }
+    ]
+  }
+}

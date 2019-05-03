@@ -1,0 +1,543 @@
+{
+  "names": {
+    "en": "Araquanid",
+    "jp": "オニシズクモ Onishizukumo",
+    "fr": "Tarenbulle",
+    "es": "Araquanid",
+    "de": "Aranestro",
+    "it": "Araquanid"
+  },
+  "national_id": 752,
+  "alola_id": 142,
+  "types": [
+    "Water",
+    "Bug"
+  ],
+  "items": [
+      {
+          "name": "Mystic Water",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Water Bubble"
+    },
+    {
+      "name": "Water Absorb",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 100,
+  "egg_groups": [
+    "Water 1",
+    "Bug"
+  ],
+  "hatch_time": [
+    3855,
+    4111
+  ],
+  "height_us": "5'11\"",
+  "height_eu": "1.8 m",
+  "weight_us": "180.8 lbs.",
+  "weight_eu": "82.0 kg",
+  "base_exp_yield": 159,
+  "leveling_rate": "Medium Fast",
+  "color": "Green",
+  "base_friendship": 70,
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 2,
+    "speed": 0
+  },
+  "base_stats": {
+    "hp": 68,
+    "atk": 70,
+    "def": 92,
+    "sp_atk": 50,
+    "sp_def": 132,
+    "speed": 42
+  },
+  "evolution_from": "Dewpider",
+  "categories": {
+    "en": "Water Bubble Pokémon",
+    "de": "Wasserblase"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolutions": [
+
+  ],
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "It delivers headbutts with the water bubble on its head. Small Pokémon get sucked into the bubble, where they drown.",
+      "de": "Es verteilt mit seiner Wasserblase Kopfstöße. Kleine Pokémon werden dabei hineingezogen und ertrinken."
+    },
+    "Moon": {
+      "en": "Despite what its appearance suggests, it cares for others. If it finds vulnerable, weak Pokémon, it protectively brings them into its water bubble.",
+      "de": "Es ist fürsorglicher, als es aussieht. Findet es einen kleinen, schwachen Artgenossen, gewährt es ihm Einlass in seine Wasserblase."
+    },
+    "Ultra Sun": {
+      "en": "It usually passes its time in the water. When its belly is full, it stores its subdued prey in the water bubble on its head.",
+      "de": "Es verlässt das Wasser nur sehr selten. Wenn es satt ist, bewahrt es erledigte Beute in der Wasserblase auf seinem Kopf auf."
+    },
+    "Ultra Moon": {
+      "en": "It has a habit of storing things it values in its water bubble. If its Trainer doesn’t watch out, Araquanid will try to put them in its bubble!",
+      "de": "Dinge, die ihm wichtig sind, pflegt es in seiner Wasserblase aufzubewahren. Dazu gehört auch sein Trainer, wenn dieser nicht aufpasst."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 69,
+  "move_learnsets": [
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bubble",
+          "level": 1
+        },
+        {
+          "move": "Bug Bite",
+          "level": 1
+        },
+        {
+          "move": "Infestation",
+          "level": 1
+        },
+        {
+          "move": "Soak",
+          "level": 1
+        },
+        {
+          "move": "Spider Web",
+          "level": 1
+        },
+        {
+          "move": "Wide Guard",
+          "level": 1
+        },
+        {
+          "move": "Infestation",
+          "level": 5
+        },
+        {
+          "move": "Spider Web",
+          "level": 8
+        },
+        {
+          "move": "Bug Bite",
+          "level": 13
+        },
+        {
+          "move": "Bubble Beam",
+          "level": 16
+        },
+        {
+          "move": "Bite",
+          "level": 21
+        },
+        {
+          "move": "Aqua Ring",
+          "level": 26
+        },
+        {
+          "move": "Leech Life",
+          "level": 33
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Lunge",
+          "level": 45
+        },
+        {
+          "move": "Mirror Coat",
+          "level": 50
+        },
+        {
+          "move": "Liquidation",
+          "level": 57
+        },
+        {
+          "move": "Entrainment",
+          "level": 62
+        },
+        {
+          "move": "Aurora Beam",
+          "egg_move": true
+        },
+        {
+          "move": "Power Split",
+          "egg_move": true
+        },
+        {
+          "move": "Spit Up",
+          "egg_move": true
+        },
+        {
+          "move": "Stockpile",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bubble",
+          "level": 1
+        },
+        {
+          "move": "Bug Bite",
+          "level": 1
+        },
+        {
+          "move": "Infestation",
+          "level": 1
+        },
+        {
+          "move": "Soak",
+          "level": 1
+        },
+        {
+          "move": "Spider Web",
+          "level": 1
+        },
+        {
+          "move": "Wide Guard",
+          "level": 1
+        },
+        {
+          "move": "Infestation",
+          "level": 5
+        },
+        {
+          "move": "Spider Web",
+          "level": 8
+        },
+        {
+          "move": "Bug Bite",
+          "level": 13
+        },
+        {
+          "move": "Bubble Beam",
+          "level": 16
+        },
+        {
+          "move": "Bite",
+          "level": 21
+        },
+        {
+          "move": "Aqua Ring",
+          "level": 26
+        },
+        {
+          "move": "Leech Life",
+          "level": 33
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Lunge",
+          "level": 45
+        },
+        {
+          "move": "Mirror Coat",
+          "level": 50
+        },
+        {
+          "move": "Liquidation",
+          "level": 57
+        },
+        {
+          "move": "Entrainment",
+          "level": 62
+        },
+        {
+          "move": "Aurora Beam",
+          "egg_move": true
+        },
+        {
+          "move": "Power Split",
+          "egg_move": true
+        },
+        {
+          "move": "Spit Up",
+          "egg_move": true
+        },
+        {
+          "move": "Sticky Web",
+          "egg_move": true
+        },
+        {
+          "move": "Stockpile",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

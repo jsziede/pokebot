@@ -1,0 +1,923 @@
+{
+  "names": {
+    "fr": "Grelaçon",
+    "de": "Arktip",
+    "it": "Bergmite",
+    "en": "Bergmite"
+  },
+  "national_id": 712,
+  "types": [
+    "Ice"
+  ],
+  "abilities": [
+    {
+      "name": "Own Tempo"
+    },
+    {
+      "name": "Ice Body"
+    },
+    {
+      "name": "Sturdy",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 190,
+  "egg_groups": [
+    "Monster"
+  ],
+  "hatch_time": [
+    5355,
+    5609
+  ],
+  "height_us": "3'03\"",
+  "height_eu": "1.0 m",
+  "weight_us": "219.4 lbs.",
+  "weight_eu": "99.5 kg",
+  "base_exp_yield": 61,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 1,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Blue",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 55,
+    "atk": 69,
+    "def": 85,
+    "sp_atk": 32,
+    "sp_def": 35,
+    "speed": 28
+  },
+  "evolutions": [
+    {
+      "to": "Avalugg",
+      "level": 37
+    }
+  ],
+  "categories": {
+    "en": "Ice Chunk Pokémon",
+    "de": "Eisklumpen"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 79,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "It blocks opponents' attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
+      "de": "Es wehrt gegnerische Angriffe mit seinem in Eis gehüllten Körper ab. Bruchstellen bessert es mit aus kalter Luft gewonnenem neuen Eis aus."
+    },
+    "Y": {
+      "en": "Using air of -150 degrees Fahrenheit, they freeze opponents solid. They live in herds above the snow line on mountains.",
+      "de": "Es friert seine Gegner mittels eines -100 °C kalten Luftstromes ein. Mit seinen Artgenossen lebt es herdenweise auf Bergen inmitten des ewigen Eises."
+    },
+    "Omega Ruby": {
+      "en": "It blocks opponents' attacks with the ice that shields its body. It uses cold air to repair any cracks with new ice.",
+      "de": "Es friert seine Gegner mittels eines -100 °C kalten Luftstromes ein. Mit seinen Artgenossen lebt es herdenweise auf Bergen inmitten des ewigen Eises."
+    },
+    "Alpha Sapphire": {
+      "en": "Using air of -150 degrees Fahrenheit, they freeze opponents solid. They live in herds above the snow line on mountains.",
+      "de": "Es friert seine Gegner mittels eines -100 °C kalten Luftstromes ein. Mit seinen Artgenossen lebt es herdenweise auf Bergen inmitten des ewigen Eises."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": null,
+  "move_learnsets": [
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Harden",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Powder Snow",
+          "level": 5
+        },
+        {
+          "move": "Icy Wind",
+          "level": 10
+        },
+        {
+          "move": "Take Down",
+          "level": 15
+        },
+        {
+          "move": "Sharpen",
+          "level": 20
+        },
+        {
+          "move": "Curse",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 26
+        },
+        {
+          "move": "Ice Ball",
+          "level": 30
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 35
+        },
+        {
+          "move": "Avalanche",
+          "level": 39
+        },
+        {
+          "move": "Blizzard",
+          "level": 43
+        },
+        {
+          "move": "Recover",
+          "level": 47
+        },
+        {
+          "move": "Double-Edge",
+          "level": 49
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Mirror Coat",
+          "egg_move": true
+        },
+        {
+          "move": "Mist",
+          "egg_move": true
+        },
+        {
+          "move": "Recover",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Polish",
+          "tm": "TM69"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Flash Cannon",
+          "tm": "TM91"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Harden",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Powder Snow",
+          "level": 5
+        },
+        {
+          "move": "Icy Wind",
+          "level": 10
+        },
+        {
+          "move": "Take Down",
+          "level": 15
+        },
+        {
+          "move": "Sharpen",
+          "level": 20
+        },
+        {
+          "move": "Curse",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 26
+        },
+        {
+          "move": "Ice Ball",
+          "level": 30
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 35
+        },
+        {
+          "move": "Avalanche",
+          "level": 39
+        },
+        {
+          "move": "Blizzard",
+          "level": 43
+        },
+        {
+          "move": "Recover",
+          "level": 47
+        },
+        {
+          "move": "Double-Edge",
+          "level": 49
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Mirror Coat",
+          "egg_move": true
+        },
+        {
+          "move": "Mist",
+          "egg_move": true
+        },
+        {
+          "move": "Recover",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Polish",
+          "tm": "TM69"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Flash Cannon",
+          "tm": "TM91"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Harden",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Powder Snow",
+          "level": 5
+        },
+        {
+          "move": "Icy Wind",
+          "level": 10
+        },
+        {
+          "move": "Take Down",
+          "level": 15
+        },
+        {
+          "move": "Sharpen",
+          "level": 20
+        },
+        {
+          "move": "Curse",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 26
+        },
+        {
+          "move": "Ice Ball",
+          "level": 30
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 35
+        },
+        {
+          "move": "Avalanche",
+          "level": 39
+        },
+        {
+          "move": "Blizzard",
+          "level": 43
+        },
+        {
+          "move": "Recover",
+          "level": 47
+        },
+        {
+          "move": "Double-Edge",
+          "level": 49
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Mirror Coat",
+          "egg_move": true
+        },
+        {
+          "move": "Mist",
+          "egg_move": true
+        },
+        {
+          "move": "Recover",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Polish",
+          "tm": "TM69"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Flash Cannon",
+          "tm": "TM91"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Harden",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Powder Snow",
+          "level": 5
+        },
+        {
+          "move": "Icy Wind",
+          "level": 10
+        },
+        {
+          "move": "Take Down",
+          "level": 15
+        },
+        {
+          "move": "Sharpen",
+          "level": 20
+        },
+        {
+          "move": "Curse",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 26
+        },
+        {
+          "move": "Ice Ball",
+          "level": 30
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 35
+        },
+        {
+          "move": "Avalanche",
+          "level": 39
+        },
+        {
+          "move": "Blizzard",
+          "level": 43
+        },
+        {
+          "move": "Recover",
+          "level": 47
+        },
+        {
+          "move": "Double-Edge",
+          "level": 49
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Mirror Coat",
+          "egg_move": true
+        },
+        {
+          "move": "Mist",
+          "egg_move": true
+        },
+        {
+          "move": "Recover",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Polish",
+          "tm": "TM69"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Flash Cannon",
+          "tm": "TM91"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

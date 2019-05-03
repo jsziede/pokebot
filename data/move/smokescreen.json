@@ -1,0 +1,164 @@
+{
+  "index_number": 108,
+  "pp": 20,
+  "max_pp": 32,
+  "power": 0,
+  "accuracy": 100,
+  "category": "status",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": false,
+  "names": {
+    "cz": "Kouřová clona",
+    "dk": "Røgslør",
+    "fr": "Brouillard",
+    "de": "Rauchwolke",
+    "gr": "Καπνογόνο",
+    "it": "Muro di Fumo",
+    "pl": "Zasłona dymna (Original series)  Ściana Dymu (Diamond and Pearl onwards)",
+    "en": "Smokescreen"
+  },
+  "type": "Normal",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Clever"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Clever"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 2,
+      "jam": 3,
+      "condition": "Clever"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "accuracy",
+      "change_by": -1
+    }
+  ],
+  "pokedex_entries": {
+    "Gold": {
+      "en": "Lowers the foe's accuracy.",
+      "de": "Senkt Genauigkeit des Gegners."
+    },
+    "Silver": {
+      "en": "Lowers the foe's accuracy.",
+      "de": "Senkt Genauigkeit des Gegners."
+    },
+    "Crystal": {
+      "en": "Lowers the foe's accuracy.",
+      "de": "Senkt Genauigkeit des Gegners."
+    },
+    "Ruby": {
+      "en": "Lowers the foe’s accuracy using smoke, ink, etc.",
+      "de": "Senkt Genauigkeit d. Gegners mit Rauch, Tinte o. ä."
+    },
+    "Sapphire": {
+      "en": "Lowers the foe’s accuracy using smoke, ink, etc.",
+      "de": "Senkt Genauigkeit d. Gegners mit Rauch, Tinte o. ä."
+    },
+    "Emerald": {
+      "en": "Lowers the foe’s accuracy using smoke, ink, etc.",
+      "de": "Senkt Genauigkeit d. Gegners mit Rauch, Tinte o. ä."
+    },
+    "FireRed": {
+      "en": "An obscuring cloud of smoke or ink reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "LeafGreen": {
+      "en": "An obscuring cloud of smoke or ink reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Diamond": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Pearl": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Platinum": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "HeartGold": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "SoulSilver": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the foe’s accuracy.",
+      "de": "Senkt Genauigkeit des Gegners mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Black": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "White": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Black 2": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "White 2": {
+      "en": "The user releases an obscuring cloud of smoke or ink. It reduces the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "X": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Y": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "O.Ruby": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Moon": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Ultra Sun": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Ultra Moon": {
+      "en": "The user releases an obscuring cloud of smoke or ink. This lowers the target’s accuracy.",
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem."
+    },
+    "Omega Ruby": {
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Senkt Genauigkeit des Zieles mit Rauch, Tinte oder Ähnlichem.",
+      "en": "Unknown"
+    }
+  }
+}

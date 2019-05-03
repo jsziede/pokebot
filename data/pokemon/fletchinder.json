@@ -1,0 +1,953 @@
+{
+  "names": {
+    "fr": "Braisillon",
+    "de": "Dartignis",
+    "it": "Fletchinder",
+    "en": "Fletchinder"
+  },
+  "national_id": 662,
+  "types": [
+    "Fire",
+    "Flying"
+  ],
+  "abilities": [
+    {
+      "name": "Flame Body"
+    },
+    {
+      "name": "Gale Wings",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 120,
+  "egg_groups": [
+    "Flying"
+  ],
+  "hatch_time": [
+    4080,
+    4334
+  ],
+  "height_us": "2'04\"",
+  "height_eu": "0.7 m",
+  "weight_us": "35.3 lbs.",
+  "weight_eu": "16.0 kg",
+  "base_exp_yield": 134,
+  "leveling_rate": "Medium Slow",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 2
+  },
+  "color": "Red",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 62,
+    "atk": 73,
+    "def": 55,
+    "sp_atk": 56,
+    "sp_def": 52,
+    "speed": 84
+  },
+  "evolution_from": "Fletchling",
+  "evolutions": [
+    {
+      "to": "Talonflame",
+      "level": 35
+    }
+  ],
+  "alola_id": 159,
+  "categories": {
+    "en": "Ember Pokémon",
+    "de": "Funkenregen"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 15,
+  "mega_evolutions": [
+
+  ],
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "From its beak, it expels embers that set the tall grass on fire. Then it pounces on the bewildered prey that pop out of the grass.",
+      "de": "Es speit Funken aus seinem Schnabel und fängt die Beute, die überrascht aus dem angesengten Gras hervorspringt."
+    },
+    "Y": {
+      "en": "The hotter the flame sac on its belly, the faster it can fly, but it takes some time to get the fire going.",
+      "de": "Je heißer die Flammen im Feuersack seines Bauches lodern, desto schneller kann es fliegen. Es dauert jedoch eine Weile, bis es zur Zündung kommt."
+    },
+    "Omega Ruby": {
+      "en": "From its beak, it expels embers that set the tall grass on fire. Then it pounces on the bewildered prey that pop out of the grass.",
+      "de": "Je heißer die Flammen im Feuersack seines Bauches lodern, desto schneller kann es fliegen. Es dauert jedoch eine Weile, bis es zur Zündung kommt."
+    },
+    "Alpha Sapphire": {
+      "en": "The hotter the flame sac on its belly, the faster it can fly, but it takes some time to get the fire going.",
+      "de": "Je heißer die Flammen im Feuersack seines Bauches lodern, desto schneller kann es fliegen. Es dauert jedoch eine Weile, bis es zur Zündung kommt."
+    },
+    "Sun": {
+      "en": "From its beak, it fires embers at its prey. Once it has caught them, it grills them at high heat before feasting upon them.",
+      "de": "Es speit Funken aus seinem Schnabel und schreckt so die Beute auf. Einmal gefangen, wird sie geröstet und dann verspeist."
+    },
+    "Moon": {
+      "en": "It will not tolerate other Fletchinder entering its territory, which has a radius of several miles.",
+      "de": "Sein Revier hat einen Radius von mehreren Kilometern. Das Eindringen anderer Dartignis wird nicht geduldet."
+    },
+    "Ultra Sun": {
+      "en": "It scatters embers in the tall grass. Then bug Pokémon, frightened by the flames, come flying out, and Fletchinder gobbles them up.",
+      "de": "Es versprüht Funken im hohen Gras und fängt die dadurch aufgescheuchten Käfer-Pokémon ab, indem es sie mit dem Schnabel aufpickt."
+    },
+    "Ultra Moon": {
+      "en": "Its speed right after takeoff already puts it in the top speed class of all bird Pokémon.",
+      "de": "Kaum ein anderes Vogel-Pokémon gewinnt direkt nach dem Abflug so schnell an Tempo wie Dartignis."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 94,
+  "move_learnsets": [
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Growl",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 6
+        },
+        {
+          "move": "Peck",
+          "level": 10
+        },
+        {
+          "move": "Agility",
+          "level": 13
+        },
+        {
+          "move": "Flail",
+          "level": 16
+        },
+        {
+          "move": "Ember",
+          "level": 17
+        },
+        {
+          "move": "Roost",
+          "level": 25
+        },
+        {
+          "move": "Razor Wind",
+          "level": 27
+        },
+        {
+          "move": "Natural Gift",
+          "level": 31
+        },
+        {
+          "move": "Flame Charge",
+          "level": 38
+        },
+        {
+          "move": "Acrobatics",
+          "level": 42
+        },
+        {
+          "move": "Me First",
+          "level": 46
+        },
+        {
+          "move": "Tailwind",
+          "level": 51
+        },
+        {
+          "move": "Steel Wing",
+          "level": 55
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Tailwind",
+          "egg_move": true
+        },
+        {
+          "move": "Fly",
+          "tm": "HM2"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Roost",
+          "tm": "TM19"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Steel Wing",
+          "tm": "TM51"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Acrobatics",
+          "tm": "TM62"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Growl",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 6
+        },
+        {
+          "move": "Peck",
+          "level": 10
+        },
+        {
+          "move": "Agility",
+          "level": 13
+        },
+        {
+          "move": "Flail",
+          "level": 16
+        },
+        {
+          "move": "Ember",
+          "level": 17
+        },
+        {
+          "move": "Roost",
+          "level": 25
+        },
+        {
+          "move": "Razor Wind",
+          "level": 27
+        },
+        {
+          "move": "Natural Gift",
+          "level": 31
+        },
+        {
+          "move": "Flame Charge",
+          "level": 38
+        },
+        {
+          "move": "Acrobatics",
+          "level": 42
+        },
+        {
+          "move": "Me First",
+          "level": 46
+        },
+        {
+          "move": "Tailwind",
+          "level": 51
+        },
+        {
+          "move": "Steel Wing",
+          "level": 55
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Tailwind",
+          "egg_move": true
+        },
+        {
+          "move": "Fly",
+          "tm": "HM2"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Roost",
+          "tm": "TM19"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Steel Wing",
+          "tm": "TM51"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Acrobatics",
+          "tm": "TM62"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Ember",
+          "level": 1
+        },
+        {
+          "move": "Growl",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 6
+        },
+        {
+          "move": "Peck",
+          "level": 10
+        },
+        {
+          "move": "Agility",
+          "level": 13
+        },
+        {
+          "move": "Flail",
+          "level": 16
+        },
+        {
+          "move": "Roost",
+          "level": 25
+        },
+        {
+          "move": "Razor Wind",
+          "level": 27
+        },
+        {
+          "move": "Natural Gift",
+          "level": 31
+        },
+        {
+          "move": "Flame Charge",
+          "level": 38
+        },
+        {
+          "move": "Acrobatics",
+          "level": 42
+        },
+        {
+          "move": "Me First",
+          "level": 46
+        },
+        {
+          "move": "Tailwind",
+          "level": 51
+        },
+        {
+          "move": "Steel Wing",
+          "level": 55
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Tailwind",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Roost",
+          "tm": "TM19"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Steel Wing",
+          "tm": "TM51"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Acrobatics",
+          "tm": "TM62"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Fly",
+          "tm": "TM76"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Ember",
+          "level": 1
+        },
+        {
+          "move": "Growl",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 6
+        },
+        {
+          "move": "Peck",
+          "level": 10
+        },
+        {
+          "move": "Agility",
+          "level": 13
+        },
+        {
+          "move": "Flail",
+          "level": 16
+        },
+        {
+          "move": "Roost",
+          "level": 25
+        },
+        {
+          "move": "Razor Wind",
+          "level": 27
+        },
+        {
+          "move": "Natural Gift",
+          "level": 31
+        },
+        {
+          "move": "Flame Charge",
+          "level": 38
+        },
+        {
+          "move": "Acrobatics",
+          "level": 42
+        },
+        {
+          "move": "Me First",
+          "level": 46
+        },
+        {
+          "move": "Tailwind",
+          "level": 51
+        },
+        {
+          "move": "Steel Wing",
+          "level": 55
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Tailwind",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Roost",
+          "tm": "TM19"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Steel Wing",
+          "tm": "TM51"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Acrobatics",
+          "tm": "TM62"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Fly",
+          "tm": "TM76"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

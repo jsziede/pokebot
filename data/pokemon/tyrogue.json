@@ -1,0 +1,2224 @@
+{
+  "names": {
+    "fr": "Debugant",
+    "de": "Rabauz",
+    "it": "Tyrogue",
+    "en": "Tyrogue"
+  },
+  "national_id": 236,
+  "types": [
+    "Fighting"
+  ],
+  "abilities": [
+    {
+      "name": "Guts"
+    },
+    {
+      "name": "Steadfast"
+    },
+    {
+      "name": "Vital Spirit",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 100.0
+  },
+  "catch_rate": 75,
+  "egg_groups": [
+    "Undiscovered"
+  ],
+  "hatch_time": [
+    6630,
+    6884
+  ],
+  "height_us": "2'04\"",
+  "height_eu": "0.7 m",
+  "weight_us": "46.3 lbs.",
+  "weight_eu": "21.0 kg",
+  "base_exp_yield": 42,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 1,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Purple",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 35,
+    "atk": 35,
+    "def": 35,
+    "sp_atk": 35,
+    "sp_def": 35,
+    "speed": 35
+  },
+  "evolutions": [
+    {
+      "to": "Hitmonlee",
+      "level": 20,
+      "conditions": [
+        "Attack > Defense"
+      ]
+    },
+    {
+      "to": "Hitmonchan",
+      "level": 20,
+      "conditions": [
+        "Defense > Attack"
+      ]
+    },
+    {
+      "to": "Hitmontop",
+      "level": 20,
+      "conditions": [
+        "Attack = Defense"
+      ]
+    }
+  ],
+  "categories": {
+    "en": "Scuffle Pokémon",
+    "de": "Racker"
+  },
+  "kanto_id": null,
+  "johto_id": 145,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Gold": {
+      "en": "It is always bursting with energy. To make itself stronger, it keeps on fighting even if it loses.",
+      "de": "Es strotzt vor Energie. Um noch stärker zu werden, kämpft es weiter, auch wenn es verloren hat."
+    },
+    "Silver": {
+      "en": "Even though it is small, it can't be ignored because it will slug any handy target without warning.",
+      "de": "Es ist zwar nicht groß, aber dennoch unübersehbar, denn es schlägt jeder Zeit ohne Vorwarnung zu."
+    },
+    "Crystal": {
+      "en": "To brush up on its fighting skills, it will challenge anyone. It has a very strong competitive spirit.",
+      "de": "Um seine Kampffähigkeiten zu verbessern, tritt es gegen jeden an. Es besitzt großen Kampfgeist."
+    },
+    "Ruby": {
+      "en": "Tyrogue becomes stressed out if it does not get to train every day. When raising this Pokémon, the Trainer must establish and uphold various training methods.",
+      "de": "Rabauz muss jeden Tag trainieren, sonst ist es nicht ausgelastet und reagiert gestresst. Wenn man dieses Pokémon trainiert, muss man zahlreiche Trainingsmethoden einsetzen und sie ständig ausbauen."
+    },
+    "Sapphire": {
+      "en": "Tyrogue becomes stressed out if it does not get to train every day. When raising this Pokémon, the Trainer must establish and uphold various training methods.",
+      "de": "Rabauz muss jeden Tag trainieren, sonst ist es nicht ausgelastet und reagiert gestresst. Wenn man dieses Pokémon trainiert, muss man zahlreiche Trainingsmethoden einsetzen und ausbauen."
+    },
+    "Emerald": {
+      "en": "Tyrogue become stressed out if they do not get to train every day. When raising this Pokémon, the Trainer must establish a regular training schedule.",
+      "de": "RABAUZ muss jeden Tag trainieren, sonst ist es nicht ausgelastet. Wenn man es trainiert, muss man zahlreiche Trainingsmethoden einsetzen."
+    },
+    "FireRed": {
+      "en": "Even though it is small, it can't be ignored because it will slug any handy target without warning.",
+      "de": "Es ist zwar nicht groß, aber dennoch unübersehbar, denn es schlägt jederzeit ohne Vorwarnung zu."
+    },
+    "LeafGreen": {
+      "en": "It is always bursting with energy. To make itself stronger, it keeps on fighting even if it loses.",
+      "de": "Es strotzt vor Energie. Um noch stärker zu werden, kämpft es weiter, auch wenn es verloren hat."
+    },
+    "Diamond": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbe- gierde. Es erholt sich ständig von Verletzungen."
+    },
+    "Pearl": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbe- gierde. Es erholt sich ständig von Verletzungen."
+    },
+    "Platinum": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbegierde. Es erholt sich ständig von Verletzungen."
+    },
+    "HeartGold": {
+      "en": "It is always bursting with energy. To make itself stronger, it keeps on fighting even if it loses.",
+      "de": "Es ist bekannt für seine Kampfbe- gierde. Es erholt sich ständig von Verletzungen."
+    },
+    "SoulSilver": {
+      "en": "Even though it is small, it can't be ignored because it will slug any handy target without warning.",
+      "de": "Es ist bekannt für seine Kampfbe- gierde. Es erholt sich ständig von Verletzungen."
+    },
+    "Black": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbegierde. Es erholt sich ständig von Verletzungen."
+    },
+    "White": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbegierde. Es erholt sich ständig von Verletzungen."
+    },
+    "Black 2": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbegierde. Es erholt sich ständig von Verletzungen."
+    },
+    "White 2": {
+      "en": "It is famous for its eagerness to fight and always nurses injuries from challenging larger foes.",
+      "de": "Es ist bekannt für seine Kampfbegierde. Es erholt sich ständig von Verletzungen."
+    },
+    "X": {
+      "en": "It is always bursting with energy. To make itself stronger, it keeps on fighting even if it loses.",
+      "de": "Es strotzt vor Energie. Um noch stärker zu werden, kämpft es weiter, auch wenn es verloren hat."
+    },
+    "Y": {
+      "en": "To brush up on its fighting skills, it will challenge anyone. It has a very strong competitive spirit.",
+      "de": "Um seine Kampffähigkeiten zu verbessern, tritt es gegen jeden an. Es besitzt großen Kampfgeist."
+    },
+    "Omega Ruby": {
+      "en": "Tyrogue becomes stressed out if it does not get to train every day. When raising this Pokémon, the Trainer must establish and uphold various training methods.",
+      "de": "Rabauz muss jeden Tag trainieren, sonst ist es nicht ausgelastet und reagiert gestresst. Wenn man dieses Pokémon trainiert, muss man zahlreiche Trainingsmethoden einsetzen und ausbauen."
+    },
+    "Alpha Sapphire": {
+      "en": "Tyrogue becomes stressed out if it does not get to train every day. When raising this Pokémon, the Trainer must establish and uphold various training methods.",
+      "de": "Rabauz muss jeden Tag trainieren, sonst ist es nicht ausgelastet und reagiert gestresst. Wenn man dieses Pokémon trainiert, muss man zahlreiche Trainingsmethoden einsetzen und ausbauen."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      4,
+      4
+    ],
+    "power": [
+      2,
+      4
+    ],
+    "stamina": [
+      2,
+      2
+    ],
+    "skill": [
+      4,
+      4
+    ],
+    "jump": [
+      3,
+      3
+    ]
+  },
+  "ultra_alola_id": null,
+  "move_learnsets": [
+    {
+      "games": [
+        "Gold",
+        "Silver"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Headbutt",
+          "tm": "TM2"
+        },
+        {
+          "move": "Curse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Snore",
+          "tm": "TM13"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Mud-Slap",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM35"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Detect",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Crystal"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Headbutt",
+          "tm": "TM2"
+        },
+        {
+          "move": "Curse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Snore",
+          "tm": "TM13"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Mud-Slap",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM35"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Detect",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ruby",
+        "Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "FireRed",
+        "LeafGreen"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Emerald"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Diamond",
+        "Pearl"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Platinum"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "HeartGold",
+        "SoulSilver"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Pursuit",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Pursuit",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Ally Switch",
+          "egg_move": true
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Pursuit",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Pursuit",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Pursuit",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Fake Out",
+          "level": 1
+        },
+        {
+          "move": "Foresight",
+          "level": 1
+        },
+        {
+          "move": "Helping Hand",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Bullet Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Helping Hand",
+          "egg_move": true
+        },
+        {
+          "move": "High Jump Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Mach Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Mind Reader",
+          "egg_move": true
+        },
+        {
+          "move": "Pursuit",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Vacuum Wave",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

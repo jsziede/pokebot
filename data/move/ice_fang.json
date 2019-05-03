@@ -1,0 +1,132 @@
+{
+  "index_number": 423,
+  "pp": 15,
+  "max_pp": 24,
+  "power": 65,
+  "accuracy": 95,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Crocs Givre",
+    "de": "Eiszahn",
+    "gr": "Παγόδοντες",
+    "it": "Gelodenti",
+    "pl": "Lodowy Kieł",
+    "en": "Ice Fang"
+  },
+  "type": "Ice",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 4,
+      "jam": 0,
+      "condition": "Cool"
+    }
+  ],
+  "pokedex_entries": {
+    "Diamond": {
+      "en": "The user bites with cold-infused fangs. It may also make the foe flinch or freeze.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Gegner schreckt eventuell zurück oder friert fest."
+    },
+    "Pearl": {
+      "en": "The user bites with cold-infused fangs. It may also make the foe flinch or freeze.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Gegner schreckt eventuell zurück oder friert fest."
+    },
+    "Platinum": {
+      "en": "The user bites with cold-infused fangs. It may also make the foe flinch or freeze.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Gegner schreckt eventuell zurück oder friert fest."
+    },
+    "HeartGold": {
+      "en": "The user bites with cold-infused fangs. It may also make the foe flinch or freeze.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Gegner schreckt eventuell zurück oder friert fest."
+    },
+    "SoulSilver": {
+      "en": "The user bites with cold-infused fangs. It may also make the foe flinch or freeze.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Gegner schreckt eventuell zurück oder friert fest."
+    },
+    "Black": {
+      "en": "The user bites with cold-infused fangs. It may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "White": {
+      "en": "The user bites with cold-infused fangs. It may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "Black 2": {
+      "en": "The user bites with cold-infused fangs. It may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "White 2": {
+      "en": "The user bites with cold-infused fangs. It may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "X": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "Y": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "O.Ruby": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "Moon": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "Ultra Sun": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "Ultra Moon": {
+      "en": "The user bites with cold-infused fangs. This may also make the target flinch or leave it frozen.",
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein."
+    },
+    "Omega Ruby": {
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Anwender beißt mit eiskalten Reißzähnen zu. Ziel schreckt eventuell zurück oder friert ein.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "freeze",
+        "probability": 10
+      }
+    ]
+  }
+}

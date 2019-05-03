@@ -1,0 +1,4195 @@
+{
+  "names": {
+    "fr": "Rattata",
+    "de": "Rattfratz",
+    "it": "Rattata",
+    "en": "Rattata"
+  },
+  "national_id": 19,
+  "types": [
+    "Normal"
+  ],
+  "items": [
+      {
+          "name": "Pecha Berry",
+          "chance": 5,
+          "form": "Alolan"
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Run Away"
+    },
+    {
+      "name": "Guts"
+    },
+    {
+      "name": "Hustle",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 255,
+  "egg_groups": [
+    "Field"
+  ],
+  "hatch_time": [
+    4080,
+    4334
+  ],
+  "height_us": "1'00\"",
+  "height_eu": "0.3 m",
+  "weight_us": "7.7 lbs.",
+  "weight_eu": "3.5 kg",
+  "base_exp_yield": 51,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 1
+  },
+  "color": "Purple",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 30,
+    "atk": 56,
+    "def": 35,
+    "sp_atk": 25,
+    "sp_def": 35,
+    "speed": 72
+  },
+  "evolutions": [
+    {
+      "to": "Raticate",
+      "level": 20
+    }
+  ],
+  "alola_id": 15,
+  "categories": {
+    "en": "Mouse Pokémon",
+    "de": "Maus (Ratte vor der 2. Gen.)"
+  },
+  "kanto_id": 19,
+  "johto_id": 17,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+    {
+      "condition": "Alola",
+      "image_suffix": "alola",
+      "names": {
+        "en": "Alolan Rattata",
+        "de": "Alola-Rattfratz"
+      },
+      "types": [
+        "Dark",
+        "Normal"
+      ],
+      "abilities": [
+        {
+          "name": "Gluttony"
+        },
+        {
+          "name": "Hustle"
+        },
+        {
+          "name": "Thick Fat",
+          "hidden": true
+        }
+      ]
+    }
+  ],
+  "pokedex_entries": {
+    "Red": {
+      "en": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+      "de": "Ein kleines, sehr wendiges und bissiges Pokémon, welches in vielen Gegenden heimisch ist."
+    },
+    "Blue": {
+      "en": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+      "de": "Ein kleines, sehr wendiges und bissiges Pokémon, welches in vielen Gegenden heimisch ist."
+    },
+    "Yellow": {
+      "en": "Will chew on anything with its fangs. If you see one, it is certain that 40 more live in the area.",
+      "de": "Dieses Pokémon nagt alles und jeden an. Es lebt in großen Rudeln von bis zu vierzig Pokémon."
+    },
+    "Gold": {
+      "en": "It eats everything. Wherever food is available, it will settle down and produce offspring continuously.",
+      "de": "Es frisst alles. Wo es Nahrung findet, baut es ein Nest und pflanzt sich ständig fort."
+    },
+    "Silver": {
+      "en": "Living wherever there is food available, it ceaselessly scavenges for edibles the entire day.",
+      "de": "Es baut sein Nest, wo es Futter findet. Es ist den ganzen Tag auf der Suche nach etwas Essbarem."
+    },
+    "Crystal": {
+      "en": "This Pokémon's impressive vitality allows it to live anywhere. It also multiplies very quickly.",
+      "de": "Seine Anpassungsfähigkeit ermöglicht es ihm, überall zu leben. Es vermehrt sich rasch."
+    },
+    "Ruby": {
+      "en": "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives - it will make its nest anywhere.",
+      "de": "Rattfratz ist extrem vorsichtig. Sogar im Schlaf nimmt es alles wahr, indem es seine Ohren bewegt. Es stellt keine großen Ansprüche an seinen Lebensraum und richtet sein Nest überall ein."
+    },
+    "Sapphire": {
+      "en": "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives - it will make its nest anywhere.",
+      "de": "Rattfratz ist extrem vorsichtig. Sogar im Schlaf nimmt es alles wahr, indem es seine Ohren bewegt. Es stellt keine großen Ansprüche an seinen Lebensraum und richtet sein Nest überall ein."
+    },
+    "Emerald": {
+      "en": "A Rattata is cautious in the extreme. Even while it is asleep, it constantly moves its ears and listens for danger. It will make its nest anywhere.",
+      "de": "RATTFRATZ ist extrem vorsichtig. Sogar im Schlaf nimmt es alles wahr, indem es seine Ohren bewegt. Es richtet sein Nest überall ein."
+    },
+    "FireRed": {
+      "en": "Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to whittle them down.",
+      "de": "Seine Reißzähne sind lang und scharf. Da sie ständig wachsen, nagt es immerzu an etwas, um sie abzuwetzen."
+    },
+    "LeafGreen": {
+      "en": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+      "de": "Ein kleines, sehr wendiges und bissiges Pokémon, welches in vielen Gegenden heimisch ist."
+    },
+    "Diamond": {
+      "en": "Cautious in the extreme, its hardy vitality lets it live in any kind of environment.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "Pearl": {
+      "en": "Cautious in the extreme, its hardy vitality lets it live in any kind of environment.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "Platinum": {
+      "en": "Cautious in the extreme, its hardy vitality lets it live in any kind of environment.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "HeartGold": {
+      "en": "It eats everything. Wherever food is available, it will settle down and produce offspring continuously.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "SoulSilver": {
+      "en": "Living wherever there is food available, it ceaselessly scavenges for edibles the entire day.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "Black": {
+      "en": "Cautious in the extreme, its hardy vitality lets it live in any kind of environment.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "White": {
+      "en": "Cautious in the extreme, its hardy vitality lets it live in any kind of environment.",
+      "de": "Es strotzt vor Lebenskraft und kann in jeder Umgebung leben. Es ist extrem vorsichtig."
+    },
+    "Black 2": {
+      "en": "It searches for food all day. It gnaws on hard objects to wear down its fangs, which grow constantly during its lifetime.",
+      "de": "Sucht den lieben langen Tag nach Futter. Da seine Nagezähne immer nachwachsen, wetzt es sie an harten Objekten ab."
+    },
+    "White 2": {
+      "en": "It searches for food all day. It gnaws on hard objects to wear down its fangs, which grow constantly during its lifetime.",
+      "de": "Sucht den lieben langen Tag nach Futter. Da seine Nagezähne immer nachwachsen, wetzt es sie an harten Objekten ab."
+    },
+    "X": {
+      "en": "Living wherever there is food available, it ceaselessly scavenges for edibles the entire day.",
+      "de": "Es baut sein Nest, wo es Futter findet. Es ist den ganzen Tag auf der Suche nach etwas Essbarem."
+    },
+    "Y": {
+      "en": "Its fangs are long and very sharp. They grow continuously, so it gnaws on hard things to whittle them down.",
+      "de": "Seine Reißzähne sind lang und scharf. Da sie ständig wachsen, nagt es immerzu an etwas, um sie abzuwetzen."
+    },
+    "Omega Ruby": {
+      "en": "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.",
+      "de": "Rattfratz ist extrem vorsichtig. Sogar im Schlaf nimmt es alles wahr, indem es seine Ohren bewegt. Es stellt keine großen Ansprüche an seinen Lebensraum und richtet sein Nest überall ein."
+    },
+    "Alpha Sapphire": {
+      "en": "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.",
+      "de": "Rattfratz ist extrem vorsichtig. Sogar im Schlaf nimmt es alles wahr, indem es seine Ohren bewegt. Es stellt keine großen Ansprüche an seinen Lebensraum und richtet sein Nest überall ein."
+    },
+    "Sun": {
+      "en": "Its incisors continue growing until its death. If its Trainer doesn’t offer it a file to gnaw on, it will gnaw on door frames, table legs, and so on.",
+      "de": "Kein Eintrag vorhanden"
+    },
+    "Moon": {
+      "en": "With their strong capacity for survival, they can live in dirty places without concern. Left unchecked, their numbers multiply rapidly.",
+      "de": "Kein Eintrag vorhanden"
+    },
+    "Ultra Sun": {
+      "en": "Its incisors grow continuously throughout its life. If its incisors get too long, this Pokémon becomes unable to eat, and it starves to death.",
+      "de": "Alola-Form: Es zeigt nur an frischen Dingen Interesse. Nimmt man es mit zum Einkaufen, hilft es einem bei der Auswahl von Zutaten.\nStandard-Form: Seine Nagezähne wachsen sein ganzes Leben über. Werden sie allzu lang, kann es damit nicht mehr fressen und verhungert."
+    },
+    "Ultra Moon": {
+      "en": "This Pokémon is common but hazardous. Its sharp incisors can easily cut right through hard wood.",
+      "de": "Alola-Form: Sie schleichen sich jede Nacht auf der Suche nach Futter in Wohnhäuser. Ihre massenhafte Verbreitung führt zu weitreichenden Problemen.\nStandard-Form: Ein weitverbreitetes Pokémon, das nicht ganz ungefährlich ist. Selbst hartes Holz zerkleinert es mit seinen scharfen Nagezähnen mühelos."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      5,
+      5
+    ],
+    "power": [
+      1,
+      3
+    ],
+    "stamina": [
+      1,
+      3
+    ],
+    "skill": [
+      3,
+      3
+    ],
+    "jump": [
+      2,
+      3
+    ]
+  },
+  "ultra_alola_id": 6,
+  "move_learnsets": [
+    {
+      "games": [
+        "Red",
+        "Blue"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 14
+        },
+        {
+          "move": "Focus Energy",
+          "level": 23
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Body Slam",
+          "tm": "TM8"
+        },
+        {
+          "move": "Take Down",
+          "tm": "TM9"
+        },
+        {
+          "move": "Double-Edge",
+          "tm": "TM10"
+        },
+        {
+          "move": "Bubble Beam",
+          "tm": "TM11"
+        },
+        {
+          "move": "Water Gun",
+          "tm": "TM12"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Rage",
+          "tm": "TM20"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Mimic",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Bide",
+          "tm": "TM34"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Skull Bash",
+          "tm": "TM40"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM50"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Yellow"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 14
+        },
+        {
+          "move": "Focus Energy",
+          "level": 23
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Body Slam",
+          "tm": "TM8"
+        },
+        {
+          "move": "Take Down",
+          "tm": "TM9"
+        },
+        {
+          "move": "Double-Edge",
+          "tm": "TM10"
+        },
+        {
+          "move": "Bubble Beam",
+          "tm": "TM11"
+        },
+        {
+          "move": "Water Gun",
+          "tm": "TM12"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Rage",
+          "tm": "TM20"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Mimic",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Bide",
+          "tm": "TM34"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Skull Bash",
+          "tm": "TM40"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM50"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Gold",
+        "Silver"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 13
+        },
+        {
+          "move": "Focus Energy",
+          "level": 20
+        },
+        {
+          "move": "Pursuit",
+          "level": 27
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "tm": "TM2"
+        },
+        {
+          "move": "Curse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Snore",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Icy Wind",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Mud-Slap",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM35"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Defense Curl",
+          "tm": "TM40"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Crystal"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 13
+        },
+        {
+          "move": "Focus Energy",
+          "level": 20
+        },
+        {
+          "move": "Pursuit",
+          "level": 27
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Headbutt",
+          "tm": "TM2"
+        },
+        {
+          "move": "Curse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Snore",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Icy Wind",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Mud-Slap",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM35"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Defense Curl",
+          "tm": "TM40"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ruby",
+        "Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 13
+        },
+        {
+          "move": "Focus Energy",
+          "level": 20
+        },
+        {
+          "move": "Pursuit",
+          "level": 27
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Endeavor",
+          "level": 41
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Swagger",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "FireRed",
+        "LeafGreen"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 13
+        },
+        {
+          "move": "Focus Energy",
+          "level": 20
+        },
+        {
+          "move": "Pursuit",
+          "level": 27
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Endeavor",
+          "level": 41
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Swagger",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Emerald"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 7
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 13
+        },
+        {
+          "move": "Focus Energy",
+          "level": 20
+        },
+        {
+          "move": "Pursuit",
+          "level": 27
+        },
+        {
+          "move": "Super Fang",
+          "level": 34
+        },
+        {
+          "move": "Endeavor",
+          "level": 41
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Swagger",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Diamond",
+        "Pearl"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Swagger",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Pluck",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Platinum"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Swagger",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Pluck",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "HeartGold",
+        "SoulSilver"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Swagger",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Pluck",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM83"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Pluck",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM83"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Pluck",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Assurance",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true
+        },
+        {
+          "move": "Me First",
+          "egg_move": true
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Screech",
+          "egg_move": true
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Assurance",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Me First",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Screech",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Me First",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Stockpile",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Swallow",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Quash",
+          "tm": "TM60",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Embargo",
+          "tm": "TM63",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Tail Whip",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 7
+        },
+        {
+          "move": "Bite",
+          "level": 10
+        },
+        {
+          "move": "Pursuit",
+          "level": 13
+        },
+        {
+          "move": "Hyper Fang",
+          "level": 16
+        },
+        {
+          "move": "Assurance",
+          "level": 19
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Sucker Punch",
+          "level": 25
+        },
+        {
+          "move": "Super Fang",
+          "level": 28
+        },
+        {
+          "move": "Double-Edge",
+          "level": 31
+        },
+        {
+          "move": "Endeavor",
+          "level": 34
+        },
+        {
+          "move": "Bite",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Flame Wheel",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Last Resort",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Me First",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Screech",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true,
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Final Gambit",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Me First",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Revenge",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Stockpile",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Swallow",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Switcheroo",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Uproar",
+          "egg_move": true,
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Rattata"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Shadow Ball",
+          "tm": "TM30",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Quash",
+          "tm": "TM60",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Embargo",
+          "tm": "TM63",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Alolan Rattata"
+          ]
+        }
+      ]
+    }
+  ]
+}

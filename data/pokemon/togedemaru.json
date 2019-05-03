@@ -1,0 +1,582 @@
+{
+  "names": {
+    "en": "Togedemaru",
+    "jp": "トゲデマル Togedemaru",
+    "fr": "Togedemaru",
+    "es": "Togedemaru",
+    "de": "Togedemaru",
+    "it": "Togedemaru"
+  },
+  "national_id": 777,
+  "alola_id": 225,
+  "types": [
+    "Electric",
+    "Steel"
+  ],
+  "items": [
+      {
+          "name": "Electric Seed",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Iron Barbs"
+    },
+    {
+      "name": "Lightning Rod"
+    },
+    {
+      "name": "Sturdy",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 180,
+  "egg_groups": [
+    "Field",
+    "Fairy"
+  ],
+  "hatch_time": [
+    2570,
+    2826
+  ],
+  "height_us": "1'00\"",
+  "height_eu": "0.3 m",
+  "weight_us": "7.3 lbs.",
+  "weight_eu": "3.3 kg",
+  "base_exp_yield": 152,
+  "leveling_rate": "Medium Fast",
+  "color": "Gray",
+  "base_friendship": 70,
+  "ev_yield": {
+    "hp": 0,
+    "atk": 2,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "base_stats": {
+    "hp": 65,
+    "atk": 98,
+    "def": 63,
+    "sp_atk": 40,
+    "sp_def": 73,
+    "speed": 96
+  },
+  "categories": {
+    "en": "Roly-Poly Pokémon",
+    "de": "Einigler"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "The spiny fur on its back is normally at rest. When this Pokémon becomes agitated, its fur stands on end and stabs into its attackers.",
+      "de": "Normalerweise liegen seine Stacheln am Rücken an, aber wenn es sich aufregt, stellen sie sich auf und stechen angreifende Gegner."
+    },
+    "Moon": {
+      "en": "The long hairs on its back act as lightning rods. The bolts of lightning it attracts are stored as energy in its electric sac.",
+      "de": "Sein langer Stachel fungiert als Blitzableiter. Damit zieht es Blitze auf sich, die es dann in seinen Elektrotaschen speichert."
+    },
+    "Ultra Sun": {
+      "en": "When it’s surprised or agitated, the 14 fur spikes on its back will stand up involuntarily.",
+      "de": "Es hat 14 lange stachelartige Strähnen auf dem Rücken, die sich unfreiwillig aufstellen, wenn es sich freut oder von etwas überrascht wird."
+    },
+    "Ultra Moon": {
+      "en": "Its capacity to produce electricity is somewhat limited, so it gets charged up by letting lightning strike it!",
+      "de": "Da es selbst nicht besonders viel Elektrizität erzeugen kann, badet es in den Blitzen von Gewittern, um sich aufzuladen."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 113,
+  "move_learnsets": [
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 5
+        },
+        {
+          "move": "Rollout",
+          "level": 9
+        },
+        {
+          "move": "Charge",
+          "level": 13
+        },
+        {
+          "move": "Spark",
+          "level": 17
+        },
+        {
+          "move": "Nuzzle",
+          "level": 21
+        },
+        {
+          "move": "Magnet Rise",
+          "level": 25
+        },
+        {
+          "move": "Discharge",
+          "level": 29
+        },
+        {
+          "move": "Zing Zap",
+          "level": 33
+        },
+        {
+          "move": "Electric Terrain",
+          "level": 37
+        },
+        {
+          "move": "Wild Charge",
+          "level": 41
+        },
+        {
+          "move": "Pin Missile",
+          "level": 45
+        },
+        {
+          "move": "Spiky Shield",
+          "level": 49
+        },
+        {
+          "move": "Fell Stinger",
+          "level": 53
+        },
+        {
+          "move": "Disarming Voice",
+          "egg_move": true
+        },
+        {
+          "move": "Encore",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Present",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Tickle",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Wish",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 5
+        },
+        {
+          "move": "Rollout",
+          "level": 9
+        },
+        {
+          "move": "Charge",
+          "level": 13
+        },
+        {
+          "move": "Spark",
+          "level": 17
+        },
+        {
+          "move": "Nuzzle",
+          "level": 21
+        },
+        {
+          "move": "Magnet Rise",
+          "level": 25
+        },
+        {
+          "move": "Discharge",
+          "level": 29
+        },
+        {
+          "move": "Zing Zap",
+          "level": 33
+        },
+        {
+          "move": "Electric Terrain",
+          "level": 37
+        },
+        {
+          "move": "Wild Charge",
+          "level": 41
+        },
+        {
+          "move": "Pin Missile",
+          "level": 45
+        },
+        {
+          "move": "Spiky Shield",
+          "level": 49
+        },
+        {
+          "move": "Fell Stinger",
+          "level": 53
+        },
+        {
+          "move": "Disarming Voice",
+          "egg_move": true
+        },
+        {
+          "move": "Encore",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Present",
+          "egg_move": true
+        },
+        {
+          "move": "Reversal",
+          "egg_move": true
+        },
+        {
+          "move": "Tickle",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Wish",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "U-turn",
+          "tm": "TM89"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

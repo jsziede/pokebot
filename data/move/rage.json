@@ -1,0 +1,162 @@
+{
+  "index_number": 99,
+  "pp": 20,
+  "max_pp": 32,
+  "power": 20,
+  "accuracy": 100,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "dk": "Raseri",
+    "fr": "Frénésie",
+    "de": "Raserei",
+    "gr": "Οργή",
+    "it": "Ira",
+    "en": "Rage"
+  },
+  "type": "Normal",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 1,
+      "jam": 3,
+      "condition": "Tough"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "atk",
+      "change_by": 1
+    }
+  ],
+  "pokedex_entries": {
+    "Gold": {
+      "en": "Raises ATTACK if the user is hit.",
+      "de": "Hebt ANGR-Wert bei Schadenszufuhr."
+    },
+    "Silver": {
+      "en": "Raises ATTACK if the user is hit.",
+      "de": "Hebt ANGR-Wert bei Schadenszufuhr."
+    },
+    "Crystal": {
+      "en": "Raises ATTACK if the user is hit.",
+      "de": "Hebt ANGR-Wert bei Schadenszufuhr."
+    },
+    "Ruby": {
+      "en": "Raises the user’s ATTACK every time it is hit.",
+      "de": "Erhöht ANGR. des Anwenders bei jedem gegn. Treffer."
+    },
+    "Sapphire": {
+      "en": "Raises the user’s ATTACK every time it is hit.",
+      "de": "Erhöht ANGR. des Anwenders bei jedem gegn. Treffer."
+    },
+    "Emerald": {
+      "en": "Raises the user’s ATTACK every time it is hit.",
+      "de": "Erhöht ANGR. des Anwenders bei jedem gegn. Treffer."
+    },
+    "FireRed": {
+      "en": "An attack that becomes stronger each time the user is hit in battle.",
+      "de": "Erhöht ANGR. des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "LeafGreen": {
+      "en": "An attack that becomes stronger each time the user is hit in battle.",
+      "de": "Erhöht ANGR. des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "Diamond": {
+      "en": "While this move is in use, it gains attack power each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "Pearl": {
+      "en": "While this move is in use, it gains attack power each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "Platinum": {
+      "en": "While this move is in use, it gains attack power each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "HeartGold": {
+      "en": "While this move is in use, it gains attack power each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "SoulSilver": {
+      "en": "While this move is in use, it gains attack power each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders bei jedem gegnerischen Treffer."
+    },
+    "Black": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "White": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "Black 2": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "White 2": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "X": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "Y": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "O.Ruby": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "Moon": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "Ultra Sun": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "Ultra Moon": {
+      "en": "As long as this move is in use, the power of rage raises the Attack stat each time the user is hit in battle.",
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist."
+    },
+    "Omega Ruby": {
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Erhöht Angriff des Anwenders, wenn dieser getroffen wird, solange die Attacke aktiviert ist.",
+      "en": "Unknown"
+    }
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "names": {
+    "en": "Mareanie",
+    "jp": "ヒドイデ Hidoide",
+    "fr": "Vorastérie",
+    "es": "Mareanie",
+    "de": "Garstella",
+    "it": "Mareanie"
+  },
+  "national_id": 747,
+  "alola_id": 113,
+  "types": [
+    "Poison",
+    "Water"
+  ],
+  "items": [
+      {
+          "name": "Poison Barb",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Merciless"
+    },
+    {
+      "name": "Limber"
+    },
+    {
+      "name": "Regenerator",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 190,
+  "egg_groups": [
+    "Water 1"
+  ],
+  "hatch_time": [
+    5140,
+    5396
+  ],
+  "height_us": "1'04\"",
+  "height_eu": "0.4 m",
+  "weight_us": "17.6 lbs.",
+  "weight_eu": "8.0 kg",
+  "base_exp_yield": 61,
+  "leveling_rate": "Medium Fast",
+  "color": "Blue",
+  "base_friendship": 70,
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 1,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "base_stats": {
+    "hp": 50,
+    "atk": 53,
+    "def": 62,
+    "sp_atk": 43,
+    "sp_def": 52,
+    "speed": 45
+  },
+  "evolutions": [
+    {
+      "to": "Toxapex",
+      "level": 38
+    }
+  ],
+  "categories": {
+    "en": "Brutal Star Pokémon",
+    "de": "Quäl-Stern"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "It plunges the poison spike on its head into its prey. When the prey has weakened, Mareanie deals the finishing blow with its 10 tentacles.",
+      "de": "Mit seinem Giftstachel am Kopf attackiert es Beute. Ist diese geschwächt, umschlingt es sie mit seinen zehn Tentakeln und gibt ihr den Rest."
+    },
+    "Moon": {
+      "en": "It's found crawling on beaches and seafloors. The coral that grows on Corsola's head is as good as a five-star banquet to this Pokémon.",
+      "de": "Kriecht auf dem Meeresgrund oder am Strand herum. Die Korallen, die auf den Köpfen von Corasonn wachsen, sind seine Leibspeise."
+    },
+    "Ultra Sun": {
+      "en": "They eat Corsola branches, so Mareanie are hated by craftsmen who work with Corsola branches that have naturally fallen off.",
+      "de": "Die Arme von Corasonn sind seine Leibspeise. Handwerker, die natürlich abgefallene Arme von Corasonn verarbeiten, mögen sie deshalb nicht."
+    },
+    "Ultra Moon": {
+      "en": "Aside from its head, its body parts regenerate quickly if they’re cut off. After a good night’s sleep, Mareanie is back to normal.",
+      "de": "Bis auf den Kopf wachsen all seine Körperteile schnell nach, wenn sie abgetrennt werden. Dafür muss es nur eine Nacht durchschlafen."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 45,
+  "move_learnsets": [
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Peck",
+          "level": 5
+        },
+        {
+          "move": "Bite",
+          "level": 9
+        },
+        {
+          "move": "Toxic Spikes",
+          "level": 13
+        },
+        {
+          "move": "Wide Guard",
+          "level": 17
+        },
+        {
+          "move": "Toxic",
+          "level": 21
+        },
+        {
+          "move": "Venoshock",
+          "level": 25
+        },
+        {
+          "move": "Spike Cannon",
+          "level": 29
+        },
+        {
+          "move": "Recover",
+          "level": 33
+        },
+        {
+          "move": "Poison Jab",
+          "level": 37
+        },
+        {
+          "move": "Venom Drench",
+          "level": 41
+        },
+        {
+          "move": "Pin Missile",
+          "level": 45
+        },
+        {
+          "move": "Liquidation",
+          "level": 49
+        },
+        {
+          "move": "Haze",
+          "egg_move": true
+        },
+        {
+          "move": "Spit Up",
+          "egg_move": true
+        },
+        {
+          "move": "Stockpile",
+          "egg_move": true
+        },
+        {
+          "move": "Swallow",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Peck",
+          "level": 5
+        },
+        {
+          "move": "Bite",
+          "level": 9
+        },
+        {
+          "move": "Toxic Spikes",
+          "level": 13
+        },
+        {
+          "move": "Wide Guard",
+          "level": 17
+        },
+        {
+          "move": "Toxic",
+          "level": 21
+        },
+        {
+          "move": "Venoshock",
+          "level": 25
+        },
+        {
+          "move": "Spike Cannon",
+          "level": 29
+        },
+        {
+          "move": "Recover",
+          "level": 33
+        },
+        {
+          "move": "Poison Jab",
+          "level": 37
+        },
+        {
+          "move": "Venom Drench",
+          "level": 41
+        },
+        {
+          "move": "Pin Missile",
+          "level": 45
+        },
+        {
+          "move": "Liquidation",
+          "level": 49
+        },
+        {
+          "move": "Haze",
+          "egg_move": true
+        },
+        {
+          "move": "Spit Up",
+          "egg_move": true
+        },
+        {
+          "move": "Stockpile",
+          "egg_move": true
+        },
+        {
+          "move": "Swallow",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

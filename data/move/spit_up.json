@@ -1,0 +1,154 @@
+{
+  "index_number": 255,
+  "pp": 10,
+  "max_pp": 16,
+  "power": 0,
+  "accuracy": 100,
+  "category": "special",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Relâche",
+    "de": "Entfessler",
+    "gr": "Πτυσμός",
+    "it": "Sfoghenergia",
+    "pl": "Wyplucie",
+    "en": "Spit Up"
+  },
+  "type": "Normal",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 4,
+      "jam": 0,
+      "condition": "Tough"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Tough"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 1,
+      "jam": 0,
+      "condition": "Tough"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "def",
+      "change_by": -1
+    },
+    {
+      "stat": "sp_def",
+      "change_by": -1
+    }
+  ],
+  "pokedex_entries": {
+    "Ruby": {
+      "en": "Releases stockpiled power (the more the better).",
+      "de": "Entlädt gehortete Kraft. Je mehr, desto besser."
+    },
+    "Sapphire": {
+      "en": "Releases stockpiled power (the more the better).",
+      "de": "Entlädt gehortete Kraft. Je mehr, desto besser."
+    },
+    "Emerald": {
+      "en": "Releases stockpiled power (the more the better).",
+      "de": "Entlädt gehortete Kraft. Je mehr, desto besser."
+    },
+    "FireRed": {
+      "en": "The power built using STOCKPILE is released at once for attack.",
+      "de": "Entlädt die Kraft, die während Einsatz von HORTER gesammelt wurde."
+    },
+    "LeafGreen": {
+      "en": "The power built using STOCKPILE is released at once for attack.",
+      "de": "Entlädt die Kraft, die während Einsatz von HORTER gesammelt wurde."
+    },
+    "Diamond": {
+      "en": "The power stored using the move Stockpile is released at once in an attack.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "Pearl": {
+      "en": "The power stored using the move Stockpile is released at once in an attack.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "Platinum": {
+      "en": "The power stored using the move Stockpile is released at once in an attack.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "HeartGold": {
+      "en": "The power stored using the move Stockpile is released at once in an attack.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "SoulSilver": {
+      "en": "The power stored using the move Stockpile is released at once in an attack.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "Black": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the damage.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "White": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the damage.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "Black 2": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the damage.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "White 2": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the damage.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "X": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "Y": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde."
+    },
+    "O.Ruby": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde. Je mehr Energie gehortet wurde, desto stärker der Angriff."
+    },
+    "Moon": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde. Je mehr Energie gehortet wurde, desto stärker der Angriff."
+    },
+    "Ultra Sun": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde. Je mehr Energie gehortet wurde, desto stärker der Angriff."
+    },
+    "Ultra Moon": {
+      "en": "The power stored using the move Stockpile is released at once in an attack. The more power is stored, the greater the move’s power.",
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde. Je mehr Energie gehortet wurde, desto stärker der Angriff."
+    },
+    "Omega Ruby": {
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Entlädt die Kraft, die während des Einsatzes von Horter gesammelt wurde.",
+      "en": "Unknown"
+    }
+  }
+}

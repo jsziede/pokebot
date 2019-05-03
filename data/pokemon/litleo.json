@@ -1,0 +1,1028 @@
+{
+  "names": {
+    "fr": "Hélionceau",
+    "de": "Leufeo",
+    "it": "Litleo",
+    "en": "Litleo"
+  },
+  "national_id": 667,
+  "types": [
+    "Fire",
+    "Normal"
+  ],
+  "abilities": [
+    {
+      "name": "Rivalry"
+    },
+    {
+      "name": "Unnerve"
+    },
+    {
+      "name": "Moxie",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 25.0,
+    "female": 75.0
+  },
+  "catch_rate": 220,
+  "egg_groups": [
+    "Field"
+  ],
+  "hatch_time": [
+    5355,
+    5609
+  ],
+  "height_us": "2'00\"",
+  "height_eu": "0.6 m",
+  "weight_us": "29.8 lbs.",
+  "weight_eu": "13.5 kg",
+  "base_exp_yield": 74,
+  "leveling_rate": "Medium Slow",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 1,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Brown",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 62,
+    "atk": 50,
+    "def": 58,
+    "sp_atk": 73,
+    "sp_def": 54,
+    "speed": 72
+  },
+  "evolutions": [
+    {
+      "to": "Pyroar",
+      "level": 35
+    }
+  ],
+  "categories": {
+    "en": "Lion Cub Pokémon",
+    "de": "Junglöwe"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 57,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
+      "de": "Je stärker sein Gegner ist, desto heißer wird seine Mähne und umso kraftvoller wird es."
+    },
+    "Y": {
+      "en": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.",
+      "de": "Sie verlassen ihr Rudel schon sehr früh, um stärker zu werden und auf eigenen Pfoten zu stehen. Sie sind sehr hitzköpfig und streitlustig."
+    },
+    "Omega Ruby": {
+      "en": "The stronger the opponent it faces, the more heat surges from its mane and the more power flows through its body.",
+      "de": "Sie verlassen ihr Rudel schon sehr früh, um stärker zu werden und auf eigenen Pfoten zu stehen. Sie sind sehr hitzköpfig und streitlustig."
+    },
+    "Alpha Sapphire": {
+      "en": "They set off on their own from their pride and live by themselves to become stronger. These hot-blooded Pokémon are quick to fight.",
+      "de": "Sie verlassen ihr Rudel schon sehr früh, um stärker zu werden und auf eigenen Pfoten zu stehen. Sie sind sehr hitzköpfig und streitlustig."
+    },
+    "Ultra Sun": {
+      "en": "When they’re young, they live with a pride. Once they’re able to hunt prey on their own, they’re kicked out and have to make their own way.",
+      "de": "Bis es seine Beute selbst fangen kann, bewegt es sich in Rudeln. Danach wird es verstoßen und muss auf eigenen Pfoten stehen."
+    },
+    "Ultra Moon": {
+      "en": "This hot-blooded Pokémon is filled with curiosity. When it gets angry or starts fighting, its short mane gets hot.",
+      "de": "Ein sehr aktives und neugieriges Pokémon. Bei Kampfbeginn und wenn es wütend ist, wird seine Mähne heiß."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 117,
+  "move_learnsets": [
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Ember",
+          "level": 5
+        },
+        {
+          "move": "Work Up",
+          "level": 8
+        },
+        {
+          "move": "Headbutt",
+          "level": 11
+        },
+        {
+          "move": "Noble Roar",
+          "level": 15
+        },
+        {
+          "move": "Take Down",
+          "level": 20
+        },
+        {
+          "move": "Fire Fang",
+          "level": 23
+        },
+        {
+          "move": "Endeavor",
+          "level": 28
+        },
+        {
+          "move": "Echoed Voice",
+          "level": 33
+        },
+        {
+          "move": "Flamethrower",
+          "level": 36
+        },
+        {
+          "move": "Crunch",
+          "level": 39
+        },
+        {
+          "move": "Hyper Voice",
+          "level": 43
+        },
+        {
+          "move": "Incinerate",
+          "level": 46
+        },
+        {
+          "move": "Overheat",
+          "level": 50
+        },
+        {
+          "move": "Entrainment",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Ember",
+          "level": 5
+        },
+        {
+          "move": "Work Up",
+          "level": 8
+        },
+        {
+          "move": "Headbutt",
+          "level": 11
+        },
+        {
+          "move": "Noble Roar",
+          "level": 15
+        },
+        {
+          "move": "Take Down",
+          "level": 20
+        },
+        {
+          "move": "Fire Fang",
+          "level": 23
+        },
+        {
+          "move": "Endeavor",
+          "level": 28
+        },
+        {
+          "move": "Echoed Voice",
+          "level": 33
+        },
+        {
+          "move": "Flamethrower",
+          "level": 36
+        },
+        {
+          "move": "Crunch",
+          "level": 39
+        },
+        {
+          "move": "Hyper Voice",
+          "level": 43
+        },
+        {
+          "move": "Incinerate",
+          "level": 46
+        },
+        {
+          "move": "Overheat",
+          "level": 50
+        },
+        {
+          "move": "Entrainment",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Ember",
+          "level": 5
+        },
+        {
+          "move": "Work Up",
+          "level": 8
+        },
+        {
+          "move": "Headbutt",
+          "level": 11
+        },
+        {
+          "move": "Noble Roar",
+          "level": 15
+        },
+        {
+          "move": "Take Down",
+          "level": 20
+        },
+        {
+          "move": "Fire Fang",
+          "level": 23
+        },
+        {
+          "move": "Endeavor",
+          "level": 28
+        },
+        {
+          "move": "Echoed Voice",
+          "level": 33
+        },
+        {
+          "move": "Flamethrower",
+          "level": 36
+        },
+        {
+          "move": "Crunch",
+          "level": 39
+        },
+        {
+          "move": "Hyper Voice",
+          "level": 43
+        },
+        {
+          "move": "Incinerate",
+          "level": 46
+        },
+        {
+          "move": "Overheat",
+          "level": 50
+        },
+        {
+          "move": "Entrainment",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Flare Blitz",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Ember",
+          "level": 5
+        },
+        {
+          "move": "Work Up",
+          "level": 8
+        },
+        {
+          "move": "Headbutt",
+          "level": 11
+        },
+        {
+          "move": "Noble Roar",
+          "level": 15
+        },
+        {
+          "move": "Take Down",
+          "level": 20
+        },
+        {
+          "move": "Fire Fang",
+          "level": 23
+        },
+        {
+          "move": "Endeavor",
+          "level": 28
+        },
+        {
+          "move": "Echoed Voice",
+          "level": 33
+        },
+        {
+          "move": "Flamethrower",
+          "level": 36
+        },
+        {
+          "move": "Crunch",
+          "level": 39
+        },
+        {
+          "move": "Hyper Voice",
+          "level": 43
+        },
+        {
+          "move": "Incinerate",
+          "level": 46
+        },
+        {
+          "move": "Overheat",
+          "level": 50
+        },
+        {
+          "move": "Entrainment",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Flare Blitz",
+          "egg_move": true
+        },
+        {
+          "move": "Snatch",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Fire Blast",
+          "tm": "TM38"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Flame Charge",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Overheat",
+          "tm": "TM50"
+        },
+        {
+          "move": "Will-O-Wisp",
+          "tm": "TM61"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

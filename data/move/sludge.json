@@ -1,0 +1,165 @@
+{
+  "index_number": 124,
+  "pp": 20,
+  "max_pp": 32,
+  "power": 65,
+  "accuracy": 100,
+  "category": "special",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": false,
+  "names": {
+    "dk": "Slam",
+    "fr": "Détritus",
+    "de": "Schlammbad",
+    "gr": "Γλίτσα",
+    "it": "Fango",
+    "pl": "Błoto",
+    "en": "Sludge"
+  },
+  "type": "Poison",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 1,
+      "jam": 4,
+      "condition": "Tough"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Tough"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 2,
+      "jam": 3,
+      "condition": "Tough"
+    }
+  ],
+  "pokedex_entries": {
+    "Gold": {
+      "en": "An attack that may poison the foe.",
+      "de": "Gegner wird evtl vergiftet."
+    },
+    "Silver": {
+      "en": "An attack that may poison the foe.",
+      "de": "Gegner wird evtl vergiftet."
+    },
+    "Crystal": {
+      "en": "An attack that may poison the foe.",
+      "de": "Gegner wird evtl vergiftet."
+    },
+    "Ruby": {
+      "en": "Sludge is hurled to inflict damage. May also poison.",
+      "de": "Wirft Schlamm auf Gegner. Evtl. Vergiftung."
+    },
+    "Sapphire": {
+      "en": "Sludge is hurled to inflict damage. May also poison.",
+      "de": "Wirft Schlamm auf Gegner. Evtl. Vergiftung."
+    },
+    "Emerald": {
+      "en": "Sludge is hurled to inflict damage. May also poison.",
+      "de": "Wirft Schlamm auf Gegner. Evtl. Vergiftung."
+    },
+    "FireRed": {
+      "en": "Toxic sludge is hurled at the foe. It may poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der evtl. vergiftet wird."
+    },
+    "LeafGreen": {
+      "en": "Toxic sludge is hurled at the foe. It may poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der evtl. vergiftet wird."
+    },
+    "Diamond": {
+      "en": "Unsanitary sludge is hurled at the foe. It may also poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der eventuell vergiftet wird."
+    },
+    "Pearl": {
+      "en": "Unsanitary sludge is hurled at the foe. It may also poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der eventuell vergiftet wird."
+    },
+    "Platinum": {
+      "en": "Unsanitary sludge is hurled at the foe. It may also poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der eventuell vergiftet wird."
+    },
+    "HeartGold": {
+      "en": "Unsanitary sludge is hurled at the foe. It may also poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der eventuell vergiftet wird."
+    },
+    "SoulSilver": {
+      "en": "Unsanitary sludge is hurled at the foe. It may also poison the target.",
+      "de": "Wirft Schlamm auf Gegner, der eventuell vergiftet wird."
+    },
+    "Black": {
+      "en": "Unsanitary sludge is hurled at the target. It may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel, das eventuell vergiftet wird."
+    },
+    "White": {
+      "en": "Unsanitary sludge is hurled at the target. It may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel, das eventuell vergiftet wird."
+    },
+    "Black 2": {
+      "en": "Unsanitary sludge is hurled at the target. It may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel, das eventuell vergiftet wird."
+    },
+    "White 2": {
+      "en": "Unsanitary sludge is hurled at the target. It may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel, das eventuell vergiftet wird."
+    },
+    "X": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet."
+    },
+    "Y": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet."
+    },
+    "O.Ruby": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet."
+    },
+    "Moon": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet."
+    },
+    "Ultra Sun": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet."
+    },
+    "Ultra Moon": {
+      "en": "Unsanitary sludge is hurled at the target. This may also poison the target.",
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet."
+    },
+    "Omega Ruby": {
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Wirft Schlamm auf das Ziel. Dieses wird eventuell vergiftet.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "poison",
+        "probability": 30
+      }
+    ]
+  }
+}

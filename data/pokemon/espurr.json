@@ -1,0 +1,923 @@
+{
+  "names": {
+    "fr": "Psystigri",
+    "de": "Psiau",
+    "it": "Espurr",
+    "en": "Espurr"
+  },
+  "national_id": 677,
+  "types": [
+    "Psychic"
+  ],
+  "abilities": [
+    {
+      "name": "Keen Eye"
+    },
+    {
+      "name": "Infiltrator"
+    },
+    {
+      "name": "Own Tempo",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 190,
+  "egg_groups": [
+    "Field"
+  ],
+  "hatch_time": [
+    5100,
+    5354
+  ],
+  "height_us": "1'00\"",
+  "height_eu": "0.3 m",
+  "weight_us": "7.7 lbs.",
+  "weight_eu": "3.5 kg",
+  "base_exp_yield": 71,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 1
+  },
+  "color": "Gray",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 62,
+    "atk": 48,
+    "def": 54,
+    "sp_atk": 63,
+    "sp_def": 60,
+    "speed": 68
+  },
+  "evolutions": [
+    {
+      "to": "Meowstic",
+      "level": 25
+    }
+  ],
+  "categories": {
+    "en": "Restraint Pokémon",
+    "de": "Zügelung"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 114,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "The organ that emits its intense psychic power is sheltered by its ears to keep power from leaking out.",
+      "de": "Damit die starken Psycho-Kräfte dieses Pokémon nicht unkontrolliert nach außen dringen, ist das Organ, das diese freisetzt, von seinen Ohren bedeckt."
+    },
+    "Y": {
+      "en": "It has enough psychic energy to blast everything within 300 feet of itself, but it has no control over its power.",
+      "de": "Es verfügt zwar über genug Psycho-Kräfte, um Objekte in einem Umkreis von 100 m wegzublasen, aber es kann sie noch nicht gut kontrollieren."
+    },
+    "Omega Ruby": {
+      "en": "The organ that emits its intense psychic power is sheltered by its ears to keep power from leaking out.",
+      "de": "Es verfügt zwar über genug Psycho-Kräfte, um Objekte in einem Umkreis von 100 m wegzublasen, aber es kann sie noch nicht gut kontrollieren."
+    },
+    "Alpha Sapphire": {
+      "en": "It has enough psychic energy to blast everything within 300 feet of itself, but it has no control over its power.",
+      "de": "Es verfügt zwar über genug Psycho-Kräfte, um Objekte in einem Umkreis von 100 m wegzublasen, aber es kann sie noch nicht gut kontrollieren."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": null,
+  "move_learnsets": [
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Covet",
+          "level": 5
+        },
+        {
+          "move": "Confusion",
+          "level": 9
+        },
+        {
+          "move": "Light Screen",
+          "level": 13
+        },
+        {
+          "move": "Psybeam",
+          "level": 17
+        },
+        {
+          "move": "Fake Out",
+          "level": 19
+        },
+        {
+          "move": "Disarming Voice",
+          "level": 22
+        },
+        {
+          "move": "Psyshock",
+          "level": 25
+        },
+        {
+          "move": "Assist",
+          "egg_move": true
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Trick",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Psyshock",
+          "tm": "TM3"
+        },
+        {
+          "move": "Calm Mind",
+          "tm": "TM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Psych Up",
+          "tm": "TM77"
+        },
+        {
+          "move": "Dream Eater",
+          "tm": "TM85"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Trick Room",
+          "tm": "TM92"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Covet",
+          "level": 5
+        },
+        {
+          "move": "Confusion",
+          "level": 9
+        },
+        {
+          "move": "Light Screen",
+          "level": 13
+        },
+        {
+          "move": "Psybeam",
+          "level": 17
+        },
+        {
+          "move": "Fake Out",
+          "level": 19
+        },
+        {
+          "move": "Disarming Voice",
+          "level": 22
+        },
+        {
+          "move": "Psyshock",
+          "level": 25
+        },
+        {
+          "move": "Assist",
+          "egg_move": true
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Trick",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Psyshock",
+          "tm": "TM3"
+        },
+        {
+          "move": "Calm Mind",
+          "tm": "TM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Psych Up",
+          "tm": "TM77"
+        },
+        {
+          "move": "Dream Eater",
+          "tm": "TM85"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Trick Room",
+          "tm": "TM92"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Covet",
+          "level": 5
+        },
+        {
+          "move": "Confusion",
+          "level": 9
+        },
+        {
+          "move": "Light Screen",
+          "level": 13
+        },
+        {
+          "move": "Psybeam",
+          "level": 17
+        },
+        {
+          "move": "Fake Out",
+          "level": 19
+        },
+        {
+          "move": "Disarming Voice",
+          "level": 22
+        },
+        {
+          "move": "Psyshock",
+          "level": 25
+        },
+        {
+          "move": "Assist",
+          "egg_move": true
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Trick",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Psyshock",
+          "tm": "TM3"
+        },
+        {
+          "move": "Calm Mind",
+          "tm": "TM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Psych Up",
+          "tm": "TM77"
+        },
+        {
+          "move": "Dream Eater",
+          "tm": "TM85"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Trick Room",
+          "tm": "TM92"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Covet",
+          "level": 5
+        },
+        {
+          "move": "Confusion",
+          "level": 9
+        },
+        {
+          "move": "Light Screen",
+          "level": 13
+        },
+        {
+          "move": "Psybeam",
+          "level": 17
+        },
+        {
+          "move": "Fake Out",
+          "level": 19
+        },
+        {
+          "move": "Disarming Voice",
+          "level": 22
+        },
+        {
+          "move": "Psyshock",
+          "level": 25
+        },
+        {
+          "move": "Assist",
+          "egg_move": true
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Trick",
+          "egg_move": true
+        },
+        {
+          "move": "Yawn",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Psyshock",
+          "tm": "TM3"
+        },
+        {
+          "move": "Calm Mind",
+          "tm": "TM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Echoed Voice",
+          "tm": "TM49"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Psych Up",
+          "tm": "TM77"
+        },
+        {
+          "move": "Dream Eater",
+          "tm": "TM85"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Trick Room",
+          "tm": "TM92"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

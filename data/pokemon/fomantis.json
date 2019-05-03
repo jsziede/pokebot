@@ -1,0 +1,495 @@
+{
+  "names": {
+    "en": "Fomantis",
+    "jp": "カリキリ Karikiri",
+    "fr": "Mimantis",
+    "es": "Fomantis",
+    "de": "Imantis",
+    "it": "Fomantis"
+  },
+  "national_id": 753,
+  "alola_id": 143,
+  "types": [
+    "Grass"
+  ],
+  "items": [
+      {
+          "name": "Miracle Seed",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Leaf Guard"
+    },
+    {
+      "name": "Contrary",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 190,
+  "egg_groups": [
+    "Grass"
+  ],
+  "hatch_time": [
+    5140,
+    5396
+  ],
+  "height_us": "1'00\"",
+  "height_eu": "0.3 m",
+  "weight_us": "3.3 lbs.",
+  "weight_eu": "1.5 kg",
+  "base_exp_yield": 50,
+  "leveling_rate": "Medium Fast",
+  "color": "Pink",
+  "base_friendship": 70,
+  "ev_yield": {
+    "hp": 0,
+    "atk": 1,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "base_stats": {
+    "hp": 40,
+    "atk": 55,
+    "def": 35,
+    "sp_atk": 50,
+    "sp_def": 35,
+    "speed": 35
+  },
+  "evolutions": [
+    {
+      "to": "Lurantis",
+      "level": 34,
+      "conditions": [
+        "Daytime"
+      ]
+    }
+  ],
+  "categories": {
+    "en": "Sickle Grass Pokémon",
+    "de": "Grassichel"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "During the day, it sleeps and soaks up light. When night falls, it walks around looking for a safer place to sleep.",
+      "de": "Mittags badet es in der Sonne und hält Nickerchen. Nachts muss es sich aber einen sichereren Schlafplatz suchen und zieht los."
+    },
+    "Moon": {
+      "en": "They give off a sweet and refreshing scent. Cutiefly often gather near the tall grass where Fomantis are hiding.",
+      "de": "Dieses Pokémon duftet frisch und lieblich. Im hohen Gras, wo sich Imantis gern versteckt, halten sich oft auch viele Wommel auf."
+    },
+    "Ultra Sun": {
+      "en": "When the sun rises, Fomantis spreads its four leaves and bathes in the sunlight. The tip of its head has a pleasant aroma.",
+      "de": "Scheint die Sonne, streckt es seine vier Blätter von sich und badet im Licht. Von seiner Kopfspitze geht ein angenehmer Duft aus."
+    },
+    "Ultra Moon": {
+      "en": "It loves the sunshine. When it basks in the sunlight regularly, it grows up with vivid coloration.",
+      "de": "Es liebt Sonnenlicht. Gönnt es sich regelmäßig Sonnenbäder, blüht es in prächtigen, satten Farben auf."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 77,
+  "move_learnsets": [
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Fury Cutter",
+          "level": 1
+        },
+        {
+          "move": "Leafage",
+          "level": 5
+        },
+        {
+          "move": "Razor Leaf",
+          "level": 10
+        },
+        {
+          "move": "Growth",
+          "level": 14
+        },
+        {
+          "move": "Ingrain",
+          "level": 19
+        },
+        {
+          "move": "Leaf Blade",
+          "level": 23
+        },
+        {
+          "move": "Synthesis",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 32
+        },
+        {
+          "move": "Sweet Scent",
+          "level": 37
+        },
+        {
+          "move": "Solar Beam",
+          "level": 41
+        },
+        {
+          "move": "Sunny Day",
+          "level": 46
+        },
+        {
+          "move": "Aromatherapy",
+          "egg_move": true
+        },
+        {
+          "move": "Defog",
+          "egg_move": true
+        },
+        {
+          "move": "Giga Drain",
+          "egg_move": true
+        },
+        {
+          "move": "Leaf Storm",
+          "egg_move": true
+        },
+        {
+          "move": "Weather Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "False Swipe",
+          "tm": "TM54"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Nature Power",
+          "tm": "TM96"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Fury Cutter",
+          "level": 1
+        },
+        {
+          "move": "Leafage",
+          "level": 5
+        },
+        {
+          "move": "Razor Leaf",
+          "level": 10
+        },
+        {
+          "move": "Growth",
+          "level": 14
+        },
+        {
+          "move": "Ingrain",
+          "level": 19
+        },
+        {
+          "move": "Leaf Blade",
+          "level": 23
+        },
+        {
+          "move": "Synthesis",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 32
+        },
+        {
+          "move": "Sweet Scent",
+          "level": 37
+        },
+        {
+          "move": "Solar Beam",
+          "level": 41
+        },
+        {
+          "move": "Sunny Day",
+          "level": 46
+        },
+        {
+          "move": "Aromatherapy",
+          "egg_move": true
+        },
+        {
+          "move": "Defog",
+          "egg_move": true
+        },
+        {
+          "move": "Giga Drain",
+          "egg_move": true
+        },
+        {
+          "move": "Leaf Storm",
+          "egg_move": true
+        },
+        {
+          "move": "Weather Ball",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "False Swipe",
+          "tm": "TM54"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Nature Power",
+          "tm": "TM96"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "names": {
+    "en": "Toxic Thread",
+    "fr": "Fil Toxique",
+    "de": "Giftfaden",
+    "it": "Velenotela",
+    "es": "Hilo Venenoso"
+  },
+  "index_number": 672,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": true,
+  "affected_by_kings_rock": false,
+  "type": "Poison",
+  "category": "status",
+  "pp": 20,
+  "max_pp": 32,
+  "power": 0,
+  "accuracy": 100,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "priority": 0,
+  "contests": [
+
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "speed",
+      "change_by": -1
+    }
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "The user shoots poisonous threads to poison the target and lower the target’s Speed stat.",
+      "de": "Der Anwender schießt giftige Fäden auf das Ziel, das dadurch vergiftet wird. Außerdem sinkt seine Initiative."
+    },
+    "Moon": {
+      "en": "The user shoots poisonous threads to poison the target and lower the target’s Speed stat.",
+      "de": "Der Anwender schießt giftige Fäden auf das Ziel, das dadurch vergiftet wird. Außerdem sinkt seine Initiative."
+    },
+    "Ultra Sun": {
+      "en": "The user shoots poisonous threads to poison the target and lower the target’s Speed stat.",
+      "de": "Der Anwender schießt giftige Fäden auf das Ziel, das dadurch vergiftet wird. Außerdem sinkt seine Initiative."
+    },
+    "Ultra Moon": {
+      "en": "The user shoots poisonous threads to poison the target and lower the target’s Speed stat.",
+      "de": "Der Anwender schießt giftige Fäden auf das Ziel, das dadurch vergiftet wird. Außerdem sinkt seine Initiative."
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "poison",
+        "probability": 100
+      }
+    ]
+  }
+}

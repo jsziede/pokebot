@@ -1,0 +1,793 @@
+{
+  "names": {
+    "fr": "Mucuscule",
+    "de": "Viscora",
+    "it": "Goomy",
+    "en": "Goomy"
+  },
+  "national_id": 704,
+  "types": [
+    "Dragon"
+  ],
+  "items": [
+      {
+          "name": "Shed Shell",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Sap Sipper"
+    },
+    {
+      "name": "Hydration"
+    },
+    {
+      "name": "Gooey",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 45,
+  "egg_groups": [
+    "Dragon"
+  ],
+  "hatch_time": [
+    10455,
+    10709
+  ],
+  "height_us": "1'00\"",
+  "height_eu": "0.3 m",
+  "weight_us": "6.2 lbs.",
+  "weight_eu": "2.8 kg",
+  "base_exp_yield": 60,
+  "leveling_rate": "Slow",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 1,
+    "speed": 0
+  },
+  "color": "Purple",
+  "base_friendship": 35,
+  "base_stats": {
+    "hp": 45,
+    "atk": 50,
+    "def": 35,
+    "sp_atk": 55,
+    "sp_def": 75,
+    "speed": 40
+  },
+  "evolutions": [
+    {
+      "to": "Sliggoo",
+      "level": 40
+    }
+  ],
+  "alola_id": 178,
+  "categories": {
+    "en": "Soft Tissue Pokémon",
+    "de": "Schneckedei"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 19,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn't dry out.",
+      "de": "Dieses schwächste aller Drachen-Pokémon lebt an feuchten und schattigen Plätzen, um seinen glitschigen Körper vor dem Austrocknen zu bewahren."
+    },
+    "Y": {
+      "en": "It's covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.",
+      "de": "Sein Körper ist von einer schleimigen Schicht umhüllt, an der gegnerische Tritte und Schläge abgleiten, ohne Schaden anzurichten."
+    },
+    "Omega Ruby": {
+      "en": "The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn't dry out.",
+      "de": "Sein Körper ist von einer schleimigen Schicht umhüllt, an der gegnerische Tritte und Schläge abgleiten, ohne Schaden anzurichten."
+    },
+    "Alpha Sapphire": {
+      "en": "It's covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.",
+      "de": "Sein Körper ist von einer schleimigen Schicht umhüllt, an der gegnerische Tritte und Schläge abgleiten, ohne Schaden anzurichten."
+    },
+    "Sun": {
+      "en": "The weakest of all Dragon-type Pokémon, it's unable to breathe if its skin dries out, so it sticks to shady places.",
+      "de": "Kein Eintrag vorhanden"
+    },
+    "Moon": {
+      "en": "Its source of protection is its slimy, germ-laden mucous membrane. Anyone who touches it needs some thorough hand-washing.",
+      "de": "Kein Eintrag vorhanden"
+    },
+    "Ultra Sun": {
+      "en": "It uses its horns to check out its surroundings. They’re very sensitive, so if you grab them, it will feel a strong shock and be unable to move.",
+      "de": "Mit seinen Fühlern tastet es die Umgebung ab. Es ist so empfindlich, dass es in Schockstarre verfällt, wenn man es in die Hand nimmt."
+    },
+    "Ultra Moon": {
+      "en": "Its body is mostly water. If it dries out, it will die, so it’s always sitting with perfect stillness in the shade.",
+      "de": "Sein Körper besteht fast ausschließlich aus Wasser. Trocknet es aus, stirbt es. Deshalb hält es sich immer bewegungslos im Schatten auf."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 79,
+  "move_learnsets": [
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Bubble",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Absorb",
+          "level": 5
+        },
+        {
+          "move": "Protect",
+          "level": 9
+        },
+        {
+          "move": "Bide",
+          "level": 13
+        },
+        {
+          "move": "Dragon Breath",
+          "level": 18
+        },
+        {
+          "move": "Rain Dance",
+          "level": 25
+        },
+        {
+          "move": "Flail",
+          "level": 28
+        },
+        {
+          "move": "Body Slam",
+          "level": 32
+        },
+        {
+          "move": "Muddy Water",
+          "level": 38
+        },
+        {
+          "move": "Dragon Pulse",
+          "level": 42
+        },
+        {
+          "move": "Acid Armor",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Iron Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Poison Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Bubble",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Absorb",
+          "level": 5
+        },
+        {
+          "move": "Protect",
+          "level": 9
+        },
+        {
+          "move": "Bide",
+          "level": 13
+        },
+        {
+          "move": "Dragon Breath",
+          "level": 18
+        },
+        {
+          "move": "Rain Dance",
+          "level": 25
+        },
+        {
+          "move": "Flail",
+          "level": 28
+        },
+        {
+          "move": "Body Slam",
+          "level": 32
+        },
+        {
+          "move": "Muddy Water",
+          "level": 38
+        },
+        {
+          "move": "Dragon Pulse",
+          "level": 42
+        },
+        {
+          "move": "Acid Armor",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Iron Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Poison Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bubble",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Absorb",
+          "level": 5
+        },
+        {
+          "move": "Protect",
+          "level": 9
+        },
+        {
+          "move": "Bide",
+          "level": 13
+        },
+        {
+          "move": "Dragon Breath",
+          "level": 18
+        },
+        {
+          "move": "Rain Dance",
+          "level": 25
+        },
+        {
+          "move": "Flail",
+          "level": 28
+        },
+        {
+          "move": "Body Slam",
+          "level": 32
+        },
+        {
+          "move": "Muddy Water",
+          "level": 38
+        },
+        {
+          "move": "Dragon Pulse",
+          "level": 42
+        },
+        {
+          "move": "Acid Armor",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Iron Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Poison Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bubble",
+          "level": 1
+        },
+        {
+          "move": "Tackle",
+          "level": 1
+        },
+        {
+          "move": "Absorb",
+          "level": 5
+        },
+        {
+          "move": "Protect",
+          "level": 9
+        },
+        {
+          "move": "Bide",
+          "level": 13
+        },
+        {
+          "move": "Dragon Breath",
+          "level": 18
+        },
+        {
+          "move": "Rain Dance",
+          "level": 25
+        },
+        {
+          "move": "Flail",
+          "level": 28
+        },
+        {
+          "move": "Body Slam",
+          "level": 32
+        },
+        {
+          "move": "Muddy Water",
+          "level": 38
+        },
+        {
+          "move": "Dragon Pulse",
+          "level": 42
+        },
+        {
+          "move": "Acid Armor",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Curse",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Iron Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Poison Tail",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

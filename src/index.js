@@ -1,10 +1,8 @@
-/*
-//  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
-*/
+//bugs
+//check TM learning for pokemon who have different movesets based on form but still have the same TM learnset
+//need to add a PP field to the pokemon's moves as well on the client side
 
-/*
-//  Packages
-*/
+//includes
 const Discord = require("discord.js");
 const client = new Discord.Client({autoReconnect:true});
 
@@ -12,15 +10,17 @@ const fs = require("fs");
 const moment = require("moment");
 const momentTz = require("moment-timezone");
 const schedule = require('node-schedule');
+const rp = require('request-promise');
+const cheerio = require('cheerio');
 const mysql = require('mysql');
+const oak = require('oakdex-pokedex');
 
 //const Sim = require('./Pokemon-Showdown/sim');
 
-/*
-//  MySQL DB Connection
-*/
-var myconfig = require('../config/my_config');
+var myconfig = require('./myconfig');
+
 var con = mysql.createConnection(myconfig.database);
+
 con.connect(function(err) {
     if (err) {
         console.log(err);
@@ -29,9 +29,7 @@ con.connect(function(err) {
     console.log("Connected!");
 });
 
-/*
-//  Custom Emoji Used Globally
-*/
+//custom emotes
 var duck;
 var tail;
 var pew;
@@ -39,68 +37,37 @@ var kukui;
 var dollar;
 var birb;
 
-/*
-//  Channel ids to send messages to.
-//  @todo Check channels on a per server basis.
-*/
+//channel ids to send messages to
 var spamChannel = "412184281151176704";
 var mainChannel = "412176149154627585";
 
-/*
-//  Debug Tools
-*/
-var enableSpam = false;     //default = false
-var spamXpMult = 1;         //default = 1
-var spamEncounterMult = 1;  //default = 1
+//for easier debugging
+var enableSpam = false;
+var spamXpMult = 1;
+var spamEncounterMult = 1;
 
-/*
-//  Global Variables
-//  @todo These might be better off in a database. 
-*/
-var evolving = [];      // Stores all the users who have an evolving pokemon as well as the Pokemon that is evolving
-var trading = [];       // Stores all the users who are in the process of trading a Pokemon
-var transactions = [];  // Stores all users currently using a command
-var raining = [];       // Stores locations in which rain is happening
-var hailing = [];       // Stores locations in which hail is happening
-var snowing = [];       // Stores locations in which snow is happening
-var sandstorm = [];     // Stores locations in which a sandstorm is happening
+//stores all the users who have an evolving pokemon as well as the pokemon that is evolving
+var evolving = [];
+
+//stores all the users who have an evolving pokemon as well as the pokemon that is evolving
+var trading = [];
+
+//stores all users currently using a command
+var transactions = [];
+
+//the id of the last user to have sent a message
+var lastUser;
+
+//stores locations in which weather is happening
+var raining = [];
+var hailing = [];
+var snowing = [];
+var sandstorm = [];
 
 var cooldown = new Date();
 cooldown = cooldown.getTime();
 
-/*
-//  Standard Pokemon object for Pokemon that have been caught.
-//  @todo this should maybe be a class.
-//  name:Official name of the Pokemon.
-//  nick: Nickname of the Pokemon provided by its trainer.
-//  no: National Pokedex number.
-//  caughtIn: Type of ball the Pokemon was caught in.
-//  type: The type (Grass, Fire, Water, etc.).
-//  item: The item the Pokemon is holding.
-//  level: Current level of the Pokemon.
-//  totalxp: Total amount of xp earned by the Pokemon.
-//  moves: A list of moves known by the Pokemon.
-//  ability: The ability of the Pokemon.
-//  abilitySlot: The ability slot in case the Pokemon can have multiple abilities.
-//  nature: The nature of the Pokemon.
-//  stats: A list of the Pokemon's current stats in order of hp, attack, defense, s. attack, s. defense, speed.
-//  IVs: A list of the Pokemon's current IVs in order of hp, attack, defense, s. attack, s. defense, speed.
-//  EVs: A list of the Pokemon's current EVs in order of hp, attack, defense, s. attack, s. defense, speed.
-//  gender: The gender of the Pokemon.
-//  ot: The name of the original trainer.
-//  otid: The id of the original trainer.
-//  date: The date the Pokemon was caught.
-//  region: The region the Pokemon was caught at.
-//  location: The location within the region the Pokemon was caught at.
-//  caughtAtLevel: The level the Pokemon was at when it was caught.
-//  shiny: If the Pokemon is shiny.
-//  lead: If the Pokemon is the trainer's lead Pokemon. Will be deprecated eventually when the party system is implemented.
-//  form: The current form the Pokemon is in.
-//  friendship: The amount of friendship the Pokemon has.
-//  evolving: If the Pokemon is evolving.
-//  status: The status condition of the Pokemon.
-//  pv: The personality value of the Pokemon.
-*/
+//standard pokemon object
 function Pokemon(name, nick, no, form, type, item, level, totalxp, moves, ability, abilitySlot, nature, stats, iv, ev, gender, region, location, caughtAtLevel, shiny) {
     this.name = name;
     this.nick = nick;
@@ -133,14 +100,7 @@ function Pokemon(name, nick, no, form, type, item, level, totalxp, moves, abilit
     this.pv = Math.floor(Math.random() * 4294967296);
 }
 
-/*
-//  Standard item object.
-//  @todo perhaps this should be a class.
-//  name: Name of the item.
-//  quantity: The amount of the item the trainer has.
-//  holdable: If a Pokemon can hold the item.
-//  isKey: If the item is a key item.
-*/
+//standard item object
 function Item(name, quantity, holdable, isKey) {
     this.name = name;
     this.quantity = quantity;
@@ -148,14 +108,7 @@ function Item(name, quantity, holdable, isKey) {
     this.isKey = isKey;
 }
 
-/*
-//  Standard Pokemon object for Pokemon that have not been caught.
-//  @todo Perhaps this should be a child class of Pokemon().
-//  name: The name of the Pokemon.
-//  level: The current level the Pokemon.
-//  rarity: How rare the Pokemon appears in the current location.
-//  method: The method required to encounter the Pokemon (grass, surf, headbutt, etc.).
-*/
+//used to store wild pokemon that a user can encounter
 function WildPokemon(name, level, rarity, method) {
     this.name = name;
     this.level = level;
@@ -163,24 +116,13 @@ function WildPokemon(name, level, rarity, method) {
     this.method = method;
 }
 
-/*
-//  Transactions lock the user out of using most other commands.
-//  userID: Id of the user who ran the command.
-//  type: The type of command being run.
-*/
+//transaction object that stores what type of command a user is running
 function Transaction(userID, type) {
     this.userID = userID;
     this.type = type;
 }
 
-/*
-//  Standard evolution object.
-//  @todo This needs to be reworked so Pokemon id is passed as well so a Trainer can have multiple Pokemon evolving.
-//  userID: Id of the user who owns the evolving Pokemon.
-//  from: The name of the Pokemon that is evolving.
-//  to: The name the Pokemon is evolving into to differentiate branched evolutions.
-//  time: What time the Pokemon started to evolve.
-*/
+//evolution object
 function Evolution(userID, from, to) {
     this.userID = userID;
     this.from = from;
@@ -189,13 +131,7 @@ function Evolution(userID, from, to) {
     this.time = this.time.getTime();
 }
 
-/*
-//  Standard trade object.
-//  userAsk: The Trainer who initiated the trade.
-//  userRespond: The Trainer who was asked to trade.
-//  askPokemon: The Pokemon that the initiator wants to send.
-//  respondPokemon: The Pokemon the initiator wants to receive.
-*/
+//evolution object
 function Trade(userAsk, userRespond, askPokemon, respondPokemon) {
     this.userAsk = userAsk;
     this.userRespond = userRespond;
@@ -203,19 +139,11 @@ function Trade(userAsk, userRespond, askPokemon, respondPokemon) {
     this.respondPokemon = respondPokemon;
 }
 
-/*
-//  Start up procedures.
-*/
 client.login(myconfig.token);
-client.on("A wild Pokebot appears!", () => {
-    /*
-    //  Shows text under Pokebot's username in the members list.
-    */
+
+//prints to console when bot is ready to be used
+client.on("ready", () => {
     client.user.setActivity('Pokémon XP: Gale of Flannery');
-    
-    /*
-    //  Load the global emojis.
-    */
     duck = client.emojis.find("name", "NotLikeDuck");
     tail = client.emojis.find("name", "FeelsTailMan");
     pew = client.emojis.find("name", "pew");
@@ -225,24 +153,11 @@ client.on("A wild Pokebot appears!", () => {
     dollar = client.emojis.find("name", "pokedollar");
     birb = client.emojis.find("name", "birb");
 
-    /*
-    //  Checks the database for any Pokemon that are in the process of evolving and triggers the evolution process for them.
-    //  This is necessary in case the bot shuts down while a Pokemon is evolving.
-    */
     fixEvolutions();
-    
-    /*
-    //  Sets the weather condition for locations where weather can happen.
-    */
     updateWeather();
+    console.log("hoi");
 });
 
-/*
-//  Restart the bot if an error occurs.
-//  @todo This could probably be handled on a per error basis
-//  or at the very least should be more robust.
-//  @todo Log the errors into a file.
-*/
 process.on('error', error => {
     client.destroy();
     console.log(error);
@@ -251,12 +166,8 @@ process.on('error', error => {
     }, 10000);
 });
 
-/*
-//  Restart the bot if an unhandled rejection occurs.
-//  @todo This could probably be be more robust.
-//  @todo Log the errors into a file.
-*/
 process.on('unhandledRejection', error => {
+    //client.channels.get(spamChannel).send("OOPSIE WOOPSIE!! Uwu I made a fucky wucky!! A wittle fucko boingo! The code monkey at my headquarters is working VEWY HAWD to fix this!");
     client.destroy();
     console.log(error);
     setTimeout(function () {
@@ -264,12 +175,8 @@ process.on('unhandledRejection', error => {
     }, 10000);
 });
 
-/*
-//  Restart the bot if an unhandled exception occurs.
-//  @todo: This could probably be be more robust.
-//  @todo Log the errors into a file.
-*/
 process.on('uncaughtException', error => {
+    //client.channels.get(spamChannel).send("OOPSIE WOOPSIE!! Uwu I made a fucky wucky!! A wittle fucko boingo! The code monkey at my headquarters is working VEWY HAWD to fix this!");
     client.destroy();
     console.log(error);
     setTimeout(function () {
@@ -277,16 +184,84 @@ process.on('uncaughtException', error => {
     }, 10000);
 });
 
-/*
-//  Update the weather five seconds after every hour.
-*/
+schedule.scheduleJob({hour: 0, minute: 0, second: 5}, function(){
+    var data;
+    try {
+        data = fs.readFileSync("countdowns.json", "utf8");
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
+
+    var cnts = JSON.parse(data);
+    if (cnts.countdowns.length > 0) {
+        function compare(a,b) {
+            if (a.date < b.date) {
+                return -1;
+            }
+            if (a.date > b.date) {
+                return 1;
+            }
+            return 0;
+        }
+
+        cnts.countdowns.sort(compare);
+        var i;
+        var fieldCount = 0;
+        var previousDate = null;
+        var textCount = 0;
+        var fields = [];
+        for (i = 0; i < cnts.countdowns.length; i++) {
+            var eventDate = moment(cnts.countdowns[i].date);
+            var today = moment().format("YYYY-MM-DD");
+            var diff = eventDate.diff(today, 'days');
+            if (diff < 0) {
+                cnts.countdowns.splice(i, 1);
+                i--;
+            } else if (eventDate.isSame(today)) {
+                previousDate = cnts.countdowns[i].date;
+                if(cnts.countdowns[i].date != previousDate) {
+                    fieldCount++;
+                    fields[fieldCount - 1] = {
+                        "name": "Today is:",
+                        "value": cnts.countdowns[i].event
+                    }
+                } else {
+                    fields[fieldCount - 1].value += "\n" + cnts.countdowns[i].event;
+                }
+                //delete event
+                cnts.countdowns.splice(i, 1);
+                i--;
+            } else if(cnts.countdowns[i].date != previousDate) {
+                previousDate = cnts.countdowns[i].date;
+                fieldCount++;
+                fields[fieldCount - 1] = {
+                    "name": eventDate.diff(today, 'days') + " days to go until:",
+                    "value": cnts.countdowns[i].event
+                }
+            } else {
+                previousDate = cnts.countdowns[i].date;
+                fields[fieldCount - 1].value += "\n" + cnts.countdowns[i].event;
+            }
+        }
+        
+        var json = JSON.stringify(cnts, null, "\t");
+        fs.writeFileSync("countdowns.json", json, "utf8");
+        
+        const embed = {
+            "title": "Countdown",
+            "fields": fields
+        };
+
+        client.channels.get(mainChannel).send({ embed });
+    }
+});
+
 schedule.scheduleJob({minute: 0, second: 5}, function(){
     updateWeather();
 });
 
-/*
-//  Triggers every time any user sends a message.
-*/
+//triggers every time any user sends a message
 client.on('message', async (message) => {
     //dont do anything if the sender is a bot
     if (message.author.bot) {
@@ -326,6 +301,7 @@ client.on('message', async (message) => {
                     return;
                 }
                 await getLeadPokemon(message.author.id).then(function(rows) {
+                        // now you have your rows, you can see if there are <20 of them
                         displayAnOwnedPkmn(rows, message);
                     }).catch((err) => setImmediate(() => { console.log(err); }));
                 return;
@@ -918,6 +894,67 @@ client.on('message', async (message) => {
             
         }
     }
+    
+    //=====================================================================================
+    //Begin non pokebot commands
+    if (message.content.startsWith("!countdown")) {
+        //splits message into an array of strings based on spaces
+        var input = message.content.trim().split(/ +/g);
+        //the first word in the message
+        const command = input.shift().toLowerCase();
+        var str = input[0] + " " + input[1] + " " + input[2];
+        if (moment(str, 'MMM DD YYY', 'en').isValid()) {
+            var eventDate = moment(str, 'MMM DD YYYY', 'en');
+            var today = moment().format("YYYY-MM-DD");
+            if (eventDate.diff(today, 'days') > 0) {  
+                input.splice(0, 3);
+                input = input.join(' ');
+                function countdownObj(date, event, user) {
+                    this.date = date;
+                    this.event = event;
+                    this.user = message.author.id;
+                }
+                var insert = new countdownObj(eventDate, input);
+                try {
+                    data = fs.readFileSync("countdowns.json", "utf8");
+                } catch (err) {
+                    console.log(err);
+                    return null;
+                }
+
+                var cnts = JSON.parse(data);
+                cnts.countdowns[cnts.countdowns.length] = insert;
+                var json = JSON.stringify(cnts, null, "\t");
+                await fs.writeFileSync("countdowns.json", json, "utf8");
+
+                message.channel.send("Successfully added event for " + "\"" + input + "\" occuring on " + moment(eventDate).format("dddd, MMMM Do, YYYY"));
+            } else {
+                message.channel.send("That day has already happened! " + duck);
+            }
+        } else {
+            message.channel.send("There was a problem adding your countdown. The command in full should look like \"!countdown <month> <day> <year> <name of event>\". " + duck);
+        }
+        return;
+    }
+
+    if (message.content.startsWith("!tarnation")) {
+        var image = '.\\delet\\tarnation.png';
+        message.channel.send("", {files: [image]});
+        return;
+    }
+
+    if (message.content.startsWith("!mf")) {
+        var image = '.\\delet\\ptemf.png';
+        message.channel.send("", {files: [image]});
+        return;
+    }
+
+    if (message.content.startsWith("!bolt")) {
+        var image = '.\\delet\\brilliane.png';
+        message.channel.send("", {files: [image]});
+        return;
+    }
+    //=====================================================================================
     
     //if user has bot data and did not send a command nor is currently running a command
     var exists = await userExists(message.author.id);
@@ -12193,6 +12230,91 @@ function hasGenderDifference(name) {
         return true;
     }
     return false;
+}
+
+async function getBulbaArticle(message, input) {
+    if (input == null || input == undefined || input === "") {
+        return;
+    }
+    titleCase = input.replace(/ /g,"_");
+    var link = `https://bulbapedia.bulbagarden.net/wiki/` + titleCase;
+    var src;
+    var desc = [null, null, null];
+    var thumb = {
+        url: "ayylmao"
+    }
+    
+    const options = {
+        uri: link,
+        transform: function (body) {
+            return cheerio.load(body);
+        }
+    };
+    await rp(options)
+        .then(($) => {
+            input = $('#firstHeading').text();
+            link = `https://bulbapedia.bulbagarden.net/wiki/` + input;
+            link = link.replace(/ /g,"_");
+            src = $("#mw-content-text").find('.roundy').find('a.image > img').attr('src');
+            desc[0] = $('#mw-content-text > p:first-of-type').text();
+            desc[1] = $('#mw-content-text > p:nth-of-type(2)').text();
+            desc[2] = $('#mw-content-text > p:nth-of-type(3)').text();
+        })
+        .catch((err) => {
+            return null;
+        });
+
+        var embed = {
+       "author": {
+            "name": "Bulbapedia Info",
+        },
+        "title": input,
+        "color": 0xE0F2B6,
+        "fields": [
+            {
+                "name": '\u200b',
+                "value": desc[0],
+                "inline": false
+            }
+        ]
+    };
+    
+    var fields = [];
+    var d;
+    for (d = 0; d < 3; d++) {
+        if (desc[d] != null) {
+            fields[fields.length] = {
+                "name": '\u200b',
+                "value": desc[d],
+                "inline": false
+            }
+        }
+    }
+    
+    fields[fields.length] = {
+                "name": '\u200b',
+                "value": "More information on [" + input + "](" + link + ") can be found on Bulbapedia.",
+                "inline": false
+    }
+    
+    if (src != undefined) {
+        thumb.url = 'https:' + src;
+        embed.thumbnail = thumb;
+    }
+    
+    if (desc[0] != null) {
+        try {
+            embed.fields = fields;
+            message.channel.send({ embed });
+        } catch (err) {
+            console.log(err);
+            return null;   
+        }
+    } else {
+        return null;
+    }
+    
+    return true;
 }
 
 //sends a direct message to the sender containing a list of all commands available to use with the bot

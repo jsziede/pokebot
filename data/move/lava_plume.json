@@ -1,0 +1,132 @@
+{
+  "index_number": 436,
+  "pp": 15,
+  "max_pp": 24,
+  "power": 80,
+  "accuracy": 100,
+  "category": "special",
+  "priority": 0,
+  "target": "all_adjacent",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Ébullilave",
+    "de": "Flammensturm",
+    "gr": "Νέφος Λάβας",
+    "it": "Lavasbuffo",
+    "pl": "Pióropusz Lawy",
+    "en": "Lava Plume"
+  },
+  "type": "Fire",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Tough"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Tough"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 2,
+      "jam": 2,
+      "condition": "Tough"
+    }
+  ],
+  "pokedex_entries": {
+    "Diamond": {
+      "en": "An inferno of scarlet flames washes over all Pokémon in battle. It may also inflict burns.",
+      "de": "Ein Flammeninferno fegt über im Kampf befindliche PKMN. Kann Verbrennungen erzeugen (außer bei Anw.)."
+    },
+    "Pearl": {
+      "en": "An inferno of scarlet flames washes over all Pokémon in battle. It may also inflict burns.",
+      "de": "Ein Flammeninferno fegt über im Kampf befindliche PKMN. Kann Verbrennungen erzeugen (außer bei Anw.)."
+    },
+    "Platinum": {
+      "en": "An inferno of scarlet flames washes over all Pokémon in battle. It may also inflict burns.",
+      "de": "Ein Flammeninferno fegt über im Kampf befindliche PKMN. Kann Verbrennungen erzeugen (außer bei Anw.)."
+    },
+    "HeartGold": {
+      "en": "An inferno of scarlet flames washes over all Pokémon in battle. It may also inflict burns.",
+      "de": "Ein Flammeninferno, das über im Kampf befindliche PKMN (außer Anw.) hinwegfegt. Verbrennt eventuell."
+    },
+    "SoulSilver": {
+      "en": "An inferno of scarlet flames washes over all Pokémon in battle. It may also inflict burns.",
+      "de": "Ein Flammeninferno, das über im Kampf befindliche PKMN (außer Anw.) hinwegfegt. Verbrennt eventuell."
+    },
+    "Black": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Ein Flammeninferno, das über den Bereich um den Anwender hinwegfegt. Verbrennt eventuell."
+    },
+    "White": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Ein Flammeninferno, das über den Bereich um den Anwender hinwegfegt. Verbrennt eventuell."
+    },
+    "Black 2": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Ein Flammeninferno, das über den Bereich um den Anwender hinwegfegt. Verbrennt eventuell."
+    },
+    "White 2": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Ein Flammeninferno, das über den Bereich um den Anwender hinwegfegt. Verbrennt eventuell."
+    },
+    "X": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "Y": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "O.Ruby": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "Moon": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "Ultra Sun": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "Ultra Moon": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "Omega Ruby": {
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "burn",
+        "probability": 30
+      }
+    ]
+  }
+}

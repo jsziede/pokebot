@@ -1,0 +1,3081 @@
+{
+  "names": {
+    "fr": "Sharpedo",
+    "de": "Tohaido",
+    "it": "Sharpedo",
+    "en": "Sharpedo"
+  },
+  "national_id": 319,
+  "types": [
+    "Water",
+    "Dark"
+  ],
+  "items": [
+      {
+          "name": "Deep Sea Tooth",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Rough Skin"
+    },
+    {
+      "name": "Speed Boost",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 60,
+  "egg_groups": [
+    "Water 2"
+  ],
+  "hatch_time": [
+    5355,
+    5609
+  ],
+  "height_us": "5'11\"",
+  "height_eu": "1.8 m",
+  "weight_us": "195.8 lbs.",
+  "weight_eu": "88.8 kg",
+  "base_exp_yield": 161,
+  "leveling_rate": "Slow",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 2,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Blue",
+  "base_friendship": 35,
+  "base_stats": {
+    "hp": 70,
+    "atk": 120,
+    "def": 40,
+    "sp_atk": 95,
+    "sp_def": 40,
+    "speed": 95
+  },
+  "evolution_from": "Carvanha",
+  "alola_id": 265,
+  "categories": {
+    "en": "Brutal Pokémon",
+    "de": "Brutal"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": 103,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 56,
+  "mega_evolutions": [
+    {
+      "types": [
+        "Grass",
+        "Poison"
+      ],
+      "ability": "Thick Fat",
+      "mega_stone": "Venusaurite",
+      "height_us": "8'02\"",
+      "height_eu": "2.5 m",
+      "weight_us": "287.3 lbs.",
+      "weight_eu": "130.3 kg",
+      "base_stats": {
+        "hp": 70,
+        "atk": 140,
+        "def": 70,
+        "sp_atk": 110,
+        "sp_def": 65,
+        "speed": 105
+      }
+    }
+  ],
+  "evolutions": [
+
+  ],
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Ruby": {
+      "en": "Nicknamed \"the bully of the sea,\" Sharpedo is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these Pokémon can thoroughly tear apart a supertanker.",
+      "de": "Tohaido trägt den Spitznamen \"Tyrann des Meeres\" und ist sehr gefürchtet. Seine grausamen Zähne wachsen sofort nach, wenn sie ausgebrochen sind. Es kann sogar einen Öltanker zerreißen."
+    },
+    "Sapphire": {
+      "en": "Sharpedo can swim at speeds of up to 75 mph by jetting seawater out of its backside. This Pokémon's drawback is its inability to swim long distances.",
+      "de": "Tohaido kann bis zu 120 km/h schnell schwimmen, indem es Meerwasser aus seinem Hinterteil herausschießt. Dieses Pokémon kann jedoch nicht sehr weite Strecken zurücklegen."
+    },
+    "Emerald": {
+      "en": "The vicious and sly gangster of the sea. Its skin is specially textured to minimize drag in water. Its speed tops out at over 75 mph per hour.",
+      "de": "Der brutale und listige Schurke der See. Seine Haut ist so strukturiert, dass der Wasserwiderstand gering ist. Es kann bis zu 120 km/h schnell schwimmen."
+    },
+    "FireRed": {
+      "en": "The ruffian of the seas, it has fangs that crunch through iron. It swims by jetting water from its rear.",
+      "de": "Es ist der Grobian des Meeres. Mit seinen Reißzähnen kann es durch Eisen beißen. Es schwimmt, indem es Wasser ausstößt."
+    },
+    "LeafGreen": {
+      "en": "The ruffian of the seas, it has fangs that crunch through iron. It swims by jetting water from its rear.",
+      "de": "Es ist der Grobian des Meeres. Mit seinen Reißzähnen kann es durch Eisen beißen. Es schwimmt, indem es Wasser ausstößt."
+    },
+    "Diamond": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird “Tyrann des Meeres” genannt."
+    },
+    "Pearl": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird “Tyrann des Meeres” genannt."
+    },
+    "Platinum": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird \"Tyrann des Meeres\" genannt."
+    },
+    "HeartGold": {
+      "en": "It can swim at speeds of 75 mph by jetting seawater through its body. It is the bandit of the sea.",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird “Tyrann des Meeres” genannt."
+    },
+    "SoulSilver": {
+      "en": "It can swim at speeds of 75 mph by jetting seawater through its body. It is the bandit of the sea.",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird “Tyrann des Meeres” genannt."
+    },
+    "Black": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird „Tyrann des Meeres“ genannt."
+    },
+    "White": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird „Tyrann des Meeres“ genannt."
+    },
+    "Black 2": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird „Tyrann des Meeres“ genannt."
+    },
+    "White 2": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird „Tyrann des Meeres“ genannt."
+    },
+    "X": {
+      "en": "Its fangs rip through sheet iron. It swims at 75 mph and is known as \"The Bully of the Sea.\"",
+      "de": "Seine Zähne durchdringen sogar Eisen. Es schwimmt mit 120 km/h und wird „Tyrann des Meeres“ genannt."
+    },
+    "Y": {
+      "en": "It can swim at speeds of 75 mph by jetting seawater through its body. It is the bandit of the sea.",
+      "de": "Tohaido mag Radau und schwimmt bis zu 120 km/h schnell, indem es Wasser aus seinem Hinterteil ausstößt."
+    },
+    "Omega Ruby": {
+      "en": "Nicknamed \"the bully of the sea,\" Sharpedo is widely feared. Its cruel fangs grow back immediately if they snap off. Just one of these Pokémon can thoroughly tear apart a supertanker.",
+      "de": "Tohaido trägt den Spitznamen ''Tyrann des Meeres'' und ist sehr gefürchtet. Seine grausamen Zähne wachsen sofort nach, wenn sie ausgebrochen sind. Es kann sogar einen Öltanker zerreißen."
+    },
+    "Alpha Sapphire": {
+      "en": "Sharpedo can swim at speeds of up to 75 mph by jetting seawater out of its backside. This Pokémon’s drawback is its inability to swim long distances.",
+      "de": "Tohaido kann bis zu 120 km/h schnell schwimmen, indem es Meerwasser aus seinem Hinterteil herausschießt. Dieses Pokémon kann jedoch keine weiten Strecken zurücklegen."
+    },
+    "Sun": {
+      "en": "It pursues its prey at speeds of 75 mph and finishes them off with fangs that can crush iron. It is known as the bully of the sea.",
+      "de": "Es jagt mit 120 km/h seine Beute und erlegt sie mithilfe seiner Zähne, die selbst Eisen durchdringen. Sein Spitzname ist „Tyrann des Meeres“."
+    },
+    "Moon": {
+      "en": "It has a sad history. In the past, its dorsal fin was a treasured foodstuff, so this Pokémon became a victim of overfishing.",
+      "de": "Tohaido hat eine traurige Vergangenheit: Seine Rückenflosse gilt als Delikatesse, weshalb es lange Zeit gnadenlos überfischt wurde."
+    },
+    "Ultra Sun": {
+      "en": "People believe that carrying one of its discarded fangs will prevent mishaps at sea, so the fangs are made into accessories.",
+      "de": "Standard-Form: Man glaubt, dass die ausgefallenen Zähne von Tohaido vor Unfällen auf dem Meer schützen. Deswegen werden sie zu Schmuck verarbeitet.\nMega-Entwicklung: Bei den gelben Mustern handelt es sich um alte Narben, die stark schmerzen, wenn Energie aus der Mega-Entwicklung durch seinen Leib fließt."
+    },
+    "Ultra Moon": {
+      "en": "It drinks in seawater and jets it from its rear to propel itself. It’s very sensitive to the scent of blood.",
+      "de": "Standard-Form: Es schwimmt, indem es das Meerwasser, das es trinkt, aus seinem Hinterteil ausstößt. Für den Geruch von Blut ist es sehr empfänglich.\nMega-Entwicklung: Wenn es vorwärtsprescht, schnellen scharfe Stacheln aus seinem Kopf, mit denen es dem Gegner tiefe Wunden zufügt."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      4,
+      4
+    ],
+    "power": [
+      4,
+      4
+    ],
+    "stamina": [
+      2,
+      2
+    ],
+    "skill": [
+      4,
+      4
+    ],
+    "jump": [
+      2,
+      3
+    ]
+  },
+  "ultra_alola_id": 93,
+  "move_learnsets": [
+    {
+      "games": [
+        "Ruby",
+        "Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 7
+        },
+        {
+          "move": "Focus Energy",
+          "level": 13
+        },
+        {
+          "move": "Scary Face",
+          "level": 16
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Screech",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 33
+        },
+        {
+          "move": "Taunt",
+          "level": 38
+        },
+        {
+          "move": "Swagger",
+          "level": 43
+        },
+        {
+          "move": "Skull Bash",
+          "level": 48
+        },
+        {
+          "move": "Agility",
+          "level": 53
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM7"
+        },
+        {
+          "move": "Dive",
+          "tm": "HM8"
+        },
+        {
+          "move": "Water Pulse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "FireRed",
+        "LeafGreen"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 7
+        },
+        {
+          "move": "Focus Energy",
+          "level": 13
+        },
+        {
+          "move": "Scary Face",
+          "level": 16
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Screech",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 33
+        },
+        {
+          "move": "Taunt",
+          "level": 38
+        },
+        {
+          "move": "Swagger",
+          "level": 43
+        },
+        {
+          "move": "Skull Bash",
+          "level": 48
+        },
+        {
+          "move": "Agility",
+          "level": 53
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM7"
+        },
+        {
+          "move": "Dive",
+          "tm": "HM8"
+        },
+        {
+          "move": "Water Pulse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Emerald"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 7
+        },
+        {
+          "move": "Focus Energy",
+          "level": 13
+        },
+        {
+          "move": "Scary Face",
+          "level": 16
+        },
+        {
+          "move": "Crunch",
+          "level": 22
+        },
+        {
+          "move": "Screech",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 33
+        },
+        {
+          "move": "Taunt",
+          "level": 38
+        },
+        {
+          "move": "Swagger",
+          "level": 43
+        },
+        {
+          "move": "Skull Bash",
+          "level": 48
+        },
+        {
+          "move": "Agility",
+          "level": 53
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM7"
+        },
+        {
+          "move": "Dive",
+          "tm": "HM8"
+        },
+        {
+          "move": "Water Pulse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Diamond",
+        "Pearl"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 6
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Scary Face",
+          "level": 11
+        },
+        {
+          "move": "Ice Fang",
+          "level": 16
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 21
+        },
+        {
+          "move": "Assurance",
+          "level": 26
+        },
+        {
+          "move": "Crunch",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 34
+        },
+        {
+          "move": "Taunt",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 50
+        },
+        {
+          "move": "Night Slash",
+          "level": 56
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM7"
+        },
+        {
+          "move": "Water Pulse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Brine",
+          "tm": "TM55"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Avalanche",
+          "tm": "TM72"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM79"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Platinum"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 6
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Scary Face",
+          "level": 11
+        },
+        {
+          "move": "Ice Fang",
+          "level": 16
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 21
+        },
+        {
+          "move": "Assurance",
+          "level": 26
+        },
+        {
+          "move": "Crunch",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 34
+        },
+        {
+          "move": "Taunt",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 50
+        },
+        {
+          "move": "Night Slash",
+          "level": 56
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM7"
+        },
+        {
+          "move": "Water Pulse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Brine",
+          "tm": "TM55"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Avalanche",
+          "tm": "TM72"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM79"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "HeartGold",
+        "SoulSilver"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 6
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Scary Face",
+          "level": 11
+        },
+        {
+          "move": "Ice Fang",
+          "level": 16
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 21
+        },
+        {
+          "move": "Assurance",
+          "level": 26
+        },
+        {
+          "move": "Crunch",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 34
+        },
+        {
+          "move": "Taunt",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 50
+        },
+        {
+          "move": "Night Slash",
+          "level": 56
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Whirlpool",
+          "tm": "HM5"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM7"
+        },
+        {
+          "move": "Water Pulse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Brine",
+          "tm": "TM55"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Avalanche",
+          "tm": "TM72"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM79"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 6
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Scary Face",
+          "level": 11
+        },
+        {
+          "move": "Ice Fang",
+          "level": 16
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 21
+        },
+        {
+          "move": "Assurance",
+          "level": 26
+        },
+        {
+          "move": "Crunch",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 34
+        },
+        {
+          "move": "Taunt",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 50
+        },
+        {
+          "move": "Night Slash",
+          "level": 56
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Brine",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM5"
+        },
+        {
+          "move": "Dive",
+          "tm": "HM6"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 6
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Scary Face",
+          "level": 11
+        },
+        {
+          "move": "Ice Fang",
+          "level": 16
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 21
+        },
+        {
+          "move": "Assurance",
+          "level": 26
+        },
+        {
+          "move": "Crunch",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 34
+        },
+        {
+          "move": "Taunt",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 50
+        },
+        {
+          "move": "Night Slash",
+          "level": 56
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Brine",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM5"
+        },
+        {
+          "move": "Dive",
+          "tm": "HM6"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Night Slash",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 6
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Scary Face",
+          "level": 11
+        },
+        {
+          "move": "Ice Fang",
+          "level": 16
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 21
+        },
+        {
+          "move": "Assurance",
+          "level": 26
+        },
+        {
+          "move": "Crunch",
+          "level": 28
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 34
+        },
+        {
+          "move": "Taunt",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 50
+        },
+        {
+          "move": "Night Slash",
+          "level": 56
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Brine",
+          "egg_move": true
+        },
+        {
+          "move": "Destiny Bond",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM5"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Night Slash",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 11
+        },
+        {
+          "move": "Assurance",
+          "level": 15
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 25
+        },
+        {
+          "move": "Scary Face",
+          "level": 29
+        },
+        {
+          "move": "Slash",
+          "level": 30
+        },
+        {
+          "move": "Poison Fang",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 51
+        },
+        {
+          "move": "Taunt",
+          "level": 56
+        },
+        {
+          "move": "Night Slash",
+          "level": 62
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Brine",
+          "egg_move": true
+        },
+        {
+          "move": "Destiny Bond",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Surf",
+          "tm": "HM3"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "HM5"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Dive",
+          "tm": "HM7"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Night Slash",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Slash",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 11
+        },
+        {
+          "move": "Assurance",
+          "level": 15
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 25
+        },
+        {
+          "move": "Scary Face",
+          "level": 29
+        },
+        {
+          "move": "Poison Fang",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 51
+        },
+        {
+          "move": "Taunt",
+          "level": 56
+        },
+        {
+          "move": "Night Slash",
+          "level": 62
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Brine",
+          "egg_move": true
+        },
+        {
+          "move": "Destiny Bond",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Psychic Fangs",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Bite",
+          "level": 1
+        },
+        {
+          "move": "Feint",
+          "level": 1
+        },
+        {
+          "move": "Focus Energy",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Night Slash",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 1
+        },
+        {
+          "move": "Slash",
+          "level": 1
+        },
+        {
+          "move": "Rage",
+          "level": 4
+        },
+        {
+          "move": "Focus Energy",
+          "level": 8
+        },
+        {
+          "move": "Aqua Jet",
+          "level": 11
+        },
+        {
+          "move": "Assurance",
+          "level": 15
+        },
+        {
+          "move": "Screech",
+          "level": 18
+        },
+        {
+          "move": "Swagger",
+          "level": 22
+        },
+        {
+          "move": "Ice Fang",
+          "level": 25
+        },
+        {
+          "move": "Scary Face",
+          "level": 29
+        },
+        {
+          "move": "Poison Fang",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 40
+        },
+        {
+          "move": "Agility",
+          "level": 45
+        },
+        {
+          "move": "Skull Bash",
+          "level": 51
+        },
+        {
+          "move": "Taunt",
+          "level": 56
+        },
+        {
+          "move": "Night Slash",
+          "level": 62
+        },
+        {
+          "move": "Ancient Power",
+          "egg_move": true
+        },
+        {
+          "move": "Brine",
+          "egg_move": true
+        },
+        {
+          "move": "Destiny Bond",
+          "egg_move": true
+        },
+        {
+          "move": "Double-Edge",
+          "egg_move": true
+        },
+        {
+          "move": "Hydro Pump",
+          "egg_move": true
+        },
+        {
+          "move": "Psychic Fangs",
+          "egg_move": true
+        },
+        {
+          "move": "Swift",
+          "egg_move": true
+        },
+        {
+          "move": "Thrash",
+          "egg_move": true
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Ice Beam",
+          "tm": "TM13"
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

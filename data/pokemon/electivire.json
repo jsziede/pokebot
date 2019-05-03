@@ -1,0 +1,2746 @@
+{
+  "names": {
+    "fr": "Élekable",
+    "de": "Elevoltek",
+    "it": "Electivire",
+    "en": "Electivire"
+  },
+  "national_id": 466,
+  "types": [
+    "Electric"
+  ],
+  "items": [
+      {
+          "name": "Electirizer",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Motor Drive"
+    },
+    {
+      "name": "Vital Spirit",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 75.0,
+    "female": 25.0
+  },
+  "catch_rate": 30,
+  "egg_groups": [
+    "Human-Like"
+  ],
+  "hatch_time": [
+    6630,
+    6884
+  ],
+  "height_us": "5'11\"",
+  "height_eu": "1.8 m",
+  "weight_us": "305.6 lbs.",
+  "weight_eu": "138.6 kg",
+  "base_exp_yield": 243,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 3,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Yellow",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 75,
+    "atk": 123,
+    "def": 67,
+    "sp_atk": 95,
+    "sp_def": 85,
+    "speed": 95
+  },
+  "evolution_from": "Electabuzz",
+  "alola_id": 228,
+  "categories": {
+    "en": "Thunderbolt Pokémon",
+    "de": "Donnerkeil"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": 199,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolutions": [
+
+  ],
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Diamond": {
+      "en": "It pushes the tips of its two tails against the foe, then lets loose with over 20,000 volts of power.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 Volt."
+    },
+    "Pearl": {
+      "en": "It pushes the tips of its two tails against the foe, then lets loose with over 20,000 volts of power.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 Volt."
+    },
+    "Platinum": {
+      "en": "Heedless of enemy attacks, it closes in, shoves its tails onto the foe, then looses high voltage.",
+      "de": "Berührt seinen Gegner mit beiden Schweifspitzen und entlädt dann starke Elektrizität."
+    },
+    "HeartGold": {
+      "en": "As its electric charge amplifies, blue sparks begin to crackle between its horns.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 Volt."
+    },
+    "SoulSilver": {
+      "en": "As its electric charge amplifies, blue sparks begin to crackle between its horns.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 Volt."
+    },
+    "Black": {
+      "en": "Heedless of enemy attacks, it closes in, shoves its tails onto the foe, then looses high voltage.",
+      "de": "Berührt seinen Gegner mit seinen beiden Schweifspitzen und entlädt dann starke Elektrizität."
+    },
+    "White": {
+      "en": "Heedless of enemy attacks, it closes in, shoves its tails onto the foe, then looses high voltage.",
+      "de": "Berührt seinen Gegner mit seinen beiden Schweifspitzen und entlädt dann starke Elektrizität."
+    },
+    "Black 2": {
+      "en": "The instant it presses the tips of its tails onto an opponent, it sends over 20,000 volts of electricity into the foe.",
+      "de": "Es berührt Gegner mit seinen beiden Schweifspitzen und entlädt dabei geballte 20 000 Volt."
+    },
+    "White 2": {
+      "en": "The instant it presses the tips of its tails onto an opponent, it sends over 20,000 volts of electricity into the foe.",
+      "de": "Es berührt Gegner mit seinen beiden Schweifspitzen und entlädt dabei geballte 20 000 Volt."
+    },
+    "X": {
+      "en": "As its electric charge amplifies, blue sparks begin to crackle between its horns.",
+      "de": "Bei voller Ladung zucken feurige, blassweiße Funken zwischen seinen zwei Hörnern hin und her."
+    },
+    "Y": {
+      "en": "It pushes the tips of its two tails against the foe, then lets loose with over 20,000 volts of power.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 V."
+    },
+    "Omega Ruby": {
+      "en": "As its electric charge amplifies, blue sparks begin to crackle between its horns.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 V."
+    },
+    "Alpha Sapphire": {
+      "en": "It pushes the tips of its two tails against the foe, then lets loose with over 20,000 volts of power.",
+      "de": "Es berührt den Gegner mit seinen beiden Schweifspitzen und entlädt dann über 20 000 V."
+    },
+    "Sun": {
+      "en": "It pushes the tips of its tails against its foes and then lets loose a high-voltage current. Its foes are burned to a crisp in an instant.",
+      "de": "Es berührt Gegner mit seinen Schweifspitzen und entlädt dann starke Elektrizität. So kann es sie im Nullkommanichts verkohlen."
+    },
+    "Moon": {
+      "en": "When it gets excited, it thumps its chest. With every thud, thunder roars and electric sparks shower all around.",
+      "de": "Wenn es sich aufregt, schlägt es sich kräftig auf die Brust. Bei jedem Schlag sprühen Funken und es ertönt ein Donnern."
+    },
+    "Ultra Sun": {
+      "en": "It grips its tail, which spews electricity, and then beats down opponents with the power of its electrified fist.",
+      "de": "Es umfasst seine vor Elektrizität sprühenden Schweife, um seine Hände aufzuladen und dann mit aller Kraft zuzuschlagen."
+    },
+    "Ultra Moon": {
+      "en": "A single Electivire can provide enough electricity for all the buildings in a big city for a year.",
+      "de": "Ein einzelnes Elevoltek erzeugt genügend Elektrizität, um eine Großstadt ein ganzes Jahr lang mit Strom zu versorgen."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      3,
+      5
+    ],
+    "power": [
+      3,
+      4
+    ],
+    "stamina": [
+      4,
+      4
+    ],
+    "skill": [
+      4,
+      5
+    ],
+    "jump": [
+      2,
+      2
+    ]
+  },
+  "ultra_alola_id": 118,
+  "move_learnsets": [
+    {
+      "games": [
+        "Diamond",
+        "Pearl"
+      ],
+      "learnset": [
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 7
+        },
+        {
+          "move": "Low Kick",
+          "level": 10
+        },
+        {
+          "move": "Swift",
+          "level": 16
+        },
+        {
+          "move": "Shock Wave",
+          "level": 19
+        },
+        {
+          "move": "Light Screen",
+          "level": 25
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 28
+        },
+        {
+          "move": "Discharge",
+          "level": 37
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 43
+        },
+        {
+          "move": "Screech",
+          "level": 52
+        },
+        {
+          "move": "Thunder",
+          "level": 58
+        },
+        {
+          "move": "Giga Impact",
+          "level": 67
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Rock Climb",
+          "tm": "HM8"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Platinum"
+      ],
+      "learnset": [
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 7
+        },
+        {
+          "move": "Low Kick",
+          "level": 10
+        },
+        {
+          "move": "Swift",
+          "level": 16
+        },
+        {
+          "move": "Shock Wave",
+          "level": 19
+        },
+        {
+          "move": "Light Screen",
+          "level": 25
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 28
+        },
+        {
+          "move": "Discharge",
+          "level": 37
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 43
+        },
+        {
+          "move": "Screech",
+          "level": 52
+        },
+        {
+          "move": "Thunder",
+          "level": 58
+        },
+        {
+          "move": "Giga Impact",
+          "level": 67
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Rock Climb",
+          "tm": "HM8"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "HeartGold",
+        "SoulSilver"
+      ],
+      "learnset": [
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 7
+        },
+        {
+          "move": "Low Kick",
+          "level": 10
+        },
+        {
+          "move": "Swift",
+          "level": 16
+        },
+        {
+          "move": "Shock Wave",
+          "level": 19
+        },
+        {
+          "move": "Light Screen",
+          "level": 25
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 28
+        },
+        {
+          "move": "Discharge",
+          "level": 37
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 43
+        },
+        {
+          "move": "Screech",
+          "level": 52
+        },
+        {
+          "move": "Thunder",
+          "level": 58
+        },
+        {
+          "move": "Giga Impact",
+          "level": 67
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Rock Climb",
+          "tm": "HM8"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Shock Wave",
+          "tm": "TM34"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 6
+        },
+        {
+          "move": "Low Kick",
+          "level": 11
+        },
+        {
+          "move": "Swift",
+          "level": 16
+        },
+        {
+          "move": "Shock Wave",
+          "level": 21
+        },
+        {
+          "move": "Light Screen",
+          "level": 26
+        },
+        {
+          "move": "Electro Ball",
+          "level": 32
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 38
+        },
+        {
+          "move": "Discharge",
+          "level": 44
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 50
+        },
+        {
+          "move": "Screech",
+          "level": 56
+        },
+        {
+          "move": "Thunder",
+          "level": 62
+        },
+        {
+          "move": "Giga Impact",
+          "level": 68
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Focus Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Hammer Arm",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 5
+        },
+        {
+          "move": "Low Kick",
+          "level": 8
+        },
+        {
+          "move": "Swift",
+          "level": 12
+        },
+        {
+          "move": "Shock Wave",
+          "level": 15
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 19
+        },
+        {
+          "move": "Electro Ball",
+          "level": 22
+        },
+        {
+          "move": "Light Screen",
+          "level": 26
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 29
+        },
+        {
+          "move": "Discharge",
+          "level": 36
+        },
+        {
+          "move": "Screech",
+          "level": 42
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 55
+        },
+        {
+          "move": "Giga Impact",
+          "level": 62
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Focus Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Hammer Arm",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Electric Terrain",
+          "level": 1
+        },
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Ion Deluge",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 5
+        },
+        {
+          "move": "Low Kick",
+          "level": 8
+        },
+        {
+          "move": "Swift",
+          "level": 12
+        },
+        {
+          "move": "Shock Wave",
+          "level": 15
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 19
+        },
+        {
+          "move": "Electro Ball",
+          "level": 22
+        },
+        {
+          "move": "Light Screen",
+          "level": 26
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 29
+        },
+        {
+          "move": "Discharge",
+          "level": 36
+        },
+        {
+          "move": "Screech",
+          "level": 42
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 55
+        },
+        {
+          "move": "Giga Impact",
+          "level": 62
+        },
+        {
+          "move": "Electric Terrain",
+          "level": 65
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Focus Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Hammer Arm",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Power-Up Punch",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Electric Terrain",
+          "level": 1
+        },
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Ion Deluge",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 5
+        },
+        {
+          "move": "Low Kick",
+          "level": 8
+        },
+        {
+          "move": "Swift",
+          "level": 12
+        },
+        {
+          "move": "Shock Wave",
+          "level": 15
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 19
+        },
+        {
+          "move": "Electro Ball",
+          "level": 22
+        },
+        {
+          "move": "Light Screen",
+          "level": 26
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 29
+        },
+        {
+          "move": "Discharge",
+          "level": 36
+        },
+        {
+          "move": "Screech",
+          "level": 42
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 55
+        },
+        {
+          "move": "Giga Impact",
+          "level": 62
+        },
+        {
+          "move": "Electric Terrain",
+          "level": 65
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Focus Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Hammer Arm",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Flash",
+          "tm": "TM70"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Power-Up Punch",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Electric Terrain",
+          "level": 1
+        },
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Ion Deluge",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 5
+        },
+        {
+          "move": "Low Kick",
+          "level": 8
+        },
+        {
+          "move": "Swift",
+          "level": 12
+        },
+        {
+          "move": "Shock Wave",
+          "level": 15
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 19
+        },
+        {
+          "move": "Electro Ball",
+          "level": 22
+        },
+        {
+          "move": "Light Screen",
+          "level": 26
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 29
+        },
+        {
+          "move": "Discharge",
+          "level": 36
+        },
+        {
+          "move": "Screech",
+          "level": 42
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 55
+        },
+        {
+          "move": "Giga Impact",
+          "level": 62
+        },
+        {
+          "move": "Electric Terrain",
+          "level": 65
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Focus Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Hammer Arm",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Electric Terrain",
+          "level": 1
+        },
+        {
+          "move": "Fire Punch",
+          "level": 1
+        },
+        {
+          "move": "Ion Deluge",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Quick Attack",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 1
+        },
+        {
+          "move": "Thunder Shock",
+          "level": 5
+        },
+        {
+          "move": "Low Kick",
+          "level": 8
+        },
+        {
+          "move": "Swift",
+          "level": 12
+        },
+        {
+          "move": "Shock Wave",
+          "level": 15
+        },
+        {
+          "move": "Thunder Wave",
+          "level": 19
+        },
+        {
+          "move": "Electro Ball",
+          "level": 22
+        },
+        {
+          "move": "Light Screen",
+          "level": 26
+        },
+        {
+          "move": "Thunder Punch",
+          "level": 29
+        },
+        {
+          "move": "Discharge",
+          "level": 36
+        },
+        {
+          "move": "Screech",
+          "level": 42
+        },
+        {
+          "move": "Thunderbolt",
+          "level": 49
+        },
+        {
+          "move": "Thunder",
+          "level": 55
+        },
+        {
+          "move": "Giga Impact",
+          "level": 62
+        },
+        {
+          "move": "Electric Terrain",
+          "level": 65
+        },
+        {
+          "move": "Barrier",
+          "egg_move": true
+        },
+        {
+          "move": "Cross Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Dynamic Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Focus Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Hammer Arm",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Karate Chop",
+          "egg_move": true
+        },
+        {
+          "move": "Meditate",
+          "egg_move": true
+        },
+        {
+          "move": "Rolling Kick",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Thunderbolt",
+          "tm": "TM24"
+        },
+        {
+          "move": "Thunder",
+          "tm": "TM25"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Psychic",
+          "tm": "TM29"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Flamethrower",
+          "tm": "TM35"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Charge Beam",
+          "tm": "TM57"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Volt Switch",
+          "tm": "TM72"
+        },
+        {
+          "move": "Thunder Wave",
+          "tm": "TM73"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Wild Charge",
+          "tm": "TM93"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

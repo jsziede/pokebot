@@ -1,0 +1,1599 @@
+{
+  "names": {
+    "fr": "Brutapode",
+    "de": "Cerapendra",
+    "it": "Scolipede",
+    "en": "Scolipede"
+  },
+  "national_id": 545,
+  "types": [
+    "Bug",
+    "Poison"
+  ],
+  "items": [
+      {
+          "name": "Poison Barb",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Poison Point"
+    },
+    {
+      "name": "Swarm"
+    },
+    {
+      "name": "Speed Boost",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 45,
+  "egg_groups": [
+    "Bug"
+  ],
+  "hatch_time": [
+    4080,
+    4334
+  ],
+  "height_us": "8'02\"",
+  "height_eu": "2.5 m",
+  "weight_us": "442.0 lbs.",
+  "weight_eu": "200.5 kg",
+  "base_exp_yield": 214,
+  "leveling_rate": "Medium Slow",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 3
+  },
+  "color": "Red",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 60,
+    "atk": 90,
+    "def": 89,
+    "sp_atk": 55,
+    "sp_def": 69,
+    "speed": 112
+  },
+  "evolution_from": "Whirlipede",
+  "categories": {
+    "en": "Megapede Pokémon",
+    "de": "Riesenfüßer"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": 51,
+  "kalos_id": 122,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolutions": [
+
+  ],
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Black": {
+      "en": "With quick movements, it chases down its foes, attacking relentlessly with its horns until it prevails.",
+      "de": "Holt Gegner flinken Fußes ein und greift sie mit den Hörnern an seinem Kopf an. Gnade ist ihm ein Fremdwort."
+    },
+    "White": {
+      "en": "Highly aggressive, it uses the claws near its neck to dig into its opponents and poison them.",
+      "de": "Rammt den Gegner mit den Zacken an seinem Hals und verpasst ihm eine Ladung Gift. Von Natur aus sehr angriffslustig."
+    },
+    "Black 2": {
+      "en": "It clasps its prey with the claws on its neck until it stops moving. Then it finishes it off with deadly poison.",
+      "de": "Lähmt seine Beute, indem es sie mit den Zacken an seinem Hals aufspießt. Mit einer Ladung Gift gibt es ihr den Rest."
+    },
+    "White 2": {
+      "en": "It clasps its prey with the claws on its neck until it stops moving. Then it finishes it off with deadly poison.",
+      "de": "Lähmt seine Beute, indem es sie mit den Zacken an seinem Hals aufspießt. Mit einer Ladung Gift gibt es ihr den Rest."
+    },
+    "X": {
+      "en": "It clasps its prey with the claws on its neck until it stops moving. Then it finishes it off with deadly poison.",
+      "de": "Lähmt seine Beute, indem es sie mit den Zacken an seinem Hals aufspießt. Mit einer Ladung Gift gibt es ihr den Rest."
+    },
+    "Y": {
+      "en": "With quick movements, it chases down its foes, attacking relentlessly with its horns until it prevails.",
+      "de": "Holt Gegner flinken Fußes ein und greift sie mit den Hörnern an seinem Kopf an. Gnade ist ihm ein Fremdwort."
+    },
+    "Omega Ruby": {
+      "en": "It clasps its prey with the claws on its neck until it stops moving. Then it finishes it off with deadly poison.",
+      "de": "Holt Gegner flinken Fußes ein und greift sie mit den Hörnern an seinem Kopf an. Gnade ist ihm ein Fremdwort."
+    },
+    "Alpha Sapphire": {
+      "en": "With quick movements, it chases down its foes, attacking relentlessly with its horns until it prevails.",
+      "de": "Holt Gegner flinken Fußes ein und greift sie mit den Hörnern an seinem Kopf an. Gnade ist ihm ein Fremdwort."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": null,
+  "move_learnsets": [
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Megahorn",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Rollout",
+          "level": 1
+        },
+        {
+          "move": "Screech",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Screech",
+          "level": 8
+        },
+        {
+          "move": "Pursuit",
+          "level": 12
+        },
+        {
+          "move": "Protect",
+          "level": 15
+        },
+        {
+          "move": "Poison Tail",
+          "level": 19
+        },
+        {
+          "move": "Bug Bite",
+          "level": 23
+        },
+        {
+          "move": "Venoshock",
+          "level": 28
+        },
+        {
+          "move": "Baton Pass",
+          "level": 30
+        },
+        {
+          "move": "Agility",
+          "level": 33
+        },
+        {
+          "move": "Steamroller",
+          "level": 39
+        },
+        {
+          "move": "Toxic",
+          "level": 44
+        },
+        {
+          "move": "Rock Climb",
+          "level": 50
+        },
+        {
+          "move": "Double-Edge",
+          "level": 55
+        },
+        {
+          "move": "Pin Missile",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Take Down",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Struggle Bug",
+          "tm": "TM76"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Megahorn",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Rollout",
+          "level": 1
+        },
+        {
+          "move": "Screech",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Screech",
+          "level": 8
+        },
+        {
+          "move": "Pursuit",
+          "level": 12
+        },
+        {
+          "move": "Protect",
+          "level": 15
+        },
+        {
+          "move": "Poison Tail",
+          "level": 19
+        },
+        {
+          "move": "Bug Bite",
+          "level": 23
+        },
+        {
+          "move": "Venoshock",
+          "level": 28
+        },
+        {
+          "move": "Baton Pass",
+          "level": 30
+        },
+        {
+          "move": "Agility",
+          "level": 33
+        },
+        {
+          "move": "Steamroller",
+          "level": 39
+        },
+        {
+          "move": "Toxic",
+          "level": 44
+        },
+        {
+          "move": "Rock Climb",
+          "level": 50
+        },
+        {
+          "move": "Double-Edge",
+          "level": 55
+        },
+        {
+          "move": "Pin Missile",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Take Down",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Struggle Bug",
+          "tm": "TM76"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Megahorn",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Rollout",
+          "level": 1
+        },
+        {
+          "move": "Screech",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Screech",
+          "level": 8
+        },
+        {
+          "move": "Pursuit",
+          "level": 12
+        },
+        {
+          "move": "Protect",
+          "level": 15
+        },
+        {
+          "move": "Poison Tail",
+          "level": 19
+        },
+        {
+          "move": "Bug Bite",
+          "level": 23
+        },
+        {
+          "move": "Venoshock",
+          "level": 28
+        },
+        {
+          "move": "Baton Pass",
+          "level": 30
+        },
+        {
+          "move": "Agility",
+          "level": 33
+        },
+        {
+          "move": "Steamroller",
+          "level": 39
+        },
+        {
+          "move": "Toxic",
+          "level": 44
+        },
+        {
+          "move": "Venom Drench",
+          "level": 47
+        },
+        {
+          "move": "Rock Climb",
+          "level": 50
+        },
+        {
+          "move": "Double-Edge",
+          "level": 55
+        },
+        {
+          "move": "Megahorn",
+          "level": 65
+        },
+        {
+          "move": "Pin Missile",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Take Down",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Struggle Bug",
+          "tm": "TM76"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Megahorn",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Rollout",
+          "level": 1
+        },
+        {
+          "move": "Screech",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Screech",
+          "level": 8
+        },
+        {
+          "move": "Pursuit",
+          "level": 12
+        },
+        {
+          "move": "Protect",
+          "level": 15
+        },
+        {
+          "move": "Poison Tail",
+          "level": 19
+        },
+        {
+          "move": "Bug Bite",
+          "level": 23
+        },
+        {
+          "move": "Venoshock",
+          "level": 28
+        },
+        {
+          "move": "Baton Pass",
+          "level": 30
+        },
+        {
+          "move": "Agility",
+          "level": 33
+        },
+        {
+          "move": "Steamroller",
+          "level": 39
+        },
+        {
+          "move": "Toxic",
+          "level": 44
+        },
+        {
+          "move": "Venom Drench",
+          "level": 47
+        },
+        {
+          "move": "Rock Climb",
+          "level": 50
+        },
+        {
+          "move": "Double-Edge",
+          "level": 55
+        },
+        {
+          "move": "Megahorn",
+          "level": 65
+        },
+        {
+          "move": "Pin Missile",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Take Down",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Struggle Bug",
+          "tm": "TM76"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Baton Pass",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Iron Defense",
+          "level": 1
+        },
+        {
+          "move": "Megahorn",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Rollout",
+          "level": 1
+        },
+        {
+          "move": "Screech",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Screech",
+          "level": 8
+        },
+        {
+          "move": "Pursuit",
+          "level": 12
+        },
+        {
+          "move": "Protect",
+          "level": 15
+        },
+        {
+          "move": "Poison Tail",
+          "level": 19
+        },
+        {
+          "move": "Bug Bite",
+          "level": 23
+        },
+        {
+          "move": "Venoshock",
+          "level": 28
+        },
+        {
+          "move": "Agility",
+          "level": 33
+        },
+        {
+          "move": "Steamroller",
+          "level": 39
+        },
+        {
+          "move": "Toxic",
+          "level": 44
+        },
+        {
+          "move": "Venom Drench",
+          "level": 47
+        },
+        {
+          "move": "Rock Climb",
+          "level": 50
+        },
+        {
+          "move": "Double-Edge",
+          "level": 55
+        },
+        {
+          "move": "Megahorn",
+          "level": 65
+        },
+        {
+          "move": "Pin Missile",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Take Down",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Smart Strike",
+          "tm": "TM67"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Baton Pass",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Iron Defense",
+          "level": 1
+        },
+        {
+          "move": "Megahorn",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 1
+        },
+        {
+          "move": "Rollout",
+          "level": 1
+        },
+        {
+          "move": "Screech",
+          "level": 1
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Screech",
+          "level": 8
+        },
+        {
+          "move": "Pursuit",
+          "level": 12
+        },
+        {
+          "move": "Protect",
+          "level": 15
+        },
+        {
+          "move": "Poison Tail",
+          "level": 19
+        },
+        {
+          "move": "Bug Bite",
+          "level": 23
+        },
+        {
+          "move": "Venoshock",
+          "level": 28
+        },
+        {
+          "move": "Agility",
+          "level": 33
+        },
+        {
+          "move": "Steamroller",
+          "level": 39
+        },
+        {
+          "move": "Toxic",
+          "level": 44
+        },
+        {
+          "move": "Venom Drench",
+          "level": 47
+        },
+        {
+          "move": "Rock Climb",
+          "level": 50
+        },
+        {
+          "move": "Double-Edge",
+          "level": 55
+        },
+        {
+          "move": "Megahorn",
+          "level": 65
+        },
+        {
+          "move": "Pin Missile",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Take Down",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Twineedle",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Venoshock",
+          "tm": "TM9"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Hyper Beam",
+          "tm": "TM15"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Smart Strike",
+          "tm": "TM67"
+        },
+        {
+          "move": "Giga Impact",
+          "tm": "TM68"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Infestation",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "index_number": 565,
+  "pp": 25,
+  "max_pp": 40,
+  "power": 30,
+  "accuracy": 100,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Dard Mortel",
+    "de": "Stachelfinale",
+    "it": "Pungiglione",
+    "en": "Fell Stinger"
+  },
+  "type": "Bug",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 1,
+      "jam": 0,
+      "condition": "Cool"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "atk",
+      "change_by": 2
+    }
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises sharply.",
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert stark."
+    },
+    "Y": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises sharply.",
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert stark."
+    },
+    "O.Ruby": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises sharply.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises sharply.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises drastically.",
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert drastisch."
+    },
+    "Moon": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises drastically.",
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert drastisch."
+    },
+    "Ultra Sun": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises drastically.",
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert drastisch."
+    },
+    "Ultra Moon": {
+      "en": "When the user knocks out a target with this move, the user’s Attack stat rises drastically.",
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert drastisch."
+    },
+    "Omega Ruby": {
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert stark.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Gelingt es dem Anwender, das Ziel mit dieser Attacke zu besiegen, steigt sein Angriffs-Wert stark.",
+      "en": "Unknown"
+    }
+  }
+}

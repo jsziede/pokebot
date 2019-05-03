@@ -1,0 +1,364 @@
+{
+  "names": {
+    "en": "Wimpod",
+    "jp": "コソクムシ Kosokumushi",
+    "fr": "Sovkipou",
+    "es": "Wimpod",
+    "de": "Reißlaus",
+    "it": "Wimpod"
+  },
+  "national_id": 767,
+  "alola_id": 182,
+  "types": [
+    "Bug",
+    "Water"
+  ],
+  "abilities": [
+    {
+      "name": "Wimp Out"
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 90,
+  "egg_groups": [
+    "Bug",
+    "Water 3"
+  ],
+  "hatch_time": [
+    5140,
+    5396
+  ],
+  "height_us": "1'08\"",
+  "height_eu": "0.5 m",
+  "weight_us": "26.5 lbs.",
+  "weight_eu": "12.0 kg",
+  "base_exp_yield": 46,
+  "leveling_rate": "Medium Fast",
+  "color": "Gray",
+  "base_friendship": 70,
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 1
+  },
+  "base_stats": {
+    "hp": 25,
+    "atk": 35,
+    "def": 40,
+    "sp_atk": 20,
+    "sp_def": 30,
+    "speed": 80
+  },
+  "evolutions": [
+    {
+      "to": "Golisopod",
+      "level": 30
+    }
+  ],
+  "categories": {
+    "en": "Turn Tail Pokémon",
+    "de": "Laufschritt"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "This Pokémon is a coward. As it desperately dashes off, the flailing of its many legs leaves a sparkling clean path in its wake.",
+      "de": "Es ist so feige, dass es wild mit seinen vielen Füßen herumschlägt und verzweifelt davonläuft. Nach seiner Flucht glänzt der Boden herrlich."
+    },
+    "Moon": {
+      "en": "Its habitat varies from beaches to seabeds. A natural scavenger, it will gleefully chow down on anything edible, no matter how rotten.",
+      "de": "Es mag verschiedene Habitate, vom Strand bis hin zum Meeresgrund. Unterwegs frisst es gern Faules und ist eine natürliche Reinigungskraft."
+    },
+    "Ultra Sun": {
+      "en": "It will pick up anything it finds on the ground. Sometimes it finds coins, so Murkrow and Meowth will go after it.",
+      "de": "Es hebt alles auf, was es finden kann. Manchmal befinden sich darunter auch Münzen, weshalb es oft von Kramurx und Mauzi gejagt wird."
+    },
+    "Ultra Moon": {
+      "en": "An astonishingly cowardly Pokémon, Wimpod will whir its legs at high speeds to run away if anything comes near it.",
+      "de": "Dieses Pokémon ist ein wahrer Drückeberger. Sobald sich ihm etwas nähert, strampelt es flink mit seinen Beinchen und nimmt Reißaus."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 83,
+  "move_learnsets": [
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Sand Attack",
+          "level": 1
+        },
+        {
+          "move": "Struggle Bug",
+          "level": 1
+        },
+        {
+          "move": "Aqua Jet",
+          "egg_move": true
+        },
+        {
+          "move": "Harden",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Wide Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Sand Attack",
+          "level": 1
+        },
+        {
+          "move": "Struggle Bug",
+          "level": 1
+        },
+        {
+          "move": "Aqua Jet",
+          "egg_move": true
+        },
+        {
+          "move": "Harden",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Spikes",
+          "egg_move": true
+        },
+        {
+          "move": "Wide Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Scald",
+          "tm": "TM55"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Surf",
+          "tm": "TM94"
+        },
+        {
+          "move": "Waterfall",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

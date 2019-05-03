@@ -1,0 +1,454 @@
+{
+  "names": {
+    "en": "Bounsweet",
+    "jp": "アマカジ Amakaji",
+    "fr": "Croquine",
+    "es": "Bounsweet",
+    "de": "Frubberl",
+    "it": "Bounsweet"
+  },
+  "national_id": 761,
+  "alola_id": 171,
+  "types": [
+    "Grass"
+  ],
+  "items": [
+      {
+          "name": "Grassy Seed",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Leaf Guard"
+    },
+    {
+      "name": "Oblivious"
+    },
+    {
+      "name": "Sweet Veil",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "female": 100.0
+  },
+  "catch_rate": 235,
+  "egg_groups": [
+    "Grass"
+  ],
+  "hatch_time": [
+    5140,
+    5396
+  ],
+  "height_us": "1'00\"",
+  "height_eu": "0.3 m",
+  "weight_us": "7.1 lbs.",
+  "weight_eu": "3.2 kg",
+  "base_exp_yield": 42,
+  "leveling_rate": "Medium Slow",
+  "color": "Purple",
+  "base_friendship": 70,
+  "ev_yield": {
+    "hp": 1,
+    "atk": 0,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "base_stats": {
+    "hp": 42,
+    "atk": 30,
+    "def": 38,
+    "sp_atk": 30,
+    "sp_def": 38,
+    "speed": 32
+  },
+  "evolutions": [
+    {
+      "to": "Steenee",
+      "level": 18
+    }
+  ],
+  "categories": {
+    "en": "Fruit Pokémon",
+    "de": "Obst"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "A delectable aroma pours from its body. They are often swallowed whole by Toucannon lured by that wafting deliciousness.",
+      "de": "Sein Körper verströmt einen köstlichen Duft, der leider seinen Fressfeind Tukanon anlockt. Dem kommt ein aromatischer Snack höchst gelegen."
+    },
+    "Moon": {
+      "en": "Although it's too sugary for human consumption, Bounsweet's sweat can be watered down into a juice with just the right amount of sweetness.",
+      "de": "Die meisten Menschen finden den Schweiß von Frubberl zu süß. Verdünnt man ihn aber mit Wasser, erhält man einen köstlichen Saft."
+    },
+    "Ultra Sun": {
+      "en": "Because of its sweet, delicious aroma, bird Pokémon are always after it, but it’s not intelligent enough to care.",
+      "de": "Da es einen köstlich süßen Duft verströmt, wird es oft von Vogel-Pokémon angegriffen. Das stört es jedoch nicht, weil es nicht sehr helle ist."
+    },
+    "Ultra Moon": {
+      "en": "It tries to resist being swallowed by a bird Pokémon by spinning the sepals on its head. It’s usually a fruitless attempt.",
+      "de": "Droht es von einem Vogel-Pokémon verschluckt zu werden, lässt es zur Abwehr den Kelch auf seinem Kopf rotieren, was jedoch selten hilft."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 108,
+  "move_learnsets": [
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Splash",
+          "level": 1
+        },
+        {
+          "move": "Play Nice",
+          "level": 5
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9
+        },
+        {
+          "move": "Razor Leaf",
+          "level": 13
+        },
+        {
+          "move": "Sweet Scent",
+          "level": 17
+        },
+        {
+          "move": "Magical Leaf",
+          "level": 21
+        },
+        {
+          "move": "Teeter Dance",
+          "level": 25
+        },
+        {
+          "move": "Flail",
+          "level": 29
+        },
+        {
+          "move": "Aromatic Mist",
+          "level": 33
+        },
+        {
+          "move": "Acupressure",
+          "egg_move": true
+        },
+        {
+          "move": "Charm",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Grass Whistle",
+          "egg_move": true
+        },
+        {
+          "move": "Play Rough",
+          "egg_move": true
+        },
+        {
+          "move": "Synthesis",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Nature Power",
+          "tm": "TM96"
+        },
+        {
+          "move": "Dazzling Gleam",
+          "tm": "TM99"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Splash",
+          "level": 1
+        },
+        {
+          "move": "Play Nice",
+          "level": 5
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9
+        },
+        {
+          "move": "Razor Leaf",
+          "level": 13
+        },
+        {
+          "move": "Sweet Scent",
+          "level": 17
+        },
+        {
+          "move": "Magical Leaf",
+          "level": 21
+        },
+        {
+          "move": "Teeter Dance",
+          "level": 25
+        },
+        {
+          "move": "Flail",
+          "level": 29
+        },
+        {
+          "move": "Aromatic Mist",
+          "level": 33
+        },
+        {
+          "move": "Acupressure",
+          "egg_move": true
+        },
+        {
+          "move": "Charm",
+          "egg_move": true
+        },
+        {
+          "move": "Feint",
+          "egg_move": true
+        },
+        {
+          "move": "Grass Whistle",
+          "egg_move": true
+        },
+        {
+          "move": "Play Rough",
+          "egg_move": true
+        },
+        {
+          "move": "Synthesis",
+          "egg_move": true
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Light Screen",
+          "tm": "TM16"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Solar Beam",
+          "tm": "TM22"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Reflect",
+          "tm": "TM33"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Energy Ball",
+          "tm": "TM53"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Nature Power",
+          "tm": "TM96"
+        },
+        {
+          "move": "Dazzling Gleam",
+          "tm": "TM99"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

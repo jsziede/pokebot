@@ -1,0 +1,4803 @@
+{
+  "names": {
+    "fr": "Sabelette",
+    "de": "Sandan",
+    "it": "Sandshrew",
+    "en": "Sandshrew"
+  },
+  "national_id": 27,
+  "types": [
+    "Ground"
+  ],
+  "items": [
+      {
+          "name": "Grip Claw",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Sand Veil"
+    },
+    {
+      "name": "Sand Rush",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 255,
+  "egg_groups": [
+    "Field"
+  ],
+  "hatch_time": [
+    5355,
+    5609
+  ],
+  "height_us": "2'00\"",
+  "height_eu": "0.6 m",
+  "weight_us": "26.5 lbs.",
+  "weight_eu": "12.0 kg",
+  "base_exp_yield": 60,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 0,
+    "def": 1,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Yellow",
+  "base_friendship": 70,
+  "base_stats": {
+    "hp": 50,
+    "atk": 75,
+    "def": 85,
+    "sp_atk": 20,
+    "sp_def": 30,
+    "speed": 40
+  },
+  "evolutions": [
+    {
+      "to": "Sandslash",
+      "level": 22
+    }
+  ],
+  "alola_id": 251,
+  "categories": {
+    "en": "Mouse Pokémon",
+    "de": "Maus"
+  },
+  "kanto_id": 27,
+  "johto_id": 48,
+  "hoenn_id": 117,
+  "sinnoh_id": null,
+  "unova_id": null,
+  "kalos_id": 97,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+    {
+      "condition": "Alola",
+      "image_suffix": "alola",
+      "names": {
+        "en": "Alolan Sandshrew",
+        "de": "Alola-Sandan"
+      },
+      "types": [
+        "Ice",
+        "Steel"
+      ],
+      "abilities": [
+        {
+          "name": "Snow Cloak"
+        },
+        {
+          "name": "Slush Rush",
+          "hidden": true
+        }
+      ],
+        "evolutions": [
+          {
+            "to": "Sandslash",
+            "item": "Ice Stone",
+            "variation": "Alola"
+          }
+        ]
+    }
+  ],
+  "pokedex_entries": {
+    "Red": {
+      "en": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+      "de": "Dieses Pokémon lebt in trockenen Gebieten unter der Erde. Es jagt jedoch an der Oberfläche."
+    },
+    "Blue": {
+      "en": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+      "de": "Dieses Pokémon lebt in trockenen Gebieten unter der Erde. Es jagt jedoch an der Oberfläche."
+    },
+    "Yellow": {
+      "en": "Its body is dry. When it gets cold at night, its hide is said to become coated with a fine dew.",
+      "de": "Der Körper dieses Pokémon ist sehr trocken. In kalten Nächten wird sein Körper von Tau überzogen."
+    },
+    "Gold": {
+      "en": "If it fell from a great height, this Pokémon could save itself by rolling into a ball and bouncing.",
+      "de": "Fällt es aus großer Höhe, rollt sich dieses Pokémon zusammen, um so den Sturz abzufangen."
+    },
+    "Silver": {
+      "en": "Disliking water, it lives in deep burrows in arid areas. It can roll itself instantly into a ball.",
+      "de": "Da es Wasser verabscheut, gräbt es sich in trockenes Erdreich ein. Es kann sich rasch zu einem Ball rollen."
+    },
+    "Crystal": {
+      "en": "It prefers dry, sandy places because it uses the sand to protect itself when threatened.",
+      "de": "Es lebt bevorzugt in sandigen Gebieten, da es sich bei Gefahr im Sand eingräbt, um sich zu schützen."
+    },
+    "Ruby": {
+      "en": "Sandshrew's body is configured to absorb water without waste, enabling it to survive in an arid desert. This Pokémon curls up to protect itself from its enemies.",
+      "de": "Sandans Körper kann sehr viel Wasser aufnehmen, so dass es auch in der Wüste überleben kann. Dieses Pokémon rollt sich zusammen, um sich vor Feinden zu schützen."
+    },
+    "Sapphire": {
+      "en": "Sandshrew has a very dry hide that is extremely tough. The Pokémon can roll into a ball that repels any attack. At night, it burrows into the desert sand to sleep.",
+      "de": "Sandan hat eine sehr trockene und extrem robuste Haut. Dieses Pokémon kann sich zu einem Ball zusammenrollen, von dem jegliche Angriffe abprallen. Nachts gräbt es sich im Wüstensand ein und schläft dort."
+    },
+    "Emerald": {
+      "en": "When it curls up in a ball, it can make any attack bounce off harmlessly. Its hide has turned tough and solid as a result of living in the desert.",
+      "de": "Rollt es sich zu einer Kugel zusammen, prallt jeder Angriff von ihm ab. Seine Haut ist zäh und fest, da es in der Wüste lebt."
+    },
+    "FireRed": {
+      "en": "It burrows and lives underground. If threatened, it curls itself up into a ball for protection.",
+      "de": "Es gräbt und lebt im Erdboden. Bei Gefahr rollt es sich zum Schutz zu einem Ball zusammen."
+    },
+    "LeafGreen": {
+      "en": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+      "de": "Dieses Pokémon lebt in trockenen Gebieten unter der Erde. Es jagt jedoch an der Erdoberfläche."
+    },
+    "Diamond": {
+      "en": "To protect itself from attackers, it curls up into a ball. It lives in arid regions with minimal rainfall.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "Pearl": {
+      "en": "To protect itself from attackers, it curls up into a ball. It lives in arid regions with minimal rainfall.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "Platinum": {
+      "en": "To protect itself from attackers, it curls up into a ball. It lives in arid regions with minimal rainfall.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "HeartGold": {
+      "en": "If it fell from a great height, this Pokémon could save itself by rolling into a ball and bouncing.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "SoulSilver": {
+      "en": "Disliking water, it lives in deep burrows in arid areas. It can roll itself instantly into a ball.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "Black": {
+      "en": "To protect itself from attackers, it curls up into a ball. It lives in arid regions with minimal rainfall.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "White": {
+      "en": "To protect itself from attackers, it curls up into a ball. It lives in arid regions with minimal rainfall.",
+      "de": "Es lebt in trockenen Regionen mit wenig Regen. Es rollt sich ein, um sich vor Gegnern zu schützen."
+    },
+    "Black 2": {
+      "en": "It digs deep burrows to live in. When in danger, it rolls up its body to withstand attacks.",
+      "de": "Fristet sein Leben in selbst gegrabenen Löchern. Bei Gefahr rollt es sich zusammen und sitzt den Angriff aus."
+    },
+    "White 2": {
+      "en": "It digs deep burrows to live in. When in danger, it rolls up its body to withstand attacks.",
+      "de": "Fristet sein Leben in selbst gegrabenen Löchern. Bei Gefahr rollt es sich zusammen und sitzt den Angriff aus."
+    },
+    "X": {
+      "en": "It burrows and lives underground. If threatened, it curls itself up into a ball for protection.",
+      "de": "Es gräbt und lebt im Erdboden. Bei Gefahr rollt es sich zum Schutz zu einem Ball zusammen."
+    },
+    "Y": {
+      "en": "Disliking water, it lives in deep burrows in arid areas. It can roll itself instantly into a ball.",
+      "de": "Da es Wasser verabscheut, gräbt es sich in trockenes Erdreich ein. Es kann sich rasch zu einem Ball rollen."
+    },
+    "Omega Ruby": {
+      "en": "Sandshrew's body is configured to absorb water without waste, enabling it to survive in an arid desert. This Pokémon curls up to protect itself from its enemies.",
+      "de": "Sandans Körper kann sehr viel Wasser aufnehmen, sodass es auch in der Wüste überleben kann. Dieses Pokémon rollt sich zusammen, um sich vor Feinden zu schützen."
+    },
+    "Alpha Sapphire": {
+      "en": "Sandshrew has a very dry hide that is extremely tough. The Pokémon can roll into a ball that repels any attack. At night, it burrows into the desert to sleep.",
+      "de": "Sandan hat eine sehr große trockene und extrem robuste Haut. Dieses Pokémon kann sich zu einem Ball zusammenrollen, von dem jegleiche Angriffe abprallen. Nachts gräbt es sich im Wüstensand ein und schläft dort."
+    },
+    "Sun": {
+      "en": "It can roll its body into a ball. It moves through the desert by rolling at high speeds.",
+      "de": "Kein Eintrag vorhanden"
+    },
+    "Moon": {
+      "en": "It usually makes its home in deserts and arid zones, where rain does not fall. It digs holes to catch Bug-type Pokémon.",
+      "de": "Kein Eintrag vorhanden"
+    },
+    "Ultra Sun": {
+      "en": "It lives in areas of limited rainfall. When danger approaches, it curls up into a ball to protect its soft stomach.",
+      "de": "Alola-Form: Um sich vor Vulkanausbrüchen zu schützen, floh es in verschneites Gebirge. Sein Eispanzer ist hart wie Stahl.\nStandard-Form: Es lebt in trockenen Gebieten mit wenig Regen. Bei Gefahr rollt es sich zu einem Ball zusammen und schützt so seine weiche Bauchgegend."
+    },
+    "Ultra Moon": {
+      "en": "When its skin gets wrinkled from moisture, it heads for a volcano. It lies flat on a spot with a lot of geothermal heat and dries itself out.",
+      "de": "Alola-Form: Sein Rücken ist hart wie Stahl. Gegner haben es auf seine weiche Bauchgegend abgesehen, weshalb es sich hartnäckig am Boden festkrallt.\nStandard-Form: Bei zu viel Feuchtigkeit sucht es einen Vulkan auf, um auf dem warmen Erdboden seine aufgeweichte Haut wieder zu trocknen."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      3,
+      4
+    ],
+    "power": [
+      3,
+      3
+    ],
+    "stamina": [
+      2,
+      3
+    ],
+    "skill": [
+      3,
+      5
+    ],
+    "jump": [
+      2,
+      3
+    ]
+  },
+  "ultra_alola_id": 149,
+  "move_learnsets": [
+    {
+      "games": [
+        "Red",
+        "Blue"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 10
+        },
+        {
+          "move": "Slash",
+          "level": 17
+        },
+        {
+          "move": "Poison Sting",
+          "level": 24
+        },
+        {
+          "move": "Swift",
+          "level": 31
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 38
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM3"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Body Slam",
+          "tm": "TM8"
+        },
+        {
+          "move": "Take Down",
+          "tm": "TM9"
+        },
+        {
+          "move": "Double-Edge",
+          "tm": "TM10"
+        },
+        {
+          "move": "Submission",
+          "tm": "TM17"
+        },
+        {
+          "move": "Seismic Toss",
+          "tm": "TM19"
+        },
+        {
+          "move": "Rage",
+          "tm": "TM20"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Fissure",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Mimic",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Bide",
+          "tm": "TM34"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Skull Bash",
+          "tm": "TM40"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM48"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM50"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Yellow"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 10
+        },
+        {
+          "move": "Slash",
+          "level": 17
+        },
+        {
+          "move": "Poison Sting",
+          "level": 24
+        },
+        {
+          "move": "Swift",
+          "level": 31
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 38
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM3"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Body Slam",
+          "tm": "TM8"
+        },
+        {
+          "move": "Take Down",
+          "tm": "TM9"
+        },
+        {
+          "move": "Double-Edge",
+          "tm": "TM10"
+        },
+        {
+          "move": "Submission",
+          "tm": "TM17"
+        },
+        {
+          "move": "Seismic Toss",
+          "tm": "TM19"
+        },
+        {
+          "move": "Rage",
+          "tm": "TM20"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Fissure",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Mimic",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Bide",
+          "tm": "TM34"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Skull Bash",
+          "tm": "TM40"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM48"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM50"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Gold",
+        "Silver"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 6
+        },
+        {
+          "move": "Sand Attack",
+          "level": 11
+        },
+        {
+          "move": "Poison Sting",
+          "level": 17
+        },
+        {
+          "move": "Slash",
+          "level": 23
+        },
+        {
+          "move": "Swift",
+          "level": 30
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 37
+        },
+        {
+          "move": "Sandstorm",
+          "level": 45
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Dynamic Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Headbutt",
+          "tm": "TM2"
+        },
+        {
+          "move": "Curse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Rollout",
+          "tm": "TM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Snore",
+          "tm": "TM13"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Mud-Slap",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM35"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Defense Curl",
+          "tm": "TM40"
+        },
+        {
+          "move": "Detect",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Fury Cutter",
+          "tm": "TM49"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Crystal"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 6
+        },
+        {
+          "move": "Sand Attack",
+          "level": 11
+        },
+        {
+          "move": "Poison Sting",
+          "level": 17
+        },
+        {
+          "move": "Slash",
+          "level": 23
+        },
+        {
+          "move": "Swift",
+          "level": 30
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 37
+        },
+        {
+          "move": "Sandstorm",
+          "level": 45
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Dynamic Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Headbutt",
+          "tm": "TM2"
+        },
+        {
+          "move": "Curse",
+          "tm": "TM3"
+        },
+        {
+          "move": "Rollout",
+          "tm": "TM4"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Snore",
+          "tm": "TM13"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Mud-Slap",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM34"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM35"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Swift",
+          "tm": "TM39"
+        },
+        {
+          "move": "Defense Curl",
+          "tm": "TM40"
+        },
+        {
+          "move": "Detect",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Fury Cutter",
+          "tm": "TM49"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ruby",
+        "Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 6
+        },
+        {
+          "move": "Sand Attack",
+          "level": 11
+        },
+        {
+          "move": "Poison Sting",
+          "level": 17
+        },
+        {
+          "move": "Slash",
+          "level": 23
+        },
+        {
+          "move": "Swift",
+          "level": 30
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 37
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 45
+        },
+        {
+          "move": "Sandstorm",
+          "level": 53
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Slide",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Swords Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "FireRed",
+        "LeafGreen"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 6
+        },
+        {
+          "move": "Sand Attack",
+          "level": 11
+        },
+        {
+          "move": "Poison Sting",
+          "level": 17
+        },
+        {
+          "move": "Slash",
+          "level": 23
+        },
+        {
+          "move": "Swift",
+          "level": 30
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 37
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 45
+        },
+        {
+          "move": "Sandstorm",
+          "level": 53
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Slide",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Swords Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Emerald"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 6
+        },
+        {
+          "move": "Sand Attack",
+          "level": 11
+        },
+        {
+          "move": "Poison Sting",
+          "level": 17
+        },
+        {
+          "move": "Slash",
+          "level": 23
+        },
+        {
+          "move": "Swift",
+          "level": 30
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 37
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 45
+        },
+        {
+          "move": "Sandstorm",
+          "level": 53
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Slide",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Swords Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Diamond",
+        "Pearl"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 3
+        },
+        {
+          "move": "Sand Attack",
+          "level": 7
+        },
+        {
+          "move": "Poison Sting",
+          "level": 9
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 13
+        },
+        {
+          "move": "Swift",
+          "level": 15
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 19
+        },
+        {
+          "move": "Rollout",
+          "level": 21
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 25
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 27
+        },
+        {
+          "move": "Slash",
+          "level": 31
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 33
+        },
+        {
+          "move": "Sandstorm",
+          "level": 37
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Slide",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Swords Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Rock Climb",
+          "tm": "HM8"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Stealth Rock",
+          "tm": "TM76"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Platinum"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 3
+        },
+        {
+          "move": "Sand Attack",
+          "level": 7
+        },
+        {
+          "move": "Poison Sting",
+          "level": 9
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 13
+        },
+        {
+          "move": "Swift",
+          "level": 15
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 19
+        },
+        {
+          "move": "Rollout",
+          "level": 21
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 25
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 27
+        },
+        {
+          "move": "Slash",
+          "level": 31
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 33
+        },
+        {
+          "move": "Sandstorm",
+          "level": 37
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Slide",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Swords Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Rock Climb",
+          "tm": "HM8"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Stealth Rock",
+          "tm": "TM76"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "HeartGold",
+        "SoulSilver"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 3
+        },
+        {
+          "move": "Sand Attack",
+          "level": 7
+        },
+        {
+          "move": "Poison Sting",
+          "level": 9
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 13
+        },
+        {
+          "move": "Swift",
+          "level": 15
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 19
+        },
+        {
+          "move": "Rollout",
+          "level": 21
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 25
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 27
+        },
+        {
+          "move": "Slash",
+          "level": 31
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 33
+        },
+        {
+          "move": "Sandstorm",
+          "level": 37
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Slide",
+          "egg_move": true
+        },
+        {
+          "move": "Safeguard",
+          "egg_move": true
+        },
+        {
+          "move": "Swords Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Rock Climb",
+          "tm": "HM8"
+        },
+        {
+          "move": "Focus Punch",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Iron Tail",
+          "tm": "TM23"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM43"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Endure",
+          "tm": "TM58"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Stealth Rock",
+          "tm": "TM76"
+        },
+        {
+          "move": "Captivate",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM82"
+        },
+        {
+          "move": "Natural Gift",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Defense Curl",
+          "level": 3
+        },
+        {
+          "move": "Sand Attack",
+          "level": 7
+        },
+        {
+          "move": "Poison Sting",
+          "level": 9
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 13
+        },
+        {
+          "move": "Swift",
+          "level": 15
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 19
+        },
+        {
+          "move": "Rollout",
+          "level": 21
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 25
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 27
+        },
+        {
+          "move": "Slash",
+          "level": 31
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 33
+        },
+        {
+          "move": "Sandstorm",
+          "level": 37
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Hone Claws",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 3
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Rollout",
+          "level": 7
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9
+        },
+        {
+          "move": "Swift",
+          "level": 11
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 14
+        },
+        {
+          "move": "Magnitude",
+          "level": 17
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 23
+        },
+        {
+          "move": "Slash",
+          "level": 26
+        },
+        {
+          "move": "Dig",
+          "level": 30
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38
+        },
+        {
+          "move": "Sandstorm",
+          "level": 42
+        },
+        {
+          "move": "Earthquake",
+          "level": 46
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Hone Claws",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 3
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Rollout",
+          "level": 7
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9
+        },
+        {
+          "move": "Swift",
+          "level": 11
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 14
+        },
+        {
+          "move": "Magnitude",
+          "level": 17
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 23
+        },
+        {
+          "move": "Slash",
+          "level": 26
+        },
+        {
+          "move": "Dig",
+          "level": 30
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38
+        },
+        {
+          "move": "Sandstorm",
+          "level": 42
+        },
+        {
+          "move": "Earthquake",
+          "level": 46
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Rototiller",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Hone Claws",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1
+        },
+        {
+          "move": "Scratch",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 3
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5
+        },
+        {
+          "move": "Rollout",
+          "level": 7
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 11
+        },
+        {
+          "move": "Magnitude",
+          "level": 14
+        },
+        {
+          "move": "Swift",
+          "level": 17
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 23
+        },
+        {
+          "move": "Slash",
+          "level": 26
+        },
+        {
+          "move": "Dig",
+          "level": 30
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38
+        },
+        {
+          "move": "Sandstorm",
+          "level": 42
+        },
+        {
+          "move": "Earthquake",
+          "level": 46
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Endure",
+          "egg_move": true
+        },
+        {
+          "move": "Flail",
+          "egg_move": true
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true
+        },
+        {
+          "move": "Rototiller",
+          "egg_move": true
+        },
+        {
+          "move": "Cut",
+          "tm": "HM1"
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Hone Claws",
+          "tm": "TM1"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65"
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74"
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75"
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Scratch",
+          "level": 1,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sand Attack",
+          "level": 3,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rollout",
+          "level": 7,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 11,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Magnitude",
+          "level": 14,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swift",
+          "level": 17,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 23,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Slash",
+          "level": 26,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Dig",
+          "level": 30,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sandstorm",
+          "level": 42,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Earthquake",
+          "level": 46,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Defense Curl",
+          "level": 1,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Scratch",
+          "level": 1,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Bide",
+          "level": 3,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Powder Snow",
+          "level": 5,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Ice Ball",
+          "level": 7,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 11,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Metal Claw",
+          "level": 14,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swift",
+          "level": 17,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Iron Defense",
+          "level": 23,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Slash",
+          "level": 26,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Iron Head",
+          "level": 30,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hail",
+          "level": 42,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "level": 46,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Endure",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Flail",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rototiller",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Curse",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Endure",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Flail",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Icicle Crash",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Icicle Spear",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Aurora Veil",
+          "tm": "TM70",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Defense Curl",
+          "level": 1,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Scratch",
+          "level": 1,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sand Attack",
+          "level": 3,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Poison Sting",
+          "level": 5,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rollout",
+          "level": 7,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 11,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Magnitude",
+          "level": 14,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swift",
+          "level": 17,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sand Tomb",
+          "level": 23,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Slash",
+          "level": 26,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Dig",
+          "level": 30,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sandstorm",
+          "level": 42,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Earthquake",
+          "level": 46,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Defense Curl",
+          "level": 1,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Scratch",
+          "level": 1,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Bide",
+          "level": 3,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Powder Snow",
+          "level": 5,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Ice Ball",
+          "level": 7,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Rapid Spin",
+          "level": 9,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Cutter",
+          "level": 11,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Metal Claw",
+          "level": 14,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swift",
+          "level": 17,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Fury Swipes",
+          "level": 20,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Iron Defense",
+          "level": 23,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Slash",
+          "level": 26,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Iron Head",
+          "level": 30,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "level": 34,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "level": 38,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hail",
+          "level": 42,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "level": 46,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Endure",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Flail",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Hone Claws",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Mud Shot",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rapid Spin",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Climb",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rototiller",
+          "egg_move": true,
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Chip Away",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Counter",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Crush Claw",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Curse",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Endure",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Flail",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hone Claws",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Icicle Crash",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Icicle Spear",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Metal Claw",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Night Slash",
+          "egg_move": true,
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sandstorm",
+          "tm": "TM37",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Sandshrew"
+          ]
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hail",
+          "tm": "TM7",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Blizzard",
+          "tm": "TM14",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Safeguard",
+          "tm": "TM20",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Earthquake",
+          "tm": "TM26",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Return",
+          "tm": "TM27",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Leech Life",
+          "tm": "TM28",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Aerial Ace",
+          "tm": "TM40",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Thief",
+          "tm": "TM46",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Round",
+          "tm": "TM48",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Shadow Claw",
+          "tm": "TM65",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Aurora Veil",
+          "tm": "TM70",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Gyro Ball",
+          "tm": "TM74",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swords Dance",
+          "tm": "TM75",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Bulldoze",
+          "tm": "TM78",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Frost Breath",
+          "tm": "TM79",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "X-Scissor",
+          "tm": "TM81",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100",
+          "variations": [
+            "Alolan Sandshrew"
+          ]
+        }
+      ]
+    }
+  ]
+}

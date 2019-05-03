@@ -1,0 +1,1827 @@
+{
+  "names": {
+    "fr": "Baggiguane",
+    "de": "Zurrokex",
+    "it": "Scraggy",
+    "en": "Scraggy"
+  },
+  "national_id": 559,
+  "types": [
+    "Dark",
+    "Fighting"
+  ],
+  "items": [
+      {
+          "name": "Shed Shell",
+          "chance": 5
+      }
+  ],
+  "abilities": [
+    {
+      "name": "Shed Skin"
+    },
+    {
+      "name": "Moxie"
+    },
+    {
+      "name": "Intimidate",
+      "hidden": true
+    }
+  ],
+  "gender_ratios": {
+    "male": 50.0,
+    "female": 50.0
+  },
+  "catch_rate": 180,
+  "egg_groups": [
+    "Field",
+    "Dragon"
+  ],
+  "hatch_time": [
+    4080,
+    4334
+  ],
+  "height_us": "2'00\"",
+  "height_eu": "0.6 m",
+  "weight_us": "26.0 lbs.",
+  "weight_eu": "11.8 kg",
+  "base_exp_yield": 70,
+  "leveling_rate": "Medium Fast",
+  "ev_yield": {
+    "hp": 0,
+    "atk": 1,
+    "def": 0,
+    "sp_atk": 0,
+    "sp_def": 0,
+    "speed": 0
+  },
+  "color": "Yellow",
+  "base_friendship": 35,
+  "base_stats": {
+    "hp": 50,
+    "atk": 75,
+    "def": 70,
+    "sp_atk": 35,
+    "sp_def": 70,
+    "speed": 48
+  },
+  "evolutions": [
+    {
+      "to": "Scrafty",
+      "level": 39
+    }
+  ],
+  "categories": {
+    "en": "Shedding Pokémon",
+    "de": "Hautwechsel"
+  },
+  "kanto_id": null,
+  "johto_id": null,
+  "hoenn_id": null,
+  "sinnoh_id": null,
+  "unova_id": 65,
+  "kalos_id": 100,
+  "alola_id": null,
+  "mega_evolutions": [
+
+  ],
+  "evolution_from": null,
+  "variations": [
+
+  ],
+  "pokedex_entries": {
+    "Black": {
+      "en": "Its skin has a rubbery elasticity, so it can reduce damage by defensively pulling its skin up to its neck.",
+      "de": "Es zieht seine gummiartige Haut bis zum Hals hinauf und nimmt eine Abwehrhaltung ein, um sich vor Schaden zu schützen."
+    },
+    "White": {
+      "en": "It immediately headbutts anyone that makes eye contact with it. Its skull is massively thick.",
+      "de": "Es hat einen dicken Schädel und versetzt jedem, mit dem sich sein Blick kreuzt, eine Kopfnuss."
+    },
+    "Black 2": {
+      "en": "Proud of its sturdy skull, it suddenly headbutts everything, but its weight makes it unstable, too.",
+      "de": "Verteilt gerne unvermittelt Kopfnüsse, deren Wucht auch seine Sinne vernebelt. Es ist stolz auf seinen robusten Schädel."
+    },
+    "White 2": {
+      "en": "Proud of its sturdy skull, it suddenly headbutts everything, but its weight makes it unstable, too.",
+      "de": "Verteilt gerne unvermittelt Kopfnüsse, deren Wucht auch seine Sinne vernebelt. Es ist stolz auf seinen robusten Schädel."
+    },
+    "X": {
+      "en": "Its skin has a rubbery elasticity, so it can reduce damage by defensively pulling its skin up to its neck.",
+      "de": "Es zieht seine gummiartige Haut bis zum Hals hinauf und nimmt eine Abwehrhaltung ein, um sich vor Schaden zu schützen."
+    },
+    "Y": {
+      "en": "Proud of its sturdy skull, it suddenly headbutts everything, but its weight makes it unstable, too.",
+      "de": "Verteilt gerne unvermittelt Kopfnüsse, deren Wucht auch seine Sinne vernebelt. Es ist stolz auf seinen robusten Schädel."
+    },
+    "Omega Ruby": {
+      "en": "Its skin has a rubbery elasticity, so it can reduce damage by defensively pulling its skin up to its neck.",
+      "de": "Verteilt gerne unvermittelt Kopfnüsse, deren Wucht auch seine Sinne vernebelt. Es ist stolz auf seinen robusten Schädel."
+    },
+    "Alpha Sapphire": {
+      "en": "Proud of its sturdy skull, it suddenly headbutts everything, but its weight makes it unstable, too.",
+      "de": "Verteilt gerne unvermittelt Kopfnüsse, deren Wucht auch seine Sinne vernebelt. Es ist stolz auf seinen robusten Schädel."
+    },
+    "Ultra Sun": {
+      "en": "They move in small groups, walking around lazily. Anyone who makes eye contact gets smacked with a headbutt.",
+      "de": "Zurrokex trotten in Gruppen von einigen Exemplaren durch die Gegend. Wer mit ihnen Augenkontakt herstellt, erhält Kopfnüsse."
+    },
+    "Ultra Moon": {
+      "en": "It stretches its saggy skin up to its neck to protect itself. The saggier their skin, the more respect they garner.",
+      "de": "Es zieht seine gummiartige Haut zum Schutz bis zum Hals hinauf. Seine Rangfolge scheint davon abzuhängen, wie hoch es sie ziehen kann."
+    }
+  },
+  "pokeathlon_stats": {
+    "speed": [
+      0,
+      0
+    ],
+    "power": [
+      0,
+      0
+    ],
+    "stamina": [
+      0,
+      0
+    ],
+    "skill": [
+      0,
+      0
+    ],
+    "jump": [
+      0,
+      0
+    ]
+  },
+  "ultra_alola_id": 156,
+  "move_learnsets": [
+    {
+      "games": [
+        "Black",
+        "White"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 5
+        },
+        {
+          "move": "Feint Attack",
+          "level": 9
+        },
+        {
+          "move": "Headbutt",
+          "level": 12
+        },
+        {
+          "move": "Swagger",
+          "level": 16
+        },
+        {
+          "move": "Brick Break",
+          "level": 20
+        },
+        {
+          "move": "Payback",
+          "level": 23
+        },
+        {
+          "move": "Chip Away",
+          "level": 27
+        },
+        {
+          "move": "High Jump Kick",
+          "level": 31
+        },
+        {
+          "move": "Scary Face",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Facade",
+          "level": 42
+        },
+        {
+          "move": "Rock Climb",
+          "level": 45
+        },
+        {
+          "move": "Focus Punch",
+          "level": 49
+        },
+        {
+          "move": "Head Smash",
+          "level": 53
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Detect",
+          "egg_move": true
+        },
+        {
+          "move": "Dragon Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Drain Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Feint Attack",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Zen Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Dragon Claw",
+          "tm": "TM2"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Smack Down",
+          "tm": "TM23"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Dragon Tail",
+          "tm": "TM82"
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Black 2",
+        "White 2"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 5
+        },
+        {
+          "move": "Feint Attack",
+          "level": 9
+        },
+        {
+          "move": "Headbutt",
+          "level": 12
+        },
+        {
+          "move": "Swagger",
+          "level": 16
+        },
+        {
+          "move": "Brick Break",
+          "level": 20
+        },
+        {
+          "move": "Payback",
+          "level": 23
+        },
+        {
+          "move": "Chip Away",
+          "level": 27
+        },
+        {
+          "move": "High Jump Kick",
+          "level": 31
+        },
+        {
+          "move": "Scary Face",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Facade",
+          "level": 42
+        },
+        {
+          "move": "Rock Climb",
+          "level": 45
+        },
+        {
+          "move": "Focus Punch",
+          "level": 49
+        },
+        {
+          "move": "Head Smash",
+          "level": 53
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Detect",
+          "egg_move": true
+        },
+        {
+          "move": "Dragon Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Drain Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Feint Attack",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Zen Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Dragon Claw",
+          "tm": "TM2"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Smack Down",
+          "tm": "TM23"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Dragon Tail",
+          "tm": "TM82"
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM83"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        }
+      ]
+    },
+    {
+      "games": [
+        "X",
+        "Y"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 5
+        },
+        {
+          "move": "Feint Attack",
+          "level": 9
+        },
+        {
+          "move": "Headbutt",
+          "level": 12
+        },
+        {
+          "move": "Swagger",
+          "level": 16
+        },
+        {
+          "move": "Brick Break",
+          "level": 20
+        },
+        {
+          "move": "Payback",
+          "level": 23
+        },
+        {
+          "move": "Chip Away",
+          "level": 27
+        },
+        {
+          "move": "High Jump Kick",
+          "level": 31
+        },
+        {
+          "move": "Scary Face",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Facade",
+          "level": 42
+        },
+        {
+          "move": "Rock Climb",
+          "level": 45
+        },
+        {
+          "move": "Focus Punch",
+          "level": 48
+        },
+        {
+          "move": "Head Smash",
+          "level": 50
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Detect",
+          "egg_move": true
+        },
+        {
+          "move": "Dragon Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Drain Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Feint Attack",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Zen Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Dragon Claw",
+          "tm": "TM2"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Smack Down",
+          "tm": "TM23"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Dragon Tail",
+          "tm": "TM82"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Power-Up Punch",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Omega Ruby",
+        "Alpha Sapphire"
+      ],
+      "learnset": [
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Low Kick",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 5
+        },
+        {
+          "move": "Feint Attack",
+          "level": 9
+        },
+        {
+          "move": "Headbutt",
+          "level": 12
+        },
+        {
+          "move": "Swagger",
+          "level": 16
+        },
+        {
+          "move": "Brick Break",
+          "level": 20
+        },
+        {
+          "move": "Payback",
+          "level": 23
+        },
+        {
+          "move": "Chip Away",
+          "level": 27
+        },
+        {
+          "move": "High Jump Kick",
+          "level": 31
+        },
+        {
+          "move": "Scary Face",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Facade",
+          "level": 42
+        },
+        {
+          "move": "Rock Climb",
+          "level": 45
+        },
+        {
+          "move": "Focus Punch",
+          "level": 48
+        },
+        {
+          "move": "Head Smash",
+          "level": 50
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Detect",
+          "egg_move": true
+        },
+        {
+          "move": "Dragon Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Drain Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Feint Attack",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Zen Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Strength",
+          "tm": "HM4"
+        },
+        {
+          "move": "Rock Smash",
+          "tm": "HM6"
+        },
+        {
+          "move": "Dragon Claw",
+          "tm": "TM2"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Smack Down",
+          "tm": "TM23"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Dig",
+          "tm": "TM28"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Incinerate",
+          "tm": "TM59"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Retaliate",
+          "tm": "TM67"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Dragon Tail",
+          "tm": "TM82"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Secret Power",
+          "tm": "TM94"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Power-Up Punch",
+          "tm": "TM98"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Sun",
+        "Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Headbutt",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 5
+        },
+        {
+          "move": "Feint Attack",
+          "level": 9
+        },
+        {
+          "move": "Swagger",
+          "level": 12
+        },
+        {
+          "move": "Low Kick",
+          "level": 16
+        },
+        {
+          "move": "Payback",
+          "level": 20
+        },
+        {
+          "move": "Brick Break",
+          "level": 23
+        },
+        {
+          "move": "Chip Away",
+          "level": 27
+        },
+        {
+          "move": "High Jump Kick",
+          "level": 31
+        },
+        {
+          "move": "Scary Face",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Facade",
+          "level": 42
+        },
+        {
+          "move": "Rock Climb",
+          "level": 45
+        },
+        {
+          "move": "Focus Punch",
+          "level": 48
+        },
+        {
+          "move": "Head Smash",
+          "level": 50
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Detect",
+          "egg_move": true
+        },
+        {
+          "move": "Dragon Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Drain Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Feint Attack",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Zen Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Dragon Claw",
+          "tm": "TM2"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Smack Down",
+          "tm": "TM23"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Dragon Tail",
+          "tm": "TM82"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    },
+    {
+      "games": [
+        "Ultra Sun",
+        "Ultra Moon"
+      ],
+      "learnset": [
+        {
+          "move": "Headbutt",
+          "level": 1
+        },
+        {
+          "move": "Leer",
+          "level": 1
+        },
+        {
+          "move": "Sand Attack",
+          "level": 5
+        },
+        {
+          "move": "Feint Attack",
+          "level": 9
+        },
+        {
+          "move": "Swagger",
+          "level": 12
+        },
+        {
+          "move": "Low Kick",
+          "level": 16
+        },
+        {
+          "move": "Payback",
+          "level": 20
+        },
+        {
+          "move": "Brick Break",
+          "level": 23
+        },
+        {
+          "move": "Chip Away",
+          "level": 27
+        },
+        {
+          "move": "High Jump Kick",
+          "level": 31
+        },
+        {
+          "move": "Scary Face",
+          "level": 34
+        },
+        {
+          "move": "Crunch",
+          "level": 38
+        },
+        {
+          "move": "Facade",
+          "level": 42
+        },
+        {
+          "move": "Rock Climb",
+          "level": 45
+        },
+        {
+          "move": "Focus Punch",
+          "level": 48
+        },
+        {
+          "move": "Head Smash",
+          "level": 50
+        },
+        {
+          "move": "Acid Spray",
+          "egg_move": true
+        },
+        {
+          "move": "Amnesia",
+          "egg_move": true
+        },
+        {
+          "move": "Counter",
+          "egg_move": true
+        },
+        {
+          "move": "Detect",
+          "egg_move": true
+        },
+        {
+          "move": "Dragon Dance",
+          "egg_move": true
+        },
+        {
+          "move": "Drain Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Fake Out",
+          "egg_move": true
+        },
+        {
+          "move": "Feint Attack",
+          "egg_move": true
+        },
+        {
+          "move": "Fire Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Ice Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Power-Up Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Quick Guard",
+          "egg_move": true
+        },
+        {
+          "move": "Thunder Punch",
+          "egg_move": true
+        },
+        {
+          "move": "Zen Headbutt",
+          "egg_move": true
+        },
+        {
+          "move": "Work Up",
+          "tm": "TM1"
+        },
+        {
+          "move": "Dragon Claw",
+          "tm": "TM2"
+        },
+        {
+          "move": "Roar",
+          "tm": "TM5"
+        },
+        {
+          "move": "Toxic",
+          "tm": "TM6"
+        },
+        {
+          "move": "Bulk Up",
+          "tm": "TM8"
+        },
+        {
+          "move": "Hidden Power",
+          "tm": "TM10"
+        },
+        {
+          "move": "Sunny Day",
+          "tm": "TM11"
+        },
+        {
+          "move": "Taunt",
+          "tm": "TM12"
+        },
+        {
+          "move": "Protect",
+          "tm": "TM17"
+        },
+        {
+          "move": "Rain Dance",
+          "tm": "TM18"
+        },
+        {
+          "move": "Frustration",
+          "tm": "TM21"
+        },
+        {
+          "move": "Smack Down",
+          "tm": "TM23"
+        },
+        {
+          "move": "Return",
+          "tm": "TM27"
+        },
+        {
+          "move": "Brick Break",
+          "tm": "TM31"
+        },
+        {
+          "move": "Double Team",
+          "tm": "TM32"
+        },
+        {
+          "move": "Sludge Bomb",
+          "tm": "TM36"
+        },
+        {
+          "move": "Rock Tomb",
+          "tm": "TM39"
+        },
+        {
+          "move": "Torment",
+          "tm": "TM41"
+        },
+        {
+          "move": "Facade",
+          "tm": "TM42"
+        },
+        {
+          "move": "Rest",
+          "tm": "TM44"
+        },
+        {
+          "move": "Attract",
+          "tm": "TM45"
+        },
+        {
+          "move": "Low Sweep",
+          "tm": "TM47"
+        },
+        {
+          "move": "Round",
+          "tm": "TM48"
+        },
+        {
+          "move": "Focus Blast",
+          "tm": "TM52"
+        },
+        {
+          "move": "Fling",
+          "tm": "TM56"
+        },
+        {
+          "move": "Payback",
+          "tm": "TM66"
+        },
+        {
+          "move": "Stone Edge",
+          "tm": "TM71"
+        },
+        {
+          "move": "Rock Slide",
+          "tm": "TM80"
+        },
+        {
+          "move": "Dragon Tail",
+          "tm": "TM82"
+        },
+        {
+          "move": "Poison Jab",
+          "tm": "TM84"
+        },
+        {
+          "move": "Grass Knot",
+          "tm": "TM86"
+        },
+        {
+          "move": "Swagger",
+          "tm": "TM87"
+        },
+        {
+          "move": "Sleep Talk",
+          "tm": "TM88"
+        },
+        {
+          "move": "Substitute",
+          "tm": "TM90"
+        },
+        {
+          "move": "Snarl",
+          "tm": "TM95"
+        },
+        {
+          "move": "Dark Pulse",
+          "tm": "TM97"
+        },
+        {
+          "move": "Confide",
+          "tm": "TM100"
+        }
+      ]
+    }
+  ]
+}

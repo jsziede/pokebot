@@ -1,0 +1,56 @@
+{
+  "names": {
+    "en": "Tearful Look",
+    "fr": "Larme à l'Œil",
+    "de": "Tränendrüse",
+    "it": "Occhionilucidi",
+    "es": "Ojos Llorosos"
+  },
+  "index_number": 715,
+  "makes_contact": false,
+  "affected_by_protect": false,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": true,
+  "affected_by_kings_rock": false,
+  "type": "Normal",
+  "category": "status",
+  "pp": 20,
+  "max_pp": 32,
+  "power": 0,
+  "accuracy": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "priority": 0,
+  "contests": [
+
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "atk",
+      "change_by": -1
+    },
+    {
+      "stat": "sp_atk",
+      "change_by": -1
+    }
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target’s Attack and Sp. Atk stats.",
+      "de": "Dem Anwender stehen Tränen in den Augen, wodurch das Ziel seinen Kampfeswillen verliert. Angriff und Spezial-Angriff des Zieles sinken."
+    },
+    "Moon": {
+      "en": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target’s Attack and Sp. Atk stats.",
+      "de": "Dem Anwender stehen Tränen in den Augen, wodurch das Ziel seinen Kampfeswillen verliert. Angriff und Spezial-Angriff des Zieles sinken."
+    },
+    "Ultra Sun": {
+      "en": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target’s Attack and Sp. Atk stats.",
+      "de": "Dem Anwender stehen Tränen in den Augen, wodurch das Ziel seinen Kampfeswillen verliert. Angriff und Spezial-Angriff des Zieles sinken."
+    },
+    "Ultra Moon": {
+      "en": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target’s Attack and Sp. Atk stats.",
+      "de": "Dem Anwender stehen Tränen in den Augen, wodurch das Ziel seinen Kampfeswillen verliert. Angriff und Spezial-Angriff des Zieles sinken."
+    }
+  }
+}

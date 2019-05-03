@@ -1,0 +1,132 @@
+{
+  "index_number": 395,
+  "pp": 10,
+  "max_pp": 16,
+  "power": 60,
+  "accuracy": 100,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Forte-Paume",
+    "de": "Kraftwelle",
+    "gr": "Ισχύς Παλάμης",
+    "it": "Palmoforza",
+    "pl": "Dłoń Siły",
+    "en": "Force Palm"
+  },
+  "type": "Fighting",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 4,
+      "jam": 0,
+      "condition": "Cool"
+    }
+  ],
+  "pokedex_entries": {
+    "Diamond": {
+      "en": "The foe is attacked with a shock wave. It may also leave the target paralyzed.",
+      "de": "Gegner wird mit Schockwelle angegriffen, die ihn eventuell paralysiert."
+    },
+    "Pearl": {
+      "en": "The foe is attacked with a shock wave. It may also leave the target paralyzed.",
+      "de": "Gegner wird mit Schockwelle angegriffen, die ihn eventuell paralysiert."
+    },
+    "Platinum": {
+      "en": "The foe is attacked with a shock wave. It may also leave the target paralyzed.",
+      "de": "Gegner wird mit Schockwelle angegriffen, die ihn eventuell paralysiert."
+    },
+    "HeartGold": {
+      "en": "The foe is attacked with a shock wave. It may also leave the target paralyzed.",
+      "de": "Gegner wird mit Schockwelle angegriffen, die ihn eventuell paralysiert."
+    },
+    "SoulSilver": {
+      "en": "The foe is attacked with a shock wave. It may also leave the target paralyzed.",
+      "de": "Gegner wird mit Schockwelle angegriffen, die ihn eventuell paralysiert."
+    },
+    "Black": {
+      "en": "The target is attacked with a shock wave. It may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "White": {
+      "en": "The target is attacked with a shock wave. It may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "Black 2": {
+      "en": "The target is attacked with a shock wave. It may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "White 2": {
+      "en": "The target is attacked with a shock wave. It may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "X": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "Y": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "O.Ruby": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "Moon": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "Ultra Sun": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "Ultra Moon": {
+      "en": "The target is attacked with a shock wave. This may also leave the target with paralysis.",
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert."
+    },
+    "Omega Ruby": {
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Das Ziel wird mit einer Schockwelle angegriffen, die es eventuell paralysiert.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "paralysis",
+        "probability": 30
+      }
+    ]
+  }
+}
