@@ -302,7 +302,7 @@ client.on('message', async (message) => {
     var sentCommand = false;
     
     //if message was sent in the spam channel
-    if (message.channel.id === spamChannel) {
+    if (await isBotChannel(message.channel.id, message.guild.id)) {
         //splits message into an array of strings based on spaces
         var input = message.content.trim().split(/ +/g);
         //the first word in the message
@@ -331,7 +331,6 @@ client.on('message', async (message) => {
                     return;
                 }
                 await getLeadPokemon(message.author.id).then(function(rows) {
-                        // now you have your rows, you can see if there are <20 of them
                         displayAnOwnedPkmn(rows, message);
                     }).catch((err) => setImmediate(() => { console.log(err); }));
                 return;
@@ -925,67 +924,6 @@ client.on('message', async (message) => {
         }
     }
     
-    //=====================================================================================
-    //Begin non pokebot commands
-    if (message.content.startsWith("!countdown")) {
-        //splits message into an array of strings based on spaces
-        var input = message.content.trim().split(/ +/g);
-        //the first word in the message
-        const command = input.shift().toLowerCase();
-        var str = input[0] + " " + input[1] + " " + input[2];
-        if (moment(str, 'MMM DD YYY', 'en').isValid()) {
-            var eventDate = moment(str, 'MMM DD YYYY', 'en');
-            var today = moment().format("YYYY-MM-DD");
-            if (eventDate.diff(today, 'days') > 0) {  
-                input.splice(0, 3);
-                input = input.join(' ');
-                function countdownObj(date, event, user) {
-                    this.date = date;
-                    this.event = event;
-                    this.user = message.author.id;
-                }
-                var insert = new countdownObj(eventDate, input);
-                try {
-                    data = fs.readFileSync("countdowns.json", "utf8");
-                } catch (err) {
-                    console.log(err);
-                    return null;
-                }
-
-                var cnts = JSON.parse(data);
-                cnts.countdowns[cnts.countdowns.length] = insert;
-                var json = JSON.stringify(cnts, null, "\t");
-                await fs.writeFileSync("countdowns.json", json, "utf8");
-
-                message.channel.send("Successfully added event for " + "\"" + input + "\" occuring on " + moment(eventDate).format("dddd, MMMM Do, YYYY"));
-            } else {
-                message.channel.send("That day has already happened! " + duck);
-            }
-        } else {
-            message.channel.send("There was a problem adding your countdown. The command in full should look like \"!countdown <month> <day> <year> <name of event>\". " + duck);
-        }
-        return;
-    }
-
-    if (message.content.startsWith("!tarnation")) {
-        var image = '.\\delet\\tarnation.png';
-        message.channel.send("", {files: [image]});
-        return;
-    }
-
-    if (message.content.startsWith("!mf")) {
-        var image = '.\\delet\\ptemf.png';
-        message.channel.send("", {files: [image]});
-        return;
-    }
-
-    if (message.content.startsWith("!bolt")) {
-        var image = '.\\delet\\brilliane.png';
-        message.channel.send("", {files: [image]});
-        return;
-    }
-    //=====================================================================================
-    
     //if user has bot data and did not send a command nor is currently running a command
     var exists = await userExists(message.author.id);
     if (exists && !sentCommand && !isInEvolution(message.author.id) && !isInTransaction(message.author.id) && !isInTrade(message.author.id)) {
@@ -1505,14 +1443,6 @@ function generateLocationJSONPath(region, location) {
     return path;
 }
 
-//generates a file path to a user's json file
-function generateUserJSONPath(user) {
-    var lower = user.toLowerCase();
-
-    var path = '.\\users\\' + lower + '.json';
-    return path;
-}
-
 //checks if data exists for a user
 async function userExists(userID) {
     var search = await getUser(userID);
@@ -1528,9 +1458,9 @@ async function userExists(userID) {
 //creates new data for a user
 async function createNewUser(userID, name, message, region) {
     var location = getDefaultLocationOfRegion(region);
-    var starter = generatePokemonByName(message, name, 5, region, location, false);
+    var starter = await generatePokemonByName(message, name, 5, region, location, false);
     
-    //var starter = generatePokemonByName(message, "Rockruff", 23, region, location, false);
+    //var starter = await generatePokemonByName(message, "Rockruff", 23, region, location, false);
     //starter.gender = "Female";
     //starter.form = "Sandy Cloak";
     
@@ -4201,7 +4131,7 @@ async function evolve(message) {
         var bag = await getBag(user.user_id);
         if (doesUserHaveHoldableItem(bag, "Poké Ball") != false) {
             removeItemFromBag(user.items, "Poké Ball", 1);
-            var shedinja = generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
+            var shedinja = await generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
             shedinja.otid = message.author.id;
             addPokemon(user.user_id, shedinja);
         }
@@ -5481,7 +5411,7 @@ function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
 }
 
 //produces a wild pokemon object
-function generatePokemonByName(message, name, level, region, location, hidden) {
+async function generatePokemonByName(message, name, level, region, location, hidden) {
     var path = generatePokemonJSONPath(name);
     var data;
     try {
@@ -5492,18 +5422,8 @@ function generatePokemonByName(message, name, level, region, location, hidden) {
     }
     var pkmn = JSON.parse(data);
     
-    var form;
-    
-    var upath = generateUserJSONPath(message.author.id);
-    var udata;
-    try {
-        udata = fs.readFileSync(upath, "utf8");
-        var user = JSON.parse(udata);
-        form = getForm(user, name, region, location);
-    } catch (err) {
-        var user = ({timezone: "America/Detroit"});
-        form = getForm(user, name, region, location);
-    }
+    var user = await getUser(message.author.id);
+    var form = getForm(user, name, region, location);
     
     var no = pkmn.national_id;
     
@@ -7175,7 +7095,7 @@ async function encounterPokemon(message, user, lead) {
         hasHidden = false;
     }
 
-    return generatePokemonByName(message, selectedPokemon.name, selectedPokemon.level, region, location, hasHidden);
+    return await generatePokemonByName(message, selectedPokemon.name, selectedPokemon.level, region, location, hasHidden);
 }
 
 /*
@@ -10010,63 +9930,6 @@ async function getLocationFiles(dirname) {
     }
     return new Promise(function(resolve) {
         resolve(files);
-    });
-}
-
-function setDexNum() {
-    var query_str = 'SELECT * FROM pokemon';
-    con.query(query_str, function (err, rows) {
-        if (err) {
-            console.log(err);
-            return false;
-        }
-        let i;
-        for (i = 0; i < rows.length; i++) {
-            var pth = generatePokemonJSONPath(rows[i].name);
-            var dat;
-            try {
-                dat = fs.readFileSync(pth, "utf8");
-            } catch (err) {
-                return null;
-            }
-            let dexNum;
-            pkm = JSON.parse(dat);
-            dexNum = pkm.national_id.toString();
-            while (dexNum.length < 3) {
-                dexNum = '0' + dexNum;
-            }
-            query_str = 'UPDATE pokemon SET pokemon.number = ? WHERE pokemon.pokemon_id = ?';
-            con.query(query_str, [dexNum, rows[i].pokemon_id], function (err2, rows2) {
-                
-            });
-        }
-    });
-}
-
-async function fixPokedex() {
-    var query_str = 'SELECT * FROM user';
-    con.query(query_str, async function (err, rows1) {
-        if (err) {
-            console.log(err);
-            return false;
-        }
-        let i;
-        for (i = 0; i < rows1.length; i++) {
-            let pokemon = await getPokemon(rows1[i].user_id);
-            let user = await getUser(rows1[i].user_id);
-            let x;
-            for (x = 0; x < pokemon.length; x++) {
-                let num = Number(pokemon[x].number);
-                user.pokedex = user.pokedex.substring(0, num) + '1' + user.pokedex.substring(num + 1);
-                query_str = 'UPDATE user SET user.pokedex = ? WHERE user.user_id = ?';
-                con.query(query_str, [user.pokedex, user.user_id], function (err, rows1) {
-                    if (err) {
-                        console.log(err);
-                        return false;
-                    }
-                });
-            }
-        }
     });
 }
 
