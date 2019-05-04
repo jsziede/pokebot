@@ -3,7 +3,7 @@ var myconfig = {
         host: "localhost",
         user: "root",
         password: "~~~password_for_root~~~",
-        database: '~~~database_name~~~',
+        database: 'pokebot',
         charset: 'utf8mb4'
     },
     token: '~~~token_here~~~'

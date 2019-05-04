@@ -313,17 +313,18 @@ client.on('message', async (message) => {
     var sentCommand = false;
     
     //only read messages from bot channel
-    let readMessage = await isBotChannel(message);
-    if (readMessage) {
+    if (await isBotChannel(message)) {
+        //if sender is trading a pokemon
+        if(isInTrade(message.author.id)) {
+            return;
+        }
+
+        let commandStatus = null;
+
         //splits message into an array of strings based on spaces
         var input = message.content.trim().split(/ +/g);
         //the first word in the message
         const command = input.shift().toLowerCase();
-        
-        var tr = isInTrade(message.author.id);
-        if(tr != false) { //if sender is trading a pokemon
-            return;
-        }
         
         var ev = isInEvolution(message.author.id);
         if(ev != false) { //if sender has a pokemon evolving
@@ -354,86 +355,47 @@ client.on('message', async (message) => {
         
         if (command === "a" || command === "ability") {
             sentCommand = true;
-            input = input.join(' ');
-            var foundInfo = getAbilityInfo(input);
-            if (foundInfo == null) {
-                message.channel.send("Ability not found. " + duck);
+            commandStatus = runAbilityCommand(input);
+            if (!commandStatus) {
+                console.log("ERROR - runAbilityCommand() : input=" + input)
             }
             return;
-            
-            
+
+
+
         } else if (command === "begin") {
             sentCommand = true;
             currentCommand = isInTransaction(message.author.id);
             if (currentCommand != false) {
                 message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to begin a new adventure. " + duck);
-                return;
             }
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                transactions[transactions.length] = new Transaction(message.author.id, "creating your adventure");
-                var accept = 0;
-                while (accept === 0) {
-                    var region = await selectRegion(message, message.author.id);
-                    if (region == null) {
-                        removeTransaction(message.author.id);
-                        message.channel.send(message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready.");
-                        return;
-                    }
-                    
-                    var starter = await selectStarter(message, message.author.id, region);
-                    if (starter == null) {
-                        removeTransaction(message.author.id);
-                        message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
-                        return;
-                    }
+            commandStatus = await runBeginCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runBeginCommand() : message author id=" + message.author.id);
+            }
+            return;
 
-                    accept = await createNewUser(message.author.id, starter, message, region);
-                    if (accept === 1) {
-                        message.channel.send(message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the \"goto <location_name>\" command to move to another location within the region, provided you have a Pokémon strong enough to protect you.");
-                        removeTransaction(message.author.id);
-                    } else if (accept === -1) {
-                        message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
-                        removeTransaction(message.author.id);
-                        return;
-                    }
-                }
-            } else {
-                message.channel.send(message.author.username + " already has an adventure in progress. " + duck);
-                return;
-            }
-            return;
             
             
-        } else if (command === "b" || command === "bag" || command === "items" || command === "🅱") {
+        } else if (command === "b" || command === "bag" || command === "🅱") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can have a bag to store items in. " + duck);
-                return;
+            commandStatus = await runBagCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runBagCommand() : message author id=" + message.author.id);
             }
-            var bag = printBag(message);
             return;
+
             
             
         } else if (command === "d" ||command === "dex" || command === "pokedex" || command === "pokédex") {
             sentCommand = true;
-            if (input.length === 0) {
-                var exists = await userExists(message.author.id);
-                if (!exists) {
-                    message.channel.send(message.author.username + " you will need to begin your adventure before you can check your Pokédex progress. " + duck);
-                    return;
-                } else {
-                    printDex(message);
-                }
-            } else {
-                input = input.join(' ');
-                var foundInfo = await getDexInfo(message, input, "None");
-                if (foundInfo == null) {
-                    message.channel.send("Pokémon not found. " + duck);
-                }
+            commandStatus = await runDexCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runDexCommand() : input=" + input);
             }
             return;
+
+
             
         } else if (command === "daycare") {
             sentCommand = true;
@@ -1087,6 +1049,128 @@ client.on('message', async (message) => {
         }).catch((err) => setImmediate(() => { console.log(err); }));
     }
 });
+
+/*
+//  Reads user input to check if an ability exists
+//  with a name that matches the input.
+//  Returns false if an error is encountered, otherwise
+//  returns true.
+*/
+function runAbilityCommand(abilityName) {
+    abilityName = abilityName.join(' ');
+    var foundInfo = getAbilityInfo(abilityName);
+    if (foundInfo == null) {
+        message.channel.send("Ability not found. " + duck);
+    }
+    if (foundInfo = false) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/*
+//  Builds data for a new user, such as starter Pokemon, starting location,
+//  and giving default items to user.
+//  Returns true.
+*/
+async function runBeginCommand(message) {
+    var exists = await userExists(message.author.id);
+    if (!exists) {
+        transactions[transactions.length] = new Transaction(message.author.id, "creating your adventure");
+        var accept = 0;
+        while (accept === 0) {
+            var region = await selectRegion(message, message.author.id);
+            if (region == null) {
+                removeTransaction(message.author.id);
+                message.channel.send(message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready.");
+                return new Promise(function(resolve) {
+                    resolve(true);
+                });
+            }
+            
+            var starter = await selectStarter(message, message.author.id, region);
+            if (starter == null) {
+                removeTransaction(message.author.id);
+                message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
+                return new Promise(function(resolve) {
+                    resolve(true);
+                });
+            }
+
+            accept = await createNewUser(message.author.id, starter, message, region);
+            if (accept === 1) {
+                message.channel.send(message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the \"goto <location_name>\" command to move to another location within the region, provided you have a Pokémon strong enough to protect you.");
+                removeTransaction(message.author.id);
+            } else if (accept === -1) {
+                message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
+                removeTransaction(message.author.id);
+                return new Promise(function(resolve) {
+                    resolve(true);
+                });
+            }
+        }
+    } else {
+        message.channel.send(message.author.username + " already has an adventure in progress. " + duck);
+        return new Promise(function(resolve) {
+            resolve(true);
+        });
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Prints the contents of the bag from the user.
+//  Return true on success, false if an error is encountered.
+*/
+async function runBagCommand(message) {
+    var exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can have a bag to store items in. " + duck);
+        return new Promise(function(resolve) {
+            resolve(true);
+        });
+    }
+    let bag = printBag(message);
+    if (bag) {
+        return new Promise(function(resolve) {
+            resolve(true);
+        });
+    } else {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+}
+
+/*
+//  Prints out information about the Pokemon that was input by the user.
+//  Returns true.
+*/
+async function runDexCommand(message, input) {
+    if (input.length === 0) {
+        var exists = await userExists(message.author.id);
+        if (!exists) {
+            message.channel.send(message.author.username + " you will need to begin your adventure before you can check your Pokédex progress. " + duck);
+            return new Promise(function(resolve) {
+                resolve(true);
+            });
+        } else {
+            printDex(message);
+        }
+    } else {
+        input = input.join(' ');
+        let foundInfo = await getDexInfo(message, input, "None");
+        if (foundInfo == null) {
+            message.channel.send("Pokémon not found. " + duck);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    })
+}
 
 /*
 //  Sets the current channel as the channel that Pokebot reads from for the current guild.
@@ -9551,7 +9635,9 @@ function getNameByNumber(number) {
     });
 }
 
-//lists all items in the sender's bag
+/*
+//  Lists all items owned by the user as a code block.
+*/
 async function printBag(message) {
     var user = await getUser(message.author.id);
     var bag = await getBag(message.author.id);
@@ -9611,6 +9697,7 @@ async function printBag(message) {
     string += "```";
     
     message.channel.send(string);
+    return true;
 }
 
 //prompts the user to buy items from the poke mart
@@ -9963,7 +10050,7 @@ async function findPokemon(name) {
 
 async function findPokmonFromRegion(name, region) {
     let returnArray = [];
-    let dirname = "./data/region/" + region + "/";
+    let dirname = "../data/region/" + region + "/";
     let filenames = await getLocationFiles(dirname);
     let i;
     for (i = 0; i < filenames.length; i++) {
