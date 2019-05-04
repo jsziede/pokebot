@@ -5,6 +5,7 @@
 
 /*
 //  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
+//  @bug Using dex command on Magikarp (and probably some others) will break bot when checking its locations. Message length limit exceeded. Options are to either only show first x locations per region or separate the location tab into its own command and do a reaction for each region.
 */
 
 /*
@@ -12475,11 +12476,19 @@ function printHelp(message) {
     });
 }
 
-//converts current Eastern time to the time zone of the sender
+/*
+//  Converts current Eastern time to the time zone of the user.
+//  If function is called by user who doesn't have a timezone on record,
+//  then converts to UTC.
+*/
 function convertToTimeZone(user) {
     var CurrentDate = moment().format();
     var zone = momentTz.tz(CurrentDate, 'America/Detroit');
-    zone = zone.clone().tz(user.timezone);
+    if (user === false) {
+        zone = moment.utc(zone).format();
+    } else {
+        zone = zone.clone().tz(user.timezone);
+    }
     return zone;
 }
 
