@@ -5,8 +5,6 @@
 
 /*
 //  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
-//  @bug Using dex command on Magikarp (and probably some others) will break bot when checking its locations. Message length limit exceeded. Options are to either only show first x locations per region or separate the location tab into its own command and do a reaction for each region.
-//  @bug If bot encounters error during transaction, user will be stuck in transaction until bot process ends.
 */
 
 /*
@@ -247,7 +245,7 @@ client.on("A wild Pokebot appears!", () => {
 */
 process.on('error', error => {
     client.destroy();
-    console.log(error);
+    console.error(error);
     setTimeout(function () {
         client.login(myconfig.token);
     }, 10000);
@@ -260,7 +258,7 @@ process.on('error', error => {
 */
 process.on('unhandledRejection', error => {
     client.destroy();
-    console.log(error);
+    console.error(error);
     setTimeout(function () {
         client.login(myconfig.token);
     }, 10000);
@@ -273,11 +271,25 @@ process.on('unhandledRejection', error => {
 */
 process.on('uncaughtException', error => {
     client.destroy();
-    console.log(error);
+    console.error(error);
     setTimeout(function () {
         client.login(myconfig.token);
     }, 10000);
 });
+
+/*
+//  Log error messages to the console.
+//  @todo This could probably be more robust.
+*/
+client.on("error", (e) => {
+    console.error(e);
+    client.destroy();
+    setTimeout(function () {
+        client.login(myconfig.token);
+    }, 10000);
+});
+client.on("warn", (e) => console.warn(e));
+client.on("debug", (e) => console.info(e));
 
 /*
 //  Update the weather five seconds after every hour.
@@ -439,64 +451,43 @@ client.on('message', async (message) => {
             
         } else if ((command === "g" || command === "give") && input.length > 0) {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can give an item to your Pokémon. " + duck);
-                return;
+            commandStatus = await runGiveCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runGiveCommand() : input=" + input);
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to give a Pokémon an item. " + duck);
-                return;
-            }
-            transactions[transactions.length] = new Transaction(message.author.id, "your current item assignment");
-            input = input.join(' ');
-            var gaveItem = await giveItem(message, input);
-            if (gaveItem === false) {
-                message.channel.send(message.author.username + " was unable to give the " + input + ". " + duck);
-            }
-            removeTransaction(message.author.id);
             return;
+            
             
             
         } else if ((command === "goto" || command === "go") && input.length > 0) {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before being able to travel the world. " + duck);
-                return;
+            commandStatus = await runGotoCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runGotoCommand() : input=" + input);
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to move to a new location. " + duck);
-                return;
-            }
-            if (input.length > 1 && input[0] === "to" && input[1] != "to") {
-                input.splice(0, 1);
-            }
-            input = input.join(' ');
-            await setLocation(message, input);
             return;
+            
+
             
         } else if (command === "h" || command === "help") {
             sentCommand = true;
-            printHelp(message);
+            commandStatus = await runHelpCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runHelpCommand() : input=" + input);
+            }
             return;
+            
+
             
         } else if (command === "headbutt") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon. " + duck);
-                return;
+            commandStatus = await runHeadbuttCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runHeadbuttCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to headbutt trees with your Pokémon. " + duck);
-                return;
-            }
-            setField(message, "Headbutt");
             return;
+
+
             
         } else if (command === "l" ||command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
             sentCommand = true;
@@ -694,10 +685,10 @@ client.on('message', async (message) => {
             return;
             
             
-        } else if (command === "rock") {
+        } else if (command === "rock" || command === "rocksmash") {
             sentCommand = true;
             input = input.join(' ').toLowerCase();
-            if (input === "smash") {
+            if (input === "smash" || command === "rocksmash") {
                 var exists = await userExists(message.author.id);
                 if (!exists) {
                     message.channel.send(message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon. " + duck);
@@ -1207,11 +1198,91 @@ async function runFishCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can fish for Pokémon. " + duck);
     } else {
-        currentCommand = isInTransaction(message.author.id);
-        if (currentCommand != false) {
-            message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to begin fishing. " + duck);
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to begin fishing. " + duck);
         } else {
             await setField(message, "Fish");
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Uses gives a specified item to their lead Pokemon.
+*/
+async function runGiveCommand(message, input) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can give an item to your Pokémon. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to give a Pokémon an item. " + duck);
+        } else {
+            transactions[transactions.length] = new Transaction(message.author.id, "your current item assignment");
+            input = input.join(' ');
+            let gaveItem = await giveItem(message, input);
+            if (gaveItem === false) {
+                message.channel.send(message.author.username + " was unable to give the " + input + ". " + duck);
+            }
+            removeTransaction(message.author.id);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Changes user's location based on the user's input, if that location exists within their current region.
+*/
+async function runGotoCommand(message, input) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before being able to travel the world. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to move to a new location. " + duck);
+        } else {
+            if (input.length > 1 && input[0] === "to" && input[1] != "to") {
+                input.splice(0, 1);
+            }
+            input = input.join(' ');
+            await setLocation(message, input);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Prints an embedded message listing all the commands and what they do.
+*/
+async function runHelpCommand(message) {
+    await printHelp(message);
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Sets user to encounter only Pokemon that are found by headbutting trees.
+*/
+async function runHeadbuttCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon. " + duck);
+    } else {
+        currentCommand = isInTransaction(message.author.id);
+        if (currentCommand != false) {
+            message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to headbutt trees with your Pokémon. " + duck);
+        } else {
+            setField(message, "Headbutt");
         }
     }
     return new Promise(function(resolve) {
