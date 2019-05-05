@@ -8069,7 +8069,7 @@ function getGifName(name) {
 }
 
 //displays information about an owned pokemon in a rich embed
-async function displayAnOwnedPkmn(pkmn) {
+async function displayAnOwnedPkmn(pkmn, message) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
     var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
     var nextLevel = getXpToNextLevel(pkmn.name, pkmn.xp, pkmn.level_current);
@@ -8195,7 +8195,7 @@ async function displayAnOwnedPkmn(pkmn) {
                     "inline": true
                 }
             ]
-        }, files: [{ attachment: modelLink, name: (imageName + '.gif') }, { attachment: ("./balls/" + pkmn.ball + ".png"), name: 'ball.png' }]
+        }, files: [{ attachment: modelLink, name: (imageName + '.gif') }, { attachment: ("../gfx/balls/" + pkmn.ball + ".png"), name: 'ball.png' }]
     });
 }
 
