@@ -2446,15 +2446,15 @@ async function setLocation(message, locationName) {
 
 //sets the current location within a region of a user
 async function printAllLocations(message) {
-    var user = await getUser(message.author.id);
+    let user = await getUser(message.author.id);
 
-    var region = user.region;
+    let region = user.region;
     if (region == null) {
         return null;
     }
 
-    var path = generateRegionJSONPath(region);
-    var data;
+    let path = generateRegionJSONPath(region);
+    let data;
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
@@ -2520,29 +2520,45 @@ async function printAllLocations(message) {
 
 //prints the current location of the sender
 async function printLocation(message) {
-    var user = await getUser(message.author.id);
-    var region = user.region;
-    var location = user.location;
+    let user = await getUser(message.author.id);
+    let region = user.region;
+    let location = user.location;
     
-    var image = generateLocationImagePath(region, location);
-    var field = "walking";
+    let image = generateLocationImagePath(region, location);
+    let field = "Walking in the grass.";
     if (user.field === "Rock Smash") {
-        field = "smashing rocks";
+        field = "Smashing rocks into pieces.";
     } else if (user.field === "Headbutt") {
-        field = "headbutting trees"
+        field = "Headbutting trees to shake them up."
     } else if (user.field.includes("Rod")) {
         if (user.field === "Old Rod") {
-            field = "fishing with an " + user.field;
+            field = "Fishing with an " + user.field + ".";
         } else {
-            field = "fishing with a " + user.field;
+            field = "Fishing with a " + user.field + ".";
         }
     } else if (user.field === "Surfing") {
-        field = "surfing"
+        field = "Surfing over the water."
     } else if (user.field === "Dive") {
-        field = "diving underwater"
+        field = "Diving under the sea."
     }
 
-    message.channel.send(message.author.username + " is " + field + " at\n" + location + "\nin the " + region + " region." , {files: [image]});
+    let embed = {
+        "author": {
+            "name":  message.author.username + "'s Location"
+        },
+        "image": {
+            "url": "attachment://location.png"
+        },
+        "fields": [
+            {
+                "name":  "\u200b",
+                "value": "**Region:** " + region + "\n**Location:** " + location + "\n*" + field + "*",
+                "inline": false
+            }
+        ]
+    };
+
+    message.channel.send({embed, files: [{ attachment: image, name: "location.png" }] });
     return true;
 }
 
