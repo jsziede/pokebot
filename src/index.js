@@ -330,7 +330,7 @@ client.on('message', async (message) => {
     //only read messages from bot channel
     if (await isBotChannel(message)) {
         //if sender is trading a pokemon
-        if(isInTrade(message.author.id)) {
+        if(isInTrade(message.author.id) != null) {
             return;
         }
 
@@ -342,7 +342,7 @@ client.on('message', async (message) => {
         const command = input.shift().toLowerCase();
         
         var ev = isInEvolution(message.author.id);
-        if(ev != false) { //if sender has a pokemon evolving
+        if(ev != null) { //if sender has a pokemon evolving
             if(command === "a") { //sender accepts evo
                 await evolve(message);
                 sentCommand = true;
@@ -660,7 +660,7 @@ client.on('message', async (message) => {
 
     //if user has bot data and did not send a command nor is currently running a command
     var exists = await userExists(message.author.id);
-    if (exists && !sentCommand && !isInEvolution(message.author.id) && !isInTransaction(message.author.id) && !isInTrade(message.author.id)) {
+    if (exists && !sentCommand && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) != null) && (isInTrade(message.author.id) != null)) {
         
         //user did not post in the spam channel
         if (message.author.id === lastUser && enableSpam === false) {
@@ -688,7 +688,7 @@ client.on('message', async (message) => {
         await giveXP(message, xpAmount);
         await giveDayCareXP(message);
         
-        if (isInEvolution(message.author.id) || isInTransaction(message.author.id)) {
+        if ((isInEvolution(message.author.id) != null) || (isInTransaction(message.author.id) != null)) {
             return;
         }
         
@@ -849,7 +849,7 @@ function runAbilityCommand(abilityName) {
 */
 async function runBeginCommand(message) {
     let activeUserTransaction = isInTransaction(message.author.id);
-     if (activeUserTransaction != false) {
+     if (activeUserTransaction != null) {
         message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to begin a new adventure. " + duck);
     } else {
         let exists = await userExists(message.author.id);
@@ -857,13 +857,13 @@ async function runBeginCommand(message) {
             transactions[transactions.length] = new Transaction(message.author.id, "creating your adventure");
             let askUser = true;
             while (askUser) {
-                let region = await selectRegion(message, message.author.id);
-                if (region == null) {
+                let region = await selectRegion(message);
+                if (region === null) {
                     removeTransaction(message.author.id);
                     message.channel.send(message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready.");
                     askUser = false;
                 } else {
-                    let starter = await selectStarter(message, message.author.id, region);
+                    let starter = await selectStarter(message, region);
                     if (starter == null) {
                         removeTransaction(message.author.id);
                         message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
@@ -944,7 +944,7 @@ async function runDaycareCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can send a Pokémon to the day care. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to send a Pokémon to the day care. " + duck);
         } else {
             transactions[transactions.length] = new Transaction(message.author.id, "your current business at the day care");
@@ -966,7 +966,7 @@ async function runDiveCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can dive with a Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to dive with your Pokémon. " + duck);
         } else {
             setField(message, "Dive");
@@ -1002,7 +1002,7 @@ async function runFishCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can fish for Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to begin fishing. " + duck);
         } else {
             await setField(message, "Fish");
@@ -1022,7 +1022,7 @@ async function runGiveCommand(message, input) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can give an item to your Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to give a Pokémon an item. " + duck);
         } else {
             transactions[transactions.length] = new Transaction(message.author.id, "your current item assignment");
@@ -1048,14 +1048,18 @@ async function runGotoCommand(message, input) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to travel the world. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to move to a new location. " + duck);
         } else {
             if (input.length > 1 && input[0] === "to" && input[1] != "to") {
                 input.splice(0, 1);
             }
             input = input.join(' ');
-            await setLocation(message, input);
+            if (await setLocation(message, input) === false) {
+                return new Promise(function(resolve) {
+                    resolve(false);
+                });
+            }
         }
     }
     return new Promise(function(resolve) {
@@ -1082,7 +1086,7 @@ async function runHeadbuttCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to headbutt trees with your Pokémon. " + duck);
         } else {
             setField(message, "Headbutt");
@@ -1123,7 +1127,11 @@ async function runLocationsCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before viewing the locations you can visit. " + duck);
     } else {
-        printAllLocations(message);
+        if (await printAllLocations(message) === false) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
     }
     return new Promise(function(resolve) {
         resolve(true);
@@ -1140,7 +1148,7 @@ async function runLottoCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure to enter the lottery. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to enter the lottery. " + duck);
         }
         
@@ -1278,7 +1286,7 @@ async function runMartCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to buy items. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to buy items. " + duck);
         } else {
             transactions[transactions.length] = new Transaction(message.author.id, "your item shopping");
@@ -1317,7 +1325,7 @@ async function runReleaseCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to release a Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to release a Pokémon. " + duck);
         } else {
             transactions[transactions.length] = new Transaction(message.author.id, "your current Pokémon release");
@@ -1343,7 +1351,7 @@ async function runRocksmashCommand(message, input) {
             message.channel.send(message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon. " + duck);
         } else {
             let activeUserTransaction = isInTransaction(message.author.id);
-            if (activeUserTransaction != false) {
+            if (activeUserTransaction != null) {
                 message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to smash rocks with your Pokémon. " + duck);
             } else {
                 setField(message, "Rock Smash");
@@ -1364,7 +1372,7 @@ async function runSetLeadCommand(message, input) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to select a Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to change your lead Pokémon. " + duck);
             return;
         } else {
@@ -1391,7 +1399,7 @@ async function runSurfCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can surf with a Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to surf with your Pokémon. " + duck);
         } else {
             setField(message, "Surfing");
@@ -1411,7 +1419,7 @@ async function runTakeCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can take items from your Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to take items from your Pokémon. " + duck);
         } else {
             takeItem(message);
@@ -1432,7 +1440,7 @@ async function runTravelCommand(message, input) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can travel to a new region. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to travel to a new region. " + duck);
         } else {
             input = input.join(' ');
@@ -1456,7 +1464,7 @@ async function runTradeCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can trade Pokémon. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to start a new trade. " + duck);
         } else if (message.mentions.users.first() === undefined) {
             message.channel.send(message.author.username + " please mention the user you want to trade with. " + duck);
@@ -1478,7 +1486,7 @@ async function runUseCommand(message, input) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can use items. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to use an item. " + duck);
         } else {
             transactions[transactions.length] = new Transaction(message.author.id, "your current item use");
@@ -1520,7 +1528,7 @@ async function runWalkCommand(message) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can walk around. " + duck);
     } else {
         let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != false) {
+        if (activeUserTransaction != null) {
             message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to walk around. " + duck);
         } else {
             await setField(message, "Walking");
@@ -1627,7 +1635,7 @@ function isInTransaction(userID) {
     if (index > -1) {
         return transactions[index].type;
     } else {
-        return false;
+        return null;
     }
 }
 
@@ -1645,7 +1653,7 @@ function isInEvolution(userID) {
     if (index > -1) {
         return evolving[index];
     } else {
-        return false;
+        return null;
     }
 }
 
@@ -1663,7 +1671,7 @@ function isInTrade(userID) {
     if (index > -1) {
         return trading[index];
     } else {
-        return false;
+        return null;
     }
 }
 
@@ -1682,7 +1690,7 @@ function generateModelLink(name, shiny, gender, form) {
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return null;
     }
     var pkmn = JSON.parse(data);
@@ -1822,7 +1830,7 @@ function generateSpriteLink(name, gender, form) {
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return null;
     }
     let pkmn = JSON.parse(data);
@@ -2001,30 +2009,32 @@ async function createNewUser(userID, name, message, region) {
     starter.lead = 1;
     
     displayAWildPkmn(starter, message);
-    var accept = false;
     
-    accept = await confirmStarter(message, userID);
-    
+    let accept = await confirmStarter(message, userID);
     if (!accept) { //if user rejects starter
-        return false;
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
     }
     
     //user begins with an everstone and 10 poke balls
-    var everstone = new Item("Everstone", 1, true, false);
-    var balls = new Item("Poké Ball", 10, true, false);
-    var visa = new Item((region + " Visa"), 1, false, true);
+    let everstone = new Item("Everstone", 1, true, false);
+    let balls = new Item("Poké Ball", 10, true, false);
+    let visa = new Item((region + " Visa"), 1, false, true);
     
     starter.nick = await nicknamePokemon(message, starter.name);
     await addPokemon(userID, starter);
 
-    var query = "SELECT * FROM pokemon WHERE current_trainer = ?";
+    let query = "SELECT * FROM pokemon WHERE current_trainer = ?";
     await con.query(query, [userID], async function (err, row) {
         if (err) {
-            console.log(err);
-            return false;
+            console.error(err);
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
         }
-        var lead_id = row[0].pokemon_id;
-        var set = {
+        let lead_id = row[0].pokemon_id;
+        let set = {
             user_id: userID,
             level: 5,
             region: starter.region,
@@ -2034,13 +2044,15 @@ async function createNewUser(userID, name, message, region) {
             money: 5000,
             lotto: "2018-06-21T00:12:45-04:00"
         }
-        var user_query = "INSERT INTO user SET ?";
+        let user_query = "INSERT INTO user SET ?";
         await con.query(user_query, [set], async function (err) {
             if (err) {
-                console.log(err);
-                return false;
+                console.error(err);
+                return new Promise(function(resolve) {
+                    resolve(false);
+                });
             }
-            var prefs_set = {
+            let prefs_set = {
                 user_id: userID,
                 react_money: 1,
                 react_encounter: 1,
@@ -2052,11 +2064,13 @@ async function createNewUser(userID, name, message, region) {
                 ping_level: 0,
                 timezone: "America/Detroit"
             }
-            var user_prefs_query = "INSERT INTO user_prefs SET ?";
+            let user_prefs_query = "INSERT INTO user_prefs SET ?";
             await con.query(user_prefs_query, [prefs_set], async function (err) {
                 if (err) {
-                    console.log(err);
-                    return false;
+                    console.error(err);
+                    return new Promise(function(resolve) {
+                        resolve(false);
+                    });
                 } else {
                     let user = await getUser(userID);
                     await addToPokedex(user, starter.no);
@@ -2064,18 +2078,20 @@ async function createNewUser(userID, name, message, region) {
             });
         });
     });
-    var bag_set = {
+    let bag_set = {
         owner: userID,
         name: everstone.name,
         quantity: 1,
         holdable: 1,
         category: "Item"
     }
-    var bag_query = "INSERT INTO bag SET ?";
+    let bag_query = "INSERT INTO bag SET ?";
     con.query(bag_query, [bag_set], function (err) {
         if (err) {
-            console.log(err);
-            return false;
+            console.error(err);
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
         }
     });
 
@@ -2089,8 +2105,10 @@ async function createNewUser(userID, name, message, region) {
     bag_query = "INSERT INTO bag SET ?";
     con.query(bag_query, [bag_set], function (err) {
         if (err) {
-            console.log(err);
-            return false;
+            console.error(err);
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
         }
     });
 
@@ -2104,19 +2122,23 @@ async function createNewUser(userID, name, message, region) {
     bag_query = "INSERT INTO bag SET ?";
     con.query(bag_query, [bag_set], function (err) {
         if (err) {
-            console.log(err);
-            return false;
+            console.error(err);
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
         }
     });
-    return true;
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
 }
 
 //asks user if they want to use the starter that was selected for them
 async function confirmStarter(message) {
     message.channel.send(message.author.username + " are you ok with this Pokémon? Type \"Yes\" to accept or \"No\" to choose a new starter Pokémon. You can also type \"Cancel\" to begin your adventure later.");
     
-    var cancel = false;
-    var input = null;
+    let cancel = false;
+    let input = null;
     while(cancel == false) {
         await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 60000, errors: ['time'] })
         .then(collected => {
@@ -2127,15 +2149,12 @@ async function confirmStarter(message) {
             cancel = true;
         });
 
-        if (input === "cancel") {
+        if (input === "cancel" || input === "no") {
             cancel = true;
             input = false;
         } else if (input === "yes") {
             cancel = true;
             input = true;
-        } else if (input === "no") {
-            cancel = true;
-            input = false;
         } else if (input != null) {
             message.channel.send(message.author.username + ", your response was not recognized. Type \"Yes\" to accept or \"No\" to choose a new starter Pokémon. You can also type \"Cancel\" to begin your adventure later.");
             input = false;
@@ -2143,11 +2162,13 @@ async function confirmStarter(message) {
             input = false;
         }
     }
-    return input;
+    return new Promise(function(resolve) {
+        resolve(input);
+    });
 }
 
 //produces a starter pokemon for a user
-async function selectStarter(message, userID, region) {
+async function selectStarter(message, region) {
     if (region === "Kanto") {
         message.channel.send(message.author.username + ", please select a starter by either typing its number in the list or its name:\n```1. Bulbasaur\n2. Charmander\n3. Squirtle```");
     } else if (region === "Johto") {
@@ -2163,178 +2184,182 @@ async function selectStarter(message, userID, region) {
     } else { //alola
         message.channel.send(message.author.username + ", please select a starter by either typing its number in the list or its name:\n```1. Rowlet\n2. Litten\n3. Popplio```");
     }
-    var cancel = false;
-    var input = null;
+    let cancel = false;
+    let selectedStarter = null;
     while(cancel == false) {
         await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
-            input = collected.first().content.toString().toLowerCase();
+            selectedStarter = collected.first().content.toString().toLowerCase();
         })
         .catch(collected => {
-            input = "cancel";
+            selectedStarter = "cancel";
             cancel = true;
         });
-        if (input === "cancel") {
+        if (selectedStarter === "cancel") {
             cancel = true;
-            input = null;
-        } else if (input != null) {
+            selectedStarter = null;
+        } else if (selectedStarter != null) {
             if (region === "Kanto") {
-                if (input === "bulbasaur" || input === "1") {
+                if (selectedStarter === "bulbasaur" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Bulbasaur";
-                } else if (input === "charmander" || input === "2") {
+                    selectedStarter = "Bulbasaur";
+                } else if (selectedStarter === "charmander" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Charmander";
-                } else if (input === "squirtle" || input === "3") {
+                    selectedStarter = "Charmander";
+                } else if (selectedStarter === "squirtle" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Squirtle";
+                    selectedStarter = "Squirtle";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else if (region === "Johto") {
-                if (input === "chikorita" || input === "1") {
+                if (selectedStarter === "chikorita" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Chikorita";
-                } else if (input === "cyndaquil" || input === "2") {
+                    selectedStarter = "Chikorita";
+                } else if (selectedStarter === "cyndaquil" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Cyndaquil";
-                } else if (input === "totodile" || input === "3") {
+                    selectedStarter = "Cyndaquil";
+                } else if (selectedStarter === "totodile" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Totodile";
+                    selectedStarter = "Totodile";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else if (region === "Hoenn") {
-                if (input === "treecko" || input === "1") {
+                if (selectedStarter === "treecko" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Treecko";
-                } else if (input === "torchic" || input === "2") {
+                    selectedStarter = "Treecko";
+                } else if (selectedStarter === "torchic" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Torchic";
-                } else if (input === "mudkip" || input === "3") {
+                    selectedStarter = "Torchic";
+                } else if (selectedStarter === "mudkip" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Mudkip";
+                    selectedStarter = "Mudkip";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else if (region === "Sinnoh") {
-                if (input === "turtwig" || input === "1") {
+                if (selectedStarter === "turtwig" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Turtwig";
-                } else if (input === "chimchar" || input === "2") {
+                    selectedStarter = "Turtwig";
+                } else if (selectedStarter === "chimchar" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Chimchar";
-                } else if (input === "piplup" || input === "3") {
+                    selectedStarter = "Chimchar";
+                } else if (selectedStarter === "piplup" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Piplup";
+                    selectedStarter = "Piplup";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else if (region === "Unova") {
-                if (input === "snivy" || input === "1") {
+                if (selectedStarter === "snivy" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Snivy";
-                } else if (input === "tepig" || input === "2") {
+                    selectedStarter = "Snivy";
+                } else if (selectedStarter === "tepig" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Tepig";
-                } else if (input === "oshawott" || input === "3") {
+                    selectedStarter = "Tepig";
+                } else if (selectedStarter === "oshawott" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Oshawott";
+                    selectedStarter = "Oshawott";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else if (region === "Kalos") {
-                if (input === "chespin" || input === "1") {
+                if (selectedStarter === "chespin" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Chespin";
-                } else if (input === "fennekin" || input === "2") {
+                    selectedStarter = "Chespin";
+                } else if (selectedStarter === "fennekin" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Fennekin";
-                } else if (input === "froakie" || input === "3") {
+                    selectedStarter = "Fennekin";
+                } else if (selectedStarter === "froakie" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Froakie";
+                    selectedStarter = "Froakie";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else if (region === "Alola") {
-                if (input === "rowlet" || input === "1") {
+                if (selectedStarter === "rowlet" || selectedStarter === "1") {
                     cancel = true;
-                    input = "Rowlet";
-                } else if (input === "litten" || input === "2") {
+                    selectedStarter = "Rowlet";
+                } else if (selectedStarter === "litten" || selectedStarter === "2") {
                     cancel = true;
-                    input = "Litten";
-                } else if (input === "popplio" || input === "3") {
+                    selectedStarter = "Litten";
+                } else if (selectedStarter === "popplio" || selectedStarter === "3") {
                     cancel = true;
-                    input = "Popplio";
+                    selectedStarter = "Popplio";
                 } else {
                     message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                    input = null;
+                    selectedStarter = null;
                 }
             } else {
                 message.channel.send(name + " selected an invalid Pokémon. Please select a starter by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-                input = null;
+                selectedStarter = null;
             }
         } else {
-            input = null;
+            selectedStarter = null;
         }
     }
-    return input;
+    return new Promise(function(resolve) {
+        resolve(selectedStarter);
+    });
 }
 
 //prompts the user to select a region to start in
-async function selectRegion(message, userID) {
+async function selectRegion(message) {
     message.channel.send(message.author.username + ", please select a region to start in by either typing its number in the list or its name:\n```1. Kanto\n2. Johto\n3. Hoenn\n4. Sinnoh\n5. Unova\n6. Kalos\n7. Alola```\nBe aware that you will not immediately be able to change regions. Type \"cancel\" to cancel region selection.");
     
     var cancel = false;
-    var input = null;
+    var selectedRegion = null;
     while(cancel == false) {
         await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
-            input = collected.first().content.toString().toLowerCase();
+            selectedRegion = collected.first().content.toString().toLowerCase();
         })
         .catch(collected => {
-            input = null;
+            selectedRegion = null;
             cancel = true;
         });
         
-        if (input === "cancel") {
+        if (selectedRegion === "cancel") {
             cancel = true;
-            input = null;
-        } else if (input === "kanto" || input === "1") {
+            selectedRegion = null;
+        } else if (selectedRegion === "kanto" || selectedRegion === "1") {
             cancel = true;
-            input = "Kanto";
-        } else if (input === "johto" || input === "2") {
+            selectedRegion = "Kanto";
+        } else if (selectedRegion === "johto" || selectedRegion === "2") {
             cancel = true;
-            input = "Johto";
-        } else if (input === "hoenn" || input === "3") {
+            selectedRegion = "Johto";
+        } else if (selectedRegion === "hoenn" || selectedRegion === "3") {
             cancel = true;
-            input = "Hoenn";
-        } else if (input === "sinnoh" || input === "4") {
+            selectedRegion = "Hoenn";
+        } else if (selectedRegion === "sinnoh" || selectedRegion === "4") {
             cancel = true;
-            input = "Sinnoh";
-        } else if (input === "unova" || input === "5") {
+            selectedRegion = "Sinnoh";
+        } else if (selectedRegion === "unova" || selectedRegion === "5") {
             cancel = true;
-            input = "Unova";
-        } else if (input === "kalos" || input === "6") {
+            selectedRegion = "Unova";
+        } else if (selectedRegion === "kalos" || selectedRegion === "6") {
             cancel = true;
-            input = "Kalos";
-        } else if (input === "alola" || input === "7") {
+            selectedRegion = "Kalos";
+        } else if (selectedRegion === "alola" || selectedRegion === "7") {
             cancel = true;
-            input = "Alola";
-        } else if (input != null) {
+            selectedRegion = "Alola";
+        } else if (selectedRegion != null) {
             message.channel.send(message.author.username + " selected an invalid region. Please select a region by typing its name or its number as shown in the selection list, or type \"cancel\" to cancel your selection.");
-            input = null;
+            selectedRegion = null;
         } else {
-            input = null;
+            selectedRegion = null;
         }
     }
-    return input;
+    return new Promise(function(resolve) {
+        resolve(selectedRegion);
+    });
 }
 
 //sets the current region of a user
@@ -2357,43 +2382,46 @@ async function setRegion(message, regionName) {
     } else {
         return false;
     }
-    var user = await getUser(message.author.id);
-    var bag = await getBag(message.author.id);
+    let user = await getUser(message.author.id);
+    let bag = await getBag(message.author.id);
     
     if (region === user.region) {
         message.channel.send(message.author.username + " you are already in the " + region + " region.");
-        return true;
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    } else {
+        let doesUserHaveIt = bag.map(function(t) { return t.name; }).indexOf(region + " Visa");
+        return new Promise(function(resolve) {
+            if (doesUserHaveIt >= 0 ) {
+                let loc = getDefaultLocationOfRegion(region);
+                let query = "UPDATE user SET region = ?, location = ? WHERE user.user_id = ?";
+                con.query(query, [region, loc, message.author.id], function(err) {
+                    if (err) {
+                        console.error(err);
+                        resolve(false);
+                    } else {
+                        message.channel.send(message.author.username + " traveled to the " + region + " region! You are now located at " + loc + ".");
+                        resolve(true);
+                    }
+                });
+            } else {
+                message.channel.send(message.author.username + " you must obtain a " + region + " Visa before you can travel to " + region + ".");
+                resolve(true);
+            }
+        });
     }
-
-    var doesUserHaveIt = bag.map(function(t) { return t.name; }).indexOf(region + " Visa");
-    
-    return new Promise(function(resolve, reject) {
-        if (doesUserHaveIt >= 0 ) {
-            var loc = getDefaultLocationOfRegion(region);
-            var query = "UPDATE user SET region = ?, location = ? WHERE user.user_id = ?";
-            con.query(query, [region, loc, message.author.id], function(err) {
-                if (err) {
-                    console.log(err);
-                    resolve(false);
-                } else {
-                    message.channel.send(message.author.username + " traveled to the " + region + " region! You are now located at " + loc + ".");
-                    resolve(true);
-                }
-            });
-        } else {
-            message.channel.send(message.author.username + " you must obtain a " + region + " Visa before you can travel to " + region + ".");
-            resolve(true);
-        }
-    });
 }
 
 //sets the current location within a region of a user
 async function setLocation(message, locationName) {
-    var user = await getUser(message.author.id);
+    let user = await getUser(message.author.id);
 
-    var region = user.region;
+    let region = user.region;
     if (region == null) {
-        return null;
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
     }
 
     var loc = doesLocationExist(region, locationName);
@@ -2477,7 +2505,17 @@ async function printAllLocations(message) {
         },
         "fields": fields
     };
-    message.channel.send({embed});
+
+    let messageSent = true;
+    await message.channel.send({embed})
+    .catch(err => {
+        console.error("[ERROR] Failed to send Locations message - " + err);
+        messageSent = false;
+    });
+
+    return new Promise(function(resolve) {
+        resolve(messageSent);
+    });
 }
 
 //prints the current location of the sender
@@ -3855,7 +3893,7 @@ async function tradeOffer(message, tradeTo) {
         return false;
     }
     
-    if (isInEvolution(tradeTo.id) != false || isInTrade(tradeTo.id) != false || isInTransaction(tradeTo.id) != false) {
+    if (isInEvolution(tradeTo.id) != null || (isInTrade(tradeTo.id) != null) || (isInTransaction(tradeTo.id) != null)) {
         message.channel.send(tradeTo.username + " is currently unavailable to trade.");
         removeTrade(message.author.id);
         return false;
@@ -4415,6 +4453,12 @@ async function evolve(message) {
     var pkmn = JSON.parse(pdata);
     
     var evo = isInEvolution(message.author.id);
+    if (evo === null) {
+        console.warn("Evolve function called but isInEvolution() returned null for user= " + message.author.id);
+        return new Promise(function(resolve) {
+            resolve(false);
+        })
+    }
     
     if (evolvingPokemon.name === evolvingPokemon.nickname) {
         evolvingPokemon.nickname = null;
@@ -5390,7 +5434,19 @@ async function teachNewMove(message, pokemon, moveName) {
         }
     
     var spriteLink = generateSpriteLink(pokemon.name, pokemon.gender, pokemon.form);
+    if (spriteLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var modelLink = generateModelLink(pokemon.name, pokemon.shiny, pokemon.gender, pokemon.form);
+    if (modelLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var name = pokemon.name;
     if (pokemon.nickname != null) {
         name = pokemon.nickname;
@@ -5726,7 +5782,7 @@ async function giveXP(message, amount) {
                 evolveTo = await checkEvolve(user, pokemon, "level", null);
             }
         } else {
-            if (isInEvolution(message.author.id) === false && evolveTo != null) {
+            if (isInEvolution(message.author.id) === null && evolveTo != null) {
                 if (evolveTo === "Malamar") {
                     message.channel.send("˙ʇdǝɔɔɐ oʇ ,,∀,,  ɹo lǝɔuɐɔ oʇ ,,q,, ǝdʎ┴ ¡ɹɐɯɐlɐW oʇuᴉ ƃuᴉʌloʌǝ sᴉ ʎɐʞuI ɹnoʎ <@" + message.author.id + ">");
                 } else {
@@ -8199,7 +8255,19 @@ async function displayAWildPkmn(pkmn, message) {
     }
     
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
+    if (modelLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
+    if (spriteLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var nextLevel = getXpToNextLevel(pkmn.name, pkmn.totalxp, pkmn.level);
     
     var type_icon = await client.emojis.find("name", pkmn.type[0]);
@@ -8326,7 +8394,19 @@ function getGifName(name) {
 //displays information about an owned pokemon in a rich embed
 async function displayAnOwnedPkmn(pkmn, message) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
+    if (modelLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
+    if (spriteLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var nextLevel = getXpToNextLevel(pkmn.name, pkmn.xp, pkmn.level_current);
     
     var year = moment(pkmn.date).format('Y');
@@ -8457,8 +8537,19 @@ async function displayAnOwnedPkmn(pkmn, message) {
 //displays hidden information about an owned pokemon in a rich embed
 function displayHiddenStats(pkmn) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
+    if (modelLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
-    
+    if (spriteLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var EVs = [pkmn.ev_hp, pkmn.ev_atk, pkmn.ev_def, pkmn.ev_spatk, pkmn.ev_spdef, pkmn.ev_spd];
     var IVs = [pkmn.iv_hp, pkmn.iv_atk, pkmn.iv_def, pkmn.iv_spatk, pkmn.iv_spdef, pkmn.iv_spd];
 
@@ -9142,8 +9233,19 @@ async function getDexInfo(message, name, form) {
     var userID = message.author.id;
     
     var modelLink = generateModelLink(pkmn.names.en, false, "Male", "None");
+    if (modelLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var spriteLink = generateSpriteLink(pkmn.names.en, "Male", "None");
-    
+    if (spriteLink === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
+
     var type_icon = await client.emojis.find("name", pkmn.types[0]);
     var types = type_icon + " " + pkmn.types[0];
     if (pkmn.types.length > 1) {
