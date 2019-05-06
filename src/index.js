@@ -358,9 +358,13 @@ client.on('message', async (message) => {
                     message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
                     return;
                 }
-                await getLeadPokemon(message.author.id).then(function(rows) {
-                        displayAnOwnedPkmn(rows, message);
-                    }).catch((err) => setImmediate(() => { console.log(err); }));
+                let lead = await getLeadPokemon(message.author.id);
+                if (lead === null) {
+                    return new Promise(function(resolve) {
+                        resolve(false);
+                    });
+                }
+                displayAnOwnedPkmn(lead, message);
                 return;
             } else {
                 message.channel.send(message.author.username + " please finish " + ev.from + "'s evolution into " + ev.to + ". Type \"B\" to cancel or  \"A\" to accept. " + duck);
@@ -699,13 +703,20 @@ client.on('message', async (message) => {
         var baseMoneyChance = 20;
         var moneyChance = baseMoneyChance;
         
-        var user;
-        await getUser(message.author.id).then(function(rows) {
-            user = rows;
-        }).catch((err) => setImmediate(() => { console.log(err); }));
+        let user = await getUser(message.author.id);
+        if (user === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
 
         //gets the sender's lead pokemon and checks its ability
         let lead = await getLeadPokemon(message.author.id);
+        if (lead === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
         var ability = lead.ability;
         
         //  @todo these should check the global weather tables instead 
@@ -1107,6 +1118,11 @@ async function runLeadCommand(message, input) {
         message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
     } else {
         let pkmn = await getLeadPokemon(message.author.id);
+        if (pkmn === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
         // if user added 'hidden' to the command, then show hidden
         if (input.length > 0 && input[0].toLowerCase() === "hidden") {
             displayHiddenStats(pkmn);
@@ -1154,6 +1170,11 @@ async function runLottoCommand(message) {
         
         //gets the day when the user last ran the lotto command, in their timezone
         let user = await getUser(message.author.id);
+        if (user === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
         let cur = convertToTimeZone(user);
         let lastDaily = moment(user.lotto);
         let zone = momentTz.tz(lastDaily, user.timezone);
@@ -1512,7 +1533,11 @@ async function runWhereCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before heading into the Pokémon world. " + duck);
     } else {    //does not need to be awaited
-        printLocation(message);
+        if (await printLocation(message) === false) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
     }
     return new Promise(function(resolve) {
         resolve(true);
@@ -1987,7 +2012,7 @@ function generateLocationJSONPath(region, location) {
 async function userExists(userID) {
     let search = await getUser(userID);
     return new Promise(function(resolve) {
-        if (search != false) {
+        if (search != null) {
             resolve(true);
         } else {
             resolve(false);
@@ -2073,6 +2098,11 @@ async function createNewUser(userID, name, message, region) {
                     });
                 } else {
                     let user = await getUser(userID);
+                    if (user === null) {
+                        return new Promise(function(resolve) {
+                            resolve(false);
+                        });
+                    }
                     await addToPokedex(user, starter.no);
                 }
             });
@@ -2383,7 +2413,18 @@ async function setRegion(message, regionName) {
         return false;
     }
     let user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     let bag = await getBag(message.author.id);
+    if (bag === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     if (region === user.region) {
         message.channel.send(message.author.username + " you are already in the " + region + " region.");
@@ -2416,6 +2457,11 @@ async function setRegion(message, regionName) {
 //sets the current location within a region of a user
 async function setLocation(message, locationName) {
     let user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     let region = user.region;
     if (region == null) {
@@ -2424,10 +2470,10 @@ async function setLocation(message, locationName) {
         });
     }
 
-    var loc = doesLocationExist(region, locationName);
+    let loc = doesLocationExist(region, locationName);
     return new Promise(function(resolve) {
         if (loc != null) {
-            var query = "UPDATE user SET location = ?, field = 'Walking' WHERE user.user_id = ?";
+            let query = "UPDATE user SET location = ?, field = 'Walking' WHERE user.user_id = ?";
             con.query(query, [loc, message.author.id], function(err) {
                 if (err) {
                     console.log(err);
@@ -2447,6 +2493,11 @@ async function setLocation(message, locationName) {
 //sets the current location within a region of a user
 async function printAllLocations(message) {
     let user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     let region = user.region;
     if (region == null) {
@@ -2521,6 +2572,11 @@ async function printAllLocations(message) {
 //prints the current location of the sender
 async function printLocation(message) {
     let user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     let region = user.region;
     let location = user.location;
     
@@ -2558,8 +2614,16 @@ async function printLocation(message) {
         ]
     };
 
-    message.channel.send({embed, files: [{ attachment: image, name: "location.png" }] });
-    return true;
+    let messageSent = true;
+    await message.channel.send({embed, files: [{ attachment: image, name: "location.png" }] })
+    .catch(err => {
+        console.error("[ERROR] Failed to send Where message - " + err);
+        messageSent = false;
+    });
+
+    return new Promise(function(resolve) {
+        resolve(messageSent);
+    });
 }
 
 //checks if the given location exists in the given region
@@ -2640,13 +2704,13 @@ function getDefaultGamesOfRegion(region) {
 
 //returns the sender's lead pokemon
 function getLeadPokemon(userid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT user.lead FROM user WHERE user_id = ?';
 
         con.query(query_str, userid, function (err, rows) {
             if (err) {
                 console.log(err);
-                return reject(err);
+                return resolve(null);
             }
             var p_id = rows[0].lead;
             query_str2 = 'SELECT * FROM pokemon WHERE pokemon_id = ?';
@@ -2654,7 +2718,7 @@ function getLeadPokemon(userid) {
             con.query(query_str2, p_id, function (err, rows2) {
                 if (err) {
                     console.log(err);
-                    return reject(err);
+                    return resolve(null);
                 }
                 resolve(rows2[0]);
             });
@@ -2669,7 +2733,7 @@ function getEvolvingPokemon(userid) {
         con.query(query_str, [userid], function (err, rows) {
             if (err) {
                 console.log(err);
-                return reject(err);
+                resolve(null);
             }
             resolve(rows[0]);
         });
@@ -2678,15 +2742,15 @@ function getEvolvingPokemon(userid) {
 
 //returns the sender's basic information
 function getUser(userid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM user, user_prefs WHERE user.user_id = ? AND user_prefs.user_id = ?';
         con.query(query_str, [userid, userid], function (err, rows) {
             if (err) {
                 console.log(err);
-                return reject(err);
+                resolve(null);
             }
             if (!rows.length) {
-                resolve(false);
+                resolve(null);
             }
             resolve(rows[0]);
         });
@@ -2700,7 +2764,7 @@ function getBag(userid) {
         con.query(query_str, userid, function (err, rows) {
             if (err) {
                 console.log(err);
-                return reject(err);
+                resolve(null);
             }
             resolve(rows);
         });
@@ -2709,12 +2773,12 @@ function getBag(userid) {
 
 //returns the pokemon currently owned by the sender
 function getPokemon(userid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage IS NULL';
         con.query(query_str, userid, function (err, rows) {
             if (err) {
                 console.log(err);
-                return reject(err);
+                resolve(null);
             }
             resolve(rows);
         });
@@ -2723,12 +2787,12 @@ function getPokemon(userid) {
 
 //returns the pokemon currently owned by the sender
 function getDaycare(userid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage = "daycare"';
         con.query(query_str, userid, function (err, rows) {
             if (err) {
                 console.log(err);
-                return reject(err);
+                resolve(null);
             }
             resolve(rows);
         });
@@ -2747,6 +2811,11 @@ async function fixEvolutions() {
         for (i = 0; i < pokemon.length; i++) {
             if (pokemon[i].evolving === 1) {
                 var user = await getUser(pokemon[i].current_trainer);
+                if (user === null) {
+                    return new Promise(function(resolve) {
+                        resolve(false);
+                    });
+                }
                 var to = await checkEvolve(user, pokemon, "level", null);
                 evolving[evolving.length] = new Evolution(pokemon[i].current_trainer, pokemon[i].name, to);
             }
@@ -2800,7 +2869,17 @@ function getItem(itemid) {
 //changes the sender's field
 async function setField(message, field) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var lead = await getLeadPokemon(user.user_id);
+    if (lead === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var rods = await getRods(user.user_id);
     var locationData;
     var rpath = generateLocationJSONPath(user.region, user.location);
@@ -3424,6 +3503,11 @@ function removeItemFromBag(userid, itemName, amount) {
 //gives the requested item to the sender's lead pokemon
 async function giveItem(message, item) {
     var bag = await getBag(message.author.id);
+    if (bag === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     item = doesUserHaveHoldableItem(bag, item);
     if (item == null) {
@@ -3431,6 +3515,11 @@ async function giveItem(message, item) {
     }
     
     var lead = await getLeadPokemon(message.author.id);
+    if (lead === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     if (lead.item === "None" || lead.item == null) {
         var query = " UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?";
         con.query(query, [item.item_id, lead.pokemon_id], function(err) {
@@ -3521,7 +3610,18 @@ function updateMoves(pokemon, moves) {
 //uses the requested item in the sender's bag if the item exists and can be used
 async function useItem(message, item) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var bag = await getBag(user.user_id);
+    if (bag === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     item = doesUserHaveUsableItem(bag, item);
 
@@ -3532,6 +3632,11 @@ async function useItem(message, item) {
     item = item.name;
 
     var lead = await getLeadPokemon(user.user_id);
+    if (lead === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var disposedItem = "None";
     var to;
     if (item === "Fire Stone") {
@@ -3867,7 +3972,17 @@ async function useItem(message, item) {
 //takes the item from the sender's lead pokemon if it holds one and returns it to the sender's bag
 async function takeItem(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var lead = await getLeadPokemon(user.user_id);
+    if (lead === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     if (lead.item === "None" || lead.item === null) {
         message.channel.send(message.author.username + " your " + lead.name + " is not holding anything.");
     } else {
@@ -3958,7 +4073,17 @@ async function tradeOffer(message, tradeTo) {
     var receiveIndex;
     
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var pokemon = await getPokemon(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     var matchedIndexes = [];
     
@@ -4081,7 +4206,17 @@ async function tradeOffer(message, tradeTo) {
     message.channel.send(message.author.username + " selected a " + selectedPokemon.name + " to trade.");
     
     var tuser = await getUser(tradeTo.id);
+    if (tuser === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var tpokemon = await getPokemon(tradeTo.id);
+    if (tpokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     matchedIndexes = [];
     
@@ -4456,7 +4591,17 @@ async function tradeOffer(message, tradeTo) {
 //evolves a pokemon and updates pokemon properties accordingly
 async function evolve(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var evolvingPokemon = await getEvolvingPokemon(message.author.id);
+    if (evolvingPokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     var ppath = generatePokemonJSONPath(evolvingPokemon.name);
     var pdata;
@@ -4716,6 +4861,11 @@ async function evolve(message) {
     
     if (evo.from === "Nincada" && evo.to === "Ninjask") {
         var bag = await getBag(user.user_id);
+        if (bag === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
         if (doesUserHaveHoldableItem(bag, "Poké Ball") != false) {
             removeItemFromBag(user.items, "Poké Ball", 1);
             var shedinja = await generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
@@ -4766,7 +4916,19 @@ async function evolve(message) {
 //cancels a pokemon's evolution
 async function cancelEvolve(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var pokemon = await getPokemon(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var i;
     for (i = 0; i < pokemon.length; i++) {
         if(pokemon[i].evolving === 1) {
@@ -4788,6 +4950,12 @@ async function cancelEvolve(message) {
 //checks if a pokemon is capable of evolving
 async function checkEvolve(user, pokemon, method) {
     var ownedPokemon = await getPokemon(user.user_id);
+    if (ownedPokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var moves = [pokemon.move_1, pokemon.move_2, pokemon.move_3, pokemon.move_4];
 
     var heldItem = "None";
@@ -5681,7 +5849,17 @@ async function teachNewMoveAI(pokemon, move) {
 //gives xp to a pokemon
 async function giveXP(message, amount) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var pokemon = await getLeadPokemon(message.author.id);
+    if (lead === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var item = "None";
     if (pokemon.item != "None" && pokemon.item != null) {
         item = await getItem(pokemon.item);
@@ -5825,7 +6003,19 @@ async function giveXP(message, amount) {
 //gives xp to a pokemon
 async function giveDayCareXP(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+    
     var pokemon = await getDaycare(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var item = "None";
     var i;
     for (i = 0; i < pokemon.length; i++) {
@@ -6022,6 +6212,11 @@ async function generatePokemonByName(message, name, level, region, location, hid
     var pkmn = JSON.parse(data);
     
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
     var form = getForm(user, name, region, location);
     
     var no = pkmn.national_id;
@@ -6368,9 +6563,24 @@ async function setActivePokemon(message, name) {
     name = name.toLowerCase();
     
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var pokemon = await getPokemon(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     var lead = await getLeadPokemon(message.author.id);
+    if (lead === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     var matchedIndexes = [];
     var onlyOptionIsLead = false;
@@ -6528,6 +6738,11 @@ async function setActivePokemon(message, name) {
 
 async function dayCare(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     if (user.region === "Kanto") {
         if (user.location != "Route 5" && user.location != "Four Island") {
@@ -6607,6 +6822,11 @@ async function dayCare(message) {
             await message.channel.send(message.author.username + " is there anything else you would like to do? " + string);
         } else if (input == 1) {
             var daycarePokemon = await getDaycare(message.author.id);
+            if (daycarePokemon === null) {
+                return new Promise(function(resolve) {
+                    resolve(false);
+                });
+            }
             if (daycarePokemon.length >= 2) {
                 await message.channel.send(message.author.username + " you cannot have more than two Pokémon at the Day Care. You must pick up one of your Pokémon before you can drop off another. " + duck);
             } else {
@@ -6653,7 +6873,19 @@ async function dayCare(message) {
 
 async function pickUpFromDayCare(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+    
     var daycarePokemon = await getDaycare(message.author.id);
+    if (daycarePokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     if (daycarePokemon.length < 1) {
         await message.channel.send(message.author.username + " you have no Pokémon currently in the Day Care.");
         return new Promise(function(resolve) {
@@ -6783,6 +7015,12 @@ async function viewDayCare(message) {
     var username = message.author.username;
 
     var pokemon = await getDaycare(userID);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+    
     if (pokemon.length < 1) {
         message.channel.send(username + " you have no Pokémon in the Day Care.");
     } else {
@@ -6825,8 +7063,18 @@ async function viewDayCare(message) {
 //send the specified pokemon to the day care
 async function placeInDaycare(message, name) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
 
     var pokemon = await getPokemon(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     var matchedIndexes = [];
     
@@ -7183,7 +7431,17 @@ async function placeInDaycare(message, name) {
 //releases the specified pokemon from the sender's party
 async function releasePokemon(message, name) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var pokemon = await getPokemon(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     var matchedIndexes = [];
     
@@ -7593,6 +7851,11 @@ async function encounterPokemon(message, user, lead) {
     }
 
     var bag = await getBag(user.user_id);
+    if (bag === null) {
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
+    }
     var hasRadar = false;
     var doesUserHaveIt = bag.map(function(t) { return t.name.toLowerCase(); }).indexOf("Poké Radar");
     if (doesUserHaveIt >= 0) {
@@ -8260,7 +8523,7 @@ async function displayAWildPkmn(pkmn, message) {
     var footerLink = "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png";
     var footerText = "You already have this Pokémon.";
     var user = await getUser(message.author.id);
-    if (user != false) {
+    if (user != null) {
         if (user.pokedex.charAt(pkmn.no) === '0') {
             footerLink = "https://cdn.bulbagarden.net/upload/7/74/Bag_Heavy_Ball_Sprite.png";
             footerText = "You do not have this Pokémon.";
@@ -8669,7 +8932,19 @@ function displayHiddenStats(pkmn) {
 //lists all the pokemon that the sender can encounter in their current location
 async function printPossibleEncounters(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+    
     var pokemon = await getPokemon(message.author.id);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var userID = user.user_id;
 
     var region = user.region;
@@ -9609,6 +9884,11 @@ async function getDexInfo(message, name, form) {
     };
     
     let user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     var rarityIndex;
     var cur = convertToTimeZone(user);
     var hour = moment(cur).hour();
@@ -9866,6 +10146,12 @@ async function printPokemon(message, otherUser) {
     }
 
     var pokemon = await getPokemon(userID);
+    if (pokemon === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var i;
 
     function compare(a,b) {
@@ -10005,6 +10291,11 @@ async function printPokemon(message, otherUser) {
 async function printDex(message) {
     let userID = message.author.id;
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     let pokedex = user.pokedex;
     var i;
     
@@ -10132,7 +10423,18 @@ function getNameByNumber(number) {
 */
 async function printBag(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var bag = await getBag(message.author.id);
+    if (bag === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     if (bag.length < 1) {
         message.channel.send("```" + message.author.username + "'s Bag:\nMoney: ₽" + user.money.toString() + "\n\nNo items.```");
@@ -10195,7 +10497,18 @@ async function printBag(message) {
 //prompts the user to buy items from the poke mart
 async function buyItems(message) {
     var user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var bag = await getBag(message.author.id);
+    if (bag === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     
     if (user.money <= 0) {
         message.channel.send(message.author.username + " has no money!");
