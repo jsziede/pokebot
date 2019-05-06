@@ -372,7 +372,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = runAbilityCommand(input);
             if (!commandStatus) {
-                console.log("ERROR - runAbilityCommand() : input=" + input)
+                console.log("[ERROR] runAbilityCommand() : input=" + input)
             }
             return;
 
@@ -382,7 +382,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runBeginCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runBeginCommand()");
+                console.log("[ERROR] runBeginCommand()");
             }
             return;
 
@@ -392,7 +392,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runBagCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runBagCommand()");
+                console.log("[ERROR] runBagCommand()");
             }
             return;
 
@@ -402,7 +402,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runDexCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runDexCommand() : input=" + input);
+                console.log("[ERROR] runDexCommand() : input=" + input);
             }
             return;
 
@@ -412,7 +412,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runDaycareCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runDaycareCommand() : input=" + input);
+                console.log("[ERROR] runDaycareCommand() : input=" + input);
             }
             return;
             
@@ -422,7 +422,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runDiveCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runDiveCommand()");
+                console.log("[ERROR] runDiveCommand()");
             }
             return;
             
@@ -432,7 +432,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runEncounterCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runEncounterCommand()");
+                console.log("[ERROR] runEncounterCommand()");
             }
             return;
             
@@ -442,7 +442,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runFishCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runFishCommand()");
+                console.log("[ERROR] runFishCommand()");
             }
             return;
             
@@ -452,7 +452,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runGiveCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runGiveCommand() : input=" + input);
+                console.log("[ERROR] runGiveCommand() : input=" + input);
             }
             return;
             
@@ -462,7 +462,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runGotoCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runGotoCommand() : input=" + input);
+                console.log("[ERROR] runGotoCommand() : input=" + input);
             }
             return;
             
@@ -472,7 +472,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runHelpCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runHelpCommand() : input=" + input);
+                console.log("[ERROR] runHelpCommand() : input=" + input);
             }
             return;
             
@@ -482,7 +482,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runHeadbuttCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runHeadbuttCommand()");
+                console.log("[ERROR] runHeadbuttCommand()");
             }
             return;
 
@@ -492,7 +492,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runLeadCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runLeadCommand()");
+                console.log("[ERROR] runLeadCommand()");
             }
             return;
 
@@ -502,7 +502,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runLocationsCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runLocationsCommand()");
+                console.log("[ERROR] runLocationsCommand()");
             }
             return;
             
@@ -512,7 +512,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runLottoCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runLottoCommand() : user id=" + message.author.id);
+                console.log("[ERROR] runLottoCommand() : user id=" + message.author.id);
             }
             return;
             
@@ -522,7 +522,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = runMoveCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runMoveCommand() : input=" + input);
+                console.log("[ERROR] runMoveCommand() : input=" + input);
             }
             return;
             
@@ -531,7 +531,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runMartCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runMartCommand()");
+                console.log("[ERROR] runMartCommand()");
             }
             return;
             
@@ -540,7 +540,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runPokemonCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runPokemonCommand()");
+                console.log("[ERROR] runPokemonCommand()");
             }
             return;
             
@@ -550,7 +550,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runReleaseCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runReleaseCommand()");
+                console.log("[ERROR] runReleaseCommand()");
             }
             return;
             
@@ -560,7 +560,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runRocksmashCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runRocksmashCommand() : input=" + input);
+                console.log("[ERROR] runRocksmashCommand() : input=" + input);
             }
             return;
             
@@ -570,7 +570,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runSetLeadCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runSetLeadCommand() : input=" + input);
+                console.log("[ERROR] runSetLeadCommand() : input=" + input);
             }
             return;
             
@@ -580,7 +580,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runSurfCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runSurfCommand()");
+                console.log("[ERROR] runSurfCommand()");
             }
             return;
             
@@ -590,7 +590,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runTakeCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runTakeCommand()");
+                console.log("[ERROR] runTakeCommand()");
             }
             return;
             
@@ -600,7 +600,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runTravelCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runTravelCommand() : input=" + input);
+                console.log("[ERROR] runTravelCommand() : input=" + input);
             }
             return;
             
@@ -610,7 +610,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runTradeCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runTradeCommand()");
+                console.log("[ERROR] runTradeCommand()");
             }
             return;
             
@@ -620,7 +620,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runUseCommand(message, input);
             if (!commandStatus) {
-                console.log("ERROR - runUseCommand() : input=" + input);
+                console.log("[ERROR] runUseCommand() : input=" + input);
             }
             return;
             
@@ -630,7 +630,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runWhereCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runWhereCommand()");
+                console.log("[ERROR] runWhereCommand()");
             }
             return;
             
@@ -640,7 +640,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runWalkCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runWalkCommand()");
+                console.log("[ERROR] runWalkCommand()");
             }
             return;
 
@@ -650,7 +650,7 @@ client.on('message', async (message) => {
             sentCommand = true;
             commandStatus = await runWeatherCommand(message);
             if (!commandStatus) {
-                console.log("ERROR - runWeatherCommand()");
+                console.log("[ERROR] runWeatherCommand()");
             }
             return;
         }
