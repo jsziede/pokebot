@@ -1971,9 +1971,7 @@ function generateRegionJSONPath(region) {
 
 //generates a file path to a location's json file
 function generateLocationJSONPath(region, location) {
-    let lower = region.toLowerCase();
-    let lowerLoc = location.toLowerCase();
-    let path = '../data/region/' + lower + "/" + lowerLoc + '.json';
+    let path = '../data/region/' + region + "/" + location + '.json';
     return path;
 }
 
