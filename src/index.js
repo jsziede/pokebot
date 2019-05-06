@@ -315,7 +315,7 @@ client.on("guildCreate", async guild => {
 //  Triggers every time any user sends a message.
 */
 client.on('message', async (message) => {
-    //dont do anything if the sender is a bot
+    //ignore messages from bots
     if (message.author.bot) {
         return;
     }
@@ -325,7 +325,6 @@ client.on('message', async (message) => {
         return;
     }
 
-    var currentCommand = null;
     var sentCommand = false;
     
     //only read messages from bot channel
@@ -491,372 +490,174 @@ client.on('message', async (message) => {
             
         } else if (command === "l" ||command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
-                return;
-            }
-            var pkmn = await getLeadPokemon(message.author.id);
-            if (input.length > 0 && input[0].toLowerCase() === "hidden") {
-                displayHiddenStats(pkmn);
-            } else { 
-                displayAnOwnedPkmn(pkmn, message);
+            commandStatus = await runLeadCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runLeadCommand()");
             }
             return;
+
+
             
         } else if (command === "locations") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                message.channel.send(message.author.username + " you will need to begin your adventure before viewing the locations you can visit. " + duck);
-                return;
+            commandStatus = await runLocationsCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runLocationsCommand()");
             }
-            printAllLocations(message);
             return;
             
+
+
         } else if (command === "lotto" ||command === "daily" || command === "lottery") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                message.channel.send(message.author.username + " you will need to begin your adventure to enter the lottery. " + duck);
-                return;
+            commandStatus = await runLottoCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runLottoCommand() : user id=" + message.author.id);
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to enter the lottery. " + duck);
-                return;
-            }
-            getUser(message.author.id).then(function(user) {
-                var cur = convertToTimeZone(user);
-                var lastDaily = moment(user.lotto);
-                var zone = momentTz.tz(lastDaily, user.timezone);
-                zone = zone.clone().tz(user.timezone);
-
-                if (moment(cur).format('D') != zone.format('D')) {
-                    var winNum = "";
-                    var possible = "0123456789";
-                    var matches = 0;
-                    for(var i = 0; i < 9; i++) {
-                        winNum += possible.charAt(Math.floor(Math.random() * possible.length));
-                    }
-                
-                    var uid = message.author.id;
-                
-                    uid = uid.substring(0, (uid.length/2));
-                
-                    for(var i = 0; i < 9; i++) {
-                        if (winNum.charAt(i) === uid.charAt(i)) {
-                            matches++;
-                        }
-                    }
-                
-                    if (matches === 0) {
-                        message.channel.send(message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball.");
-                        user.money += 1000;
-                        addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
-                    } else if (matches === 1) {
-                        message.channel.send(message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!");
-                        user.money += 2000;
-                        addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
-                    } else if (matches === 2) {
-                        message.channel.send(message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!");
-                        user.money += 4000;
-                        addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
-                    } else if (matches === 3) {
-                        message.channel.send(message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!");
-                        user.money += 7000;
-                        addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
-                    } else if (matches === 4) {
-                        message.channel.send(message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!");
-                        user.money += 10000;
-                        addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
-                    } else if (matches === 5) {
-                        message.channel.send(message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!");
-                        user.money += 13000;
-                        addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
-                    } else if (matches === 6) {
-                        message.channel.send(message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!");
-                        user.money += 18000;
-                        addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
-                    } else if (matches === 7) {
-                        message.channel.send(message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!");
-                        user.money += 25000;
-                        addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
-                    } else if (matches === 8) {
-                        message.channel.send(message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!");
-                        user.money += 35000;
-                        addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
-                        addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
-                    } else if (matches === 9) {
-                        message.channel.send(message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!");
-                        user.money += 50000;
-                        addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
-                        addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
-                        addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
-                    } 
-                
-                    message.channel.send("Your trainer id: " + uid + "\nYour lotto number: " + winNum);
-                
-                    user.lotto = convertToTimeZone(user).format();
-                    var query = "UPDATE user SET money = ?, lotto = ? WHERE user.user_id = ?";
-                    con.query(query, [user.money, user.lotto, message.author.id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                } else {
-                    var zone = momentTz.tz(moment(), 'America/Detroit');
-                    zone = zone.clone().tz(user.timezone);
-                    var timeDiff = moment(zone).endOf('day') - zone;
-                
-                    var dur = moment.duration(timeDiff);
-                    var min = "minutes";
-                    var hr = "hours";
-                    var sec = "seconds";
-                    if (dur.hours() === 1) {
-                        hr = "hour";
-                    }
-                    if (dur.minutes() === 1) {
-                        min = "minute";
-                    }
-                    if (dur.seconds() === 1) {
-                        sec = "second";
-                    }
-                    message.channel.send(message.author.username + " you have already participated in the daily lottery.\nPlease try again in " + dur.hours() + " " + hr + ", " + dur.minutes() + " " + min + ", and " + dur.seconds() + " " + sec + ". " + duck);
-                }
-            }).catch((err) => setImmediate(() => { console.log(err); }));
             return;
             
+
+
         } else if (command === "m" || command === "move" || command === "attack") {
             sentCommand = true;
-            input = input.join(' ');
-            var foundInfo = getMoveInfo(input);
-            if (foundInfo == null) {
-                message.channel.send("Move not found. " + duck);
+            commandStatus = runMoveCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runMoveCommand() : input=" + input);
             }
             return;
             
             
         } else if (command === "mart" || command === "shop" || command === "sell" || command === "buy") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before being able to buy items. " + duck);
-                return;
+            commandStatus = await runMartCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runMartCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to buy items. " + duck);
-                return;
-            }
-            transactions[transactions.length] = new Transaction(message.author.id, "your current shopping");
-            await buyItems(message);
-            removeTransaction(message.author.id);
             return;
             
             
         } else if (command === "p" || command === "pokemon" || command === "pokémon") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
-                return;
+            commandStatus = await runPokemonCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runPokemonCommand()");
             }
-            var print = printPokemon(message, null);
             return;
             
+
             
         } else if ((command === "r" || command === "release") && input.length > 0) {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before being able to release a Pokémon. " + duck);
-                return;
+            commandStatus = await runReleaseCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runReleaseCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to release a Pokémon. " + duck);
-                return;
-            }
-            transactions[transactions.length] = new Transaction(message.author.id, "your current Pokémon release");
-            input = input.join(' ');
-            var release = await releasePokemon(message, input);
-            removeTransaction(message.author.id);
             return;
             
+
             
         } else if (command === "rock" || command === "rocksmash") {
             sentCommand = true;
-            input = input.join(' ').toLowerCase();
-            if (input === "smash" || command === "rocksmash") {
-                var exists = await userExists(message.author.id);
-                if (!exists) {
-                    message.channel.send(message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon. " + duck);
-                    return;
-                }
-                currentCommand = isInTransaction(message.author.id);
-                if (currentCommand != false) {
-                    message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to smash rocks with your Pokémon. " + duck);
-                    return;
-                }
-                setField(message, "Rock Smash");
+            commandStatus = await runRocksmashCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runRocksmashCommand() : input=" + input);
             }
             return;
             
+
+
         } else if ((command === "s" || command === "swap" || command === "switch" || command === "select" || command === "setlead") && input.length > 0) {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before being able to select a Pokémon. " + duck);
-                return;
+            commandStatus = await runSetLeadCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runSetLeadCommand() : input=" + input);
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to change your lead Pokémon. " + duck);
-                return;
-            }
-            transactions[transactions.length] = new Transaction(message.author.id, "your current leader assignment");
-            input = input.join(' ');
-            var swap = await setActivePokemon(message, input);
-            if (swap === false) {
-                message.channel.send(message.author.username + " failed to change their lead Pokémon. " + duck);
-            }
-            removeTransaction(message.author.id);
             return;
             
+
             
         } else if (command === "surf") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can surf with a Pokémon. " + duck);
-                return;
+            commandStatus = await runSurfCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runSurfCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to surf with your Pokémon. " + duck);
-                return;
-            }
-            setField(message, "Surfing");
             return;
             
+
             
         } else if (command === "t" || command === "take") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can take items from your Pokémon. " + duck);
-                return;
+            commandStatus = await runTakeCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runTakeCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to take items from your Pokémon. " + duck);
-                return;
-            }
-            takeItem(message);
             return;
             
+
             
         } else if (command === "travel") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can travel to a new region. " + duck);
-                return;
-            }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to travel to a new region. " + duck);
-                return;
-            }
-            input = input.join(' ');
-            var traveled = await setRegion(message, input);
-            if (traveled === false) {
-                message.channel.send(message.author.username + " failed to travel to " + input + ". " + duck);
+            commandStatus = await runTravelCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runTravelCommand() : input=" + input);
             }
             return;
             
+
             
         } else if (command === "trade") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can trade Pokémon. " + duck);
-                return;
+            commandStatus = await runTradeCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runTradeCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to start a new trade. " + duck);
-                return;
-            }
-            
-            if (message.mentions.users.first() === undefined) {
-                message.channel.send(message.author.username + " please mention the user you want to trade with. " + duck);
-                return;
-            }
-            await tradeOffer(message, message.mentions.users.first());
             return;
             
+
             
         } else if ((command === "u" || command === "use") && input.length > 0) {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can use items. " + duck);
-                return;
+            commandStatus = await runUseCommand(message, input);
+            if (!commandStatus) {
+                console.log("ERROR - runUseCommand() : input=" + input);
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to use an item. " + duck);
-                return;
-            }
-            transactions[transactions.length] = new Transaction(message.author.id, "your current item use");
-            input = input.join(' ');
-            var usedItem = await useItem(message, input);
-            if (usedItem === false) {
-                message.channel.send(message.author.username + " was unable to use the " + input + ". " + duck);
-            }
-            removeTransaction(message.author.id);
             return;
             
+
             
         } else if (command === "w" || command === "where" || command === "locate") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                message.channel.send(message.author.username + " you will need to begin your adventure before heading into the Pokémon world. " + duck);
-                return;
+            commandStatus = await runWhereCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runWhereCommand()");
             }
-            await printLocation(message);
             return;
             
+
+
         } else if (command === "walk") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                 message.channel.send(message.author.username + " you will need to begin your adventure before you can walk around. " + duck);
-                return;
+            commandStatus = await runWalkCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runWalkCommand()");
             }
-            currentCommand = isInTransaction(message.author.id);
-            if (currentCommand != false) {
-                message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to walk around. " + duck);
-                return;
-            }
-            await setField(message, "Walking");
             return;
+
+
+
         } else if (command === "weather" || command === "forecast") {
             sentCommand = true;
-            var exists = await userExists(message.author.id);
-            if (!exists) {
-                message.channel.send(message.author.username + " you will need to begin your adventure before checking the weather. " + duck);
-                return;
+            commandStatus = await runWeatherCommand(message);
+            if (!commandStatus) {
+                console.log("ERROR - runWeatherCommand()");
             }
-            await getWeather(message);
             return;
-            
         }
     }
-    
+
+/* ======================================================= end of commands ============================================================================ */
+
     //if user has bot data and did not send a command nor is currently running a command
     var exists = await userExists(message.author.id);
     if (exists && !sentCommand && !isInEvolution(message.author.id) && !isInTransaction(message.author.id) && !isInTrade(message.author.id)) {
@@ -900,123 +701,125 @@ client.on('message', async (message) => {
         
         var user;
         await getUser(message.author.id).then(function(rows) {
-            // now you have your rows, you can see if there are <20 of them
             user = rows;
         }).catch((err) => setImmediate(() => { console.log(err); }));
 
         //gets the sender's lead pokemon and checks its ability
-        getLeadPokemon(message.author.id).then(async function(lead) {
-            var ability = lead.ability;
+        let lead = await getLeadPokemon(message.author.id);
+        var ability = lead.ability;
         
-            //double the encounter chance
-            if (ability === "Arena Trap" || ability === "Illuminate" || ability === "Swarm") {
+        //  @todo these should check the global weather tables instead 
+
+        //double the encounter chance anywhere
+        if (ability === "Arena Trap" || ability === "Illuminate" || ability === "Swarm") {
+            encounterChance += baseEncounterChance;
+        } else if (ability === "No Guard") { //1.5x encounter chance anywhere
+            encounterChance += (baseEncounterChance / 2);
+        } else if (ability === "Quick Feet" || ability === "Stench" || ability === "White Smoke") { //halves encounter chance anywhere
+            encounterChance -= (baseEncounterChance / 2);
+        } else if (ability === "Sand Veil") { //halves encounter chance in deserts
+            //  @todo check sandstorm table here
+            if (user.region === "Hoenn") {
+                if (user.location === "Route 111") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Sinnoh") {
+                if (user.location === "Route 228") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Unova") {
+                if (user.location === "Route 4" || user.location === "Desert Resort") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Alola") {
+                if (user.location === "Haina Desert") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            }
+        } else if (ability === "Snow Cloak") { //halves encounter chance in snow
+            //  @todo check hail/snowing table here
+            if (user.region === "Johto") {
+                if (user.location === "Mt. Silver") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Sinnoh") {
+                if (user.location === "Route 216" || user.location === "Route 217" || user.location === "Acuity Lakefront" || user.location === "Snowpoint City" || user.location === "Mt. Coronet") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Unova") {
+                if (user.location === "Cold Storage" || user.location === "Twist Mountain") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Kalos") {
+                if (user.location === "Route 17 (Mamoswine Road)" || user.location === "Frost Cavern") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            } else if (user.region === "Alola") {
+                if (user.location === "Mount Lanakila") {
+                        encounterChance -= (baseEncounterChance / 2);
+                }
+            }
+        } else if (ability === "Sticky Hold" || ability === "Suction Cups") { //doubles encounter chance while fishing
+            if (user.field === "Super Rod" || user.field === "Good Rod" || user.field === "Old Rod") {
                 encounterChance += baseEncounterChance;
-            } else if (ability === "No Guard") { //1.5x encounter chance
-                encounterChance += (baseEncounterChance / 2);
-            } else if (ability === "Quick Feet" || ability === "Stench" || ability === "White Smoke") { //halves encounter chance
-                encounterChance -= (baseEncounterChance / 2);
-            } else if (ability === "Sand Veil") { //halves encounter chance in deserts
-                if (user.region === "Hoenn") {
-                    if (user.location === "Route 111") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Sinnoh") {
-                    if (user.location === "Route 228") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Unova") {
-                    if (user.location === "Route 4" || user.location === "Desert Resort") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Alola") {
-                    if (user.location === "Haina Desert") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                }
-            } else if (ability === "Snow Cloak") { //halves encounter chance in snow
-                if (user.region === "Johto") {
-                    if (user.location === "Mt. Silver") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Sinnoh") {
-                    if (user.location === "Route 216" || user.location === "Route 217" || user.location === "Acuity Lakefront" || user.location === "Snowpoint City" || user.location === "Mt. Coronet") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Unova") {
-                    if (user.location === "Cold Storage" || user.location === "Twist Mountain") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Kalos") {
-                    if (user.location === "Route 17 (Mamoswine Road)" || user.location === "Frost Cavern") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                } else if (user.region === "Alola") {
-                    if (user.location === "Mount Lanakila") {
-                         encounterChance -= (baseEncounterChance / 2);
-                    }
-                }
-            } else if (ability === "Sticky Hold" || ability === "Suction Cups") { //doubles encounter chance while fishing
-                if (user.field === "Super Rod" || user.field === "Good Rod" || user.field === "Old Rod") {
-                    encounterChance += baseEncounterChance;
-                }
             }
+        }
+    
+        if (lead.item === "Cleanse Tag") {
+            encounterChance = (encounterChance / 3);
+        }
+
+        //if sender encounters a pokemon
+        if (random <= encounterChance) {
+            var encounter = await encounterPokemon(message, user, lead);
         
-            if (lead.item === "Cleanse Tag") {
-                encounterChance = (encounterChance / 3);
-            }
-
-            //if sender encounters a pokemon
-            if (random <= encounterChance) {
-                var encounter = await encounterPokemon(message, user, lead);
-            
-                if (encounter == null) {
-                    return;
-                }
-            
-                //shows the wild pokemon to the sender
-                displayAWildPkmn(encounter, message);
-            
-                transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
-            
-                var dexnum = encounter.no.toString();
-                while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
-                    dexnum = '0' + dexnum;
-                }
-                var shuffle_icon = client.emojis.find("name", dexnum);
-                message.react(shuffle_icon.id);
-                
-                var choice = 1;
-
-                if (choice === 0) {
-                    //await battleWildPokemon(message, encounter);
-                } else if (choice === 1) {
-                    //waits for user to either catch pokemon or run away
-                    await catchPokemon(message, encounter, user, lead);
-                }
-            
-                removeTransaction(message.author.id);
-            
-            //20% chance to find money
-            } else if (random <= moneyChance) {
-                var moneyAmnt = 48;
-                moneyAmnt += Math.ceil(Math.random() * 150);
-                moneyAmnt += Math.ceil(Math.random() * 100);
-            
-                moneyAmnt = Math.floor(((user.level / 100) + 1).toFixed(1) * moneyAmnt);
-                user.money += moneyAmnt;
-            
-                var newQuery = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
-                con.query(newQuery, [user.money, message.author.id], function(err, result) {
-                    if (err) {
-                        console.log(err);
-                    }
-                });
-
-                message.react(kukui.id);
-                message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
+            if (encounter == null) {
                 return;
             }
-        }).catch((err) => setImmediate(() => { console.log(err); }));
+        
+            //shows the wild pokemon to the sender
+            await displayAWildPkmn(encounter, message);
+        
+            transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
+        
+            var dexnum = encounter.no.toString();
+            while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
+                dexnum = '0' + dexnum;
+            }
+            var shuffle_icon = client.emojis.find("name", dexnum);
+            message.react(shuffle_icon.id);
+            
+            var choice = 1;
+
+            if (choice === 0) {
+                //await battleWildPokemon(message, encounter);
+            } else if (choice === 1) {
+                //waits for user to either catch pokemon or run away
+                await catchPokemon(message, encounter, user, lead);
+            }
+        
+            removeTransaction(message.author.id);
+        
+        //20% chance to find money
+        } else if (random <= moneyChance) {
+            var moneyAmnt = 48;
+            moneyAmnt += Math.ceil(Math.random() * 150);
+            moneyAmnt += Math.ceil(Math.random() * 100);
+        
+            moneyAmnt = Math.floor(((user.level / 100) + 1).toFixed(1) * moneyAmnt);
+            user.money += moneyAmnt;
+        
+            var newQuery = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
+            con.query(newQuery, [user.money, message.author.id], function(err) {
+                if (err) {
+                    console.log(err);
+                }
+            });
+
+            message.react(kukui.id);
+            message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
+            return;
+        }
     }
 });
 
@@ -1045,9 +848,9 @@ function runAbilityCommand(abilityName) {
 //  Returns true.
 */
 async function runBeginCommand(message) {
-    let currentCommand = isInTransaction(message.author.id);
-     if (currentCommand != false) {
-        message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to begin a new adventure. " + duck);
+    let activeUserTransaction = isInTransaction(message.author.id);
+     if (activeUserTransaction != false) {
+        message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to begin a new adventure. " + duck);
     } else {
         let exists = await userExists(message.author.id);
         if (!exists) {
@@ -1278,12 +1081,466 @@ async function runHeadbuttCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon. " + duck);
     } else {
-        currentCommand = isInTransaction(message.author.id);
-        if (currentCommand != false) {
-            message.channel.send(message.author.username + " please finish " + currentCommand + " before trying to headbutt trees with your Pokémon. " + duck);
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to headbutt trees with your Pokémon. " + duck);
         } else {
             setField(message, "Headbutt");
         }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Shows a detailed view of the user's lead Pokemon, or shows the hidden stats
+//  of the user's lead Pokemon.
+*/
+async function runLeadCommand(message, input) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
+    } else {
+        let pkmn = await getLeadPokemon(message.author.id);
+        // if user added 'hidden' to the command, then show hidden
+        if (input.length > 0 && input[0].toLowerCase() === "hidden") {
+            displayHiddenStats(pkmn);
+        } else { 
+            displayAnOwnedPkmn(pkmn, message);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Shows all locations within the region that the user is in.
+*/
+async function runLocationsCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before viewing the locations you can visit. " + duck);
+    } else {
+        printAllLocations(message);
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Randomly generates a numeric string and matches it to the user's id to count how many
+//  of the same digits are in the same position. User is awarded prizes based on the count.
+*/
+async function runLottoCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure to enter the lottery. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to enter the lottery. " + duck);
+        }
+        
+        //gets the day when the user last ran the lotto command, in their timezone
+        let user = await getUser(message.author.id);
+        let cur = convertToTimeZone(user);
+        let lastDaily = moment(user.lotto);
+        let zone = momentTz.tz(lastDaily, user.timezone);
+        zone = zone.clone().tz(user.timezone);
+
+        //if lotto command has not been ran on the current day
+        if (moment(cur).format('D') != zone.format('D')) {
+            let winNum = "";
+            let possible = "0123456789";
+            let matches = 0;
+
+            //randomly generate a winning number string
+            for(let i = 0; i < 9; i++) {
+                winNum += possible.charAt(Math.floor(Math.random() * possible.length));
+            }
+        
+            //cut the user'd id string in half so only the first half is matched with the winning number string
+            let uid = message.author.id;
+            uid = uid.substring(0, (uid.length/2));
+        
+            //count how many of the same numbers are in the same position for the user's id and the winning number
+            for(let i = 0; i < 9; i++) {
+                if (winNum.charAt(i) === uid.charAt(i)) {
+                    matches++;
+                }
+            }
+        
+            // lotto prizes
+            if (matches === 0) {
+                message.channel.send(message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball.");
+                user.money += 1000;
+                addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
+            } else if (matches === 1) {
+                message.channel.send(message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!");
+                user.money += 2000;
+                addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
+            } else if (matches === 2) {
+                message.channel.send(message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!");
+                user.money += 4000;
+                addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
+            } else if (matches === 3) {
+                message.channel.send(message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!");
+                user.money += 7000;
+                addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
+            } else if (matches === 4) {
+                message.channel.send(message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!");
+                user.money += 10000;
+                addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
+            } else if (matches === 5) {
+                message.channel.send(message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!");
+                user.money += 13000;
+                addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
+            } else if (matches === 6) {
+                message.channel.send(message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!");
+                user.money += 18000;
+                addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
+            } else if (matches === 7) {
+                message.channel.send(message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!");
+                user.money += 25000;
+                addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
+            } else if (matches === 8) {
+                message.channel.send(message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!");
+                user.money += 35000;
+                addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
+                addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
+            } else if (matches === 9) {
+                message.channel.send(message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!");
+                user.money += 50000;
+                addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
+                addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
+                addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
+            } 
+        
+            //tell user what their id is and what the winning number is
+            message.channel.send("Your trainer id: " + uid + "\nYour lotto number: " + winNum);
+        
+            //update the user's lotto time to be the current day
+            user.lotto = convertToTimeZone(user).format();
+            let query = "UPDATE user SET money = ?, lotto = ? WHERE user.user_id = ?";
+            con.query(query, [user.money, user.lotto, message.author.id], function (err) {
+                if (err) {
+                    return reject(err);
+                }
+            });
+        } else {    //if user already ran the lotto command today, tell them how much time they have until they can run it again for the next day
+            //  @todo are these two zone statements necessary?
+            zone = momentTz.tz(moment(), 'America/Detroit');
+            zone = zone.clone().tz(user.timezone);
+            let timeDiff = moment(zone).endOf('day') - zone;
+        
+            let dur = moment.duration(timeDiff);
+            let min = "minutes";
+            let hr = "hours";
+            let sec = "seconds";
+            if (dur.hours() === 1) {
+                hr = "hour";
+            }
+            if (dur.minutes() === 1) {
+                min = "minute";
+            }
+            if (dur.seconds() === 1) {
+                sec = "second";
+            }
+            message.channel.send(message.author.username + " you have already participated in the daily lottery.\nPlease try again in " + dur.hours() + " " + hr + ", " + dur.minutes() + " " + min + ", and " + dur.seconds() + " " + sec + ". " + duck);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Prints details about a move (attack).
+*/
+function runMoveCommand(message, input) {
+    input = input.join(' ');
+    let foundInfo = getMoveInfo(input);
+    if (foundInfo == null) {
+        message.channel.send("Move not found. " + duck);
+    }
+    return true;
+}
+
+/*
+//  Guides the user through the process of buying items from the PokeMart.
+*/
+async function runMartCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before being able to buy items. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to buy items. " + duck);
+        } else {
+            transactions[transactions.length] = new Transaction(message.author.id, "your item shopping");
+            await buyItems(message);
+            removeTransaction(message.author.id);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Shows all Pokemon currently owned by the user.
+//  Message is split into pages of 15 Pokemon each, navigated by pressing reactions.
+*/
+async function runPokemonCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
+    } else {
+        //do not await
+        printPokemon(message, null);
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Guides the user through the processing of releasing a Pokemon.
+*/
+async function runReleaseCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before being able to release a Pokémon. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to release a Pokémon. " + duck);
+        } else {
+            transactions[transactions.length] = new Transaction(message.author.id, "your current Pokémon release");
+            input = input.join(' ');
+            await releasePokemon(message, input);
+            removeTransaction(message.author.id);  
+        } 
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Sets user to encounter only Pokemon that are found by smashing rocks.
+*/
+async function runRocksmashCommand(message, input) {
+    input = input.join(' ').toLowerCase();
+    //allow user to input "rock smash" or "rocksmash"
+    if (input === "smash" || command === "rocksmash") {
+        let exists = await userExists(message.author.id);
+        if (!exists) {
+            message.channel.send(message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon. " + duck);
+        } else {
+            let activeUserTransaction = isInTransaction(message.author.id);
+            if (activeUserTransaction != false) {
+                message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to smash rocks with your Pokémon. " + duck);
+            } else {
+                setField(message, "Rock Smash");
+            }
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Changes the lead Pokemon of a user to another Pokemon specified by the user that the user owns.
+*/
+async function runSetLeadCommand(message, input) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before being able to select a Pokémon. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to change your lead Pokémon. " + duck);
+            return;
+        } else {
+            transactions[transactions.length] = new Transaction(message.author.id, "your current leader assignment");
+            input = input.join(' ');
+            let swap = await setActivePokemon(message, input);
+            if (!swap) {
+                message.channel.send(message.author.username + " failed to change their lead Pokémon. " + duck);
+            }
+            removeTransaction(message.author.id);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Sets user to encounter only Pokemon that are found by surfing.
+*/
+async function runSurfCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can surf with a Pokémon. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to surf with your Pokémon. " + duck);
+        } else {
+            setField(message, "Surfing");
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Takes the item held by the user's lead Pokemon, if it has an item, and returns it to the user's bag.
+*/
+async function runTakeCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can take items from your Pokémon. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to take items from your Pokémon. " + duck);
+        } else {
+            takeItem(message);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Changes the user's current region to the region specified by input.
+//  User must have a visa for the region to travel to it.
+*/
+async function runTravelCommand(message, input) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can travel to a new region. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to travel to a new region. " + duck);
+        } else {
+            input = input.join(' ');
+            let traveled = await setRegion(message, input);
+            if (!traveled) {
+                message.channel.send(message.author.username + " failed to travel to " + input + ". " + duck);
+            }
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Initializes a Pokemon trade between the user and another user that was mentioned in the input, if there was a mention.
+*/
+async function runTradeCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can trade Pokémon. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to start a new trade. " + duck);
+        } else if (message.mentions.users.first() === undefined) {
+            message.channel.send(message.author.username + " please mention the user you want to trade with. " + duck);
+        } else {
+            await tradeOffer(message, message.mentions.users.first());
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Attempts to use the item specified by input on either the user themself or their lead Pokemon, depending on what item is being used.
+*/
+async function runUseCommand(message, input) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can use items. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to use an item. " + duck);
+        } else {
+            transactions[transactions.length] = new Transaction(message.author.id, "your current item use");
+            input = input.join(' ');
+            let usedItem = await useItem(message, input);
+            if (!usedItem) {
+                message.channel.send(message.author.username + " was unable to use the " + input + ". " + duck);
+            }
+            removeTransaction(message.author.id);
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Prints the location and region where the user is currently located,
+//  along with a picture of the location.
+*/
+async function runWhereCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before heading into the Pokémon world. " + duck);
+    } else {    //does not need to be awaited
+        printLocation(message);
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Sets user to encounter only Pokemon that are found by walking in tall grass.
+*/
+async function runWalkCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before you can walk around. " + duck);
+    } else {
+        let activeUserTransaction = isInTransaction(message.author.id);
+        if (activeUserTransaction != false) {
+            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to walk around. " + duck);
+        } else {
+            await setField(message, "Walking");
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/*
+//  Prints all locations that are currently experiencing some type of weather.
+//  Location are paged based on weather type.
+*/
+async function runWeatherCommand(message) {
+    let exists = await userExists(message.author.id);
+    if (!exists) {
+        message.channel.send(message.author.username + " you will need to begin your adventure before checking the weather. " + duck);
+    } else {
+        await getWeather(message);
     }
     return new Promise(function(resolve) {
         resolve(true);
