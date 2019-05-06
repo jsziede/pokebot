@@ -6232,12 +6232,8 @@ async function generatePokemonByName(message, name, level, region, location, hid
     }
     var pkmn = JSON.parse(data);
     
+    //it is ok for user to be null in this function
     var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
     var form = getForm(user, name, region, location);
     
     var no = pkmn.national_id;
@@ -13311,7 +13307,7 @@ function printHelp(message) {
 function convertToTimeZone(user) {
     var CurrentDate = moment().format();
     var zone = momentTz.tz(CurrentDate, 'America/Detroit');
-    if (user === false) {
+    if (user === null || user === false) {
         zone = moment.utc(zone).format();
     } else {
         zone = zone.clone().tz(user.timezone);
