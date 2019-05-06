@@ -5338,7 +5338,7 @@ async function checkForNewMove(message, pokemon, askForResponse) {
             pp: pokemon.move_4_pp
         }
     ]
-    
+
     if (pokemon.form === "Alolan" && pokemon.name != "Rattata" && pokemon.name != "Raticate") {
         for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
             if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level === pokemon.level_current && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === (pokemon.form + " " + pokemon.name)) {
@@ -5536,7 +5536,8 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                 }
             }
         }
-    }           
+    }    
+
     return new Promise(function(resolve) {
         resolve(moves);
     });
@@ -5582,7 +5583,7 @@ async function teachNewMove(message, pokemon, moveName) {
         name = name.replace(/'/g,"_");
         name = name.replace(/ /g,"_");
 
-        var path = "./data/move/" + name + ".json";
+        var path = "../data/move/" + name + ".json";
         var data;
         try {
             data = fs.readFileSync(path, "utf8");
@@ -5954,7 +5955,7 @@ async function giveXP(message, amount) {
                 pokemon.friendship += friend;
             }
             
-            if(pokemon.level_current >= user.level) {
+            if (pokemon.level_current >= user.level) {
                 var query = "UPDATE user SET user.level = ? WHERE user.user_id = ?";
                 con.query(query, [pokemon.level_current, message.author.id], function (err) {
                     if (err) {
