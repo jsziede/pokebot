@@ -10,10 +10,10 @@
 /*
 //  Packages
 */
-const Discord = require("discord.js");
-const fs = require("fs");
-const moment = require("moment");
-const momentTz = require("moment-timezone");
+const Discord = require('discord.js');
+const fs = require('fs');
+const moment = require('moment');
+const momentTz = require('moment-timezone');
 const schedule = require('node-schedule');
 const mysql = require('mysql');
 //const Sim = require('./Pokemon-Showdown/sim');
@@ -33,7 +33,7 @@ con.connect(function(err) {
         console.log(err);
         process.exit();
     }
-    console.log("Connected!");
+    console.log("Connected to MySQL Database.");
 });
 
 /*
@@ -49,7 +49,7 @@ var birb;
 /*
 //  Debug Tools
 */
-var enableSpam = false;     //default = false
+var enableSpam = true;     //default = false
 var spamXpMult = 1;         //default = 1
 var spamEncounterMult = 1;  //default = 1
 
@@ -207,7 +207,7 @@ function Trade(userAsk, userRespond, askPokemon, respondPokemon) {
 //  Start up procedures.
 */
 client.login(myconfig.token);
-client.on("A wild Pokebot appears!", () => {
+client.on('ready', () => {
     /*
     //  Shows text under Pokebot's username in the members list.
     */
@@ -216,14 +216,14 @@ client.on("A wild Pokebot appears!", () => {
     /*
     //  Load the global emojis.
     */
-    duck = client.emojis.find("name", "NotLikeDuck");
-    tail = client.emojis.find("name", "FeelsTailMan");
-    pew = client.emojis.find("name", "pew");
-    kukui = client.emojis.find("name", "kukui");
-    blobSweat = client.emojis.find("name", "BlobSweat");
-    lfcparty = client.emojis.find("name", "lfc_party");
-    dollar = client.emojis.find("name", "pokedollar");
-    birb = client.emojis.find("name", "birb");
+    duck = client.emojis.find("name", "001");
+    tail = client.emojis.find("name", "002");
+    pew = client.emojis.find("name", "003");
+    kukui = client.emojis.find("name", "004");
+    blobSweat = client.emojis.find("name", "005");
+    lfcparty = client.emojis.find("name", "006");
+    dollar = client.emojis.find("name", "007");
+    birb = client.emojis.find("name", "008");
 
     /*
     //  Checks the database for any Pokemon that are in the process of evolving and triggers the evolution process for them.
@@ -235,6 +235,8 @@ client.on("A wild Pokebot appears!", () => {
     //  Sets the weather condition for locations where weather can happen.
     */
     updateWeather();
+
+    console.log("Connected to Discord.")
 });
 
 /*
@@ -281,15 +283,15 @@ process.on('uncaughtException', error => {
 //  Log error messages to the console.
 //  @todo This could probably be more robust.
 */
-client.on("error", (e) => {
+client.on('error', (e) => {
     console.error(e);
     client.destroy();
     setTimeout(function () {
         client.login(myconfig.token);
     }, 10000);
 });
-client.on("warn", (e) => console.warn(e));
-client.on("debug", (e) => console.info(e));
+client.on('warn', (e) => console.warn(e));
+client.on('debug', (e) => console.info(e));
 
 /*
 //  Update the weather five seconds after every hour.
@@ -325,7 +327,7 @@ client.on('message', async (message) => {
         return;
     }
 
-    var sentCommand = false;
+    let sentCommand = false;
     
     //only read messages from bot channel
     if (await isBotChannel(message)) {
@@ -333,6 +335,8 @@ client.on('message', async (message) => {
         if(isInTrade(message.author.id) != null) {
             return;
         }
+
+        let exists = await userExists(message.author.id);
 
         let commandStatus = null;
 
@@ -353,7 +357,6 @@ client.on('message', async (message) => {
                 return;
             } else if (command === "l" || command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
                 sentCommand = true;
-                var exists = await userExists(message.author.id);
                 if (!exists) {
                     message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
                     return;
@@ -663,10 +666,10 @@ client.on('message', async (message) => {
 /* ======================================================= end of commands ============================================================================ */
 
     //if user has bot data and did not send a command nor is currently running a command
-    var exists = await userExists(message.author.id);
-    if (exists && !sentCommand && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) != null) && (isInTrade(message.author.id) != null)) {
-        
+    let exists = await userExists(message.author.id);
+    if (exists && !sentCommand && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null) && (isInTrade(message.author.id) === null)) {
         //user did not post in the spam channel
+        let lastUser = null;
         if (message.author.id === lastUser && enableSpam === false) {
             return; //dont do anything if sender posted a consecutive message
         } else {
@@ -2801,35 +2804,39 @@ function getDaycare(userid) {
 
 //returns the pokemon currently owned by the sender
 async function fixEvolutions() {
+    let wereAllEvolutionsFixed = true;
     var query_str = 'SELECT * FROM pokemon WHERE pokemon.evolving = 1';
-    con.query(query_str, async function (err, pokemon) {
+    await con.query(query_str, async function (err, pokemon) {
         if (err) {
             console.log(err);
-            return false;
+            wereAllEvolutionsFixed = false;
         }
         var i;
         for (i = 0; i < pokemon.length; i++) {
             if (pokemon[i].evolving === 1) {
                 var user = await getUser(pokemon[i].current_trainer);
                 if (user === null) {
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
+                    wereAllEvolutionsFixed = false;
                 }
                 var to = await checkEvolve(user, pokemon, "level", null);
                 evolving[evolving.length] = new Evolution(pokemon[i].current_trainer, pokemon[i].name, to);
             }
         }
     });
+
+    return new Promise(function(resolve) {
+        resolve(wereAllEvolutionsFixed);
+    });
 }
 
 //returns the sender's poke balls
 async function getBalls(userid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = `SELECT * FROM pokebot.bag WHERE owner = ? AND category = "Ball" AND quantity > 0;`;
         con.query(query_str, [userid], function (err, rows) {
             if (err) {
-                return reject(err);
+                console.error(err);
+                resolve(null);
             }
             resolve(rows);
         });
@@ -2838,11 +2845,12 @@ async function getBalls(userid) {
 
 //returns the sender's fishing rods
 async function getRods(userid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = `SELECT * FROM pokebot.bag WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0;`;
         con.query(query_str, [userid], function (err, rows) {
             if (err) {
-                return reject(err);
+                console.error(err);
+                resolve(null);
             }
             resolve(rows);
         });
@@ -2851,13 +2859,13 @@ async function getRods(userid) {
 
 //returns the sender's bag
 function getItem(itemid) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM bag WHERE bag.item_id = ?';
         con.query(query_str, [itemid], function (err, rows) {
             if (err) {
-                return reject(err);
-            }
-            if (rows.length < 1) {
+                console.error(err);
+                resolve(null);
+            } else if (rows.length < 1) {
                 resolve(null);
             } else {
                 resolve(rows[0]);
@@ -2874,13 +2882,21 @@ async function setField(message, field) {
             resolve(false);
         });
     }
+    
     var lead = await getLeadPokemon(user.user_id);
     if (lead === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
     }
+    
     var rods = await getRods(user.user_id);
+    if (rods === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     var locationData;
     var rpath = generateLocationJSONPath(user.region, user.location);
     var rdata;
@@ -3273,7 +3289,7 @@ function getMovePP(name) {
     name = name.replace(/'/g,"_");
     name = name.replace(/ /g,"_");
     
-    var path = "./data/move/" + name + ".json";
+    var path = "../data/move/" + name + ".json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -3534,6 +3550,11 @@ async function giveItem(message, item) {
         });
     } else {
         var heldItem = await getItem(lead.item);
+        if (heldItem === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
         message.channel.send(message.author.username + ", your " + lead.name + " is currently holding one " + heldItem.name + ". Would you like to swap items? Type \"Yes\" to swap or \"No\" to cancel the item assignment.");
         var cancel = false;
         var input = null;
@@ -4439,7 +4460,7 @@ async function tradeOffer(message, tradeTo) {
         var tradeEvoIndex = -1;
 
         var item = await getItem(tselectedPokemon.item);
-        if (item == null) {
+        if (item === null) {
             item = tselectedPokemon.item;
         } else {
             item = item.name;
@@ -4508,7 +4529,7 @@ async function tradeOffer(message, tradeTo) {
         evolveTo = null;
         
         item = await getItem(selectedPokemon.item);
-        if (item == null) {
+        if (item === null) {
             item = selectedPokemon.item;
         } else {
             item = item.name;
@@ -5297,7 +5318,7 @@ async function checkForNewMove(message, pokemon, askForResponse) {
         return null;
     }
     var pkmn = JSON.parse(data);
-    
+
     var alreadyKnowsMove = false;
     var moves = [
         {
@@ -5855,7 +5876,7 @@ async function giveXP(message, amount) {
         });
     }
     var pokemon = await getLeadPokemon(message.author.id);
-    if (lead === null) {
+    if (pokemon === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
@@ -5863,7 +5884,7 @@ async function giveXP(message, amount) {
     var item = "None";
     if (pokemon.item != "None" && pokemon.item != null) {
         item = await getItem(pokemon.item);
-        if (item == null) {
+        if (item === null) {
             item = pokemon.item;
         } else {
             item = item.name;
@@ -6021,7 +6042,7 @@ async function giveDayCareXP(message) {
     for (i = 0; i < pokemon.length; i++) {
         if (pokemon[i].item != "None" && pokemon[i].item != null) {
             item = await getItem(pokemon[i].item);
-            if (item == null) {
+            if (item === null) {
                 item = pokemon[i].item;
             } else {
                 item = item.name;
@@ -7020,7 +7041,7 @@ async function viewDayCare(message) {
             resolve(false);
         });
     }
-    
+
     if (pokemon.length < 1) {
         message.channel.send(username + " you have no Pokémon in the Day Care.");
     } else {
@@ -8083,7 +8104,7 @@ async function catchPokemon(message, wild, user, lead) {
     var leadName = lead.name;
     
     let heldItem = await getItem(lead.item);
-    if (heldItem == null) {
+    if (heldItem === null) {
         heldItem = lead.item;
     }
 
@@ -8208,10 +8229,12 @@ async function catchPokemon(message, wild, user, lead) {
     var numTurns = 0;
     var encounter = true;
     while(encounter) {
-        var Balls;
-        await getBalls(message.author.id).then(function(rows) {
-            Balls = rows;
-        }).catch((err) => setImmediate(() => { console.log(err); }));
+        var Balls = await getBalls(message.author.id);
+        if (Balls === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
         var string = "```" + message.author.username + "'s Bag:\n";
         if (Balls.length < 1) {
             string += "You have no remaining balls!"
@@ -8709,7 +8732,7 @@ async function displayAnOwnedPkmn(pkmn, message) {
     var item = "None";
     if (pkmn.item != "None" && pkmn.item != null) {
         item = await getItem(pkmn.item);
-        if (item == null) {
+        if (item === null) {
             item = pkmn.item;
         } else {
             item = item.name;
