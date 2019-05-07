@@ -379,7 +379,7 @@ client.on('message', async (message) => {
         
         if (command === "a" || command === "ability") {
             sentCommand = true;
-            commandStatus = runAbilityCommand(input);
+            commandStatus = runAbilityCommand(message, input);
             if (!commandStatus) {
                 console.log("[ERROR] runAbilityCommand() : input=" + input)
             }
@@ -843,10 +843,11 @@ client.on('message', async (message) => {
  * Handles the process for running the `ability` command, which
  * sends a message with details about an ability.
  * 
+ * @param {Message} message The Discord message sent from the user.
  * @param {string[]} abilityName Name of the ability as input by the user.
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
-function runAbilityCommand(abilityName) {
+function runAbilityCommand(message, abilityName) {
     abilityName = abilityName.join(' ');
     var foundInfo = getAbilityInfo(abilityName);
     if (foundInfo == null) {
