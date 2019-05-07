@@ -16,6 +16,7 @@ const moment = require('moment');
 const momentTz = require('moment-timezone');
 const schedule = require('node-schedule');
 const mysql = require('mysql');
+const oak = require('oakdex-pokedex');
 //const Sim = require('./Pokemon-Showdown/sim');
 
 /**
@@ -9877,7 +9878,7 @@ async function printPossibleEncounters(message) {
 async function getDexInfo(message, name, form) {
     if(name.match(/^-{0,1}\d+$/)){
         name = parseInt(name, 10);
-        name = await getNameByNumber(name);
+        name = getNameByNumber(name);
         if (name == null) {
             return null;
         }
@@ -10702,7 +10703,7 @@ async function printDex(message) {
         }
         if (pokedex.charAt(i) === '1') {
             shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === num);
-            name = await getNameByNumber(i);
+            name = getNameByNumber(i);
         } else {
             shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === "missing");
         }
@@ -10797,15 +10798,12 @@ async function printDex(message) {
 }
 
 function getNameByNumber(number) {
-    return new Promise(function(resolve) {
-        oak.findPokemon(number, function(p) {
-            if (p == null) {
-                resolve(null);
-            } else {
-                resolve(p.names.en);
-            }
-        });
-    });
+    let pkmn = oak.findPokemon(number);
+    if (pkmn != null) {
+        return pkmn.names.en;
+    } else {
+        return null;
+    }
 }
 
 /*
