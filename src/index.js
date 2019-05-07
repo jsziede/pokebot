@@ -9936,7 +9936,9 @@ async function getDexInfo(message, name, form) {
     }
     
     var desc;
-    if (pkmn.national_id <= 721) {
+    if (pkmn.national_id === 808 || pkmn.national_id === 809) {
+        desc = pkmn.pokedex_entries[ 'Let\'s Go Pikachu' ].en;
+    } else if (pkmn.national_id <= 721) {
         desc = pkmn.pokedex_entries[ 'Alpha Sapphire' ].en;
     } else {
         desc = pkmn.pokedex_entries[ 'Ultra Sun' ].en;
@@ -12266,8 +12268,16 @@ function getEvolvesTo(pkmn, specific) {
                         }
                     }
                     else if (pkmn.evolutions[i].hasOwnProperty('conditions') && !pkmn.evolutions[i].hasOwnProperty('happiness')  && !pkmn.evolutions[i].hasOwnProperty('item')) {
+                        //specific to meltan and its Pokemon (Let's) GO candies
+                        if (pkmn.evolutions[i].conditions[0] === "400 Meltan Candy") {
+                            var k = evolutions.length;
+                            evolutions[k] = {
+                                "name": pkmn.evolutions[i].to,
+                                "method": "by feeding it 400 Meltan candies."
+                            }
+                        }
                         //specific to sylveon, only checks for Fairy moves that eevee can learn
-                        if (pkmn.evolutions[i].conditions[0] === "Fairy Type Move") {
+                        else if (pkmn.evolutions[i].conditions[0] === "Fairy Type Move") {
                             var k = evolutions.length;
                             evolutions[k] = {
                                 "name": pkmn.evolutions[i].to,
