@@ -3675,8 +3675,6 @@ function getMovePP(name) {
 
 function addToPokedex(user, number) {
     user.pokedex = user.pokedex.substring(0, number) + '1' + user.pokedex.substring(number + 1);
-    console.log(user.pokedex);
-    console.log(number);
     var query = "UPDATE user SET user.pokedex = ? WHERE user.user_id = ?";
     con.query(query, [user.pokedex, user.user_id], function (err) {
         if (err) {
