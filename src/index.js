@@ -12681,9 +12681,9 @@ async function getWeather(message) {
     var reacting = true;
     var didReact = false;
     while (reacting) {
-        await msg.react(client.emojis.find("name", "rain"));
-        await msg.react(client.emojis.find("name", "hail"));
-        await msg.react(client.emojis.find("name", "sandstorm"));
+        await msg.react(client.emojis.find(weatherEmoji => weatherEmoji.name === "rain"));
+        await msg.react(client.emojis.find(weatherEmoji => weatherEmoji.name === "hail"));
+        await msg.react(client.emojis.find(weatherEmoji => weatherEmoji.name === "sandstorm"));
         
         const filter = (reaction, user) => {
             return ['rain', 'hail', 'sandstorm'].includes(reaction.emoji.name) && user.id === userID;
@@ -13480,91 +13480,6 @@ function hasGenderDifference(name) {
         return true;
     }
     return false;
-}
-
-async function getBulbaArticle(message, input) {
-    if (input == null || input == undefined || input === "") {
-        return;
-    }
-    titleCase = input.replace(/ /g,"_");
-    var link = `https://bulbapedia.bulbagarden.net/wiki/` + titleCase;
-    var src;
-    var desc = [null, null, null];
-    var thumb = {
-        url: "ayylmao"
-    }
-    
-    const options = {
-        uri: link,
-        transform: function (body) {
-            return cheerio.load(body);
-        }
-    };
-    await rp(options)
-        .then(($) => {
-            input = $('#firstHeading').text();
-            link = `https://bulbapedia.bulbagarden.net/wiki/` + input;
-            link = link.replace(/ /g,"_");
-            src = $("#mw-content-text").find('.roundy').find('a.image > img').attr('src');
-            desc[0] = $('#mw-content-text > p:first-of-type').text();
-            desc[1] = $('#mw-content-text > p:nth-of-type(2)').text();
-            desc[2] = $('#mw-content-text > p:nth-of-type(3)').text();
-        })
-        .catch((err) => {
-            return null;
-        });
-
-        var embed = {
-       "author": {
-            "name": "Bulbapedia Info",
-        },
-        "title": input,
-        "color": 0xE0F2B6,
-        "fields": [
-            {
-                "name": '\u200b',
-                "value": desc[0],
-                "inline": false
-            }
-        ]
-    };
-    
-    var fields = [];
-    var d;
-    for (d = 0; d < 3; d++) {
-        if (desc[d] != null) {
-            fields[fields.length] = {
-                "name": '\u200b',
-                "value": desc[d],
-                "inline": false
-            }
-        }
-    }
-    
-    fields[fields.length] = {
-                "name": '\u200b',
-                "value": "More information on [" + input + "](" + link + ") can be found on Bulbapedia.",
-                "inline": false
-    }
-    
-    if (src != undefined) {
-        thumb.url = 'https:' + src;
-        embed.thumbnail = thumb;
-    }
-    
-    if (desc[0] != null) {
-        try {
-            embed.fields = fields;
-            message.channel.send({ embed });
-        } catch (err) {
-            console.log(err);
-            return null;   
-        }
-    } else {
-        return null;
-    }
-    
-    return true;
 }
 
 //sends a direct message to the sender containing a list of all commands available to use with the bot
