@@ -217,14 +217,14 @@ client.on('ready', () => {
     /**
      *  Load the global emojis.
     */
-    duck = client.emojis.find("name", "001");
-    tail = client.emojis.find("name", "002");
-    pew = client.emojis.find("name", "003");
-    kukui = client.emojis.find("name", "004");
-    blobSweat = client.emojis.find("name", "005");
-    lfcparty = client.emojis.find("name", "006");
-    dollar = client.emojis.find("name", "007");
-    birb = client.emojis.find("name", "008");
+    duck = client.emojis.find(duck => duck.name === "001");
+    tail = client.emojis.find(tail => tail.name === "002");
+    pew = client.emojis.find(pew => pew.name === "003");
+    kukui = client.emojis.find(kukui => kukui.name === "004");
+    blobSweat = client.emojis.find(blobSweat => blobSweat.name === "005");
+    lfcparty = client.emojis.find(lfcparty => lfcparty.name === "006");
+    dollar = client.emojis.find(dollar => dollar.name === "007");
+    birb = client.emojis.find(birb => birb.name === "008");
 
     /**
      *  Checks the database for any Pokemon that are in the process of evolving and triggers the evolution process for them.
@@ -2770,7 +2770,7 @@ async function setLocation(message, locationName) {
         });
     }
 
-    let loc = doesLocationExist(region, locationName);
+    let loc = getFullLocationName(region, locationName);
     return new Promise(function(resolve) {
         if (loc != null) {
             let query = "UPDATE user SET location = ?, field = 'Walking' WHERE user.user_id = ?";
@@ -2882,7 +2882,15 @@ async function printAllLocations(message) {
     });
 }
 
-//prints the current location of the sender
+/**
+ * Sends a message containing information about where
+ * the user is located.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} False if errors are encountered, otherwise
+ * true.
+ */
 async function printLocation(message) {
     let user = await getUser(message.author.id);
     if (user === null) {
@@ -2939,8 +2947,18 @@ async function printLocation(message) {
     });
 }
 
-//checks if the given location exists in the given region
-function doesLocationExist(region, name) {
+/**
+ * Gets the full name of a location based on a partial name,
+ * if it exists.
+ * 
+ * @param {string} region The name of the region where the desired
+ * location is at.
+ * @param {string} name The partial name of a location.
+ * 
+ * @returns {string} The full name of a location, or null
+ * if the location does not exist.
+ */
+function getFullLocationName(region, name) {
     var path = generateRegionJSONPath(region);
     var data;
     try {
@@ -2962,7 +2980,15 @@ function doesLocationExist(region, name) {
     return null;
 }
 
-//returns the beginning location of a given region
+/**
+ * Gets the default location of a region for when a user either
+ * travels to that region or begins their adventure in that region.
+ * 
+ * @param {string} region The name of the region in which the default
+ * location is requested.
+ * 
+ * @returns {string} The default location of a region.
+ */
 function getDefaultLocationOfRegion(region) {
     if (region === "Kanto") {
         return "Pallet Town";
@@ -2981,7 +3007,14 @@ function getDefaultLocationOfRegion(region) {
     }
 }
 
-//returns the default games of a given region
+/**
+ * Gets the names of the most recent games that take place
+ * in a specified region.
+ * 
+ * @param {string} region The name of the region.
+ * 
+ * @returns {string[]} The pair of most recent games that took place in the specified region.
+ */
 function getDefaultGamesOfRegion(region) {
     var arr = [" ", " "];
     if (region === "Kanto") {
@@ -3015,7 +3048,14 @@ function getDefaultGamesOfRegion(region) {
     }
 }
 
-//returns the sender's lead pokemon
+/**
+ * Gets the user's lead Pokemon.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Pokemon} The user's lead Pokemon if they have one,
+ * otherwise null.
+ */
 function getLeadPokemon(userid) {
     return new Promise(function(resolve) {
         var query_str = 'SELECT user.lead FROM user WHERE user_id = ?';
@@ -3039,9 +3079,17 @@ function getLeadPokemon(userid) {
     });
 }
 
-//returns the sender's lead pokemon
-function getEvolvingPokemon(userid) {
-    return new Promise(function(resolve, reject) {
+/**
+ * Gets a user's evolving Pokemon. A user should only have
+ * at most one evolving Pokemon at any given time.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Pokemon} The user's evolving Pokemon,
+ * or null if the user does not have an evolving Pokemon.
+ */
+async function getEvolvingPokemon(userid) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM pokemon WHERE pokemon.evolving = 1 AND pokemon.current_trainer = ?';
         con.query(query_str, [userid], function (err, rows) {
             if (err) {
@@ -3053,8 +3101,15 @@ function getEvolvingPokemon(userid) {
     });
 }
 
-//returns the sender's basic information
-function getUser(userid) {
+/**
+ * Gets a Discord user who uses Pokebot.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {User} The User object of the requested user,
+ * or null if the user doesn't exist in the database.
+ */
+async function getUser(userid) {
     return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM user, user_prefs WHERE user.user_id = ? AND user_prefs.user_id = ?';
         con.query(query_str, [userid, userid], function (err, rows) {
@@ -3070,9 +3125,16 @@ function getUser(userid) {
     });
 }
 
-//returns the sender's bag
-function getBag(userid) {
-    return new Promise(function(resolve, reject) {
+/**
+ * Gets all items owned by a user.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Item[]} All items owned by a user, or null
+ * if no items were found.
+ */
+async function getBag(userid) {
+    return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM bag WHERE bag.owner = ? AND bag.quantity > 0';
         con.query(query_str, userid, function (err, rows) {
             if (err) {
@@ -3085,7 +3147,7 @@ function getBag(userid) {
 }
 
 //returns the pokemon currently owned by the sender
-function getPokemon(userid) {
+async function getPokemon(userid) {
     return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage IS NULL';
         con.query(query_str, userid, function (err, rows) {
@@ -9424,12 +9486,12 @@ async function printPossibleEncounters(message) {
                         walkString += " " + poke_ball;
                     }
                     if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        walkString += " "  + possiblePokemon[x][w].name + " | Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        walkString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     } else {
-                        walkString += " "  + possiblePokemon[x][w].name + " | Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        walkString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     }
                     if (possiblePokemon[x][w].method != null) {
-                        walkString += " | " + possiblePokemon[x][w].method ;
+                        walkString += " *" + possiblePokemon[x][w].method + "*";
                     }
                     walkString += "\n";
                     if (walkString.length >= 900) {
@@ -9477,12 +9539,12 @@ async function printPossibleEncounters(message) {
                         surfString += " " + poke_ball;
                     }
                     if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        surfString += " "  + possiblePokemon[x][w].name + " | Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        surfString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     } else {
-                        surfString += " "  + possiblePokemon[x][w].name + " | Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        surfString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     }
                     if (possiblePokemon[x][w].method != null) {
-                        surfString += " | " + possiblePokemon[x][w].method ;
+                        surfString += " *" + possiblePokemon[x][w].method + "*";
                     }
                     surfString += "\n";
                     if (surfString.length >= 900) {
@@ -9530,12 +9592,12 @@ async function printPossibleEncounters(message) {
                         fishString += " " + poke_ball;
                     }
                     if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        fishString += " "  + possiblePokemon[x][w].name + " | Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        fishString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     } else {
-                        fishString += " "  + possiblePokemon[x][w].name + " | Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        fishString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     }
                     if (possiblePokemon[x][w].method != null) {
-                        fishString += " | " + possiblePokemon[x][w].method ;
+                        fishString += " *" + possiblePokemon[x][w].method + "*";
                     }
                     fishString += "\n";
                     if (fishString.length >= 900) {
@@ -9583,12 +9645,12 @@ async function printPossibleEncounters(message) {
                         rockSmashString += " " + poke_ball;
                     }
                     if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        rockSmashString += " "  + possiblePokemon[x][w].name + " | Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        rockSmashString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     } else {
-                        rockSmashString += " "  + possiblePokemon[x][w].name + " | Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        rockSmashString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     }
                     if (possiblePokemon[x][w].method != null) {
-                        rockSmashString += " | " + possiblePokemon[x][w].method ;
+                        rockSmashString += " *" + possiblePokemon[x][w].method + "*";
                     }
                     rockSmashString += "\n";
                     if (rockSmashString.length >= 900) {
@@ -9636,12 +9698,12 @@ async function printPossibleEncounters(message) {
                         headbuttString += " " + poke_ball;
                     }
                     if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        headbuttString += " "  + possiblePokemon[x][w].name + " | Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        headbuttString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     } else {
-                        headbuttString += " "  + possiblePokemon[x][w].name + " | Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        headbuttString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     }
                     if (possiblePokemon[x][w].method != null) {
-                        headbuttString += " | " + possiblePokemon[x][w].method ;
+                        headbuttString += " *" + possiblePokemon[x][w].method + "*";
                     }
                     headbuttString += "\n";
                     if (headbuttString.length >= 900) {
@@ -9689,12 +9751,12 @@ async function printPossibleEncounters(message) {
                         diveString += " " + poke_ball;
                     }
                     if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        diveString += " "  + possiblePokemon[x][w].name + " | Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        diveString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     } else {
-                        diveString += " "  + possiblePokemon[x][w].name + " | Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
+                        diveString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
                     }
                     if (possiblePokemon[x][w].method != null) {
-                        diveString += " | " + possiblePokemon[x][w].method ;
+                        diveString += " *" + possiblePokemon[x][w].method + "*";
                     }
                     diveString += "\n";
                     if (diveString.length >= 900) {
@@ -9801,7 +9863,7 @@ async function printPossibleEncounters(message) {
                     reaction.remove(userID);
                 }
             })
-            .catch(collected => {
+            .catch(() => {
                 if (!didReact) {
                     reacting = false;
                     msg.clearReactions();
