@@ -58,11 +58,15 @@ Running the bot is easy. Simply navigate to the `src` directory and run the comm
 node index.js
 ```
 
-If everything goes correctly, you should see the message "A wild Pokebot appears!" in your console.
+If everything goes correctly, you should see the message "Connected to Discord." in your console.
+
+### Emoji
+
+Similar to Discord Nitro subscribers, bot accounts are able to use any emoji in any guild if the guild has global emoji permissions. I have taken advantage of this by uploading over 800 custom emoji across many private guilds that the bot is a member of. These emoji include the Pokémon Shuffle icons for all 807 Pokémon as well as other custom emoji, and are used to add extra flavor to the bot. Running the bot on your own machine will result in many messages containing "null" where the emoji should be and will likely throw exceptions for using the null emojis as reactions. I plan on adding generic fallback emojis in the future to fix these potential errors.
 
 ## Roadmap
 
-Pokébot is still a major work in progress. This project started off as a solution to my boredom one summer day and quickly snowballed into a large program. I am currently in the process of refactoring and restructuring the code to make it more easily understandable and increase its modularity. This also includes increased documentation and added testing. The database is also going to receive a minor facelift so the bot can be used in multiple servers. **Due to this process, the bot is currently unusable with multiple errors in the code.**
+Pokébot is still a major work in progress. This project started off as a solution to my boredom one summer day and quickly snowballed into a large program. I am currently in the process of refactoring and restructuring the code to make it more easily understandable and increase its modularity and maintainability. This also includes increased documentation and added testing. The database is also going to receive a minor facelift so the bot can be used in multiple servers.
 
 Major features still in the work:
 
