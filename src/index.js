@@ -1186,7 +1186,7 @@ async function runLeadCommand(message, input) {
         }
         // if user added 'hidden' to the command, then show hidden
         if (input.length > 0 && input[0].toLowerCase() === "hidden") {
-            displayHiddenStats(pkmn);
+            displayHiddenStats(pkmn, message);
         } else { 
             displayAnOwnedPkmn(pkmn, message);
         }
@@ -9206,7 +9206,7 @@ async function displayAnOwnedPkmn(pkmn, message) {
 }
 
 //displays hidden information about an owned pokemon in a rich embed
-function displayHiddenStats(pkmn) {
+function displayHiddenStats(pkmn, message) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
     if (modelLink === null) {
         return new Promise(function(resolve) {
