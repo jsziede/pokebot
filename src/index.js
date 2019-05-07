@@ -1,13 +1,13 @@
-/*
+/**
 //  Pokébot - A simulation of the Pokémon video games that runs in the Discord environment.
 //  Copyright (C) 2019 Joshua Sziede
 */
 
-/*
-//  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
-*/
+/**
+ *  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
+ */
 
-/*
+/**
 //  Packages
 */
 const Discord = require('discord.js');
@@ -18,13 +18,13 @@ const schedule = require('node-schedule');
 const mysql = require('mysql');
 //const Sim = require('./Pokemon-Showdown/sim');
 
-/*
-//  Connect to Discord.
+/**
+ *  Connect to Discord.
 */
 const client = new Discord.Client({autoReconnect:true});
 
-/*
-//  MySQL DB Connection
+/**
+ *  MySQL DB Connection
 */
 var myconfig = require('../config/my_config');
 var con = mysql.createConnection(myconfig.database);
@@ -36,8 +36,8 @@ con.connect(function(err) {
     console.log("Connected to MySQL Database.");
 });
 
-/*
-//  Custom Emoji Used Globally
+/**
+ *  Custom Emoji Used Globally
 */
 var duck;
 var tail;
@@ -46,17 +46,18 @@ var kukui;
 var dollar;
 var birb;
 
-/*
-//  Debug Tools
+/**
+ *  Debug Tools
 */
 var enableSpam = true;     //default = false
 var spamXpMult = 1;         //default = 1
 var spamEncounterMult = 1;  //default = 1
 
-/*
-//  Global Variables
-//  @todo These might be better as database tables. 
-*/
+/**
+ *  Global Variables
+ *  @todo These might be better as database tables. 
+ */
+
 var evolving = [];      // Stores all the users who have an evolving pokemon as well as the Pokemon that is evolving
 var trading = [];       // Stores all the users who are in the process of trading a Pokemon
 var transactions = [];  // Stores all users currently using a command
@@ -68,38 +69,38 @@ var sandstorm = [];     // Stores locations in which a sandstorm is happening
 var cooldown = new Date();
 cooldown = cooldown.getTime();
 
-/*
-//  Standard Pokemon object for Pokemon that have been caught.
-//  @todo this should maybe be a class.
-//  name:Official name of the Pokemon.
-//  nick: Nickname of the Pokemon provided by its trainer.
-//  no: National Pokedex number.
-//  caughtIn: Type of ball the Pokemon was caught in.
-//  type: The type (Grass, Fire, Water, etc.).
-//  item: The item the Pokemon is holding.
-//  level: Current level of the Pokemon.
-//  totalxp: Total amount of xp earned by the Pokemon.
-//  moves: A list of moves known by the Pokemon.
-//  ability: The ability of the Pokemon.
-//  abilitySlot: The ability slot in case the Pokemon can have multiple abilities.
-//  nature: The nature of the Pokemon.
-//  stats: A list of the Pokemon's current stats in order of hp, attack, defense, s. attack, s. defense, speed.
-//  IVs: A list of the Pokemon's current IVs in order of hp, attack, defense, s. attack, s. defense, speed.
-//  EVs: A list of the Pokemon's current EVs in order of hp, attack, defense, s. attack, s. defense, speed.
-//  gender: The gender of the Pokemon.
-//  ot: The name of the original trainer.
-//  otid: The id of the original trainer.
-//  date: The date the Pokemon was caught.
-//  region: The region the Pokemon was caught at.
-//  location: The location within the region the Pokemon was caught at.
-//  caughtAtLevel: The level the Pokemon was at when it was caught.
-//  shiny: If the Pokemon is shiny.
-//  lead: If the Pokemon is the trainer's lead Pokemon. Will be deprecated eventually when the party system is implemented.
-//  form: The current form the Pokemon is in.
-//  friendship: The amount of friendship the Pokemon has.
-//  evolving: If the Pokemon is evolving.
-//  status: The status condition of the Pokemon.
-//  pv: The personality value of the Pokemon.
+/**
+ *  Standard Pokemon object for Pokemon that have been caught.
+ *  @todo this should maybe be a class.
+ *  name:Official name of the Pokemon.
+ *  nick: Nickname of the Pokemon provided by its trainer.
+ *  no: National Pokedex number.
+ *  caughtIn: Type of ball the Pokemon was caught in.
+ *  type: The type (Grass, Fire, Water, etc.).
+ *  item: The item the Pokemon is holding.
+ *  level: Current level of the Pokemon.
+ *  totalxp: Total amount of xp earned by the Pokemon.
+ *  moves: A list of moves known by the Pokemon.
+ *  ability: The ability of the Pokemon.
+ *  abilitySlot: The ability slot in case the Pokemon can have multiple abilities.
+ *  nature: The nature of the Pokemon.
+ *  stats: A list of the Pokemon's current stats in order of hp, attack, defense, s. attack, s. defense, speed.
+ *  IVs: A list of the Pokemon's current IVs in order of hp, attack, defense, s. attack, s. defense, speed.
+ *  EVs: A list of the Pokemon's current EVs in order of hp, attack, defense, s. attack, s. defense, speed.
+ *  gender: The gender of the Pokemon.
+ *  ot: The name of the original trainer.
+ *  otid: The id of the original trainer.
+ *  date: The date the Pokemon was caught.
+ *  region: The region the Pokemon was caught at.
+ *  location: The location within the region the Pokemon was caught at.
+ *  caughtAtLevel: The level the Pokemon was at when it was caught.
+ *  shiny: If the Pokemon is shiny.
+ *  lead: If the Pokemon is the trainer's lead Pokemon. Will be deprecated eventually when the party system is implemented.
+ *  form: The current form the Pokemon is in.
+ *  friendship: The amount of friendship the Pokemon has.
+ *  evolving: If the Pokemon is evolving.
+ *  status: The status condition of the Pokemon.
+ *  pv: The personality value of the Pokemon.
 */
 function Pokemon(name, nick, no, form, type, item, level, totalxp, moves, ability, abilitySlot, nature, stats, iv, ev, gender, region, location, caughtAtLevel, shiny) {
     this.name = name;
@@ -133,13 +134,13 @@ function Pokemon(name, nick, no, form, type, item, level, totalxp, moves, abilit
     this.pv = Math.floor(Math.random() * 4294967296);
 }
 
-/*
-//  Standard item object.
-//  @todo perhaps this should be a class.
-//  name: Name of the item.
-//  quantity: The amount of the item the trainer has.
-//  holdable: If a Pokemon can hold the item.
-//  isKey: If the item is a key item.
+/**
+ *  Standard item object.
+ *  @todo perhaps this should be a class.
+ *  name: Name of the item.
+ *  quantity: The amount of the item the trainer has.
+ *  holdable: If a Pokemon can hold the item.
+ *  isKey: If the item is a key item.
 */
 function Item(name, quantity, holdable, isKey) {
     this.name = name;
@@ -148,13 +149,13 @@ function Item(name, quantity, holdable, isKey) {
     this.isKey = isKey;
 }
 
-/*
-//  Standard Pokemon object for Pokemon that have not been caught.
-//  @todo Perhaps this should be a child class of Pokemon().
-//  name: The name of the Pokemon.
-//  level: The current level the Pokemon.
-//  rarity: How rare the Pokemon appears in the current location.
-//  method: The method required to encounter the Pokemon (grass, surf, headbutt, etc.).
+/**
+ *  Standard Pokemon object for Pokemon that have not been caught.
+ *  @todo Perhaps this should be a child class of Pokemon().
+ *  name: The name of the Pokemon.
+ *  level: The current level the Pokemon.
+ *  rarity: How rare the Pokemon appears in the current location.
+ *  method: The method required to encounter the Pokemon (grass, surf, headbutt, etc.).
 */
 function WildPokemon(name, level, rarity, method) {
     this.name = name;
@@ -163,23 +164,23 @@ function WildPokemon(name, level, rarity, method) {
     this.method = method;
 }
 
-/*
-//  Transactions lock the user out of using most other commands.
-//  userID: Id of the user who ran the command.
-//  type: The type of command being run.
+/**
+ *  Transactions lock the user out of using most other commands.
+ *  userID: Id of the user who ran the command.
+ *  type: The type of command being run.
 */
 function Transaction(userID, type) {
     this.userID = userID;
     this.type = type;
 }
 
-/*
-//  Standard evolution object.
-//  @todo This needs to be reworked so Pokemon id is passed as well so a Trainer can have multiple Pokemon evolving.
-//  userID: Id of the user who owns the evolving Pokemon.
-//  from: The name of the Pokemon that is evolving.
-//  to: The name the Pokemon is evolving into to differentiate branched evolutions.
-//  time: What time the Pokemon started to evolve.
+/**
+ *  Standard evolution object.
+ *  @todo This needs to be reworked so Pokemon id is passed as well so a Trainer can have multiple Pokemon evolving.
+ *  userID: Id of the user who owns the evolving Pokemon.
+ *  from: The name of the Pokemon that is evolving.
+ *  to: The name the Pokemon is evolving into to differentiate branched evolutions.
+ *  time: What time the Pokemon started to evolve.
 */
 function Evolution(userID, from, to) {
     this.userID = userID;
@@ -189,12 +190,12 @@ function Evolution(userID, from, to) {
     this.time = this.time.getTime();
 }
 
-/*
-//  Standard trade object.
-//  userAsk: The Trainer who initiated the trade.
-//  userRespond: The Trainer who was asked to trade.
-//  askPokemon: The Pokemon that the initiator wants to send.
-//  respondPokemon: The Pokemon the initiator wants to receive.
+/**
+ *  Standard trade object.
+ *  userAsk: The Trainer who initiated the trade.
+ *  userRespond: The Trainer who was asked to trade.
+ *  askPokemon: The Pokemon that the initiator wants to send.
+ *  respondPokemon: The Pokemon the initiator wants to receive.
 */
 function Trade(userAsk, userRespond, askPokemon, respondPokemon) {
     this.userAsk = userAsk;
@@ -203,18 +204,18 @@ function Trade(userAsk, userRespond, askPokemon, respondPokemon) {
     this.respondPokemon = respondPokemon;
 }
 
-/*
-//  Start up procedures.
+/**
+ *  Start up procedures.
 */
 client.login(myconfig.token);
 client.on('ready', () => {
-    /*
-    //  Shows text under Pokebot's username in the members list.
+    /**
+     *  Shows text under Pokebot's username in the members list.
     */
     client.user.setActivity('Pokémon XP: Gale of Flannery');
     
-    /*
-    //  Load the global emojis.
+    /**
+     *  Load the global emojis.
     */
     duck = client.emojis.find("name", "001");
     tail = client.emojis.find("name", "002");
@@ -225,25 +226,25 @@ client.on('ready', () => {
     dollar = client.emojis.find("name", "007");
     birb = client.emojis.find("name", "008");
 
-    /*
-    //  Checks the database for any Pokemon that are in the process of evolving and triggers the evolution process for them.
-    //  This is necessary in case the bot shuts down while a Pokemon is evolving.
+    /**
+     *  Checks the database for any Pokemon that are in the process of evolving and triggers the evolution process for them.
+     *  This is necessary in case the bot shuts down while a Pokemon is evolving.
     */
     fixEvolutions();
     
-    /*
-    //  Sets the weather condition for locations where weather can happen.
+    /**
+     *  Sets the weather condition for locations where weather can happen.
     */
     updateWeather();
 
     console.log("Connected to Discord.")
 });
 
-/*
-//  Restart the bot if an error occurs.
-//  @todo This could probably be handled on a per error basis
-//  or at the very least should be more robust.
-//  @todo Log the errors into a file.
+/**
+ *  Restart the bot if an error occurs.
+ *  @todo This could probably be handled on a per error basis
+ *  or at the very least should be more robust.
+ *  @todo Log the errors into a file.
 */
 process.on('error', error => {
     client.destroy();
@@ -253,10 +254,10 @@ process.on('error', error => {
     }, 10000);
 });
 
-/*
-//  Restart the bot if an unhandled rejection occurs.
-//  @todo This could probably be be more robust.
-//  @todo Log the errors into a file.
+/**
+ *  Restart the bot if an unhandled rejection occurs.
+ *  @todo This could probably be be more robust.
+ *  @todo Log the errors into a file.
 */
 process.on('unhandledRejection', error => {
     client.destroy();
@@ -266,10 +267,10 @@ process.on('unhandledRejection', error => {
     }, 10000);
 });
 
-/*
-//  Restart the bot if an unhandled exception occurs.
-//  @todo: This could probably be be more robust.
-//  @todo Log the errors into a file.
+/**
+ *  Restart the bot if an unhandled exception occurs.
+ *  @todo: This could probably be be more robust.
+ *  @todo Log the errors into a file.
 */
 process.on('uncaughtException', error => {
     client.destroy();
@@ -279,9 +280,9 @@ process.on('uncaughtException', error => {
     }, 10000);
 });
 
-/*
-//  Log error messages to the console.
-//  @todo This could probably be more robust.
+/**
+ *  Log error messages to the console.
+ *  @todo This could probably be more robust.
 */
 client.on('error', (e) => {
     console.error(e);
@@ -293,16 +294,16 @@ client.on('error', (e) => {
 client.on('warn', (e) => console.warn(e));
 client.on('debug', (e) => console.info(e));
 
-/*
-//  Update the weather five seconds after every hour.
+/**
+ *  Update the weather five seconds after every hour.
 */
 schedule.scheduleJob({minute: 0, second: 5}, function(){
     updateWeather();
 });
 
-/*
-//  Triggers upon joining a server.
-//  Send welcome message to first text channel with send permissions.
+/**
+ *  Triggers upon joining a server.
+ *  Send welcome message to first text channel with send permissions.
 */
 client.on("guildCreate", async guild => {
     for (let channel of guild.channels) {
@@ -313,8 +314,8 @@ client.on("guildCreate", async guild => {
     }
 })
 
-/*
-//  Triggers every time any user sends a message.
+/**
+ *  Triggers every time any user sends a message.
 */
 client.on('message', async (message) => {
     //ignore messages from bots
@@ -837,12 +838,13 @@ client.on('message', async (message) => {
     }
 });
 
-/*
-//  Reads user input to check if an ability exists
-//  with a name that matches the input.
-//  Returns false if an error is encountered, otherwise
-//  returns true.
-*/
+/**
+ * Handles the process for running the `ability` command, which
+ * sends a message with details about an ability.
+ * 
+ * @param {string[]} abilityName Name of the ability as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 function runAbilityCommand(abilityName) {
     abilityName = abilityName.join(' ');
     var foundInfo = getAbilityInfo(abilityName);
@@ -856,11 +858,16 @@ function runAbilityCommand(abilityName) {
     }
 }
 
-/*
-//  Builds data for a new user, such as starter Pokemon, starting location,
-//  and giving default items to user.
-//  Returns true.
-*/
+/**
+ * Handles the process for running the `begin` command, which
+ * initializes data for a new user. This includes their starter
+ * Pokemon, their starting region, and default bag items.
+ * 
+ * @todo This should establish their timezone and user prefs as well.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runBeginCommand(message) {
     let activeUserTransaction = isInTransaction(message.author.id);
      if (activeUserTransaction != null) {
@@ -904,10 +911,13 @@ async function runBeginCommand(message) {
     });
 }
 
-/*
-//  Prints the contents of the bag from the user.
-//  Return true on success, false if an error is encountered.
-*/
+/**
+ * Handles the process for running the `bag` command, which
+ * sends a message that shows the contents of the user's bag.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runBagCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -925,10 +935,15 @@ async function runBagCommand(message) {
     });
 }
 
-/*
-//  Prints out information about the Pokemon that was input by the user.
-//  Returns true.
-*/
+/**
+ * Handles the process for running the `dex` command, which
+ * sends a message containing detailed information about a 
+ * Pokemon.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input Pokemon name as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runDexCommand(message, input) {
     if (input.length === 0) {
         let exists = await userExists(message.author.id);
@@ -949,9 +964,14 @@ async function runDexCommand(message, input) {
     })
 }
 
-/*
-//  Guides the user through the Daycare process.
-*/
+/**
+ * Handles the process for running the `daycare` command, which
+ * allows a user to drop off and pick up their Pokemon from the
+ * day care.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runDaycareCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -971,9 +991,13 @@ async function runDaycareCommand(message) {
     });
 }
 
-/*
-//  Sets user to encounter only Pokemon that are found by diving.
-*/
+/**
+ * Handles the process for running the `dive` command, which
+ * sets a user to only encounter Pokemon found by diving.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runDiveCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -991,9 +1015,14 @@ async function runDiveCommand(message) {
     });
 }
 
-/*
-//  Prints a list of all Pokemon that can be encountered by the user in their current location.
-*/
+/**
+ * Handles the process for running the `encounter` command, which
+ * sends a message containing all the different Pokemon that the
+ * user can encounter in their current location.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runEncounterCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1006,10 +1035,13 @@ async function runEncounterCommand(message) {
     });
 }
 
-/*
-//  Sets user to encounter only Pokemon that are found by fishing.
-//  User is prompted to select which fishing rod to use.
-*/
+/**
+ * Handles the process for running the `fish` command, which
+ * sets a user to only encounter Pokemon found by fishing.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runFishCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1027,9 +1059,14 @@ async function runFishCommand(message) {
     });
 }
 
-/*
-//  Uses gives a specified item to their lead Pokemon.
-*/
+/**
+ * Handles the process for running the `give` command, which
+ * gives an item to the user's lead Pokemon.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input Name of item as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runGiveCommand(message, input) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1053,9 +1090,15 @@ async function runGiveCommand(message, input) {
     });
 }
 
-/*
-//  Changes user's location based on the user's input, if that location exists within their current region.
-*/
+/**
+ * Handles the process for running the `goto` command, which
+ * changes the location of the user to somewhere else within
+ * the same region.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input Location name as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runGotoCommand(message, input) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1081,9 +1124,14 @@ async function runGotoCommand(message, input) {
     });
 }
 
-/*
-//  Prints an embedded message listing all the commands and what they do.
-*/
+/**
+ * Handles the process for running the `help` command, which
+ * will send a DM to the user containing information about
+ * all of the Pokebot commands.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runHelpCommand(message) {
     await printHelp(message);
     return new Promise(function(resolve) {
@@ -1091,9 +1139,13 @@ async function runHelpCommand(message) {
     });
 }
 
-/*
-//  Sets user to encounter only Pokemon that are found by headbutting trees.
-*/
+/**
+ * Handles the process for running the `headbutt` command, which
+ * sets a user to only encounter Pokemon found by headbutting trees.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runHeadbuttCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1111,10 +1163,14 @@ async function runHeadbuttCommand(message) {
     });
 }
 
-/*
-//  Shows a detailed view of the user's lead Pokemon, or shows the hidden stats
-//  of the user's lead Pokemon.
-*/
+/**
+ * Handles the process for running the `lead` command, which
+ * changes the user's lead Pokemon to another Pokemon that they own.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input Optional user input that will show the lead Pokemon's hidden stats if this value is equal to `"hidden"`.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runLeadCommand(message, input) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1138,9 +1194,14 @@ async function runLeadCommand(message, input) {
     });
 }
 
-/*
-//  Shows all locations within the region that the user is in.
-*/
+/**
+ * Handles the process for running the `locations` command, which
+ * sends a message containing all locations within the user's current
+ * region.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runLocationsCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1157,10 +1218,20 @@ async function runLocationsCommand(message) {
     });
 }
 
-/*
-//  Randomly generates a numeric string and matches it to the user's id to count how many
-//  of the same digits are in the same position. User is awarded prizes based on the count.
-*/
+/**
+ * Handles the process for running the `lotto` command, which
+ * randomly generates a number and matches that number to the
+ * user's id to determine what prizes the user will receive.
+ * 
+ * @todo Move most of this command into a separate function to
+ * keep it consistent with other command functions.
+ * 
+ * @todo Possibly make the lotto winning number global for all users
+ * instead of randomly generated for each user.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runLottoCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1263,7 +1334,7 @@ async function runLottoCommand(message) {
                 }
             });
         } else {    //if user already ran the lotto command today, tell them how much time they have until they can run it again for the next day
-            //  @todo are these two zone statements necessary?
+            /**  @todo are these two zone statements necessary? */
             zone = momentTz.tz(moment(), 'America/Detroit');
             zone = zone.clone().tz(user.timezone);
             let timeDiff = moment(zone).endOf('day') - zone;
@@ -1289,9 +1360,14 @@ async function runLottoCommand(message) {
     });
 }
 
-/*
-//  Prints details about a move (attack).
-*/
+/**
+ * Handles the process for running the `move` command, which
+ * sends a message containing details about a Pokemon move.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input Name of the move as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 function runMoveCommand(message, input) {
     input = input.join(' ');
     let foundInfo = getMoveInfo(input);
@@ -1301,9 +1377,13 @@ function runMoveCommand(message, input) {
     return true;
 }
 
-/*
-//  Guides the user through the process of buying items from the PokeMart.
-*/
+/**
+ * Handles the process for running the `mart` command, which
+ * lets a user to buy items.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runMartCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1323,10 +1403,13 @@ async function runMartCommand(message) {
     });
 }
 
-/*
-//  Shows all Pokemon currently owned by the user.
-//  Message is split into pages of 15 Pokemon each, navigated by pressing reactions.
-*/
+/**
+ * Handles the process for running the `pokemon` command, which
+ * sends a message showing all Pokemon currently owned by the user.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runPokemonCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1340,9 +1423,13 @@ async function runPokemonCommand(message) {
     });
 }
 
-/*
-//  Guides the user through the processing of releasing a Pokemon.
-*/
+/**
+ * Handles the process for running the `release` command, which
+ * releases a Pokemon owned by the user.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runReleaseCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1363,9 +1450,15 @@ async function runReleaseCommand(message) {
     });
 }
 
-/*
-//  Sets user to encounter only Pokemon that are found by smashing rocks.
-*/
+/**
+ * Handles the process for running the `rocksmash` command, which
+ * sets a user to encounter only Pokemon that are found by smashing
+ * rocks.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input Optional user input that allows a user to accidentally input `"rock smash"` as two words if `input` is equal to `"smash"`.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runRocksmashCommand(message, input) {
     input = input.join(' ').toLowerCase();
     //allow user to input "rock smash" or "rocksmash"
@@ -1387,9 +1480,15 @@ async function runRocksmashCommand(message, input) {
     });
 }
 
-/*
-//  Changes the lead Pokemon of a user to another Pokemon specified by the user that the user owns.
-*/
+/**
+ * Handles the process for running the `setlead` command, which
+ * changes the user's lead Pokemon to another Pokemon that the
+ * user owns.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input The name of the Pokemon that the user wants to set as their lead Pokemon.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runSetLeadCommand(message, input) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1414,9 +1513,13 @@ async function runSetLeadCommand(message, input) {
     });
 }
 
-/*
-//  Sets user to encounter only Pokemon that are found by surfing.
-*/
+/**
+ * Handles the process for running the `surf` command, which
+ * sets a user to encounter only Pokemon that are found by surfing.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runSurfCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1434,9 +1537,14 @@ async function runSurfCommand(message) {
     });
 }
 
-/*
-//  Takes the item held by the user's lead Pokemon, if it has an item, and returns it to the user's bag.
-*/
+/**
+ * Handles the process for running the `take` command, which
+ * takes the item held by the user's lead Pokemon if it is holding
+ * any item.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runTakeCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1454,10 +1562,14 @@ async function runTakeCommand(message) {
     });
 }
 
-/*
-//  Changes the user's current region to the region specified by input.
-//  User must have a visa for the region to travel to it.
-*/
+/**
+ * Handles the process for running the `travel` command, which
+ * changes the region that the user is currently in.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input The name of the region as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runTravelCommand(message, input) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1479,9 +1591,13 @@ async function runTravelCommand(message, input) {
     });
 }
 
-/*
-//  Initializes a Pokemon trade between the user and another user that was mentioned in the input, if there was a mention.
-*/
+/**
+ * Handles the process for running the `trade` command, which
+ * establishes a Pokemon trade between two users.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runTradeCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1501,9 +1617,15 @@ async function runTradeCommand(message) {
     });
 }
 
-/*
-//  Attempts to use the item specified by input on either the user themself or their lead Pokemon, depending on what item is being used.
-*/
+/**
+ * Handles the process for running the `use` command, which
+ * uses an item on either a Pokemon or the user, depending
+ * on the item.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @param {string[]} input The name of the item as input by the user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runUseCommand(message, input) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1527,10 +1649,14 @@ async function runUseCommand(message, input) {
     });
 }
 
-/*
-//  Prints the location and region where the user is currently located,
-//  along with a picture of the location.
-*/
+/**
+ * Handles the process for running the `where` command, which
+ * sends a message that shows where the user is currently
+ * located at.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runWhereCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1547,9 +1673,14 @@ async function runWhereCommand(message) {
     });
 }
 
-/*
-//  Sets user to encounter only Pokemon that are found by walking in tall grass.
-*/
+/**
+ * Handles the process for running the `walk` command, which
+ * sets a user to encounter only Pokemon that are found in
+ * tall grass.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runWalkCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1567,10 +1698,14 @@ async function runWalkCommand(message) {
     });
 }
 
-/*
-//  Prints all locations that are currently experiencing some type of weather.
-//  Location are paged based on weather type.
-*/
+/**
+ * Handles the process for running the `weather` command, which
+ * sends a message showing all locations that currently experiencing
+ * some type of weather, as well as the current season.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function runWeatherCommand(message) {
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1583,9 +1718,16 @@ async function runWeatherCommand(message) {
     });
 }
 
-/*
-//  Sets the current channel as the channel that Pokebot reads from for the current guild.
-*/
+/**
+ * Establishes the channel contained in `message` as the channel
+ * that the bot will read commands from, for the guild contained
+ * in `message`. This is to prevent users from being able to spam
+ * all channels in a guild and instead consolidate spam to a single
+ * channel.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
 async function setBotChannel(message) {
     let query = "SELECT * FROM guilds WHERE guild_id = ?";
     con.query(query, [message.guild.id], async function (err, rows) {
@@ -1638,11 +1780,16 @@ async function setBotChannel(message) {
     });
 }
 
-/*
-//  Checks if message sent from user was in the bot channel.
-*/
+/**
+ * Checks if the channel contained in `message` is the
+ * designated bot channel for the guild contained in
+ * `message`.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * @returns {boolean} True if the channel is the bot channel, otherwise false.
+ */
 async function isBotChannel(message) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         let query = "SELECT * FROM guilds WHERE guilds.guild_id = ? AND guilds.channel = ?";
         con.query(query, [message.guild.id, message.channel.id], function (err, rows) {
             if (err) {
@@ -1657,7 +1804,14 @@ async function isBotChannel(message) {
     });
 }
 
-//checks if a user is currently running a command
+/**
+ * Checks if a user is currently in a transaction.
+ * A user should only have one transaction at any given moment.
+ * 
+ * @param {UserID} userID ID of a Pokebot user.
+ * @returns {string} String of the transaction type the user
+ * is currently in, or null if the user is not in a transaction.
+ */
 function isInTransaction(userID) {
     var index = transactions.map(function(t) { return t.userID; }).indexOf(userID);
     if (index > -1) {
@@ -1667,7 +1821,12 @@ function isInTransaction(userID) {
     }
 }
 
-//removes a user from the list of those who are currently running a command
+/**
+ * Removes a user from their active transaction
+ * if they are in one.
+ * 
+ * @param {UserID} userID ID of a Pokebot user.
+ */
 function removeTransaction(userID) {
     var index = transactions.map(function(t) { return t.userID; }).indexOf(userID);
     if (index > -1) {
@@ -1675,7 +1834,15 @@ function removeTransaction(userID) {
     }
 }
 
-//checks if a user is currently evolving a pokemon
+/**
+ * Checks if a user currently has a Pokemon that
+ * is evolving.
+ * 
+ * @param {UserID} userID ID of a Pokebot user.
+ * @returns {Evolution} Evolution object of the currently
+ * evolving Pokemon, or null if the user does not have any
+ * Pokemon that are evolving.
+ */
 function isInEvolution(userID) {
     var index = evolving.map(function(t) { return t.userID; }).indexOf(userID);
     if (index > -1) {
@@ -1685,7 +1852,12 @@ function isInEvolution(userID) {
     }
 }
 
-//removes a user from the list of users currently evolving a pokemon
+/**
+ * Removes a user from the evolution list.
+ * This means none of their Pokemon are evolving.
+ * 
+ * @param {UserID} userID ID of a Pokebot user.
+ */
 function removeEvolution(userID) {
     var index = evolving.map(function(t) { return t.userID; }).indexOf(userID);
     if (index > -1) {
@@ -1693,7 +1865,15 @@ function removeEvolution(userID) {
     }
 }
 
-//checks if a user is currently performing a trade
+/**
+ * Checks if a user is currently trading Pokemon
+ * with another user.
+ * 
+ * @param {UserID} userID ID of a Pokebot user.
+ * @returns {Trade} Trade object of the users who are trading
+ * with each other, or null if the user is not in the trading
+ * process.
+ */
 function isInTrade(userID) {
     var index = trading.map(function(t) { return t.userAsk; }).indexOf(userID);
     if (index > -1) {
@@ -1703,7 +1883,12 @@ function isInTrade(userID) {
     }
 }
 
-//removes a user from the list of users currently evolving a pokemon
+/**
+ * Removes a user from the trade list.
+ * This means the user is not currently trading Pokemon.
+ * 
+ * @param {UserID} userID ID of a Pokebot user.
+ */
 function removeTrade(userID) {
     var index = trading.map(function(t) { return t.userAsk; }).indexOf(userID);
     if (index > -1) {
@@ -1711,7 +1896,17 @@ function removeTrade(userID) {
     }
 }
 
-//generates a link to a 3d model from pkparaiso
+/**
+ * Generates a file path to a 3D Pokemon model
+ * found in `gfx/models/`.
+ * 
+ * @param {string} name Name of the Pokemon.
+ * @param {boolean} shiny If the Pokemon is shiny.
+ * @param {string} gender The gender of the Pokemon. Should only be `"male"`, `"female"`, or `"none"`.
+ * @param {string} form The form of the Pokemon.
+ * 
+ * @returns {string} The relative file path to the Pokemon model image.
+ */
 function generateModelLink(name, shiny, gender, form) {
     var path = generatePokemonJSONPath(name);
     var data;
@@ -5776,7 +5971,7 @@ async function teachNewMoveAI(pokemon, move) {
     name = name.replace(/'/g,"_");
     name = name.replace(/ /g,"_");
 
-    var path = "./data/move/" + name + ".json";
+    var path = "../data/move/" + name + ".json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -5800,7 +5995,7 @@ async function teachNewMoveAI(pokemon, move) {
         currentMove = currentMove.replace(/'/g,"_");
         currentMove = currentMove.replace(/ /g,"_");
 
-        var mpath = "./data/move/" + currentMove + ".json";
+        var mpath = "../data/move/" + currentMove + ".json";
         var mdata;
         try {
             mdata = fs.readFileSync(mpath, "utf8");
@@ -10050,9 +10245,9 @@ function getMoveInfo(name) {
     name = name.replace(/'/g,"_");
     name = name.replace(/ /g,"_");
     
-    var moveImageLink = "./data/move/images/" + name + ".png";
+    var moveImageLink = "../data/move/images/" + name + ".png";
     
-    var path = "./data/move/" + name + ".json";
+    var path = "../data/move/" + name + ".json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
