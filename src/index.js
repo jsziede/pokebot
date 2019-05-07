@@ -379,7 +379,7 @@ client.on('message', async (message) => {
         
         if (command === "a" || command === "ability") {
             sentCommand = true;
-            commandStatus = runAbilityCommand(message, input);
+            commandStatus = await runAbilityCommand(message, input);
             if (!commandStatus) {
                 console.log("[ERROR] runAbilityCommand() : input=" + input)
             }
@@ -847,16 +847,18 @@ client.on('message', async (message) => {
  * @param {string[]} abilityName Name of the ability as input by the user.
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
-function runAbilityCommand(message, abilityName) {
+async function runAbilityCommand(message, abilityName) {
     abilityName = abilityName.join(' ');
-    var foundInfo = getAbilityInfo(abilityName);
-    if (foundInfo == null) {
+    var foundInfo = await printAbilityInfo(message, abilityName);
+    if (foundInfo === false) {
         message.channel.send("Ability not found. " + duck);
-    }
-    if (foundInfo = false) {
-        return false;
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
     } else {
-        return true;
+        return new Promise(function(resolve) {
+            resolve(true);
+        });
     }
 }
 
@@ -10501,23 +10503,23 @@ function getMoveInfo(name) {
     return true;
 }
 
-function getAbilityInfo(name) {
-    if (name == undefined) {
-        return;
+async function printAbilityInfo(message, abilityName) {
+    if (abilityName == undefined) {
+        return false;
     }
-    name = name.toLowerCase();
+    abilityName = abilityName.toLowerCase();
     
-    var path = "./data/ability/" + name.replace(/ /g,"_") + ".json";
+    var path = "../data/ability/" + abilityName.replace(/ /g,"_") + ".json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
-        return null;
+        return false;
     }
     
     var ability = JSON.parse(data);
     
-    message.channel.send({
+    await message.channel.send({
         "embed": {
             "author": {
                 "name": ability.names.en
@@ -10532,7 +10534,6 @@ function getAbilityInfo(name) {
 //lists all pokemon owned by the sender
 async function printPokemon(message, otherUser) {
     var userID = message.author.id;
-    var username = message.author.username;
     
     if (otherUser != null) {
         userID = otherUser.id;
