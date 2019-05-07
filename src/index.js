@@ -529,7 +529,7 @@ client.on('message', async (message) => {
 
         } else if (command === "m" || command === "move" || command === "attack") {
             sentCommand = true;
-            commandStatus = runMoveCommand(message, input);
+            commandStatus = await runMoveCommand(message, input);
             if (!commandStatus) {
                 console.log("[ERROR] runMoveCommand() : input=" + input);
             }
@@ -849,17 +849,16 @@ client.on('message', async (message) => {
  */
 async function runAbilityCommand(message, abilityName) {
     abilityName = abilityName.join(' ');
-    var foundInfo = await printAbilityInfo(message, abilityName);
+    let foundInfo = await printAbilityInfo(message, abilityName);
     if (foundInfo === false) {
-        message.channel.send("Ability not found. " + duck);
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    } else {
-        return new Promise(function(resolve) {
-            resolve(true);
+        await message.channel.send("Ability not found. " + duck)
+        .catch(err => {
+            console.error("[ERROR] Failed to send message - " + err);
         });
     }
+    return new Promise(function(resolve) {
+        resolve(foundInfo);
+    });
 }
 
 /**
@@ -1372,13 +1371,20 @@ async function runLottoCommand(message) {
  * @param {string[]} input Name of the move as input by the user.
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
-function runMoveCommand(message, input) {
+async function runMoveCommand(message, input) {
     input = input.join(' ');
-    let foundInfo = getMoveInfo(input);
-    if (foundInfo == null) {
-        message.channel.send("Move not found. " + duck);
+    let foundInfo = await printMoveInfo(message, input);
+    let commandStatus = true;
+    if (foundInfo === false) {
+        await message.channel.send("Move not found. " + duck)
+        .catch(err => {
+            console.error("[ERROR] Failed to send message - " + err);
+            commandStatus = false;
+        });
     }
-    return true;
+    return new Promise(function(resolve) {
+        resolve(commandStatus);
+    });
 }
 
 /**
@@ -10416,24 +10422,24 @@ async function getDexInfo(message, name, form) {
     return true;
 }
 
-function getMoveInfo(name) {
-    name = name.toLowerCase();
-    if (name === "10000000 volt thunderbolt" || name === "10,000,000 volt thunderbolt") {
-        name = "10 000 000 volt thunderbolt";
+async function printMoveInfo(message, moveName) {
+    moveName = moveName.toLowerCase();
+    if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
+        moveName = "10 000 000 volt thunderbolt";
     }
     
-    name = name.replace(/-/g,"_");
-    name = name.replace(/'/g,"_");
-    name = name.replace(/ /g,"_");
+    moveName = moveName.replace(/-/g,"_");
+    moveName = moveName.replace(/'/g,"_");
+    moveName = moveName.replace(/ /g,"_");
     
-    var moveImageLink = "../data/move/images/" + name + ".png";
+    var moveImageLink = "../gfx/moves/" + moveName + ".png";
     
-    var path = "../data/move/" + name + ".json";
+    var path = "../data/move/" + moveName + ".json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
-        return null;
+        return false;
     }
     
     var move = JSON.parse(data);
@@ -10460,14 +10466,14 @@ function getMoveInfo(name) {
         pp = "---"
     }
     
-    message.channel.send({
+    await message.channel.send({
         "embed": {
             "author": {
                 "name": move.names.en,
                 "icon_url": cat,
             },
             "image": {
-                "url": ("attachment://" + name + ".png")
+                "url": ("attachment://" + moveName + ".png")
             },
             "color": getTypeColor(move.type),
             "fields": [
@@ -10497,7 +10503,7 @@ function getMoveInfo(name) {
                     "inline": false
                 }
             ]
-        }, files: [{ attachment: moveImageLink, name: (name + ".png") }]
+        }, files: [{ attachment: moveImageLink, name: (moveName + ".png") }]
     });
     
     return true;
