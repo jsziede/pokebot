@@ -2046,7 +2046,16 @@ function generateModelLink(name, shiny, gender, form) {
     return url;
 }
 
-//generates link to a 2d sprite from github
+/**
+ * Generates a URL to a Pokemon sprite from the Oakdex-Pokedex sprite repository on Github.
+ * @todo Host sprites within the Pokebot repository.
+ * 
+ * @param {string} name The name of the Pokemon.
+ * @param {string} gender The gender of the Pokemon. Should only be `"male"`, `"female"`, or `"none"`.
+ * @param {string} form The form of the Pokemon.
+ * 
+ * @returns {string} URL to the Pokemon sprite.
+ */
 function generateSpriteLink(name, gender, form) {
     let path = generatePokemonJSONPath(name);
     let data;
@@ -2126,13 +2135,26 @@ function generateSpriteLink(name, gender, form) {
     return url;
 }
 
-//generates a file path to a location's image file
+/**
+ * Generates a file path for a location's image.
+ * 
+ * @param {string} region The name of the region where the location is.
+ * @param {string} location The name of the location.
+ * 
+ * @returns {string} File path to the location's image.
+ */
 function generateLocationImagePath(region, location) {
     let path = '../gfx/maps/' + region + '/' + location + '.png';
     return path;
 }
 
-//generates a file path to a pokemon's json file
+/**
+ * Generates a file path to the JSON file for a specific Pokemon species.
+ * 
+ * @param {string} name The name of the Pokemon.
+ * 
+ * @returns {string} File path to the JSON file.
+ */
 function generatePokemonJSONPath(name) {
     let lower = name.toLowerCase();
     //pokemon names are not always the same as the file names
@@ -2184,7 +2206,13 @@ function generatePokemonJSONPath(name) {
     return path;
 }
 
-//generates a file path to a nature's json file
+/**
+ * Generates a file path to the JSON file for a specific nature.
+ * 
+ * @param {string} nature The name of the nature.
+ * 
+ * @returns {string} File path to the JSON file.
+ */
 function generateNatureJSONPath(nature) {
     let lower = nature.toLowerCase();
     
@@ -2192,7 +2220,13 @@ function generateNatureJSONPath(nature) {
     return path;
 }
 
-//generates a file path to a regions's json file
+/**
+ * Generates a file path to the JSON file for a specific region.
+ * 
+ * @param {string} region The name of the region.
+ * 
+ * @returns {string} File path to the JSON file.
+ */
 function generateRegionJSONPath(region) {
     let lower = region.toLowerCase();
     
@@ -2200,13 +2234,26 @@ function generateRegionJSONPath(region) {
     return path;
 }
 
-//generates a file path to a location's json file
+/**
+ * Generates a file path to the JSON file for a specific location.
+ * 
+ * @param {string} region The name of the region that contains the location.
+ * @param {string} location The name of the location.
+ * 
+ * @returns {string} File path to the JSON file.
+ */
 function generateLocationJSONPath(region, location) {
     let path = '../data/region/' + region + "/" + location + '.json';
     return path;
 }
 
-//checks if data exists for a user
+/**
+ * Checks if a user is known to Pokebot.
+ * 
+ * @param {string} userID The id of the user.
+ * 
+ * @returns {boolean} True if user is known, otherwise false.
+ */
 async function userExists(userID) {
     let search = await getUser(userID);
     return new Promise(function(resolve) {
@@ -2218,7 +2265,17 @@ async function userExists(userID) {
     });
 }
 
-//creates new data for a user
+/**
+ * Creates a new Pokebot user and adds their information to the database.
+ * 
+ * @param {string} userID The Discord id of the user.
+ * @param {string} name The name of the user's starter Pokemon.
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} region The region that the user selected to begin in.
+ * 
+ * @returns {string} Returns true if user was successfully created,
+ * otherwise false.
+ */
 async function createNewUser(userID, name, message, region) {
     let location = getDefaultLocationOfRegion(region);
     let starter = await generatePokemonByName(message, name, 5, region, location, false);
@@ -2240,7 +2297,7 @@ async function createNewUser(userID, name, message, region) {
         });
     }
     
-    //user begins with an everstone and 10 poke balls
+    //user begins with an everstone, 10 poke balls, and a visa for their region
     let everstone = new Item("Everstone", 1, true, false);
     let balls = new Item("Poké Ball", 10, true, false);
     let visa = new Item((region + " Visa"), 1, false, true);
@@ -2361,7 +2418,16 @@ async function createNewUser(userID, name, message, region) {
     });
 }
 
-//asks user if they want to use the starter that was selected for them
+/**
+ * Sends a message containing detailed information about a new
+ * user's starter Pokemon and sends another message asking if
+ * the user will accept the starter Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if user accepted the starter Pokemon,
+ * otherwise false.
+ */
 async function confirmStarter(message) {
     message.channel.send(message.author.username + " are you ok with this Pokémon? Type \"Yes\" to accept or \"No\" to choose a new starter Pokémon. You can also type \"Cancel\" to begin your adventure later.");
     
@@ -2372,7 +2438,7 @@ async function confirmStarter(message) {
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
-        .catch(collected => {
+        .catch(() => {
             input = "cancel";
             cancel = true;
         });
@@ -2395,7 +2461,16 @@ async function confirmStarter(message) {
     });
 }
 
-//produces a starter pokemon for a user
+/**
+ * Sends messages asking the user what starter Pokemon
+ * they wants, based on the region the user selected.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} region The name of the region selected by the user.
+ * 
+ * @returns {string} The name of the starter Pokemon selected by
+ * the user, or null if the user did not select a starter.
+ */
 async function selectStarter(message, region) {
     if (region === "Kanto") {
         message.channel.send(message.author.username + ", please select a starter by either typing its number in the list or its name:\n```1. Bulbasaur\n2. Charmander\n3. Squirtle```");
@@ -2419,7 +2494,7 @@ async function selectStarter(message, region) {
         .then(collected => {
             selectedStarter = collected.first().content.toString().toLowerCase();
         })
-        .catch(collected => {
+        .catch(() => {
             selectedStarter = "cancel";
             cancel = true;
         });
@@ -2538,7 +2613,14 @@ async function selectStarter(message, region) {
     });
 }
 
-//prompts the user to select a region to start in
+/**
+ * Sends messages asking the user to select a starting region.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {string} The name of the region selected by the user,
+ * otherwise null if the user did not select a region.
+ */
 async function selectRegion(message) {
     message.channel.send(message.author.username + ", please select a region to start in by either typing its number in the list or its name:\n```1. Kanto\n2. Johto\n3. Hoenn\n4. Sinnoh\n5. Unova\n6. Kalos\n7. Alola```\nBe aware that you will not immediately be able to change regions. Type \"cancel\" to cancel region selection.");
     
@@ -2590,7 +2672,17 @@ async function selectRegion(message) {
     });
 }
 
-//sets the current region of a user
+/**
+ * Changes a user's region if the user is not already in that region.
+ * The user's location is also changed to the default location of
+ * that region. The user must own a visa for a region to travel to it.
+ * 
+ * @param {Message} message The Discord message sent from the user/
+ * @param {string} regionName The lowercase name of the region.
+ * 
+ * @returns {boolean} False if any errors are encountered,
+ * otherwise true.
+ */
 async function setRegion(message, regionName) {
     var region = regionName.toLowerCase();
     if (region === "kanto") {
@@ -2652,7 +2744,17 @@ async function setRegion(message, regionName) {
     }
 }
 
-//sets the current location within a region of a user
+/**
+ * Changes a user's location if the user was not already at
+ * that location. The location must be in the user's current
+ * region.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The lowercase name of the location.
+ * 
+ * @returns {boolean} False if any errors are encountered,
+ * otherwise true.
+ */
 async function setLocation(message, locationName) {
     let user = await getUser(message.author.id);
     if (user === null) {
@@ -2688,7 +2790,15 @@ async function setLocation(message, locationName) {
     });
 }
 
-//sets the current location within a region of a user
+/**
+ * Sends a message containing all location names within the
+ * user's current region.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} False if errors are encountered, otherwise
+ * true.
+ */
 async function printAllLocations(message) {
     let user = await getUser(message.author.id);
     if (user === null) {
@@ -2699,7 +2809,10 @@ async function printAllLocations(message) {
 
     let region = user.region;
     if (region == null) {
-        return null;
+        console.error("[ERROR] printAllLocations(): User " + message.author.id + " has a null region!");
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
     }
 
     let path = generateRegionJSONPath(region);
@@ -2707,8 +2820,10 @@ async function printAllLocations(message) {
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
-        console.log(err);
-        return null;
+        console.error(err);
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
     }
     region = JSON.parse(data);
 
