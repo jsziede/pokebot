@@ -3156,7 +3156,14 @@ async function getBag(userid) {
     });
 }
 
-//returns the pokemon currently owned by the sender
+/**
+ * Gets all Pokemon owned by a user.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Pokemon[]} A list of all Pokemon currently owned
+ * by the user.
+ */
 async function getPokemon(userid) {
     return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage IS NULL';
@@ -3170,8 +3177,16 @@ async function getPokemon(userid) {
     });
 }
 
-//returns the pokemon currently owned by the sender
-function getDaycare(userid) {
+/**
+ * Gets all Pokemon owned by a user that are currently
+ * in the day care.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Pokemon[]} A list of all the user's Pokemon
+ * that are currently in the day care.
+ */
+async function getDaycare(userid) {
     return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage = "daycare"';
         con.query(query_str, userid, function (err, rows) {
@@ -3184,7 +3199,14 @@ function getDaycare(userid) {
     });
 }
 
-//returns the pokemon currently owned by the sender
+/**
+ * Gets all Pokemon that are currently evolving and adds them to the
+ * global evolving list. This prevents evolutions from breaking if the
+ * bot shuts down while a Pokemon is evolving.
+ * 
+ * @returns {boolean} True if all evolving Pokemon were added to the
+ * evolving list, otherwise false.
+ */
 async function fixEvolutions() {
     let wereAllEvolutionsFixed = true;
     var query_str = 'SELECT * FROM pokemon WHERE pokemon.evolving = 1';
@@ -3211,7 +3233,14 @@ async function fixEvolutions() {
     });
 }
 
-//returns the sender's poke balls
+/**
+ * Gets all Poke Balls owned by a user, including
+ * Great Balls, Net Balls, etc.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Item[]} All Poke Balls owned by a user.
+ */
 async function getBalls(userid) {
     return new Promise(function(resolve) {
         var query_str = `SELECT * FROM pokebot.bag WHERE owner = ? AND category = "Ball" AND quantity > 0;`;
@@ -3225,7 +3254,13 @@ async function getBalls(userid) {
     });
 }
 
-//returns the sender's fishing rods
+/**
+ * Gets all fishing rods owned by a user.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * 
+ * @returns {Item[]} All fishing rods owned by the user.
+ */
 async function getRods(userid) {
     return new Promise(function(resolve) {
         var query_str = `SELECT * FROM pokebot.bag WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0;`;
@@ -3239,8 +3274,15 @@ async function getRods(userid) {
     });
 }
 
-//returns the sender's bag
-function getItem(itemid) {
+/**
+ * Gets an item from the item table in the database.
+ * 
+ * @param {string} itemid The primary key of the item.
+ * 
+ * @returns {Item} The item with the specified id, or
+ * null if there is no item with that id.
+ */
+async function getItem(itemid) {
     return new Promise(function(resolve) {
         var query_str = 'SELECT * FROM bag WHERE bag.item_id = ?';
         con.query(query_str, [itemid], function (err, rows) {
@@ -3256,7 +3298,14 @@ function getItem(itemid) {
     });
 }
 
-//changes the sender's field
+/**
+ * Sets a user's field (walking, surfing, diving, etc).
+ * 
+ * @param {Message} message The Discord message sent from the user
+ * @param {string} field The name of the field to set the user to.
+ * 
+ * @returns {boolean} True if the user's field was changed.
+ */
 async function setField(message, field) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -3288,8 +3337,6 @@ async function setField(message, field) {
     } catch (err) {
         locationData = null;
     }
-    
-    var games = getDefaultGamesOfRegion(user.region);
     
     var curField = user.field;
     var canSurf = false;
@@ -3590,7 +3637,18 @@ async function setField(message, field) {
     }
 }
 
-//prompts the sender to enter a nickname and sets the response as the pokemon's nickname
+/**
+ * Asks a user if they want to nickname a Pokemon.
+ * Prompts to the user to input a nickname if the user complies.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The regular name of the Pokemon species
+ * that is being nicknamed.
+ * 
+ * @returns {string} The nickname of the Pokemon as input by
+ * the user, or the Pokemon's regular name if the user opts
+ * out of nicknaming the Pokemon.
+ */
 async function nicknamePokemon(message, name) {
     message.channel.send(message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name.");
     var cancel = false;
@@ -3661,17 +3719,25 @@ async function nicknamePokemon(message, name) {
     }
 }
 
-function getMovePP(name) {
-    name = name.toLowerCase();
-    if (name === "10000000 volt thunderbolt" || name === "10,000,000 volt thunderbolt") {
-        name = "10 000 000 volt thunderbolt";
+/**
+ * Gets the base Power Points of a move.
+ * 
+ * @param {string} moveName The name of the move.
+ * 
+ * @returns {number} The base Power Points of the move,
+ * or null if an error was encountered.
+ */
+function getMovePP(moveName) {
+    moveName = moveName.toLowerCase();
+    if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
+        moveName = "10 000 000 volt thunderbolt";
     }
     
-    name = name.replace(/-/g,"_");
-    name = name.replace(/'/g,"_");
-    name = name.replace(/ /g,"_");
+    moveName = moveName.replace(/-/g,"_");
+    moveName = moveName.replace(/'/g,"_");
+    moveName = moveName.replace(/ /g,"_");
     
-    var path = "../data/move/" + name + ".json";
+    var path = "../data/move/" + moveName + ".json";
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -3683,8 +3749,22 @@ function getMovePP(name) {
     return move.pp;
 }
 
-function addToPokedex(user, number) {
-    user.pokedex = user.pokedex.substring(0, number) + '1' + user.pokedex.substring(number + 1);
+/**
+ * Updates a user's Pokedex string by setting an index
+ * of that string to '`1`'.
+ * 
+ * @todo Check if user already has the Pokemon registered in their
+ * Pokedex. This will save time by preventing both the substring call
+ * and the database query.
+ * 
+ * @param {User} user The Pokebot user whose Pokedex is being updated.
+ * @param {number} dexNum The national Pokedex number of the Pokemon
+ * being added to the user's Pokedex.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
+function addToPokedex(user, dexNum) {
+    user.pokedex = user.pokedex.substring(0, dexNum) + '1' + user.pokedex.substring(dexNum + 1);
     var query = "UPDATE user SET user.pokedex = ? WHERE user.user_id = ?";
     con.query(query, [user.pokedex, user.user_id], function (err) {
         if (err) {
@@ -3693,7 +3773,14 @@ function addToPokedex(user, number) {
     });
 }
 
-//adds the passed item into the sender's bag
+/**
+ * Inserts a new Pokemon into the database.
+ * 
+ * @param {string} userid The id of the user who owns the Pokemon.
+ * @param {Pokemon} pokemon The Pokemon object to insert into the database. 
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 function addPokemon(userid, pokemon) {
     var movePP = [null, null, null, null];
     if (pokemon.moves[0] != null) {
@@ -3709,7 +3796,7 @@ function addPokemon(userid, pokemon) {
         movePP[3] = getMovePP(pokemon.moves[3]);
     }
 
-    return new Promise(function(resolve, reject) {
+    return new Promise(function(resolve) {
         let national_id = pokemon.no.toString();
         while (national_id.length < 3) {
             national_id = '0' + national_id;
@@ -3780,7 +3867,16 @@ function addPokemon(userid, pokemon) {
     });
 }
 
-//checks if sender has a specific item in their bag that can be used
+/**
+ * Gets a usable item from a user's bag.
+ * 
+ * @param {Item[]} bag The user's items to search from.
+ * @param {string} item The name of the usable item to
+ * search for.
+ * 
+ * @returns {Item} The usable item if the user owns it,
+ * otherwise null.
+ */
 function doesUserHaveUsableItem(bag, item) {
     item = item.toLowerCase();
     
@@ -3804,7 +3900,16 @@ function doesUserHaveUsableItem(bag, item) {
     return null;
 }
 
-//checks if sender has a specific item in their bag that can be held
+/**
+ * Gets a holdable item from a user's bag.
+ * 
+ * @param {Item[]} bag The user's items to search from.
+ * @param {string} item The name of the holdable item to
+ * search for.
+ * 
+ * @returns {Item} The holdable item if the user owns it,
+ * otherwise null.
+ */
 function doesUserHaveHoldableItem(bag, item) {
     item = item.toLowerCase();
     
@@ -3828,7 +3933,17 @@ function doesUserHaveHoldableItem(bag, item) {
     return null;
 }
 
-//adds the passed item into the sender's bag
+/**
+ * Inserts a certain quantity of one item into a user's bag.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * @param {string} itemName The name of the item being added.
+ * @param {number} amount The quantity of the item being added.
+ * @param {boolean} isHoldable If the item can be held by a Pokemon.
+ * @param {string} cat The category of the item being added (key, medicine, etc).
+ * 
+ * @returns {boolean} True if the item was added to the user's bag.
+ */
 function addItemToBag(userid, itemName, amount, isHoldable, cat) {
     return new Promise(function(resolve) {
         var query = "SELECT * from bag WHERE bag.owner = ? AND bag.name = ?";
@@ -3871,7 +3986,15 @@ function addItemToBag(userid, itemName, amount, isHoldable, cat) {
     });
 }
 
-//should not return nor print anything, only return false on failure or true on success
+/**
+ * Removes a certain quantity of one item from a user's bag.
+ * 
+ * @param {string} userid The Discord id of the user.
+ * @param {string} itemName The name of the item being added.
+ * @param {number} amount The quantity of the item being added.
+ * 
+ * @returns {boolean} True if the item was removed from the user's bag.
+ */
 function removeItemFromBag(userid, itemName, amount) {
     return new Promise(function(resolve, reject) {
         var query = "SELECT * from bag WHERE bag.owner = ? AND bag.name = ? AND bag.quantity > 0";
@@ -3896,7 +4019,15 @@ function removeItemFromBag(userid, itemName, amount) {
     });
 }
 
-//gives the requested item to the sender's lead pokemon
+/**
+ * Removes one item from a user's bag and gives it to the user's
+ * lead Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} item The name of the item to give.
+ * 
+ * @returns {boolean} False if any errors are encountered.
+ */
 async function giveItem(message, item) {
     var bag = await getBag(message.author.id);
     if (bag === null) {
@@ -3982,6 +4113,13 @@ async function giveItem(message, item) {
     return true;
 }
 
+/**
+ * Sets a Pokemon as evolving.
+ * 
+ * @param {string} pokemon The id of the Pokemon.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 function addEvolutionToPokemon(pokemon) {
     return new Promise(function(resolve, reject) {
         var query_str = 'UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?';
@@ -3995,6 +4133,16 @@ function addEvolutionToPokemon(pokemon) {
     });
 }
 
+/**
+ * Updates a Pokemon's moves in the database.
+ * 
+ * @todo Only pass PokemonID instead of the whole Pokemon.
+ * 
+ * @param {Pokemon} pokemon The Pokemon object that is having its moves updated.
+ * @param {move[]} moves The list of four move objects that is being assigned to the Pokemon.
+ * 
+ * @returns {boolean} True if the Pokemon's moves were updated.
+ */
 function updateMoves(pokemon, moves) {
     return new Promise(function(resolve, reject) {
         var query_str = 'UPDATE pokemon SET pokemon.move_1 = ?, pokemon.move_1_pp = ?, pokemon.move_2 = ?, pokemon.move_2_pp = ?, pokemon.move_3 = ?, pokemon.move_3_pp = ?, pokemon.move_4 = ?, pokemon.move_4_pp = ? WHERE pokemon_id = ?';
@@ -4008,7 +4156,14 @@ function updateMoves(pokemon, moves) {
     });
 }
 
-//uses the requested item in the sender's bag if the item exists and can be used
+/**
+ * Performs the use action of an item owned by a user.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} item The name of the item being user.
+ * 
+ * @returns {boolean} True if the item was used.
+ */
 async function useItem(message, item) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -4370,7 +4525,18 @@ async function useItem(message, item) {
     return true;
 }
 
-//takes the item from the sender's lead pokemon if it holds one and returns it to the sender's bag
+/**
+ * Removes an item being held by a user's lead Pokemon and adds it to a user's bag.
+ * 
+ * @todo Allow this to work for any Pokemon by passing the Pokemon's
+ * id, not just the lead Pokemon.
+ * @todo Maybe make it return true if item was added to bag, rather
+ * than no errors being encountered.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if the two trainers traded Pokemon.
+ */
 async function takeItem(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -4408,7 +4574,17 @@ async function takeItem(message) {
     return true;
 }
 
-//sends a trade offer from the sender to a requested user and prompts both users to perform a pokemon trade with each other
+/**
+ * Allows a user to trade a Pokemon with another user.
+ * 
+ * @todo This function could use some serious modularity.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} tradeTo The Discord id of the trainer that the
+ * user wants to trade with.
+ * 
+ * @returns {boolean} True if the item was added to the user's bag.
+ */
 async function tradeOffer(message, tradeTo) {
     var tradeFromIndex = trading.length;
     trading[trading.length] = new Trade(message.author.id, tradeTo.id, null, null);
@@ -4989,7 +5165,13 @@ async function tradeOffer(message, tradeTo) {
     
 }
 
-//evolves a pokemon and updates pokemon properties accordingly
+/**
+ * Evolves a user's evolving Pokemon and updates all its stats.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if the Pokemon successfully evolved.
+ */
 async function evolve(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -5314,7 +5496,13 @@ async function evolve(message) {
     return true;
 }
 
-//cancels a pokemon's evolution
+/**
+ * Cancels a Pokemon's evolution.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if the evolution was successfully cancelled.
+ */
 async function cancelEvolve(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -5348,7 +5536,18 @@ async function cancelEvolve(message) {
     return true;
 }
 
-//checks if a pokemon is capable of evolving
+/**
+ * Checks if a Pokemon has met its evolution requirement.
+ * 
+ * @todo The `method` argument seems to do nothing, is it necessary?
+ * 
+ * @param {User} user The Pokebot user who owns the Pokemon.
+ * @param {Pokemon} pokemon The Pokemon that is being checked for evolution.
+ * @param {string} method The evolution method. Should only be "`level`", "`trade`", or "`item`".
+ * 
+ * @returns {string} The name of the Pokemon that it will evolve into, or null
+ * if the Pokemon is not ready to evolve.
+ */
 async function checkEvolve(user, pokemon, method) {
     var ownedPokemon = await getPokemon(user.user_id);
     if (ownedPokemon === null) {
