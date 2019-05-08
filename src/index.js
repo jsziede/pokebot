@@ -5,6 +5,8 @@
 
 /**
  *  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
+ *  @todo Learned Pokemon moves should be moved to their own table. This way we can keep track of what moves a Pokemon has learned that aren't part of its normal level up (such as egg moves) for the move relearner.
+ *  @todo In the games, when a Pokemon is in the Day Care, its moves are replaced one by one in order of the move slot. Pokebot currently does an experimental optimal move replacement calculation instead. Will need to run tests to see how optimal this algorithm is, otherwise it should fall back to the day care method.
  */
 
 /**
@@ -5826,7 +5828,14 @@ async function checkEvolve(user, pokemon, method) {
     }
 }
 
-//levels up a pokemon and updates stats accordingly
+/**
+ * Raises a Pokemon's level by one and updates its stats accordingly.
+ * 
+ * @param {Pokemon} Pokemon The Pokemon to level up.
+ * 
+ * @returns {number[]} The Pokemon's stats after it leveled up, or null
+ * if an error was encountered.
+ */
 function levelUp(pokemon) {
     var path = generatePokemonJSONPath(pokemon.name);
     var data;
@@ -5886,7 +5895,22 @@ function levelUp(pokemon) {
     return stats;
 }
 
-//checks if a pokemon can learn a new move
+/**
+ * Checks if a Pokemon can learn a new move based on its level.
+ * 
+ * @todo Maybe check if the Pokemon is in the Day Care from this
+ * function rather than pass an argument.
+ * @todo This should simply return a list of moves that the Pokemon can learn
+ * and the actual move learning should be handled in a different function.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} pokemon The Pokemon that is being checked for a new move,
+ * @param {boolean} askForResponse If the owner of the Pokemon should be asked
+ * if they want their Pokemon to learn a new move if the Pokemon already knows
+ * four moves. This should only be false if the Pokemon is in the Day Care.
+ * 
+ * @returns {move[]} The list of moves known by the Pokemon.
+ */
 async function checkForNewMove(message, pokemon, askForResponse) {
     var path = generatePokemonJSONPath(pokemon.name);
     var data;
@@ -6122,7 +6146,17 @@ async function checkForNewMove(message, pokemon, askForResponse) {
     });
 }
 
-//prompts the user to teach their pokemon a new move if the pokemon has no free move slots
+/**
+ * Asks the Pokemon's owner which move the Pokemon should forget if the
+ * Pokemon already knows four moves but wants to learn a new move. The
+ * move selected by the user is replaced with the new move.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} pokemon The Pokemon that wants to learn a new move.
+ * @param {string} moveName The name of the new move the Pokemon wants to learn.
+ * 
+ * @returns {move[]} The Pokemon's moveset after the owner has made a choice. 
+ */
 async function teachNewMove(message, pokemon, moveName) {
     var moves = [
         {
@@ -6316,6 +6350,16 @@ async function teachNewMove(message, pokemon, moveName) {
     }
 }
 
+/**
+ * An experimental algorithm that automatically decides which move to
+ * replace, if any, when a Pokemon with four moves wants to learn a
+ * new move, and replaces that move. This is used by the day care.
+ * 
+ * @param {Pokemon} pokemon The Pokemon that wants to learn a new move.
+ * @param {string} move The name of the new move the Pokemon wants to learn.
+ * 
+ * @returns {move[]} The Pokemon's moveset after a decision has been made.
+ */
 async function teachNewMoveAI(pokemon, move) {
     var highestStat;
     if (((pokemon.stat_atk / pokemon.stat_spatk) > 1.25)) {
@@ -6447,7 +6491,14 @@ async function teachNewMoveAI(pokemon, move) {
     });
 }
 
-//gives xp to a pokemon
+/**
+ * Gives experience to a Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {number} amount The amount of exp. to give to the Pokemon.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
 async function giveXP(message, amount) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -6601,7 +6652,13 @@ async function giveXP(message, amount) {
     return true;
 }
 
-//gives xp to a pokemon
+/**
+ * Gives experience to all Pokemon owned by a user that are in the Day Care.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
 async function giveDayCareXP(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -6706,7 +6763,14 @@ async function giveDayCareXP(message) {
     });
 }
 
-//returns the minimum amount of xp a wild pokemon must have earned based on its current level
+/**
+ * Calculates how much experience a Pokemon must have earned to reach its current level.
+ * 
+ * @param {string} rate The leveling rate of the Pokemon.
+ * @param {number} currentLevel The current level of the Pokemon.
+ * 
+ * @returns {number} The minium amount of experience a Pokemon must have earned to reach its current level.
+ */
 function getTotalXpAtLevel(rate, currentLevel) {
     var xpData;
     try {
@@ -6730,7 +6794,19 @@ function getTotalXpAtLevel(rate, currentLevel) {
     }
 }
 
-//returns how much xp is needed for the pokemon to level up
+/**
+ * Calculates how much more experience a Pokemon needs to earn until it reaches its next level.
+ * 
+ * @todo The three parameters could be replaced by just one if a Pokemon object is passed instead.
+ * @todo Perhaps return -1 if Pokemon is level 100 to differentiate between an error or not.
+ * 
+ * @param {string} name The name of the Pokemon.
+ * @param {number} currentTotalXp The total experience the Pokemon has earned.
+ * @param {number} currentLevel The current level of the Pokemon.
+ * 
+ * @returns {number} The amount of experience the Pokemon needs to reach its next level, or null
+ * if either Pokemon is level 100 or an error was encountered.
+ */
 function getXpToNextLevel(name, currentTotalXp, currentLevel) {
     if(currentLevel === 100) {
         return null;
@@ -6768,7 +6844,15 @@ function getXpToNextLevel(name, currentTotalXp, currentLevel) {
     }
 }
 
-//gets the stat multiplier of a nature
+/**
+ * Gets the nature's multiplier for a given stat.
+ * 
+ * @param {string} nature The name of the nature.
+ * @param {string} statName The name of the stat.
+ * 
+ * @returns {number} The nature's multiplier for the given stat,
+ * or null if an error is encountered.
+ */
 function getNatureStatMultiplier(nature, statName) {
     var path = generateNatureJSONPath(nature);
     var data;
@@ -6788,7 +6872,20 @@ function getNatureStatMultiplier(nature, statName) {
     return 1;
 }
 
-//determines the stats of a pokemon
+/**
+ * Calculates a Pokemon's single stat for its current level.
+ * 
+ * @todo All parameters besides `baseValue` could be replaced by one Pokemon object.
+ * 
+ * @param {number} level The level of the Pokemon.
+ * @param {number} baseValue The Pokemon's base stat value for the given stat.
+ * @param {number} iv The Pokemon's IV for the given stat.
+ * @param {number} ev The Pokemon's EV for the given stat.
+ * @param {string} nature The name of the Pokemon's nature.
+ * @param {string} statName The name of the given stat.
+ * 
+ * @returns {number} The Pokemon's stat for its current level.
+ */
 function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
     var stat;
     if (statName === "hp") {
@@ -6800,7 +6897,20 @@ function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
     }
 }
 
-//produces a wild pokemon object
+/**
+ * Generates a Pokemon object based on its name.
+ * 
+ * @todo The `region` and `location` parameters are not necessary and can be easily determined from the `message` parameter.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The name of the Pokemon to generate.
+ * @param {number} level The level the generated Pokemon will be.
+ * @param {string} region The region where the Pokemon will be generated in.
+ * @param {string} location The location within the region where the Pokemon will be generated in.
+ * @param {boolean} hidden If the Pokemon should be generated with its hidden ability if it has one.
+ * 
+ * @returns {Pokemon} The Pokemon that was generated, or null if the Pokemon failed to generate.
+ */
 async function generatePokemonByName(message, name, level, region, location, hidden) {
     var path = generatePokemonJSONPath(name);
     var data;
@@ -7155,7 +7265,18 @@ async function generatePokemonByName(message, name, level, region, location, hid
     return newPokemon;
 }
 
-//changes the lead pokemon of the sender
+/**
+ * Changes the lead Pokemon of a user. If the user has multiple Pokemon with the same name,
+ * the user will be prompted on which Pokemon to make the lead.
+ * 
+ * @todo The Pokemon selection should be done in its own function and then that Pokemon id
+ * should be passed to this function, rather than a name.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The name or nickname of the Pokemon that the user wants to set as their lead.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function setActivePokemon(message, name) {
     name = name.toLowerCase();
     
@@ -7333,6 +7454,14 @@ async function setActivePokemon(message, name) {
     return true;
 }
 
+
+/**
+ * Allows a user to drop off and pick up Pokemon from the Day Care.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function dayCare(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -7468,6 +7597,15 @@ async function dayCare(message) {
     });
 }
 
+/**
+ * Removes a Pokemon from the Day Care. User is prompted
+ * on which Pokemon to remove if they have multiple Pokemon
+ * in the Day Care.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function pickUpFromDayCare(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -7607,6 +7745,14 @@ async function pickUpFromDayCare(message) {
     });
 }
 
+/**
+ * Sends a message containing detailed information about
+ * a user's Pokemon that are in the Day Care.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function viewDayCare(message) {
     var userID = message.author.id;
     var username = message.author.username;
@@ -7657,7 +7803,17 @@ async function viewDayCare(message) {
     });
 }
 
-//send the specified pokemon to the day care
+/**
+ * Places a Pokemon in the Day Care. If user has multiple Pokemon with the
+ * same name, the user will be asked which Pokemon they want to place.
+ * 
+ * @todo Rather than `name`, a Pokemon's id should be passed.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The name or nickname of the Pokemon to be placed in the Day Care.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function placeInDaycare(message, name) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -8025,7 +8181,16 @@ async function placeInDaycare(message, name) {
     });
 }
 
-//releases the specified pokemon from the sender's party
+/**
+ * Releases a Pokemon owned by a user. User will be asked which
+ * Pokemon to release if they own multiple Pokemon with the same
+ * name.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The name or nickname of the Pokemon to be released.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function releasePokemon(message, name) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -8314,7 +8479,14 @@ async function releasePokemon(message, name) {
     return true;
 }
 
-//prompts the user to make a final decision on whether or not to put a pokemon in the day care
+/**
+ * Promps a user to confirm a Day Care drop off.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} pkmn The Pokemon the user is dropping off at the Day Care.
+ * 
+ * @returns {boolean} True if user confirmed the drop off.
+ */
 async function confirmDayCare(message, pkmn) {
     var string = message.author.username + " are you sure you want to send this " + pkmn.name + " to the Day Care? It will be unusable while at the day care and you will have no choice over what moves it may learn when leveling up nor will it be able to evolve. If you were looking to breed this Pokémon, use the \"nursery\" command instead. Type \"Yes\" to confirm or \"No\" to cancel the drop off.";
     
@@ -8361,7 +8533,15 @@ async function confirmDayCare(message, pkmn) {
     });
 }
 
-//prompts the user to make a final decision on whether or not to release a pokemon
+/**
+ * Prompts a user to confirm that the user wants to release their
+ * specified Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} pkmn The Pokemon that the user selected to release.
+ * 
+ * @returns {boolean} True if user responded with yes.
+ */
 async function confirmRelease(message, pkmn) {
     var string = message.author.username + " are you sure you want to release this " + pkmn.name + "? Type \"Yes\" to confirm or \"No\" to cancel the release.";
     
@@ -8408,7 +8588,18 @@ async function confirmRelease(message, pkmn) {
     });
 }
 
-//gets a wild pokemon found in the user's current location that is at most one level higher than the user
+/**
+ * Generates a Pokemon that the user can catch based on the user's current region
+ * and location.
+ * 
+ * @todo Perhaps `lead` can be calculated from this command rather than passing it as a param.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {User} user The Pokebot user to generate the Pokemon for.
+ * @param {Pokemon} lead The user's lead Pokemon.
+ * 
+ * @returns {Pokemon} The Pokemon that was generated.
+ */
 async function encounterPokemon(message, user, lead) {
     var region = user.region;
     var location = user.location;
@@ -8662,7 +8853,19 @@ async function battleWildPokemon(message, wild) {
 
 */
 
-//prompts the user to select a poke ball to throw at a wild pokemon and calculates whether or not the throw was successful
+/**
+ * Allows a user to catch a Pokemon. The user is continuously prompted
+ * on which Poke Ball to use until either the Pokemon is caught or the user
+ * runs away from the Pokemon. The user's lead Pokemon also gets its EVs
+ * changed based on the encountered Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} wild The Pokemon that was generated to be caught.
+ * @param {User} user The Pokebot user who is catching the Pokemon.
+ * @param {Pokemon} lead The user's lead Pokemon.
+ * 
+ * @returns {boolean} True if the user caught the Pokemon.
+ */
 async function catchPokemon(message, wild, user, lead) {
     var path = generatePokemonJSONPath(wild.name);
     var data;
@@ -9117,7 +9320,15 @@ async function catchPokemon(message, wild, user, lead) {
     return true;
 }
 
-//displays information about a wild pokemon in a rich embed
+/**
+ * Sends a message containing detailed information about a Pokemon that is not
+ * owned by any trainers.
+ * 
+ * @param {Pokemon} pkmn The Pokemon object to be represented in the message.
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function displayAWildPkmn(pkmn, message) {
     var footerLink = "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png";
     var footerText = "You already have this Pokémon.";
@@ -9247,13 +9458,21 @@ async function displayAWildPkmn(pkmn, message) {
     });
 }
 
+/**
+ * Converts a Pokemon's name into a string that will not be changed
+ * when being uploaded to Discord's databases as a message attachment.
+ * 
+ * @param {string} name The name of the Pokemon to be converted.
+ * 
+ * @returns {string} A string compatible with Discord's attachment databases.
+ */
 function getGifName(name) {
     if (name.startsWith("Nidoran")) {
         return "Nidoran";
     } else if (name === "Mime Jr.") {
-        return "mimejr";
+        return "MimeJr";
     } else if (name === "Mr. Mime") {
-        return "mrmime";
+        return "MrMime";
     } else if (name === "Flabébé") {
         return "Flabebe";
     } else if (name === "Farfetch'd") {
@@ -9269,7 +9488,15 @@ function getGifName(name) {
     }
 }
 
-//displays information about an owned pokemon in a rich embed
+/**
+ * Sends a message containing detailed information about a Pokemon that is
+ * owned by a trainer.
+ * 
+ * @param {Pokemon} pkmn The Pokemon object to be represented in the message.
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function displayAnOwnedPkmn(pkmn, message) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
     if (modelLink === null) {
@@ -9412,7 +9639,16 @@ async function displayAnOwnedPkmn(pkmn, message) {
     });
 }
 
-//displays hidden information about an owned pokemon in a rich embed
+/**
+ * Sends a message containing detailed information about an owned
+ * Pokemon's hidden stats, including its friendship, personality
+ * value, effort values, individual values, and hidden power type.
+ * 
+ * @param {Pokemon} pkmn The Pokemon object to be represented in the message.
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 function displayHiddenStats(pkmn, message) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
     if (modelLink === null) {
@@ -9528,7 +9764,15 @@ function displayHiddenStats(pkmn, message) {
     });
 }
 
-//lists all the pokemon that the sender can encounter in their current location
+/**
+ * Sends a message showing all Pokemon that a user can encounter in their
+ * current location based on certain factors, such as time of day.
+ * Each field is separated by tabs that are navigated by using reactions.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function printPossibleEncounters(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -10082,7 +10326,20 @@ async function printPossibleEncounters(message) {
     return true;
 }
 
-//sends a message containing pokedex data of the requested pokemon
+/**
+ * Sends a message containing information about a Pokemon species.
+ * This includes its Pokedex data, move learnsets, evolutions, and
+ * where it can be encountered.
+ * 
+ * @bug Pokemon that are found in many different locations, such as Magikarp,
+ * will break Discord's character limit for embedded messages.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} name The name of the Pokemon species.
+ * @param {string} form The form of the Pokemon species.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function getDexInfo(message, name, form) {
     if(name.match(/^-{0,1}\d+$/)){
         name = parseInt(name, 10);
@@ -10621,6 +10878,14 @@ async function getDexInfo(message, name, form) {
     return true;
 }
 
+/**
+ * Sends a message containing detailed information about a Pokemon move.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} moveName The name of the move.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function printMoveInfo(message, moveName) {
     moveName = moveName.toLowerCase();
     if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
@@ -10708,6 +10973,14 @@ async function printMoveInfo(message, moveName) {
     return true;
 }
 
+/**
+ * Sends a message containing detailed information about a Pokemon ability.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} abilityName The name of the ability.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function printAbilityInfo(message, abilityName) {
     if (abilityName == undefined) {
         return false;
@@ -10736,7 +11009,15 @@ async function printAbilityInfo(message, abilityName) {
     return true;
 }
 
-//lists all pokemon owned by the sender
+/**
+ * Sends a message listing all Pokemon owned by a user.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} otherUser An optional overwrite to print Pokemon for a different user.
+ * This is used when trading Pokemon.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function printPokemon(message, otherUser) {
     var userID = message.author.id;
     
@@ -10887,7 +11168,17 @@ async function printPokemon(message, otherUser) {
     return true;
 }
 
-//lists all pokemon owned by the sender
+/**
+ * Sends a message containing a user's Pokedex progress.
+ * 
+ * @todo Unlike the games, Pokedex progress is only added when the user owns the species,
+ * not by just seeing it. Might want to add seen Pokemon as well but keep them
+ * differentiated from owned.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function printDex(message) {
     let userID = message.author.id;
     var user = await getUser(message.author.id);
@@ -11006,6 +11297,13 @@ async function printDex(message) {
     return true;
 }
 
+/**
+ * Gets a Pokemon species's name from its national Pokedex number.
+ * 
+ * @param {number} number The Pokemon's national Pokedex number.
+ * 
+ * @returns {string} The name of the Pokemon species.
+ */
 function getNameByNumber(number) {
     let pkmn = oak.findPokemon(number);
     if (pkmn != null) {
@@ -11015,9 +11313,15 @@ function getNameByNumber(number) {
     }
 }
 
-/*
-//  Lists all items owned by the user as a code block.
-*/
+/**
+ * Sends a message listing all items owned by a user.
+ * 
+ * @todo Convert this into an embedded message and separate by reaction tabs for each item category.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function printBag(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -11091,7 +11395,13 @@ async function printBag(message) {
     return true;
 }
 
-//prompts the user to buy items from the poke mart
+/**
+ * Prompts a user to buy items from the Poke Mart.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors are encountered.
+ */
 async function buyItems(message) {
     var user = await getUser(message.author.id);
     if (user === null) {
@@ -11438,6 +11748,13 @@ async function buyItems(message) {
     }
 }
 
+/**
+ * Gets all locations from all regions where a Pokemon can be found.
+ * 
+ * @param {string} name The name of the Pokemon species.
+ * 
+ * @returns {string[][]} A list of all locations where the Pokemon can be found, for each region.
+ */
 async function findPokemon(name) {
     let regions = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola"];
     let foundInfo = [[],[],[],[],[],[],[]];
@@ -11450,6 +11767,14 @@ async function findPokemon(name) {
     });
 }
 
+/**
+ * Gets all locations for a specific region where a Pokemon can be found.
+ * 
+ * @param {string} name The name of the Pokemon species.
+ * @param {string} moveName The name of the region.
+ * 
+ * @returns {string[]} A list of all locations for the specific region where the Pokemon can be found.
+ */
 async function findPokmonFromRegion(name, region) {
     let returnArray = [];
     let dirname = "../data/region/" + region + "/";
@@ -11469,6 +11794,13 @@ async function findPokmonFromRegion(name, region) {
     });
 }
 
+/**
+ * Gets all data from a location's JSON file.
+ * 
+ * @param {string} path Path to the JSON file.
+ * 
+ * @returns {JSON} The JSON data for the location.
+ */
 async function readFromLocationFile(path) {
     var data;
     try {
@@ -11484,6 +11816,13 @@ async function readFromLocationFile(path) {
     });
 }
 
+/**
+ * Gets all location JSON files from a directory.
+ * 
+ * @param {string} dirname File path to the directory containing the JSON files.
+ * 
+ * @returns {string[]} List of all file names found within the directory.
+ */
 async function getLocationFiles(dirname) {
     var files;
     try {
@@ -11497,6 +11836,13 @@ async function getLocationFiles(dirname) {
     });
 }
 
+/**
+ * Gets a Pokemon's characteristic.
+ * 
+ * @param {Pokemon} pokemon The Pokemon to get the characteristic for.
+ * 
+ * @returns {string} The Pokemon's characteristic.
+ */
 function getCharacteristic(pokemon) {
     var one = [0, 5, 10, 15, 20, 25, 30];
     var two = [1, 6, 11, 16, 21, 26, 31];
@@ -11600,7 +11946,17 @@ function getCharacteristic(pokemon) {
     }
 }
 
-//gets the form of a pokemon based on its location
+/**
+ * Determines which a form a wild Pokemon should be in based
+ * on where the Pokemon is being encountered.
+ * 
+ * @param {User} user The Pokebot user who is encountering the Pokemon.
+ * @param {string} name The name of the Pokemon species.
+ * @param {string} region The region where the Pokemon is being encountered.
+ * @param {string} location The location where the Pokemon is being encountered.
+ * 
+ * @returns {string} The form the Pokemon should be in when encountered.
+ */
 function getForm(user, name, region, location) {
     if (name === "Shaymin") {
         return "Land";
@@ -11720,7 +12076,17 @@ function getForm(user, name, region, location) {
     }
 }
 
-//checks if the pokemon learns a new move upon evolving
+/**
+ * Checks if a Pokemon learns a move upon evolving.
+ * 
+ * @todo This returns a string `"None"` if the Pokemon doesn't
+ * have an evolution move but should probably return `null`.
+ * 
+ * @param {string} to The name of the evolved Pokemon species.
+ * @param {string} form The form of the evolved Pokemon.
+ * 
+ * @returns {string} The name of the move that is learned when evolving.
+ */
 function checkForNewMoveUponEvo(to, form) {
     if (to === "Venusaur") {
         return ["Petal Dance"];
@@ -12302,6 +12668,16 @@ function checkForNewMoveUponEvo(to, form) {
     return ["None"];
 }
 
+/**
+ * Gets a list of all moves that a Pokemon can learn, based on certain methods.
+ * 
+ * @param {JSON} pkmn The Pokemon species to get the moves for.
+ * @param {string} form The form of the species to get the moves for.
+ * @param {string} method The method of how the move is learned. Should only be
+ * `"level"`, `"egg"`, and `"tm"`.
+ * 
+ * @returns {string[]} All moves learned by the Pokemon for the method.
+ */
 function getPokemonMoves(pkmn, form, method) {
     var i;
     var moves = [];
