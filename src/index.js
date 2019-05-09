@@ -19,6 +19,7 @@ const momentTz = require('moment-timezone');
 const schedule = require('node-schedule');
 const mysql = require('mysql');
 const oak = require('oakdex-pokedex');
+const chalk = require('chalk');
 //const Sim = require('./Pokemon-Showdown/sim');
 
 /**
@@ -842,6 +843,52 @@ client.on('message', async (message) => {
 });
 
 /**
+ * Sends a Discord message to a specific channel.
+ * 
+ * @param {TextChannel} channel The id of the channel to send the message to.
+ * @param {any} content The content of the message. Can be a string or an embed object.
+ * 
+ * @returns {boolean} True if message was sent.
+ */
+async function sendMessage(channel, content) {
+    didMessageGetSent = false;
+    await channel.send(content)
+    .then(() => {
+        didMessageGetSent = true;
+    })
+    .catch(err => {
+        console.error("[ERROR] Failed to send message - " + err);
+    });
+
+    return new Promise(function(resolve) {
+        resolve(didMessageGetSent);
+    });
+}
+
+/**
+ * Performs a database query.
+ * 
+ * @param {string} query The MySQL query to perform.
+ * @param {any[]} variables The list of variables for the query string.
+ * 
+ * @returns {any[]} The query results.
+ */
+async function doQuery(query, variables) {
+    let queryReturn = null;
+    await con.query(query, variables, function (err, rows) {
+        if (err) {
+            console.error(err);
+        } else {
+            queryReturn = rows;
+        }
+    });
+
+    return new Promise(function(resolve) {
+        resolve(queryReturn);
+    });
+}
+
+/**
  * Handles the process for running the `ability` command, which
  * sends a message with details about an ability.
  * 
@@ -850,16 +897,12 @@ client.on('message', async (message) => {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runAbilityCommand(message, abilityName) {
+    let commandStatus = false;
     abilityName = abilityName.join(' ');
-    let foundInfo = await printAbilityInfo(message, abilityName);
-    if (foundInfo === false) {
-        await message.channel.send("Ability not found. " + duck)
-        .catch(err => {
-            console.error("[ERROR] Failed to send message - " + err);
-        });
-    }
+    let ability = getAbilityInfo(abilityName);
+    commandStatus = await printAbilityInfo(message.channel, ability[0], ability[1]);
     return new Promise(function(resolve) {
-        resolve(foundInfo);
+        resolve(commandStatus);
     });
 }
 
@@ -10974,39 +11017,77 @@ async function printMoveInfo(message, moveName) {
 }
 
 /**
- * Sends a message containing detailed information about a Pokemon ability.
+ * Gets data from a JSON file in JSON format.
  * 
- * @param {Message} message The Discord message sent from the user.
+ * @param {string} path Path of the JSON file.
+ * 
+ * @returns {JSON} The data from the file in JSON format,
+ * or null if data could not be parsed.
+ */
+function parseJSON(path) {
+    let stringData, parsedData = null;
+    
+    try {
+        stringData = fs.readFileSync(path, "utf8");
+        parsedData = JSON.parse(stringData);
+    } catch (err) {
+        console.log(chalk`{yellow [WARNING]} Could not parse JSON file: ` + path);
+    }
+
+    return parsedData;
+}
+
+/**
+ * Gets an ability's name and description.
+ * 
  * @param {string} abilityName The name of the ability.
+ * 
+ * @returns {string[]} The name and description of the ability,
+ * or null list if ability doesn't exist.
+ */
+function getAbilityInfo(abilityName) {
+    let abilityData = [null, null];
+    if (abilityName != undefined) {
+        abilityName = abilityName.toLowerCase();
+        let path = "../data/ability/" + abilityName.replace(/ /g,"_") + ".json";
+        let ability = parseJSON(path);
+        if (ability != null) {
+            abilityData = [ability.names.en, ability.descriptions.en]
+        }
+    }
+    
+    return abilityData;
+}
+
+/**
+ * Sends a message containing detailed information about a Pokemon ability.
+ * Will alert user if 
+ * 
+ * @param {TextChannel} channel The Discord channel to send the message to.
+ * @param {string} name The name of the ability.
+ * @param {string} description
  * 
  * @returns {boolean} True if no errors are encountered.
  */
-async function printAbilityInfo(message, abilityName) {
-    if (abilityName == undefined) {
-        return false;
-    }
-    abilityName = abilityName.toLowerCase();
-    
-    var path = "../data/ability/" + abilityName.replace(/ /g,"_") + ".json";
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        return false;
-    }
-    
-    var ability = JSON.parse(data);
-    
-    await message.channel.send({
-        "embed": {
-            "author": {
-                "name": ability.names.en
-            },
-            "description": ability.descriptions.en
+async function printAbilityInfo(channel, name, description) {
+    let didMessageGetSent = false;
+    if (name === null || description === null) {
+        didMessageGetSent = await sendMessage(channel, "Ability not found!");
+    } else {
+        let embed = {
+            "embed": {
+                "author": {
+                    "name": name
+                },
+                "description": description
+            }
         }
-    });
+        didMessageGetSent = await sendMessage(channel, embed);
+    }
     
-    return true;
+    return new Promise(function(resolve) {
+        resolve(didMessageGetSent);
+    });
 }
 
 /**
@@ -14389,3 +14470,4 @@ function flipChar(c) {
 	}
 	return c;
 }
+
