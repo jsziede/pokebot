@@ -846,13 +846,13 @@ client.on('message', async (message) => {
 /**
  * Sends a Discord message to a specific channel.
  * 
- * @param {TextChannel} channel The id of the channel to send the message to.
+ * @param {TextChannel} channel The Discord channel to send the message to.
  * @param {any} content The content of the message. Can be a string or an embed object.
  * 
  * @returns {boolean} True if message was sent.
  */
 async function sendMessage(channel, content) {
-    didMessageGetSent = false;
+    let didMessageGetSent = false;
     await channel.send(content)
     .then(() => {
         didMessageGetSent = true;
@@ -1275,6 +1275,8 @@ async function runLocationsCommand(message) {
  * 
  * @todo Possibly make the lotto winning number global for all users
  * instead of randomly generated for each user.
+ * 
+ * @todo Change prize rewards to let user pick from a selection of items.
  * 
  * @param {Message} message Discord message sent by a user.
  * @returns {boolean} False if an error is encountered, otherwise true.
