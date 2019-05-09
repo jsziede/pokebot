@@ -858,7 +858,7 @@ async function sendMessage(channel, content) {
         didMessageGetSent = true;
     })
     .catch(err => {
-        console.error("[ERROR] Failed to send message - " + err);
+        console.error(chalk`{red [ERROR]} Failed to send message: ` + err);
     });
 
     return new Promise(function(resolve) {
@@ -890,25 +890,6 @@ async function doQuery(query, variables) {
 }
 
 /**
- * Handles the process for running the `ability` command, which
- * sends a message with details about an ability.
- * 
- * @param {Message} message The Discord message sent from the user.
- * @param {string[]} abilityName Name of the ability as input by the user.
- * 
- * @returns {boolean} False if an error is encountered, otherwise true.
- */
-async function runAbilityCommand(message, abilityName) {
-    let commandStatus = false;
-    abilityName = abilityName.join(' ');
-    let ability = getAbilityInfo(abilityName);
-    commandStatus = await printAbilityInfo(message.channel, ability[0], ability[1]);
-    return new Promise(function(resolve) {
-        resolve(commandStatus);
-    });
-}
-
-/**
  * Checks if a user is in a transaction and prints that transaction
  * if they are.
  * 
@@ -932,6 +913,25 @@ async function printTransactionIfTrue(message, commandWarning) {
 }
 
 /**
+ * Handles the process for running the `ability` command, which
+ * sends a message with details about an ability.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string[]} abilityName Name of the ability as input by the user.
+ * 
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
+async function runAbilityCommand(message, abilityName) {
+    let commandStatus = false;
+    abilityName = abilityName.join(' ');
+    let ability = getAbilityInfo(abilityName);
+    commandStatus = await printAbilityInfo(message.channel, ability[0], ability[1]);
+    return new Promise(function(resolve) {
+        resolve(commandStatus);
+    });
+}
+
+/**
  * Handles the process for running the `begin` command, which
  * initializes data for a new user. This includes their starter
  * Pokemon, their starting region, and default bag items.
@@ -942,44 +942,37 @@ async function printTransactionIfTrue(message, commandWarning) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runBeginCommand(message) {
-    let activeUserTransaction = isInTransaction(message.author.id);
     let commandStatus = false;
+    let cancelled = true;
     if (await printTransactionIfTrue(message, " before trying to begin a new adventure.") === false) {
         let exists = await userExists(message.author.id);
         if (!exists) {
             transactions[transactions.length] = new Transaction(message.author.id, "creating your adventure");
-            let askUser = true;
-            while (askUser) {
+            let awaitingUserInput = true;
+            //lets the user pick their region and starter Pokemon, and populates the user's bag with starting items.
+            while (awaitingUserInput) {
                 let region = await selectRegion(message);
-                if (region === null) {
+                let starter = await selectStarter(message, region);
+                awaitingUserInput = await createNewUser(message.author.id, starter, message, region);
+                if (awaitingUserInput) {
+                    cancelled = false;
+                    awaitingUserInput = false;
+                    commandStatus = await sendMessage(message.channel, (message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the \"goto <location_name>\" command to move to another location within the region, provided you have a Pokémon strong enough to protect you."));
                     removeTransaction(message.author.id);
-                    message.channel.send(message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready.");
-                    askUser = false;
-                } else {
-                    let starter = await selectStarter(message, region);
-                    if (starter == null) {
-                        removeTransaction(message.author.id);
-                        message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
-                        askUser = false;
-                    } else {
-                        askUser = await createNewUser(message.author.id, starter, message, region);
-                        if (askUser) {
-                            message.channel.send(message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the \"goto <location_name>\" command to move to another location within the region, provided you have a Pokémon strong enough to protect you.");
-                            removeTransaction(message.author.id);
-                        } else {
-                            message.channel.send(message.author.username + " has decided to cancel their starter selection. Begin your adventure another time when you are ready.");
-                            removeTransaction(message.author.id);
-                        }
-                        askUser = false;
-                    }
                 }
             }
+            //if user decided to cancel (likely because they didn't like their starter Pokemon, or because they timed out).
+            if (cancelled) {
+                removeTransaction(message.author.id);
+                commandStatus = await sendMessage(message.channel, (message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready."));
+            }
         } else {
-            message.channel.send(message.author.username + " already has an adventure in progress. " + duck);
+            commandStatus = await sendMessage(message.channel, (message.author.username + " already has an adventure in progress."));
         }
     }
+
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -2307,6 +2300,11 @@ async function userExists(userID) {
  */
 async function createNewUser(userID, name, message, region) {
     let location = getDefaultLocationOfRegion(region);
+    if (location === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
     let starter = await generatePokemonByName(message, name, 5, region, location, false);
     
     //var starter = await generatePokemonByName(message, "Rockruff", 23, region, location, false);
@@ -2492,7 +2490,7 @@ async function confirmStarter(message) {
 
 /**
  * Sends messages asking the user what starter Pokemon
- * they wants, based on the region the user selected.
+ * they want, based on the region the user selected.
  * 
  * @param {Message} message The Discord message sent from the user.
  * @param {string} region The name of the region selected by the user.
@@ -2501,7 +2499,9 @@ async function confirmStarter(message) {
  * the user, or null if the user did not select a starter.
  */
 async function selectStarter(message, region) {
-    if (region === "Kanto") {
+    if (region === null) {
+        return null;
+    } else if (region === "Kanto") {
         message.channel.send(message.author.username + ", please select a starter by either typing its number in the list or its name:\n```1. Bulbasaur\n2. Charmander\n3. Squirtle```");
     } else if (region === "Johto") {
         message.channel.send(message.author.username + ", please select a starter by either typing its number in the list or its name:\n```1. Chikorita\n2. Cyndaquil\n3. Totodile```");
@@ -3019,7 +3019,9 @@ function getFullLocationName(region, name) {
  * @returns {string} The default location of a region.
  */
 function getDefaultLocationOfRegion(region) {
-    if (region === "Kanto") {
+    if (region === null) {
+        return null;
+    } else if (region === "Kanto") {
         return "Pallet Town";
     } else if (region === "Johto") {
         return "New Bark Town";
