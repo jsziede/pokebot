@@ -12690,6 +12690,14 @@ function getPokemonMoves(pkmn, form, method) {
     return moves;
 }
 
+/**
+ * Gets information about the pre-evolution of a Pokemon species.
+ * 
+ * @param {JSON} pkmn The Pokemon species to get the moves for.
+ * 
+ * @returns {any} A list of objects which each contain the name
+ * of the pre-evolution and how the Pokemon evolves.
+ */
 function getEvolvesFrom(pkmn) {
     if (pkmn.hasOwnProperty("evolution_from") && pkmn.evolution_from != null) {
         var path = generatePokemonJSONPath(pkmn.evolution_from);
@@ -12708,6 +12716,16 @@ function getEvolvesFrom(pkmn) {
     }
 }
 
+/**
+ * Gets information about all evolutions of a Pokemon species.
+ * 
+ * @param {JSON} pkmn The Pokemon species to get the moves for.
+ * @param {string} specific The name of the specific evolved species
+ * to get information for if the Pokemon has multiple evolutions.
+ * 
+ * @returns {any} A list of objects which each contain the name
+ * of the pre-evolution and how the Pokemon evolves.
+ */
 function getEvolvesTo(pkmn, specific) {
     var specIndex = 0;
     var evolutions = [];
@@ -13067,6 +13085,14 @@ function getEvolvesTo(pkmn, specific) {
     }
 }
 
+/**
+ * Sends a message containing detailed information about
+ * the weather for all regions.
+ * 
+ * @param {message} Message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
 async function getWeather(message) {
     var userID = message.author.id;
     var season = moment().month() % 4;
@@ -13315,6 +13341,12 @@ async function getWeather(message) {
     return true;
 }
 
+/**
+ * Changes the weather for locations where weather
+ * can occur, based on the day of the month.
+ * 
+ * @returns {any} True if no errors were encountered.
+ */
 function updateWeather() {
     var weekday = moment().weekday();
     var dayOfMonth = moment().date();
@@ -13921,7 +13953,14 @@ function updateWeather() {
     }
 }
 
-//gets the color associated with the type of a pokemon
+/**
+ * Gets a hexadecimal number that represents a Pokemon's type.
+ * 
+ * @param {string} type The name of the type.
+ * 
+ * @returns {number} A hexadecimal number that represent the
+ * type's color.
+ */
 function getTypeColor(type) {
     if (type === "Normal") {
         return 0xa8a878;
@@ -13964,7 +14003,14 @@ function getTypeColor(type) {
     }
 }
 
-//returns true if the given pokemon has a gender difference
+/**
+ * Determines if a Pokemon species has visual differences between its male 
+ * and female genders.
+ * 
+ * @param {string} name The name of the Pokemon species.
+ * 
+ * @returns {boolean} True if Pokemon has gender differences.
+ */
 function hasGenderDifference(name) {
     var pkmn = [
         'Abomasnow',
@@ -14073,7 +14119,13 @@ function hasGenderDifference(name) {
     return false;
 }
 
-//sends a direct message to the sender containing a list of all commands available to use with the bot
+/**
+ * Sends a message containing detailed information about all the Pokebot commands.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
 function printHelp(message) {
     message.author.send({
         "embed": {
@@ -14176,11 +14228,14 @@ function printHelp(message) {
     });
 }
 
-/*
-//  Converts current Eastern time to the time zone of the user.
-//  If function is called by user who doesn't have a timezone on record,
-//  then converts to UTC.
-*/
+/**
+ * Gets current time in a user's timezone. Defauls to UTC
+ * if user does not have a timezone.
+ * 
+ * @param {User} user The Pokebot user to get the timezone of.
+ * 
+ * @returns {Moment} The current time for the user.
+ */
 function convertToTimeZone(user) {
     var CurrentDate = moment().format();
     var zone = momentTz.tz(CurrentDate, 'America/Detroit');
@@ -14192,7 +14247,15 @@ function convertToTimeZone(user) {
     return zone;
 }
 
-//makes a string appear as if upside down and mirrored
+/**
+ * Copies a string and changes most ascii alphabet characters to
+ * a Unicode character that looks like an upside-down version of
+ * the ascii character. 
+ * 
+ * @param {string} aString The string to turn upside-down.
+ * 
+ * @returns {string} The flipped version of the string.
+ */
 function flipString(aString) {
 	aString = aString.toLowerCase();
 	var last = aString.length - 1;
@@ -14203,6 +14266,15 @@ function flipString(aString) {
 	return result;
 }
 
+/**
+ * Changes an ascii alphabet character to
+ * a Unicode character that looks like an upside-down version of
+ * the ascii character. 
+ * 
+ * @param {string} c The ascii character to turn upside-down.
+ * 
+ * @returns {string} The flipped version of the character.
+ */
 function flipChar(c) {
 	if (c == 'a') {
 		return '\u0250'
