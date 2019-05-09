@@ -7,6 +7,7 @@
  *  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
  *  @todo Learned Pokemon moves should be moved to their own table. This way we can keep track of what moves a Pokemon has learned that aren't part of its normal level up (such as egg moves) for the move relearner.
  *  @todo In the games, when a Pokemon is in the Day Care, its moves are replaced one by one in order of the move slot. Pokebot currently does an experimental optimal move replacement calculation instead. Will need to run tests to see how optimal this algorithm is, otherwise it should fall back to the day care method.
+ *  @todo Add table for users who are currently inputting responses. This way if a user tries to do a command while Pokebot is awaiting input, Pokebot won't give two warning messages to the user.
  */
 
 /**
@@ -894,6 +895,7 @@ async function doQuery(query, variables) {
  * 
  * @param {Message} message The Discord message sent from the user.
  * @param {string[]} abilityName Name of the ability as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runAbilityCommand(message, abilityName) {
@@ -903,6 +905,29 @@ async function runAbilityCommand(message, abilityName) {
     commandStatus = await printAbilityInfo(message.channel, ability[0], ability[1]);
     return new Promise(function(resolve) {
         resolve(commandStatus);
+    });
+}
+
+/**
+ * Checks if a user is in a transaction and prints that transaction
+ * if they are.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} commandWarning A string representing the command
+ * the user is trying to run.
+ * 
+ * @returns {boolean} True if user is in transaction.
+ */
+async function printTransactionIfTrue(message, commandWarning) {
+    let status = false;
+    let activeUserTransaction = isInTransaction(message.author.id);
+    if (activeUserTransaction != null) {
+        await sendMessage(message.channel, (message.author.username + " please finish " + activeUserTransaction + commandWarning));
+        status = true;
+    }
+
+    return new Promise(function(resolve) {
+        resolve(status);
     });
 }
 
@@ -918,9 +943,8 @@ async function runAbilityCommand(message, abilityName) {
  */
 async function runBeginCommand(message) {
     let activeUserTransaction = isInTransaction(message.author.id);
-     if (activeUserTransaction != null) {
-        message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to begin a new adventure. " + duck);
-    } else {
+    let commandStatus = false;
+    if (await printTransactionIfTrue(message, " before trying to begin a new adventure.") === false) {
         let exists = await userExists(message.author.id);
         if (!exists) {
             transactions[transactions.length] = new Transaction(message.author.id, "creating your adventure");
@@ -1025,10 +1049,7 @@ async function runDaycareCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can send a Pokémon to the day care. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to send a Pokémon to the day care. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to send a Pokémon to the day care.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current business at the day care");
             await dayCare(message);
             removeTransaction(message.author.id);
@@ -1051,10 +1072,7 @@ async function runDiveCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can dive with a Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to dive with your Pokémon. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to dive with your Pokémon.") === false) {
             setField(message, "Dive");
         }
     }
@@ -1095,10 +1113,7 @@ async function runFishCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can fish for Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to begin fishing. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to begin fishing.") === false) {
             await setField(message, "Fish");
         }
     }
@@ -1120,10 +1135,7 @@ async function runGiveCommand(message, input) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can give an item to your Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to give a Pokémon an item. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to give a Pokémon an item.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current item assignment");
             input = input.join(' ');
             let gaveItem = await giveItem(message, input);
@@ -1152,10 +1164,7 @@ async function runGotoCommand(message, input) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to travel the world. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to move to a new location. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to move to a new location.") === false) {
             if (input.length > 1 && input[0] === "to" && input[1] != "to") {
                 input.splice(0, 1);
             }
@@ -1199,10 +1208,7 @@ async function runHeadbuttCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to headbutt trees with your Pokémon. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to headbutt trees with your Pokémon.") === false) {
             setField(message, "Headbutt");
         }
     }
@@ -1285,122 +1291,119 @@ async function runLottoCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure to enter the lottery. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to enter the lottery. " + duck);
-        }
-        
-        //gets the day when the user last ran the lotto command, in their timezone
-        let user = await getUser(message.author.id);
-        if (user === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
-        let cur = convertToTimeZone(user);
-        let lastDaily = moment(user.lotto);
-        let zone = momentTz.tz(lastDaily, user.timezone);
-        zone = zone.clone().tz(user.timezone);
-
-        //if lotto command has not been ran on the current day
-        if (moment(cur).format('D') != zone.format('D')) {
-            let winNum = "";
-            let possible = "0123456789";
-            let matches = 0;
-
-            //randomly generate a winning number string
-            for(let i = 0; i < 9; i++) {
-                winNum += possible.charAt(Math.floor(Math.random() * possible.length));
+        if (await printTransactionIfTrue(message, " before trying to enter the lottery.") === false) {
+            //gets the day when the user last ran the lotto command, in their timezone
+            let user = await getUser(message.author.id);
+            if (user === null) {
+                return new Promise(function(resolve) {
+                    resolve(false);
+                });
             }
-        
-            //cut the user'd id string in half so only the first half is matched with the winning number string
-            let uid = message.author.id;
-            uid = uid.substring(0, (uid.length/2));
-        
-            //count how many of the same numbers are in the same position for the user's id and the winning number
-            for(let i = 0; i < 9; i++) {
-                if (winNum.charAt(i) === uid.charAt(i)) {
-                    matches++;
-                }
-            }
-        
-            // lotto prizes
-            if (matches === 0) {
-                message.channel.send(message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball.");
-                user.money += 1000;
-                addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
-            } else if (matches === 1) {
-                message.channel.send(message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!");
-                user.money += 2000;
-                addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
-            } else if (matches === 2) {
-                message.channel.send(message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!");
-                user.money += 4000;
-                addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
-            } else if (matches === 3) {
-                message.channel.send(message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!");
-                user.money += 7000;
-                addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
-            } else if (matches === 4) {
-                message.channel.send(message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!");
-                user.money += 10000;
-                addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
-            } else if (matches === 5) {
-                message.channel.send(message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!");
-                user.money += 13000;
-                addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
-            } else if (matches === 6) {
-                message.channel.send(message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!");
-                user.money += 18000;
-                addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
-            } else if (matches === 7) {
-                message.channel.send(message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!");
-                user.money += 25000;
-                addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
-            } else if (matches === 8) {
-                message.channel.send(message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!");
-                user.money += 35000;
-                addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
-                addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
-            } else if (matches === 9) {
-                message.channel.send(message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!");
-                user.money += 50000;
-                addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
-                addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
-                addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
-            } 
-        
-            //tell user what their id is and what the winning number is
-            message.channel.send("Your trainer id: " + uid + "\nYour lotto number: " + winNum);
-        
-            //update the user's lotto time to be the current day
-            user.lotto = convertToTimeZone(user).format();
-            let query = "UPDATE user SET money = ?, lotto = ? WHERE user.user_id = ?";
-            con.query(query, [user.money, user.lotto, message.author.id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-        } else {    //if user already ran the lotto command today, tell them how much time they have until they can run it again for the next day
-            /**  @todo are these two zone statements necessary? */
-            zone = momentTz.tz(moment(), 'America/Detroit');
+            let cur = convertToTimeZone(user);
+            let lastDaily = moment(user.lotto);
+            let zone = momentTz.tz(lastDaily, user.timezone);
             zone = zone.clone().tz(user.timezone);
-            let timeDiff = moment(zone).endOf('day') - zone;
-        
-            let dur = moment.duration(timeDiff);
-            let min = "minutes";
-            let hr = "hours";
-            let sec = "seconds";
-            if (dur.hours() === 1) {
-                hr = "hour";
+
+            //if lotto command has not been ran on the current day
+            if (moment(cur).format('D') != zone.format('D')) {
+                let winNum = "";
+                let possible = "0123456789";
+                let matches = 0;
+
+                //randomly generate a winning number string
+                for(let i = 0; i < 9; i++) {
+                    winNum += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+            
+                //cut the user'd id string in half so only the first half is matched with the winning number string
+                let uid = message.author.id;
+                uid = uid.substring(0, (uid.length/2));
+            
+                //count how many of the same numbers are in the same position for the user's id and the winning number
+                for(let i = 0; i < 9; i++) {
+                    if (winNum.charAt(i) === uid.charAt(i)) {
+                        matches++;
+                    }
+                }
+            
+                // lotto prizes
+                if (matches === 0) {
+                    message.channel.send(message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball.");
+                    user.money += 1000;
+                    addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
+                } else if (matches === 1) {
+                    message.channel.send(message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!");
+                    user.money += 2000;
+                    addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
+                } else if (matches === 2) {
+                    message.channel.send(message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!");
+                    user.money += 4000;
+                    addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
+                } else if (matches === 3) {
+                    message.channel.send(message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!");
+                    user.money += 7000;
+                    addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
+                } else if (matches === 4) {
+                    message.channel.send(message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!");
+                    user.money += 10000;
+                    addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
+                } else if (matches === 5) {
+                    message.channel.send(message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!");
+                    user.money += 13000;
+                    addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
+                } else if (matches === 6) {
+                    message.channel.send(message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!");
+                    user.money += 18000;
+                    addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
+                } else if (matches === 7) {
+                    message.channel.send(message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!");
+                    user.money += 25000;
+                    addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
+                } else if (matches === 8) {
+                    message.channel.send(message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!");
+                    user.money += 35000;
+                    addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
+                    addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
+                } else if (matches === 9) {
+                    message.channel.send(message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!");
+                    user.money += 50000;
+                    addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
+                    addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
+                    addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
+                } 
+            
+                //tell user what their id is and what the winning number is
+                message.channel.send("Your trainer id: " + uid + "\nYour lotto number: " + winNum);
+            
+                //update the user's lotto time to be the current day
+                user.lotto = convertToTimeZone(user).format();
+                let query = "UPDATE user SET money = ?, lotto = ? WHERE user.user_id = ?";
+                con.query(query, [user.money, user.lotto, message.author.id], function (err) {
+                    if (err) {
+                        return reject(err);
+                    }
+                });
+            } else {    //if user already ran the lotto command today, tell them how much time they have until they can run it again for the next day
+                /**  @todo are these two zone statements necessary? */
+                zone = momentTz.tz(moment(), 'America/Detroit');
+                zone = zone.clone().tz(user.timezone);
+                let timeDiff = moment(zone).endOf('day') - zone;
+            
+                let dur = moment.duration(timeDiff);
+                let min = "minutes";
+                let hr = "hours";
+                let sec = "seconds";
+                if (dur.hours() === 1) {
+                    hr = "hour";
+                }
+                if (dur.minutes() === 1) {
+                    min = "minute";
+                }
+                if (dur.seconds() === 1) {
+                    sec = "second";
+                }
+                message.channel.send(message.author.username + " you have already participated in the daily lottery.\nPlease try again in " + dur.hours() + " " + hr + ", " + dur.minutes() + " " + min + ", and " + dur.seconds() + " " + sec + ". " + duck);
             }
-            if (dur.minutes() === 1) {
-                min = "minute";
-            }
-            if (dur.seconds() === 1) {
-                sec = "second";
-            }
-            message.channel.send(message.author.username + " you have already participated in the daily lottery.\nPlease try again in " + dur.hours() + " " + hr + ", " + dur.minutes() + " " + min + ", and " + dur.seconds() + " " + sec + ". " + duck);
         }
     }
     return new Promise(function(resolve) {
@@ -1444,10 +1447,7 @@ async function runMartCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to buy items. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to buy items. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to buy items.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your item shopping");
             await buyItems(message);
             removeTransaction(message.author.id);
@@ -1490,10 +1490,7 @@ async function runReleaseCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to release a Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to release a Pokémon. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to release a Pokémon.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current Pokémon release");
             input = input.join(' ');
             await releasePokemon(message, input);
@@ -1522,10 +1519,7 @@ async function runRocksmashCommand(message, input) {
         if (!exists) {
             message.channel.send(message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon. " + duck);
         } else {
-            let activeUserTransaction = isInTransaction(message.author.id);
-            if (activeUserTransaction != null) {
-                message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to smash rocks with your Pokémon. " + duck);
-            } else {
+            if (await printTransactionIfTrue(message, " before trying to smash rocks with your Pokémon.") === false) {
                 setField(message, "Rock Smash");
             }
         }
@@ -1549,11 +1543,7 @@ async function runSetLeadCommand(message, input) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before being able to select a Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to change your lead Pokémon. " + duck);
-            return;
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to change your lead Pokémon.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current leader assignment");
             input = input.join(' ');
             let swap = await setActivePokemon(message, input);
@@ -1580,10 +1570,7 @@ async function runSurfCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can surf with a Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to surf with your Pokémon. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to surf with your Pokémon.") === false) {
             setField(message, "Surfing");
         }
     }
@@ -1605,10 +1592,7 @@ async function runTakeCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can take items from your Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to take items from your Pokémon. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to take items from your Pokémon.") === false) {
             takeItem(message);
         }
     }
@@ -1630,10 +1614,7 @@ async function runTravelCommand(message, input) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can travel to a new region. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to travel to a new region. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to travel to a new region.") === false) {
             input = input.join(' ');
             let traveled = await setRegion(message, input);
             if (!traveled) {
@@ -1658,13 +1639,12 @@ async function runTradeCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can trade Pokémon. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to start a new trade. " + duck);
-        } else if (message.mentions.users.first() === undefined) {
-            message.channel.send(message.author.username + " please mention the user you want to trade with. " + duck);
-        } else {
-            await tradeOffer(message, message.mentions.users.first());
+        if (await printTransactionIfTrue(message, " before trying to start a new trade.") === false) {
+            if (message.mentions.users.first() === undefined) {
+                message.channel.send(message.author.username + " please mention the user you want to trade with. " + duck);
+            } else {
+                await tradeOffer(message, message.mentions.users.first());
+            }
         }
     }
     return new Promise(function(resolve) {
@@ -1686,10 +1666,7 @@ async function runUseCommand(message, input) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can use items. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to use an item. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to use an item.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current item use");
             input = input.join(' ');
             let usedItem = await useItem(message, input);
@@ -1741,10 +1718,7 @@ async function runWalkCommand(message) {
     if (!exists) {
         message.channel.send(message.author.username + " you will need to begin your adventure before you can walk around. " + duck);
     } else {
-        let activeUserTransaction = isInTransaction(message.author.id);
-        if (activeUserTransaction != null) {
-            message.channel.send(message.author.username + " please finish " + activeUserTransaction + " before trying to walk around. " + duck);
-        } else {
+        if (await printTransactionIfTrue(message, " before trying to walk around.") === false) {
             await setField(message, "Walking");
         }
     }
