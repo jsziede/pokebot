@@ -393,18 +393,6 @@ async function doNonCommandMessage(message) {
         }
     }
     
-    //gives between 3 and 60 xp to the sender's lead pokemon
-    var xpAmount = Math.ceil(Math.random() * 10);
-    xpAmount += Math.ceil(Math.random() * 20);
-    xpAmount += Math.ceil(Math.random() * 30);
-    xpAmount = xpAmount * spamXpMult;
-    await giveXP(message, xpAmount);
-    await giveDayCareXP(message);
-    
-    if ((isInEvolution(message.author.id) != null) || (isInTransaction(message.author.id) != null)) {
-        return;
-    }
-    
     var random = Math.ceil(Math.random() * 100);
     var baseMoneyChance = 20;
     var moneyChance = baseMoneyChance;
@@ -469,6 +457,14 @@ async function doNonCommandMessage(message) {
 
         message.react(kukui.id);
         message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
+    } else {
+        //gives between 3 and 60 xp to the sender's lead pokemon
+        var xpAmount = Math.ceil(Math.random() * 10);
+        xpAmount += Math.ceil(Math.random() * 20);
+        xpAmount += Math.ceil(Math.random() * 30);
+        xpAmount = xpAmount * spamXpMult;
+        await giveXP(message, xpAmount);
+        await giveDayCareXP(message);
     }
 }
 
