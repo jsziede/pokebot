@@ -8,6 +8,7 @@
  *  @todo Learned Pokemon moves should be moved to their own table. This way we can keep track of what moves a Pokemon has learned that aren't part of its normal level up (such as egg moves) for the move relearner.
  *  @todo In the games, when a Pokemon is in the Day Care, its moves are replaced one by one in order of the move slot. Pokebot currently does an experimental optimal move replacement calculation instead. Will need to run tests to see how optimal this algorithm is, otherwise it should fall back to the day care method.
  *  @todo Add table for users who are currently inputting responses. This way if a user tries to do a command while Pokebot is awaiting input, Pokebot won't give two warning messages to the user.
+ *  @todo All message sends need to be awaited, otherwise weirdness may happen.
  */
 
 /**
@@ -357,7 +358,10 @@ client.on('message', async (message) => {
         }
     }
 
-    await doNonCommandMessage(message);
+    let exists = await userExists(message.author.id);
+    if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
+        await doNonCommandMessage(message);
+    }
 });
 
 /**
@@ -372,102 +376,99 @@ client.on('message', async (message) => {
  * @returns {boolean} True if no errors were encountered.
  */
 async function doNonCommandMessage(message) {
-    let exists = await userExists(message.author.id);
-    if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
-        if (!enableSpam) {
-            //user did not post in the spam channel
-            let lastUser = null;
-            if (message.author.id === lastUser) {
-                return; //dont do anything if sender posted a consecutive message
-            }
-            
-            //bot wont do anything until at least after a second since the last message passed
-            let currentTime = new Date();
-            currentTime = currentTime.getTime();
-            if ((currentTime - cooldown) < 1000) {
-                return;
-            } else {
-                cooldown = currentTime;
-            }
+    if (!enableSpam) {
+        //user did not post in the spam channel
+        let lastUser = null;
+        if (message.author.id === lastUser) {
+            return; //dont do anything if sender posted a consecutive message
         }
         
-        //gives between 3 and 60 xp to the sender's lead pokemon
-        var xpAmount = Math.ceil(Math.random() * 10);
-        xpAmount += Math.ceil(Math.random() * 20);
-        xpAmount += Math.ceil(Math.random() * 30);
-        xpAmount = xpAmount * spamXpMult;
-        await giveXP(message, xpAmount);
-        await giveDayCareXP(message);
-        
-        if ((isInEvolution(message.author.id) != null) || (isInTransaction(message.author.id) != null)) {
+        //bot wont do anything until at least after a second since the last message passed
+        let currentTime = new Date();
+        currentTime = currentTime.getTime();
+        if ((currentTime - cooldown) < 1000) {
             return;
+        } else {
+            cooldown = currentTime;
         }
-        
-        var random = Math.ceil(Math.random() * 100);
-        var baseMoneyChance = 20;
-        var moneyChance = baseMoneyChance;
-        
-        let user = await getUser(message.author.id);
-        if (user === null) {
-            return;
-        }
+    }
+    
+    //gives between 3 and 60 xp to the sender's lead pokemon
+    var xpAmount = Math.ceil(Math.random() * 10);
+    xpAmount += Math.ceil(Math.random() * 20);
+    xpAmount += Math.ceil(Math.random() * 30);
+    xpAmount = xpAmount * spamXpMult;
+    await giveXP(message, xpAmount);
+    await giveDayCareXP(message);
+    
+    if ((isInEvolution(message.author.id) != null) || (isInTransaction(message.author.id) != null)) {
+        return;
+    }
+    
+    var random = Math.ceil(Math.random() * 100);
+    var baseMoneyChance = 20;
+    var moneyChance = baseMoneyChance;
+    
+    let user = await getUser(message.author.id);
+    if (user === null) {
+        return;
+    }
 
-        //gets the sender's lead pokemon and checks its ability
-        let lead = await getLeadPokemon(message.author.id);
-        if (lead === null) {
-            console.warn(chalk`yellow {[Warning]} User` + message.author.id + `exists but doesn't have lead Pokemon.`);
-            return;
-        }
-        
-        let encounterChance = getEncounterChanceForLocation(lead.ability, lead.item, user.region, user.location, user.field);
+    //gets the sender's lead pokemon and checks its ability
+    let lead = await getLeadPokemon(message.author.id);
+    if (lead === null) {
+        console.warn(chalk`yellow {[Warning]} User` + message.author.id + `exists but doesn't have lead Pokemon.`);
+        return;
+    }
+    
+    let encounterChance = getEncounterChanceForLocation(lead.ability, lead.item, user.region, user.location, user.field);
 
-        //if sender encounters a pokemon
-        if (random <= encounterChance) {
-            var encounter = await encounterPokemon(message, user, lead);
+    //if sender encounters a pokemon
+    if (random <= encounterChance) {
+        var encounter = await encounterPokemon(message, user, lead);
+    
+        if (encounter != null) {
+            //shows the wild pokemon to the sender
+            await displayAWildPkmn(encounter, message);
         
-            if (encounter != null) {
-                //shows the wild pokemon to the sender
-                await displayAWildPkmn(encounter, message);
-            
-                transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
-            
-                var dexnum = encounter.no.toString();
-                while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
-                    dexnum = '0' + dexnum;
-                }
-                var shuffle_icon = client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
-                message.react(shuffle_icon.id);
-                
-                var choice = 1;
-
-                if (choice === 0) {
-                    //await battleWildPokemon(message, encounter);
-                } else if (choice === 1) {
-                    //waits for user to either catch pokemon or run away
-                    await catchPokemon(message, encounter, user, lead);
-                }
-            
-                removeTransaction(message.author.id);
+            transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
+        
+            var dexnum = encounter.no.toString();
+            while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
+                dexnum = '0' + dexnum;
             }
-        //20% chance to find money
-        } else if (random <= moneyChance) {
-            var moneyAmnt = 48;
-            moneyAmnt += Math.ceil(Math.random() * 150);
-            moneyAmnt += Math.ceil(Math.random() * 100);
-        
-            moneyAmnt = Math.floor(((user.level / 100) + 1).toFixed(1) * moneyAmnt);
-            user.money += moneyAmnt;
-        
-            var newQuery = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
-            con.query(newQuery, [user.money, message.author.id], function(err) {
-                if (err) {
-                    console.log(err);
-                }
-            });
+            var shuffle_icon = client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
+            message.react(shuffle_icon.id);
+            
+            var choice = 1;
 
-            message.react(kukui.id);
-            message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
+            if (choice === 0) {
+                //await battleWildPokemon(message, encounter);
+            } else if (choice === 1) {
+                //waits for user to either catch pokemon or run away
+                await catchPokemon(message, encounter, user, lead);
+            }
+        
+            removeTransaction(message.author.id);
         }
+    //20% chance to find money
+    } else if (random <= moneyChance) {
+        var moneyAmnt = 48;
+        moneyAmnt += Math.ceil(Math.random() * 150);
+        moneyAmnt += Math.ceil(Math.random() * 100);
+    
+        moneyAmnt = Math.floor(((user.level / 100) + 1).toFixed(1) * moneyAmnt);
+        user.money += moneyAmnt;
+    
+        var newQuery = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
+        con.query(newQuery, [user.money, message.author.id], function(err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+
+        message.react(kukui.id);
+        message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
     }
 }
 
@@ -8910,7 +8911,7 @@ async function catchPokemon(message, wild, user, lead) {
 
     var i;
     
-    message.channel.send("<@" + message.author.id + ">, a wild " + wild.name + " appeared!");
+    await message.channel.send("<@" + message.author.id + ">, a wild " + wild.name + " appeared!");
     
     var numTurns = 0;
     var encounter = true;
@@ -9004,10 +9005,10 @@ async function catchPokemon(message, wild, user, lead) {
         var catchRate = pkmn.catch_rate;
         
         if (input === -2) {
-            message.channel.send(message.author.username + " ran away from the wild " + wild.name + ".");
+            await message.channel.send(message.author.username + " ran away from the wild " + wild.name + ".");
             encounter = false;
         } else if (input === -1) {
-            message.channel.send(message.author.username + " the wild " + wild.name + " fled!");
+            await message.channel.send(message.author.username + " the wild " + wild.name + " fled!");
             encounter = false;
         } else { //threw ball
             ballUsed = Balls[input].name;
