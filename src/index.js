@@ -374,19 +374,21 @@ client.on('message', async (message) => {
 async function doNonCommandMessage(message) {
     let exists = await userExists(message.author.id);
     if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
-        //user did not post in the spam channel
-        let lastUser = null;
-        if (message.author.id === lastUser && !enableSpam) {
-            return; //dont do anything if sender posted a consecutive message
-        }
-        
-        //bot wont do anything until at least after a second since the last message passed
-        var currentTime = new Date();
-        currentTime = currentTime.getTime();
-        if ((currentTime - cooldown) < 1000) {
-            return;
-        } else {
-            cooldown = currentTime;
+        if (!enableSpam) {
+            //user did not post in the spam channel
+            let lastUser = null;
+            if (message.author.id === lastUser) {
+                return; //dont do anything if sender posted a consecutive message
+            }
+            
+            //bot wont do anything until at least after a second since the last message passed
+            let currentTime = new Date();
+            currentTime = currentTime.getTime();
+            if ((currentTime - cooldown) < 1000) {
+                return;
+            } else {
+                cooldown = currentTime;
+            }
         }
         
         //gives between 3 and 60 xp to the sender's lead pokemon
