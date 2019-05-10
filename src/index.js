@@ -313,7 +313,7 @@ schedule.scheduleJob({minute: 0, second: 5}, function(){
 client.on("guildCreate", async guild => {
     for (let channel of guild.channels) {
         if (channel[1].type === 'text' && channel[1].permissionsFor(guild.me).has(`SEND_MESSAGES`)) {
-            await client.channels.get(channel[0]).send(`Hello, thank you for adding me to your guild. My default command prefix is \`!pb\`. To enable commands, go to the channel that you want me to read from and run the \`!pb activate\` command. The command channel can be changed at any time by running the activate command in whichever channel you want, as long as I have message sending permissions in it.`);
+            await sendMessage(client.channels.get(channel[0]), (`Hello, thank you for adding me to your guild. My default command prefix is \`!pb\`. To enable commands, go to the channel that you want me to read from and run the \`!pb activate\` command. The command channel can be changed at any time by running the activate command in whichever channel you want, as long as I have message sending permissions in it.`));
             break;
         }
     }
@@ -323,365 +323,61 @@ client.on("guildCreate", async guild => {
  *  Triggers every time any user sends a message.
 */
 client.on('message', async (message) => {
-    //ignore messages from bots
+    /** Ignore messages from bot accounts. */
     if (message.author.bot) {
         return;
     }
 
+    /** Don't do anything if user is trading a Pokemon.  */
+    if (isInTrade(message.author.id) != null) {
+        return;
+    }
+
+    /** @todo replace this with a function to check if message begins with the guild's prefix once prefix customization has been added. */
     if (message.content.trim() === `!pb activate`) {
         await setBotChannel(message);
         return;
     }
-
-    let sentCommand = false;
     
-    //only read messages from bot channel
+    /** Only read commands sent in the bot channel. */
     if (await isBotChannel(message)) {
-        //if sender is trading a pokemon
-        if(isInTrade(message.author.id) != null) {
-            return;
-        }
-
-        let exists = await userExists(message.author.id);
-
-        let commandStatus = null;
-
-        //splits message into an array of strings based on spaces
-        var input = message.content.trim().split(/ +/g);
-        //the first word in the message
+        /** Splits message into an array of words. */
+        let input = message.content.trim().split(/ +/g);
+        /** The command is the first word in the message, not including the prefix. */
         const command = input.shift().toLowerCase();
         
-        var ev = isInEvolution(message.author.id);
-        if(ev != null) { //if sender has a pokemon evolving
-            if(command === "a") { //sender accepts evo
-                await evolve(message);
-                sentCommand = true;
-                return;
-            } else if (command === "b") { //sender cancels evo
-                sentCommand = true;
-                await cancelEvolve(message);
-                return;
-            } else if (command === "l" || command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
-                sentCommand = true;
-                if (!exists) {
-                    message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
-                    return;
-                }
-                let lead = await getLeadPokemon(message.author.id);
-                if (lead === null) {
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-                displayAnOwnedPkmn(lead, message);
-                return;
-            } else {
-                message.channel.send(message.author.username + " please finish " + ev.from + "'s evolution into " + ev.to + ". Type \"B\" to cancel or  \"A\" to accept. " + duck);
-                return;
-            }
+        /** Only allow some commands if a user is evolving one of their Pokemon. */
+        if (await checkIfUserIsEvolving(message, command)) {
+            return;
         }
         
-        if (command === "a" || command === "ability") {
-            sentCommand = true;
-            commandStatus = await runAbilityCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runAbilityCommand() : input=" + input)
-            }
-            return;
-
-
-
-        } else if (command === "begin") {
-            sentCommand = true;
-            commandStatus = await runBeginCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runBeginCommand()");
-            }
-            return;
-
-            
-            
-        } else if (command === "b" || command === "bag" || command === "🅱") {
-            sentCommand = true;
-            commandStatus = await runBagCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runBagCommand()");
-            }
-            return;
-
-            
-            
-        } else if (command === "d" ||command === "dex" || command === "pokedex" || command === "pokédex") {
-            sentCommand = true;
-            commandStatus = await runDexCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runDexCommand() : input=" + input);
-            }
-            return;
-
-
-            
-        } else if (command === "daycare") {
-            sentCommand = true;
-            commandStatus = await runDaycareCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runDaycareCommand() : input=" + input);
-            }
-            return;
-            
-            
-
-        } else if (command === "dive") {
-            sentCommand = true;
-            commandStatus = await runDiveCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runDiveCommand()");
-            }
-            return;
-            
-
-            
-        } else if (command === "e" || command === "encounter" || command === "encounters") {
-            sentCommand = true;
-            commandStatus = await runEncounterCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runEncounterCommand()");
-            }
-            return;
-            
-
-            
-        } else if (command === "fish" || command === "f") {
-            sentCommand = true;
-            commandStatus = await runFishCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runFishCommand()");
-            }
-            return;
-            
-
-            
-        } else if ((command === "g" || command === "give") && input.length > 0) {
-            sentCommand = true;
-            commandStatus = await runGiveCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runGiveCommand() : input=" + input);
-            }
-            return;
-            
-            
-            
-        } else if ((command === "goto" || command === "go") && input.length > 0) {
-            sentCommand = true;
-            commandStatus = await runGotoCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runGotoCommand() : input=" + input);
-            }
-            return;
-            
-
-            
-        } else if (command === "h" || command === "help") {
-            sentCommand = true;
-            commandStatus = await runHelpCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runHelpCommand() : input=" + input);
-            }
-            return;
-            
-
-            
-        } else if (command === "headbutt") {
-            sentCommand = true;
-            commandStatus = await runHeadbuttCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runHeadbuttCommand()");
-            }
-            return;
-
-
-            
-        } else if (command === "l" ||command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
-            sentCommand = true;
-            commandStatus = await runLeadCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runLeadCommand()");
-            }
-            return;
-
-
-            
-        } else if (command === "locations") {
-            sentCommand = true;
-            commandStatus = await runLocationsCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runLocationsCommand()");
-            }
-            return;
-            
-
-
-        } else if (command === "lotto" ||command === "daily" || command === "lottery") {
-            sentCommand = true;
-            commandStatus = await runLottoCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runLottoCommand() : user id=" + message.author.id);
-            }
-            return;
-            
-
-
-        } else if (command === "m" || command === "move" || command === "attack") {
-            sentCommand = true;
-            commandStatus = await runMoveCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runMoveCommand() : input=" + input);
-            }
-            return;
-            
-            
-        } else if (command === "mart" || command === "shop" || command === "sell" || command === "buy") {
-            sentCommand = true;
-            commandStatus = await runMartCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runMartCommand()");
-            }
-            return;
-            
-            
-        } else if (command === "p" || command === "pokemon" || command === "pokémon") {
-            sentCommand = true;
-            commandStatus = await runPokemonCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runPokemonCommand()");
-            }
-            return;
-            
-
-            
-        } else if ((command === "r" || command === "release") && input.length > 0) {
-            sentCommand = true;
-            commandStatus = await runReleaseCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runReleaseCommand()");
-            }
-            return;
-            
-
-            
-        } else if (command === "rock" || command === "rocksmash") {
-            sentCommand = true;
-            commandStatus = await runRocksmashCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runRocksmashCommand() : input=" + input);
-            }
-            return;
-            
-
-
-        } else if ((command === "s" || command === "swap" || command === "switch" || command === "select" || command === "setlead") && input.length > 0) {
-            sentCommand = true;
-            commandStatus = await runSetLeadCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runSetLeadCommand() : input=" + input);
-            }
-            return;
-            
-
-            
-        } else if (command === "surf") {
-            sentCommand = true;
-            commandStatus = await runSurfCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runSurfCommand()");
-            }
-            return;
-            
-
-            
-        } else if (command === "t" || command === "take") {
-            sentCommand = true;
-            commandStatus = await runTakeCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runTakeCommand()");
-            }
-            return;
-            
-
-            
-        } else if (command === "travel") {
-            sentCommand = true;
-            commandStatus = await runTravelCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runTravelCommand() : input=" + input);
-            }
-            return;
-            
-
-            
-        } else if (command === "trade") {
-            sentCommand = true;
-            commandStatus = await runTradeCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runTradeCommand()");
-            }
-            return;
-            
-
-            
-        } else if ((command === "u" || command === "use") && input.length > 0) {
-            sentCommand = true;
-            commandStatus = await runUseCommand(message, input);
-            if (!commandStatus) {
-                console.log("[ERROR] runUseCommand() : input=" + input);
-            }
-            return;
-            
-
-            
-        } else if (command === "w" || command === "where" || command === "locate") {
-            sentCommand = true;
-            commandStatus = await runWhereCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runWhereCommand()");
-            }
-            return;
-            
-
-
-        } else if (command === "walk") {
-            sentCommand = true;
-            commandStatus = await runWalkCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runWalkCommand()");
-            }
-            return;
-
-
-
-        } else if (command === "weather" || command === "forecast") {
-            sentCommand = true;
-            commandStatus = await runWeatherCommand(message);
-            if (!commandStatus) {
-                console.log("[ERROR] runWeatherCommand()");
-            }
+        /** Perform the command action if message contains a command. */
+        if (await doCommand(message, input, command)) {
             return;
         }
     }
 
-/* ======================================================= end of commands ============================================================================ */
+    await doNonCommandMessage(message);
+});
 
-    //if user has bot data and did not send a command nor is currently running a command
+/**
+ * Performs various actions for the user if the user
+ * sent a message that wasn't a command, including giving
+ * experience to the user's lead Pokemon, possibly
+ * having the user encounter a wild Pokemon, and possibly
+ * giving money to the user.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
+async function doNonCommandMessage(message) {
     let exists = await userExists(message.author.id);
-    if (exists && !sentCommand && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null) && (isInTrade(message.author.id) === null)) {
+    if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
         //user did not post in the spam channel
         let lastUser = null;
-        if (message.author.id === lastUser && enableSpam === false) {
+        if (message.author.id === lastUser && !enableSpam) {
             return; //dont do anything if sender posted a consecutive message
-        } else {
-            if (!sentCommand) { //if not a consecutive message, set the sender as the last user
-                lastUser = message.author.id;
-            }
         }
         
         //bot wont do anything until at least after a second since the last message passed
@@ -705,121 +401,52 @@ client.on('message', async (message) => {
             return;
         }
         
-        //6% chance to encounter a wild pokemon, 20% chance to find money
         var random = Math.ceil(Math.random() * 100);
-        var baseEncounterChance = 8 * spamEncounterMult;
-        var encounterChance = baseEncounterChance;
         var baseMoneyChance = 20;
         var moneyChance = baseMoneyChance;
         
         let user = await getUser(message.author.id);
         if (user === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
+            return;
         }
 
         //gets the sender's lead pokemon and checks its ability
         let lead = await getLeadPokemon(message.author.id);
         if (lead === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
+            console.warn(chalk`yellow {[Warning]} User` + message.author.id + `exists but doesn't have lead Pokemon.`);
+            return;
         }
-        var ability = lead.ability;
         
-        //  @todo these should check the global weather tables instead 
-
-        //double the encounter chance anywhere
-        if (ability === "Arena Trap" || ability === "Illuminate" || ability === "Swarm") {
-            encounterChance += baseEncounterChance;
-        } else if (ability === "No Guard") { //1.5x encounter chance anywhere
-            encounterChance += (baseEncounterChance / 2);
-        } else if (ability === "Quick Feet" || ability === "Stench" || ability === "White Smoke") { //halves encounter chance anywhere
-            encounterChance -= (baseEncounterChance / 2);
-        } else if (ability === "Sand Veil") { //halves encounter chance in deserts
-            //  @todo check sandstorm table here
-            if (user.region === "Hoenn") {
-                if (user.location === "Route 111") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Sinnoh") {
-                if (user.location === "Route 228") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Unova") {
-                if (user.location === "Route 4" || user.location === "Desert Resort") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Alola") {
-                if (user.location === "Haina Desert") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            }
-        } else if (ability === "Snow Cloak") { //halves encounter chance in snow
-            //  @todo check hail/snowing table here
-            if (user.region === "Johto") {
-                if (user.location === "Mt. Silver") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Sinnoh") {
-                if (user.location === "Route 216" || user.location === "Route 217" || user.location === "Acuity Lakefront" || user.location === "Snowpoint City" || user.location === "Mt. Coronet") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Unova") {
-                if (user.location === "Cold Storage" || user.location === "Twist Mountain") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Kalos") {
-                if (user.location === "Route 17 (Mamoswine Road)" || user.location === "Frost Cavern") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            } else if (user.region === "Alola") {
-                if (user.location === "Mount Lanakila") {
-                        encounterChance -= (baseEncounterChance / 2);
-                }
-            }
-        } else if (ability === "Sticky Hold" || ability === "Suction Cups") { //doubles encounter chance while fishing
-            if (user.field === "Super Rod" || user.field === "Good Rod" || user.field === "Old Rod") {
-                encounterChance += baseEncounterChance;
-            }
-        }
-    
-        if (lead.item === "Cleanse Tag") {
-            encounterChance = (encounterChance / 3);
-        }
+        let encounterChance = getEncounterChanceForLocation(lead.ability, lead.item, user.region, user.location, user.field);
 
         //if sender encounters a pokemon
         if (random <= encounterChance) {
             var encounter = await encounterPokemon(message, user, lead);
         
-            if (encounter == null) {
-                return;
-            }
-        
-            //shows the wild pokemon to the sender
-            await displayAWildPkmn(encounter, message);
-        
-            transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
-        
-            var dexnum = encounter.no.toString();
-            while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
-                dexnum = '0' + dexnum;
-            }
-            var shuffle_icon = client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
-            message.react(shuffle_icon.id);
+            if (encounter != null) {
+                //shows the wild pokemon to the sender
+                await displayAWildPkmn(encounter, message);
             
-            var choice = 1;
+                transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
+            
+                var dexnum = encounter.no.toString();
+                while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
+                    dexnum = '0' + dexnum;
+                }
+                var shuffle_icon = client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
+                message.react(shuffle_icon.id);
+                
+                var choice = 1;
 
-            if (choice === 0) {
-                //await battleWildPokemon(message, encounter);
-            } else if (choice === 1) {
-                //waits for user to either catch pokemon or run away
-                await catchPokemon(message, encounter, user, lead);
+                if (choice === 0) {
+                    //await battleWildPokemon(message, encounter);
+                } else if (choice === 1) {
+                    //waits for user to either catch pokemon or run away
+                    await catchPokemon(message, encounter, user, lead);
+                }
+            
+                removeTransaction(message.author.id);
             }
-        
-            removeTransaction(message.author.id);
-        
         //20% chance to find money
         } else if (random <= moneyChance) {
             var moneyAmnt = 48;
@@ -838,13 +465,270 @@ client.on('message', async (message) => {
 
             message.react(kukui.id);
             message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
-            return;
         }
     }
-});
+}
 
 /**
- * Sends a Discord message to a specific channel.
+ * Determines the percentage of a user encountering a wild Pokemon
+ * in their current location based on their lead Pokemon's ability
+ * and held item.
+ * 
+ * @param {string} ability The ability of the lead Pokemon.
+ * @param {string} item The item held by the lead.
+ * @param {string} region The region the user is currently at.
+ * @param {string} location The location the user is currently at.
+ * @param {string} field The field the user is using to encounter Pokemon. 
+ * 
+ * @returns {number} The chance (in percent out of 100) of a user encountering a Pokemon.
+ */
+function getEncounterChanceForLocation(ability, item, region, location, field) {
+    let encounterChance = 8 * spamEncounterMult;
+    /** Doubles encounter chance everywhere. */
+    if (ability === "Arena Trap" || ability === "Illuminate" || ability === "Swarm") {
+        encounterChance = encounterChance * 2;
+    /** Increases encounter chance by 50% everywhere. */
+    } else if (ability === "No Guard") {
+        encounterChance = encounterChance * 1.5;
+    /** Halves encounter chance everywhere. */
+    } else if (ability === "Quick Feet" || ability === "Stench" || ability === "White Smoke") {
+        encounterChance = encounterChance / 2;
+    /** Halves encounter chance in sandstorm. */
+    } else if (ability === "Sand Veil") {
+        for (location in sandstorm) {
+            if (location.region === region && location.location === location) {
+                encounterChance = encounterChance / 2;
+            }
+        }
+    /** Halves encounter chance in snow and hail. */
+    } else if (ability === "Snow Cloak") {
+        for (location in hailing) {
+            if (location.region === region && location.location === location) {
+                encounterChance = encounterChance / 2;
+            }
+        }
+        for (location in snowing) {
+            if (location.region === region && location.location === location) {
+                encounterChance = encounterChance / 2;
+            }
+        }
+    /** Doubles encounter rate while fishing. */
+    } else if (ability === "Sticky Hold" || ability === "Suction Cups") {
+        if (field === "Super Rod" || field === "Good Rod" || field === "Old Rod") {
+            encounterChance = encounterChance * 2;
+        }
+    }
+
+    /** Reduces encounter chance to a third. */
+    if (item === "Cleanse Tag") {
+        encounterChance = encounterChance / 3;
+    }
+
+    return encounterChance;
+}
+
+/**
+ * Checks if user sent a command, and performs that command's
+ * actions if so.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} input The content of the user's message.
+ * @param {string} command The text command sent from the user within the message.
+ * 
+ * @returns {boolean} True if user sent a command.
+ */
+async function doCommand(message, input, command) {
+    let isMessageACommand = true;
+    let commandStatus = false;
+    if (command === "a" || command === "ability") {
+        commandStatus = await runAbilityCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runAbilityCommand() : input=" + input)
+        }
+    } else if (command === "begin") {
+        commandStatus = await runBeginCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runBeginCommand()");
+        }
+    } else if (command === "b" || command === "bag" || command === "🅱") {
+        commandStatus = await runBagCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runBagCommand()");
+        }
+    } else if (command === "d" ||command === "dex" || command === "pokedex" || command === "pokédex") {
+        commandStatus = await runDexCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runDexCommand() : input=" + input);
+        }
+    } else if (command === "daycare") {
+        commandStatus = await runDaycareCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runDaycareCommand() : input=" + input);
+        }
+    } else if (command === "dive") {
+        commandStatus = await runDiveCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runDiveCommand()");
+        }
+    } else if (command === "e" || command === "encounter" || command === "encounters") {
+        commandStatus = await runEncounterCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runEncounterCommand()");
+        }
+    } else if (command === "fish" || command === "f") {
+        commandStatus = await runFishCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runFishCommand()");
+        }
+    } else if ((command === "g" || command === "give") && input.length > 0) {
+        commandStatus = await runGiveCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runGiveCommand() : input=" + input);
+        }
+    } else if ((command === "goto" || command === "go") && input.length > 0) {
+        commandStatus = await runGotoCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runGotoCommand() : input=" + input);
+        }
+    } else if (command === "h" || command === "help") {
+        commandStatus = await runHelpCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runHelpCommand() : input=" + input);
+        }
+    } else if (command === "headbutt") {
+        commandStatus = await runHeadbuttCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runHeadbuttCommand()");
+        }
+    } else if (command === "l" ||command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
+        commandStatus = await runLeadCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runLeadCommand()");
+        }
+    } else if (command === "locations") {
+        commandStatus = await runLocationsCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runLocationsCommand()");
+        }
+    } else if (command === "lotto" ||command === "daily" || command === "lottery") {
+        commandStatus = await runLottoCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runLottoCommand() : user id=" + message.author.id);
+        }
+    } else if (command === "m" || command === "move" || command === "attack") {
+        commandStatus = await runMoveCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runMoveCommand() : input=" + input);
+        }
+    } else if (command === "mart" || command === "shop" || command === "sell" || command === "buy") {
+        commandStatus = await runMartCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runMartCommand()");
+        }
+    } else if (command === "p" || command === "pokemon" || command === "pokémon") {
+        commandStatus = await runPokemonCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runPokemonCommand()");
+        }
+    } else if ((command === "r" || command === "release") && input.length > 0) {
+        commandStatus = await runReleaseCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runReleaseCommand()");
+        }
+    } else if (command === "rock" || command === "rocksmash") {
+        commandStatus = await runRocksmashCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runRocksmashCommand() : input=" + input);
+        }
+    } else if ((command === "s" || command === "swap" || command === "switch" || command === "select" || command === "setlead") && input.length > 0) {
+        commandStatus = await runSetLeadCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runSetLeadCommand() : input=" + input);
+        }
+    } else if (command === "surf") {
+        commandStatus = await runSurfCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runSurfCommand()");
+        }
+    } else if (command === "t" || command === "take") {
+        commandStatus = await runTakeCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runTakeCommand()");
+        }
+    } else if (command === "travel") {
+        commandStatus = await runTravelCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runTravelCommand() : input=" + input);
+        }
+    } else if (command === "trade") {
+        commandStatus = await runTradeCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runTradeCommand()");
+        }
+    } else if ((command === "u" || command === "use") && input.length > 0) {
+        commandStatus = await runUseCommand(message, input);
+        if (!commandStatus) {
+            console.log("[ERROR] runUseCommand() : input=" + input);
+        }
+    } else if (command === "w" || command === "where" || command === "locate") {
+        commandStatus = await runWhereCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runWhereCommand()");
+        }
+    } else if (command === "walk") {
+        commandStatus = await runWalkCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runWalkCommand()");
+        }
+    } else if (command === "weather" || command === "forecast") {
+        commandStatus = await runWeatherCommand(message);
+        if (!commandStatus) {
+            console.log("[ERROR] runWeatherCommand()");
+        }
+    } else {
+        isMessageACommand = false;
+    }
+
+    return new Promise(function(resolve) {
+        resolve(isMessageACommand);
+    });
+}
+
+/**
+ * Checks if user is in the process of evolving a Pokemon.
+ * This function contains commands that the user is allowed
+ * to run while evolving a Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} command The text command sent from the user within the message.
+ * 
+ * @returns {boolean} True if user has a Pokemon that is evolving.
+ */
+async function checkIfUserIsEvolving(message, command) {
+    let ev = isInEvolution(message.author.id);
+    let isEvolving = false;
+    if(ev != null) { //if sender has a pokemon evolving
+        isEvolving = true;
+        if(command === "a") { //sender accepts evo
+            await evolve(message);
+        } else if (command === "b") { //sender cancels evo
+            await cancelEvolve(message);
+        } else if (command === "l" || command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
+            commandStatus = await runLeadCommand(message, input);
+            if (!commandStatus) {
+                console.log("[ERROR] runLeadCommand()");
+            }
+        } else {
+            await sendMessage(message.channel, (message.author.username + " please finish " + ev.from + "'s evolution into " + ev.to + ". Type \"B\" to cancel or  \"A\" to accept."));
+        }
+    }
+    return new Promise(function(resolve) {
+        resolve(isEvolving);
+    });
+}
+
+/**
+ * Sends a Discord message to a specific channel and catches any possible errors.
  * 
  * @param {TextChannel} channel The Discord channel to send the message to.
  * @param {any} content The content of the message. Can be a string or an embed object.
