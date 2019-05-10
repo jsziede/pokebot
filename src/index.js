@@ -57,7 +57,7 @@ var birb;
 */
 var enableSpam = true;     //default = false
 var spamXpMult = 1;         //default = 1
-var spamEncounterMult = 1;  //default = 1
+var spamEncounterMult = 100;  //default = 1
 
 /**
  *  Global Variables
@@ -3556,7 +3556,7 @@ async function setField(message, field) {
  * out of nicknaming the Pokemon.
  */
 async function nicknamePokemon(message, name) {
-    message.channel.send(message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name.");
+    await message.channel.send(message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name.");
     var cancel = false;
     var input = null;
     while(cancel == false) {
@@ -3584,11 +3584,11 @@ async function nicknamePokemon(message, name) {
     }
     
     if (input < 1) {
-        message.channel.send(message.author.username + " decided not to nickname their " + name + ".");
+        await message.channel.send(message.author.username + " decided not to nickname their " + name + ".");
         return name;
     }
     
-    message.channel.send(message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
+    await message.channel.send(message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
     cancel = false;
     input = null;
     while(cancel == false) {
@@ -3620,7 +3620,7 @@ async function nicknamePokemon(message, name) {
     if (input == null) {
         return name;
     } else {
-        message.channel.send(message.author.username + " nicknamed their " + name + " '" + input + "'.");
+        await message.channel.send(message.author.username + " nicknamed their " + name + " '" + input + "'.");
         return input;
     }
 }
