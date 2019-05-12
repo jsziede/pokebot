@@ -758,17 +758,15 @@ async function sendMessage(channel, content) {
  * @returns {any[]} The query results.
  */
 async function doQuery(query, variables) {
-    let queryReturn = null;
-    await con.query(query, variables, function (err, rows) {
-        if (err) {
-            console.error(err);
-        } else {
-            queryReturn = rows;
-        }
-    });
-
-    return new Promise(function(resolve) {
-        resolve(queryReturn);
+    return new Promise(async function(resolve) {
+        await con.query(query, variables, function (err, rows) {
+            if (err) {
+                console.error(err);
+                resolve(null);
+            } else {
+                resolve(rows);
+            }
+        });
     });
 }
 
@@ -2215,116 +2213,63 @@ async function createNewUser(userID, name, message, region) {
     let visa = new Item((region + " Visa"), 1, false, true);
     
     starter.nick = await nicknamePokemon(message, starter.name);
-    await addPokemon(userID, starter);
 
-    let query = "SELECT * FROM pokemon WHERE current_trainer = ?";
-    await con.query(query, [userID], async function (err, row) {
-        if (err) {
-            console.error(err);
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
-        let lead_id = row[0].pokemon_id;
-        let set = {
-            user_id: userID,
-            level: 5,
-            region: starter.region,
-            location: starter.location,
-            field: "Walking",
-            lead: lead_id,
-            money: 5000,
-            lotto: "2018-06-21T00:12:45-04:00"
-        }
-        let user_query = "INSERT INTO user SET ?";
-        await con.query(user_query, [set], async function (err) {
-            if (err) {
-                console.error(err);
-                return new Promise(function(resolve) {
-                    resolve(false);
-                });
-            }
-            let prefs_set = {
-                user_id: userID,
-                react_money: 1,
-                react_encounter: 1,
-                react_move: 1,
-                react_level: 1,
-                ping_money: 0,
-                ping_move: 1,
-                ping_encounter: 1,
-                ping_level: 0,
-                timezone: "America/Detroit"
-            }
-            let user_prefs_query = "INSERT INTO user_prefs SET ?";
-            await con.query(user_prefs_query, [prefs_set], async function (err) {
-                if (err) {
-                    console.error(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                } else {
-                    let user = await getUser(userID);
-                    if (user === null) {
-                        return new Promise(function(resolve) {
-                            resolve(false);
-                        });
-                    }
-                    await addToPokedex(user, starter.no);
-                }
-            });
-        });
-    });
-    let bag_set = {
+    let user_set = {
+        user_id: userID,
+        level: 5,
+        region: starter.region,
+        location: starter.location,
+        field: "Walking",
+        lead: null,
+        money: 5000,
+        lotto: "2018-06-21T00:12:45-04:00"
+    }
+
+    let prefs_set = {
+        user_id: userID,
+        react_money: 1,
+        react_encounter: 1,
+        react_move: 1,
+        react_level: 1,
+        ping_money: 0,
+        ping_move: 1,
+        ping_encounter: 1,
+        ping_level: 0,
+        timezone: "America/Detroit"
+    }
+
+    let everstone_set = {
         owner: userID,
         name: everstone.name,
         quantity: 1,
         holdable: 1,
         category: "Item"
     }
-    let bag_query = "INSERT INTO bag SET ?";
-    con.query(bag_query, [bag_set], function (err) {
-        if (err) {
-            console.error(err);
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
-    });
 
-    bag_set = {
+    let ball_set = {
         owner: userID,
         name: balls.name,
         quantity: 10,
         holdable: 1,
         category: "Ball"
     }
-    bag_query = "INSERT INTO bag SET ?";
-    con.query(bag_query, [bag_set], function (err) {
-        if (err) {
-            console.error(err);
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
-    });
 
-    bag_set = {
+    let visa_set = {
         owner: userID,
         name: visa.name,
         quantity: 1,
         holdable: 0,
         category: "Key"
     }
-    bag_query = "INSERT INTO bag SET ?";
-    con.query(bag_query, [bag_set], function (err) {
-        if (err) {
-            console.error(err);
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
-    });
+
+    await doQuery("INSERT INTO user SET ?", [user_set]);
+    await doQuery("INSERT INTO user_prefs SET ?", [prefs_set]);
+    await doQuery("INSERT INTO item SET ?", [everstone_set]);
+    await doQuery("INSERT INTO item SET ?", [ball_set]);
+    await doQuery("INSERT INTO item SET ?", [visa_set]);
+    let newPokemon = await addPokemon(userID, starter);
+    await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon.insertId, userID]);
+
     return new Promise(function(resolve) {
         resolve(true);
     });
@@ -3051,7 +2996,7 @@ async function getUser(userid) {
  */
 async function getBag(userid) {
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM bag WHERE bag.owner = ? AND bag.quantity > 0';
+        var query_str = 'SELECT * FROM item WHERE item.owner = ? AND item.quantity > 0';
         con.query(query_str, userid, function (err, rows) {
             if (err) {
                 console.log(err);
@@ -3149,7 +3094,7 @@ async function fixEvolutions() {
  */
 async function getBalls(userid) {
     return new Promise(function(resolve) {
-        var query_str = `SELECT * FROM pokebot.bag WHERE owner = ? AND category = "Ball" AND quantity > 0;`;
+        var query_str = `SELECT * FROM pokebot.item WHERE owner = ? AND category = "Ball" AND quantity > 0;`;
         con.query(query_str, [userid], function (err, rows) {
             if (err) {
                 console.error(err);
@@ -3169,7 +3114,7 @@ async function getBalls(userid) {
  */
 async function getRods(userid) {
     return new Promise(function(resolve) {
-        var query_str = `SELECT * FROM pokebot.bag WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0;`;
+        var query_str = `SELECT * FROM pokebot.item WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0;`;
         con.query(query_str, [userid], function (err, rows) {
             if (err) {
                 console.error(err);
@@ -3190,7 +3135,7 @@ async function getRods(userid) {
  */
 async function getItem(itemid) {
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM bag WHERE bag.item_id = ?';
+        var query_str = 'SELECT * FROM item WHERE item.item_id = ?';
         con.query(query_str, [itemid], function (err, rows) {
             if (err) {
                 console.error(err);
@@ -3721,14 +3666,6 @@ function addPokemon(userid, pokemon) {
             level_current: pokemon.level,
             xp: pokemon.totalxp,
             friendship: pokemon.friendship,
-            move_1: pokemon.moves[0],
-            move_1_pp: movePP[0],
-            move_2: pokemon.moves[1],
-            move_2_pp: movePP[1],
-            move_3: pokemon.moves[2],
-            move_3_pp: movePP[2],
-            move_4: pokemon.moves[3],
-            move_4_pp: movePP[3],
             stat_hp: pokemon.stats[0],
             iv_hp: pokemon.IVs[0],
             ev_hp: pokemon.EVs[0],
@@ -3761,13 +3698,34 @@ function addPokemon(userid, pokemon) {
             evolving: pokemon.evolving,
             personality: pokemon.pv
         }
+
         var query = "INSERT INTO pokemon SET ?";
-        con.query(query, [set], function (err) {
+        con.query(query, [set], async function (err, result) {
             if (err) {
                 console.log(err);
                 resolve(false);
             } else {
-                resolve(true);
+                let i = 0;
+                for (i; i < pokemon.moves.length; i++) {
+                    if (pokemon.moves[i] != null) {
+                        let move_set = {
+                            pokemon: result.insertId,
+                            name: pokemon.moves[i],
+                            max_pp: movePP[i],
+                            current_pp: movePP[i],
+                            known: 1
+                        }
+                        query = "INSERT INTO move SET ?";
+                        await con.query(query, [move_set], function (err) {
+                            if (err) {
+                                console.log(err);
+                                resolve(false);
+                            } else {
+                                resolve(true);
+                            }
+                        });
+                    }
+                }
             }
         });
     });
@@ -3852,7 +3810,7 @@ function doesUserHaveHoldableItem(bag, item) {
  */
 function addItemToBag(userid, itemName, amount, isHoldable, cat) {
     return new Promise(function(resolve) {
-        var query = "SELECT * from bag WHERE bag.owner = ? AND bag.name = ?";
+        var query = "SELECT * from item WHERE item.owner = ? AND item.name = ?";
         con.query(query, [userid, itemName], function (err, bag) {
             if (err) {
                 resolve(false);
@@ -3869,7 +3827,7 @@ function addItemToBag(userid, itemName, amount, isHoldable, cat) {
                     holdable: hold,
                     category: cat
                 }
-                var newQuery = "INSERT INTO bag SET ?";
+                var newQuery = "INSERT INTO item SET ?";
                 con.query(newQuery, set, function(err) {
                     if (err) {
                         resolve(false);
@@ -3879,7 +3837,7 @@ function addItemToBag(userid, itemName, amount, isHoldable, cat) {
                 });
             } else {
                 var quantity = bag[0].quantity + amount;
-                var newQuery = "UPDATE bag SET quantity = ? WHERE bag.owner = ? AND bag.name = ?";
+                var newQuery = "UPDATE item SET quantity = ? WHERE item.owner = ? AND item.name = ?";
                 con.query(newQuery, [quantity, userid, itemName], function(err) {
                     if (err) {
                         resolve(false);
@@ -3903,14 +3861,14 @@ function addItemToBag(userid, itemName, amount, isHoldable, cat) {
  */
 function removeItemFromBag(userid, itemName, amount) {
     return new Promise(function(resolve, reject) {
-        var query = "SELECT * from bag WHERE bag.owner = ? AND bag.name = ? AND bag.quantity > 0";
+        var query = "SELECT * from item WHERE item.owner = ? AND item.name = ? AND item.quantity > 0";
         con.query(query, [userid, itemName], function (err, bag) {
             if (err) {
                 return reject(err);
             }
             if (bag.length > 0) {
                 var updatedQuantity = bag[0].quantity - amount;
-                var newQuery = " UPDATE bag SET bag.quantity = ? WHERE bag.owner = ? AND bag.name = ?";
+                var newQuery = " UPDATE item SET item.quantity = ? WHERE item.owner = ? AND item.name = ?";
                 con.query(newQuery, [updatedQuantity, userid, itemName], function(err) {
                     if (err) {
                         resolve(false);
@@ -4049,17 +4007,13 @@ function addEvolutionToPokemon(pokemon) {
  * 
  * @returns {boolean} True if the Pokemon's moves were updated.
  */
-function updateMoves(pokemon, moves) {
-    return new Promise(function(resolve, reject) {
-        var query_str = 'UPDATE pokemon SET pokemon.move_1 = ?, pokemon.move_1_pp = ?, pokemon.move_2 = ?, pokemon.move_2_pp = ?, pokemon.move_3 = ?, pokemon.move_3_pp = ?, pokemon.move_4 = ?, pokemon.move_4_pp = ? WHERE pokemon_id = ?';
-        con.query(query_str, [moves[0].name, moves[0].pp, moves[1].name, moves[1].pp, moves[2].name, moves[2].pp, moves[3].name, moves[3].pp, pokemon.pokemon_id], function (err) {
-            if (err) {
-                return reject(err);
-            } else {
-                resolve(true);
-            }
-        });
-    });
+async function updateMoves(pokemon, moves) {
+    const moveNames = moves.map(move => move.name);
+    await doQuery('UPDATE moves SET moves.known = 0 WHERE moves.pokemon = ? AND NOT moves.name IN ?', [pokemon.pokemon_id, moveNames]);
+    for (move in moves) {
+        let status = await doQuery('UPDATE moves SET moves.known = 1 WHERE moves.pokemon = ? AND moves.name = ?', [pokemon.pokemon_id, move.name]);
+        console.log(status);
+    }
 }
 
 /**
