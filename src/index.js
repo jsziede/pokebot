@@ -9417,7 +9417,7 @@ async function displayAnOwnedPkmn(pkmn, message) {
 
     let moves = await getPokemonKnownMoves(pkmn.pokemon_id);
     if (moves === null) {
-        console.warn("Pokemon " + pkmn.pokemon_id + " has null moves!");
+        console.warn(chalk`{yellow [WARNING]} Pokemon ` + pkmn.pokemon_id + ` has null moves!`);
     }
     let i = 0;
     let movesString = "";
