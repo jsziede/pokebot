@@ -56,7 +56,7 @@ var birb;
  *  Debug Tools
 */
 var enableSpam = true;     //default = false
-var spamXpMult = 1;         //default = 1
+var spamXpMult = 2;         //default = 1
 var spamEncounterMult = 1;  //default = 1
 
 /**
@@ -5778,6 +5778,8 @@ function levelUp(pokemon) {
  * function rather than pass an argument.
  * @todo This should simply return a list of moves that the Pokemon can learn
  * and the actual move learning should be handled in a different function.
+ * @todo Add a flag that determines whether or not moves were changed so that a DB hit
+ * isn't always needed.
  * 
  * @param {Message} message The Discord message sent from the user.
  * @param {Pokemon} pokemon The Pokemon that is being checked for a new move,
@@ -5871,6 +5873,7 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                 } else {
                     //already knows the move
                 }
+                await updateMoves(pokemon, moves);
             }
         }
     } else if (pokemon.name === "Wormadam" || pokemon.name === "Shaymin" || pokemon.name === "Deoxys" || pokemon.name === "Hoopa" || pokemon.name === "Lycanroc") {
@@ -5920,6 +5923,7 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                 } else {
                     //already knows the move
                 }
+                await updateMoves(pokemon, moves);
             }
         }
     } else if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[0].hasOwnProperty("variations")) {
@@ -5969,6 +5973,7 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                 } else {
                     //already knows the move
                 }
+                await updateMoves(pokemon, moves);
             }
         }
     } else {
@@ -6019,6 +6024,7 @@ async function checkForNewMove(message, pokemon, askForResponse) {
                 } else {
                     //already knows the move
                 }
+                await updateMoves(pokemon, moves);
             }
         }
     }    
@@ -6212,30 +6218,25 @@ async function teachNewMove(message, pokemon, moveName) {
 
     if (input === 0) {
         message.channel.send(message.author.username + " cancelled teaching " + name + " the move " + moveName + ".");
-        return moves;
     } else if (input === 1) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[0].name + " and learned " + moveName + ".");
         moves[0].name = moveName;
         moves[0].pp = getMovePP(moveName);
-        return moves;
     } else if (input === 2) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[1].name + " and learned " + moveName + ".");
         moves[1].name = moveName;
         moves[1].pp = getMovePP(moveName);
-        return moves;
     } else if (input === 3) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[2].name + " and learned " + moveName + ".");
         moves[2].name = moveName;
         moves[2].pp = getMovePP(moveName);
-        return moves;
     } else if (input === 4) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[3].name + " and learned " + moveName + ".");
         moves[3].name = moveName;
         moves[3].pp = getMovePP(moveName);
-        return moves;
-    } else {
-        return moves;
     }
+
+    return moves;
 }
 
 /**
@@ -6529,7 +6530,6 @@ async function giveXP(message, amount) {
     }
 
     await doQuery("UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?", [pokemon, pokemon.pokemon_id]);
-    await updateMoves(pokemon, moves);
 
     return true;
 }
