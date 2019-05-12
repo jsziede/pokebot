@@ -3151,6 +3151,21 @@ async function getItem(itemid) {
 }
 
 /**
+ * Changes a list of move objects into a list of just the move names.
+ * 
+ * @param {Move[]} moves The list of moves to convert.
+ * 
+ * @returns {string[]} The name of each move in the same order as the objects were.
+ */
+function convertMovesObjectToNames(moves) {
+    let i = 0;
+    for (i; i < moves.length; i++) {
+        moves[i] = moves[i].name;
+    }
+    return moves;
+}
+
+/**
  * Sets a user's field (walking, surfing, diving, etc).
  * 
  * @param {Message} message The Discord message sent from the user
@@ -3189,6 +3204,9 @@ async function setField(message, field) {
     } catch (err) {
         locationData = null;
     }
+
+    let moves = await getPokemonKnownMoves(lead.pokemon_id);
+    moves = convertMovesObjectToNames(moves);
     
     var curField = user.field;
     var canSurf = false;
@@ -3217,7 +3235,8 @@ async function setField(message, field) {
             message.channel.send(message.author.username + " you cannot surf here.");
             return false;
         } else {
-            var moves = [lead.move_1, lead.move_2, lead.move_3, lead.move_4];
+            var moves = await getPokemonKnownMoves(lead.pokemon_id);
+            
             if (moves.indexOf("Surf") >= 0) {
                 var i;
                 for (i = 0; i < locationData.pokemon.length; i++) {
