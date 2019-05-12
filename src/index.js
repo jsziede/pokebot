@@ -54,9 +54,10 @@ var birb;
 /**
  *  Debug Tools
 */
-var enableSpam = true;     //default = false
-var spamXpMult = 2;         //default = 1
-var spamEncounterMult = 1;  //default = 1
+const enableSpam = true;        //default = false
+const spamXpMult = 2;           //default = 1
+const spamEncounterMult = 1;    //default = 1
+const baseMoneyChance = 20;     //default = 20
 
 /**
  *  Global Variables
@@ -391,16 +392,13 @@ async function doNonCommandMessage(message) {
         }
     }
     
-    var random = Math.ceil(Math.random() * 100);
-    var baseMoneyChance = 20;
-    var moneyChance = baseMoneyChance;
+    let random = Math.ceil(Math.random() * 100);
     
     let user = await getUser(message.author.id);
     if (user === null) {
         return;
     }
 
-    //gets the sender's lead pokemon and checks its ability
     let lead = await getLeadPokemon(message.author.id);
     if (lead === null) {
         console.warn(chalk`yellow {[Warning]} User` + message.author.id + `exists but doesn't have lead Pokemon.`);
@@ -409,61 +407,90 @@ async function doNonCommandMessage(message) {
     
     let encounterChance = getEncounterChanceForLocation(lead.ability, lead.item, user.region, user.location, user.field);
 
-    //if sender encounters a pokemon
+    /* User encounters a wild Pokemon. */
     if (random <= encounterChance) {
-        var encounter = await encounterPokemon(message, user, lead);
-    
+        let encounter = await generateWildPokemon(message, user, lead);
         if (encounter != null) {
-            //shows the wild pokemon to the sender
-            await displayAWildPkmn(encounter, message);
-        
-            transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
-        
-            var dexnum = encounter.no.toString();
-            while (dexnum.length < 3) { //prepends 0s to the string if less than three characters long
-                dexnum = '0' + dexnum;
-            }
-            var shuffle_icon = client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
-            message.react(shuffle_icon.id);
-            
-            var choice = 1;
-
-            if (choice === 0) {
-                //await battleWildPokemon(message, encounter);
-            } else if (choice === 1) {
-                //waits for user to either catch pokemon or run away
-                await catchPokemon(message, encounter, user, lead);
-            }
-        
-            removeTransaction(message.author.id);
+            await encounterWildPokemon(message, encounter, user, lead);
         }
-    //20% chance to find money
-    } else if (random <= moneyChance) {
-        var moneyAmnt = 48;
-        moneyAmnt += Math.ceil(Math.random() * 150);
+    /* User is given money. */
+    } else if (random <= baseMoneyChance) {
+        /* Give a random amount of money to the user. */
+        let moneyAmnt = Math.ceil(Math.random() * 150);
         moneyAmnt += Math.ceil(Math.random() * 100);
-    
-        moneyAmnt = Math.floor(((user.level / 100) + 1).toFixed(1) * moneyAmnt);
-        user.money += moneyAmnt;
-    
-        var newQuery = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
-        con.query(newQuery, [user.money, message.author.id], function(err) {
-            if (err) {
-                console.log(err);
-            }
-        });
-
-        message.react(kukui.id);
-        message.channel.send(message.author.username + " found " + dollar + moneyAmnt.toString() + "!\nYou now have " + dollar + user.money + ".");
+        moneyAmnt += Math.ceil(Math.random() * 50);
+        await giveMoney(moneyAmnt, user);
+    /* User's lead Pokemon is given XP. */
     } else {
-        //gives between 3 and 60 xp to the sender's lead pokemon
-        var xpAmount = Math.ceil(Math.random() * 10);
+        /* Give a random amount of XP to the user lead Pokemon. */
+        let xpAmount = Math.ceil(Math.random() * 5);
+        xpAmount += Math.ceil(Math.random() * 10);
         xpAmount += Math.ceil(Math.random() * 20);
-        xpAmount += Math.ceil(Math.random() * 30);
         xpAmount = xpAmount * spamXpMult;
         await giveXP(message, xpAmount);
         await giveDayCareXP(message);
     }
+}
+
+/**
+ * Walks a user through the process of catching a wild Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} encounter The wild Pokemon to be encountered.
+ * @param {User} user The Pokebot user.
+ * @param {Pokemon} lead The user's lead Pokemon.
+ */
+async function encounterWildPokemon(message, encounter, user, lead) {
+    /* Show details about the wild Pokemon. */
+    await displayAWildPkmn(encounter, message);
+
+    transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
+    
+    let shuffle_icon = await getShuffleEmoji(encounter.no);
+    await message.react(shuffle_icon.id);
+
+    //waits for user to either catch pokemon or run away
+    await throwPokeBall(message, encounter, user, lead);
+
+    removeTransaction(message.author.id);
+}
+
+/**
+ * Gets a Pokemon's Shuffle icon as an emoji.
+ * 
+ * @param {number} number The national Pokedex number of the Pokemon.
+ * 
+ * @returns {Emoji} The Shuffle emoji of the Pokemon.
+ */
+async function getShuffleEmoji(number) {
+    let dexnum = number.toString();
+    while (dexnum.length < 3) {
+        dexnum = '0' + dexnum;
+    }
+    let shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
+    return new Promise(function(resolve) {
+        resolve(shuffle_icon);
+    });
+}
+
+/**
+ * Adds Pokemon dollars to a user's account.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {number} amount The amount of money.
+ * @param {User} user The Pokebot user.
+ * 
+ * @returns {any[]} The result of the query that adds money to a user.
+ */
+async function giveMoney(message, amount, user) {
+    let queryStatus = await doQuery("UPDATE user SET user.money = user.money + ? WHERE user.user_id = ?", [amount, user.user_id]);
+    if (queryStatus != null) {
+        await message.react(kukui.id);
+        await sendMessage(message.channel, message.author.username + " found " + dollar + moneyAmnt.toString() + "! You now have " + dollar + user.money + ".");
+    }
+    return new Promise(function(resolve) {
+        resolve(queryStatus);
+    });
 }
 
 /**
@@ -8480,7 +8507,7 @@ async function confirmRelease(message, pkmn) {
  * 
  * @returns {Pokemon} The Pokemon that was generated.
  */
-async function encounterPokemon(message, user, lead) {
+async function generateWildPokemon(message, user, lead) {
     var region = user.region;
     var location = user.location;
     var leadLevel = lead.level_current;
@@ -8746,7 +8773,7 @@ async function battleWildPokemon(message, wild) {
  * 
  * @returns {boolean} True if the user caught the Pokemon.
  */
-async function catchPokemon(message, wild, user, lead) {
+async function throwPokeBall(message, wild, user, lead) {
     var path = generatePokemonJSONPath(wild.name);
     var data;
     try {
