@@ -7,10 +7,13 @@
   "license": "GPL-3.0",
   "dependencies": {
     "bufferutil": "^3.0.5",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "chalk": "^2.4.2",
     "discord.js": "^11.4.2",
     "erlpack": "github:discordapp/erlpack",
     "libsodium-wrappers": "^0.7.4",
+    "mocha": "^6.1.4",
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.17",
     "mysql": "^2.15.0",
@@ -26,5 +29,8 @@
     "sodium": "^3.0.2",
     "sqlite3": "^4.0.0",
     "uws": "^9.148.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }

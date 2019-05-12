@@ -2268,7 +2268,6 @@ async function createNewUser(userID, name, message, region) {
     await doQuery("INSERT INTO item SET ?", [ball_set]);
     await doQuery("INSERT INTO item SET ?", [visa_set]);
     let newPokemon = await addPokemon(userID, starter);
-    console.log(newPokemon);
     await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon, userID]);
 
     return new Promise(function(resolve) {
@@ -6024,29 +6023,29 @@ async function checkForNewMove(message, pokemon, askForResponse) {
  */
 async function teachNewMove(message, pokemon, moveName) {
     let knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
-        let moves = [
-            {
-                name: null,
-                pp: null
-            },
-            {
-                name: null,
-                pp: null
-            },
-            {
-                name: null,
-                pp: null
-            },
-            {
-                name: null,
-                pp: null
-            }
-        ]
-        let i = 0;
-        for (i; i < knownMoves.length; i++) {
-            moves[i].name = knownMoves[i].name;
-            moves[i].pp = knownMoves[i].current_pp;
+    let moves = [
+        {
+            name: null,
+            pp: null
+        },
+        {
+            name: null,
+            pp: null
+        },
+        {
+            name: null,
+            pp: null
+        },
+        {
+            name: null,
+            pp: null
         }
+    ]
+    let i = 0;
+    for (i; i < knownMoves.length; i++) {
+        moves[i].name = knownMoves[i].name;
+        moves[i].pp = knownMoves[i].current_pp;
+    }
     var m;
     var fields = [];
     var name;
