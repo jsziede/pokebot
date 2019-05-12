@@ -1,18 +1,17 @@
 /**
-//  Pokébot - A simulation of the Pokémon video games that runs in the Discord environment.
-//  Copyright (C) 2019 Joshua Sziede
+ *  Pokébot - A simulation of the Pokémon video games that runs in the Discord environment.
+ *  Copyright (C) 2019 Joshua Sziede
 */
 
 /**
  *  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
- *  @todo Learned Pokemon moves should be moved to their own table. This way we can keep track of what moves a Pokemon has learned that aren't part of its normal level up (such as egg moves) for the move relearner.
  *  @todo In the games, when a Pokemon is in the Day Care, its moves are replaced one by one in order of the move slot. Pokebot currently does an experimental optimal move replacement calculation instead. Will need to run tests to see how optimal this algorithm is, otherwise it should fall back to the day care method.
  *  @todo Add table for users who are currently inputting responses. This way if a user tries to do a command while Pokebot is awaiting input, Pokebot won't give two warning messages to the user.
  *  @todo All message sends need to be awaited, otherwise weirdness may happen.
- */
+*/
 
 /**
-//  Packages
+ *  Packages
 */
 const Discord = require('discord.js');
 const fs = require('fs');
@@ -32,8 +31,8 @@ const client = new Discord.Client({autoReconnect:true});
 /**
  *  MySQL DB Connection
 */
-var myconfig = require('../config/my_config');
-var con = mysql.createConnection(myconfig.database);
+const myconfig = require('../config/my_config');
+const con = mysql.createConnection(myconfig.database);
 con.connect(function(err) {
     if (err) {
         console.log(err);
@@ -62,8 +61,7 @@ var spamEncounterMult = 1;  //default = 1
 /**
  *  Global Variables
  *  @todo These might be better as database tables. 
- */
-
+*/
 var evolving = [];      // Stores all the users who have an evolving pokemon as well as the Pokemon that is evolving
 var trading = [];       // Stores all the users who are in the process of trading a Pokemon
 var transactions = [];  // Stores all users currently using a command
