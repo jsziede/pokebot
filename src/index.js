@@ -456,18 +456,26 @@ async function encounterWildPokemon(message, encounter, user, lead) {
 }
 
 /**
- * Gets a Pokemon's Shuffle icon as an emoji.
+ * Gets a Pokemon's Shuffle icon as an emoji. If argument
+ * is not a number, then attempts to get an emoji with
+ * that name.
  * 
- * @param {number} number The national Pokedex number of the Pokemon.
+ * @param {string} number The national Pokedex number of the Pokemon.
  * 
  * @returns {Emoji} The Shuffle emoji of the Pokemon.
  */
 async function getShuffleEmoji(number) {
-    let dexnum = number.toString();
-    while (dexnum.length < 3) {
-        dexnum = '0' + dexnum;
+    let shuffle_icon;
+    let pattern = /^\d+$/;
+    if (pattern.test(number)) {
+        let dexnum = number.toString();
+        while (dexnum.length < 3) {
+            dexnum = '0' + dexnum;
+        }
+        shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
+    } else {
+        shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === number);
     }
-    let shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
     return new Promise(function(resolve) {
         resolve(shuffle_icon);
     });
@@ -7678,7 +7686,7 @@ async function viewDayCare(message) {
         var i;
         for (i = 0; i < pokemon.length; i++) {
             var cost = 100 + ((pokemon[i].level_current - pokemon[i].level_at_daycare) * 100);
-            var shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === pokemon[i].number);
+            let shuffle_icon = await getShuffleEmoji(pokemon[i].number);
             var moves;
             if (pokemon[i].move_1 != null) {
                 moves = pokemon[i].move_1;
@@ -9852,7 +9860,7 @@ async function printPossibleEncounters(message) {
                 var w;
                 var walkString = "";
                 for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === possiblePokemon[x][w].no);
+                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
                     walkString += shuffle_icon;
                     if (possiblePokemon[x][w].hasIt) {
                         walkString += " " + poke_ball;
@@ -9905,7 +9913,7 @@ async function printPossibleEncounters(message) {
                 var w;
                 var surfString = "";
                 for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === possiblePokemon[x][w].no);
+                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
                     surfString += shuffle_icon;
                     if (possiblePokemon[x][w].hasIt) {
                         surfString += " " + poke_ball;
@@ -9958,7 +9966,7 @@ async function printPossibleEncounters(message) {
                 var w;
                 var fishString = "";
                 for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === possiblePokemon[x][w].no);
+                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
                     fishString += shuffle_icon;
                     if (possiblePokemon[x][w].hasIt) {
                         fishString += " " + poke_ball;
@@ -10011,7 +10019,7 @@ async function printPossibleEncounters(message) {
                 var w;
                 var rockSmashString = "";
                 for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === possiblePokemon[x][w].no);
+                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
                     rockSmashString += shuffle_icon;
                     if (possiblePokemon[x][w].hasIt) {
                         rockSmashString += " " + poke_ball;
@@ -10064,7 +10072,7 @@ async function printPossibleEncounters(message) {
                 var w;
                 var headbuttString = "";
                 for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === possiblePokemon[x][w].no);
+                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
                     headbuttString += shuffle_icon;
                     if (possiblePokemon[x][w].hasIt) {
                         headbuttString += " " + poke_ball;
@@ -10117,7 +10125,7 @@ async function printPossibleEncounters(message) {
                 var w;
                 var diveString = "";
                 for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === possiblePokemon[x][w].no);
+                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
                     diveString += shuffle_icon;
                     if (possiblePokemon[x][w].hasIt) {
                         diveString += " " + poke_ball;
@@ -10571,11 +10579,7 @@ async function getDexInfo(message, name, form) {
         }
 
         pkm = JSON.parse(dat);
-        dexNum = pkm.national_id.toString();
-        while (dexNum.length < 3) {
-            dexNum = '0' + dexNum;
-        }
-        shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexNum);
+        shuffle_icon = await getShuffleEmoji(pkm.national_id);
         evoFromString = shuffle_icon + " Evolves from " + evolvesFrom[0].name + " " + evolvesFrom[0].method;
         if (evolvesFrom.length > 1) {
             var f;
@@ -10589,11 +10593,7 @@ async function getDexInfo(message, name, form) {
                 }
 
                 pkm = JSON.parse(dat);
-                dexNum = pkm.national_id.toString();
-                while (dexNum.length < 3) {
-                    dexNum = '0' + dexNum;
-                }
-                shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexNum);
+                shuffle_icon = await getShuffleEmoji(pkm.national_id);
                 evoFromString += "\n" + shuffle_icon + " Evolves from " + evolvesFrom[f].name + " " + evolvesFrom[f].method;
             }
         }
@@ -10610,11 +10610,7 @@ async function getDexInfo(message, name, form) {
         }
 
         pkm = JSON.parse(dat);
-        dexNum = pkm.national_id.toString();
-        while (dexNum.length < 3) {
-            dexNum = '0' + dexNum;
-        }
-        shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexNum);
+        shuffle_icon = await getShuffleEmoji(pkm.national_id);
         evoToString = shuffle_icon + "Evolves into " + evolvesTo[0].name + " " + evolvesTo[0].method;
         if (evolvesTo.length > 1) {
             var f;
@@ -10632,7 +10628,7 @@ async function getDexInfo(message, name, form) {
                 while (dexNum.length < 3) {
                     dexNum = '0' + dexNum;
                 }
-                shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexNum);
+                shuffle_icon = await getShuffleEmoji(pkm.national_id);
                 evoToString += "\n" + shuffle_icon + "Evolves into " + evolvesTo[f].name + " " + evolvesTo[f].method;
             }
         }
@@ -11011,12 +11007,7 @@ async function printPokemon(message, otherUser) {
     let fieldString = null;
 
     for (i = 0; i < pokemon.length; i++) {
-        let dex_num = pokemon[i].number.toString();
-        while (dex_num.length < 3) {
-            dex_num = '0' + dex_num;
-        }
-        let shuffle_icon;
-        shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dex_num);
+        let shuffle_icon = await getShuffleEmoji(pokemon[i].number);
         let form = pokemon[i].form;
         if (form == null) {
             form = "";
@@ -11161,10 +11152,10 @@ async function printDex(message) {
             num = '0' + num;
         }
         if (pokedex.charAt(i) === '1') {
-            shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === num);
+            shuffle_icon = await getShuffleEmoji(i);
             name = getNameByNumber(i);
         } else {
-            shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === "missing");
+            shuffle_icon = await getShuffleEmoji("missing");
         }
         if (fieldString == null) {
             fieldString = shuffle_icon + " **#" + num + "** " + name + "\n";
