@@ -6023,24 +6023,30 @@ async function checkForNewMove(message, pokemon, askForResponse) {
  * @returns {move[]} The Pokemon's moveset after the owner has made a choice. 
  */
 async function teachNewMove(message, pokemon, moveName) {
-    var moves = [
-        {
-            name: pokemon.move_1,
-            pp: pokemon.move_1_pp
-        },
-        {
-            name: pokemon.move_2,
-            pp: pokemon.move_2_pp
-        },
-        {
-            name: pokemon.move_3,
-            pp: pokemon.move_3_pp
-        },
-        {
-            name: pokemon.move_4,
-            pp: pokemon.move_4_pp
+    let knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
+        let moves = [
+            {
+                name: null,
+                pp: null
+            },
+            {
+                name: null,
+                pp: null
+            },
+            {
+                name: null,
+                pp: null
+            },
+            {
+                name: null,
+                pp: null
+            }
+        ]
+        let i = 0;
+        for (i; i < knownMoves.length; i++) {
+            moves[i].name = knownMoves[i].name;
+            moves[i].pp = knownMoves[i].current_pp;
         }
-    ]
     var m;
     var fields = [];
     var name;
