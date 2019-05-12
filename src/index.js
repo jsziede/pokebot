@@ -3648,7 +3648,7 @@ function getMovePP(moveName) {
 }
 
 /**
- * Updates a user's Pokedex string by setting an index
+ * Updates a user's Pokedex string by setting an index (minus one)
  * of that string to '`1`'.
  * 
  * @todo Check if user already has the Pokemon registered in their
@@ -3659,15 +3659,15 @@ function getMovePP(moveName) {
  * @param {number} dexNum The national Pokedex number of the Pokemon
  * being added to the user's Pokedex.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {Query} The result of the database query.
  */
-function addToPokedex(user, dexNum) {
+async function addToPokedex(user, dexNum) {
+    /* Prevent off by one error since Pokedex count starts at one. */
+    dexNum = dexNum - 1;
     user.pokedex = user.pokedex.substring(0, dexNum) + '1' + user.pokedex.substring(dexNum + 1);
-    var query = "UPDATE user SET user.pokedex = ? WHERE user.user_id = ?";
-    con.query(query, [user.pokedex, user.user_id], function (err) {
-        if (err) {
-            console.log(err);
-        }
+    let queryResult = await doQuery("UPDATE user SET user.pokedex = ? WHERE user.user_id = ?", [user.pokedex, user.user_id]);
+    return new Promise(function(resolve) {
+        resolve(queryResult);
     });
 }
 
@@ -3759,6 +3759,9 @@ async function addPokemon(userid, pokemon) {
             await doQuery("INSERT INTO move SET ?", [move_set]);
         }
     }
+
+    let user = await getUser(userid);
+    await addToPokedex(user, pokemon.no);
 
     return new Promise(function(resolve) {
         resolve(newPokemon.insertId);
@@ -11144,14 +11147,14 @@ async function printDex(message) {
     let fieldCount = 0;
     let fieldString = null;
 
-    for (i = 1; i < 802; i++) {
+    for (i = 1; i < 810; i++) {
         let shuffle_icon;
         let name = "----------";
         let num = i.toString();
         while (num.length < 3) {
             num = '0' + num;
         }
-        if (pokedex.charAt(i) === '1') {
+        if (pokedex.charAt(i - 1) === '1') {
             shuffle_icon = await getShuffleEmoji(i);
             name = getNameByNumber(i);
         } else {
