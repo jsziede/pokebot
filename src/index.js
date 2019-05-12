@@ -3235,8 +3235,6 @@ async function setField(message, field) {
             message.channel.send(message.author.username + " you cannot surf here.");
             return false;
         } else {
-            var moves = await getPokemonKnownMoves(lead.pokemon_id);
-            
             if (moves.indexOf("Surf") >= 0) {
                 var i;
                 for (i = 0; i < locationData.pokemon.length; i++) {
@@ -3277,7 +3275,6 @@ async function setField(message, field) {
             message.channel.send(message.author.username + " you cannot dive here.");
             return false;
         } else {
-            var moves = [lead.move_1, lead.move_2, lead.move_3, lead.move_4];
             if (moves.indexOf("Dive") >= 0) {
                 var i;
                 for (i = 0; i < locationData.pokemon.length; i++) {
@@ -3318,7 +3315,6 @@ async function setField(message, field) {
             message.channel.send(message.author.username + " there are no trees worth headbutting here.");
             return false;
         } else {
-            var moves = [lead.move_1, lead.move_2, lead.move_3, lead.move_4];
             if (moves.indexOf("Headbutt") >= 0) {
                 var i;
                 for (i = 0; i < locationData.pokemon.length; i++) {
@@ -3359,7 +3355,6 @@ async function setField(message, field) {
             message.channel.send(message.author.username + " there are no rocks worth smashing here.");
             return false;
         } else {
-            var moves = [lead.move_1, lead.move_2, lead.move_3, lead.move_4];
             if (moves.indexOf("Rock Smash") >= 0) {
                 var i;
                 for (i = 0; i < locationData.pokemon.length; i++) {
@@ -4287,31 +4282,36 @@ async function useItem(message, item) {
         }
         var pkmn = JSON.parse(pdata);
         
-        var i;
         var moveName;
         if (item.includes("Confide")) {
             moveName = item.substring(6, item.length);
         } else {
             moveName = item.substring(5, item.length);
         }
-        var moves = [
+        let knownMoves = await getPokemonKnownMoves(lead.pokemon_id);
+        let moves = [
             {
-                name: lead.move_1,
-                pp: lead.move_1_pp
+                name: null,
+                pp: null
             },
             {
-                name: lead.move_2,
-                pp: lead.move_2_pp
+                name: null,
+                pp: null
             },
             {
-                name: lead.move_3,
-                pp: lead.move_3_pp
+                name: null,
+                pp: null
             },
             {
-                name: lead.move_4,
-                pp: lead.move_4_pp
+                name: null,
+                pp: null
             }
-        ];
+        ]
+        let i = 0;
+        for (i; i < knownMoves.length; i++) {
+            moves[i].name = knownMoves[i].name;
+            moves[i].pp = knownMoves[i].current_pp;
+        }
         var alreadyKnowsMove = false;
         var canLearnTM = false;
         if (lead.form === "Alolan") {
@@ -4319,7 +4319,7 @@ async function useItem(message, item) {
                 if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("tm") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === (pokemon.form + " " + pokemon.name) && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].tm === moveName) {
                     canLearnTM = true;
                     var m;
-                    for (m = 0; m < lead.moves.length; m++) {
+                    for (m = 0; m < moves.length; m++) {
                         if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
                             alreadyKnowsMove = true;
                         }
@@ -4354,7 +4354,7 @@ async function useItem(message, item) {
                 if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("tm") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move === moveName) {
                     canLearnTM = true;
                     var m;
-                    for (m = 0; m < lead.moves.length; m++) {
+                    for (m = 0; m < moves.length; m++) {
                         if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
                             alreadyKnowsMove = true;
                         }
