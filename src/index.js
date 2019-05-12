@@ -9335,6 +9335,20 @@ function getGifName(name) {
 }
 
 /**
+ * Gets all moves currently known by an owned Pokemon.
+ * 
+ * @param {number} pokemonId The id of the owned Pokemon.
+ * 
+ * @returns {any[]} All moves currently known by the Pokemon.
+ */
+async function getPokemonKnownMoves(pokemonId) {
+    let moves = await doQuery("SELECT * FROM move WHERE move.pokemon = ? AND move.known = 1", [pokemonId]);
+    return new Promise(function(resolve) {
+        resolve(moves);
+    });
+}
+
+/**
  * Sends a message containing detailed information about a Pokemon that is
  * owned by a trainer.
  * 
@@ -9401,18 +9415,18 @@ async function displayAnOwnedPkmn(pkmn, message) {
         typeString += ("\n" + type_icon + " " + pkmn.type_2);
     }
 
-    var movesString = pkmn.move_1;
-    if (pkmn.move_2 != "---" && pkmn.move_2 != null) {
-        movesString += "\n" + pkmn.move_2;
+    let moves = await getPokemonKnownMoves(pkmn.pokemon_id);
+    if (moves === null) {
+        console.warn("Pokemon " + pkmn.pokemon_id + " has null moves!");
     }
-    if (pkmn.move_3 != "---" && pkmn.move_3 != null) {
-        movesString += "\n" + pkmn.move_3;
-    }
-    if (pkmn.move_4 != "---" && pkmn.move_4 != null) {
-        movesString += "\n" + pkmn.move_4;
+    let i = 0;
+    let movesString = "";
+    for (i; i < moves.length; i++) {
+        movesString += moves[i].name;
+        movesString += "\n";
     }
     
-    message.channel.send({
+    await message.channel.send({
         "embed": {
             "author": {
                 "name": nick,
