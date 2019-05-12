@@ -2268,7 +2268,8 @@ async function createNewUser(userID, name, message, region) {
     await doQuery("INSERT INTO item SET ?", [ball_set]);
     await doQuery("INSERT INTO item SET ?", [visa_set]);
     let newPokemon = await addPokemon(userID, starter);
-    await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon.insertId, userID]);
+    console.log(newPokemon);
+    await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon, userID]);
 
     return new Promise(function(resolve) {
         resolve(true);
@@ -3630,9 +3631,9 @@ function addToPokedex(user, dexNum) {
  * @param {string} userid The id of the user who owns the Pokemon.
  * @param {Pokemon} pokemon The Pokemon object to insert into the database. 
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {number} The database id of the Pokemon.
  */
-function addPokemon(userid, pokemon) {
+async function addPokemon(userid, pokemon) {
     var movePP = [null, null, null, null];
     if (pokemon.moves[0] != null) {
         movePP[0] = getMovePP(pokemon.moves[0]);
@@ -3647,87 +3648,74 @@ function addPokemon(userid, pokemon) {
         movePP[3] = getMovePP(pokemon.moves[3]);
     }
 
-    return new Promise(function(resolve) {
-        let national_id = pokemon.no.toString();
-        while (national_id.length < 3) {
-            national_id = '0' + national_id;
-        }
-        var set = {
-            original_trainer: userid.toString(),
-            current_trainer: userid.toString(),
-            number: national_id,
-            name: pokemon.name,
-            nickname: pokemon.nick,
-            region: pokemon.region,
-            location: pokemon.location,
-            date: pokemon.date,
-            ball: pokemon.caughtIn,
-            level_caught: pokemon.level,
-            level_current: pokemon.level,
-            xp: pokemon.totalxp,
-            friendship: pokemon.friendship,
-            stat_hp: pokemon.stats[0],
-            iv_hp: pokemon.IVs[0],
-            ev_hp: pokemon.EVs[0],
-            stat_atk: pokemon.stats[1],
-            iv_atk: pokemon.IVs[1],
-            ev_atk: pokemon.EVs[1],
-            stat_def: pokemon.stats[2],
-            iv_def: pokemon.IVs[2],
-            ev_def: pokemon.EVs[2],
-            stat_spatk: pokemon.stats[3],
-            iv_spatk: pokemon.IVs[3],
-            ev_spatk: pokemon.EVs[3],
-            stat_spdef: pokemon.stats[4],
-            iv_spdef: pokemon.IVs[4],
-            ev_spdef: pokemon.EVs[4],
-            stat_spd: pokemon.stats[5],
-            iv_spd: pokemon.IVs[5],
-            ev_spd: pokemon.EVs[5],
-            type_1: pokemon.type[0],
-            type_2: pokemon.type[1],
-            item: pokemon.item,
-            ability: pokemon.ability,
-            ability_slot: pokemon.abilitySlot,
-            gender: pokemon.gender,
-            nature: pokemon.nature,
-            form: pokemon.form,
-            status: pokemon.status,
-            shiny: pokemon.shiny,
-            lead: pokemon.lead,
-            evolving: pokemon.evolving,
-            personality: pokemon.pv
-        }
+    let national_id = pokemon.no.toString();
+    while (national_id.length < 3) {
+        national_id = '0' + national_id;
+    }
+    let pokemon_set = {
+        original_trainer: userid.toString(),
+        current_trainer: userid.toString(),
+        number: national_id,
+        name: pokemon.name,
+        nickname: pokemon.nick,
+        region: pokemon.region,
+        location: pokemon.location,
+        date: pokemon.date,
+        ball: pokemon.caughtIn,
+        level_caught: pokemon.level,
+        level_current: pokemon.level,
+        xp: pokemon.totalxp,
+        friendship: pokemon.friendship,
+        stat_hp: pokemon.stats[0],
+        iv_hp: pokemon.IVs[0],
+        ev_hp: pokemon.EVs[0],
+        stat_atk: pokemon.stats[1],
+        iv_atk: pokemon.IVs[1],
+        ev_atk: pokemon.EVs[1],
+        stat_def: pokemon.stats[2],
+        iv_def: pokemon.IVs[2],
+        ev_def: pokemon.EVs[2],
+        stat_spatk: pokemon.stats[3],
+        iv_spatk: pokemon.IVs[3],
+        ev_spatk: pokemon.EVs[3],
+        stat_spdef: pokemon.stats[4],
+        iv_spdef: pokemon.IVs[4],
+        ev_spdef: pokemon.EVs[4],
+        stat_spd: pokemon.stats[5],
+        iv_spd: pokemon.IVs[5],
+        ev_spd: pokemon.EVs[5],
+        type_1: pokemon.type[0],
+        type_2: pokemon.type[1],
+        item: pokemon.item,
+        ability: pokemon.ability,
+        ability_slot: pokemon.abilitySlot,
+        gender: pokemon.gender,
+        nature: pokemon.nature,
+        form: pokemon.form,
+        status: pokemon.status,
+        shiny: pokemon.shiny,
+        lead: pokemon.lead,
+        evolving: pokemon.evolving,
+        personality: pokemon.pv
+    }
 
-        var query = "INSERT INTO pokemon SET ?";
-        con.query(query, [set], async function (err, result) {
-            if (err) {
-                console.log(err);
-                resolve(false);
-            } else {
-                let i = 0;
-                for (i; i < pokemon.moves.length; i++) {
-                    if (pokemon.moves[i] != null) {
-                        let move_set = {
-                            pokemon: result.insertId,
-                            name: pokemon.moves[i],
-                            max_pp: movePP[i],
-                            current_pp: movePP[i],
-                            known: 1
-                        }
-                        query = "INSERT INTO move SET ?";
-                        await con.query(query, [move_set], function (err) {
-                            if (err) {
-                                console.log(err);
-                                resolve(false);
-                            } else {
-                                resolve(true);
-                            }
-                        });
-                    }
-                }
+    let newPokemon = await doQuery("INSERT INTO pokemon SET ?", [pokemon_set]);
+    let i = 0;
+    for (i; i < pokemon.moves.length; i++) {
+        if (pokemon.moves[i] != null) {
+            let move_set = {
+                pokemon: newPokemon.insertId,
+                name: pokemon.moves[i],
+                max_pp: movePP[i],
+                current_pp: movePP[i],
+                known: 1
             }
-        });
+            await doQuery("INSERT INTO move SET ?", [move_set]);
+        }
+    }
+
+    return new Promise(function(resolve) {
+        resolve(newPokemon.insertId);
     });
 }
 
@@ -5313,7 +5301,7 @@ async function evolve(message) {
             removeItemFromBag(user.items, "Poké Ball", 1);
             var shedinja = await generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
             shedinja.otid = message.author.id;
-            addPokemon(user.user_id, shedinja);
+            await addPokemon(user.user_id, shedinja);
         }
     }
 
@@ -9169,7 +9157,7 @@ async function catchPokemon(message, wild, user, lead) {
 
                 wild.caughtIn = Balls[input].name;
                 wild.nick = await nicknamePokemon(message, wild.name);
-                addPokemon(message.author.id, wild);
+                await addPokemon(message.author.id, wild);
                 await addToPokedex(user, wild.no);
                 encounter = false;
             }
