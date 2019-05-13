@@ -871,13 +871,12 @@ async function runBeginCommand(message) {
                 if (awaitingUserInput) {
                     cancelled = false;
                     awaitingUserInput = false;
-                    commandStatus = await sendMessage(message.channel, (message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the \"goto <location_name>\" command to move to another location within the region, provided you have a Pokémon strong enough to protect you."));
-                    removeTransaction(message.author.id);
+                    commandStatus = await sendMessage(message.channel, (message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the `goto <location_name>` command to move to another location within the region, provided you have a Pokémon strong enough to protect you."));
                 }
             }
+            removeTransaction(message.author.id);
             //if user decided to cancel (likely because they didn't like their starter Pokemon, or because they timed out).
             if (cancelled) {
-                removeTransaction(message.author.id);
                 commandStatus = await sendMessage(message.channel, (message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready."));
             }
         } else {
@@ -898,19 +897,15 @@ async function runBeginCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runBagCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can have a bag to store items in. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can have a bag to store items in."));
     } else {
-        let bag = printBag(message);
-        if (!bag) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
+        commandStatus = await printBag(message);
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -924,22 +919,20 @@ async function runBagCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runDexCommand(message, input) {
+    let commandStatus = true;
     if (input.length === 0) {
         let exists = await userExists(message.author.id);
         if (!exists) {
-            message.channel.send(message.author.username + " you will need to begin your adventure before you can check your Pokédex progress. " + duck);
+            commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can check your Pokédex progress."));
         } else {
-            printDex(message);
+            commandStatus = await printDex(message);
         }
     } else {
         input = input.join(' ');
-        let foundInfo = await getDexInfo(message, input, "None");
-        if (foundInfo == null) {
-            message.channel.send("Pokémon not found. " + duck);
-        }
+        commandStatus = await getDexInfo(message, input, "None");
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     })
 }
 
@@ -952,18 +945,19 @@ async function runDexCommand(message, input) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runDaycareCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can send a Pokémon to the day care. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can send a Pokémon to the day care."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to send a Pokémon to the day care.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current business at the day care");
-            await dayCare(message);
+            commandStatus = await dayCare(message);
             removeTransaction(message.author.id);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -975,16 +969,17 @@ async function runDaycareCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runDiveCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can dive with a Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can dive with a Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to dive with your Pokémon.") === false) {
-            setField(message, "Dive");
+            commandStatus = await setField(message, "Dive");
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -997,14 +992,15 @@ async function runDiveCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runEncounterCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before being able to find wild Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before being able to find wild Pokémon."));
     } else {
-        printPossibleEncounters(message);
+        commandStatus = await printPossibleEncounters(message);
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1016,16 +1012,17 @@ async function runEncounterCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runFishCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can fish for Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can fish for Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to begin fishing.") === false) {
-            await setField(message, "Fish");
+            commandStatus = await setField(message, "Fish");
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1038,22 +1035,20 @@ async function runFishCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runGiveCommand(message, input) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can give an item to your Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can give an item to your Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to give a Pokémon an item.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current item assignment");
             input = input.join(' ');
-            let gaveItem = await giveItem(message, input);
-            if (gaveItem === false) {
-                message.channel.send(message.author.username + " was unable to give the " + input + ". " + duck);
-            }
+            commandStatus = await giveItem(message, input);
             removeTransaction(message.author.id);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1067,24 +1062,21 @@ async function runGiveCommand(message, input) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runGotoCommand(message, input) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before being able to travel the world. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before being able to travel the world."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to move to a new location.") === false) {
             if (input.length > 1 && input[0] === "to" && input[1] != "to") {
                 input.splice(0, 1);
             }
             input = input.join(' ');
-            if (await setLocation(message, input) === false) {
-                return new Promise(function(resolve) {
-                    resolve(false);
-                });
-            }
+            commandStatus = await setLocation(message, input)
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1097,9 +1089,9 @@ async function runGotoCommand(message, input) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runHelpCommand(message) {
-    await printHelp(message);
+    let commandStatus = await printHelp(message);
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1111,16 +1103,17 @@ async function runHelpCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runHeadbuttCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can headbutt trees with a Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to headbutt trees with your Pokémon.") === false) {
-            setField(message, "Headbutt");
+            commandStatus = await setField(message, "Headbutt");
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1133,25 +1126,24 @@ async function runHeadbuttCommand(message) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runLeadCommand(message, input) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure to obtain Pokémon."));
     } else {
         let pkmn = await getLeadPokemon(message.author.id);
         if (pkmn === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
+            commandStatus = false
         }
         // if user added 'hidden' to the command, then show hidden
         if (input.length > 0 && input[0].toLowerCase() === "hidden") {
-            displayHiddenStats(pkmn, message);
+            commandStatus = await displayHiddenStats(pkmn, message);
         } else { 
-            displayAnOwnedPkmn(pkmn, message);
+            commandStatus = await displayAnOwnedPkmn(pkmn, message);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1164,18 +1156,15 @@ async function runLeadCommand(message, input) {
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runLocationsCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before viewing the locations you can visit. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before viewing the locations you can visit."));
     } else {
-        if (await printAllLocations(message) === false) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
+        commandStatus = await printAllLocations(message) === false);
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
