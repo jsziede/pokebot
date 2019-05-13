@@ -3710,6 +3710,36 @@ function getMovePP(moveName) {
 }
 
 /**
+ * Gets the type of a move.
+ * 
+ * @param {string} moveName The name of the move.
+ * 
+ * @returns {number} The type of the move,
+ * or null if an error was encountered.
+ */
+function getMoveType(moveName) {
+    moveName = moveName.toLowerCase();
+    if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
+        moveName = "10 000 000 volt thunderbolt";
+    }
+    
+    moveName = moveName.replace(/-/g,"_");
+    moveName = moveName.replace(/'/g,"_");
+    moveName = moveName.replace(/ /g,"_");
+    
+    var path = "../data/move/" + moveName + ".json";
+    var data;
+    try {
+        data = fs.readFileSync(path, "utf8");
+    } catch (err) {
+        return null;
+    }
+    
+    var move = JSON.parse(data);
+    return move.type;
+}
+
+/**
  * Updates a user's Pokedex string by setting an index (minus one)
  * of that string to '`1`'.
  * 
@@ -9494,6 +9524,11 @@ async function displayAnOwnedPkmn(pkmn, message) {
     let i = 0;
     let movesString = "";
     for (i; i < moves.length; i++) {
+        let moveTypeIcon = getMoveType(moves[i].name);
+        if (moveTypeIcon != null) {
+            moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
+            movesString += moveTypeIcon;
+        }
         movesString += moves[i].name;
         movesString += "\n";
     }
