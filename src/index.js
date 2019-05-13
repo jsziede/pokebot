@@ -339,28 +339,32 @@ client.on('message', async (message) => {
         return;
     }
     
-    /** Only read commands sent in the bot channel. */
-    if (await isBotChannel(message)) {
-        /** Splits message into an array of words. */
-        let input = message.content.trim().split(/ +/g);
-        /** The command is the first word in the message, not including the prefix. */
-        const command = input.shift().toLowerCase();
-        
-        /** Only allow some commands if a user is evolving one of their Pokemon. */
-        if (await checkIfUserIsEvolving(message, command)) {
-            return;
-        }
-        
-        /** Perform the command action if message contains a command. */
-        if (await doCommand(message, input, command)) {
-            return;
-        }
-    }
+    con.beginTransaction(async function(err) {
+        if (err) { console.error(err); }
 
-    let exists = await userExists(message.author.id);
-    if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
-        await doNonCommandMessage(message);
-    }
+        /** Only read commands sent in the bot channel. */
+        if (await isBotChannel(message)) {
+            /** Splits message into an array of words. */
+            let input = message.content.trim().split(/ +/g);
+            /** The command is the first word in the message, not including the prefix. */
+            const command = input.shift().toLowerCase();
+            
+            /** Only allow some commands if a user is evolving one of their Pokemon. */
+            if (await checkIfUserIsEvolving(message, command)) {
+                return;
+            }
+            
+            /** Perform the command action if message contains a command. */
+            if (await doCommand(message, input, command)) {
+                return;
+            }
+        }
+
+        let exists = await userExists(message.author.id);
+        if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
+            await doNonCommandMessage(message);
+        }
+    });
 });
 
 /**
@@ -794,11 +798,13 @@ async function sendMessage(channel, content) {
  * @returns {any[]} The query results.
  */
 async function doQuery(query, variables) {
-    return new Promise(async function(resolve) {
+    return new Promise(async function(resolve, reject) {
         await con.query(query, variables, function (err, rows) {
             if (err) {
-                console.error(err);
-                resolve(null);
+                con.rollback(function() {
+                    console.error(err);
+                  });
+                reject(null);
             } else {
                 resolve(rows);
             }
@@ -871,11 +877,16 @@ async function runBeginCommand(message) {
             while (awaitingUserInput) {
                 let region = await selectRegion(message);
                 let starter = await selectStarter(message, region);
+                if (starter != null) {
+                    cancelled = false;
+                }
                 awaitingUserInput = await createNewUser(message.author.id, starter, message, region);
                 if (awaitingUserInput) {
                     cancelled = false;
                     awaitingUserInput = false;
                     commandStatus = await sendMessage(message.channel, (message.author.username + " has started their Pokémon adventure with a " + starter + "! Since you chose to begin in the " + region + " region, you will find yourself in " + getDefaultLocationOfRegion(region) + ". Use the `goto <location_name>` command to move to another location within the region, provided you have a Pokémon strong enough to protect you."));
+                } else if (!cancelled) {
+                    commandStatus = await sendMessage(message.channel, "Sorry, something went wrong! I was unable to begin your adventure, please try again.");
                 }
             }
             removeTransaction(message.author.id);
@@ -2253,12 +2264,19 @@ async function userExists(userID) {
  * otherwise false.
  */
 async function createNewUser(userID, name, message, region) {
+    let wasUserCreated = true;
     let location = getDefaultLocationOfRegion(region);
     if (location === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
     }
+    if (name === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+
     let starter = await generatePokemonByName(message, name, 5, region, location, false);
     
     //var starter = await generatePokemonByName(message, "Rockruff", 23, region, location, false);
@@ -2333,16 +2351,20 @@ async function createNewUser(userID, name, message, region) {
         category: "Key"
     }
 
-    await doQuery("INSERT INTO user SET ?", [user_set]);
-    await doQuery("INSERT INTO user_prefs SET ?", [prefs_set]);
-    await doQuery("INSERT INTO item SET ?", [everstone_set]);
-    await doQuery("INSERT INTO item SET ?", [ball_set]);
-    await doQuery("INSERT INTO item SET ?", [visa_set]);
-    let newPokemon = await addPokemon(userID, starter);
-    await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon, userID]);
+    try {
+        await doQuery("INSERT INTO user SET ?", [user_set]);
+        await doQuery("INSERT INTO user_prefs SET ?", [prefs_set]);
+        await doQuery("INSERT INTO item SET ?", [everstone_set]);
+        await doQuery("INSERT INTO item SET ?", [ball_set]);
+        await doQuery("INSERT INTO item SET ?", [visa_set]);
+        let newPokemon = await addPokemon(userID, starter);
+        await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon, userID]);
+    } catch (err) {
+        wasUserCreated = false;
+    }
 
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(wasUserCreated);
     });
 }
 
@@ -2401,7 +2423,9 @@ async function confirmStarter(message) {
  */
 async function selectStarter(message, region) {
     if (region === null) {
-        return null;
+        return new Promise(function(resolve) {
+            resolve(null);
+        });
     } else if (region === "Kanto") {
         message.channel.send(message.author.username + ", please select a starter by either typing its number in the list or its name:\n```1. Bulbasaur\n2. Charmander\n3. Squirtle```");
     } else if (region === "Johto") {
@@ -5414,14 +5438,6 @@ async function evolve(message) {
         nickname: evolvingPokemon.nickname,
         number: national_id,
         friendship: evolvingPokemon.friendship,
-        move_1: evolvingPokemon.move_1,
-        move_1_pp: evolvingPokemon.move_1_pp,
-        move_2: evolvingPokemon.move_2,
-        move_2_pp: evolvingPokemon.move_2_pp,
-        move_3: evolvingPokemon.move_3,
-        move_3_pp: evolvingPokemon.move_3_pp,
-        move_4: evolvingPokemon.move_4,
-        move_4_pp: evolvingPokemon.move_4_pp,
         stat_hp: evolvingPokemon.stat_hp,
         stat_atk: evolvingPokemon.stat_atk,
         stat_def: evolvingPokemon.stat_def,
