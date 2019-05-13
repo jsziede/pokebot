@@ -5479,7 +5479,7 @@ async function evolve(message) {
     });
 
     await addToPokedex(user, pkmn.national_id);
-    await updateMoves(evolvingPokemon, moves);
+    await updateMoves(evolvingPokemon, evolvingMoves);
 
     return true;
 }
