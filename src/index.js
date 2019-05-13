@@ -739,11 +739,14 @@ async function doCommand(message, input, command) {
 async function checkIfUserIsEvolving(message, command) {
     let ev = isInEvolution(message.author.id);
     let isEvolving = false;
-    if(ev != null) { //if sender has a pokemon evolving
+    /* If sender has a Pokemon evolving. */
+    if(ev != null) {
         isEvolving = true;
-        if(command === "a") { //sender accepts evo
+        /* If sender accepts evolution. */
+        if(command === "a") {
             await evolve(message);
-        } else if (command === "b") { //sender cancels evo
+        /* If sender cancels evolution. */
+        } else if (command === "b") {
             await cancelEvolve(message);
         } else if (command === "l" || command === "lead" || command === "main" || command === "front" || command === "first" || command === "current") {
             commandStatus = await runLeadCommand(message, input);
@@ -853,6 +856,7 @@ async function runAbilityCommand(message, abilityName) {
  * @todo This should establish their timezone and user prefs as well.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runBeginCommand(message) {
@@ -863,7 +867,7 @@ async function runBeginCommand(message) {
         if (!exists) {
             transactions[transactions.length] = new Transaction(message.author.id, "creating your adventure");
             let awaitingUserInput = true;
-            //lets the user pick their region and starter Pokemon, and populates the user's bag with starting items.
+            /* Lets the user pick their region and starter Pokemon, and populates the user's bag with starting items. */
             while (awaitingUserInput) {
                 let region = await selectRegion(message);
                 let starter = await selectStarter(message, region);
@@ -875,7 +879,7 @@ async function runBeginCommand(message) {
                 }
             }
             removeTransaction(message.author.id);
-            //if user decided to cancel (likely because they didn't like their starter Pokemon, or because they timed out).
+            /* If user decided to cancel (likely because they didn't like their starter Pokemon, or because they timed out). */
             if (cancelled) {
                 commandStatus = await sendMessage(message.channel, (message.author.username + " has decided to cancel their region selection. Begin your adventure another time when you are ready."));
             }
@@ -894,6 +898,7 @@ async function runBeginCommand(message) {
  * sends a message that shows the contents of the user's bag.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runBagCommand(message) {
@@ -916,6 +921,7 @@ async function runBagCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input Pokemon name as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runDexCommand(message, input) {
@@ -925,7 +931,8 @@ async function runDexCommand(message, input) {
         if (!exists) {
             commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can check your Pokédex progress."));
         } else {
-            commandStatus = await printDex(message);
+            /* Do not await, otherwise user will be stuck waiting for the message reactions to end. */
+            printDex(message);
         }
     } else {
         input = input.join(' ');
@@ -942,6 +949,7 @@ async function runDexCommand(message, input) {
  * day care.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runDaycareCommand(message) {
@@ -966,6 +974,7 @@ async function runDaycareCommand(message) {
  * sets a user to only encounter Pokemon found by diving.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runDiveCommand(message) {
@@ -989,6 +998,7 @@ async function runDiveCommand(message) {
  * user can encounter in their current location.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runEncounterCommand(message) {
@@ -1009,6 +1019,7 @@ async function runEncounterCommand(message) {
  * sets a user to only encounter Pokemon found by fishing.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runFishCommand(message) {
@@ -1032,6 +1043,7 @@ async function runFishCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input Name of item as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runGiveCommand(message, input) {
@@ -1059,6 +1071,7 @@ async function runGiveCommand(message, input) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input Location name as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runGotoCommand(message, input) {
@@ -1086,6 +1099,7 @@ async function runGotoCommand(message, input) {
  * all of the Pokebot commands.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runHelpCommand(message) {
@@ -1100,6 +1114,7 @@ async function runHelpCommand(message) {
  * sets a user to only encounter Pokemon found by headbutting trees.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runHeadbuttCommand(message) {
@@ -1123,6 +1138,7 @@ async function runHeadbuttCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input Optional user input that will show the lead Pokemon's hidden stats if this value is equal to `"hidden"`.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runLeadCommand(message, input) {
@@ -1135,7 +1151,7 @@ async function runLeadCommand(message, input) {
         if (pkmn === null) {
             commandStatus = false
         }
-        // if user added 'hidden' to the command, then show hidden
+        /* If user added 'hidden' to the command, then show hidden stats. */
         if (input.length > 0 && input[0].toLowerCase() === "hidden") {
             commandStatus = await displayHiddenStats(pkmn, message);
         } else { 
@@ -1153,6 +1169,7 @@ async function runLeadCommand(message, input) {
  * region.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runLocationsCommand(message) {
@@ -1161,7 +1178,7 @@ async function runLocationsCommand(message) {
     if (!exists) {
         commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before viewing the locations you can visit."));
     } else {
-        commandStatus = await printAllLocations(message) === false);
+        commandStatus = await printAllLocations(message);
     }
     return new Promise(function(resolve) {
         resolve(commandStatus);
@@ -1173,139 +1190,27 @@ async function runLocationsCommand(message) {
  * randomly generates a number and matches that number to the
  * user's id to determine what prizes the user will receive.
  * 
- * @todo Move most of this command into a separate function to
- * keep it consistent with other command functions.
- * 
  * @todo Possibly make the lotto winning number global for all users
  * instead of randomly generated for each user.
  * 
  * @todo Change prize rewards to let user pick from a selection of items.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runLottoCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure to enter the lottery. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure to enter the lottery."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to enter the lottery.") === false) {
-            //gets the day when the user last ran the lotto command, in their timezone
-            let user = await getUser(message.author.id);
-            if (user === null) {
-                return new Promise(function(resolve) {
-                    resolve(false);
-                });
-            }
-            let cur = convertToTimeZone(user);
-            let lastDaily = moment(user.lotto);
-            let zone = momentTz.tz(lastDaily, user.timezone);
-            zone = zone.clone().tz(user.timezone);
-
-            //if lotto command has not been ran on the current day
-            if (moment(cur).format('D') != zone.format('D')) {
-                let winNum = "";
-                let possible = "0123456789";
-                let matches = 0;
-
-                //randomly generate a winning number string
-                for(let i = 0; i < 9; i++) {
-                    winNum += possible.charAt(Math.floor(Math.random() * possible.length));
-                }
-            
-                //cut the user'd id string in half so only the first half is matched with the winning number string
-                let uid = message.author.id;
-                uid = uid.substring(0, (uid.length/2));
-            
-                //count how many of the same numbers are in the same position for the user's id and the winning number
-                for(let i = 0; i < 9; i++) {
-                    if (winNum.charAt(i) === uid.charAt(i)) {
-                        matches++;
-                    }
-                }
-            
-                // lotto prizes
-                if (matches === 0) {
-                    message.channel.send(message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball.");
-                    user.money += 1000;
-                    addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
-                } else if (matches === 1) {
-                    message.channel.send(message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!");
-                    user.money += 2000;
-                    addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
-                } else if (matches === 2) {
-                    message.channel.send(message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!");
-                    user.money += 4000;
-                    addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
-                } else if (matches === 3) {
-                    message.channel.send(message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!");
-                    user.money += 7000;
-                    addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
-                } else if (matches === 4) {
-                    message.channel.send(message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!");
-                    user.money += 10000;
-                    addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
-                } else if (matches === 5) {
-                    message.channel.send(message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!");
-                    user.money += 13000;
-                    addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
-                } else if (matches === 6) {
-                    message.channel.send(message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!");
-                    user.money += 18000;
-                    addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
-                } else if (matches === 7) {
-                    message.channel.send(message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!");
-                    user.money += 25000;
-                    addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
-                } else if (matches === 8) {
-                    message.channel.send(message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!");
-                    user.money += 35000;
-                    addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
-                    addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
-                } else if (matches === 9) {
-                    message.channel.send(message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!");
-                    user.money += 50000;
-                    addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
-                    addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
-                    addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
-                } 
-            
-                //tell user what their id is and what the winning number is
-                message.channel.send("Your trainer id: " + uid + "\nYour lotto number: " + winNum);
-            
-                //update the user's lotto time to be the current day
-                user.lotto = convertToTimeZone(user).format();
-                let query = "UPDATE user SET money = ?, lotto = ? WHERE user.user_id = ?";
-                con.query(query, [user.money, user.lotto, message.author.id], function (err) {
-                    if (err) {
-                        return reject(err);
-                    }
-                });
-            } else {    //if user already ran the lotto command today, tell them how much time they have until they can run it again for the next day
-                /**  @todo are these two zone statements necessary? */
-                zone = momentTz.tz(moment(), 'America/Detroit');
-                zone = zone.clone().tz(user.timezone);
-                let timeDiff = moment(zone).endOf('day') - zone;
-            
-                let dur = moment.duration(timeDiff);
-                let min = "minutes";
-                let hr = "hours";
-                let sec = "seconds";
-                if (dur.hours() === 1) {
-                    hr = "hour";
-                }
-                if (dur.minutes() === 1) {
-                    min = "minute";
-                }
-                if (dur.seconds() === 1) {
-                    sec = "second";
-                }
-                message.channel.send(message.author.username + " you have already participated in the daily lottery.\nPlease try again in " + dur.hours() + " " + hr + ", " + dur.minutes() + " " + min + ", and " + dur.seconds() + " " + sec + ". " + duck);
-            }
+            commandStatus = await doLotto(message);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1315,19 +1220,12 @@ async function runLottoCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input Name of the move as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runMoveCommand(message, input) {
     input = input.join(' ');
-    let foundInfo = await printMoveInfo(message, input);
-    let commandStatus = true;
-    if (foundInfo === false) {
-        await message.channel.send("Move not found. " + duck)
-        .catch(err => {
-            console.error("[ERROR] Failed to send message - " + err);
-            commandStatus = false;
-        });
-    }
+    let commandStatus = await printMoveInfo(message, input);
     return new Promise(function(resolve) {
         resolve(commandStatus);
     });
@@ -1338,21 +1236,23 @@ async function runMoveCommand(message, input) {
  * lets a user to buy items.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runMartCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before being able to buy items. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before being able to buy items."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to buy items.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your item shopping");
-            await buyItems(message);
+            commandStatus = await buyItems(message);
             removeTransaction(message.author.id);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1361,18 +1261,20 @@ async function runMartCommand(message) {
  * sends a message showing all Pokemon currently owned by the user.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runPokemonCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure to obtain Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure to obtain Pokémon."));
     } else {
-        //do not await
+        /* Do not await, otherwise user will be stuck waiting for the message reactions to end. */
         printPokemon(message, null);
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1381,22 +1283,24 @@ async function runPokemonCommand(message) {
  * releases a Pokemon owned by the user.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runReleaseCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before being able to release a Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before being able to release a Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to release a Pokémon.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current Pokémon release");
             input = input.join(' ');
-            await releasePokemon(message, input);
+            commandStatus = await releasePokemon(message, input);
             removeTransaction(message.author.id);  
         } 
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1407,23 +1311,25 @@ async function runReleaseCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input Optional user input that allows a user to accidentally input `"rock smash"` as two words if `input` is equal to `"smash"`.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runRocksmashCommand(message, input) {
+    let commandStatus = true;
     input = input.join(' ').toLowerCase();
     //allow user to input "rock smash" or "rocksmash"
     if (input === "smash" || command === "rocksmash") {
         let exists = await userExists(message.author.id);
         if (!exists) {
-            message.channel.send(message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon. " + duck);
+            commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can smash rocks with a Pokémon."));
         } else {
             if (await printTransactionIfTrue(message, " before trying to smash rocks with your Pokémon.") === false) {
-                setField(message, "Rock Smash");
+                commandStatus = await setField(message, "Rock Smash");
             }
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1434,25 +1340,26 @@ async function runRocksmashCommand(message, input) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input The name of the Pokemon that the user wants to set as their lead Pokemon.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runSetLeadCommand(message, input) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before being able to select a Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before being able to select a Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to change your lead Pokémon.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current leader assignment");
             input = input.join(' ');
-            let swap = await setActivePokemon(message, input);
-            if (!swap) {
-                message.channel.send(message.author.username + " failed to change their lead Pokémon. " + duck);
+            if (await setActivePokemon(message, input) === false) {
+                commandStatus = await sendMessage(message.channel, (message.author.username + " failed to change their lead Pokémon."));
             }
             removeTransaction(message.author.id);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1461,19 +1368,21 @@ async function runSetLeadCommand(message, input) {
  * sets a user to encounter only Pokemon that are found by surfing.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runSurfCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can surf with a Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can surf with a Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to surf with your Pokémon.") === false) {
-            setField(message, "Surfing");
+            commandStatus = await setField(message, "Surfing");
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1483,19 +1392,21 @@ async function runSurfCommand(message) {
  * any item.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runTakeCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can take items from your Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can take items from your Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to take items from your Pokémon.") === false) {
-            takeItem(message);
+            commandStatus = await takeItem(message);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1505,23 +1416,24 @@ async function runTakeCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input The name of the region as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runTravelCommand(message, input) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can travel to a new region. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can travel to a new region."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to travel to a new region.") === false) {
             input = input.join(' ');
-            let traveled = await setRegion(message, input);
-            if (!traveled) {
-                message.channel.send(message.author.username + " failed to travel to " + input + ". " + duck);
+            if (await setRegion(message, input) === false) {
+                commandStatus = await sendMessage(message.channel, (message.author.username + " failed to travel to " + input + "."));
             }
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1530,23 +1442,25 @@ async function runTravelCommand(message, input) {
  * establishes a Pokemon trade between two users.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runTradeCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can trade Pokémon. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can trade Pokémon."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to start a new trade.") === false) {
             if (message.mentions.users.first() === undefined) {
-                message.channel.send(message.author.username + " please mention the user you want to trade with. " + duck);
+                commandStatus = await sendMessage(message.channel, (message.author.username + " please mention the user you want to trade with."));
             } else {
-                await tradeOffer(message, message.mentions.users.first());
+                commandStatus = await tradeOffer(message, message.mentions.users.first());
             }
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1557,25 +1471,27 @@ async function runTradeCommand(message) {
  * 
  * @param {Message} message Discord message sent by a user.
  * @param {string[]} input The name of the item as input by the user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runUseCommand(message, input) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can use items. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can use items."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to use an item.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current item use");
             input = input.join(' ');
             let usedItem = await useItem(message, input);
             if (!usedItem) {
-                message.channel.send(message.author.username + " was unable to use the " + input + ". " + duck);
+                commandStatus = await sendMessage(message.channel, (message.author.username + " was unable to use the " + input + "."));
             }
             removeTransaction(message.author.id);
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1585,21 +1501,19 @@ async function runUseCommand(message, input) {
  * located at.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runWhereCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before heading into the Pokémon world. " + duck);
-    } else {    //does not need to be awaited
-        if (await printLocation(message) === false) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before heading into the Pokémon world."));
+    } else {
+        commandStatus = await printLocation(message);
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1609,19 +1523,21 @@ async function runWhereCommand(message) {
  * tall grass.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runWalkCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before you can walk around. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before you can walk around."));
     } else {
         if (await printTransactionIfTrue(message, " before trying to walk around.") === false) {
-            await setField(message, "Walking");
+            commandStatus = await setField(message, "Walking");
         }
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
     });
 }
 
@@ -1631,17 +1547,145 @@ async function runWalkCommand(message) {
  * some type of weather, as well as the current season.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function runWeatherCommand(message) {
+    let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
-        message.channel.send(message.author.username + " you will need to begin your adventure before checking the weather. " + duck);
+        commandStatus = await sendMessage(message.channel, (message.author.username + " you will need to begin your adventure before checking the weather."));
     } else {
-        await getWeather(message);
+        commandStatus = await getWeather(message);
     }
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(commandStatus);
+    });
+}
+
+/**
+ * Generates a random number and matches that number to a user'd id
+ * to award the user prizes.
+ * 
+ * @param {Message} message Discord message sent by a user.
+ * 
+ * @returns {boolean} False if an error is encountered, otherwise true.
+ */
+async function doLotto(message) {
+    let userDidLotto = false;
+    /* Gets the day when the user last ran the lotto command, in their timezone. */
+    let user = await getUser(message.author.id);
+    if (user === null) {
+        return new Promise(function(resolve) {
+            resolve(false);
+        });
+    }
+    let cur = convertToTimeZone(user);
+    let lastDaily = moment(user.lotto);
+    let zone = momentTz.tz(lastDaily, user.timezone);
+    zone = zone.clone().tz(user.timezone);
+
+    /* If lotto command has not been ran on the current day. */
+    if (moment(cur).format('D') != zone.format('D')) {
+        let winNum = "";
+        let possible = "0123456789";
+        let matches = 0;
+
+        /* Randomly generate a winning number string. */
+        for(let i = 0; i < 9; i++) {
+            winNum += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+
+        /* Cut the user'd id string in half so only the first half is matched with the winning number string. */
+        let uid = message.author.id;
+        uid = uid.substring(0, (uid.length/2));
+
+        /* Count how many of the same numbers are in the same position for the user's id and the winning number. */
+        for(let i = 0; i < 9; i++) {
+            if (winNum.charAt(i) === uid.charAt(i)) {
+                matches++;
+            }
+        }
+
+        /* Lotto prizes. */
+        if (matches === 0) {
+            await sendMessage(message.channel, (message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball."));
+            user.money += 1000;
+            await addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
+        } else if (matches === 1) {
+            await sendMessage(message.channel, (message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!"));
+            user.money += 2000;
+            await addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
+        } else if (matches === 2) {
+            await sendMessage(message.channel, (message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!"));
+            user.money += 4000;
+            await addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
+        } else if (matches === 3) {
+            await sendMessage(message.channel, (message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!"));
+            user.money += 7000;
+            await addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
+        } else if (matches === 4) {
+            await sendMessage(message.channel, (message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!"));
+            user.money += 10000;
+            await addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
+        } else if (matches === 5) {
+            await sendMessage(message.channel, (message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!"));
+            user.money += 13000;
+            await addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
+        } else if (matches === 6) {
+            await sendMessage(message.channel, (message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!"));
+            user.money += 18000;
+            await addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
+        } else if (matches === 7) {
+            await sendMessage(message.channel, (message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!"));
+            user.money += 25000;
+            await addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
+        } else if (matches === 8) {
+            await sendMessage(message.channel, (message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!"));
+            user.money += 35000;
+            await addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
+            await addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
+        } else if (matches === 9) {
+            await sendMessage(message.channel, (message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!"));
+            user.money += 50000;
+            await addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
+            await addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
+            await addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
+        } 
+
+        /* Tell user what their id is and what the winning number is. */
+        await sendMessage(message.channel, ("Your trainer id: " + uid + "\nYour lotto number: " + winNum));
+
+        /* Update the user's lotto time to be the current day. */
+        user.lotto = convertToTimeZone(user).format();
+        if (await doQuery("UPDATE user SET money = ?, lotto = ? WHERE user.user_id = ?", [user.money, user.lotto, message.author.id]) != null) {
+            userDidLotto = true;
+        }
+    } else {
+        /* If user already ran the lotto command today, tell them how much time they have until they can run it again for the next day. */
+        /**  @todo are these two zone statements necessary? */
+        zone = momentTz.tz(moment(), 'America/Detroit');
+        zone = zone.clone().tz(user.timezone);
+        let timeDiff = moment(zone).endOf('day') - zone;
+
+        let dur = moment.duration(timeDiff);
+        let min = "minutes";
+        let hr = "hours";
+        let sec = "seconds";
+        if (dur.hours() === 1) {
+            hr = "hour";
+        }
+        if (dur.minutes() === 1) {
+            min = "minute";
+        }
+        if (dur.seconds() === 1) {
+            sec = "second";
+        }
+        userDidLotto = await sendMessage(message.channel, (message.author.username + " you have already participated in the daily lottery.\nPlease try again in " + dur.hours() + " " + hr + ", " + dur.minutes() + " " + min + ", and " + dur.seconds() + " " + sec + "."));
+    }
+
+    return new Promise(function(resolve) {
+        resolve(userDidLotto);
     });
 }
 
@@ -1653,6 +1697,7 @@ async function runWeatherCommand(message) {
  * channel.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
 async function setBotChannel(message) {
@@ -1713,6 +1758,7 @@ async function setBotChannel(message) {
  * `message`.
  * 
  * @param {Message} message Discord message sent by a user.
+ * 
  * @returns {boolean} True if the channel is the bot channel, otherwise false.
  */
 async function isBotChannel(message) {
@@ -1736,6 +1782,7 @@ async function isBotChannel(message) {
  * A user should only have one transaction at any given moment.
  * 
  * @param {UserID} userID ID of a Pokebot user.
+ * 
  * @returns {string} String of the transaction type the user
  * is currently in, or null if the user is not in a transaction.
  */
@@ -1766,6 +1813,7 @@ function removeTransaction(userID) {
  * is evolving.
  * 
  * @param {UserID} userID ID of a Pokebot user.
+ * 
  * @returns {Evolution} Evolution object of the currently
  * evolving Pokemon, or null if the user does not have any
  * Pokemon that are evolving.
@@ -1797,6 +1845,7 @@ function removeEvolution(userID) {
  * with another user.
  * 
  * @param {UserID} userID ID of a Pokebot user.
+ * 
  * @returns {Trade} Trade object of the users who are trading
  * with each other, or null if the user is not in the trading
  * process.
@@ -3834,7 +3883,7 @@ function doesUserHaveHoldableItem(bag, item) {
  * 
  * @returns {boolean} True if the item was added to the user's bag.
  */
-function addItemToBag(userid, itemName, amount, isHoldable, cat) {
+async function addItemToBag(userid, itemName, amount, isHoldable, cat) {
     return new Promise(function(resolve) {
         var query = "SELECT * from item WHERE item.owner = ? AND item.name = ?";
         con.query(query, [userid, itemName], function (err, bag) {
@@ -4438,7 +4487,7 @@ async function useItem(message, item) {
  * 
  * @param {Message} message The Discord message sent from the user.
  * 
- * @returns {boolean} True if the two trainers traded Pokemon.
+ * @returns {boolean} True if no errors were encountered.
  */
 async function takeItem(message) {
     var user = await getUser(message.author.id);
