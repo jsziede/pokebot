@@ -419,7 +419,7 @@ async function doNonCommandMessage(message) {
         let moneyAmnt = Math.ceil(Math.random() * 150);
         moneyAmnt += Math.ceil(Math.random() * 100);
         moneyAmnt += Math.ceil(Math.random() * 50);
-        await giveMoney(moneyAmnt, user);
+        await giveMoney(message, moneyAmnt, user);
     /* User's lead Pokemon is given XP. */
     } else {
         /* Give a random amount of XP to the user lead Pokemon. */
@@ -494,7 +494,7 @@ async function giveMoney(message, amount, user) {
     let queryStatus = await doQuery("UPDATE user SET user.money = user.money + ? WHERE user.user_id = ?", [amount, user.user_id]);
     if (queryStatus != null) {
         await message.react(kukui.id);
-        await sendMessage(message.channel, message.author.username + " found " + dollar + moneyAmnt.toString() + "! You now have " + dollar + user.money + ".");
+        await sendMessage(message.channel, message.author.username + " found " + dollar + amount.toString() + "! You now have " + dollar + user.money + ".");
     }
     return new Promise(function(resolve) {
         resolve(queryStatus);
@@ -3754,7 +3754,7 @@ async function addPokemon(userid, pokemon) {
                 name: pokemon.moves[i],
                 max_pp: movePP[i],
                 current_pp: movePP[i],
-                known: 1
+                slot: (i + 1)
             }
             await doQuery("INSERT INTO move SET ?", [move_set]);
         }
@@ -4046,18 +4046,18 @@ function addEvolutionToPokemon(pokemon) {
  */
 async function updateMoves(pokemon, moves) {
     const moveNames = moves.map(move => move.name);
-    await doQuery('UPDATE move SET move.known = 0 WHERE move.pokemon = ? AND NOT move.name IN (?)', [pokemon.pokemon_id, moveNames]);
+    await doQuery('UPDATE move SET move.slot = NULL WHERE move.pokemon = ? AND NOT move.name IN (?)', [pokemon.pokemon_id, moveNames]);
     let i = 0;
     for (i; i < moves.length; i++) {
         if (moves[i].name != null && moves[i].pp != null) {
-            let status = await doQuery('UPDATE move SET move.known = 1 WHERE move.pokemon = ? AND move.name = ?', [pokemon.pokemon_id, moves[i].name]);
+            let status = await doQuery('UPDATE move SET move.slot = ? WHERE move.pokemon = ? AND move.name = ?', [(i + 1), pokemon.pokemon_id, moves[i].name]);
             if (status.affectedRows === 0) {
                 let move_set = {
                     pokemon: pokemon.pokemon_id,
                     name: moves[i].name,
                     max_pp: moves[i].pp,
                     current_pp: moves[i].pp,
-                    known: 1
+                    slot: (i + 1)
                 }
                 await doQuery('INSERT INTO move SET ?', [move_set]);
             }
@@ -9414,7 +9414,7 @@ function getGifName(name) {
  * @returns {any[]} All moves currently known by the Pokemon.
  */
 async function getPokemonKnownMoves(pokemonId) {
-    let moves = await doQuery("SELECT * FROM move WHERE move.pokemon = ? AND move.known = 1", [pokemonId]);
+    let moves = await doQuery("SELECT * FROM move WHERE move.pokemon = ? AND move.slot IS NOT NULL ORDER BY move.slot", [pokemonId]);
     return new Promise(function(resolve) {
         resolve(moves);
     });
