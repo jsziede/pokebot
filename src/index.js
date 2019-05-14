@@ -9769,7 +9769,7 @@ async function printPossibleEncounters(message) {
         while (dexNum.length < 3) {
             dexNum = '0' + dexNum;
         }
-        var hasIt = user.pokedex.charAt(pkm.national_id);
+        var hasIt = user.pokedex.charAt(pkm.national_id - 1);
         if (hasIt === '1') {
             hasIt = true;
         } else {
