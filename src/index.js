@@ -9231,7 +9231,7 @@ async function displayAWildPkmn(pkmn, message) {
     var footerText = "You already have this Pokémon.";
     var user = await getUser(message.author.id);
     if (user != null) {
-        if (user.pokedex.charAt(pkmn.no) === '0') {
+        if (user.pokedex.charAt(pkmn.no - 1) === '0') {
             footerLink = "https://cdn.bulbagarden.net/upload/7/74/Bag_Heavy_Ball_Sprite.png";
             footerText = "You do not have this Pokémon.";
         }
