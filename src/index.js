@@ -2822,8 +2822,18 @@ async function printLocation(message) {
             },
             "fields": [
                 {
+                    "name":  "Region",
+                    "value": user.region,
+                    "inline": false
+                },
+                {
+                    "name":  "Location",
+                    "value": user.location,
+                    "inline": false
+                },
+                {
                     "name":  "\u200b",
-                    "value": "**Region:** " + user.region + "\n**Location:** " + user.location + "\n*" + field + "*",
+                    "value": "*" + field + "*",
                     "inline": false
                 }
             ]
