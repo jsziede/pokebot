@@ -791,6 +791,30 @@ async function sendMessage(channel, content) {
 }
 
 /**
+ * Sends a Discord message with attached files to a specific channel and catches any possible errors.
+ * 
+ * @param {TextChannel} channel The Discord channel to send the message to.
+ * @param {embed} content The content of the message. Must be a Discord embed object.
+ * @param {any[]} attachments The list of attachement objects.
+ * 
+ * @returns {boolean} True if message was sent.
+ */
+async function sendMessageWithAttachments(channel, content, attachments) {
+    let didMessageGetSent = false;
+    await channel.send({embed: content, files: attachments })
+    .then(() => {
+        didMessageGetSent = true;
+    })
+    .catch(err => {
+        console.error(chalk`{red [ERROR]} Failed to send message: ` + err);
+    });
+
+    return new Promise(function(resolve) {
+        resolve(didMessageGetSent);
+    });
+}
+
+/**
  * Performs a database query.
  * 
  * @param {string} query The MySQL query to perform.
@@ -1879,7 +1903,6 @@ function generateModelLink(name, shiny, gender, form) {
     let pkmn = parseJSON(generatePokemonJSONPath(name));
     let url;
 
-    let dexnum = pkmn.national_id;
     let lower = pkmn.names.en.toLowerCase();
     
     /* Pokemon names are not always the same as the file names. */
@@ -2105,7 +2128,7 @@ function generateLocationImagePath(region, location) {
  */
 function generatePokemonJSONPath(name) {
     let lower = name.toLowerCase();
-    //pokemon names are not always the same as the file names
+    /* Pokemon names are not always the same as the file names. */
     if (lower === "mr. mime") {
         lower = "mr_mime";
     }
@@ -2251,77 +2274,76 @@ async function createNewUser(userID, name, message, region) {
     displayAWildPkmn(starter, message);
     
     let accept = await confirmStarter(message, userID);
-    if (!accept) { //if user rejects starter
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    /* User begins with an everstone, 10 poke balls, and a visa for their region. */
-    let everstone = new Item("Everstone", 1, true, false);
-    let balls = new Item("Poké Ball", 10, true, false);
-    let visa = new Item((region + " Visa"), 1, false, true);
-    
-    starter.nick = await nicknamePokemon(message, starter.name);
-
-    let userSet = {
-        user_id: userID,
-        level: 5,
-        region: starter.region,
-        location: starter.location,
-        field: "Walking",
-        lead: null,
-        money: 5000,
-        lotto: "2018-06-21T00:12:45-04:00"
-    }
-
-    let prefsSet = {
-        user_id: userID,
-        react_money: 1,
-        react_encounter: 1,
-        react_move: 1,
-        react_level: 1,
-        ping_money: 0,
-        ping_move: 1,
-        ping_encounter: 1,
-        ping_level: 0,
-        timezone: "America/Detroit"
-    }
-
-    let everstoneSet = {
-        owner: userID,
-        name: everstone.name,
-        quantity: 1,
-        holdable: 1,
-        category: "Item"
-    }
-
-    let ballSet = {
-        owner: userID,
-        name: balls.name,
-        quantity: 10,
-        holdable: 1,
-        category: "Ball"
-    }
-
-    let visaSet = {
-        owner: userID,
-        name: visa.name,
-        quantity: 1,
-        holdable: 0,
-        category: "Key"
-    }
-
-    try {
-        await doQuery("INSERT INTO user SET ?", [userSet]);
-        await doQuery("INSERT INTO user_prefs SET ?", [prefsSet]);
-        await doQuery("INSERT INTO item SET ?", [everstoneSet]);
-        await doQuery("INSERT INTO item SET ?", [ballSet]);
-        await doQuery("INSERT INTO item SET ?", [visaSet]);
-        let newPokemon = await addPokemon(userID, starter);
-        await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon, userID]);
-    } catch (err) {
+    /* If user rejects starter. */
+    if (!accept) {
         wasUserCreated = false;
+    } else {
+        /* User begins with an everstone, 10 poke balls, and a visa for their region. */
+        let everstone = new Item("Everstone", 1, true, false);
+        let balls = new Item("Poké Ball", 10, true, false);
+        let visa = new Item((region + " Visa"), 1, false, true);
+        
+        starter.nick = await nicknamePokemon(message, starter.name);
+
+        let userSet = {
+            user_id: userID,
+            level: 5,
+            region: starter.region,
+            location: starter.location,
+            field: "Walking",
+            lead: null,
+            money: 5000,
+            lotto: "2018-06-21T00:12:45-04:00"
+        }
+
+        let prefsSet = {
+            user_id: userID,
+            react_money: 1,
+            react_encounter: 1,
+            react_move: 1,
+            react_level: 1,
+            ping_money: 0,
+            ping_move: 1,
+            ping_encounter: 1,
+            ping_level: 0,
+            timezone: "America/Detroit"
+        }
+
+        let everstoneSet = {
+            owner: userID,
+            name: everstone.name,
+            quantity: 1,
+            holdable: 1,
+            category: "Item"
+        }
+
+        let ballSet = {
+            owner: userID,
+            name: balls.name,
+            quantity: 10,
+            holdable: 1,
+            category: "Ball"
+        }
+
+        let visaSet = {
+            owner: userID,
+            name: visa.name,
+            quantity: 1,
+            holdable: 0,
+            category: "Key"
+        }
+
+        try {
+            await doQuery("INSERT INTO user SET ?", [userSet]);
+            await doQuery("INSERT INTO user_prefs SET ?", [prefsSet]);
+            await doQuery("INSERT INTO item SET ?", [everstoneSet]);
+            await doQuery("INSERT INTO item SET ?", [ballSet]);
+            await doQuery("INSERT INTO item SET ?", [visaSet]);
+            let newPokemon = await addPokemon(userID, starter);
+            await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [newPokemon, userID]);
+        } catch (err) {
+            wasUserCreated = false;
+        }
     }
 
     return new Promise(function(resolve) {
@@ -2602,6 +2624,7 @@ async function selectRegion(message) {
 async function setRegion(message, regionName) {
     let wereNoErrorsEncountered = true;
     let region = regionName.toLowerCase();
+    /* Get the proper name of the region. */
     if (region === "kanto") {
         region = "Kanto";
     } else if (region === "johto") {
@@ -2620,6 +2643,7 @@ async function setRegion(message, regionName) {
         return false;
     }
 
+    /* Only change user's region is user exists, is in a region, and that region is not the same as the region the user wants to go to. */
     let user = await getUser(message.author.id);
     if (user != null) {
         let bag = await getBag(message.author.id);
@@ -2640,6 +2664,8 @@ async function setRegion(message, regionName) {
                 }
             }
         }
+    } else {
+        wereNoErrorsEncountered = false;
     }
 
     return new Promise(function(resolve) {
@@ -2659,37 +2685,34 @@ async function setRegion(message, regionName) {
  * otherwise true.
  */
 async function setLocation(message, locationName) {
+    let wereNoErrorsEncountered = true;
     let user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    let region = user.region;
-    if (region == null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    let loc = getFullLocationName(region, locationName);
-    return new Promise(function(resolve) {
-        if (loc != null) {
-            let query = "UPDATE user SET location = ?, field = 'Walking' WHERE user.user_id = ?";
-            con.query(query, [loc, message.author.id], function(err) {
-                if (err) {
-                    console.log(err);
-                    resolve(false);
+    /* Only change user's location is user exists, the specified location exists within the user's region,
+    and the user's current location is not the same as the location the user wants to go to. */
+    if (user != null) {
+        if (user.region != null) {
+            let loc = getFullLocationName(user.region, locationName);
+            if (loc != null) {
+                if (loc === user.location) {
+                    wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already located at " + loc + "."));
                 } else {
-                    message.channel.send(message.author.username + " is now walking at " + loc + ".");
-                    resolve(true);
+                    if (await doQuery("UPDATE user SET location = ?, field = 'Walking' WHERE user.user_id = ?", [loc, message.author.id]) != null) {
+                        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " is now walking at " + loc + "."));
+                    } else {
+                        wereNoErrorsEncountered = false;
+                    }
                 }
-            });
-        } else {
-            message.channel.send(message.author.username + " failed to go to " + locationName + ". " + duck);
-            resolve(true);
+            } else {
+                await sendMessage(message.channel, (message.author.username + " failed to go to " + locationName + ". " + duck));
+                wereNoErrorsEncountered = false;
+            }
         }
+    } else {
+        wereNoErrorsEncountered = false;
+    }
+
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
     });
 }
 
@@ -2703,85 +2726,59 @@ async function setLocation(message, locationName) {
  * true.
  */
 async function printAllLocations(message) {
+    let wasMessageSent = false;
     let user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    let region = user.region;
-    if (region == null) {
-        console.error("[ERROR] printAllLocations(): User " + message.author.id + " has a null region!");
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    let path = generateRegionJSONPath(region);
-    let data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.error(err);
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    region = JSON.parse(data);
-
-    let i;
-    let fields = [];
-    let fieldsCount = 0;
-    let string = null;
-    for (i = 0; i < region.locations.length; i++) {
-        if (string == null) {
-            string = region.locations[i].names.en;
-        } else if (i % 20 === 0) {
-            let name = "Locations";
-            if (fieldsCount > 0) {
-                name = "Locations (cont.)";
+    if (user != null && user.region != null) {
+        let region = parseJSON(generateRegionJSONPath(user.region));
+        let locationsIndex;
+        let embedfields = [];
+        let fieldsCount = 0;
+        let locationName = null;
+        for (locationsIndex = 0; locationsIndex < region.locations.length; locationsIndex++) {
+            if (locationName == null) {
+                locationName = region.locations[locationsIndex].names.en;
+            } else if (locationsIndex % 20 === 0) {
+                let name = "Locations";
+                if (fieldsCount > 0) {
+                    name = "Locations (cont.)";
+                }
+                embedfields[fieldsCount] = {
+                    "name": name,
+                    "value": locationName,
+                    "inline": true
+                }
+                locationName = region.locations[locationsIndex].names.en;
+                fieldsCount++;
+            }else {
+                locationName += "\n" + region.locations[locationsIndex].names.en;
             }
-            fields[fieldsCount] = {
-                "name": name,
-                "value": string,
-                "inline": true
-            }
-            string = region.locations[i].names.en;
-            fieldsCount++;
-        }else {
-            string += "\n" + region.locations[i].names.en;
         }
+
+        if (locationName != null) {
+            let name = "Locations";
+                if (fieldsCount > 0) {
+                    name = "Locations (cont.)";
+                }
+                embedfields[fieldsCount] = {
+                    "name": name,
+                    "value": locationName,
+                    "inline": true
+                }
+        }
+
+        let embed = {
+            "author": {
+                "name": "The " + user.region + " Region"
+            },
+            "fields": embedfields
+        };
+
+
+        wasMessageSent = await sendMessage(message.channel, embed);
     }
-
-    if (string != null) {
-        let name = "Locations";
-            if (fieldsCount > 0) {
-                name = "Locations (cont.)";
-            }
-            fields[fieldsCount] = {
-                "name": name,
-                "value": string,
-                "inline": true
-            }
-    }
-
-    let embed = {
-        "author": {
-            "name": "The " + user.region + " Region"
-        },
-        "fields": fields
-    };
-
-    let messageSent = true;
-    await message.channel.send({embed})
-    .catch(err => {
-        console.error("[ERROR] Failed to send Locations message - " + err);
-        messageSent = false;
-    });
 
     return new Promise(function(resolve) {
-        resolve(messageSent);
+        resolve(wasMessageSent);
     });
 }
 
@@ -2795,58 +2792,48 @@ async function printAllLocations(message) {
  * true.
  */
 async function printLocation(message) {
+    let wasMessageSent = false;
     let user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    let region = user.region;
-    let location = user.location;
-    
-    let image = generateLocationImagePath(region, location);
-    let field = "Walking in the grass.";
-    if (user.field === "Rock Smash") {
-        field = "Smashing rocks into pieces.";
-    } else if (user.field === "Headbutt") {
-        field = "Headbutting trees to shake them up."
-    } else if (user.field.includes("Rod")) {
-        if (user.field === "Old Rod") {
-            field = "Fishing with an " + user.field + ".";
-        } else {
-            field = "Fishing with a " + user.field + ".";
-        }
-    } else if (user.field === "Surfing") {
-        field = "Surfing over the water."
-    } else if (user.field === "Dive") {
-        field = "Diving under the sea."
-    }
-
-    let embed = {
-        "author": {
-            "name":  message.author.username + "'s Location"
-        },
-        "image": {
-            "url": "attachment://location.png"
-        },
-        "fields": [
-            {
-                "name":  "\u200b",
-                "value": "**Region:** " + region + "\n**Location:** " + location + "\n*" + field + "*",
-                "inline": false
+    if (user != null) {
+        let imageOfLocation = generateLocationImagePath(user.region, user.location);
+        let field = "Walking in the grass.";
+        if (user.field === "Rock Smash") {
+            field = "Smashing rocks into pieces.";
+        } else if (user.field === "Headbutt") {
+            field = "Headbutting trees to shake them up."
+        } else if (user.field.includes("Rod")) {
+            if (user.field === "Old Rod") {
+                field = "Fishing with an " + user.field + ".";
+            } else {
+                field = "Fishing with a " + user.field + ".";
             }
-        ]
-    };
-
-    let messageSent = true;
-    await message.channel.send({embed, files: [{ attachment: image, name: "location.png" }] })
-    .catch(err => {
-        console.error("[ERROR] Failed to send Where message - " + err);
-        messageSent = false;
-    });
+        } else if (user.field === "Surfing") {
+            field = "Surfing over the water."
+        } else if (user.field === "Dive") {
+            field = "Diving under the sea."
+        }
+    
+        let embed = {
+            "author": {
+                "name":  message.author.username + "'s Location"
+            },
+            "image": {
+                "url": "attachment://location.png"
+            },
+            "fields": [
+                {
+                    "name":  "\u200b",
+                    "value": "**Region:** " + user.region + "\n**Location:** " + user.location + "\n*" + field + "*",
+                    "inline": false
+                }
+            ]
+        };
+    
+        wasMessageSent = await sendMessageWithAttachments(message.channel, embed, [{ attachment: imageOfLocation, name: "location.png" }]);
+    }
 
     return new Promise(function(resolve) {
-        resolve(messageSent);
+        resolve(wasMessageSent);
     });
 }
 
@@ -2862,25 +2849,17 @@ async function printLocation(message) {
  * if the location does not exist.
  */
 function getFullLocationName(region, name) {
-    var path = generateRegionJSONPath(region);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var list = JSON.parse(data);
-    
-    var locationName = name.toLowerCase();
-    var i;
-    for (i = 0; i < list.locations.length; i++) {
-        var loc = list.locations[i].names.en.toLowerCase();
+    let fullLocationName = null;
+    let list = parseJSON(generateRegionJSONPath(region));
+    let locationName = name.toLowerCase();
+    let locationsIndex;
+    for (locationsIndex = 0; locationsIndex < list.locations.length; locationsIndex++) {
+        let loc = list.locations[locationsIndex].names.en.toLowerCase();
         if (~loc.indexOf(locationName)) {
-            return list.locations[i].names.en;
+            fullLocationName = list.locations[locationsIndex].names.en;
         }
     }
-    return null;
+    return fullLocationName;
 }
 
 /**
