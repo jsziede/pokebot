@@ -2882,94 +2882,46 @@ function getFullLocationName(region, name) {
  * @returns {string} The default location of a region.
  */
 function getDefaultLocationOfRegion(region) {
-    if (region === null) {
-        return null;
-    } else if (region === "Kanto") {
-        return "Pallet Town";
+    let defaultRegion = null;
+     if (region === "Kanto") {
+        defaultRegion = "Pallet Town";
     } else if (region === "Johto") {
-        return "New Bark Town";
+        defaultRegion = "New Bark Town";
     } else if (region === "Hoenn") {
-        return "Littleroot Town";
+        defaultRegion = "Littleroot Town";
     } else if (region === "Sinnoh") {
-        return "Twinleaf Town";
+        defaultRegion = "Twinleaf Town";
     } else if (region === "Unova") {
-        return "Aspertia City";
+        defaultRegion = "Aspertia City";
     } else if (region === "Kalos") {
-        return "Vaniville Town";
-    } else { //alola
-        return "Route 1"; //aka Hau'oli outskirts
+        defaultRegion = "Vaniville Town";
+    } else if (region === "Alola") {
+        defaultRegion = "Route 1";
     }
-}
 
-/**
- * Gets the names of the most recent games that take place
- * in a specified region.
- * 
- * @param {string} region The name of the region.
- * 
- * @returns {string[]} The pair of most recent games that took place in the specified region.
- */
-function getDefaultGamesOfRegion(region) {
-    var arr = [" ", " "];
-    if (region === "Kanto") {
-        arr[0] = "FireRed";
-        arr[1] = "LeafGreen";
-        return arr;
-    } else if (region === "Johto") {
-        arr[0] = "HeartGold";
-        arr[1] = "SoulSilver";
-        return arr;
-    } else if (region === "Hoenn") {
-        arr[0] = "Omega Ruby";
-        arr[1] = "Alpha Sapphire";
-        return arr;
-    } else if (region === "Sinnoh") {
-        arr[0] = "Diamond";
-        arr[1] = "Pearl";
-        return arr;
-    } else if (region === "Unova") {
-        arr[0] = "Black 2";
-        arr[1] = "White 2";
-        return arr;
-    } else if (region === "Kalos") {
-        arr[0] = "X";
-        arr[1] = "Y";
-        return arr;
-    } else { //alola
-        arr[0] = "Ultra Sun";
-        arr[1] = "Ultra Moon";
-        return arr;
-    }
+    return defaultRegion;
 }
 
 /**
  * Gets the user's lead Pokemon.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Pokemon} The user's lead Pokemon if they have one,
  * otherwise null.
  */
-function getLeadPokemon(userid) {
+async function getLeadPokemon(userId) {
+    let leadPokemon = null;
+    let user = await getUser(userId);
+    if (user != null) {
+        let lead = await doQuery('SELECT * FROM pokemon WHERE pokemon_id = ?', [user.lead]);
+        if (lead != null) {
+            leadPokemon = lead[0];
+        }
+    }
+
     return new Promise(function(resolve) {
-        var query_str = 'SELECT user.lead FROM user WHERE user_id = ?';
-
-        con.query(query_str, userid, function (err, rows) {
-            if (err) {
-                console.log(err);
-                return resolve(null);
-            }
-            var p_id = rows[0].lead;
-            query_str2 = 'SELECT * FROM pokemon WHERE pokemon_id = ?';
-
-            con.query(query_str2, p_id, function (err, rows2) {
-                if (err) {
-                    console.log(err);
-                    return resolve(null);
-                }
-                resolve(rows2[0]);
-            });
-        });
+        resolve(leadPokemon);
     });
 }
 
@@ -2977,87 +2929,68 @@ function getLeadPokemon(userid) {
  * Gets a user's evolving Pokemon. A user should only have
  * at most one evolving Pokemon at any given time.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Pokemon} The user's evolving Pokemon,
  * or null if the user does not have an evolving Pokemon.
  */
-async function getEvolvingPokemon(userid) {
+async function getEvolvingPokemon(userId) {
+    let evolvingPokemon = await doQuery('SELECT * FROM pokemon WHERE pokemon.evolving = 1 AND pokemon.current_trainer = ?', [userId]);
+    if (evolvingPokemon != null) {
+        evolvingPokemon = evolvingPokemon[0];
+    }
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM pokemon WHERE pokemon.evolving = 1 AND pokemon.current_trainer = ?';
-        con.query(query_str, [userid], function (err, rows) {
-            if (err) {
-                console.log(err);
-                resolve(null);
-            }
-            resolve(rows[0]);
-        });
+        resolve(evolvingPokemon);
     });
 }
 
 /**
  * Gets a Discord user who uses Pokebot.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {User} The User object of the requested user,
  * or null if the user doesn't exist in the database.
  */
-async function getUser(userid) {
+async function getUser(userId) {
+    let user = await doQuery('SELECT * FROM user, user_prefs WHERE user.user_id = ? AND user_prefs.user_id = ?', [userId, userId]);
+    if (user != null) {
+        user = user[0];
+    }
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM user, user_prefs WHERE user.user_id = ? AND user_prefs.user_id = ?';
-        con.query(query_str, [userid, userid], function (err, rows) {
-            if (err) {
-                console.log(err);
-                resolve(null);
-            }
-            if (!rows.length) {
-                resolve(null);
-            }
-            resolve(rows[0]);
-        });
+        resolve(user);
     });
 }
 
 /**
  * Gets all items owned by a user.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Item[]} All items owned by a user, or null
  * if no items were found.
  */
-async function getBag(userid) {
+async function getBag(userId) {
+    let bag = await doQuery('SELECT * FROM item WHERE item.owner = ? AND item.quantity > 0', [userId]);
+    /* Need to return the whole list of items, not just a single row. */
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM item WHERE item.owner = ? AND item.quantity > 0';
-        con.query(query_str, userid, function (err, rows) {
-            if (err) {
-                console.log(err);
-                resolve(null);
-            }
-            resolve(rows);
-        });
+        resolve(bag);
     });
 }
 
 /**
  * Gets all Pokemon owned by a user.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Pokemon[]} A list of all Pokemon currently owned
  * by the user.
  */
-async function getPokemon(userid) {
+async function getPokemon(userId) {
+    let pokemon = await doQuery('SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage IS NULL', [userId]);
+    /* Need to return the whole list of Pokemon, not just a single row. */
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage IS NULL';
-        con.query(query_str, userid, function (err, rows) {
-            if (err) {
-                console.log(err);
-                resolve(null);
-            }
-            resolve(rows);
-        });
+        resolve(pokemon);
     });
 }
 
@@ -3065,21 +2998,16 @@ async function getPokemon(userid) {
  * Gets all Pokemon owned by a user that are currently
  * in the day care.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Pokemon[]} A list of all the user's Pokemon
  * that are currently in the day care.
  */
-async function getDaycare(userid) {
+async function getDaycare(userId) {
+    let daycarePokemon = await doQuery(`SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage = "daycare"`, [userId]);
+    /* Need to return the whole list of Pokemon, not just a single row. */
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage = "daycare"';
-        con.query(query_str, userid, function (err, rows) {
-            if (err) {
-                console.log(err);
-                resolve(null);
-            }
-            resolve(rows);
-        });
+        resolve(daycarePokemon);
     });
 }
 
@@ -3093,24 +3021,27 @@ async function getDaycare(userid) {
  */
 async function fixEvolutions() {
     let wereAllEvolutionsFixed = true;
-    var query_str = 'SELECT * FROM pokemon WHERE pokemon.evolving = 1';
-    await con.query(query_str, async function (err, pokemon) {
-        if (err) {
-            console.log(err);
-            wereAllEvolutionsFixed = false;
-        }
-        var i;
-        for (i = 0; i < pokemon.length; i++) {
-            if (pokemon[i].evolving === 1) {
-                var user = await getUser(pokemon[i].current_trainer);
+    let evolvingPokemon = await doQuery('SELECT * FROM pokemon WHERE pokemon.evolving = 1', []);
+    if (evolvingPokemon === null) {
+        wereAllEvolutionsFixed = false;
+    } else {
+        let evolvingPokemonIndex;
+        for (evolvingPokemonIndex = 0; evolvingPokemonIndex < evolvingPokemon.length; evolvingPokemonIndex++) {
+            if (evolvingPokemon[evolvingPokemonIndex].evolving === 1) {
+                let user = await getUser(evolvingPokemon[evolvingPokemonIndex].current_trainer);
                 if (user === null) {
                     wereAllEvolutionsFixed = false;
+                } else {
+                    let evolvingInto = await checkEvolve(user, evolvingPokemon[evolvingPokemonIndex], "level");
+                    if (evolvingInto != null) {
+                        evolving[evolving.length] = new Evolution(evolvingPokemon[evolvingPokemonIndex].current_trainer, evolvingPokemon[evolvingPokemonIndex].name, evolvingInto);
+                    } else {
+                        wereAllEvolutionsFixed = false;
+                    }
                 }
-                var to = await checkEvolve(user, pokemon[i], "level");
-                evolving[evolving.length] = new Evolution(pokemon[i].current_trainer, pokemon[i].name, to);
             }
         }
-    });
+    }
 
     return new Promise(function(resolve) {
         resolve(wereAllEvolutionsFixed);
@@ -3121,64 +3052,48 @@ async function fixEvolutions() {
  * Gets all Poke Balls owned by a user, including
  * Great Balls, Net Balls, etc.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Item[]} All Poke Balls owned by a user.
  */
-async function getBalls(userid) {
+async function getBalls(userId) {
+    let balls = await doQuery(`SELECT * FROM pokebot.item WHERE owner = ? AND category = "Ball" AND quantity > 0`, [userId]);
+    /* Need to return the whole list of balls, not just a single row. */
     return new Promise(function(resolve) {
-        var query_str = `SELECT * FROM pokebot.item WHERE owner = ? AND category = "Ball" AND quantity > 0;`;
-        con.query(query_str, [userid], function (err, rows) {
-            if (err) {
-                console.error(err);
-                resolve(null);
-            }
-            resolve(rows);
-        });
+        resolve(balls);
     });
 }
 
 /**
  * Gets all fishing rods owned by a user.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * 
  * @returns {Item[]} All fishing rods owned by the user.
  */
-async function getRods(userid) {
+async function getRods(userId) {
+    let rods = await doQuery(`SELECT * FROM pokebot.item WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0`, [userId]);
+    /* Need to return the whole list of rods, not just a single row. */
     return new Promise(function(resolve) {
-        var query_str = `SELECT * FROM pokebot.item WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0;`;
-        con.query(query_str, [userid], function (err, rows) {
-            if (err) {
-                console.error(err);
-                resolve(null);
-            }
-            resolve(rows);
-        });
+        resolve(rods);
     });
 }
 
 /**
  * Gets an item from the item table in the database.
  * 
- * @param {string} itemid The primary key of the item.
+ * @param {string} itemId The primary key of the item.
  * 
  * @returns {Item} The item with the specified id, or
  * null if there is no item with that id.
  */
-async function getItem(itemid) {
+async function getItem(itemId) {
+    let item = await doQuery('SELECT * FROM item WHERE item.item_id = ?', [itemId]);
+    if (item != null) {
+        item = item[0];
+    }
     return new Promise(function(resolve) {
-        var query_str = 'SELECT * FROM item WHERE item.item_id = ?';
-        con.query(query_str, [itemid], function (err, rows) {
-            if (err) {
-                console.error(err);
-                resolve(null);
-            } else if (rows.length < 1) {
-                resolve(null);
-            } else {
-                resolve(rows[0]);
-            }
-        });
+        resolve(item);
     });
 }
 
@@ -3189,10 +3104,10 @@ async function getItem(itemid) {
  * 
  * @returns {string[]} The name of each move in the same order as the objects were.
  */
-function convertMovesObjectToNames(moves) {
-    let i = 0;
-    for (i; i < moves.length; i++) {
-        moves[i] = moves[i].name;
+function convertMoveObjectsToNames(moves) {
+    let nameIndex = 0;
+    for (nameIndex; nameIndex < moves.length; nameIndex++) {
+        moves[nameIndex] = moves[nameIndex].name;
     }
     return moves;
 }
@@ -3206,250 +3121,204 @@ function convertMovesObjectToNames(moves) {
  * @returns {boolean} True if the user's field was changed.
  */
 async function setField(message, field) {
-    var user = await getUser(message.author.id);
+    let wereNoErrorsEncountered = true;
+    let user = await getUser(message.author.id);
     if (user === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
     }
     
-    var lead = await getLeadPokemon(user.user_id);
+    let lead = await getLeadPokemon(user.user_id);
     if (lead === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
     }
-    
-    var rods = await getRods(user.user_id);
-    if (rods === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
 
-    var locationData;
-    var rpath = generateLocationJSONPath(user.region, user.location);
-    var rdata;
-    try {
-        rdata = fs.readFileSync(rpath, "utf8");
-        locationData = JSON.parse(rdata);
-    } catch (err) {
-        locationData = null;
-    }
-
-    let moves = await getPokemonKnownMoves(lead.pokemon_id);
-    moves = convertMovesObjectToNames(moves);
+    let locationData = parseJSON(generateLocationJSONPath(user.region, user.location));
+    let moves = convertMoveObjectsToNames(await getPokemonKnownMoves(lead.pokemon_id));
     
-    var curField = user.field;
-    var canSurf = false;
     if (field === "Walking") {
-        if (curField === "Walking") {
-            message.channel.send(message.author.username + " you are already walking.");
-            return false;
+        if (user.field === "Walking") {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already walking."));
         } else {
-            var query = "UPDATE user SET field = ? WHERE user.user_id = ?";
-            con.query(query, [field, message.author.id], function(err) {
-                if (err) {
-                    console.log(err);
-                    message.channel.send(message.author.username + " failed to walk.");
-                    return false;
-                } else {
-                    message.channel.send(message.author.username + " is now walking.");
-                    return true;
-                }
-            });
+            if (await doQuery("UPDATE user SET field = ? WHERE user.user_id = ?", [field, message.author.id]) === null) {
+                wereNoErrorsEncountered = false;
+            }
         }
     } else if (field === "Surfing") {
-        if (curField === "Surfing") {
-            message.channel.send(message.author.username + " you are already surfing.");
-            return false;
-        } else if (locationData == null) {
-            message.channel.send(message.author.username + " you cannot surf here.");
-            return false;
+        if (user.field === "Surfing") {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already surfing."));
+        } else if (locationData === null) {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you cannot surf here."));
         } else {
+            /* If user's lead Pokemon knows the move Surf. */
             if (moves.indexOf("Surf") >= 0) {
-                var i;
-                for (i = 0; i < locationData.pokemon.length; i++) {
-                    var a;
-                    for (a = 0; a < locationData.pokemon.length; a++) {
-                        if (locationData.pokemon[a].field === "Surfing") {
-                            canSurf = true;
-                            i = locationData.pokemon.length;
-                        }
+                let canSurf = false;
+                let wildPokemonIndex;
+                /* Checks if any wild Pokemon in the user's current location are found by surfing.
+                Presumably if there aren't any Pokemon found by surfing, then its not a location with
+                reachable water and therefore the user shouldn't be able to surf there. */
+                for (wildPokemonIndex = 0; wildPokemonIndex < locationData.pokemon.length; wildPokemonIndex++) {
+                    if (locationData.pokemon[wildPokemonIndex].field === "Surfing") {
+                        canSurf = true;
+                        break;
                     }
                 }
                 if (canSurf) {
-                    var query = "UPDATE user SET field = ? WHERE user.user_id = ?";
-                    con.query(query, [field, message.author.id], function(err) {
-                        if (err) {
-                            console.log(err);
-                            message.channel.send(message.author.username + " failed to surf.");
-                            return false;
-                        } else {
-                            message.channel.send(message.author.username + " is now surfing.");
-                            return true;
-                        }
-                    });
+                    if (await doQuery("UPDATE user SET field = ? WHERE user.user_id = ?", [field, message.author.id]) === null) {
+                        await sendMessage(message.channel, (message.author.username + " failed to surf."));
+                        wereNoErrorsEncountered = false;
+                    } else {
+                        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " is now surfing."));
+                    }
                 } else {
-                    message.channel.send(message.author.username + " you cannot surf here.");
-                    return false;
+                    wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you cannot surf here."));
                 }
             } else {
-                message.channel.send(message.author.username + " your lead Pokémon must know the move Surf!");
-                return false;
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your lead Pokémon must know the move Surf!"));
             }
         }
     } else if (field === "Dive") {
-        if (curField === "Dive") {
-            message.channel.send(message.author.username + " you are already diving.");
-            return false;
-        } else if (locationData == null) {
-            message.channel.send(message.author.username + " you cannot dive here.");
-            return false;
+        if (user.field === "Diving") {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already diving."));
+        } else if (locationData === null) {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you cannot dive here."));
         } else {
             if (moves.indexOf("Dive") >= 0) {
-                var i;
-                for (i = 0; i < locationData.pokemon.length; i++) {
-                    var a;
-                    for (a = 0; a < locationData.pokemon.length; a++) {
-                        if (locationData.pokemon[a].field === "Dive") {
-                            canSurf = true;
-                            i = locationData.pokemon.length;
-                        }
+                let canDive = false;
+                let wildPokemonIndex;
+                for (wildPokemonIndex = 0; wildPokemonIndex < locationData.pokemon.length; wildPokemonIndex++) {
+                    if (locationData.pokemon[wildPokemonIndex].field === "Dive") {
+                        canSurf = true;
+                        break;
                     }
                 }
-                if (canSurf) {
-                    var query = "UPDATE user SET field = ? WHERE user.user_id = ?";
-                    con.query(query, [field, message.author.id], function(err) {
-                        if (err) {
-                            console.log(err);
-                            message.channel.send(message.author.username + " failed to dive.");
-                            return false;
-                        } else {
-                            message.channel.send(message.author.username + " is now diving.");
-                            return true;
-                        }
-                    });
+                if (canDive) {
+                    if (await doQuery("UPDATE user SET field = ? WHERE user.user_id = ?", [field, message.author.id]) === null) {
+                        await sendMessage(message.channel, (message.author.username + " failed to dive."));
+                        wereNoErrorsEncountered = false;
+                    } else {
+                        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " is now diving."));
+                    }
                 } else {
-                    message.channel.send(message.author.username + " you cannot dive here.");
-                    return false;
+                    wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you cannot dive here."));
                 }
             } else {
-                message.channel.send(message.author.username + " your lead Pokémon must know the move Dive!");
-                return false;
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your lead Pokémon must know the move Dive!"));
             }
         }
     } else if (field === "Headbutt") {
-        if (curField === "Headbutt") {
-            message.channel.send(message.author.username + " you are already headbutting trees.");
-            return false;
-        } else if (locationData == null) {
-            message.channel.send(message.author.username + " there are no trees worth headbutting here.");
-            return false;
+        if (user.field === "Headbutt") {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already headbutting trees."));
+        } else if (locationData === null) {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you cannot headbutt any trees here."));
         } else {
             if (moves.indexOf("Headbutt") >= 0) {
-                var i;
-                for (i = 0; i < locationData.pokemon.length; i++) {
-                    var a;
-                    for (a = 0; a < locationData.pokemon.length; a++) {
-                        if (locationData.pokemon[a].field === "Headbutt") {
-                            canSurf = true;
-                            i = locationData.pokemon.length;
-                        }
+                let canHeadbutt = false;
+                let wildPokemonIndex;
+                for (wildPokemonIndex = 0; wildPokemonIndex < locationData.pokemon.length; wildPokemonIndex++) {
+                    if (locationData.pokemon[wildPokemonIndex].field === "Headbutt") {
+                        canSurf = true;
+                        break;
                     }
                 }
-                if (canSurf) {
-                    var query = "UPDATE user SET field = ? WHERE user.user_id = ?";
-                    con.query(query, [field, message.author.id], function(err) {
-                        if (err) {
-                            console.log(err);
-                            message.channel.send(message.author.username + " failed to headbutt any trees.");
-                            return false;
-                        } else {
-                            message.channel.send(message.author.username + " is now headbutting trees.");
-                            return true;
-                        }
-                    });
+                if (canHeadbutt) {
+                    if (await doQuery("UPDATE user SET field = ? WHERE user.user_id = ?", [field, message.author.id]) === null) {
+                        await sendMessage(message.channel, (message.author.username + " failed to begin headbutting trees."));
+                        wereNoErrorsEncountered = false;
+                    } else {
+                        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " is now headbutting trees."));
+                    }
                 } else {
-                    message.channel.send(message.author.username + " there are no trees worth headbutting here.");
-                    return false;
+                    wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " there is no point in headbutting trees here."));
                 }
             } else {
-                message.channel.send(message.author.username + " your lead Pokémon must know the move Headbutt!");
-                return false;
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your lead Pokémon must know the move Headbutt!"));
             }
         }
     } else if (field === "Rock Smash") {
-        if (curField === "Rock Smash") {
-            message.channel.send(message.author.username + " you are already smashing rocks.");
-            return false;
-        } else if (locationData == null) {
-            message.channel.send(message.author.username + " there are no rocks worth smashing here.");
-            return false;
+        if (user.field === "Rock Smash") {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already smashing rocks."));
+        } else if (locationData === null) {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you cannot smash rocks here."));
         } else {
             if (moves.indexOf("Rock Smash") >= 0) {
-                var i;
-                for (i = 0; i < locationData.pokemon.length; i++) {
-                    var a;
-                    for (a = 0; a < locationData.pokemon.length; a++) {
-                        if (locationData.pokemon[a].field === "Rock Smash") {
-                            canSurf = true;
-                            i = locationData.pokemon.length;
-                        }
+                let canRockSmash = false;
+                let wildPokemonIndex;
+                for (wildPokemonIndex = 0; wildPokemonIndex < locationData.pokemon.length; wildPokemonIndex++) {
+                    if (locationData.pokemon[wildPokemonIndex].field === "Rock Smash") {
+                        canSurf = true;
+                        break;
                     }
                 }
-                if (canSurf) {
-                    var query = "UPDATE user SET field = ? WHERE user.user_id = ?";
-                    con.query(query, [field, message.author.id], function(err) {
-                        if (err) {
-                            console.log(err);
-                            message.channel.send(message.author.username + " failed to smash any rocks.");
-                            return false;
-                        } else {
-                            message.channel.send(message.author.username + " is now smashing rocks.");
-                            return true;
-                        }
-                    });
+                if (canRockSmash) {
+                    if (await doQuery("UPDATE user SET field = ? WHERE user.user_id = ?", [field, message.author.id]) === null) {
+                        await sendMessage(message.channel, (message.author.username + " failed to begin smashing rocks."));
+                        wereNoErrorsEncountered = false;
+                    } else {
+                        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " is now smashing rocks."));
+                    }
                 } else {
-                    message.channel.send(message.author.username + " there are no rocks worth smashing here.");
-                    return false;
+                    wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " there is no point in smashing rocks here."));
                 }
             } else {
-                message.channel.send(message.author.username + " your lead Pokémon must know the move Rock Smash!");
-                return false;
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your lead Pokémon must know the move Rock Smash!"));
             }
         }
     } else if (field === "Fish") {
-        var rodFound = false;
-        var selectedRod;
-        var canFish = false;
-        var rod_count;
-        var unusedRods = [];
+        /**
+         * The fishing rods owned by the user.
+         */
+        let rods = await getRods(user.user_id);
+        if (rods === null) {
+            return new Promise(function(resolve) {
+                resolve(false);
+            });
+        }
+
+        let rodFound = false;
+        /**
+         * The rod selected by the user to fish with.
+         */
+        let selectedRod = null;
+        let canFish = false;
+        let rod_count;
+        let unusedRods = [];
+        /* Gets all fishing rods owned by the user that the user is not currently using.
+        For example, if a user already owns all three rods but is currently fishing with
+        a Great Rod, this list will only contain the Old Rod and Super Rod. */
         for (rod_count = 0; rod_count < rods.length; rod_count++) {
             unusedRods[unusedRods.length] = rods[rod_count].name;
             rodFound = true;
         }
+        /* If user doesn't own any fishing rods that are not currently in use. */
         if (unusedRods.length < 1) {
+            /* If user is already fishing with the only rod the user owns. */
             if (rodFound) {
-                message.channel.send(message.author.username + " you are already fishing with a " + user.field + ".");
-                return false;
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you are already fishing with a " + user.field + "."));
+            /* If user owns no fishing rods at all. */
             } else {
-                message.channel.send(message.author.username + " you do not own any fishing rods.");
-                return false;
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " you do not own any fishing rods."));
             }
+        /* If user only owns two rods and one of the rods is currently in use, then
+        automatically swap to the unused rod. */
         } else if (unusedRods.length === 1){
             selectedRod = unusedRods[0];
+        /* If user owns multiple rods that are not currently being used, then
+        the user is prompted to select which unused rod to begin using. */
         } else if (unusedRods.length > 1) {
             transactions[transactions.length] = new Transaction(message.author.id, "selecting a fishing rod");
-            var input = null;
-            var cancel = false;
-            var string = (message.author.username + " you have multiple fishing rods. Please select a rod from the list below by typing its name or number as shown in the list, or type \"Cancel\" to stop selecting a rod.\n ```");
+            let input = null;
+            let cancel = false;
+            let string = (message.author.username + " you have multiple fishing rods. Please select a rod from the list below by typing its name or number as shown in the list, or type \"Cancel\" to stop selecting a rod.\n ```");
             for (i = 0; i < rods.length; i++) {
                 string += ((i + 1).toString() + ". " + rods[i].name + "\n");
             }
             string += "```";
             
-            message.channel.send(string);
+            await sendMessage(message.channel, string);
 
             while (cancel == false) {
                 await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
@@ -3457,6 +3326,7 @@ async function setField(message, field) {
                     input = collected.first().content.toString().toLowerCase();
                 })
                 .catch(collected => {
+                    console.error(collected);
                     input = "cancel";
                     cancel = true;
                 });
@@ -3464,26 +3334,26 @@ async function setField(message, field) {
                     cancel = true;
                     input = null
                 } else if (/^\d+$/.test(input)) {
-                    var num = Number(input);
+                    let num = Number(input);
                     if (num > 0 && num <= rods.length) {
                         cancel = true;
                         input = (num - 1);
                     } else {
-                        message.channel.send("Number is out of range. " + string);
+                        await sendMessage(message.channel, (message.author.username + " that number is not a valid choice. " + string));
                         input = null;
                     }
                 } else if (input != null) {
-                    var a;
-                    var match = false;
-                    for (a = 0; a < rods.length; a++) {
-                        if (rods[a].name.toLowerCase() === input) {
-                            input = a;
+                    let rodsIndex;
+                    let match = false;
+                    for (rodsIndex = 0; rodsIndex < rods.length; rodsIndex++) {
+                        if (rods[rodsIndex].name.toLowerCase() === input) {
+                            input = rodsIndex;
                             match = true;
                             cancel = true;
                         }
                     }
                     if (!match) {
-                        message.channel.send("Choice not recognized. " + string);
+                        await sendMessage(message.channel, (message.author.username + "you do not own a fishing rod with that name. " + string));
                         input = null;
                     }
                 } else {
@@ -3493,46 +3363,45 @@ async function setField(message, field) {
             
             removeTransaction(message.author.id);
             
-            if (input == null) {
-                message.channel.send(message.author.username + " cancelled their fishing rod selection.");
-                return false;
+            if (input === null) {
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " cancelled their fishing rod selection."));
+                selectedRod = null;
             } else {
                 selectedRod = rods[input].name;
             }
         } else {
-            message.channel.send(message.author.username + " your don't have any fishing rods!");
-            return false;
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your don't have any fishing rods!"));
+            selectedRod = null;
         }
         
-        
-        if (locationData == null) {
-            message.channel.send(message.author.username + " there are no Pokémon to fish for here.");
-            return false;
-        }
-        var a;
-        for (a = 0; a < locationData.pokemon.length; a++) {
-            if (locationData.pokemon[a].field === selectedRod) {
-                canFish = true;
+        if (selectedRod != null) {
+            if (locationData === null) {
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " there are no Pokémon to fish for here using the " + selectedRod + "."));
+            } else {
+                let wildPokemonIndex;
+                for (wildPokemonIndex = 0; wildPokemonIndex < locationData.pokemon.length; wildPokemonIndex++) {
+                    if (locationData.pokemon[wildPokemonIndex].field === selectedRod) {
+                        canFish = true;
+                    }
+                }
+                
+                if (canFish) {
+                    if (await doQuery("UPDATE user SET field = ? WHERE user.user_id = ?", [field, message.author.id]) === null) {
+                        await sendMessage(message.channel, (message.author.username + " failed to fish with the " + selectedRod + "."));
+                        wereNoErrorsEncountered = false;
+                    } else {
+                        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " is now fishing with the " + selectedRod + "."));
+                    }
+                } else {
+                    wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " there are no Pokémon to fish for here using the " + selectedRod + "."));
+                }
             }
         }
-        
-        if (canFish) {
-            var query = "UPDATE user SET field = ? WHERE user.user_id = ?";
-            con.query(query, [selectedRod, message.author.id], function(err) {
-                if (err) {
-                    console.log(err);
-                    message.channel.send(message.author.username + " failed to fish.");
-                    return false;
-                } else {
-                    message.channel.send(message.author.username + " is now fishing with the " + selectedRod + ".");
-                    return true;
-                }
-            });
-        } else {
-            message.channel.send(message.author.username + " there are no Pokémon to fish for here using the " + selectedRod + ".");
-            return false;
-        }
     }
+
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
 }
 
 /**
