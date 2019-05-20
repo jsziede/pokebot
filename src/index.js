@@ -381,13 +381,13 @@ client.on('message', async (message) => {
  */
 async function doNonCommandMessage(message) {
     if (!enableSpam) {
-        //user did not post in the spam channel
+        /* User did not post in the spam channel. */
         let lastUser = null;
         if (message.author.id === lastUser) {
-            return; //dont do anything if sender posted a consecutive message
+            return; /* Dont do anything if sender posted a consecutive message. */
         }
         
-        //bot wont do anything until at least after a second since the last message passed
+        /* Bot wont do anything until at least after a second since the last message passed. */
         let currentTime = new Date();
         currentTime = currentTime.getTime();
         if ((currentTime - cooldown) < 1000) {
@@ -3417,73 +3417,85 @@ async function setField(message, field) {
  * out of nicknaming the Pokemon.
  */
 async function nicknamePokemon(message, name) {
-    await message.channel.send(message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name.");
-    var cancel = false;
-    var input = null;
-    while(cancel == false) {
+    await sendMessage(message.channel, (message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name."));
+
+    const YES_NICKNAME = 1;
+    const NO_NICKNAME = null;
+    let cancel = false;
+    let input = NO_NICKNAME;
+
+    while(cancel === false) {
         await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             input = collected.first().content.toString().toLowerCase();
         })
         .catch(collected => {
-            input = "cancel";
+            console.error(collected);
+            input = NO_NICKNAME;
             cancel = true;
         });
 
         if (input === "no" || input === "cancel") {
             cancel = true;
-            input = 0;
+            input = NO_NICKNAME;
         } else if (input === "yes") {
             cancel = true;
-            input = 1;
+            input = YES_NICKNAME;
         } else if (input != null) {
-            message.channel.send(message.author.username + ", your response was not recognized. Type \"Yes\" to enter a nickname for " + name + " or \"No\" to keep its current name.");
-            input = null;
+            await sendMessage(message.channel, (message.author.username + ", your response was not recognized. Type \"Yes\" to enter a nickname for " + name + " or \"No\" to keep its current name."));
+            input = NO_NICKNAME;
         } else {
-            input = 0;
+            input = NO_NICKNAME;
         }
     }
     
-    if (input < 1) {
-        await message.channel.send(message.author.username + " decided not to nickname their " + name + ".");
-        return name;
-    }
+    if (input === YES_NICKNAME) {
+        await sendMessage(message.channel, (message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty."));
     
-    await message.channel.send(message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
-    cancel = false;
-    input = null;
-    while(cancel == false) {
-        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-        .then(collected => {
-            input = collected.first().content.toString();
-        })
-        .catch(collected => {
-            input = null;
-            cancel = true;
-        });
-        
-        if (input != null) {
-            input = input.trim();
-            if (input === name) {
-                message.channel.send(message.author.username + " decided not to nickname their " + name + ".");
+        cancel = false;
+        /* After this assingment, input represents the Pokemon's nickname rather than the user's
+        yes or no response on whether or not they want to nickname their Pokemkon. */
+        input = NO_NICKNAME;
+
+        while(cancel === false) {
+            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+            .then(collected => {
+                input = collected.first().content.toString();
+            })
+            .catch(collected => {
+                console.error(collected);
+                input = NO_NICKNAME;
                 cancel = true;
-            } else if (input.length > 0 && input.length <= 20) {
-                cancel = true;
-            } else if (input.length <= 0 || input.length > 20) {
-                message.channel.send(message.author.username + ", your nickname was not valid. Enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty.");
-                input = null;
-            } else {
-                input = null;
+            });
+            
+            if (input != NO_NICKNAME) {
+                input = input.trim();
+                if (input === name) {
+                    await sendMessage(message.channel, (message.author.username + " decided not to nickname their " + name + "."));
+                    cancel = true;
+                } else if (input.length > 0 && input.length <= 20) {
+                    cancel = true;
+                } else if (input.length <= 0 || input.length > 20) {
+                    await sendMessage(message.channel, (message.author.username + ", your nickname was not valid. Enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty."));
+                    input = NO_NICKNAME;
+                } else {
+                    input = NO_NICKNAME;
+                }
             }
+    
+            /**
+             * @todo Profanity filter needs to go here.
+             */
         }
     }
     
-    if (input == null) {
-        return name;
-    } else {
-        await message.channel.send(message.author.username + " nicknamed their " + name + " '" + input + "'.");
-        return input;
+    if (input != null) {
+        await sendMessage(message.channel, (message.author.username + " nicknamed their " + name + " '" + input + "'."));
     }
+
+    return new Promise(function(resolve) {
+        resolve(input);
+    });
 }
 
 /**
@@ -9289,7 +9301,7 @@ async function displayAnOwnedPkmn(pkmn, message) {
     
     var name = pkmn.name;
     var nick = pkmn.nickname;
-    if (nick == null) {
+    if (nick === null) {
         nick = pkmn.name;
     }
 
@@ -10863,8 +10875,8 @@ async function printPokemon(message, otherUser) {
         } else {
             form = " [" + form + " Form]";
         }
-        if (fieldString == null) {
-            if (pokemon[i].nickname == null) {
+        if (fieldString === null) {
+            if (pokemon[i].nickname === null) {
                 fieldString = shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
             } else {
                 fieldString = shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
@@ -10876,13 +10888,13 @@ async function printPokemon(message, otherUser) {
                 "inline": false
             }
             fieldCount++;
-            if (pokemon[i].nickname == null) {
+            if (pokemon[i].nickname === null) {
                 fieldString = shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
             } else {
                 fieldString = shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
             }
         } else {
-            if (pokemon[i].nickname == null) {
+            if (pokemon[i].nickname === null) {
                 fieldString += shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
             } else {
                 fieldString += shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
