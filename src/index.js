@@ -3695,24 +3695,31 @@ async function addPokemon(userid, pokemon) {
 function doesUserHaveUsableItem(bag, item) {
     item = item.toLowerCase();
     
-    var isLetters = /^\d+$/.test(item);
+    let doesOnlyContainDigits = /^\d+$/.test(item);
+
+    let itemInBag = null;
     
-    if (!isLetters) {
-        var i;
-        for (i = 0; i < bag.length; i++) {
-            var lowerItem = bag[i].name.toLowerCase();
-            if(lowerItem === item && (bag[i].category === "Item" || bag[i].category === "TM")) {
-                return bag[i];
+    /**
+     * If user is searching the item by name.
+     * 
+     * @warn This is not future-proof. A new item could eventually
+     * be given a name with only digits.
+     */
+    if (!doesOnlyContainDigits) {
+        let bagIndex;
+        for (bagIndex = 0; bagIndex < bag.length; bagIndex++) {
+            let lowerItem = bag[bagIndex].name.toLowerCase();
+            if(lowerItem === item && (bag[bagIndex].category === "Item" || bag[bagIndex].category === "TM")) {
+                itemInBag = bag[bagIndex];
             }
         }
+    /* If user input the index of an item. */
     } else {
         if (item <= bag.length && bag[item].holdable === 1 && (bag[item].category === "Item" || bag[item].category === "TM") && bag[item].category != "Key") {
-            return bag[item];
-        } else {
-            return null;
+            itemInBag = bag[item];
         }
     }
-    return null;
+    return itemInBag;
 }
 
 /**
@@ -3728,30 +3735,37 @@ function doesUserHaveUsableItem(bag, item) {
 function doesUserHaveHoldableItem(bag, item) {
     item = item.toLowerCase();
     
-    var isLetters = /^\d+$/.test(item);
+    let doesOnlyContainDigits = /^\d+$/.test(item);
+    let itemInBag = null;
     
-    if (!isLetters) {
-        var i;
-        for (i = 0; i < bag.length; i++) {
-            var lowerItem = bag[i].name.toLowerCase();
+    /**
+     * If user is searching the item by name.
+     * 
+     * @warn This is not future-proof. A new item could eventually
+     * be given a name with only digits.
+     */
+    if (!doesOnlyContainDigits) {
+        let bagIndex;
+        for (bagIndex = 0; bagIndex < bag.length; i++) {
+            let lowerItem = bag[i].name.toLowerCase();
             if(lowerItem === item && bag[i].holdable === 1 && (bag[i].category === "Item" || bag[i].category === "TM" || bag[i].category === "Ball")) {
-                return bag[i];
+                itemInBag = bag[i];
             }
         }
+    /* If user input the index of an item. */
     } else {
         if (item <= bag.length && bag[item].holdable === 1 && (bag[item].category === "Item" || bag[item].category === "TM")) {
-            return bag[item];
-        } else {
-            return null;
+            itemInBag = bag[item];
         }
     }
-    return null;
+
+    return itemInBag;
 }
 
 /**
  * Inserts a certain quantity of one item into a user's bag.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * @param {string} itemName The name of the item being added.
  * @param {number} amount The quantity of the item being added.
  * @param {boolean} isHoldable If the item can be held by a Pokemon.
@@ -3759,78 +3773,67 @@ function doesUserHaveHoldableItem(bag, item) {
  * 
  * @returns {boolean} True if the item was added to the user's bag.
  */
-async function addItemToBag(userid, itemName, amount, isHoldable, cat) {
+async function addItemToBag(userId, itemName, amount, isHoldable, cat) {
+    let wasItemAdded = false;
+    let itemQuantity = await doQuery("SELECT * from item WHERE item.owner = ? AND item.name = ?", [userId, itemName]);
+    if (itemQuantity != null) {
+        /* If user has never owned the item before, the item object will need to be inserted into the table. */
+        if (itemQuantity.length < 1) {
+            let hold = 0;
+            if (isHoldable) {
+                hold = 1;
+            }
+            let itemSet = {
+                owner: userId,
+                name: itemName,
+                quantity: amount,
+                holdable: hold,
+                category: cat
+            }
+            if (await doQuery("INSERT INTO item SET ?", [itemSet]) != null) {
+                wasItemAdded = true;
+            }
+        /* If user has already owned the item before, only update its quantity. */
+        } else {
+            let quantity = bag[0].quantity + amount;
+            if (await doQuery("UPDATE item SET quantity = ? WHERE item.owner = ? AND item.name = ?", [quantity, userId, itemName]) != null) {
+                wasItemAdded = true;
+            }
+        }
+    }
+
     return new Promise(function(resolve) {
-        var query = "SELECT * from item WHERE item.owner = ? AND item.name = ?";
-        con.query(query, [userid, itemName], function (err, bag) {
-            if (err) {
-                resolve(false);
-            }
-            if (bag.length < 1) {
-                var hold = 0;
-                if (isHoldable) {
-                    hold = 1;
-                }
-                var set = {
-                    owner: userid,
-                    name: itemName,
-                    quantity: amount,
-                    holdable: hold,
-                    category: cat
-                }
-                var newQuery = "INSERT INTO item SET ?";
-                con.query(newQuery, set, function(err) {
-                    if (err) {
-                        resolve(false);
-                    } else {
-                        resolve(true);
-                    }
-                });
-            } else {
-                var quantity = bag[0].quantity + amount;
-                var newQuery = "UPDATE item SET quantity = ? WHERE item.owner = ? AND item.name = ?";
-                con.query(newQuery, [quantity, userid, itemName], function(err) {
-                    if (err) {
-                        resolve(false);
-                    } else {
-                        resolve(true);
-                    }
-                });
-            }
-        });
+        resolve(wasItemAdded);
     });
 }
 
 /**
  * Removes a certain quantity of one item from a user's bag.
  * 
- * @param {string} userid The Discord id of the user.
+ * @param {string} userId The Discord id of the user.
  * @param {string} itemName The name of the item being added.
  * @param {number} amount The quantity of the item being added.
  * 
  * @returns {boolean} True if the item was removed from the user's bag.
  */
-function removeItemFromBag(userid, itemName, amount) {
-    return new Promise(function(resolve, reject) {
-        var query = "SELECT * from item WHERE item.owner = ? AND item.name = ? AND item.quantity > 0";
-        con.query(query, [userid, itemName], function (err, bag) {
-            if (err) {
-                return reject(err);
+function removeItemFromBag(userId, itemName, amount) {
+    let wasItemRemoved = false;
+    let itemToRemove = await doQuery("SELECT * from item WHERE item.owner = ? AND item.name = ? AND item.quantity > 0", [userId, itemName]);
+    if (itemToRemove != null) {
+        /* If user owns the item to be removed. */
+        if (itemToRemove.length > 0) {
+            let updatedQuantity = itemToRemove[0].quantity - amount;
+            /* Item quantities cannot be negative. */
+            if (updatedQuantity >= 0) {
+                if (await doQuery("UPDATE item SET item.quantity = ? WHERE item.owner = ? AND item.name = ?", [updatedQuantity, userId, itemName]) != null) {
+                    wasItemRemoved = true;
+                }
             }
-            if (bag.length > 0) {
-                var updatedQuantity = bag[0].quantity - amount;
-                var newQuery = " UPDATE item SET item.quantity = ? WHERE item.owner = ? AND item.name = ?";
-                con.query(newQuery, [updatedQuantity, userid, itemName], function(err) {
-                    if (err) {
-                        resolve(false);
-                    } else {
-                        resolve(true);
-                    }
-                });
-            } else {
-                resolve(false);
-            }
-        });
+        }
+    }
+
+    return new Promise(function(resolve) {
+        resolve(wasItemRemoved);
     });
 }
 
