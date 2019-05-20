@@ -474,9 +474,8 @@ async function getShuffleEmoji(number) {
     let pattern = /^\d+$/;
     if (pattern.test(number)) {
         let dexnum = number.toString();
-        while (dexnum.length < 3) {
-            dexnum = '0' + dexnum;
-        }
+        dexnum = dexnum.padStart((3 - dexnum.length), '0');
+
         shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
     } else {
         shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === number);
@@ -2041,9 +2040,7 @@ function generateSpriteLink(name, gender, form) {
     let url;
     url = dexnum.toString();
     /* Prepends 0s to the string if less than three characters long. */
-    while (url.length < 3) {
-        url = '0' + url;
-    }
+    url = url.padStart((3 - url.length), '0');
     
     /* Gets proper image if the pokemon has a form. */
     if (form === "Alolan") {
@@ -3613,9 +3610,8 @@ async function addPokemon(userid, pokemon) {
     }
 
     let national_id = pokemon.no.toString();
-    while (national_id.length < 3) {
-        national_id = '0' + national_id;
-    }
+    national_id = national_id.padStart((3 - national_id.length), '0');
+
     let pokemon_set = {
         original_trainer: userid.toString(),
         current_trainer: userid.toString(),
@@ -5065,9 +5061,7 @@ async function evolve(message) {
     }
     
     let national_id = pkmn.national_id.toString();
-    while (national_id.length < 3) {
-        national_id = '0' + national_id;
-    }
+    national_id = national_id.padStart((3 - national_id.length), '0');
 
     var hidden = [];
     var abilities = [];
@@ -9643,9 +9637,8 @@ async function printPossibleEncounters(message) {
 
         let pkm = JSON.parse(dat);
         let dexNum = pkm.national_id.toString();
-        while (dexNum.length < 3) {
-            dexNum = '0' + dexNum;
-        }
+        dexnum = dexnum.padStart((3 - dexNum.length), '0');
+
         var hasIt = user.pokedex.charAt(pkm.national_id - 1);
         if (hasIt === '1') {
             hasIt = true;
@@ -10493,9 +10486,8 @@ async function getDexInfo(message, name, form) {
 
                 pkm = JSON.parse(dat);
                 dexNum = pkm.national_id.toString();
-                while (dexNum.length < 3) {
-                    dexNum = '0' + dexNum;
-                }
+                dexNum = national_id.padStart((3 - dexNum.length), '0');
+
                 shuffle_icon = await getShuffleEmoji(pkm.national_id);
                 evoToString += "\n" + shuffle_icon + "Evolves into " + evolvesTo[f].name + " " + evolvesTo[f].method;
             }
@@ -11016,9 +11008,8 @@ async function printDex(message) {
         let shuffle_icon;
         let name = "----------";
         let num = i.toString();
-        while (num.length < 3) {
-            num = '0' + num;
-        }
+        num = num.padStart((3 - num.length), '0');
+
         if (pokedex.charAt(i - 1) === '1') {
             shuffle_icon = await getShuffleEmoji(i);
             name = getNameByNumber(i);
