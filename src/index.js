@@ -3498,6 +3498,31 @@ async function nicknamePokemon(message, name) {
     });
 }
 
+
+/**
+ * Gets the name of the JSON file containing
+ * information about a Pokemon move.
+ * 
+ * @param {string} name The name of the move.
+ * 
+ * @returns {string} The relative file path of the move's JSON file.
+ */
+function generateMoveJSONPath(name) {
+    name = name.toLowerCase();
+    
+    /* Moves with ambiguous names. */
+    if (name === "10000000 volt thunderbolt") {
+        name = "10 000 000 volt thunderbolt";
+    }
+
+    name = name.replace(/-/g,"_");
+    name = name.replace(/'/g,"_");
+    name = name.replace(/,/g,"_");
+    name = name.replace(/ /g,"_");
+
+    return "../data/move/" + name + ".json";
+}
+
 /**
  * Gets the base Power Points of a move.
  * 
@@ -3507,25 +3532,15 @@ async function nicknamePokemon(message, name) {
  * or null if an error was encountered.
  */
 function getMovePP(moveName) {
-    moveName = moveName.toLowerCase();
-    if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
-        moveName = "10 000 000 volt thunderbolt";
+    let path = generateMoveJSONPath(moveName);
+    let move = parseJSON(path);
+    let pp = null;
+
+    if (move != null) {
+        pp = move.pp;
     }
-    
-    moveName = moveName.replace(/-/g,"_");
-    moveName = moveName.replace(/'/g,"_");
-    moveName = moveName.replace(/ /g,"_");
-    
-    var path = "../data/move/" + moveName + ".json";
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        return null;
-    }
-    
-    var move = JSON.parse(data);
-    return move.pp;
+
+    return pp;
 }
 
 /**
@@ -3537,30 +3552,21 @@ function getMovePP(moveName) {
  * or null if an error was encountered.
  */
 function getMoveType(moveName) {
-    moveName = moveName.toLowerCase();
-    if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
-        moveName = "10 000 000 volt thunderbolt";
+    let path = generateMoveJSONPath(moveName);
+    let move = parseJSON(path);
+    let type = null;
+
+    if (move != null) {
+        type = move.type;
     }
-    
-    moveName = moveName.replace(/-/g,"_");
-    moveName = moveName.replace(/'/g,"_");
-    moveName = moveName.replace(/ /g,"_");
-    
-    var path = "../data/move/" + moveName + ".json";
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        return null;
-    }
-    
-    var move = JSON.parse(data);
-    return move.type;
+
+    return type;
 }
 
 /**
  * Updates a user's Pokedex string by setting an index (minus one)
- * of that string to '`1`'.
+ * of that string to '`1`', where index is the Pokemon's national
+ * Pokedex number.
  * 
  * @todo Check if user already has the Pokemon registered in their
  * Pokedex. This will save time by preventing both the substring call
@@ -3591,7 +3597,8 @@ async function addToPokedex(user, dexNum) {
  * @returns {number} The database id of the Pokemon.
  */
 async function addPokemon(userid, pokemon) {
-    var movePP = [null, null, null, null];
+    let movePP = [null, null, null, null];
+
     if (pokemon.moves[0] != null) {
         movePP[0] = getMovePP(pokemon.moves[0]);
     }
