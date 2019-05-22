@@ -31,20 +31,20 @@
   "leveling_rate": "Slow",
   "ev_yield": {
     "hp": 0,
-    "atk": 1,
+    "atk": 2,
     "def": 0,
     "sp_atk": 1,
     "sp_def": 0,
-    "speed": 1
+    "speed": 0
   },
   "color": "Red",
   "base_friendship": 0,
   "base_stats": {
     "hp": 50,
-    "atk": 150,
-    "def": 50,
-    "sp_atk": 150,
-    "sp_def": 50,
+    "atk": 180,
+    "def": 20,
+    "sp_atk": 180,
+    "sp_def": 20,
     "speed": 150
   },
   "categories": {
@@ -324,59 +324,101 @@
       "learnset": [
         {
           "move": "Leer",
-          "level": 1
+          "level": 1,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Wrap",
-          "level": 1
+          "level": 1,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Night Shade",
-          "level": 7
+          "level": 7,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Teleport",
-          "level": 13
+          "level": 13,
+          "variations": [
+            "Attack"
+          ]
         },
         {
-          "move": "Knock Off",
-          "level": 19
+          "move": "Taunt",
+          "level": 19,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Pursuit",
-          "level": 25
+          "level": 25,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Psychic",
-          "level": 31
+          "level": 31,
+          "variations": [
+            "Attack"
+          ]
         },
         {
-          "move": "Snatch",
-          "level": 37
+          "move": "Superpower",
+          "level": 37,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Psycho Shift",
-          "level": 43
+          "level": 43,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Zen Headbutt",
-          "level": 49
+          "level": 49,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Cosmic Power",
-          "level": 55
+          "level": 55,
+          "variations": [
+            "Attack"
+          ]
         },
         {
-          "move": "Recover",
-          "level": 61
+          "move": "Zap Cannon",
+          "level": 61,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Psycho Boost",
-          "level": 67
+          "level": 67,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Hyper Beam",
-          "level": 73
+          "level": 73,
+          "variations": [
+            "Attack"
+          ]
         },
         {
           "move": "Psyshock",

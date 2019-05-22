@@ -31,21 +31,21 @@
   "leveling_rate": "Slow",
   "ev_yield": {
     "hp": 0,
-    "atk": 1,
+    "atk": 0,
     "def": 0,
-    "sp_atk": 1,
+    "sp_atk": 0,
     "sp_def": 0,
-    "speed": 1
+    "speed": 3
   },
   "color": "Red",
   "base_friendship": 0,
   "base_stats": {
     "hp": 50,
-    "atk": 150,
-    "def": 50,
-    "sp_atk": 150,
-    "sp_def": 50,
-    "speed": 150
+    "atk": 95,
+    "def": 90,
+    "sp_atk": 95,
+    "sp_def": 90,
+    "speed": 180
   },
   "categories": {
     "en": "DNA Pokémon",
@@ -324,59 +324,101 @@
       "learnset": [
         {
           "move": "Leer",
-          "level": 1
+          "level": 1,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Wrap",
-          "level": 1
+          "level": 1,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Night Shade",
-          "level": 7
+          "level": 7,
+          "variations": [
+            "Speed"
+          ]
         },
         {
-          "move": "Teleport",
-          "level": 13
+          "move": "Double Team",
+          "level": 13,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Knock Off",
-          "level": 19
+          "level": 19,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Pursuit",
-          "level": 25
+          "level": 25,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Psychic",
-          "level": 31
+          "level": 31,
+          "variations": [
+            "Speed"
+          ]
         },
         {
-          "move": "Snatch",
-          "level": 37
+          "move": "Swift",
+          "level": 37,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Psycho Shift",
-          "level": 43
+          "level": 43,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Zen Headbutt",
-          "level": 49
+          "level": 49,
+          "variations": [
+            "Speed"
+          ]
         },
         {
-          "move": "Cosmic Power",
-          "level": 55
+          "move": "Agility",
+          "level": 55,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Recover",
-          "level": 61
+          "level": 61,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Psycho Boost",
-          "level": 67
+          "level": 67,
+          "variations": [
+            "Speed"
+          ]
         },
         {
-          "move": "Hyper Beam",
-          "level": 73
+          "move": "Extreme Speed",
+          "level": 73,
+          "variations": [
+            "Speed"
+          ]
         },
         {
           "move": "Psyshock",
