@@ -1,1340 +1,257 @@
 {
-  "names": {
-    "fr": "Hexagel",
-    "de": "Frigometri",
-    "it": "Cryogonal",
-    "en": "Cryogonal"
-  },
-  "national_id": 615,
-  "types": [
-    "Ice"
-  ],
-  "items": [
-      {
-          "name": "Never-Melt Ice",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Levitate"
-    }
-  ],
-  "gender_ratios": null,
-  "catch_rate": 25,
-  "egg_groups": [
-    "Mineral"
-  ],
-  "hatch_time": [
-    6630,
-    6884
-  ],
-  "height_us": "3'07\"",
-  "height_eu": "1.1 m",
-  "weight_us": "326.3 lbs.",
-  "weight_eu": "148.0 kg",
-  "base_exp_yield": 170,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 2,
-    "speed": 0
-  },
-  "color": "Blue",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 70,
-    "atk": 50,
-    "def": 30,
-    "sp_atk": 95,
-    "sp_def": 135,
-    "speed": 105
-  },
-  "categories": {
-    "en": "Crystallizing Pokémon",
-    "de": "Kristall"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 121,
-  "kalos_id": 111,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "When its body temperature goes up, it turns into steam and vanishes. When its temperature lowers, it returns to ice.",
-      "de": "Steigt seine Körpertemperatur, wird es zu Wasser und verschwindet. Kühlt es wieder ab, nimmt es seine alte Form an."
-    },
-    "White": {
-      "en": "They are born in snow clouds. They use chains made of ice crystals to capture prey.",
-      "de": "Es fängt seine Beute mit Ketten, die sich aus Eiskristallen zusammensetzen. Entstanden ist es aus einer Schneewolke."
-    },
-    "Black 2": {
-      "en": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
-      "de": "Es fängt seine Beute mit Ketten aus Eiskristallen und kühlt sie auf eine Temperatur von minus 100 Grad ab."
-    },
-    "White 2": {
-      "en": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
-      "de": "Es fängt seine Beute mit Ketten aus Eiskristallen und kühlt sie auf eine Temperatur von minus 100 Grad ab."
-    },
-    "X": {
-      "en": "They are born in snow clouds. They use chains made of ice crystals to capture prey.",
-      "de": "Es fängt seine Beute mit Ketten, die sich aus Eiskristallen zusammensetzen. Entstanden ist es aus einer Schneewolke."
-    },
-    "Y": {
-      "en": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
-      "de": "Es fängt seine Beute mit Ketten aus Eiskristallen und kühlt sie auf eine Temperatur von -100 °C ab."
-    },
-    "Omega Ruby": {
-      "en": "They are born in snow clouds. They use chains made of ice crystals to capture prey.",
-      "de": "Es fängt seine Beute mit Ketten aus Eiskristallen und kühlt sie auf eine Temperatur von -100 °C ab."
-    },
-    "Alpha Sapphire": {
-      "en": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
-      "de": "Es fängt seine Beute mit Ketten aus Eiskristallen und kühlt sie auf eine Temperatur von -100 °C ab."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Cryogonal",
+    "national_id": 615,
+    "types": [
+        "Ice"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Never-Melt Ice",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Levitate"
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 25,
+    "gender_ratios": null,
+    "egg_groups": [
+        "Mineral"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        6630,
+        6884
+    ],
+    "height_us": "3'07\"",
+    "height_eu": "1.1 m",
+    "weight_us": "326.3 lbs.",
+    "weight_eu": "148.0 kg",
+    "base_exp_yield": 170,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 2,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 70,
+        "atk": 50,
+        "def": 30,
+        "sp_atk": 95,
+        "sp_def": 135,
+        "speed": 105
+    },
+    "evolution_from": null,
+    "evolutions": [],
+    "species": "Crystallizing Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "They are composed of ice crystals. They capture prey with chains of ice, freezing the prey at -148° F.",
+    "move_learnset": [
+        {
+            "move": "Bind",
+            "level": 1
+        },
+        {
+            "move": "Ice Shard",
+            "level": 1
+        },
+        {
+            "move": "Night Slash",
+            "level": 1
+        },
+        {
+            "move": "Rapid Spin",
+            "level": 1
+        },
+        {
+            "move": "Sharpen",
+            "level": 1
+        },
+        {
+            "move": "Sheer Cold",
+            "level": 1
+        },
+        {
+            "move": "Icy Wind",
+            "level": 5
+        },
+        {
+            "move": "Haze",
+            "level": 9
+        },
+        {
+            "move": "Mist",
+            "level": 9
+        },
+        {
+            "move": "Aurora Beam",
+            "level": 13
+        },
+        {
+            "move": "Acid Armor",
+            "level": 17
+        },
+        {
+            "move": "Ancient Power",
+            "level": 21
+        },
+        {
+            "move": "Ice Beam",
+            "level": 25
+        },
+        {
+            "move": "Light Screen",
+            "level": 29
+        },
+        {
+            "move": "Reflect",
+            "level": 33
+        },
+        {
+            "move": "Slash",
+            "level": 37
+        },
+        {
+            "move": "Confuse Ray",
+            "level": 41
+        },
+        {
+            "move": "Recover",
+            "level": 45
+        },
+        {
+            "move": "Freeze-Dry",
+            "level": 49
+        },
+        {
+            "move": "Solar Beam",
+            "level": 50
+        },
+        {
+            "move": "Night Slash",
+            "level": 53
+        },
+        {
+            "move": "Sheer Cold",
+            "level": 57
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hail",
+            "tm": "TM7"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Ice Beam",
+            "tm": "TM13"
+        },
+        {
+            "move": "Blizzard",
+            "tm": "TM14"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Reflect",
+            "tm": "TM33"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Acrobatics",
+            "tm": "TM62"
+        },
+        {
+            "move": "Explosion",
+            "tm": "TM64"
+        },
+        {
+            "move": "Aurora Veil",
+            "tm": "TM70"
+        },
+        {
+            "move": "Frost Breath",
+            "tm": "TM79"
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": "TM91"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Bind",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 5
-        },
-        {
-          "move": "Sharpen",
-          "level": 9
-        },
-        {
-          "move": "Rapid Spin",
-          "level": 13
-        },
-        {
-          "move": "Icy Wind",
-          "level": 17
-        },
-        {
-          "move": "Haze",
-          "level": 21
-        },
-        {
-          "move": "Mist",
-          "level": 21
-        },
-        {
-          "move": "Aurora Beam",
-          "level": 25
-        },
-        {
-          "move": "Acid Armor",
-          "level": 29
-        },
-        {
-          "move": "Ice Beam",
-          "level": 33
-        },
-        {
-          "move": "Light Screen",
-          "level": 37
-        },
-        {
-          "move": "Reflect",
-          "level": 37
-        },
-        {
-          "move": "Slash",
-          "level": 41
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Solar Beam",
-          "level": 53
-        },
-        {
-          "move": "Night Slash",
-          "level": 57
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 61
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Frost Breath",
-          "tm": "TM79"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Bind",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 5
-        },
-        {
-          "move": "Sharpen",
-          "level": 9
-        },
-        {
-          "move": "Rapid Spin",
-          "level": 13
-        },
-        {
-          "move": "Icy Wind",
-          "level": 17
-        },
-        {
-          "move": "Haze",
-          "level": 21
-        },
-        {
-          "move": "Mist",
-          "level": 21
-        },
-        {
-          "move": "Aurora Beam",
-          "level": 25
-        },
-        {
-          "move": "Acid Armor",
-          "level": 29
-        },
-        {
-          "move": "Ice Beam",
-          "level": 33
-        },
-        {
-          "move": "Light Screen",
-          "level": 37
-        },
-        {
-          "move": "Reflect",
-          "level": 37
-        },
-        {
-          "move": "Slash",
-          "level": 41
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Solar Beam",
-          "level": 53
-        },
-        {
-          "move": "Night Slash",
-          "level": 57
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 61
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Frost Breath",
-          "tm": "TM79"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Bind",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 1
-        },
-        {
-          "move": "Mist",
-          "level": 1
-        },
-        {
-          "move": "Night Slash",
-          "level": 1
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 5
-        },
-        {
-          "move": "Sharpen",
-          "level": 9
-        },
-        {
-          "move": "Rapid Spin",
-          "level": 13
-        },
-        {
-          "move": "Icy Wind",
-          "level": 17
-        },
-        {
-          "move": "Haze",
-          "level": 21
-        },
-        {
-          "move": "Mist",
-          "level": 21
-        },
-        {
-          "move": "Aurora Beam",
-          "level": 25
-        },
-        {
-          "move": "Acid Armor",
-          "level": 29
-        },
-        {
-          "move": "Ice Beam",
-          "level": 33
-        },
-        {
-          "move": "Light Screen",
-          "level": 37
-        },
-        {
-          "move": "Reflect",
-          "level": 37
-        },
-        {
-          "move": "Slash",
-          "level": 41
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Freeze-Dry",
-          "level": 50
-        },
-        {
-          "move": "Solar Beam",
-          "level": 53
-        },
-        {
-          "move": "Night Slash",
-          "level": 57
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 61
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Frost Breath",
-          "tm": "TM79"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Bind",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 1
-        },
-        {
-          "move": "Mist",
-          "level": 1
-        },
-        {
-          "move": "Night Slash",
-          "level": 1
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 5
-        },
-        {
-          "move": "Sharpen",
-          "level": 9
-        },
-        {
-          "move": "Rapid Spin",
-          "level": 13
-        },
-        {
-          "move": "Icy Wind",
-          "level": 17
-        },
-        {
-          "move": "Haze",
-          "level": 21
-        },
-        {
-          "move": "Mist",
-          "level": 21
-        },
-        {
-          "move": "Aurora Beam",
-          "level": 25
-        },
-        {
-          "move": "Acid Armor",
-          "level": 29
-        },
-        {
-          "move": "Ice Beam",
-          "level": 33
-        },
-        {
-          "move": "Light Screen",
-          "level": 37
-        },
-        {
-          "move": "Reflect",
-          "level": 37
-        },
-        {
-          "move": "Slash",
-          "level": 41
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Freeze-Dry",
-          "level": 50
-        },
-        {
-          "move": "Solar Beam",
-          "level": 53
-        },
-        {
-          "move": "Night Slash",
-          "level": 57
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 61
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Frost Breath",
-          "tm": "TM79"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bind",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 1
-        },
-        {
-          "move": "Night Slash",
-          "level": 1
-        },
-        {
-          "move": "Rapid Spin",
-          "level": 1
-        },
-        {
-          "move": "Sharpen",
-          "level": 1
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 1
-        },
-        {
-          "move": "Icy Wind",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Mist",
-          "level": 9
-        },
-        {
-          "move": "Aurora Beam",
-          "level": 13
-        },
-        {
-          "move": "Acid Armor",
-          "level": 17
-        },
-        {
-          "move": "Ancient Power",
-          "level": 21
-        },
-        {
-          "move": "Ice Beam",
-          "level": 25
-        },
-        {
-          "move": "Light Screen",
-          "level": 29
-        },
-        {
-          "move": "Reflect",
-          "level": 33
-        },
-        {
-          "move": "Slash",
-          "level": 37
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 41
-        },
-        {
-          "move": "Recover",
-          "level": 45
-        },
-        {
-          "move": "Freeze-Dry",
-          "level": 49
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Night Slash",
-          "level": 53
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 57
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Aurora Veil",
-          "tm": "TM70"
-        },
-        {
-          "move": "Frost Breath",
-          "tm": "TM79"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bind",
-          "level": 1
-        },
-        {
-          "move": "Ice Shard",
-          "level": 1
-        },
-        {
-          "move": "Night Slash",
-          "level": 1
-        },
-        {
-          "move": "Rapid Spin",
-          "level": 1
-        },
-        {
-          "move": "Sharpen",
-          "level": 1
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 1
-        },
-        {
-          "move": "Icy Wind",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Mist",
-          "level": 9
-        },
-        {
-          "move": "Aurora Beam",
-          "level": 13
-        },
-        {
-          "move": "Acid Armor",
-          "level": 17
-        },
-        {
-          "move": "Ancient Power",
-          "level": 21
-        },
-        {
-          "move": "Ice Beam",
-          "level": 25
-        },
-        {
-          "move": "Light Screen",
-          "level": 29
-        },
-        {
-          "move": "Reflect",
-          "level": 33
-        },
-        {
-          "move": "Slash",
-          "level": 37
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 41
-        },
-        {
-          "move": "Recover",
-          "level": 45
-        },
-        {
-          "move": "Freeze-Dry",
-          "level": 49
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Night Slash",
-          "level": 53
-        },
-        {
-          "move": "Sheer Cold",
-          "level": 57
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Aurora Veil",
-          "tm": "TM70"
-        },
-        {
-          "move": "Frost Breath",
-          "tm": "TM79"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

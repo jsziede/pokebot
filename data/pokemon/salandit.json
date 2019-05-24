@@ -1,553 +1,274 @@
 {
-  "names": {
-    "en": "Salandit",
-    "jp": "ヤトウモリ Yatōmori",
-    "fr": "Tritox",
-    "es": "Salandit",
-    "de": "Molunk",
-    "it": "Salandit"
-  },
-  "national_id": 757,
-  "alola_id": 161,
-  "types": [
-    "Poison",
-    "Fire"
-  ],
-  "items": [
-      {
-          "name": "Smoke Ball",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Corrosion"
-    },
-    {
-      "name": "Oblivious",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 87.5,
-    "female": 12.5
-  },
-  "catch_rate": 120,
-  "egg_groups": [
-    "Monster",
-    "Dragon"
-  ],
-  "hatch_time": [
-    5140,
-    5396
-  ],
-  "height_us": "2'00\"",
-  "height_eu": "0.6 m",
-  "weight_us": "10.6 lbs.",
-  "weight_eu": "4.8 kg",
-  "base_exp_yield": 64,
-  "leveling_rate": "Medium Fast",
-  "color": "Black",
-  "base_friendship": 70,
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 1
-  },
-  "base_stats": {
-    "hp": 48,
-    "atk": 44,
-    "def": 40,
-    "sp_atk": 71,
-    "sp_def": 40,
-    "speed": 77
-  },
-  "evolutions": [
-    {
-      "to": "Salazzle",
-      "level": 33,
-      "conditions": [
-        "Female"
-      ]
-    }
-  ],
-  "categories": {
-    "en": "Toxic Lizard Pokémon",
-    "de": "Giftechse"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Sun": {
-      "en": "It burns its bodily fluids to create a poisonous gas. When its enemies become disoriented from inhaling the gas, it attacks them.",
-      "de": "Durch Verbrennung von Körperflüssigkeit erzeugt es ein Gas, das Feinde schwindelig und so zu leichten Zielen macht."
-    },
-    "Moon": {
-      "en": "Volcanoes or dry, craggy places are its home. It emanates a sweet-smelling poisonous gas that attracts bug Pokémon, then attacks them.",
-      "de": "Lebt in Vulkanen und trockenen Felsgebieten. Mit seinem süßlich duftenden Giftgas lockt es Käfer-Pokémon an, um sie anzugreifen."
-    },
-    "Ultra Sun": {
-      "en": "The males will do whatever the females tell them. They give the females most of their food. Due to malnutrition, the males can’t evolve.",
-      "de": "Das Männchen ist dem Weibchen hörig. Da es diesem fast seine gesamte Beute gibt, leidet es an Unterernährung und entwickelt sich nicht."
-    },
-    "Ultra Moon": {
-      "en": "It weakens opponents and sends them reeling with its poisonous gas. Salandit doesn’t deal well with Spinda, since it’s always reeling.",
-      "de": "Es bringt Gegner mit Giftgas ins Taumeln und schlägt dann zu. Mit Pandir, die von Natur aus taumeln, kommt es deshalb gar nicht klar."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Salandit",
+    "national_id": 757,
+    "types": [
+        "Poison",
+        "Fire"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Smoke Ball",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Corrosion"
+        },
+        {
+            "name": "Oblivious",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 120,
+    "gender_ratios": {
+        "male": 87.5,
+        "female": 12.5
+    },
+    "egg_groups": [
+        "Monster",
+        "Dragon"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        5140,
+        5396
+    ],
+    "height_us": "2'00\"",
+    "height_eu": "0.6 m",
+    "weight_us": "10.6 lbs.",
+    "weight_eu": "4.8 kg",
+    "base_exp_yield": 64,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 1
+    },
+    "base_stats": {
+        "hp": 48,
+        "atk": 44,
+        "def": 40,
+        "sp_atk": 71,
+        "sp_def": 40,
+        "speed": 77
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Salazzle",
+            "level": 33,
+            "conditions": [
+                "Female"
+            ]
+        }
+    ],
+    "species": "Toxic Lizard Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "The males will do whatever the females tell them. They give the females most of their food. Due to malnutrition, the males can’t evolve.",
+    "move_learnset": [
+        {
+            "move": "Poison Gas",
+            "level": 1
+        },
+        {
+            "move": "Scratch",
+            "level": 1
+        },
+        {
+            "move": "Ember",
+            "level": 5
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 8
+        },
+        {
+            "move": "Dragon Rage",
+            "level": 13
+        },
+        {
+            "move": "Smog",
+            "level": 16
+        },
+        {
+            "move": "Double Slap",
+            "level": 21
+        },
+        {
+            "move": "Flame Burst",
+            "level": 24
+        },
+        {
+            "move": "Toxic",
+            "level": 29
+        },
+        {
+            "move": "Nasty Plot",
+            "level": 32
+        },
+        {
+            "move": "Venoshock",
+            "level": 37
+        },
+        {
+            "move": "Flamethrower",
+            "level": 40
+        },
+        {
+            "move": "Venom Drench",
+            "level": 45
+        },
+        {
+            "move": "Dragon Pulse",
+            "level": 48
+        },
+        {
+            "move": "Belch",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Out",
+            "egg_move": true
+        },
+        {
+            "move": "Knock Off",
+            "egg_move": true
+        },
+        {
+            "move": "Sand Attack",
+            "egg_move": true
+        },
+        {
+            "move": "Snatch",
+            "egg_move": true
+        },
+        {
+            "move": "Dragon Claw",
+            "tm": "TM2"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Leech Life",
+            "tm": "TM28"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": "TM34"
+        },
+        {
+            "move": "Flamethrower",
+            "tm": "TM35"
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36"
+        },
+        {
+            "move": "Fire Blast",
+            "tm": "TM38"
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Flame Charge",
+            "tm": "TM43"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Overheat",
+            "tm": "TM50"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": "TM61"
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": "TM65"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 96,
-  "move_learnsets": [
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Ember",
-          "level": 5
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 8
-        },
-        {
-          "move": "Dragon Rage",
-          "level": 13
-        },
-        {
-          "move": "Smog",
-          "level": 16
-        },
-        {
-          "move": "Double Slap",
-          "level": 21
-        },
-        {
-          "move": "Flame Burst",
-          "level": 24
-        },
-        {
-          "move": "Toxic",
-          "level": 29
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 32
-        },
-        {
-          "move": "Venoshock",
-          "level": 37
-        },
-        {
-          "move": "Flamethrower",
-          "level": 40
-        },
-        {
-          "move": "Venom Drench",
-          "level": 45
-        },
-        {
-          "move": "Dragon Pulse",
-          "level": 48
-        },
-        {
-          "move": "Belch",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Sand Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Snatch",
-          "egg_move": true
-        },
-        {
-          "move": "Dragon Claw",
-          "tm": "TM2"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Leech Life",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Flame Charge",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Overheat",
-          "tm": "TM50"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Ember",
-          "level": 5
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 8
-        },
-        {
-          "move": "Dragon Rage",
-          "level": 13
-        },
-        {
-          "move": "Smog",
-          "level": 16
-        },
-        {
-          "move": "Double Slap",
-          "level": 21
-        },
-        {
-          "move": "Flame Burst",
-          "level": 24
-        },
-        {
-          "move": "Toxic",
-          "level": 29
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 32
-        },
-        {
-          "move": "Venoshock",
-          "level": 37
-        },
-        {
-          "move": "Flamethrower",
-          "level": 40
-        },
-        {
-          "move": "Venom Drench",
-          "level": 45
-        },
-        {
-          "move": "Dragon Pulse",
-          "level": 48
-        },
-        {
-          "move": "Belch",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Sand Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Snatch",
-          "egg_move": true
-        },
-        {
-          "move": "Dragon Claw",
-          "tm": "TM2"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Leech Life",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Flame Charge",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Overheat",
-          "tm": "TM50"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

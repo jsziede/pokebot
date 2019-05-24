@@ -1,504 +1,249 @@
 {
-  "names": {
-    "en": "Pikipek",
-    "jp": "ツツケラ Tsutsukera",
-    "fr": "Picassaut",
-    "es": "Pikipek",
-    "de": "Peppeck",
-    "it": "Pikipek"
-  },
-  "national_id": 731,
-  "alola_id": 10,
-  "types": [
-    "Normal",
-    "Flying"
-  ],
-  "items": [
-      {
-          "name": "Oran Berry",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Keen Eye"
-    },
-    {
-      "name": "Skill Link"
-    },
-    {
-      "name": "Pickup",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 255,
-  "egg_groups": [
-    "Flying"
-  ],
-  "hatch_time": [
-    3855,
-    4111
-  ],
-  "height_us": "1'00\"",
-  "height_eu": "0.3 m",
-  "weight_us": "2.6 lbs.",
-  "weight_eu": "1.2 kg",
-  "base_exp_yield": 53,
-  "leveling_rate": "Medium Fast",
-  "color": "Black",
-  "base_friendship": 70,
-  "ev_yield": {
-    "hp": 0,
-    "atk": 1,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "base_stats": {
-    "hp": 35,
-    "atk": 75,
-    "def": 30,
-    "sp_atk": 30,
-    "sp_def": 30,
-    "speed": 65
-  },
-  "evolutions": [
-    {
-      "to": "Trumbeak",
-      "level": 14
-    }
-  ],
-  "categories": {
-    "en": "Woodpecker Pokémon",
-    "de": "Specht"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Sun": {
-      "en": "It can peck at a rate of 16 times a second to drill holes in trees. It uses the holes for food storage and for nesting.",
-      "de": "Pickt 16-mal pro Sekunde auf Bäume ein, um Löcher ins Holz zu schlagen. Diese nutzt es dann als Futterspeicher oder Nest."
-    },
-    "Moon": {
-      "en": "This Pokémon feeds on berries, whose leftover seeds become the ammunition for the attacks it fires off from its mouth.",
-      "de": "Dieses Pokémon ernährt sich von Beeren. Die Samen verschießt es später als Munition aus seinem Schnabel."
-    },
-    "Ultra Sun": {
-      "en": "It pecks at trees with its hard beak. You can get some idea of its mood or condition from the rhythm of its pecking.",
-      "de": "Es pickt mit seinem robusten Schnabel auf Bäume ein. An seinem Pickrhythmus lassen sich seine Laune und sein Befinden ablesen."
-    },
-    "Ultra Moon": {
-      "en": "It may look spindly, but its neck muscles are heavy-duty. It can peck at a tree 16 times per second!",
-      "de": "Es sieht schmächtig und schwach aus, doch es hat sehr kräftige Halsmuskeln. Dadurch kann es 16-mal pro Sekunde auf Bäume einpicken."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Pikipek",
+    "national_id": 731,
+    "types": [
+        "Normal",
+        "Flying"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Oran Berry",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Keen Eye"
+        },
+        {
+            "name": "Skill Link"
+        },
+        {
+            "name": "Pickup",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Flying"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        3855,
+        4111
+    ],
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "2.6 lbs.",
+    "weight_eu": "1.2 kg",
+    "base_exp_yield": 53,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 1,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 35,
+        "atk": 75,
+        "def": 30,
+        "sp_atk": 30,
+        "sp_def": 30,
+        "speed": 65
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Trumbeak",
+            "level": 14
+        }
+    ],
+    "species": "Woodpecker Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It pecks at trees with its hard beak. You can get some idea of its mood or condition from the rhythm of its pecking.",
+    "move_learnset": [
+        {
+            "move": "Peck",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 3
+        },
+        {
+            "move": "Echoed Voice",
+            "level": 7
+        },
+        {
+            "move": "Rock Smash",
+            "level": 9
+        },
+        {
+            "move": "Supersonic",
+            "level": 13
+        },
+        {
+            "move": "Pluck",
+            "level": 15
+        },
+        {
+            "move": "Roost",
+            "level": 19
+        },
+        {
+            "move": "Fury Attack",
+            "level": 21
+        },
+        {
+            "move": "Screech",
+            "level": 25
+        },
+        {
+            "move": "Drill Peck",
+            "level": 27
+        },
+        {
+            "move": "Bullet Seed",
+            "level": 31
+        },
+        {
+            "move": "Feather Dance",
+            "level": 33
+        },
+        {
+            "move": "Hyper Voice",
+            "level": 37
+        },
+        {
+            "move": "Boomburst",
+            "egg_move": true
+        },
+        {
+            "move": "Brave Bird",
+            "egg_move": true
+        },
+        {
+            "move": "Mirror Move",
+            "egg_move": true
+        },
+        {
+            "move": "Tailwind",
+            "egg_move": true
+        },
+        {
+            "move": "Uproar",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Roost",
+            "tm": "TM19"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Smack Down",
+            "tm": "TM23"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Flame Charge",
+            "tm": "TM43"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Steel Wing",
+            "tm": "TM51"
+        },
+        {
+            "move": "Swords Dance",
+            "tm": "TM75"
+        },
+        {
+            "move": "Fly",
+            "tm": "TM76"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 1,
-  "move_learnsets": [
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 3
-        },
-        {
-          "move": "Echoed Voice",
-          "level": 7
-        },
-        {
-          "move": "Rock Smash",
-          "level": 9
-        },
-        {
-          "move": "Supersonic",
-          "level": 13
-        },
-        {
-          "move": "Pluck",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 19
-        },
-        {
-          "move": "Fury Attack",
-          "level": 21
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Drill Peck",
-          "level": 27
-        },
-        {
-          "move": "Bullet Seed",
-          "level": 31
-        },
-        {
-          "move": "Feather Dance",
-          "level": 33
-        },
-        {
-          "move": "Hyper Voice",
-          "level": 37
-        },
-        {
-          "move": "Boomburst",
-          "egg_move": true
-        },
-        {
-          "move": "Brave Bird",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Move",
-          "egg_move": true
-        },
-        {
-          "move": "Tailwind",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Roost",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Flame Charge",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Fly",
-          "tm": "TM76"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 3
-        },
-        {
-          "move": "Echoed Voice",
-          "level": 7
-        },
-        {
-          "move": "Rock Smash",
-          "level": 9
-        },
-        {
-          "move": "Supersonic",
-          "level": 13
-        },
-        {
-          "move": "Pluck",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 19
-        },
-        {
-          "move": "Fury Attack",
-          "level": 21
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Drill Peck",
-          "level": 27
-        },
-        {
-          "move": "Bullet Seed",
-          "level": 31
-        },
-        {
-          "move": "Feather Dance",
-          "level": 33
-        },
-        {
-          "move": "Hyper Voice",
-          "level": 37
-        },
-        {
-          "move": "Boomburst",
-          "egg_move": true
-        },
-        {
-          "move": "Brave Bird",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Move",
-          "egg_move": true
-        },
-        {
-          "move": "Tailwind",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Roost",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Flame Charge",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Fly",
-          "tm": "TM76"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

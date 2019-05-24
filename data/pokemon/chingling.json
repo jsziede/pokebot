@@ -1,2020 +1,268 @@
 {
-  "names": {
-    "fr": "Korillon",
-    "de": "Klingplim",
-    "it": "Chingling",
-    "en": "Chingling"
-  },
-  "national_id": 433,
-  "types": [
-    "Psychic"
-  ],
-  "items": [
-      {
-          "name": "Spell Tag",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Levitate"
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 120,
-  "egg_groups": [
-    "Undiscovered"
-  ],
-  "hatch_time": [
-    6630,
-    6884
-  ],
-  "height_us": "0'08\"",
-  "height_eu": "0.2 m",
-  "weight_us": "1.3 lbs.",
-  "weight_eu": "0.6 kg",
-  "base_exp_yield": 57,
-  "leveling_rate": "Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 1,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Yellow",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 45,
-    "atk": 30,
-    "def": 50,
-    "sp_atk": 65,
-    "sp_def": 50,
-    "speed": 45
-  },
-  "evolutions": [
-    {
-      "to": "Chimecho",
-      "happiness": true,
-      "conditions": [
-        "Nighttime"
-      ]
-    }
-  ],
-  "categories": {
-    "en": "Bell Pokémon",
-    "de": "Glöckchen"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": 157,
-  "sinnoh_id": 82,
-  "unova_id": null,
-  "kalos_id": 111,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "It emits cries by agitating an orb at the back of its throat. It moves with flouncing hops.",
-      "de": "Es ruft, indem es eine Kugel in seiner Kehle bewegt. Es bewegt sich mit eiligen Hopsern fort."
-    },
-    "Pearl": {
-      "en": "Each time it hops, it makes a ringing sound. It deafens foes by emitting high-frequency cries.",
-      "de": "Jedes Mal, wenn es hüpft, entsteht ein klingender Laut. Seine hohen Schreie machen die Gegner taub."
-    },
-    "Platinum": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    },
-    "HeartGold": {
-      "en": "It emits high-frequency cries that people can't hear. Once it starts, it can cry for an awfully long time.",
-      "de": "Es ruft, indem es eine Kugel in seiner Kehle bewegt. Es bewegt sich mit eiligen Hopsern fort."
-    },
-    "SoulSilver": {
-      "en": "It emits high-frequency cries that people can't hear. Once it starts, it can cry for an awfully long time.",
-      "de": "Es ruft, indem es eine Kugel in seiner Kehle bewegt. Es bewegt sich mit eiligen Hopsern fort."
-    },
-    "Black": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    },
-    "White": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    },
-    "Black 2": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    },
-    "White 2": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    },
-    "X": {
-      "en": "Each time it hops, it makes a ringing sound. It deafens foes by emitting high-frequency cries.",
-      "de": "Jedes Mal, wenn es hüpft, entsteht ein klingender Laut. Seine hohen Schreie machen die Gegner taub."
-    },
-    "Y": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    },
-    "Omega Ruby": {
-      "en": "Each time it hops, it makes a ringing sound. It deafens foes by emitting high-frequency cries.",
-      "de": "Jedes Mal, wenn es hüpft, entsteht ein klingender Laut. Seine hohen Schreie machen die Gegner taub."
-    },
-    "Alpha Sapphire": {
-      "en": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
-      "de": "In seinem Maul befindet sich eine Kugel, die beim Hopsen ein klingelndes Geräusch erzeugt."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      2,
-      4
+    "name": "Chingling",
+    "national_id": 433,
+    "types": [
+        "Psychic"
     ],
-    "power": [
-      2,
-      3
+    "items": [
+        {
+            "name": "Spell Tag",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      3,
-      3
+    "abilities": [
+        {
+            "name": "Levitate"
+        }
     ],
-    "skill": [
-      2,
-      3
+    "catch_rate": 120,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Undiscovered"
     ],
-    "jump": [
-      4,
-      5
+    "hatch_time": [
+        6630,
+        6884
+    ],
+    "height_us": "0'08\"",
+    "height_eu": "0.2 m",
+    "weight_us": "1.3 lbs.",
+    "weight_eu": "0.6 kg",
+    "base_exp_yield": 57,
+    "leveling_rate": "Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 1,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 45,
+        "atk": 30,
+        "def": 50,
+        "sp_atk": 65,
+        "sp_def": 50,
+        "speed": 45
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Chimecho",
+            "happiness": true,
+            "conditions": [
+                "Nighttime"
+            ]
+        }
+    ],
+    "species": "Bell Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "There is an orb inside its mouth. When it hops, the orb bounces all over and makes a ringing sound.",
+    "move_learnset": [
+        {
+            "move": "Wrap",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 4
+        },
+        {
+            "move": "Astonish",
+            "level": 7
+        },
+        {
+            "move": "Confusion",
+            "level": 10
+        },
+        {
+            "move": "Yawn",
+            "level": 13
+        },
+        {
+            "move": "Last Resort",
+            "level": 16
+        },
+        {
+            "move": "Entrainment",
+            "level": 19
+        },
+        {
+            "move": "Uproar",
+            "level": 32
+        },
+        {
+            "move": "Cosmic Power",
+            "egg_move": true
+        },
+        {
+            "move": "Curse",
+            "egg_move": true
+        },
+        {
+            "move": "Disable",
+            "egg_move": true
+        },
+        {
+            "move": "Future Sight",
+            "egg_move": true
+        },
+        {
+            "move": "Hypnosis",
+            "egg_move": true
+        },
+        {
+            "move": "Recover",
+            "egg_move": true
+        },
+        {
+            "move": "Skill Swap",
+            "egg_move": true
+        },
+        {
+            "move": "Stored Power",
+            "egg_move": true
+        },
+        {
+            "move": "Wish",
+            "egg_move": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": "TM3"
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Reflect",
+            "tm": "TM33"
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Trick Room",
+            "tm": "TM92"
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": "TM99"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 9
-        },
-        {
-          "move": "Confusion",
-          "level": 14
-        },
-        {
-          "move": "Uproar",
-          "level": 17
-        },
-        {
-          "move": "Last Resort",
-          "level": 22
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Dream Eater",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Skill Swap",
-          "tm": "TM48"
-        },
-        {
-          "move": "Snatch",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Recycle",
-          "tm": "TM67"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 9
-        },
-        {
-          "move": "Confusion",
-          "level": 14
-        },
-        {
-          "move": "Uproar",
-          "level": 17
-        },
-        {
-          "move": "Last Resort",
-          "level": 22
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Dream Eater",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Skill Swap",
-          "tm": "TM48"
-        },
-        {
-          "move": "Snatch",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Recycle",
-          "tm": "TM67"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 9
-        },
-        {
-          "move": "Confusion",
-          "level": 14
-        },
-        {
-          "move": "Uproar",
-          "level": 17
-        },
-        {
-          "move": "Last Resort",
-          "level": 22
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Dream Eater",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Skill Swap",
-          "tm": "TM48"
-        },
-        {
-          "move": "Snatch",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Recycle",
-          "tm": "TM67"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 9
-        },
-        {
-          "move": "Confusion",
-          "level": 14
-        },
-        {
-          "move": "Uproar",
-          "level": 17
-        },
-        {
-          "move": "Last Resort",
-          "level": 22
-        },
-        {
-          "move": "Entrainment",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Stored Power",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 9
-        },
-        {
-          "move": "Confusion",
-          "level": 14
-        },
-        {
-          "move": "Uproar",
-          "level": 17
-        },
-        {
-          "move": "Last Resort",
-          "level": 22
-        },
-        {
-          "move": "Entrainment",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Stored Power",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 9
-        },
-        {
-          "move": "Confusion",
-          "level": 14
-        },
-        {
-          "move": "Uproar",
-          "level": 17
-        },
-        {
-          "move": "Last Resort",
-          "level": 22
-        },
-        {
-          "move": "Entrainment",
-          "level": 25
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Stored Power",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Confusion",
-          "level": 10
-        },
-        {
-          "move": "Yawn",
-          "level": 13
-        },
-        {
-          "move": "Last Resort",
-          "level": 16
-        },
-        {
-          "move": "Entrainment",
-          "level": 19
-        },
-        {
-          "move": "Uproar",
-          "level": 32
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Stored Power",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Confusion",
-          "level": 10
-        },
-        {
-          "move": "Yawn",
-          "level": 13
-        },
-        {
-          "move": "Last Resort",
-          "level": 16
-        },
-        {
-          "move": "Entrainment",
-          "level": 19
-        },
-        {
-          "move": "Uproar",
-          "level": 32
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Stored Power",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Wrap",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Confusion",
-          "level": 10
-        },
-        {
-          "move": "Yawn",
-          "level": 13
-        },
-        {
-          "move": "Last Resort",
-          "level": 16
-        },
-        {
-          "move": "Entrainment",
-          "level": 19
-        },
-        {
-          "move": "Uproar",
-          "level": 32
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Future Sight",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Stored Power",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

@@ -1,2486 +1,328 @@
 {
-  "names": {
-    "fr": "Tarinorme",
-    "de": "Voluminas",
-    "it": "Probopass",
-    "en": "Probopass"
-  },
-  "national_id": 476,
-  "types": [
-    "Rock",
-    "Steel"
-  ],
-  "items": [
-      {
-          "name": "Magnet",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Sturdy"
-    },
-    {
-      "name": "Magnet Pull"
-    },
-    {
-      "name": "Sand Force",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 60,
-  "egg_groups": [
-    "Mineral"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "4'07\"",
-  "height_eu": "1.4 m",
-  "weight_us": "749.6 lbs.",
-  "weight_eu": "340.0 kg",
-  "base_exp_yield": 184,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 1,
-    "sp_atk": 0,
-    "sp_def": 2,
-    "speed": 0
-  },
-  "color": "Gray",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 60,
-    "atk": 55,
-    "def": 145,
-    "sp_atk": 75,
-    "sp_def": 150,
-    "speed": 40
-  },
-  "evolution_from": "Nosepass",
-  "alola_id": 199,
-  "categories": {
-    "en": "Compass Pokémon",
-    "de": "Kompass"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": 62,
-  "sinnoh_id": 156,
-  "unova_id": null,
-  "kalos_id": 94,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "It exudes strong magnetism from all over. It controls three small units called Mini-Noses.",
-      "de": "Es gibt starken Magnetismus ab. Es steuert drei kleine Einheiten, die sich Mininasen nennen."
-    },
-    "Pearl": {
-      "en": "It exudes strong magnetism from all over. It controls three small units called Mini-Noses.",
-      "de": "Es gibt starken Magnetismus ab. Es steuert drei kleine Einheiten, die sich Mininasen nennen."
-    },
-    "Platinum": {
-      "en": "It freely controls three small units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt sie Mininasen."
-    },
-    "HeartGold": {
-      "en": "It controls three units called Mini-Noses using magnetic force. With them, it can attack the foe from three directions.",
-      "de": "Es gibt starken Magnetismus ab. Es steuert drei kleine Einheiten, die sich Mininasen nennen."
-    },
-    "SoulSilver": {
-      "en": "It controls three units called Mini-Noses using magnetic force. With them, it can attack the foe from three directions.",
-      "de": "Es gibt starken Magnetismus ab. Es steuert drei kleine Einheiten, die sich Mininasen nennen."
-    },
-    "Black": {
-      "en": "It freely controls three small units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt sie Mininasen."
-    },
-    "White": {
-      "en": "It freely controls three small units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt sie Mininasen."
-    },
-    "Black 2": {
-      "en": "It freely controls three units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt diese Einheiten Mininasen."
-    },
-    "White 2": {
-      "en": "It freely controls three units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt diese Einheiten Mininasen."
-    },
-    "X": {
-      "en": "It exudes strong magnetism from all over. It controls three small units called Mini-Noses.",
-      "de": "Es gibt starken Magnetismus ab. Es steuert drei kleine Einheiten, die sich Mininasen nennen."
-    },
-    "Y": {
-      "en": "It freely controls three small units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt sie Mininasen."
-    },
-    "Omega Ruby": {
-      "en": "It exudes strong magnetism from all over. It controls three small units called Mini-Noses.",
-      "de": "Es gibt starken Magnetismus ab. Es steuert drei kleine Einheiten, die sich Mininasen nennen."
-    },
-    "Alpha Sapphire": {
-      "en": "It freely controls three small units called Mini-Noses using magnetic force.",
-      "de": "Es steuert drei kleine Einheiten mithilfe von starkem Magnetismus. Man nennt sie Mininasen."
-    },
-    "Sun": {
-      "en": "It radiates such a powerful magnetic field that nearby electrical appliances become unusable.",
-      "de": "Durch seinen starken Magnetismus macht es Elektrogeräte in seiner Nähe kaputt."
-    },
-    "Moon": {
-      "en": "The main body controls three mobile units called Mini-Noses, which it maneuvers to catch prey.",
-      "de": "Sein Körper selbst bewegt sich nicht. Um Beute zu fangen, steuert es drei kleine Einheiten, die Mininasen genannt werden."
-    },
-    "Ultra Sun": {
-      "en": "Although it can control its units known as Mini-Noses, they sometimes get lost and don’t come back.",
-      "de": "Es steuert kleine Einheiten, die man Mininasen nennt. Leider verirren sie sich manchmal, und es heißt, dass einige von ihnen nie wiederkehren."
-    },
-    "Ultra Moon": {
-      "en": "It uses three small units to catch prey and battle enemies. The main body mostly just gives orders.",
-      "de": "Sein Körper selbst befehligt meist nur die drei kleinen Einheiten, die an seiner Stelle kämpfen und für die Nahrungssuche zuständig sind."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      2,
-      2
+    "name": "Probopass",
+    "national_id": 476,
+    "types": [
+        "Rock",
+        "Steel"
     ],
-    "power": [
-      3,
-      5
+    "items": [
+        {
+            "name": "Magnet",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      4,
-      5
+    "abilities": [
+        {
+            "name": "Sturdy"
+        },
+        {
+            "name": "Magnet Pull"
+        },
+        {
+            "name": "Sand Force",
+            "hidden": true
+        }
     ],
-    "skill": [
-      1,
-      4
+    "catch_rate": 60,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Mineral"
     ],
-    "jump": [
-      3,
-      5
+    "hatch_time": [
+        5355,
+        5609
+    ],
+    "height_us": "4'07\"",
+    "height_eu": "1.4 m",
+    "weight_us": "749.6 lbs.",
+    "weight_eu": "340.0 kg",
+    "base_exp_yield": 184,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 1,
+        "sp_atk": 0,
+        "sp_def": 2,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 60,
+        "atk": 55,
+        "def": 145,
+        "sp_atk": 75,
+        "sp_def": 150,
+        "speed": 40
+    },
+    "evolution_from": "Nosepass",
+    "evolutions": [],
+    "species": "Compass Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It freely controls three small units called Mini-Noses using magnetic force.",
+    "move_learnset": [
+        {
+            "move": "Block",
+            "level": 1
+        },
+        {
+            "move": "Gravity",
+            "level": 1
+        },
+        {
+            "move": "Iron Defense",
+            "level": 1
+        },
+        {
+            "move": "Magnet Bomb",
+            "level": 1
+        },
+        {
+            "move": "Magnet Rise",
+            "level": 1
+        },
+        {
+            "move": "Magnetic Flux",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Tri Attack",
+            "level": 1
+        },
+        {
+            "move": "Wide Guard",
+            "level": 1
+        },
+        {
+            "move": "Iron Defense",
+            "level": 4
+        },
+        {
+            "move": "Block",
+            "level": 7
+        },
+        {
+            "move": "Magnet Bomb",
+            "level": 10
+        },
+        {
+            "move": "Thunder Wave",
+            "level": 13
+        },
+        {
+            "move": "Rest",
+            "level": 16
+        },
+        {
+            "move": "Spark",
+            "level": 19
+        },
+        {
+            "move": "Rock Slide",
+            "level": 22
+        },
+        {
+            "move": "Power Gem",
+            "level": 25
+        },
+        {
+            "move": "Rock Blast",
+            "level": 28
+        },
+        {
+            "move": "Discharge",
+            "level": 31
+        },
+        {
+            "move": "Sandstorm",
+            "level": 34
+        },
+        {
+            "move": "Earth Power",
+            "level": 37
+        },
+        {
+            "move": "Stone Edge",
+            "level": 40
+        },
+        {
+            "move": "Lock-On",
+            "level": 43
+        },
+        {
+            "move": "Zap Cannon",
+            "level": 43
+        },
+        {
+            "move": "Block",
+            "egg_move": true
+        },
+        {
+            "move": "Double-Edge",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Magnitude",
+            "egg_move": true
+        },
+        {
+            "move": "Rollout",
+            "egg_move": true
+        },
+        {
+            "move": "Stealth Rock",
+            "egg_move": true
+        },
+        {
+            "move": "Wide Guard",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Smack Down",
+            "tm": "TM23"
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24"
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25"
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37"
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39"
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Explosion",
+            "tm": "TM64"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Rock Polish",
+            "tm": "TM69"
+        },
+        {
+            "move": "Stone Edge",
+            "tm": "TM71"
+        },
+        {
+            "move": "Volt Switch",
+            "tm": "TM72"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Bulldoze",
+            "tm": "TM78"
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": "TM91"
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": "TM99"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 156,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 13
-        },
-        {
-          "move": "Block",
-          "level": 19
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 25
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 37
-        },
-        {
-          "move": "Rest",
-          "level": 43
-        },
-        {
-          "move": "Discharge",
-          "level": 49
-        },
-        {
-          "move": "Stone Edge",
-          "level": 55
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 61
-        },
-        {
-          "move": "Lock-On",
-          "level": 67
-        },
-        {
-          "move": "Earth Power",
-          "level": 73
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 13
-        },
-        {
-          "move": "Block",
-          "level": 19
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 25
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 37
-        },
-        {
-          "move": "Rest",
-          "level": 43
-        },
-        {
-          "move": "Power Gem",
-          "level": 49
-        },
-        {
-          "move": "Discharge",
-          "level": 55
-        },
-        {
-          "move": "Stone Edge",
-          "level": 61
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 67
-        },
-        {
-          "move": "Lock-On",
-          "level": 73
-        },
-        {
-          "move": "Earth Power",
-          "level": 79
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 13
-        },
-        {
-          "move": "Block",
-          "level": 19
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 25
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 37
-        },
-        {
-          "move": "Rest",
-          "level": 43
-        },
-        {
-          "move": "Power Gem",
-          "level": 49
-        },
-        {
-          "move": "Discharge",
-          "level": 55
-        },
-        {
-          "move": "Stone Edge",
-          "level": 61
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 67
-        },
-        {
-          "move": "Lock-On",
-          "level": 73
-        },
-        {
-          "move": "Earth Power",
-          "level": 79
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Head Smash",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 13
-        },
-        {
-          "move": "Block",
-          "level": 19
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 25
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 37
-        },
-        {
-          "move": "Rest",
-          "level": 43
-        },
-        {
-          "move": "Power Gem",
-          "level": 49
-        },
-        {
-          "move": "Discharge",
-          "level": 55
-        },
-        {
-          "move": "Stone Edge",
-          "level": 61
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 67
-        },
-        {
-          "move": "Lock-On",
-          "level": 73
-        },
-        {
-          "move": "Earth Power",
-          "level": 79
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stealth Rock",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 4
-        },
-        {
-          "move": "Block",
-          "level": 8
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 11
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 15
-        },
-        {
-          "move": "Rock Blast",
-          "level": 18
-        },
-        {
-          "move": "Rest",
-          "level": 22
-        },
-        {
-          "move": "Spark",
-          "level": 25
-        },
-        {
-          "move": "Rock Slide",
-          "level": 29
-        },
-        {
-          "move": "Power Gem",
-          "level": 32
-        },
-        {
-          "move": "Sandstorm",
-          "level": 36
-        },
-        {
-          "move": "Discharge",
-          "level": 39
-        },
-        {
-          "move": "Earth Power",
-          "level": 43
-        },
-        {
-          "move": "Stone Edge",
-          "level": 46
-        },
-        {
-          "move": "Lock-On",
-          "level": 50
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 50
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stealth Rock",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 4
-        },
-        {
-          "move": "Block",
-          "level": 8
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 11
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 15
-        },
-        {
-          "move": "Rock Blast",
-          "level": 18
-        },
-        {
-          "move": "Rest",
-          "level": 22
-        },
-        {
-          "move": "Spark",
-          "level": 25
-        },
-        {
-          "move": "Rock Slide",
-          "level": 29
-        },
-        {
-          "move": "Power Gem",
-          "level": 32
-        },
-        {
-          "move": "Sandstorm",
-          "level": 36
-        },
-        {
-          "move": "Discharge",
-          "level": 39
-        },
-        {
-          "move": "Earth Power",
-          "level": 43
-        },
-        {
-          "move": "Stone Edge",
-          "level": 46
-        },
-        {
-          "move": "Lock-On",
-          "level": 50
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 50
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stealth Rock",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Wide Guard",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 4
-        },
-        {
-          "move": "Block",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 10
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 13
-        },
-        {
-          "move": "Rest",
-          "level": 16
-        },
-        {
-          "move": "Spark",
-          "level": 19
-        },
-        {
-          "move": "Rock Slide",
-          "level": 22
-        },
-        {
-          "move": "Power Gem",
-          "level": 25
-        },
-        {
-          "move": "Rock Blast",
-          "level": 28
-        },
-        {
-          "move": "Discharge",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 34
-        },
-        {
-          "move": "Earth Power",
-          "level": 37
-        },
-        {
-          "move": "Stone Edge",
-          "level": 40
-        },
-        {
-          "move": "Lock-On",
-          "level": 43
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 43
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stealth Rock",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Magnetic Flux",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Tri Attack",
-          "level": 1
-        },
-        {
-          "move": "Wide Guard",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 4
-        },
-        {
-          "move": "Block",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 10
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 13
-        },
-        {
-          "move": "Rest",
-          "level": 16
-        },
-        {
-          "move": "Spark",
-          "level": 19
-        },
-        {
-          "move": "Rock Slide",
-          "level": 22
-        },
-        {
-          "move": "Power Gem",
-          "level": 25
-        },
-        {
-          "move": "Rock Blast",
-          "level": 28
-        },
-        {
-          "move": "Discharge",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 34
-        },
-        {
-          "move": "Earth Power",
-          "level": 37
-        },
-        {
-          "move": "Stone Edge",
-          "level": 40
-        },
-        {
-          "move": "Lock-On",
-          "level": 43
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 43
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stealth Rock",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Gravity",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 1
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 1
-        },
-        {
-          "move": "Magnet Rise",
-          "level": 1
-        },
-        {
-          "move": "Magnetic Flux",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Tri Attack",
-          "level": 1
-        },
-        {
-          "move": "Wide Guard",
-          "level": 1
-        },
-        {
-          "move": "Iron Defense",
-          "level": 4
-        },
-        {
-          "move": "Block",
-          "level": 7
-        },
-        {
-          "move": "Magnet Bomb",
-          "level": 10
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 13
-        },
-        {
-          "move": "Rest",
-          "level": 16
-        },
-        {
-          "move": "Spark",
-          "level": 19
-        },
-        {
-          "move": "Rock Slide",
-          "level": 22
-        },
-        {
-          "move": "Power Gem",
-          "level": 25
-        },
-        {
-          "move": "Rock Blast",
-          "level": 28
-        },
-        {
-          "move": "Discharge",
-          "level": 31
-        },
-        {
-          "move": "Sandstorm",
-          "level": 34
-        },
-        {
-          "move": "Earth Power",
-          "level": 37
-        },
-        {
-          "move": "Stone Edge",
-          "level": 40
-        },
-        {
-          "move": "Lock-On",
-          "level": 43
-        },
-        {
-          "move": "Zap Cannon",
-          "level": 43
-        },
-        {
-          "move": "Block",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Magnitude",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stealth Rock",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

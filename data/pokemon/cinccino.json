@@ -1,1324 +1,249 @@
 {
-  "names": {
-    "fr": "Pashmilla",
-    "de": "Chillabell",
-    "it": "Cinccino",
-    "en": "Cinccino"
-  },
-  "national_id": 573,
-  "types": [
-    "Normal"
-  ],
-  "abilities": [
-    {
-      "name": "Cute Charm"
-    },
-    {
-      "name": "Technician"
-    },
-    {
-      "name": "Skill Link",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 25.0,
-    "female": 75.0
-  },
-  "catch_rate": 60,
-  "egg_groups": [
-    "Field"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "1'08\"",
-  "height_eu": "0.5 m",
-  "weight_us": "16.5 lbs.",
-  "weight_eu": "7.5 kg",
-  "base_exp_yield": 165,
-  "leveling_rate": "Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 2
-  },
-  "color": "Gray",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 75,
-    "atk": 95,
-    "def": 60,
-    "sp_atk": 65,
-    "sp_def": 60,
-    "speed": 115
-  },
-  "evolution_from": "Minccino",
-  "categories": {
-    "en": "Scarf Pokémon",
-    "de": "Schal"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 79,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "Their white fur is coated in a special oil that makes it easy for them to deflect attacks.",
-      "de": "Sein weißer Flaum ist mit einem speziellen Öl überzogen. Gegnerische Angriffe gleiten daran einfach ab."
-    },
-    "White": {
-      "en": "Their white fur feels amazing to touch. Their fur repels dust and prevents static electricity from building up.",
-      "de": "Sein weißer Flaum fühlt sich wunderbar flauschig an und zieht weder Staub noch statische Elektrizität an."
-    },
-    "Black 2": {
-      "en": "Cinccino's body is coated in a special oil that helps it deflect attacks, such as punches.",
-      "de": "Sein Körper ist mit einem speziellen Öl überzogen, an dem gegnerische Hiebe und ähnliche Angriffe einfach abgleiten."
-    },
-    "White 2": {
-      "en": "Cinccino's body is coated in a special oil that helps it deflect attacks, such as punches.",
-      "de": "Sein Körper ist mit einem speziellen Öl überzogen, an dem gegnerische Hiebe und ähnliche Angriffe einfach abgleiten."
-    },
-    "X": {
-      "en": "Their white fur feels amazing to touch. Their fur repels dust and prevents static electricity from building up.",
-      "de": "Sein weißer Flaum fühlt sich wunderbar flauschig an und zieht weder Staub noch statische Elektrizität an."
-    },
-    "Y": {
-      "en": "Cinccino's body is coated in a special oil that helps it deflect attacks, such as punches.",
-      "de": "Sein Körper ist mit einem speziellen Öl überzogen, an dem gegnerische Hiebe und ähnliche Angriffe einfach abgleiten."
-    },
-    "Omega Ruby": {
-      "en": "Their white fur feels amazing to touch. Their fur repels dust and prevents static electricity from building up.",
-      "de": "Sein Körper ist mit einem speziellen Öl überzogen, an dem gegnerische Hiebe und ähnliche Angriffe einfach abgleiten."
-    },
-    "Alpha Sapphire": {
-      "en": "Cinccino's body is coated in a special oil that helps it deflect attacks, such as punches.",
-      "de": "Sein Körper ist mit einem speziellen Öl überzogen, an dem gegnerische Hiebe und ähnliche Angriffe einfach abgleiten."
-    },
-    "Ultra Sun": {
-      "en": "The white parts of its coat are covered in an oil secreted from its body, so this Pokémon can slide right away from its enemies’ attacks.",
-      "de": "Sein weißer Flaum ist von einem Film aus speziellem Öl überzogen, das aus seinem Körper austritt. Gegnerische Angriffe gleiten daran ab."
-    },
-    "Ultra Moon": {
-      "en": "The oil that seeps from its body is really smooth. For people troubled by bad skin, this oil is an effective treatment.",
-      "de": "Aus seinem Körper tritt besonders schmieriges Öl aus, das für Menschen, die unter trockener Haut leiden, von großem Nutzen ist."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Cinccino",
+    "national_id": 573,
+    "types": [
+        "Normal"
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Cute Charm"
+        },
+        {
+            "name": "Technician"
+        },
+        {
+            "name": "Skill Link",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 60,
+    "gender_ratios": {
+        "male": 25,
+        "female": 75
+    },
+    "egg_groups": [
+        "Field"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        4080,
+        4334
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "1'08\"",
+    "height_eu": "0.5 m",
+    "weight_us": "16.5 lbs.",
+    "weight_eu": "7.5 kg",
+    "base_exp_yield": 165,
+    "leveling_rate": "Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 2
+    },
+    "base_stats": {
+        "hp": 75,
+        "atk": 95,
+        "def": 60,
+        "sp_atk": 65,
+        "sp_def": 60,
+        "speed": 115
+    },
+    "evolution_from": "Minccino",
+    "evolutions": [],
+    "species": "Scarf Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Cinccino's body is coated in a special oil that helps it deflect attacks, such as punches.",
+    "move_learnset": [
+        {
+            "move": "Bullet Seed",
+            "level": 1
+        },
+        {
+            "move": "Helping Hand",
+            "level": 1
+        },
+        {
+            "move": "Rock Blast",
+            "level": 1
+        },
+        {
+            "move": "Sing",
+            "level": 1
+        },
+        {
+            "move": "Tail Slap",
+            "level": 1
+        },
+        {
+            "move": "Tickle",
+            "level": 1
+        },
+        {
+            "move": "Aqua Tail",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Tears",
+            "egg_move": true
+        },
+        {
+            "move": "Flail",
+            "egg_move": true
+        },
+        {
+            "move": "Iron Tail",
+            "egg_move": true
+        },
+        {
+            "move": "Knock Off",
+            "egg_move": true
+        },
+        {
+            "move": "Mud-Slap",
+            "egg_move": true
+        },
+        {
+            "move": "Sleep Talk",
+            "egg_move": true
+        },
+        {
+            "move": "Tail Whip",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24"
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Focus Blast",
+            "tm": "TM52"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": "TM99"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 88,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Bullet Seed",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Rock Blast",
-          "level": 1
-        },
-        {
-          "move": "Sing",
-          "level": 1
-        },
-        {
-          "move": "Tail Slap",
-          "level": 1
-        },
-        {
-          "move": "Tickle",
-          "level": 1
-        },
-        {
-          "move": "Aqua Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Iron Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Sleep Talk",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Whip",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Bullet Seed",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Rock Blast",
-          "level": 1
-        },
-        {
-          "move": "Sing",
-          "level": 1
-        },
-        {
-          "move": "Tail Slap",
-          "level": 1
-        },
-        {
-          "move": "Tickle",
-          "level": 1
-        },
-        {
-          "move": "Aqua Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Iron Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Sleep Talk",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Whip",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Bullet Seed",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Rock Blast",
-          "level": 1
-        },
-        {
-          "move": "Sing",
-          "level": 1
-        },
-        {
-          "move": "Tail Slap",
-          "level": 1
-        },
-        {
-          "move": "Tickle",
-          "level": 1
-        },
-        {
-          "move": "Aqua Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Iron Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Sleep Talk",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Whip",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Bullet Seed",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Rock Blast",
-          "level": 1
-        },
-        {
-          "move": "Sing",
-          "level": 1
-        },
-        {
-          "move": "Tail Slap",
-          "level": 1
-        },
-        {
-          "move": "Tickle",
-          "level": 1
-        },
-        {
-          "move": "Aqua Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Iron Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Sleep Talk",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Whip",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bullet Seed",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Rock Blast",
-          "level": 1
-        },
-        {
-          "move": "Sing",
-          "level": 1
-        },
-        {
-          "move": "Tail Slap",
-          "level": 1
-        },
-        {
-          "move": "Tickle",
-          "level": 1
-        },
-        {
-          "move": "Aqua Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Iron Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Sleep Talk",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Whip",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bullet Seed",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Rock Blast",
-          "level": 1
-        },
-        {
-          "move": "Sing",
-          "level": 1
-        },
-        {
-          "move": "Tail Slap",
-          "level": 1
-        },
-        {
-          "move": "Tickle",
-          "level": 1
-        },
-        {
-          "move": "Aqua Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Iron Tail",
-          "egg_move": true
-        },
-        {
-          "move": "Knock Off",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Sleep Talk",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Whip",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

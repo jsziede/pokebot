@@ -1,2763 +1,333 @@
 {
-  "names": {
-    "fr": "Capidextre",
-    "de": "Ambidiffel",
-    "it": "Ambipom",
-    "en": "Ambipom"
-  },
-  "national_id": 424,
-  "types": [
-    "Normal"
-  ],
-  "abilities": [
-    {
-      "name": "Technician"
-    },
-    {
-      "name": "Pickup"
-    },
-    {
-      "name": "Skill Link",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 45,
-  "egg_groups": [
-    "Field"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "3'11\"",
-  "height_eu": "1.2 m",
-  "weight_us": "44.8 lbs.",
-  "weight_eu": "20.3 kg",
-  "base_exp_yield": 169,
-  "leveling_rate": "Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 2
-  },
-  "color": "Purple",
-  "base_friendship": 100,
-  "base_stats": {
-    "hp": 75,
-    "atk": 100,
-    "def": 66,
-    "sp_atk": 60,
-    "sp_def": 66,
-    "speed": 115
-  },
-  "evolution_from": "Aipom",
-  "categories": {
-    "en": "Long Tail Pokémon",
-    "de": "Langschweif"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": 64,
-  "unova_id": null,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "To eat, it deftly shucks nuts with its two tails. It rarely uses its arms now.",
-      "de": "Wenn es hungrig ist, knackt es Nüsse mit seinen beiden Schweifen. Nur selten verwendet es die Arme."
-    },
-    "Pearl": {
-      "en": "They work in large colonies and make rings by linking their tails, apparently in friendship.",
-      "de": "Sie arbeiten in großen Kolonien und verbinden ihre Schweife in Freundschaft."
-    },
-    "Platinum": {
-      "en": "Split into two, the tails are so adept at handling and doing things, Ambipom rarely uses its hands.",
-      "de": "Es ist mit seinen beiden Schweifen so geschickt, dass es seine Hände nur noch selten gebraucht."
-    },
-    "HeartGold": {
-      "en": "They live on large trees. They are said to communicate by connecting their tails to those of others.",
-      "de": "Wenn es hungrig ist, knackt es Nüsse mit seinen beiden Schweifen. Nur selten verwendet es die Arme."
-    },
-    "SoulSilver": {
-      "en": "It is very difficult to dodge the consecutive strikes of its two tails.",
-      "de": "Wenn es hungrig ist, knackt es Nüsse mit seinen beiden Schweifen. Nur selten verwendet es die Arme."
-    },
-    "Black": {
-      "en": "Split into two, the tails are so adept at handling and doing things, Ambipom rarely uses its hands.",
-      "de": "Es ist mit seinen beiden Schweifen so geschickt, dass es seine Hände nur noch selten gebraucht."
-    },
-    "White": {
-      "en": "Split into two, the tails are so adept at handling and doing things, Ambipom rarely uses its hands.",
-      "de": "Es ist mit seinen beiden Schweifen so geschickt, dass es seine Hände nur noch selten gebraucht."
-    },
-    "Black 2": {
-      "en": "Split into two, the tails are so adept at handling and doing things, Ambipom rarely uses its hands.",
-      "de": "Es ist mit seinen beiden Schweifen so geschickt, dass es seine Hände nur noch selten gebraucht."
-    },
-    "White 2": {
-      "en": "Split into two, the tails are so adept at handling and doing things, Ambipom rarely uses its hands.",
-      "de": "Es ist mit seinen beiden Schweifen so geschickt, dass es seine Hände nur noch selten gebraucht."
-    },
-    "X": {
-      "en": "They work in large colonies and make rings by linking their tails, apparently in friendship.",
-      "de": "Sie leben in großen Kolonien und verbinden ihre Schweife in Freundschaft."
-    },
-    "Y": {
-      "en": "To eat, it deftly shucks nuts with its two tails. It rarely uses its arms now.",
-      "de": "Wenn es hungrig ist, knackt es Nüsse mit seinen beiden Schweifen. Nur selten verwendet es die Arme."
-    },
-    "Omega Ruby": {
-      "en": "They work in large colonies and make rings by linking their tails, apparently in friendship.",
-      "de": "Wenn es hungrig ist, knackt es Nüsse mit seinen beiden Schweifen. Nur selten verwendet es die Arme."
-    },
-    "Alpha Sapphire": {
-      "en": "To eat, it deftly shucks nuts with its two tails. It rarely uses its arms now.",
-      "de": "Wenn es hungrig ist, knackt es Nüsse mit seinen beiden Schweifen. Nur selten verwendet es die Arme."
-    },
-    "Ultra Sun": {
-      "en": "In their search for comfortable trees, they get into territorial disputes with groups of Passimian. They win about half the time.",
-      "de": "Sie streiten sich mit Gruppen von Quartermak um die bequemsten Bäume. Etwa die Hälfte dieser Revierkämpfe gewinnen sie."
-    },
-    "Ultra Moon": {
-      "en": "It uses its tails for everything. If it wraps both of its tails around you and gives you a squeeze, that’s proof it really likes you.",
-      "de": "Es benutzt seine zwei Schweife für alles, was es tut. Wenn es jemanden mit ihnen umarmt, ist das ein Beweis seiner Zuneigung."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      3,
-      4
+    "name": "Ambipom",
+    "national_id": 424,
+    "types": [
+        "Normal"
     ],
-    "power": [
-      2,
-      4
+    "abilities": [
+        {
+            "name": "Technician"
+        },
+        {
+            "name": "Pickup"
+        },
+        {
+            "name": "Skill Link",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      3,
-      4
+    "catch_rate": 45,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Field"
     ],
-    "skill": [
-      5,
-      5
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      3,
-      4
+    "height_us": "3'11\"",
+    "height_eu": "1.2 m",
+    "weight_us": "44.8 lbs.",
+    "weight_eu": "20.3 kg",
+    "base_exp_yield": 169,
+    "leveling_rate": "Fast",
+    "base_friendship": 100,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 2
+    },
+    "base_stats": {
+        "hp": 75,
+        "atk": 100,
+        "def": 66,
+        "sp_atk": 60,
+        "sp_def": 66,
+        "speed": 115
+    },
+    "evolution_from": "Aipom",
+    "evolutions": [],
+    "species": "Long Tail Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "To eat, it deftly shucks nuts with its two tails. It rarely uses its arms now.",
+    "move_learnset": [
+        {
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Dual Chop",
+            "level": 1
+        },
+        {
+            "move": "Sand Attack",
+            "level": 1
+        },
+        {
+            "move": "Scratch",
+            "level": 1
+        },
+        {
+            "move": "Tail Whip",
+            "level": 1
+        },
+        {
+            "move": "Sand Attack",
+            "level": 4
+        },
+        {
+            "move": "Astonish",
+            "level": 8
+        },
+        {
+            "move": "Baton Pass",
+            "level": 11
+        },
+        {
+            "move": "Tickle",
+            "level": 15
+        },
+        {
+            "move": "Fury Swipes",
+            "level": 18
+        },
+        {
+            "move": "Swift",
+            "level": 22
+        },
+        {
+            "move": "Screech",
+            "level": 25
+        },
+        {
+            "move": "Agility",
+            "level": 29
+        },
+        {
+            "move": "Double Hit",
+            "level": 32
+        },
+        {
+            "move": "Fling",
+            "level": 36
+        },
+        {
+            "move": "Nasty Plot",
+            "level": 39
+        },
+        {
+            "move": "Last Resort",
+            "level": 43
+        },
+        {
+            "move": "Agility",
+            "egg_move": true
+        },
+        {
+            "move": "Beat Up",
+            "egg_move": true
+        },
+        {
+            "move": "Bounce",
+            "egg_move": true
+        },
+        {
+            "move": "Counter",
+            "egg_move": true
+        },
+        {
+            "move": "Covet",
+            "egg_move": true
+        },
+        {
+            "move": "Double Slap",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Out",
+            "egg_move": true
+        },
+        {
+            "move": "Pursuit",
+            "egg_move": true
+        },
+        {
+            "move": "Quick Guard",
+            "egg_move": true
+        },
+        {
+            "move": "Revenge",
+            "egg_move": true
+        },
+        {
+            "move": "Screech",
+            "egg_move": true
+        },
+        {
+            "move": "Slam",
+            "egg_move": true
+        },
+        {
+            "move": "Spite",
+            "egg_move": true
+        },
+        {
+            "move": "Switcheroo",
+            "egg_move": true
+        },
+        {
+            "move": "Tail Slap",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24"
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Low Sweep",
+            "tm": "TM47"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Acrobatics",
+            "tm": "TM62"
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": "TM65"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 116,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Iron Tail",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Snatch",
-          "tm": "TM49"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Iron Tail",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Snatch",
-          "tm": "TM49"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Iron Tail",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Snatch",
-          "tm": "TM49"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Quick Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Quick Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Dual Chop",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Quick Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Dual Chop",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Sand Attack",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Baton Pass",
-          "level": 11
-        },
-        {
-          "move": "Tickle",
-          "level": 15
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 18
-        },
-        {
-          "move": "Swift",
-          "level": 22
-        },
-        {
-          "move": "Screech",
-          "level": 25
-        },
-        {
-          "move": "Agility",
-          "level": 29
-        },
-        {
-          "move": "Double Hit",
-          "level": 32
-        },
-        {
-          "move": "Fling",
-          "level": 36
-        },
-        {
-          "move": "Nasty Plot",
-          "level": 39
-        },
-        {
-          "move": "Last Resort",
-          "level": 43
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Double Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Quick Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Spite",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Tail Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

@@ -1,1612 +1,305 @@
 {
-  "names": {
-    "fr": "Tutankafer",
-    "de": "Echnatoll",
-    "it": "Cofagrigus",
-    "en": "Cofagrigus"
-  },
-  "national_id": 563,
-  "types": [
-    "Ghost"
-  ],
-  "items": [
-      {
-          "name": "Spell Tag",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Mummy"
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 90,
-  "egg_groups": [
-    "Mineral",
-    "Amorphous"
-  ],
-  "hatch_time": [
-    6630,
-    6884
-  ],
-  "height_us": "5'07\"",
-  "height_eu": "1.7 m",
-  "weight_us": "168.7 lbs.",
-  "weight_eu": "76.5 kg",
-  "base_exp_yield": 169,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 2,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Yellow",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 58,
-    "atk": 50,
-    "def": 145,
-    "sp_atk": 95,
-    "sp_def": 105,
-    "speed": 30
-  },
-  "evolution_from": "Yamask",
-  "categories": {
-    "en": "Coffin Pokémon",
-    "de": "Sarkophag"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 69,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "It has been said that they swallow those who get too close and turn them into mummies. They like to eat gold nuggets.",
-      "de": "Angeblich verschlingt es jeden, der sich ihm auch nur nähert. Besonders gern frisst es Klumpen aus reinem Gold."
-    },
-    "White": {
-      "en": "They pretend to be elaborate coffins to teach lessons to grave robbers. Their bodies are covered in pure gold.",
-      "de": "Es tarnt sich als prächtiger Sarkophag und zieht Grabräubern die Ohren lang. Sein Körper ist mit Gold überzogen."
-    },
-    "Black 2": {
-      "en": "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
-      "de": "Grabräuber, die es mit einem echten Sarg verwechseln und ihm zu nahe kommen, hält es im Inneren seines Körpers gefangen."
-    },
-    "White 2": {
-      "en": "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
-      "de": "Grabräuber, die es mit einem echten Sarg verwechseln und ihm zu nahe kommen, hält es im Inneren seines Körpers gefangen."
-    },
-    "X": {
-      "en": "It has been said that they swallow those who get too close and turn them into mummies. They like to eat gold nuggets.",
-      "de": "Angeblich verschlingt es jeden, der sich ihm auch nur nähert. Besonders gern frisst es Klumpen aus reinem Gold."
-    },
-    "Y": {
-      "en": "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
-      "de": "Grabräuber, die es mit einem echten Sarg verwechseln und ihm zu nahe kommen, hält es im Inneren seines Körpers gefangen."
-    },
-    "Omega Ruby": {
-      "en": "It has been said that they swallow those who get too close and turn them into mummies. They like to eat gold nuggets.",
-      "de": "Grabräuber, die es mit einem echten Sarg verwechseln und ihm zu nahe kommen, hält es im Inneren seines Körpers gefangen."
-    },
-    "Alpha Sapphire": {
-      "en": "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
-      "de": "Grabräuber, die es mit einem echten Sarg verwechseln und ihm zu nahe kommen, hält es im Inneren seines Körpers gefangen."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Cofagrigus",
+    "national_id": 563,
+    "types": [
+        "Ghost"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Spell Tag",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Mummy"
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 90,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Mineral",
+        "Amorphous"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        6630,
+        6884
+    ],
+    "height_us": "5'07\"",
+    "height_eu": "1.7 m",
+    "weight_us": "168.7 lbs.",
+    "weight_eu": "76.5 kg",
+    "base_exp_yield": 169,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 2,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 58,
+        "atk": 50,
+        "def": 145,
+        "sp_atk": 95,
+        "sp_def": 105,
+        "speed": 30
+    },
+    "evolution_from": "Yamask",
+    "evolutions": [],
+    "species": "Coffin Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Grave robbers who mistake them for real coffins and get too close end up trapped inside their bodies.",
+    "move_learnset": [
+        {
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Disable",
+            "level": 1
+        },
+        {
+            "move": "Haze",
+            "level": 1
+        },
+        {
+            "move": "Protect",
+            "level": 1
+        },
+        {
+            "move": "Scary Face",
+            "level": 1
+        },
+        {
+            "move": "Disable",
+            "level": 5
+        },
+        {
+            "move": "Haze",
+            "level": 9
+        },
+        {
+            "move": "Night Shade",
+            "level": 13
+        },
+        {
+            "move": "Hex",
+            "level": 17
+        },
+        {
+            "move": "Will-O-Wisp",
+            "level": 21
+        },
+        {
+            "move": "Ominous Wind",
+            "level": 25
+        },
+        {
+            "move": "Curse",
+            "level": 29
+        },
+        {
+            "move": "Guard Split",
+            "level": 33
+        },
+        {
+            "move": "Power Split",
+            "level": 33
+        },
+        {
+            "move": "Shadow Ball",
+            "level": 39
+        },
+        {
+            "move": "Grudge",
+            "level": 45
+        },
+        {
+            "move": "Mean Look",
+            "level": 51
+        },
+        {
+            "move": "Destiny Bond",
+            "level": 57
+        },
+        {
+            "move": "Ally Switch",
+            "egg_move": true
+        },
+        {
+            "move": "Crafty Shield",
+            "egg_move": true
+        },
+        {
+            "move": "Disable",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Tears",
+            "egg_move": true
+        },
+        {
+            "move": "Heal Block",
+            "egg_move": true
+        },
+        {
+            "move": "Imprison",
+            "egg_move": true
+        },
+        {
+            "move": "Memento",
+            "egg_move": true
+        },
+        {
+            "move": "Nasty Plot",
+            "egg_move": true
+        },
+        {
+            "move": "Nightmare",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic Spikes",
+            "egg_move": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": "TM61"
+        },
+        {
+            "move": "Embargo",
+            "tm": "TM63"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Trick Room",
+            "tm": "TM92"
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": "TM97"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Protect",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Night Shade",
-          "level": 13
-        },
-        {
-          "move": "Hex",
-          "level": 17
-        },
-        {
-          "move": "Will-O-Wisp",
-          "level": 21
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "level": 29
-        },
-        {
-          "move": "Guard Split",
-          "level": 33
-        },
-        {
-          "move": "Power Split",
-          "level": 33
-        },
-        {
-          "move": "Scary Face",
-          "level": 34
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 39
-        },
-        {
-          "move": "Grudge",
-          "level": 45
-        },
-        {
-          "move": "Mean Look",
-          "level": 51
-        },
-        {
-          "move": "Destiny Bond",
-          "level": 57
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Heal Block",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Nightmare",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Protect",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Night Shade",
-          "level": 13
-        },
-        {
-          "move": "Hex",
-          "level": 17
-        },
-        {
-          "move": "Will-O-Wisp",
-          "level": 21
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "level": 29
-        },
-        {
-          "move": "Guard Split",
-          "level": 33
-        },
-        {
-          "move": "Power Split",
-          "level": 33
-        },
-        {
-          "move": "Scary Face",
-          "level": 34
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 39
-        },
-        {
-          "move": "Grudge",
-          "level": 45
-        },
-        {
-          "move": "Mean Look",
-          "level": 51
-        },
-        {
-          "move": "Destiny Bond",
-          "level": 57
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Heal Block",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Nightmare",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Protect",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Night Shade",
-          "level": 13
-        },
-        {
-          "move": "Hex",
-          "level": 17
-        },
-        {
-          "move": "Will-O-Wisp",
-          "level": 21
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "level": 29
-        },
-        {
-          "move": "Guard Split",
-          "level": 33
-        },
-        {
-          "move": "Power Split",
-          "level": 33
-        },
-        {
-          "move": "Scary Face",
-          "level": 34
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 39
-        },
-        {
-          "move": "Grudge",
-          "level": 45
-        },
-        {
-          "move": "Mean Look",
-          "level": 51
-        },
-        {
-          "move": "Destiny Bond",
-          "level": 57
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Heal Block",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Nightmare",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Protect",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Night Shade",
-          "level": 13
-        },
-        {
-          "move": "Hex",
-          "level": 17
-        },
-        {
-          "move": "Will-O-Wisp",
-          "level": 21
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "level": 29
-        },
-        {
-          "move": "Guard Split",
-          "level": 33
-        },
-        {
-          "move": "Power Split",
-          "level": 33
-        },
-        {
-          "move": "Scary Face",
-          "level": 34
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 39
-        },
-        {
-          "move": "Grudge",
-          "level": 45
-        },
-        {
-          "move": "Mean Look",
-          "level": 51
-        },
-        {
-          "move": "Destiny Bond",
-          "level": 57
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Heal Block",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Nightmare",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Protect",
-          "level": 1
-        },
-        {
-          "move": "Scary Face",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Night Shade",
-          "level": 13
-        },
-        {
-          "move": "Hex",
-          "level": 17
-        },
-        {
-          "move": "Will-O-Wisp",
-          "level": 21
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "level": 29
-        },
-        {
-          "move": "Guard Split",
-          "level": 33
-        },
-        {
-          "move": "Power Split",
-          "level": 33
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 39
-        },
-        {
-          "move": "Grudge",
-          "level": 45
-        },
-        {
-          "move": "Mean Look",
-          "level": 51
-        },
-        {
-          "move": "Destiny Bond",
-          "level": 57
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Heal Block",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Nightmare",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Haze",
-          "level": 1
-        },
-        {
-          "move": "Protect",
-          "level": 1
-        },
-        {
-          "move": "Scary Face",
-          "level": 1
-        },
-        {
-          "move": "Disable",
-          "level": 5
-        },
-        {
-          "move": "Haze",
-          "level": 9
-        },
-        {
-          "move": "Night Shade",
-          "level": 13
-        },
-        {
-          "move": "Hex",
-          "level": 17
-        },
-        {
-          "move": "Will-O-Wisp",
-          "level": 21
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 25
-        },
-        {
-          "move": "Curse",
-          "level": 29
-        },
-        {
-          "move": "Guard Split",
-          "level": 33
-        },
-        {
-          "move": "Power Split",
-          "level": 33
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 39
-        },
-        {
-          "move": "Grudge",
-          "level": 45
-        },
-        {
-          "move": "Mean Look",
-          "level": 51
-        },
-        {
-          "move": "Destiny Bond",
-          "level": 57
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Crafty Shield",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Heal Block",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Nightmare",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

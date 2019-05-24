@@ -1,412 +1,69 @@
 {
-  "names": {
-    "fr": "Métamorph",
-    "de": "Ditto",
-    "it": "Ditto",
-    "en": "Ditto"
-  },
-  "national_id": 132,
-  "types": [
-    "Normal"
-  ],
-  "items": [
-      {
-          "name": "Metal Powder",
-          "chance": 5
-      },
-      {
-          "name": "Quick Powder",
-          "chance": 50
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Limber"
-    },
-    {
-      "name": "Imposter",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": null,
-  "catch_rate": 35,
-  "egg_groups": [
-    "Ditto"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "1'00\"",
-  "height_eu": "0.3 m",
-  "weight_us": "8.8 lbs.",
-  "weight_eu": "4.0 kg",
-  "base_exp_yield": 101,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 1,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Purple",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 48,
-    "atk": 48,
-    "def": 48,
-    "sp_atk": 48,
-    "sp_def": 48,
-    "speed": 48
-  },
-  "alola_id": 209,
-  "categories": {
-    "en": "Transform Pokémon",
-    "de": "Transform"
-  },
-  "kanto_id": 132,
-  "johto_id": 92,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": 138,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Red": {
-      "en": "Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.",
-      "de": "Dieses Pokémon kann die Gene von Gegnern kopieren und sich sofort in deren Ebenbild verwandeln."
-    },
-    "Blue": {
-      "en": "Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.",
-      "de": "Dieses Pokémon kann die Gene von Gegnern kopieren und sich sofort in deren Ebenbild verwandeln."
-    },
-    "Yellow": {
-      "en": "When it spots an enemy, its body transforms into an almost perfect copy of its opponent.",
-      "de": "Wenn Ditto einen Gegner ausmacht, nimmt es blitzschnell das Aussehen seines Gegenübers an."
-    },
-    "Gold": {
-      "en": "It can transform into anything. When it sleeps, it changes into a stone to avoid being attacked.",
-      "de": "Es kann sich in alles verwandeln. Wenn es schläft, verwandelt es sich in einen Stein, um sicher zu sein."
-    },
-    "Silver": {
-      "en": "Its transformation ability is perfect. However, if it is made to laugh, it can't maintain its disguise.",
-      "de": "Seine Verwandlungskunst ist perfekt. Bringt man es jedoch zum Lachen, fällt seine Tarnung."
-    },
-    "Crystal": {
-      "en": "When it encounters another Ditto, it will move faster than normal to duplicate that opponent exactly.",
-      "de": "Trifft es auf ein anderes Ditto, bewegt es sich schneller als gewöhnlich, um es exakt nachzuahmen."
-    },
-    "Ruby": {
-      "en": "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
-      "de": "Ditto verändert seine Zellstruktur, um sich in eine andere Form zu verwandeln. Wenn es sich dabei jedoch auf sein Gedächtnis verlässt, unterlaufen diesem Pokémon schon mal Fehler."
-    },
-    "Sapphire": {
-      "en": "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
-      "de": "Ditto verändert seine Zellstruktur, um sich in eine andere Form zu verwandeln. Wenn es sich dabei jedoch auf sein Gedächtnis verlässt, unterlaufen diesem Pokémon schon mal Fehler."
-    },
-    "Emerald": {
-      "en": "A Ditto rearranges its cell structure to transform itself. However, if it tries to change based on its memory, it will get details wrong.",
-      "de": "DITTO verändert seine Zellstruktur, um sich zu verwandeln. Verlässt es sich dabei jedoch auf sein Gedächtnis, unterlaufen diesem POKÉMON schon mal Fehler."
-    },
-    "FireRed": {
-      "en": "It can freely recombine its own cellular structure to transform into other life-forms.",
-      "de": "Es kann seine eigene Zellstruktur frei zusammensetzen und sich in jede andere Lebensform verwandeln."
-    },
-    "LeafGreen": {
-      "en": "Capable of copying an opponent's genetic code to instantly transform itself into a duplicate of the enemy.",
-      "de": "Dieses Pokémon kann die Gene von Gegnern kopieren und sich sofort in deren Ebenbild verwandeln."
-    },
-    "Diamond": {
-      "en": "It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "Pearl": {
-      "en": "It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "Platinum": {
-      "en": "It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "HeartGold": {
-      "en": "It can transform into anything. When it sleeps, it changes into a stone to avoid being attacked.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "SoulSilver": {
-      "en": "Its transformation ability is perfect. However, if made to laugh, it can't maintain its disguise.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "Black": {
-      "en": "It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "White": {
-      "en": "It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "Black 2": {
-      "en": "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes.",
-      "de": "Ruht es sich nicht aus, kann es seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "White 2": {
-      "en": "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes.",
-      "de": "Ruht es sich nicht aus, kann es seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "X": {
-      "en": "It has the ability to reconstitute its entire cellular structure to transform into whatever it sees.",
-      "de": "Es kann seine Zellstruktur so verändern, dass es sich in alles verwandeln kann, was es sieht."
-    },
-    "Y": {
-      "en": "It can freely recombine its own cellular structure to transform into other life-forms.",
-      "de": "Es kann seine eigene Zellstruktur frei zusammensetzen und sich in jede andere Lebensform verwandeln."
-    },
-    "Omega Ruby": {
-      "en": "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
-      "de": "Ditto verändert seine Zellstruktur, um sich in eine andere Form zu verwandeln. Wenn es sich dabei jedoch auf sein Gedächtnis verlässt, unterlaufen diesem Pokémon schon mal Fehler."
-    },
-    "Alpha Sapphire": {
-      "en": "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
-      "de": "Ditto verändert seine Zellstruktur, um sich in eine andere Form zu verwandeln. Wenn es sich dabei jedoch auf sein Gedächtnis verlässt, unterlaufen diesem Pokémon schon mal Fehler."
-    },
-    "Sun": {
-      "en": "It can reorganize its cells to make itself into a duplicate of anything it sees. The quality of the duplicate depends on the individual.",
-      "de": "Es verändert seine Zellstruktur, um die Gestalt anderer Lebewesen, die es sieht, anzunehmen. Wie gut das Ebenbild ist, variiert nach Exemplar."
-    },
-    "Moon": {
-      "en": "With its astonishing capacity for metamorphosis, it can get along with anything. It does not get along well with its fellow Ditto.",
-      "de": "Dank seiner Fähigkeiten als Gestaltwandler kann es sich mit allen Lebewesen anfreunden. Nur mit Artgenossen kommt es nicht zurecht."
-    },
-    "Ultra Sun": {
-      "en": "While it can transform into anything, each Ditto apparently has its own strengths and weaknesses when it comes to transformations.",
-      "de": "Ditto kann jede beliebige Gestalt annehmen, wobei aber jedes Exemplar individuelle Stärken und Schwächen aufweist."
-    },
-    "Ultra Moon": {
-      "en": "It transforms into whatever it sees. If the thing it’s transforming into isn’t right in front of it, Ditto relies on its memory—so sometimes it fails.",
-      "de": "Es kann sich in alles verwandeln, was es sieht. Muss es sich dabei aber auf sein Gedächtnis verlassen, macht es manchmal auch Fehler."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      2,
-      5
+    "name": "Ditto",
+    "national_id": 132,
+    "types": [
+        "Normal"
     ],
-    "power": [
-      2,
-      5
+    "items": [
+        {
+            "name": "Metal Powder",
+            "chance": 5
+        },
+        {
+            "name": "Quick Powder",
+            "chance": 50
+        }
     ],
-    "stamina": [
-      2,
-      5
+    "abilities": [
+        {
+            "name": "Limber"
+        },
+        {
+            "name": "Imposter",
+            "hidden": true
+        }
     ],
-    "skill": [
-      2,
-      5
+    "catch_rate": 35,
+    "gender_ratios": null,
+    "egg_groups": [
+        "Ditto"
     ],
-    "jump": [
-      2,
-      5
+    "hatch_time": [
+        5355,
+        5609
+    ],
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "8.8 lbs.",
+    "weight_eu": "4.0 kg",
+    "base_exp_yield": 101,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 1,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 48,
+        "atk": 48,
+        "def": 48,
+        "sp_atk": 48,
+        "sp_def": 48,
+        "speed": 48
+    },
+    "evolution_from": null,
+    "evolutions": [],
+    "species": "Transform Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.",
+    "move_learnset": [
+        {
+            "move": "Transform",
+            "level": 1
+        }
     ]
-  },
-  "ultra_alola_id": 92,
-  "move_learnsets": [
-    {
-      "games": [
-        "Red",
-        "Blue"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Yellow"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Gold",
-        "Silver"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Crystal"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ruby",
-        "Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "FireRed",
-        "LeafGreen"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Emerald"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Transform",
-          "level": 1
-        }
-      ]
-    }
-  ]
 }

@@ -1,513 +1,254 @@
 {
-  "names": {
-    "en": "Sandygast",
-    "jp": "スナバァ Sunabā",
-    "fr": "Bacabouh",
-    "es": "Sandygast",
-    "de": "Sankabuh",
-    "it": "Sandygast"
-  },
-  "national_id": 769,
-  "alola_id": 186,
-  "types": [
-    "Ghost",
-    "Ground"
-  ],
-  "items": [
-      {
-          "name": "Spell Tag",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Water Compaction"
-    },
-    {
-      "name": "Sand Veil",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 140,
-  "egg_groups": [
-    "Amorphous"
-  ],
-  "hatch_time": [
-    3855,
-    4111
-  ],
-  "height_us": "1'08\"",
-  "height_eu": "0.5 m",
-  "weight_us": "154.3 lbs.",
-  "weight_eu": "70.0 kg",
-  "base_exp_yield": 64,
-  "leveling_rate": "Medium Fast",
-  "color": "Brown",
-  "base_friendship": 70,
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 1,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "base_stats": {
-    "hp": 55,
-    "atk": 55,
-    "def": 80,
-    "sp_atk": 70,
-    "sp_def": 45,
-    "speed": 15
-  },
-  "evolutions": [
-    {
-      "to": "Palossand",
-      "level": 42
-    }
-  ],
-  "categories": {
-    "en": "Sand Heap Pokémon",
-    "de": "Sandhaufen"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Sun": {
-      "en": "Born from a sand mound playfully built by a child, this Pokémon embodies the grudges of the departed.",
-      "de": "Der Groll eines verstorbenen Reisenden fuhr in einen Sandhügel, den ein Kind gebaut hatte, und brachte dieses Pokémon in die Welt."
-    },
-    "Moon": {
-      "en": "It takes control of anyone who puts a hand in its mouth. And so it adds to the accumulation of its sand-mound body.",
-      "de": "Es kann jeden kontrollieren, der seine Hand in sein Maul steckt, und bringt sie dann dazu, seinen Körper immer weiter zu vergrößern."
-    },
-    "Ultra Sun": {
-      "en": "It likes the shovel on its head, so Sandygast will get serious and fight any children who come to take it back.",
-      "de": "Die Schaufel auf seinem Kopf ist sein größter Schatz. Versucht ein Kind, sich seine Schaufel zurückzuholen, gibt es diese nicht kampflos auf."
-    },
-    "Ultra Moon": {
-      "en": "If you build sand mounds when you’re playing, destroy them before you go home, or they may get possessed and become Sandygast.",
-      "de": "Lässt man beim Spielen gebaute Sandhaufen zurück, kann es vorkommen, dass sich eine Seele dort einnistet und ein Sankabuh entsteht."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Sandygast",
+    "national_id": 769,
+    "types": [
+        "Ghost",
+        "Ground"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Spell Tag",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Water Compaction"
+        },
+        {
+            "name": "Sand Veil",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 140,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Amorphous"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        3855,
+        4111
+    ],
+    "height_us": "1'08\"",
+    "height_eu": "0.5 m",
+    "weight_us": "154.3 lbs.",
+    "weight_eu": "70.0 kg",
+    "base_exp_yield": 64,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 1,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 55,
+        "atk": 55,
+        "def": 80,
+        "sp_atk": 70,
+        "sp_def": 45,
+        "speed": 15
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Palossand",
+            "level": 42
+        }
+    ],
+    "species": "Sand Heap Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It likes the shovel on its head, so Sandygast will get serious and fight any children who come to take it back.",
+    "move_learnset": [
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Harden",
+            "level": 1
+        },
+        {
+            "move": "Astonish",
+            "level": 5
+        },
+        {
+            "move": "Sand Attack",
+            "level": 9
+        },
+        {
+            "move": "Sand Tomb",
+            "level": 14
+        },
+        {
+            "move": "Mega Drain",
+            "level": 18
+        },
+        {
+            "move": "Bulldoze",
+            "level": 23
+        },
+        {
+            "move": "Hypnosis",
+            "level": 27
+        },
+        {
+            "move": "Iron Defense",
+            "level": 32
+        },
+        {
+            "move": "Giga Drain",
+            "level": 36
+        },
+        {
+            "move": "Shadow Ball",
+            "level": 41
+        },
+        {
+            "move": "Earth Power",
+            "level": 45
+        },
+        {
+            "move": "Shore Up",
+            "level": 50
+        },
+        {
+            "move": "Sandstorm",
+            "level": 54
+        },
+        {
+            "move": "Amnesia",
+            "egg_move": true
+        },
+        {
+            "move": "Ancient Power",
+            "egg_move": true
+        },
+        {
+            "move": "Curse",
+            "egg_move": true
+        },
+        {
+            "move": "Destiny Bond",
+            "egg_move": true
+        },
+        {
+            "move": "Spit Up",
+            "egg_move": true
+        },
+        {
+            "move": "Stockpile",
+            "egg_move": true
+        },
+        {
+            "move": "Swallow",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37"
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Rock Polish",
+            "tm": "TM69"
+        },
+        {
+            "move": "Stone Edge",
+            "tm": "TM71"
+        },
+        {
+            "move": "Bulldoze",
+            "tm": "TM78"
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80"
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 126,
-  "move_learnsets": [
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 5
-        },
-        {
-          "move": "Sand Attack",
-          "level": 9
-        },
-        {
-          "move": "Sand Tomb",
-          "level": 14
-        },
-        {
-          "move": "Mega Drain",
-          "level": 18
-        },
-        {
-          "move": "Bulldoze",
-          "level": 23
-        },
-        {
-          "move": "Hypnosis",
-          "level": 27
-        },
-        {
-          "move": "Iron Defense",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 36
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 41
-        },
-        {
-          "move": "Earth Power",
-          "level": 45
-        },
-        {
-          "move": "Shore Up",
-          "level": 50
-        },
-        {
-          "move": "Sandstorm",
-          "level": 54
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Destiny Bond",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 5
-        },
-        {
-          "move": "Sand Attack",
-          "level": 9
-        },
-        {
-          "move": "Sand Tomb",
-          "level": 14
-        },
-        {
-          "move": "Mega Drain",
-          "level": 18
-        },
-        {
-          "move": "Bulldoze",
-          "level": 23
-        },
-        {
-          "move": "Hypnosis",
-          "level": 27
-        },
-        {
-          "move": "Iron Defense",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 36
-        },
-        {
-          "move": "Shadow Ball",
-          "level": 41
-        },
-        {
-          "move": "Earth Power",
-          "level": 45
-        },
-        {
-          "move": "Shore Up",
-          "level": 50
-        },
-        {
-          "move": "Sandstorm",
-          "level": 54
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Destiny Bond",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

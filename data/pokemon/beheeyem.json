@@ -1,1880 +1,349 @@
 {
-  "names": {
-    "fr": "Neitram",
-    "de": "Megalon",
-    "it": "Beheeyem",
-    "en": "Beheeyem"
-  },
-  "national_id": 606,
-  "types": [
-    "Psychic"
-  ],
-  "abilities": [
-    {
-      "name": "Telepathy"
-    },
-    {
-      "name": "Synchronize"
-    },
-    {
-      "name": "Analytic",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 90,
-  "egg_groups": [
-    "Human-Like"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "3'03\"",
-  "height_eu": "1.0 m",
-  "weight_us": "76.1 lbs.",
-  "weight_eu": "34.5 kg",
-  "base_exp_yield": 170,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 2,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Brown",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 75,
-    "atk": 75,
-    "def": 75,
-    "sp_atk": 125,
-    "sp_def": 95,
-    "speed": 40
-  },
-  "evolution_from": "Elgyem",
-  "categories": {
-    "en": "Cerebral Pokémon",
-    "de": "Grips"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 112,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "It can manipulate an opponent's memory. Apparently, it communicates by flashing its three different-colored fingers.",
-      "de": "Manipuliert das gegnerische Gedächtnis. Lässt es seine drei bunten Finger aufleuchten, kommuniziert es offenbar."
-    },
-    "White": {
-      "en": "It uses psychic power to control an opponent's brain and tamper with its memories.",
-      "de": "Es manipuliert die Gehirne seiner Gegner mit Psycho-Kräften, indem es die Bilder ihrer Erinnerungen umgestaltet."
-    },
-    "Black 2": {
-      "en": "Apparently, it communicates by flashing its three fingers, but those patterns haven't been decoded.",
-      "de": "Es spricht, indem es seine Fingerspitzen leuchten lässt, doch noch konnte der Code dahinter nicht entziffert werden."
-    },
-    "White 2": {
-      "en": "Apparently, it communicates by flashing its three fingers, but those patterns haven't been decoded.",
-      "de": "Es spricht, indem es seine Fingerspitzen leuchten lässt, doch noch konnte der Code dahinter nicht entziffert werden."
-    },
-    "X": {
-      "en": "Apparently, it communicates by flashing its three fingers, but those patterns haven't been decoded.",
-      "de": "Es spricht, indem es seine Fingerspitzen leuchten lässt, doch noch konnte der Code dahinter nicht entziffert werden."
-    },
-    "Y": {
-      "en": "It uses psychic power to control an opponent's brain and tamper with its memories.",
-      "de": "Es manipuliert die Gehirne seiner Gegner mit Psycho-Kräften, indem es die Bilder ihrer Erinnerungen umgestaltet."
-    },
-    "Omega Ruby": {
-      "en": "Apparently, it communicates by flashing its three fingers, but those patterns haven't been decoded.",
-      "de": "Es manipuliert die Gehirne seiner Gegner mit Psycho-Kräften, indem es die Bilder ihrer Erinnerungen umgestaltet."
-    },
-    "Alpha Sapphire": {
-      "en": "It uses psychic power to control an opponent's brain and tamper with its memories.",
-      "de": "Es manipuliert die Gehirne seiner Gegner mit Psycho-Kräften, indem es die Bilder ihrer Erinnerungen umgestaltet."
-    },
-    "Ultra Sun": {
-      "en": "With its psychic powers, it rewrites its opponents’ memories. You, too, may have already had your memories rewritten.",
-      "de": "Mithilfe seiner Psycho-Kräfte gestaltet es die Erinnerungen anderer um. Man weiß nie, ob es einen selbst bereits erwischt hat."
-    },
-    "Ultra Moon": {
-      "en": "It has strong psychic powers. Using its fingers that flash three different colors, it controls its opponents and rewrites their memories.",
-      "de": "Es verfügt über mächtige Psycho-Kräfte. Seine in drei Farben leuchtenden Finger manipulieren andere und gestalten ihre Erinnerungen um."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Beheeyem",
+    "national_id": 606,
+    "types": [
+        "Psychic"
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Telepathy"
+        },
+        {
+            "name": "Synchronize"
+        },
+        {
+            "name": "Analytic",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 90,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Human-Like"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "3'03\"",
+    "height_eu": "1.0 m",
+    "weight_us": "76.1 lbs.",
+    "weight_eu": "34.5 kg",
+    "base_exp_yield": 170,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 2,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 75,
+        "atk": 75,
+        "def": 75,
+        "sp_atk": 125,
+        "sp_def": 95,
+        "speed": 40
+    },
+    "evolution_from": "Elgyem",
+    "evolutions": [],
+    "species": "Cerebral Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It uses psychic power to control an opponent's brain and tamper with its memories.",
+    "move_learnset": [
+        {
+            "move": "Confusion",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 1
+        },
+        {
+            "move": "Heal Block",
+            "level": 1
+        },
+        {
+            "move": "Miracle Eye",
+            "level": 1
+        },
+        {
+            "move": "Psychic Terrain",
+            "level": 1
+        },
+        {
+            "move": "Synchronoise",
+            "level": 1
+        },
+        {
+            "move": "Wonder Room",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 4
+        },
+        {
+            "move": "Heal Block",
+            "level": 8
+        },
+        {
+            "move": "Miracle Eye",
+            "level": 11
+        },
+        {
+            "move": "Psybeam",
+            "level": 15
+        },
+        {
+            "move": "Headbutt",
+            "level": 18
+        },
+        {
+            "move": "Hidden Power",
+            "level": 22
+        },
+        {
+            "move": "Imprison",
+            "level": 25
+        },
+        {
+            "move": "Simple Beam",
+            "level": 29
+        },
+        {
+            "move": "Zen Headbutt",
+            "level": 32
+        },
+        {
+            "move": "Psych Up",
+            "level": 36
+        },
+        {
+            "move": "Psychic",
+            "level": 39
+        },
+        {
+            "move": "Calm Mind",
+            "level": 45
+        },
+        {
+            "move": "Recover",
+            "level": 50
+        },
+        {
+            "move": "Guard Split",
+            "level": 56
+        },
+        {
+            "move": "Power Split",
+            "level": 58
+        },
+        {
+            "move": "Synchronoise",
+            "level": 63
+        },
+        {
+            "move": "Wonder Room",
+            "level": 68
+        },
+        {
+            "move": "Ally Switch",
+            "egg_move": true
+        },
+        {
+            "move": "Astonish",
+            "egg_move": true
+        },
+        {
+            "move": "Barrier",
+            "egg_move": true
+        },
+        {
+            "move": "Cosmic Power",
+            "egg_move": true
+        },
+        {
+            "move": "Disable",
+            "egg_move": true
+        },
+        {
+            "move": "Guard Swap",
+            "egg_move": true
+        },
+        {
+            "move": "Nasty Plot",
+            "egg_move": true
+        },
+        {
+            "move": "Power Swap",
+            "egg_move": true
+        },
+        {
+            "move": "Skill Swap",
+            "egg_move": true
+        },
+        {
+            "move": "Teleport",
+            "egg_move": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": "TM3"
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Reflect",
+            "tm": "TM33"
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Steel Wing",
+            "tm": "TM51"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57"
+        },
+        {
+            "move": "Embargo",
+            "tm": "TM63"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Trick Room",
+            "tm": "TM92"
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": "TM97"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 97,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Heal Block",
-          "level": 1
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Heal Block",
-          "level": 8
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 11
-        },
-        {
-          "move": "Psybeam",
-          "level": 15
-        },
-        {
-          "move": "Headbutt",
-          "level": 18
-        },
-        {
-          "move": "Hidden Power",
-          "level": 22
-        },
-        {
-          "move": "Imprison",
-          "level": 25
-        },
-        {
-          "move": "Simple Beam",
-          "level": 29
-        },
-        {
-          "move": "Zen Headbutt",
-          "level": 32
-        },
-        {
-          "move": "Psych Up",
-          "level": 36
-        },
-        {
-          "move": "Psychic",
-          "level": 39
-        },
-        {
-          "move": "Calm Mind",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 50
-        },
-        {
-          "move": "Guard Split",
-          "level": 56
-        },
-        {
-          "move": "Power Split",
-          "level": 58
-        },
-        {
-          "move": "Synchronoise",
-          "level": 63
-        },
-        {
-          "move": "Wonder Room",
-          "level": 68
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Barrier",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Power Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Teleport",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Ally Switch",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Heal Block",
-          "level": 1
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Heal Block",
-          "level": 8
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 11
-        },
-        {
-          "move": "Psybeam",
-          "level": 15
-        },
-        {
-          "move": "Headbutt",
-          "level": 18
-        },
-        {
-          "move": "Hidden Power",
-          "level": 22
-        },
-        {
-          "move": "Imprison",
-          "level": 25
-        },
-        {
-          "move": "Simple Beam",
-          "level": 29
-        },
-        {
-          "move": "Zen Headbutt",
-          "level": 32
-        },
-        {
-          "move": "Psych Up",
-          "level": 36
-        },
-        {
-          "move": "Psychic",
-          "level": 39
-        },
-        {
-          "move": "Calm Mind",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 50
-        },
-        {
-          "move": "Guard Split",
-          "level": 56
-        },
-        {
-          "move": "Power Split",
-          "level": 58
-        },
-        {
-          "move": "Synchronoise",
-          "level": 63
-        },
-        {
-          "move": "Wonder Room",
-          "level": 68
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Barrier",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Power Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Teleport",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Ally Switch",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Heal Block",
-          "level": 1
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 1
-        },
-        {
-          "move": "Synchronoise",
-          "level": 1
-        },
-        {
-          "move": "Wonder Room",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Heal Block",
-          "level": 8
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 11
-        },
-        {
-          "move": "Psybeam",
-          "level": 15
-        },
-        {
-          "move": "Headbutt",
-          "level": 18
-        },
-        {
-          "move": "Hidden Power",
-          "level": 22
-        },
-        {
-          "move": "Imprison",
-          "level": 25
-        },
-        {
-          "move": "Simple Beam",
-          "level": 29
-        },
-        {
-          "move": "Zen Headbutt",
-          "level": 32
-        },
-        {
-          "move": "Psych Up",
-          "level": 36
-        },
-        {
-          "move": "Psychic",
-          "level": 39
-        },
-        {
-          "move": "Calm Mind",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 50
-        },
-        {
-          "move": "Guard Split",
-          "level": 56
-        },
-        {
-          "move": "Power Split",
-          "level": 58
-        },
-        {
-          "move": "Synchronoise",
-          "level": 63
-        },
-        {
-          "move": "Wonder Room",
-          "level": 68
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Barrier",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Power Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Teleport",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Heal Block",
-          "level": 1
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 1
-        },
-        {
-          "move": "Synchronoise",
-          "level": 1
-        },
-        {
-          "move": "Wonder Room",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Heal Block",
-          "level": 8
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 11
-        },
-        {
-          "move": "Psybeam",
-          "level": 15
-        },
-        {
-          "move": "Headbutt",
-          "level": 18
-        },
-        {
-          "move": "Hidden Power",
-          "level": 22
-        },
-        {
-          "move": "Imprison",
-          "level": 25
-        },
-        {
-          "move": "Simple Beam",
-          "level": 29
-        },
-        {
-          "move": "Zen Headbutt",
-          "level": 32
-        },
-        {
-          "move": "Psych Up",
-          "level": 36
-        },
-        {
-          "move": "Psychic",
-          "level": 39
-        },
-        {
-          "move": "Calm Mind",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 50
-        },
-        {
-          "move": "Guard Split",
-          "level": 56
-        },
-        {
-          "move": "Power Split",
-          "level": 58
-        },
-        {
-          "move": "Synchronoise",
-          "level": 63
-        },
-        {
-          "move": "Wonder Room",
-          "level": 68
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Barrier",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Power Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Teleport",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Heal Block",
-          "level": 1
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 1
-        },
-        {
-          "move": "Psychic Terrain",
-          "level": 1
-        },
-        {
-          "move": "Synchronoise",
-          "level": 1
-        },
-        {
-          "move": "Wonder Room",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Heal Block",
-          "level": 8
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 11
-        },
-        {
-          "move": "Psybeam",
-          "level": 15
-        },
-        {
-          "move": "Headbutt",
-          "level": 18
-        },
-        {
-          "move": "Hidden Power",
-          "level": 22
-        },
-        {
-          "move": "Imprison",
-          "level": 25
-        },
-        {
-          "move": "Simple Beam",
-          "level": 29
-        },
-        {
-          "move": "Zen Headbutt",
-          "level": 32
-        },
-        {
-          "move": "Psych Up",
-          "level": 36
-        },
-        {
-          "move": "Psychic",
-          "level": 39
-        },
-        {
-          "move": "Calm Mind",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 50
-        },
-        {
-          "move": "Guard Split",
-          "level": 56
-        },
-        {
-          "move": "Power Split",
-          "level": 58
-        },
-        {
-          "move": "Synchronoise",
-          "level": 63
-        },
-        {
-          "move": "Wonder Room",
-          "level": 68
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Barrier",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Power Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Teleport",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Heal Block",
-          "level": 1
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 1
-        },
-        {
-          "move": "Psychic Terrain",
-          "level": 1
-        },
-        {
-          "move": "Synchronoise",
-          "level": 1
-        },
-        {
-          "move": "Wonder Room",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Heal Block",
-          "level": 8
-        },
-        {
-          "move": "Miracle Eye",
-          "level": 11
-        },
-        {
-          "move": "Psybeam",
-          "level": 15
-        },
-        {
-          "move": "Headbutt",
-          "level": 18
-        },
-        {
-          "move": "Hidden Power",
-          "level": 22
-        },
-        {
-          "move": "Imprison",
-          "level": 25
-        },
-        {
-          "move": "Simple Beam",
-          "level": 29
-        },
-        {
-          "move": "Zen Headbutt",
-          "level": 32
-        },
-        {
-          "move": "Psych Up",
-          "level": 36
-        },
-        {
-          "move": "Psychic",
-          "level": 39
-        },
-        {
-          "move": "Calm Mind",
-          "level": 45
-        },
-        {
-          "move": "Recover",
-          "level": 50
-        },
-        {
-          "move": "Guard Split",
-          "level": 56
-        },
-        {
-          "move": "Power Split",
-          "level": 58
-        },
-        {
-          "move": "Synchronoise",
-          "level": 63
-        },
-        {
-          "move": "Wonder Room",
-          "level": 68
-        },
-        {
-          "move": "Ally Switch",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Barrier",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Disable",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Nasty Plot",
-          "egg_move": true
-        },
-        {
-          "move": "Power Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Skill Swap",
-          "egg_move": true
-        },
-        {
-          "move": "Teleport",
-          "egg_move": true
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

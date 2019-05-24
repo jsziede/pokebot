@@ -1,1659 +1,308 @@
 {
-  "names": {
-    "fr": "Manternel",
-    "de": "Matrifol",
-    "it": "Leavanny",
-    "en": "Leavanny"
-  },
-  "national_id": 542,
-  "types": [
-    "Bug",
-    "Grass"
-  ],
-  "items": [
-      {
-          "name": "Mental Herb",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Swarm"
-    },
-    {
-      "name": "Chlorophyll"
-    },
-    {
-      "name": "Overcoat",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 45,
-  "egg_groups": [
-    "Bug"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "3'11\"",
-  "height_eu": "1.2 m",
-  "weight_us": "45.2 lbs.",
-  "weight_eu": "20.5 kg",
-  "base_exp_yield": 221,
-  "leveling_rate": "Medium Slow",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 3,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Yellow",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 75,
-    "atk": 103,
-    "def": 80,
-    "sp_atk": 70,
-    "sp_def": 70,
-    "speed": 92
-  },
-  "evolution_from": "Swadloon",
-  "categories": {
-    "en": "Nurturing Pokémon",
-    "de": "Kinderpflege"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 48,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "Upon finding a small Pokémon, it weaves clothing for it from leaves, using the cutters on its arms and sticky silk.",
-      "de": "Findet es ein junges Pokémon, kann es nicht anders, als ihm mit seinen Scheren und Klebefäden ein Kleidchen zu nähen."
-    },
-    "White": {
-      "en": "It keeps its eggs warm with heat from fermenting leaves. It also uses leaves to make warm wrappings for Sewaddle.",
-      "de": "Nutzt die Hitze kompostierenden Laubes zum Ausbrüten von Eiern. Es fertigt aus Blättern Kleidchen für Strawickl an."
-    },
-    "Black 2": {
-      "en": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
-      "de": "Begegnet es einem jungen Pokémon, näht es ihm mit den klebrigen Fäden aus seinem Mund ein Kleid aus Blättern."
-    },
-    "White 2": {
-      "en": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
-      "de": "Begegnet es einem jungen Pokémon, näht es ihm mit den klebrigen Fäden aus seinem Mund ein Kleid aus Blättern."
-    },
-    "X": {
-      "en": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
-      "de": "Begegnet es einem jungen Pokémon, näht es ihm mit den klebrigen Fäden aus seinem Mund ein Kleid aus Blättern."
-    },
-    "Y": {
-      "en": "It keeps its eggs warm with heat from fermenting leaves. It also uses leaves to make warm wrappings for Sewaddle.",
-      "de": "Nutzt die Hitze kompostierenden Laubes zum Ausbrüten von Eiern. Es fertigt aus Blättern Kleidchen für Strawickl an."
-    },
-    "Omega Ruby": {
-      "en": "Upon finding a small Pokémon, it weaves clothing for it from leaves by using the sticky silk secreted from its mouth.",
-      "de": "Nutzt die Hitze kompostierenden Laubes zum Ausbrüten von Eiern. Es fertigt aus Blättern Kleidchen für Strawickl an."
-    },
-    "Alpha Sapphire": {
-      "en": "It keeps its eggs warm with heat from fermenting leaves. It also uses leaves to make warm wrappings for Sewaddle.",
-      "de": "Nutzt die Hitze kompostierenden Laubes zum Ausbrüten von Eiern. Es fertigt aus Blättern Kleidchen für Strawickl an."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Leavanny",
+    "national_id": 542,
+    "types": [
+        "Bug",
+        "Grass"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Mental Herb",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Swarm"
+        },
+        {
+            "name": "Chlorophyll"
+        },
+        {
+            "name": "Overcoat",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 45,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Bug"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        4080,
+        4334
+    ],
+    "height_us": "3'11\"",
+    "height_eu": "1.2 m",
+    "weight_us": "45.2 lbs.",
+    "weight_eu": "20.5 kg",
+    "base_exp_yield": 221,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 3,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 75,
+        "atk": 103,
+        "def": 80,
+        "sp_atk": 70,
+        "sp_def": 70,
+        "speed": 92
+    },
+    "evolution_from": "Swadloon",
+    "evolutions": [],
+    "species": "Nurturing Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It keeps its eggs warm with heat from fermenting leaves. It also uses leaves to make warm wrappings for Sewaddle.",
+    "move_learnset": [
+        {
+            "move": "Bug Bite",
+            "level": 1
+        },
+        {
+            "move": "False Swipe",
+            "level": 1
+        },
+        {
+            "move": "Razor Leaf",
+            "level": 1
+        },
+        {
+            "move": "Slash",
+            "level": 1
+        },
+        {
+            "move": "String Shot",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Bug Bite",
+            "level": 8
+        },
+        {
+            "move": "Razor Leaf",
+            "level": 15
+        },
+        {
+            "move": "Struggle Bug",
+            "level": 22
+        },
+        {
+            "move": "Fell Stinger",
+            "level": 29
+        },
+        {
+            "move": "Helping Hand",
+            "level": 32
+        },
+        {
+            "move": "Leaf Blade",
+            "level": 36
+        },
+        {
+            "move": "X-Scissor",
+            "level": 39
+        },
+        {
+            "move": "Entrainment",
+            "level": 43
+        },
+        {
+            "move": "Swords Dance",
+            "level": 46
+        },
+        {
+            "move": "Leaf Storm",
+            "level": 50
+        },
+        {
+            "move": "Agility",
+            "egg_move": true
+        },
+        {
+            "move": "Air Slash",
+            "egg_move": true
+        },
+        {
+            "move": "Baton Pass",
+            "egg_move": true
+        },
+        {
+            "move": "Camouflage",
+            "egg_move": true
+        },
+        {
+            "move": "Grassy Terrain",
+            "egg_move": true
+        },
+        {
+            "move": "Me First",
+            "egg_move": true
+        },
+        {
+            "move": "Mind Reader",
+            "egg_move": true
+        },
+        {
+            "move": "Razor Wind",
+            "egg_move": true
+        },
+        {
+            "move": "Screech",
+            "egg_move": true
+        },
+        {
+            "move": "Silver Wind",
+            "egg_move": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Reflect",
+            "tm": "TM33"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Steel Wing",
+            "tm": "TM51"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "False Swipe",
+            "tm": "TM54"
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": "TM65"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Swords Dance",
+            "tm": "TM75"
+        },
+        {
+            "move": "X-Scissor",
+            "tm": "TM81"
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Nature Power",
+            "tm": "TM96"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Bug Bite",
-          "level": 1
-        },
-        {
-          "move": "False Swipe",
-          "level": 1
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 1
-        },
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 8
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 15
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 29
-        },
-        {
-          "move": "Helping Hand",
-          "level": 32
-        },
-        {
-          "move": "Leaf Blade",
-          "level": 36
-        },
-        {
-          "move": "X-Scissor",
-          "level": 39
-        },
-        {
-          "move": "Entrainment",
-          "level": 43
-        },
-        {
-          "move": "Swords Dance",
-          "level": 46
-        },
-        {
-          "move": "Leaf Storm",
-          "level": 50
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Air Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Camouflage",
-          "egg_move": true
-        },
-        {
-          "move": "Me First",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Razor Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Silver Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Bug Bite",
-          "level": 1
-        },
-        {
-          "move": "False Swipe",
-          "level": 1
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 1
-        },
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 8
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 15
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 29
-        },
-        {
-          "move": "Helping Hand",
-          "level": 32
-        },
-        {
-          "move": "Leaf Blade",
-          "level": 36
-        },
-        {
-          "move": "X-Scissor",
-          "level": 39
-        },
-        {
-          "move": "Entrainment",
-          "level": 43
-        },
-        {
-          "move": "Swords Dance",
-          "level": 46
-        },
-        {
-          "move": "Leaf Storm",
-          "level": 50
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Air Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Camouflage",
-          "egg_move": true
-        },
-        {
-          "move": "Me First",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Razor Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Silver Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Bug Bite",
-          "level": 1
-        },
-        {
-          "move": "False Swipe",
-          "level": 1
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 1
-        },
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 8
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 15
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 29
-        },
-        {
-          "move": "Helping Hand",
-          "level": 32
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 34
-        },
-        {
-          "move": "Leaf Blade",
-          "level": 36
-        },
-        {
-          "move": "X-Scissor",
-          "level": 39
-        },
-        {
-          "move": "Entrainment",
-          "level": 43
-        },
-        {
-          "move": "Swords Dance",
-          "level": 46
-        },
-        {
-          "move": "Leaf Storm",
-          "level": 50
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Air Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Camouflage",
-          "egg_move": true
-        },
-        {
-          "move": "Me First",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Razor Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Silver Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Bug Bite",
-          "level": 1
-        },
-        {
-          "move": "False Swipe",
-          "level": 1
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 1
-        },
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 8
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 15
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 29
-        },
-        {
-          "move": "Helping Hand",
-          "level": 32
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 34
-        },
-        {
-          "move": "Leaf Blade",
-          "level": 36
-        },
-        {
-          "move": "X-Scissor",
-          "level": 39
-        },
-        {
-          "move": "Entrainment",
-          "level": 43
-        },
-        {
-          "move": "Swords Dance",
-          "level": 46
-        },
-        {
-          "move": "Leaf Storm",
-          "level": 50
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Air Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Camouflage",
-          "egg_move": true
-        },
-        {
-          "move": "Me First",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Razor Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Silver Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bug Bite",
-          "level": 1
-        },
-        {
-          "move": "False Swipe",
-          "level": 1
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 1
-        },
-        {
-          "move": "Slash",
-          "level": 1
-        },
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 8
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 15
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 22
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 29
-        },
-        {
-          "move": "Helping Hand",
-          "level": 32
-        },
-        {
-          "move": "Leaf Blade",
-          "level": 36
-        },
-        {
-          "move": "X-Scissor",
-          "level": 39
-        },
-        {
-          "move": "Entrainment",
-          "level": 43
-        },
-        {
-          "move": "Swords Dance",
-          "level": 46
-        },
-        {
-          "move": "Leaf Storm",
-          "level": 50
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Air Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Camouflage",
-          "egg_move": true
-        },
-        {
-          "move": "Me First",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Razor Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Silver Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bug Bite",
-          "level": 1
-        },
-        {
-          "move": "False Swipe",
-          "level": 1
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 1
-        },
-        {
-          "move": "Slash",
-          "level": 1
-        },
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 8
-        },
-        {
-          "move": "Razor Leaf",
-          "level": 15
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 22
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 29
-        },
-        {
-          "move": "Helping Hand",
-          "level": 32
-        },
-        {
-          "move": "Leaf Blade",
-          "level": 36
-        },
-        {
-          "move": "X-Scissor",
-          "level": 39
-        },
-        {
-          "move": "Entrainment",
-          "level": 43
-        },
-        {
-          "move": "Swords Dance",
-          "level": 46
-        },
-        {
-          "move": "Leaf Storm",
-          "level": 50
-        },
-        {
-          "move": "Agility",
-          "egg_move": true
-        },
-        {
-          "move": "Air Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Camouflage",
-          "egg_move": true
-        },
-        {
-          "move": "Grassy Terrain",
-          "egg_move": true
-        },
-        {
-          "move": "Me First",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Razor Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Silver Wind",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

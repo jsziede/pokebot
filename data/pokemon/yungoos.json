@@ -1,502 +1,255 @@
 {
-  "names": {
-    "en": "Yungoos",
-    "jp": "ヤングース Yangūsu",
-    "fr": "Manglouton",
-    "es": "Yungoos",
-    "de": "Mangunior",
-    "it": "Yungoos"
-  },
-  "national_id": 734,
-  "alola_id": 13,
-  "types": [
-    "Normal"
-  ],
-  "items": [
-      {
-          "name": "Pecha Berry",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Stakeout"
-    },
-    {
-      "name": "Strong Jaw"
-    },
-    {
-      "name": "Adaptability",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 255,
-  "egg_groups": [
-    "Field"
-  ],
-  "hatch_time": [
-    3855,
-    4111
-  ],
-  "height_us": "1'04\"",
-  "height_eu": "0.4 m",
-  "weight_us": "13.2 lbs.",
-  "weight_eu": "6.0 kg",
-  "base_exp_yield": 51,
-  "leveling_rate": "Medium Fast",
-  "color": "Brown",
-  "base_friendship": 70,
-  "ev_yield": {
-    "hp": 0,
-    "atk": 1,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "base_stats": {
-    "hp": 48,
-    "atk": 70,
-    "def": 30,
-    "sp_atk": 30,
-    "sp_def": 30,
-    "speed": 45
-  },
-  "evolutions": [
-    {
-      "to": "Gumshoos",
-      "level": 20,
-      "conditions": [
-        "Daytime"
-      ]
-    }
-  ],
-  "categories": {
-    "en": "Loitering Pokémon",
-    "de": "Patrouille"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Sun": {
-      "en": "With its sharp fangs, it will bite anything. It did not originally live in Alola but was imported from another region.",
-      "de": "Mit seinen scharfen Zähnen schnappt es nach allem. Es lebte ursprünglich nicht in Alola und wurde aus einer anderen Region eingeführt."
-    },
-    "Moon": {
-      "en": "It wanders around in a never-ending search for food. At dusk, it collapses from exhaustion and falls asleep on the spot.",
-      "de": "Die Futtersuche treibt es unaufhörlich umher, doch sobald die Sonne untergeht, wird es von Müdigkeit überfallen und schläft sofort ein."
-    },
-    "Ultra Sun": {
-      "en": "Its stomach takes up most of its long torso. It’s a big eater, so the amount Trainers have to spend on its food is no laughing matter.",
-      "de": "Sein Magen füllt beinahe das gesamte Innere seines länglichen Körpers aus. Die bei diesem Vielfraß anfallenden Futterkosten sind enorm."
-    },
-    "Ultra Moon": {
-      "en": "Although it will eat anything, it prefers fresh living things, so it marches down streets in search of prey.",
-      "de": "Es ist zwar ein Allesfresser, bevorzugt aber frische oder lebendige Nahrung. Auf der Suche nach Beute marschiert es die Straßen entlang."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Yungoos",
+    "national_id": 734,
+    "types": [
+        "Normal"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Pecha Berry",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Stakeout"
+        },
+        {
+            "name": "Strong Jaw"
+        },
+        {
+            "name": "Adaptability",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Field"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        3855,
+        4111
+    ],
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "13.2 lbs.",
+    "weight_eu": "6.0 kg",
+    "base_exp_yield": 51,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 1,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 48,
+        "atk": 70,
+        "def": 30,
+        "sp_atk": 30,
+        "sp_def": 30,
+        "speed": 45
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Gumshoos",
+            "level": 20,
+            "conditions": [
+                "Daytime"
+            ]
+        }
+    ],
+    "species": "Loitering Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Its stomach takes up most of its long torso. It’s a big eater, so the amount Trainers have to spend on its food is no laughing matter.",
+    "move_learnset": [
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Leer",
+            "level": 3
+        },
+        {
+            "move": "Pursuit",
+            "level": 7
+        },
+        {
+            "move": "Sand Attack",
+            "level": 10
+        },
+        {
+            "move": "Odor Sleuth",
+            "level": 13
+        },
+        {
+            "move": "Bide",
+            "level": 16
+        },
+        {
+            "move": "Bite",
+            "level": 19
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 22
+        },
+        {
+            "move": "Super Fang",
+            "level": 25
+        },
+        {
+            "move": "Take Down",
+            "level": 28
+        },
+        {
+            "move": "Scary Face",
+            "level": 31
+        },
+        {
+            "move": "Crunch",
+            "level": 34
+        },
+        {
+            "move": "Hyper Fang",
+            "level": 37
+        },
+        {
+            "move": "Yawn",
+            "level": 40
+        },
+        {
+            "move": "Thrash",
+            "level": 43
+        },
+        {
+            "move": "Rest",
+            "level": 46
+        },
+        {
+            "move": "Fire Fang",
+            "egg_move": true
+        },
+        {
+            "move": "Ice Fang",
+            "egg_move": true
+        },
+        {
+            "move": "Last Resort",
+            "egg_move": true
+        },
+        {
+            "move": "Revenge",
+            "egg_move": true
+        },
+        {
+            "move": "Thunder Fang",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37"
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39"
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 4,
-  "move_learnsets": [
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 3
-        },
-        {
-          "move": "Pursuit",
-          "level": 7
-        },
-        {
-          "move": "Sand Attack",
-          "level": 10
-        },
-        {
-          "move": "Odor Sleuth",
-          "level": 13
-        },
-        {
-          "move": "Bide",
-          "level": 16
-        },
-        {
-          "move": "Bite",
-          "level": 19
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 22
-        },
-        {
-          "move": "Super Fang",
-          "level": 25
-        },
-        {
-          "move": "Take Down",
-          "level": 28
-        },
-        {
-          "move": "Scary Face",
-          "level": 31
-        },
-        {
-          "move": "Crunch",
-          "level": 34
-        },
-        {
-          "move": "Hyper Fang",
-          "level": 37
-        },
-        {
-          "move": "Yawn",
-          "level": 40
-        },
-        {
-          "move": "Thrash",
-          "level": 43
-        },
-        {
-          "move": "Rest",
-          "level": 46
-        },
-        {
-          "move": "Last Resort",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 3
-        },
-        {
-          "move": "Pursuit",
-          "level": 7
-        },
-        {
-          "move": "Sand Attack",
-          "level": 10
-        },
-        {
-          "move": "Odor Sleuth",
-          "level": 13
-        },
-        {
-          "move": "Bide",
-          "level": 16
-        },
-        {
-          "move": "Bite",
-          "level": 19
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 22
-        },
-        {
-          "move": "Super Fang",
-          "level": 25
-        },
-        {
-          "move": "Take Down",
-          "level": 28
-        },
-        {
-          "move": "Scary Face",
-          "level": 31
-        },
-        {
-          "move": "Crunch",
-          "level": 34
-        },
-        {
-          "move": "Hyper Fang",
-          "level": 37
-        },
-        {
-          "move": "Yawn",
-          "level": 40
-        },
-        {
-          "move": "Thrash",
-          "level": 43
-        },
-        {
-          "move": "Rest",
-          "level": 46
-        },
-        {
-          "move": "Fire Fang",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Fang",
-          "egg_move": true
-        },
-        {
-          "move": "Last Resort",
-          "egg_move": true
-        },
-        {
-          "move": "Revenge",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Fang",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

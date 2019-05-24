@@ -1,588 +1,287 @@
 {
-  "names": {
-    "en": "Comfey",
-    "jp": "キュワワー Cuwawa",
-    "fr": "Guérilande",
-    "es": "Comfey",
-    "de": "Curelei",
-    "it": "Comfey"
-  },
-  "national_id": 764,
-  "alola_id": 174,
-  "types": [
-    "Fairy"
-  ],
-  "items": [
-      {
-          "name": "Misty Seed",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Flower Veil"
-    },
-    {
-      "name": "Triage"
-    },
-    {
-      "name": "Natural Cure",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 25.0,
-    "female": 75.0
-  },
-  "catch_rate": 60,
-  "egg_groups": [
-    "Grass"
-  ],
-  "hatch_time": [
-    5140,
-    5396
-  ],
-  "height_us": "0'04\"",
-  "height_eu": "0.1 m",
-  "weight_us": "0.7 lbs.",
-  "weight_eu": "0.3 kg",
-  "base_exp_yield": 170,
-  "leveling_rate": "Fast",
-  "color": "Green",
-  "base_friendship": 70,
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 2,
-    "speed": 0
-  },
-  "base_stats": {
-    "hp": 51,
-    "atk": 52,
-    "def": 90,
-    "sp_atk": 82,
-    "sp_def": 110,
-    "speed": 100
-  },
-  "categories": {
-    "en": "Posy Picker Pokémon",
-    "de": "Blumenkranz"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Sun": {
-      "en": "It attaches flowers to its highly nutritious vine. This revitalizes the flowers, and they give off an aromatic scent.",
-      "de": "Dieses Pokémon sieht aus, als hätte man Blüten an einer nahrhaften Ranke angebracht. Diese blühen auf und sind äußerst wohlriechend."
-    },
-    "Moon": {
-      "en": "Baths prepared with the flowers from its vine have a relaxing effect, so this Pokémon is a hit with many people.",
-      "de": "Ein Wellness-Bad mit seinen Blüten hilft, dem Alltag zu entfliehen und gut zu entspannen. Bei vielen Menschen daher äußerst beliebt."
-    },
-    "Ultra Sun": {
-      "en": "It stretches sticky vines out from its head and picks flowers to adorn itself with. When it doesn’t have any flowers, it feels uneasy.",
-      "de": "Mit der klebrigen Ranke an seinem Kopf pflückt es Blumen und schmückt sich dann mit ihnen. Fehlt ihm sein Blütenschmuck, wird es nervös."
-    },
-    "Ultra Moon": {
-      "en": "It picks flowers and sticks them to its body with fluids it produces. The aroma that wafts from its petals has a healing effect.",
-      "de": "Es pflückt Blumen und klebt sie mithilfe eines Sekrets an seinen Körper. Von seinen Blüten geht ein Duft mit heilsamer Wirkung aus."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Comfey",
+    "national_id": 764,
+    "types": [
+        "Fairy"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Misty Seed",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Flower Veil"
+        },
+        {
+            "name": "Triage"
+        },
+        {
+            "name": "Natural Cure",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 60,
+    "gender_ratios": {
+        "male": 25,
+        "female": 75
+    },
+    "egg_groups": [
+        "Grass"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        5140,
+        5396
+    ],
+    "height_us": "0'04\"",
+    "height_eu": "0.1 m",
+    "weight_us": "0.7 lbs.",
+    "weight_eu": "0.3 kg",
+    "base_exp_yield": 170,
+    "leveling_rate": "Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 2,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 51,
+        "atk": 52,
+        "def": 90,
+        "sp_atk": 82,
+        "sp_def": 110,
+        "speed": 100
+    },
+    "evolution_from": null,
+    "evolutions": [],
+    "species": "Posy Picker Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It stretches sticky vines out from its head and picks flowers to adorn itself with. When it doesn’t have any flowers, it feels uneasy.",
+    "move_learnset": [
+        {
+            "move": "Flower Shield",
+            "level": 1
+        },
+        {
+            "move": "Helping Hand",
+            "level": 1
+        },
+        {
+            "move": "Vine Whip",
+            "level": 1
+        },
+        {
+            "move": "Leech Seed",
+            "level": 4
+        },
+        {
+            "move": "Draining Kiss",
+            "level": 7
+        },
+        {
+            "move": "Magical Leaf",
+            "level": 10
+        },
+        {
+            "move": "Growth",
+            "level": 13
+        },
+        {
+            "move": "Wrap",
+            "level": 16
+        },
+        {
+            "move": "Sweet Kiss",
+            "level": 19
+        },
+        {
+            "move": "Natural Gift",
+            "level": 22
+        },
+        {
+            "move": "Petal Blizzard",
+            "level": 25
+        },
+        {
+            "move": "Synthesis",
+            "level": 28
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 31
+        },
+        {
+            "move": "Grass Knot",
+            "level": 34
+        },
+        {
+            "move": "Floral Healing",
+            "level": 37
+        },
+        {
+            "move": "Petal Dance",
+            "level": 40
+        },
+        {
+            "move": "Aromatherapy",
+            "level": 43
+        },
+        {
+            "move": "Grassy Terrain",
+            "level": 46
+        },
+        {
+            "move": "Play Rough",
+            "level": 49
+        },
+        {
+            "move": "After You",
+            "egg_move": true
+        },
+        {
+            "move": "Amnesia",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Lucky Chant",
+            "egg_move": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Acrobatics",
+            "tm": "TM62"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Trick Room",
+            "tm": "TM92"
+        },
+        {
+            "move": "Nature Power",
+            "tm": "TM96"
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": "TM99"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 111,
-  "move_learnsets": [
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Flower Shield",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Vine Whip",
-          "level": 1
-        },
-        {
-          "move": "Leech Seed",
-          "level": 4
-        },
-        {
-          "move": "Draining Kiss",
-          "level": 7
-        },
-        {
-          "move": "Magical Leaf",
-          "level": 10
-        },
-        {
-          "move": "Growth",
-          "level": 13
-        },
-        {
-          "move": "Wrap",
-          "level": 16
-        },
-        {
-          "move": "Sweet Kiss",
-          "level": 19
-        },
-        {
-          "move": "Natural Gift",
-          "level": 22
-        },
-        {
-          "move": "Petal Blizzard",
-          "level": 25
-        },
-        {
-          "move": "Synthesis",
-          "level": 28
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 31
-        },
-        {
-          "move": "Grass Knot",
-          "level": 34
-        },
-        {
-          "move": "Floral Healing",
-          "level": 37
-        },
-        {
-          "move": "Petal Dance",
-          "level": 40
-        },
-        {
-          "move": "Aromatherapy",
-          "level": 43
-        },
-        {
-          "move": "Grassy Terrain",
-          "level": 46
-        },
-        {
-          "move": "Play Rough",
-          "level": 49
-        },
-        {
-          "move": "After You",
-          "egg_move": true
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Flower Shield",
-          "level": 1
-        },
-        {
-          "move": "Helping Hand",
-          "level": 1
-        },
-        {
-          "move": "Vine Whip",
-          "level": 1
-        },
-        {
-          "move": "Leech Seed",
-          "level": 4
-        },
-        {
-          "move": "Draining Kiss",
-          "level": 7
-        },
-        {
-          "move": "Magical Leaf",
-          "level": 10
-        },
-        {
-          "move": "Growth",
-          "level": 13
-        },
-        {
-          "move": "Wrap",
-          "level": 16
-        },
-        {
-          "move": "Sweet Kiss",
-          "level": 19
-        },
-        {
-          "move": "Natural Gift",
-          "level": 22
-        },
-        {
-          "move": "Petal Blizzard",
-          "level": 25
-        },
-        {
-          "move": "Synthesis",
-          "level": 28
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 31
-        },
-        {
-          "move": "Grass Knot",
-          "level": 34
-        },
-        {
-          "move": "Floral Healing",
-          "level": 37
-        },
-        {
-          "move": "Petal Dance",
-          "level": 40
-        },
-        {
-          "move": "Aromatherapy",
-          "level": 43
-        },
-        {
-          "move": "Grassy Terrain",
-          "level": 46
-        },
-        {
-          "move": "Play Rough",
-          "level": 49
-        },
-        {
-          "move": "After You",
-          "egg_move": true
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Acrobatics",
-          "tm": "TM62"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

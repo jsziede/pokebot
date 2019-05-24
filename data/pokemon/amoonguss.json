@@ -1,1416 +1,273 @@
 {
-  "names": {
-    "fr": "Gaulet",
-    "de": "Hutsassa",
-    "it": "Amoonguss",
-    "en": "Amoonguss"
-  },
-  "national_id": 591,
-  "types": [
-    "Grass",
-    "Poison"
-  ],
-  "items": [
-      {
-          "name": "Big Mushroom",
-          "chance": 5
-      },
-      {
-          "name": "Tiny Mushroom",
-          "chance": 50
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Effect Spore"
-    },
-    {
-      "name": "Regenerator",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 75,
-  "egg_groups": [
-    "Grass"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "2'01\"",
-  "height_eu": "0.6 m",
-  "weight_us": "23.1 lbs.",
-  "weight_eu": "10.5 kg",
-  "base_exp_yield": 162,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 2,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "White",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 114,
-    "atk": 85,
-    "def": 70,
-    "sp_atk": 85,
-    "sp_def": 80,
-    "speed": 30
-  },
-  "evolution_from": "Foongus",
-  "categories": {
-    "en": "Mushroom Pokémon",
-    "de": "Pilz"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 97,
-  "kalos_id": 54,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
-      "de": "Es lockt seine Beute an, indem es die Hüte in Form von Pokébällen an seinen Armen rüttelt und einen Tanz aufführt."
-    },
-    "White": {
-      "en": "They show off their Poké Ball caps to lure prey, but very few Pokémon are fooled by this.",
-      "de": "Um Beute anzulocken, bietet es seinen Hut feil, der einem Pokéball ähnelt. Doch kaum ein Pokémon fällt darauf herein."
-    },
-    "Black 2": {
-      "en": "It moves the caps on both arms and does a dance to lure prey. It prefers damp places.",
-      "de": "Es rüttelt die Hüte an seinen Armen und lockt Beute mit einem Tanz an. Es hält sich bevorzugt an feuchten Orten auf."
-    },
-    "White 2": {
-      "en": "It moves the caps on both arms and does a dance to lure prey. It prefers damp places.",
-      "de": "Es rüttelt die Hüte an seinen Armen und lockt Beute mit einem Tanz an. Es hält sich bevorzugt an feuchten Orten auf."
-    },
-    "X": {
-      "en": "They show off their Poké Ball caps to lure prey, but very few Pokémon are fooled by this.",
-      "de": "Um Beute anzulocken, bietet es seinen Hut feil, der einem Pokéball ähnelt. Doch kaum ein Pokémon fällt darauf herein."
-    },
-    "Y": {
-      "en": "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
-      "de": "Es lockt seine Beute an, indem es die Hüte in Form von Pokébällen an seinen Armen rüttelt und einen Tanz aufführt."
-    },
-    "Omega Ruby": {
-      "en": "They show off their Poké Ball caps to lure prey, but very few Pokémon are fooled by this.",
-      "de": "Es lockt seine Beute an, indem es die Hüte in Form von Pokébällen an seinen Armen rüttelt und einen Tanz aufführt."
-    },
-    "Alpha Sapphire": {
-      "en": "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
-      "de": "Es lockt seine Beute an, indem es die Hüte in Form von Pokébällen an seinen Armen rüttelt und einen Tanz aufführt."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Amoonguss",
+    "national_id": 591,
+    "types": [
+        "Grass",
+        "Poison"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Big Mushroom",
+            "chance": 5
+        },
+        {
+            "name": "Tiny Mushroom",
+            "chance": 50
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Effect Spore"
+        },
+        {
+            "name": "Regenerator",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 75,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Grass"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        5355,
+        5609
+    ],
+    "height_us": "2'01\"",
+    "height_eu": "0.6 m",
+    "weight_us": "23.1 lbs.",
+    "weight_eu": "10.5 kg",
+    "base_exp_yield": 162,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 2,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 114,
+        "atk": 85,
+        "def": 70,
+        "sp_atk": 85,
+        "sp_def": 80,
+        "speed": 30
+    },
+    "evolution_from": "Foongus",
+    "evolutions": [],
+    "species": "Mushroom Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It lures prey close by dancing and waving its arm caps, which resemble Poké Balls, in a swaying motion.",
+    "move_learnset": [
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Bide",
+            "level": 1
+        },
+        {
+            "move": "Growth",
+            "level": 1
+        },
+        {
+            "move": "Growth",
+            "level": 6
+        },
+        {
+            "move": "Astonish",
+            "level": 8
+        },
+        {
+            "move": "Bide",
+            "level": 12
+        },
+        {
+            "move": "Mega Drain",
+            "level": 15
+        },
+        {
+            "move": "Ingrain",
+            "level": 18
+        },
+        {
+            "move": "Feint Attack",
+            "level": 20
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 24
+        },
+        {
+            "move": "Giga Drain",
+            "level": 28
+        },
+        {
+            "move": "Toxic",
+            "level": 32
+        },
+        {
+            "move": "Synthesis",
+            "level": 35
+        },
+        {
+            "move": "Clear Smog",
+            "level": 43
+        },
+        {
+            "move": "Solar Beam",
+            "level": 49
+        },
+        {
+            "move": "Rage Powder",
+            "level": 54
+        },
+        {
+            "move": "Spore",
+            "level": 62
+        },
+        {
+            "move": "Body Slam",
+            "egg_move": true
+        },
+        {
+            "move": "Defense Curl",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Gastro Acid",
+            "egg_move": true
+        },
+        {
+            "move": "Growth",
+            "egg_move": true
+        },
+        {
+            "move": "Poison Powder",
+            "egg_move": true
+        },
+        {
+            "move": "Rollout",
+            "egg_move": true
+        },
+        {
+            "move": "Stun Spore",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Nature Power",
+            "tm": "TM96"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Bide",
-          "level": 12
-        },
-        {
-          "move": "Mega Drain",
-          "level": 15
-        },
-        {
-          "move": "Ingrain",
-          "level": 18
-        },
-        {
-          "move": "Feint Attack",
-          "level": 20
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 24
-        },
-        {
-          "move": "Giga Drain",
-          "level": 28
-        },
-        {
-          "move": "Toxic",
-          "level": 32
-        },
-        {
-          "move": "Synthesis",
-          "level": 35
-        },
-        {
-          "move": "Clear Smog",
-          "level": 43
-        },
-        {
-          "move": "Solar Beam",
-          "level": 49
-        },
-        {
-          "move": "Rage Powder",
-          "level": 54
-        },
-        {
-          "move": "Spore",
-          "level": 62
-        },
-        {
-          "move": "Body Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Defense Curl",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Gastro Acid",
-          "egg_move": true
-        },
-        {
-          "move": "Growth",
-          "egg_move": true
-        },
-        {
-          "move": "Poison Powder",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stun Spore",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Bide",
-          "level": 12
-        },
-        {
-          "move": "Mega Drain",
-          "level": 15
-        },
-        {
-          "move": "Ingrain",
-          "level": 18
-        },
-        {
-          "move": "Feint Attack",
-          "level": 20
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 24
-        },
-        {
-          "move": "Giga Drain",
-          "level": 28
-        },
-        {
-          "move": "Toxic",
-          "level": 32
-        },
-        {
-          "move": "Synthesis",
-          "level": 35
-        },
-        {
-          "move": "Clear Smog",
-          "level": 43
-        },
-        {
-          "move": "Solar Beam",
-          "level": 49
-        },
-        {
-          "move": "Rage Powder",
-          "level": 54
-        },
-        {
-          "move": "Spore",
-          "level": 62
-        },
-        {
-          "move": "Body Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Defense Curl",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Gastro Acid",
-          "egg_move": true
-        },
-        {
-          "move": "Growth",
-          "egg_move": true
-        },
-        {
-          "move": "Poison Powder",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stun Spore",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Bide",
-          "level": 12
-        },
-        {
-          "move": "Mega Drain",
-          "level": 15
-        },
-        {
-          "move": "Ingrain",
-          "level": 18
-        },
-        {
-          "move": "Feint Attack",
-          "level": 20
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 24
-        },
-        {
-          "move": "Giga Drain",
-          "level": 28
-        },
-        {
-          "move": "Toxic",
-          "level": 32
-        },
-        {
-          "move": "Synthesis",
-          "level": 35
-        },
-        {
-          "move": "Clear Smog",
-          "level": 43
-        },
-        {
-          "move": "Solar Beam",
-          "level": 49
-        },
-        {
-          "move": "Rage Powder",
-          "level": 54
-        },
-        {
-          "move": "Spore",
-          "level": 62
-        },
-        {
-          "move": "Body Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Defense Curl",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Gastro Acid",
-          "egg_move": true
-        },
-        {
-          "move": "Growth",
-          "egg_move": true
-        },
-        {
-          "move": "Poison Powder",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stun Spore",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Bide",
-          "level": 12
-        },
-        {
-          "move": "Mega Drain",
-          "level": 15
-        },
-        {
-          "move": "Ingrain",
-          "level": 18
-        },
-        {
-          "move": "Feint Attack",
-          "level": 20
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 24
-        },
-        {
-          "move": "Giga Drain",
-          "level": 28
-        },
-        {
-          "move": "Toxic",
-          "level": 32
-        },
-        {
-          "move": "Synthesis",
-          "level": 35
-        },
-        {
-          "move": "Clear Smog",
-          "level": 43
-        },
-        {
-          "move": "Solar Beam",
-          "level": 49
-        },
-        {
-          "move": "Rage Powder",
-          "level": 54
-        },
-        {
-          "move": "Spore",
-          "level": 62
-        },
-        {
-          "move": "Body Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Defense Curl",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Gastro Acid",
-          "egg_move": true
-        },
-        {
-          "move": "Growth",
-          "egg_move": true
-        },
-        {
-          "move": "Poison Powder",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stun Spore",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Bide",
-          "level": 12
-        },
-        {
-          "move": "Mega Drain",
-          "level": 15
-        },
-        {
-          "move": "Ingrain",
-          "level": 18
-        },
-        {
-          "move": "Feint Attack",
-          "level": 20
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 24
-        },
-        {
-          "move": "Giga Drain",
-          "level": 28
-        },
-        {
-          "move": "Toxic",
-          "level": 32
-        },
-        {
-          "move": "Synthesis",
-          "level": 35
-        },
-        {
-          "move": "Clear Smog",
-          "level": 43
-        },
-        {
-          "move": "Solar Beam",
-          "level": 49
-        },
-        {
-          "move": "Rage Powder",
-          "level": 54
-        },
-        {
-          "move": "Spore",
-          "level": 62
-        },
-        {
-          "move": "Body Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Defense Curl",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Gastro Acid",
-          "egg_move": true
-        },
-        {
-          "move": "Growth",
-          "egg_move": true
-        },
-        {
-          "move": "Poison Powder",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stun Spore",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Astonish",
-          "level": 1
-        },
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 1
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Astonish",
-          "level": 8
-        },
-        {
-          "move": "Bide",
-          "level": 12
-        },
-        {
-          "move": "Mega Drain",
-          "level": 15
-        },
-        {
-          "move": "Ingrain",
-          "level": 18
-        },
-        {
-          "move": "Feint Attack",
-          "level": 20
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 24
-        },
-        {
-          "move": "Giga Drain",
-          "level": 28
-        },
-        {
-          "move": "Toxic",
-          "level": 32
-        },
-        {
-          "move": "Synthesis",
-          "level": 35
-        },
-        {
-          "move": "Clear Smog",
-          "level": 43
-        },
-        {
-          "move": "Solar Beam",
-          "level": 49
-        },
-        {
-          "move": "Rage Powder",
-          "level": 54
-        },
-        {
-          "move": "Spore",
-          "level": 62
-        },
-        {
-          "move": "Body Slam",
-          "egg_move": true
-        },
-        {
-          "move": "Defense Curl",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Gastro Acid",
-          "egg_move": true
-        },
-        {
-          "move": "Growth",
-          "egg_move": true
-        },
-        {
-          "move": "Poison Powder",
-          "egg_move": true
-        },
-        {
-          "move": "Rollout",
-          "egg_move": true
-        },
-        {
-          "move": "Stun Spore",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

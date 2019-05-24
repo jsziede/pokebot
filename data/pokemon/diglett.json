@@ -1,4192 +1,800 @@
 {
-  "names": {
-    "fr": "Taupiqueur",
-    "de": "Digda",
-    "it": "Diglett",
-    "en": "Diglett"
-  },
-  "national_id": 50,
-  "types": [
-    "Ground"
-  ],
-  "items": [
-      {
-          "name": "Soft Sand",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Sand Veil"
-    },
-    {
-      "name": "Arena Trap"
-    },
-    {
-      "name": "Sand Force",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 255,
-  "egg_groups": [
-    "Field"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "0'08\"",
-  "height_eu": "0.2 m",
-  "weight_us": "1.8 lbs.",
-  "weight_eu": "0.8 kg",
-  "base_exp_yield": 53,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 1
-  },
-  "color": "Brown",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 10,
-    "atk": 55,
-    "def": 25,
-    "sp_atk": 35,
-    "sp_def": 45,
-    "speed": 95
-  },
-  "evolutions": [
-    {
-      "to": "Dugtrio",
-      "level": 26
-    }
-  ],
-  "alola_id": 71,
-  "categories": {
-    "en": "Mole Pokémon",
-    "de": "Maulwurf"
-  },
-  "kanto_id": 50,
-  "johto_id": 134,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": 1,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-    {
-      "condition": "Alola",
-      "image_suffix": "alola",
-      "names": {
-        "en": "Alolan Diglett",
-        "de": "Alola-Digda"
-      },
-      "types": [
-        "Ground",
-        "Steel"
-      ],
-      "abilities": [
+    "name": "Diglett",
+    "national_id": 50,
+    "types": [
+        "Ground"
+    ],
+    "items": [
         {
-          "name": "Sand Veil"
-        },
-        {
-          "name": "Tangling Hair"
-        },
-        {
-          "name": "Sand Force",
-          "hidden": true
+            "name": "Soft Sand",
+            "chance": 5
         }
-      ]
-    }
-  ],
-  "pokedex_entries": {
-    "Red": {
-      "en": "Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground.",
-      "de": "Dieses Pokémon lebt einen Meter unter der Erde. Es frisst Wurzeln und kommt selten an die Oberfläche."
-    },
-    "Blue": {
-      "en": "Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground.",
-      "de": "Dieses Pokémon lebt einen Meter unter der Erde. Es frisst Wurzeln und kommt selten an die Oberfläche."
-    },
-    "Yellow": {
-      "en": "It prefers dark places. It spends most of its time underground, though it may pop up in caves.",
-      "de": "Dieses Pokémon lebt unter der Erdoberfläche. Man kann es mitunter in Höhlen beobachten."
-    },
-    "Gold": {
-      "en": "Its skin is very thin. If it is exposed to light, its blood heats up, causing it to grow weak.",
-      "de": "Seine Haut ist sehr dünn. Wird es Sonnenlicht ausgesetzt, erhitzt sich sein Blut und es wird schwach."
-    },
-    "Silver": {
-      "en": "If a Diglett digs through a field, it leaves the soil perfectly tilled and ideal for planting crops.",
-      "de": "Setzt ein Digda Schaufler auf einem Acker ein, ist die Erde ideal gepflügt, um etwas anzupflanzen."
-    },
-    "Crystal": {
-      "en": "It digs underground and chews on tree roots, sticking its head out only when the sun isn't bright.",
-      "de": "Es gräbt in der Erde und nagt an Baumwurzeln. Es kommt nur heraus, wenn die Sonne nicht scheint."
-    },
-    "Ruby": {
-      "en": "Diglett are raised in most farms. The reason is simple - wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
-      "de": "Digda wird zumeist auf Farmen gezüchtet. Denn wo auch immer dieses Pokémon zu graben beginnt, hinterlässt es Erde, die für das Anpflanzen von Feldfrüchten perfekt geeignet und für den Anbau köstlichen Gemüses ideal ist."
-    },
-    "Sapphire": {
-      "en": "Diglett are raised in most farms. The reason is simple - wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
-      "de": "Digda wird zumeist auf Farmen gezüchtet. Denn wo auch immer dieses Pokémon zu graben beginnt, hinterlässt es Erde, die für das Anpflanzen von Feldfrüchten perfekt geeignet und für den Anbau köstlichen Gemüses ideal ist."
-    },
-    "Emerald": {
-      "en": "Diglett are raised in most farms. The reason is simple — wherever they burrow, the soil is left perfectly tilled for growing delicious crops.",
-      "de": "DIGDA wird zumeist auf Farmen gezüchtet. Denn wo es auch immer zu graben beginnt, hinterlässt es Erde, die für das Pflanzen von Feldfrüchten perfekt geeignet ist."
-    },
-    "FireRed": {
-      "en": "It burrows through the ground at a shallow depth. It leaves raised earth in its wake, making it easy to spot.",
-      "de": "Es gräbt sich in geringer Tiefe durch den Erdboden, dadurch hinterlässt es durchwühlte Erde und ist somit leicht zu finden."
-    },
-    "LeafGreen": {
-      "en": "Lives about one yard underground where it feeds on plant roots. It sometimes appears aboveground.",
-      "de": "Dieses Pokémon lebt einen Meter unter der Erde. Es frisst Wurzeln und kommt selten an die Oberfläche."
-    },
-    "Diamond": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "Pearl": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "Platinum": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "HeartGold": {
-      "en": "Its skin is very thin. If it is exposed to light, its blood heats up, causing it to grow weak.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "SoulSilver": {
-      "en": "If a Diglett digs through a field, it leaves the soil perfectly tilled and ideal for planting crops.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "Black": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "White": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "Black 2": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "White 2": {
-      "en": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight.",
-      "de": "Dieses Pokémon lebt unterirdisch. Da es an Dunkelheit gewöhnt ist, schreckt helles Licht es ab."
-    },
-    "X": {
-      "en": "Lives about one yard underground where it feeds on plant roots. It sometimes appears aboveground.",
-      "de": "Dieses Pokémon lebt 1 m unter der Erde. Es frisst Wurzeln und kommt selten an die Oberfläche."
-    },
-    "Y": {
-      "en": "Its skin is very thin. If it is exposed to light, its blood heats up, causing it to grow weak.",
-      "de": "Seine Haut ist sehr dünn. Wird es Sonnenlicht ausgesetzt, erhitzt sich sein Blut und es wird schwach."
-    },
-    "Omega Ruby": {
-      "en": "Diglett are raised in most farms. The reason is simple—wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
-      "de": "Digds wird zumeist auf Farmen gezüchtet. Denn wo auch immer dieses Pokémon zu graben beginnt, hinterlässt es Erde, die für das Anpflanzen von Feldfrüchten perfekt geeignet und für den Anbau köstlichen Gemüses ideal ist."
-    },
-    "Alpha Sapphire": {
-      "en": "Diglett are raised in most farms. The reason is simple—wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
-      "de": "Digds wird zumeist auf Farmen gezüchtet. Denn wo auch immer dieses Pokémon zu graben beginnt, hinterlässt es Erde, die für das Anpflanzen von Feldfrüchten perfekt geeignet und für den Anbau köstlichen Gemüses ideal ist."
-    },
-    "Sun": {
-      "en": "It chews on plant roots underground. Farmers whose vegetables are vulnerable find it can be quite a pest.",
-      "de": "Kein Eintrag vorhanden"
-    },
-    "Moon": {
-      "en": "Many farmers cherish and nurture Diglett because its droppings enrich the soil it lives in.",
-      "de": "Kein Eintrag vorhanden"
-    },
-    "Ultra Sun": {
-      "en": "It travels through tunnels that it digs underground. It hates sunlight, so it comes out only after the sun goes down.",
-      "de": "Alola-Form: Es ist so kräftig, dass es sich mühelos durch Schichten von Lavagestein graben kann. An der Oberfläche zeigt es sich nur selten.\nStandard-Form: Es gräbt unterirdische Tunnel und bewegt sich darin fort. Da es Licht verabscheut, taucht es erst nachts wieder an der Oberfläche auf."
-    },
-    "Ultra Moon": {
-      "en": "Around their crops, farmers plant the kind of tree that Diglett like to eat as a way of getting Diglett to plow the fields for them.",
-      "de": "Alola-Form: Es ist kräftiger als die Digda anderer Regionen. Diese Stärke hat es sich beim Graben durch Schichten von Lavagestein antrainiert.\nStandard-Form: Auf Farmen werden Digdas Lieblingsbäume um die Feldfrüchte herum gepflanzt. Im Gegenzug durchpflügen sie dafür den Boden."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      4,
-      5
     ],
-    "power": [
-      1,
-      2
+    "abilities": [
+        {
+            "name": "Sand Veil"
+        },
+        {
+            "name": "Arena Trap"
+        },
+        {
+            "name": "Sand Force",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      3,
-      4
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Field"
     ],
-    "skill": [
-      3,
-      4
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      1,
-      1
+    "height_us": "0'08\"",
+    "height_eu": "0.2 m",
+    "weight_us": "1.8 lbs.",
+    "weight_eu": "0.8 kg",
+    "base_exp_yield": 53,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 1
+    },
+    "base_stats": {
+        "hp": 10,
+        "atk": 55,
+        "def": 25,
+        "sp_atk": 35,
+        "sp_def": 45,
+        "speed": 95
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Dugtrio",
+            "level": 26
+        }
+    ],
+    "species": "Mole Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Diglett are raised in most farms. The reason is simple—wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
+    "move_learnset": [
+        {
+            "move": "Sand Attack",
+            "level": 1,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Scratch",
+            "level": 1,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Growl",
+            "level": 4,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Astonish",
+            "level": 7,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 10,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Magnitude",
+            "level": 14,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Bulldoze",
+            "level": 18,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 22,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Mud Bomb",
+            "level": 25,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Earth Power",
+            "level": 28,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Dig",
+            "level": 31,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Slash",
+            "level": 35,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "level": 39,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Fissure",
+            "level": 43,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Metal Claw",
+            "level": 1,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sand Attack",
+            "level": 1,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Growl",
+            "level": 4,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Astonish",
+            "level": 7,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 10,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Magnitude",
+            "level": 14,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Bulldoze",
+            "level": 18,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 22,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Mud Bomb",
+            "level": 25,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Earth Power",
+            "level": 28,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Dig",
+            "level": 31,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Iron Head",
+            "level": 35,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "level": 39,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Fissure",
+            "level": 43,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Ancient Power",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Astonish",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Beat Up",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Endure",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Feint Attack",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Final Gambit",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Headbutt",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Memento",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Mud Bomb",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Pursuit",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Reversal",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Screech",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Uproar",
+            "egg_move": true,
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Ancient Power",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Beat Up",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Endure",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Feint Attack",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Final Gambit",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Headbutt",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Memento",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Metal Sound",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Pursuit",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Reversal",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Thrash",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Return",
+            "tm": "TM27",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Round",
+            "tm": "TM48",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": "TM65",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Bulldoze",
+            "tm": "TM78",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100",
+            "variations": [
+                "Diglett"
+            ]
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Return",
+            "tm": "TM27",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Round",
+            "tm": "TM48",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": "TM65",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Bulldoze",
+            "tm": "TM78",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": "TM91",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        }
     ]
-  },
-  "ultra_alola_id": 31,
-  "move_learnsets": [
-    {
-      "games": [
-        "Red",
-        "Blue"
-      ],
-      "learnset": [
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 15
-        },
-        {
-          "move": "Dig",
-          "level": 19
-        },
-        {
-          "move": "Sand Attack",
-          "level": 24
-        },
-        {
-          "move": "Slash",
-          "level": 31
-        },
-        {
-          "move": "Earthquake",
-          "level": 40
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Body Slam",
-          "tm": "TM8"
-        },
-        {
-          "move": "Take Down",
-          "tm": "TM9"
-        },
-        {
-          "move": "Double-Edge",
-          "tm": "TM10"
-        },
-        {
-          "move": "Rage",
-          "tm": "TM20"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Fissure",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Mimic",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Bide",
-          "tm": "TM34"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM48"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM50"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Yellow"
-      ],
-      "learnset": [
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 15
-        },
-        {
-          "move": "Dig",
-          "level": 19
-        },
-        {
-          "move": "Sand Attack",
-          "level": 24
-        },
-        {
-          "move": "Slash",
-          "level": 31
-        },
-        {
-          "move": "Earthquake",
-          "level": 40
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Body Slam",
-          "tm": "TM8"
-        },
-        {
-          "move": "Take Down",
-          "tm": "TM9"
-        },
-        {
-          "move": "Double-Edge",
-          "tm": "TM10"
-        },
-        {
-          "move": "Rage",
-          "tm": "TM20"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Fissure",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Mimic",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Bide",
-          "tm": "TM34"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM48"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM50"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Gold",
-        "Silver"
-      ],
-      "learnset": [
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 5
-        },
-        {
-          "move": "Magnitude",
-          "level": 9
-        },
-        {
-          "move": "Dig",
-          "level": 17
-        },
-        {
-          "move": "Sand Attack",
-          "level": 25
-        },
-        {
-          "move": "Slash",
-          "level": 33
-        },
-        {
-          "move": "Earthquake",
-          "level": 41
-        },
-        {
-          "move": "Fissure",
-          "level": 49
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Curse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Snore",
-          "tm": "TM13"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Mud-Slap",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Crystal"
-      ],
-      "learnset": [
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 5
-        },
-        {
-          "move": "Magnitude",
-          "level": 9
-        },
-        {
-          "move": "Dig",
-          "level": 17
-        },
-        {
-          "move": "Sand Attack",
-          "level": 25
-        },
-        {
-          "move": "Slash",
-          "level": 33
-        },
-        {
-          "move": "Earthquake",
-          "level": 41
-        },
-        {
-          "move": "Fissure",
-          "level": 49
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Curse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Snore",
-          "tm": "TM13"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Mud-Slap",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ruby",
-        "Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 5
-        },
-        {
-          "move": "Magnitude",
-          "level": 9
-        },
-        {
-          "move": "Dig",
-          "level": 17
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 25
-        },
-        {
-          "move": "Slash",
-          "level": 33
-        },
-        {
-          "move": "Earthquake",
-          "level": 41
-        },
-        {
-          "move": "Fissure",
-          "level": 49
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Rock Slide",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "FireRed",
-        "LeafGreen"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 5
-        },
-        {
-          "move": "Magnitude",
-          "level": 9
-        },
-        {
-          "move": "Dig",
-          "level": 17
-        },
-        {
-          "move": "Fury Swipes",
-          "level": 21
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 25
-        },
-        {
-          "move": "Slash",
-          "level": 33
-        },
-        {
-          "move": "Earthquake",
-          "level": 41
-        },
-        {
-          "move": "Fissure",
-          "level": 49
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Rock Slide",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Emerald"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 5
-        },
-        {
-          "move": "Magnitude",
-          "level": 9
-        },
-        {
-          "move": "Dig",
-          "level": 17
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 25
-        },
-        {
-          "move": "Slash",
-          "level": 33
-        },
-        {
-          "move": "Earthquake",
-          "level": 41
-        },
-        {
-          "move": "Fissure",
-          "level": 49
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Rock Slide",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Magnitude",
-          "level": 12
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 15
-        },
-        {
-          "move": "Dig",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Earth Power",
-          "level": 26
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 29
-        },
-        {
-          "move": "Slash",
-          "level": 34
-        },
-        {
-          "move": "Earthquake",
-          "level": 37
-        },
-        {
-          "move": "Fissure",
-          "level": 40
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Rock Slide",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Magnitude",
-          "level": 12
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 15
-        },
-        {
-          "move": "Dig",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Earth Power",
-          "level": 26
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 29
-        },
-        {
-          "move": "Slash",
-          "level": 34
-        },
-        {
-          "move": "Earthquake",
-          "level": 37
-        },
-        {
-          "move": "Fissure",
-          "level": 40
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Rock Slide",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Magnitude",
-          "level": 12
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 15
-        },
-        {
-          "move": "Dig",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Earth Power",
-          "level": 26
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 29
-        },
-        {
-          "move": "Slash",
-          "level": 34
-        },
-        {
-          "move": "Earthquake",
-          "level": 37
-        },
-        {
-          "move": "Fissure",
-          "level": 40
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Rock Slide",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 12
-        },
-        {
-          "move": "Magnitude",
-          "level": 15
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 26
-        },
-        {
-          "move": "Earth Power",
-          "level": 29
-        },
-        {
-          "move": "Dig",
-          "level": 34
-        },
-        {
-          "move": "Slash",
-          "level": 37
-        },
-        {
-          "move": "Earthquake",
-          "level": 40
-        },
-        {
-          "move": "Fissure",
-          "level": 45
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 12
-        },
-        {
-          "move": "Magnitude",
-          "level": 15
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 26
-        },
-        {
-          "move": "Earth Power",
-          "level": 29
-        },
-        {
-          "move": "Dig",
-          "level": 34
-        },
-        {
-          "move": "Slash",
-          "level": 37
-        },
-        {
-          "move": "Earthquake",
-          "level": 40
-        },
-        {
-          "move": "Fissure",
-          "level": 45
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 12
-        },
-        {
-          "move": "Magnitude",
-          "level": 15
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 26
-        },
-        {
-          "move": "Earth Power",
-          "level": 29
-        },
-        {
-          "move": "Dig",
-          "level": 34
-        },
-        {
-          "move": "Slash",
-          "level": 37
-        },
-        {
-          "move": "Earthquake",
-          "level": 40
-        },
-        {
-          "move": "Fissure",
-          "level": 45
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1
-        },
-        {
-          "move": "Scratch",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Astonish",
-          "level": 7
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 12
-        },
-        {
-          "move": "Magnitude",
-          "level": 15
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 23
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 26
-        },
-        {
-          "move": "Earth Power",
-          "level": 29
-        },
-        {
-          "move": "Dig",
-          "level": 34
-        },
-        {
-          "move": "Slash",
-          "level": 37
-        },
-        {
-          "move": "Earthquake",
-          "level": 40
-        },
-        {
-          "move": "Fissure",
-          "level": 45
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Screech",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Scratch",
-          "level": 1,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Growl",
-          "level": 4,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Astonish",
-          "level": 7,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 10,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Magnitude",
-          "level": 14,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 22,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 25,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Earth Power",
-          "level": 28,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Dig",
-          "level": 31,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Slash",
-          "level": 35,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "level": 39,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Fissure",
-          "level": 43,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Metal Claw",
-          "level": 1,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Growl",
-          "level": 4,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Astonish",
-          "level": 7,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 10,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Magnitude",
-          "level": 14,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 22,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 25,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Earth Power",
-          "level": 28,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Dig",
-          "level": 31,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Iron Head",
-          "level": 35,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "level": 39,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Fissure",
-          "level": 43,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Endure",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Memento",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Screech",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Endure",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Memento",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Metal Sound",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Thrash",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Sand Attack",
-          "level": 1,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Scratch",
-          "level": 1,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Growl",
-          "level": 4,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Astonish",
-          "level": 7,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 10,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Magnitude",
-          "level": 14,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 22,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 25,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Earth Power",
-          "level": 28,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Dig",
-          "level": 31,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Slash",
-          "level": 35,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "level": 39,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Fissure",
-          "level": 43,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Metal Claw",
-          "level": 1,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sand Attack",
-          "level": 1,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Growl",
-          "level": 4,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Astonish",
-          "level": 7,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 10,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Magnitude",
-          "level": 14,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "level": 18,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 22,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 25,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Earth Power",
-          "level": 28,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Dig",
-          "level": 31,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Iron Head",
-          "level": 35,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "level": 39,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Fissure",
-          "level": 43,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Astonish",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Endure",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Memento",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Screech",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true,
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Ancient Power",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Beat Up",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Endure",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Feint Attack",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Final Gambit",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Headbutt",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Memento",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Metal Sound",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Thrash",
-          "egg_move": true,
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Diglett"
-          ]
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Shadow Claw",
-          "tm": "TM65",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Alolan Diglett"
-          ]
-        }
-      ]
-    }
-  ]
 }

@@ -1,470 +1,99 @@
 {
-  "names": {
-    "fr": "Chenipotte",
-    "de": "Waumpel",
-    "it": "Wurmple",
-    "en": "Wurmple"
-  },
-  "national_id": 265,
-  "types": [
-    "Bug"
-  ],
-  "items": [
-      {
-          "name": "Bright Powder",
-          "chance": 5
-      },
-      {
-          "name": "Pecha Berry",
-          "chance": 50
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Shield Dust"
-    },
-    {
-      "name": "Run Away",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 255,
-  "egg_groups": [
-    "Bug"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "1'00\"",
-  "height_eu": "0.3 m",
-  "weight_us": "7.9 lbs.",
-  "weight_eu": "3.6 kg",
-  "base_exp_yield": 39,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 1,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Red",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 45,
-    "atk": 45,
-    "def": 35,
-    "sp_atk": 20,
-    "sp_def": 30,
-    "speed": 20
-  },
-  "evolutions": [
-    {
-      "to": "Silcoon",
-      "level": 7,
-      "conditions": [
-        "Random"
-      ]
-    },
-    {
-      "to": "Cascoon",
-      "level": 7,
-      "conditions": [
-        "Random"
-      ]
-    }
-  ],
-  "categories": {
-    "en": "Worm Pokémon",
-    "de": "Wurm"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": 14,
-  "sinnoh_id": 48,
-  "unova_id": null,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Ruby": {
-      "en": "Using the spikes on its rear end, Wurmple peels the bark off trees and feeds on the sap that oozes out. This Pokémon's feet are tipped with suction pads that allow it to cling to glass without slipping.",
-      "de": "Waumpel kann mit den Stacheln an seinem Hinterteil die Rinde von Bäumen entfernen und ernährt sich von dem austretenden Saft. An den Füßen dieses Pokémon befinden sich Saugnäpfe, mit denen es auch an Glas nicht abrutscht."
-    },
-    "Sapphire": {
-      "en": "Wurmple is targeted by Swellow as prey. This Pokémon will try to resist by pointing the spikes on its rear at the attacking predator. It will weaken the foe by leaking poison from the spikes.",
-      "de": "Waumpel wird von Schwalboss als Beute angesehen. Dieses Pokémon wehrt sich gegen angreifende Räuber, indem es die Stacheln an seinem Hinterteil auf sie richtet. Es schwächt seine Gegner mit dem Gift, das aus den Stacheln austritt."
-    },
-    "Emerald": {
-      "en": "It sticks to tree branches and eats leaves. The thread it spits from its mouth, which becomes gooey when it touches air, slows the movement of its foes.",
-      "de": "Es haftet an Ästen und frisst die Blätter. Der Faden, den es ausspuckt, wird an der Luft klebrig und schränkt den Bewegungsfreiraum des Gegners ein."
-    },
-    "FireRed": {
-      "en": "It lives amidst tall grass and in forests. When attacked, it resists by pointing its venomous spikes at the foe.",
-      "de": "Es lebt im hohen Gras und im Wald. Wird es angegriffen, richtet es seine Giftstacheln auf den Gegner."
-    },
-    "LeafGreen": {
-      "en": "It lives amidst tall grass and in forests. When attacked, it resists by pointing its venomous spikes at the foe.",
-      "de": "Es lebt im hohen Gras und im Wald. Wird es angegriffen, richtet es seine Giftstacheln auf den Gegner."
-    },
-    "Diamond": {
-      "en": "It loves to eat leaves. If it is attacked by a Starly, it will defend itself with its spiked rear.",
-      "de": "Es isst am liebsten Blätter. Wird es von einem STARALILI angegriffen, verteidigt es sich mit Stacheln."
-    },
-    "Pearl": {
-      "en": "It spits a white silk that turns sticky when it contacts air. It is used to immobilize foes.",
-      "de": "Es spuckt weiße Seide, die an der Luft fest wird. Damit macht es Gegner bewegungsunfähig."
-    },
-    "Platinum": {
-      "en": "Often targeted by bird Pokémon, it desperately resists by releasing poison from its tail spikes.",
-      "de": "Es wird oft von Vogel-Pokémon angegriffen, wehrt sich aber mit Gift aus seinen Schwanzspitzen."
-    },
-    "HeartGold": {
-      "en": "It lives among the tall grass and in forests. It repels attacks by raising up the spikes on its rear.",
-      "de": "Es isst am liebsten Blätter. Wird es von einem STARALILI angegriffen, verteidigt es sich mit Stacheln."
-    },
-    "SoulSilver": {
-      "en": "It lives among the tall grass and in forests. It repels attacks by raising up the spikes on its rear.",
-      "de": "Es isst am liebsten Blätter. Wird es von einem STARALILI angegriffen, verteidigt es sich mit Stacheln."
-    },
-    "Black": {
-      "en": "Often targeted by bird Pokémon, it desperately resists by releasing poison from its tail spikes.",
-      "de": "Es wird oft von Vogel-Pokémon angegriffen, wehrt sich aber mit Gift aus seinen Schwanzspitzen."
-    },
-    "White": {
-      "en": "Often targeted by bird Pokémon, it desperately resists by releasing poison from its tail spikes.",
-      "de": "Es wird oft von Vogel-Pokémon angegriffen, wehrt sich aber mit Gift aus seinen Schwanzspitzen."
-    },
-    "Black 2": {
-      "en": "Often targeted by bird Pokémon, it desperately resists by releasing poison from its tail spikes.",
-      "de": "Es wird oft von Vogel-Pokémon angegriffen, wehrt sich aber mit Gift aus seinen Schweifspitzen."
-    },
-    "White 2": {
-      "en": "Often targeted by bird Pokémon, it desperately resists by releasing poison from its tail spikes.",
-      "de": "Es wird oft von Vogel-Pokémon angegriffen, wehrt sich aber mit Gift aus seinen Schweifspitzen."
-    },
-    "X": {
-      "en": "It loves to eat leaves. If it is attacked by a Starly, it will defend itself with its spiked rear.",
-      "de": "Es isst am liebsten Blätter. Wird es von einem Staralili angegriffen, verteidigt es sich mit Stacheln."
-    },
-    "Y": {
-      "en": "It lives among the tall grass and in forests. It repels attacks by raising up the spikes on its rear.",
-      "de": "Es haust in Wäldern und auf Wiesen. Bei Angriffen wehrt es sich mit den Giftstacheln auf seinem Hinterteil."
-    },
-    "Omega Ruby": {
-      "en": "Using the spikes on its rear end, Wurmple peels the bark off trees and feeds on the sap that oozes out. This Pokémon's feet are tipped with suction pads that allow it to cling to glass without slipping.",
-      "de": "Waumpel kann mit den Stacheln an seinem Hinterteil die Rinde von Bäumen entfernen und ernährt sich von dem austretenden Saft. An den Füßen dieses Pokémon befinden sich Saugnäpfe, mit denen es auch an Glas nicht abrutscht."
-    },
-    "Alpha Sapphire": {
-      "en": "Wurmple is targeted by Swellow as prey. This Pokémon will try to resist by pointing the spikes on its rear at the attacking predator. It will weaken the foe by leaking poison from the spikes.",
-      "de": "Waumpel wird von Schwalboss als Beute angesehen. Dieses Pokémon wehrt sich gegen angreifende Räuber, indem es die Stacheln an seinem Hinterteil auf sie richtet. Es schwächt seine Gegner mit dem Gift, das aus den Stacheln austritt."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      1,
-      3
+    "name": "Wurmple",
+    "national_id": 265,
+    "types": [
+        "Bug"
     ],
-    "power": [
-      2,
-      3
+    "items": [
+        {
+            "name": "Bright Powder",
+            "chance": 5
+        },
+        {
+            "name": "Pecha Berry",
+            "chance": 50
+        }
     ],
-    "stamina": [
-      1,
-      4
+    "abilities": [
+        {
+            "name": "Shield Dust"
+        },
+        {
+            "name": "Run Away",
+            "hidden": true
+        }
     ],
-    "skill": [
-      4,
-      5
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Bug"
     ],
-    "jump": [
-      2,
-      3
+    "hatch_time": [
+        4080,
+        4334
+    ],
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "7.9 lbs.",
+    "weight_eu": "3.6 kg",
+    "base_exp_yield": 39,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 1,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 45,
+        "atk": 45,
+        "def": 35,
+        "sp_atk": 20,
+        "sp_def": 30,
+        "speed": 20
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Silcoon",
+            "level": 7,
+            "conditions": [
+                "Random"
+            ]
+        },
+        {
+            "to": "Cascoon",
+            "level": 7,
+            "conditions": [
+                "Random"
+            ]
+        }
+    ],
+    "species": "Worm Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Wurmple is targeted by Swellow as prey. This Pokémon will try to resist by pointing the spikes on its rear at the attacking predator. It will weaken the foe by leaking poison from the spikes.",
+    "move_learnset": [
+        {
+            "move": "String Shot",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Poison Sting",
+            "level": 5
+        },
+        {
+            "move": "Bug Bite",
+            "level": 15
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Ruby",
-        "Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "games": [
-        "FireRed",
-        "LeafGreen"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "games": [
-        "Emerald"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "String Shot",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Poison Sting",
-          "level": 5
-        },
-        {
-          "move": "Bug Bite",
-          "level": 15
-        }
-      ]
-    }
-  ]
 }

@@ -1,2811 +1,358 @@
 {
-  "names": {
-    "fr": "Lockpin",
-    "de": "Schlapor",
-    "it": "Lopunny",
-    "en": "Lopunny"
-  },
-  "national_id": 428,
-  "types": [
-    "Normal"
-  ],
-  "abilities": [
-    {
-      "name": "Cute Charm"
+    "name": "Lopunny",
+    "national_id": 428,
+    "types": [
+        "Normal"
+    ],
+    "abilities": [
+        {
+            "name": "Cute Charm"
+        },
+        {
+            "name": "Klutz"
+        },
+        {
+            "name": "Limber",
+            "hidden": true
+        }
+    ],
+    "catch_rate": 60,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
     },
-    {
-      "name": "Klutz"
+    "egg_groups": [
+        "Field",
+        "Human-Like"
+    ],
+    "hatch_time": [
+        5355,
+        5609
+    ],
+    "height_us": "3'11\"",
+    "height_eu": "1.2 m",
+    "weight_us": "73.4 lbs.",
+    "weight_eu": "33.3 kg",
+    "base_exp_yield": 168,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 140,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 2
     },
-    {
-      "name": "Limber",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 60,
-  "egg_groups": [
-    "Field",
-    "Human-Like"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "3'11\"",
-  "height_eu": "1.2 m",
-  "weight_us": "73.4 lbs.",
-  "weight_eu": "33.3 kg",
-  "base_exp_yield": 168,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 2
-  },
-  "color": "Brown",
-  "base_friendship": 140,
-  "base_stats": {
-    "hp": 65,
-    "atk": 76,
-    "def": 84,
-    "sp_atk": 54,
-    "sp_def": 96,
-    "speed": 105
-  },
-  "evolution_from": "Buneary",
-  "categories": {
-    "en": "Rabbit Pokémon",
-    "de": "Hase"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": 68,
-  "unova_id": null,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-    {
-      "types": [
-        "Normal",
-        "Fighting"
-      ],
-      "ability": "Scrappy",
-      "mega_stone": "Lopunnite",
-      "height_us": "4'03\"",
-      "height_eu": "1.3 m",
-      "weight_us": "62.4 lbs.",
-      "weight_eu": "28.3 kg",
-      "base_stats": {
+    "base_stats": {
         "hp": 65,
-        "atk": 136,
-        "def": 94,
+        "atk": 76,
+        "def": 84,
         "sp_atk": 54,
         "sp_def": 96,
-        "speed": 135
-      }
-    }
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "An extremely cautious Pokémon. It cloaks its body with its fluffy ear fur when it senses danger.",
-      "de": "Ein sehr vorsichtiges PKMN. Nimmt es Gefahr wahr, schützt es seinen Körper mit seinen weichen Ohren."
+        "speed": 105
     },
-    "Pearl": {
-      "en": "It is very conscious of its looks and never fails to groom its ears. It runs with sprightly jumps.",
-      "de": "Es ist sehr bedacht auf sein Äußeres und vergisst nie, seine Ohren zu kämmen."
-    },
-    "Platinum": {
-      "en": "The ears appear to be delicate. If they are touched roughly, it kicks with its graceful legs.",
-      "de": "Es hat sehr empfindliche Ohren. Fasst man sie zu rau an, wird es mit seinen grazilen Beinen zutreten."
-    },
-    "HeartGold": {
-      "en": "It sheds its fur twice a year. Its winter fur is soft and fluffy.",
-      "de": "Ein sehr vorsichtiges PKMN. Nimmt es Gefahr wahr, schützt es seinen Körper mit seinen weichen Ohren."
-    },
-    "SoulSilver": {
-      "en": "It sheds its fur twice a year. Its winter fur is soft and fluffy.",
-      "de": "Ein sehr vorsichtiges PKMN. Nimmt es Gefahr wahr, schützt es seinen Körper mit seinen weichen Ohren."
-    },
-    "Black": {
-      "en": "The ears appear to be delicate. If they are touched roughly, it kicks with its graceful legs.",
-      "de": "Es hat sehr empfindliche Ohren. Fasst man sie zu rau an, wird es mit seinen grazilen Beinen zutreten."
-    },
-    "White": {
-      "en": "The ears appear to be delicate. If they are touched roughly, it kicks with its graceful legs.",
-      "de": "Es hat sehr empfindliche Ohren. Fasst man sie zu rau an, wird es mit seinen grazilen Beinen zutreten."
-    },
-    "Black 2": {
-      "en": "Extremely cautious, it quickly bounds off when it senses danger.",
-      "de": "Es ist extrem vorsichtig. Wenn es Gefahr wittert, macht es sich mit flinken Sprüngen aus dem Staub."
-    },
-    "White 2": {
-      "en": "Extremely cautious, it quickly bounds off when it senses danger.",
-      "de": "Es ist extrem vorsichtig. Wenn es Gefahr wittert, macht es sich mit flinken Sprüngen aus dem Staub."
-    },
-    "X": {
-      "en": "Extremely cautious, it quickly bounds off when it senses danger.",
-      "de": "Es ist extrem vorsichtig. Wenn es Gefahr wittert, macht es sich mit flinken Sprüngen aus dem Staub."
-    },
-    "Y": {
-      "en": "The ears appear to be delicate. If they are touched roughly, it kicks with its graceful legs.",
-      "de": "Es hat sehr empfindliche Ohren. Fasst man sie zu rau an, wird es mit seinen grazilen Beinen zutreten."
-    },
-    "Omega Ruby": {
-      "en": "Extremely cautious, it quickly bounds off when it senses danger.",
-      "de": "Es hat sehr empfindliche Ohren. Fasst man sie zu rau an, wird es mit seinen grazilen Beinen zutreten."
-    },
-    "Alpha Sapphire": {
-      "en": "The ears appear to be delicate. If they are touched roughly, it kicks with its graceful legs.",
-      "de": "Es hat sehr empfindliche Ohren. Fasst man sie zu rau an, wird es mit seinen grazilen Beinen zutreten."
-    },
-    "Ultra Sun": {
-      "en": "Lopunny regrows its coat twice a year. Mufflers and hats made from its fur are really warm.",
-      "de": "Standard-Form: Es wechselt zweimal im Jahr seine Wolle. Daraus lassen sich Schals oder Mützen herstellen, die ihre Träger mollig warmhalten.\nMega-Entwicklung: Seine Ohren nutzt es als Peitschen, um damit auf seine Gegner einzuschlagen. Es ist sehr angriffslustig."
-    },
-    "Ultra Moon": {
-      "en": "It’s notably wary and has a dislike of fighting, but at the same time, it can deliver powerful kicks with its lithe legs.",
-      "de": "Standard-Form: Ein sehr vorsichtiges Pokémon, das Kämpfe zu vermeiden sucht. Mit seinen grazilen Beinen teilt es kräftige Tritte aus.\nMega-Entwicklung: Durch die Energie der Mega-Entwicklung ist sein Kampftrieb erwacht. Es hat sich jenes Fells entledigt, das bei Angriffen nur stören würde."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      4,
-      5
-    ],
-    "power": [
-      3,
-      4
-    ],
-    "stamina": [
-      3,
-      4
-    ],
-    "skill": [
-      1,
-      2
-    ],
-    "jump": [
-      3,
-      4
+    "evolution_from": "Buneary",
+    "evolutions": [],
+    "species": "Rabbit Pokémon",
+    "mega_evolves": true,
+    "pokedex_entry": "The ears appear to be delicate. If they are touched roughly, it kicks with its graceful legs.",
+    "move_learnset": [
+        {
+            "move": "Bounce",
+            "level": 1
+        },
+        {
+            "move": "Defense Curl",
+            "level": 1
+        },
+        {
+            "move": "Foresight",
+            "level": 1
+        },
+        {
+            "move": "Healing Wish",
+            "level": 1
+        },
+        {
+            "move": "Magic Coat",
+            "level": 1
+        },
+        {
+            "move": "Mirror Coat",
+            "level": 1
+        },
+        {
+            "move": "Pound",
+            "level": 1
+        },
+        {
+            "move": "Return",
+            "level": 1
+        },
+        {
+            "move": "Rototiller",
+            "level": 1
+        },
+        {
+            "move": "Splash",
+            "level": 1
+        },
+        {
+            "move": "Endure",
+            "level": 6
+        },
+        {
+            "move": "Baby-Doll Eyes",
+            "level": 13
+        },
+        {
+            "move": "Quick Attack",
+            "level": 16
+        },
+        {
+            "move": "Jump Kick",
+            "level": 23
+        },
+        {
+            "move": "Baton Pass",
+            "level": 26
+        },
+        {
+            "move": "Agility",
+            "level": 33
+        },
+        {
+            "move": "Dizzy Punch",
+            "level": 36
+        },
+        {
+            "move": "After You",
+            "level": 43
+        },
+        {
+            "move": "Charm",
+            "level": 46
+        },
+        {
+            "move": "Entrainment",
+            "level": 53
+        },
+        {
+            "move": "Bounce",
+            "level": 56
+        },
+        {
+            "move": "Healing Wish",
+            "level": 63
+        },
+        {
+            "move": "High Jump Kick",
+            "level": 66
+        },
+        {
+            "move": "Circle Throw",
+            "egg_move": true
+        },
+        {
+            "move": "Copycat",
+            "egg_move": true
+        },
+        {
+            "move": "Cosmic Power",
+            "egg_move": true
+        },
+        {
+            "move": "Double Hit",
+            "egg_move": true
+        },
+        {
+            "move": "Encore",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Out",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Tears",
+            "egg_move": true
+        },
+        {
+            "move": "Fire Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Flail",
+            "egg_move": true
+        },
+        {
+            "move": "Focus Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Ice Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Low Kick",
+            "egg_move": true
+        },
+        {
+            "move": "Mud Sport",
+            "egg_move": true
+        },
+        {
+            "move": "Power-Up Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Sky Uppercut",
+            "egg_move": true
+        },
+        {
+            "move": "Sweet Kiss",
+            "egg_move": true
+        },
+        {
+            "move": "Switcheroo",
+            "egg_move": true
+        },
+        {
+            "move": "Teeter Dance",
+            "egg_move": true
+        },
+        {
+            "move": "Thunder Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Ice Beam",
+            "tm": "TM13"
+        },
+        {
+            "move": "Blizzard",
+            "tm": "TM14"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24"
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Low Sweep",
+            "tm": "TM47"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Focus Blast",
+            "tm": "TM52"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57"
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": "TM59"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 9,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "Charm",
-          "level": 43
-        },
-        {
-          "move": "Bounce",
-          "level": 46
-        },
-        {
-          "move": "Healing Wish",
-          "level": 53
-        },
-        {
-          "move": "Attract",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Iron Tail",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Drain Punch",
-          "tm": "TM60"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "Charm",
-          "level": 43
-        },
-        {
-          "move": "Bounce",
-          "level": 46
-        },
-        {
-          "move": "Healing Wish",
-          "level": 53
-        },
-        {
-          "move": "Attract",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Iron Tail",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Drain Punch",
-          "tm": "TM60"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "Charm",
-          "level": 43
-        },
-        {
-          "move": "Bounce",
-          "level": 46
-        },
-        {
-          "move": "Healing Wish",
-          "level": 53
-        },
-        {
-          "move": "Attract",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Iron Tail",
-          "tm": "TM23"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Drain Punch",
-          "tm": "TM60"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "After You",
-          "level": 43
-        },
-        {
-          "move": "Charm",
-          "level": 46
-        },
-        {
-          "move": "Entrainment",
-          "level": 53
-        },
-        {
-          "move": "Bounce",
-          "level": 56
-        },
-        {
-          "move": "Healing Wish",
-          "level": 63
-        },
-        {
-          "move": "Circle Throw",
-          "egg_move": true
-        },
-        {
-          "move": "Copycat",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Focus Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "After You",
-          "level": 43
-        },
-        {
-          "move": "Charm",
-          "level": 46
-        },
-        {
-          "move": "Entrainment",
-          "level": 53
-        },
-        {
-          "move": "Bounce",
-          "level": 56
-        },
-        {
-          "move": "Healing Wish",
-          "level": 63
-        },
-        {
-          "move": "Circle Throw",
-          "egg_move": true
-        },
-        {
-          "move": "Copycat",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Focus Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Bounce",
-          "level": 1
-        },
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Healing Wish",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Rototiller",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "After You",
-          "level": 43
-        },
-        {
-          "move": "Charm",
-          "level": 46
-        },
-        {
-          "move": "Entrainment",
-          "level": 53
-        },
-        {
-          "move": "Bounce",
-          "level": 56
-        },
-        {
-          "move": "Healing Wish",
-          "level": 63
-        },
-        {
-          "move": "Circle Throw",
-          "egg_move": true
-        },
-        {
-          "move": "Copycat",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Focus Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Sport",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Teeter Dance",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Bounce",
-          "level": 1
-        },
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Healing Wish",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Rototiller",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Return",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "After You",
-          "level": 43
-        },
-        {
-          "move": "Charm",
-          "level": 46
-        },
-        {
-          "move": "Entrainment",
-          "level": 53
-        },
-        {
-          "move": "Bounce",
-          "level": 56
-        },
-        {
-          "move": "Healing Wish",
-          "level": 63
-        },
-        {
-          "move": "High Jump Kick",
-          "level": 66
-        },
-        {
-          "move": "Circle Throw",
-          "egg_move": true
-        },
-        {
-          "move": "Copycat",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Focus Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Sport",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Teeter Dance",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bounce",
-          "level": 1
-        },
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Healing Wish",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Return",
-          "level": 1
-        },
-        {
-          "move": "Rototiller",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Baby-Doll Eyes",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "After You",
-          "level": 43
-        },
-        {
-          "move": "Charm",
-          "level": 46
-        },
-        {
-          "move": "Entrainment",
-          "level": 53
-        },
-        {
-          "move": "Bounce",
-          "level": 56
-        },
-        {
-          "move": "Healing Wish",
-          "level": 63
-        },
-        {
-          "move": "High Jump Kick",
-          "level": 66
-        },
-        {
-          "move": "Circle Throw",
-          "egg_move": true
-        },
-        {
-          "move": "Copycat",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Focus Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Sport",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Teeter Dance",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Brutal Swing",
-          "tm": "TM59"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bounce",
-          "level": 1
-        },
-        {
-          "move": "Defense Curl",
-          "level": 1
-        },
-        {
-          "move": "Foresight",
-          "level": 1
-        },
-        {
-          "move": "Healing Wish",
-          "level": 1
-        },
-        {
-          "move": "Magic Coat",
-          "level": 1
-        },
-        {
-          "move": "Mirror Coat",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Return",
-          "level": 1
-        },
-        {
-          "move": "Rototiller",
-          "level": 1
-        },
-        {
-          "move": "Splash",
-          "level": 1
-        },
-        {
-          "move": "Endure",
-          "level": 6
-        },
-        {
-          "move": "Baby-Doll Eyes",
-          "level": 13
-        },
-        {
-          "move": "Quick Attack",
-          "level": 16
-        },
-        {
-          "move": "Jump Kick",
-          "level": 23
-        },
-        {
-          "move": "Baton Pass",
-          "level": 26
-        },
-        {
-          "move": "Agility",
-          "level": 33
-        },
-        {
-          "move": "Dizzy Punch",
-          "level": 36
-        },
-        {
-          "move": "After You",
-          "level": 43
-        },
-        {
-          "move": "Charm",
-          "level": 46
-        },
-        {
-          "move": "Entrainment",
-          "level": 53
-        },
-        {
-          "move": "Bounce",
-          "level": 56
-        },
-        {
-          "move": "Healing Wish",
-          "level": 63
-        },
-        {
-          "move": "High Jump Kick",
-          "level": 66
-        },
-        {
-          "move": "Circle Throw",
-          "egg_move": true
-        },
-        {
-          "move": "Copycat",
-          "egg_move": true
-        },
-        {
-          "move": "Cosmic Power",
-          "egg_move": true
-        },
-        {
-          "move": "Double Hit",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Out",
-          "egg_move": true
-        },
-        {
-          "move": "Fake Tears",
-          "egg_move": true
-        },
-        {
-          "move": "Fire Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Flail",
-          "egg_move": true
-        },
-        {
-          "move": "Focus Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Ice Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Low Kick",
-          "egg_move": true
-        },
-        {
-          "move": "Mud Sport",
-          "egg_move": true
-        },
-        {
-          "move": "Power-Up Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Sky Uppercut",
-          "egg_move": true
-        },
-        {
-          "move": "Sweet Kiss",
-          "egg_move": true
-        },
-        {
-          "move": "Switcheroo",
-          "egg_move": true
-        },
-        {
-          "move": "Teeter Dance",
-          "egg_move": true
-        },
-        {
-          "move": "Thunder Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Brutal Swing",
-          "tm": "TM59"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

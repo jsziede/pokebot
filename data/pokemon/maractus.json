@@ -1,1402 +1,279 @@
 {
-  "names": {
-    "fr": "Maracachi",
-    "de": "Maracamba",
-    "it": "Maractus",
-    "en": "Maractus"
-  },
-  "national_id": 556,
-  "types": [
-    "Grass"
-  ],
-  "items": [
-      {
-          "name": "Miracle Seed",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Water Absorb"
-    },
-    {
-      "name": "Chlorophyll"
-    },
-    {
-      "name": "Storm Drain",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 255,
-  "egg_groups": [
-    "Grass"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "3'03\"",
-  "height_eu": "1.0 m",
-  "weight_us": "61.7 lbs.",
-  "weight_eu": "28.0 kg",
-  "base_exp_yield": 161,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 2,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Green",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 75,
-    "atk": 86,
-    "def": 67,
-    "sp_atk": 106,
-    "sp_def": 67,
-    "speed": 60
-  },
-  "categories": {
-    "en": "Cactus Pokémon",
-    "de": "Kaktus"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 62,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
-      "de": "Verjagt Vogel-Pokémon, die auf seine Blüten aus sind, mit einem flotten Tänzchen und lauter Untermalung."
-    },
-    "White": {
-      "en": "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
-      "de": "Erzeugt durch rhythmische Bewegungen Laute, die dem Klang von Maracas ähneln. Lebt an trockenen Orten."
-    },
-    "Black 2": {
-      "en": "When it moves rhythmically, it makes a sound similar to maracas, making the surprised Pokémon flee.",
-      "de": "Erzeugt durch rhythmische Bewegungen Töne, die dem Klang von Maracas ähneln und überraschte Pokémon verjagen."
-    },
-    "White 2": {
-      "en": "When it moves rhythmically, it makes a sound similar to maracas, making the surprised Pokémon flee.",
-      "de": "Erzeugt durch rhythmische Bewegungen Töne, die dem Klang von Maracas ähneln und überraschte Pokémon verjagen."
-    },
-    "X": {
-      "en": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
-      "de": "Verjagt Vogel-Pokémon, die auf seine Blüten aus sind, mit einem flotten Tänzchen und lauter Untermalung."
-    },
-    "Y": {
-      "en": "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
-      "de": "Erzeugt durch rhythmische Bewegungen Laute, die dem Klang von Maracas ähneln. Lebt an trockenen Orten."
-    },
-    "Omega Ruby": {
-      "en": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
-      "de": "Erzeugt durch rhythmische Bewegungen Laute, die dem Klang von Maracas ähneln. Lebt an trockenen Orten."
-    },
-    "Alpha Sapphire": {
-      "en": "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
-      "de": "Erzeugt durch rhythmische Bewegungen Laute, die dem Klang von Maracas ähneln. Lebt an trockenen Orten."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Maractus",
+    "national_id": 556,
+    "types": [
+        "Grass"
     ],
-    "power": [
-      0,
-      0
+    "items": [
+        {
+            "name": "Miracle Seed",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Water Absorb"
+        },
+        {
+            "name": "Chlorophyll"
+        },
+        {
+            "name": "Storm Drain",
+            "hidden": true
+        }
     ],
-    "skill": [
-      0,
-      0
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Grass"
     ],
-    "jump": [
-      0,
-      0
+    "hatch_time": [
+        5355,
+        5609
+    ],
+    "height_us": "3'03\"",
+    "height_eu": "1.0 m",
+    "weight_us": "61.7 lbs.",
+    "weight_eu": "28.0 kg",
+    "base_exp_yield": 161,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 2,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 75,
+        "atk": 86,
+        "def": 67,
+        "sp_atk": 106,
+        "sp_def": 67,
+        "speed": 60
+    },
+    "evolution_from": null,
+    "evolutions": [],
+    "species": "Cactus Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
+    "move_learnset": [
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "After You",
+            "level": 1
+        },
+        {
+            "move": "Cotton Guard",
+            "level": 1
+        },
+        {
+            "move": "Peck",
+            "level": 1
+        },
+        {
+            "move": "Spiky Shield",
+            "level": 1
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 3
+        },
+        {
+            "move": "Growth",
+            "level": 6
+        },
+        {
+            "move": "Pin Missile",
+            "level": 10
+        },
+        {
+            "move": "Mega Drain",
+            "level": 13
+        },
+        {
+            "move": "Synthesis",
+            "level": 15
+        },
+        {
+            "move": "Cotton Spore",
+            "level": 18
+        },
+        {
+            "move": "Needle Arm",
+            "level": 22
+        },
+        {
+            "move": "Giga Drain",
+            "level": 26
+        },
+        {
+            "move": "Acupressure",
+            "level": 29
+        },
+        {
+            "move": "Ingrain",
+            "level": 33
+        },
+        {
+            "move": "Petal Dance",
+            "level": 38
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 42
+        },
+        {
+            "move": "Sunny Day",
+            "level": 45
+        },
+        {
+            "move": "Petal Blizzard",
+            "level": 48
+        },
+        {
+            "move": "Solar Beam",
+            "level": 50
+        },
+        {
+            "move": "Cotton Guard",
+            "level": 55
+        },
+        {
+            "move": "After You",
+            "level": 57
+        },
+        {
+            "move": "Bounce",
+            "egg_move": true
+        },
+        {
+            "move": "Bullet Seed",
+            "egg_move": true
+        },
+        {
+            "move": "Grass Whistle",
+            "egg_move": true
+        },
+        {
+            "move": "Grassy Terrain",
+            "egg_move": true
+        },
+        {
+            "move": "Leech Seed",
+            "egg_move": true
+        },
+        {
+            "move": "Seed Bomb",
+            "egg_move": true
+        },
+        {
+            "move": "Spikes",
+            "egg_move": true
+        },
+        {
+            "move": "Wood Hammer",
+            "egg_move": true
+        },
+        {
+            "move": "Worry Seed",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Nature Power",
+            "tm": "TM96"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 3
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Pin Missile",
-          "level": 10
-        },
-        {
-          "move": "Mega Drain",
-          "level": 13
-        },
-        {
-          "move": "Synthesis",
-          "level": 15
-        },
-        {
-          "move": "Cotton Spore",
-          "level": 18
-        },
-        {
-          "move": "Needle Arm",
-          "level": 22
-        },
-        {
-          "move": "Giga Drain",
-          "level": 26
-        },
-        {
-          "move": "Acupressure",
-          "level": 29
-        },
-        {
-          "move": "Ingrain",
-          "level": 33
-        },
-        {
-          "move": "Petal Dance",
-          "level": 38
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 42
-        },
-        {
-          "move": "Sunny Day",
-          "level": 45
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 55
-        },
-        {
-          "move": "After You",
-          "level": 57
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Bullet Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Grass Whistle",
-          "egg_move": true
-        },
-        {
-          "move": "Leech Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Seed Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Wood Hammer",
-          "egg_move": true
-        },
-        {
-          "move": "Worry Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 3
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Pin Missile",
-          "level": 10
-        },
-        {
-          "move": "Mega Drain",
-          "level": 13
-        },
-        {
-          "move": "Synthesis",
-          "level": 15
-        },
-        {
-          "move": "Cotton Spore",
-          "level": 18
-        },
-        {
-          "move": "Needle Arm",
-          "level": 22
-        },
-        {
-          "move": "Giga Drain",
-          "level": 26
-        },
-        {
-          "move": "Acupressure",
-          "level": 29
-        },
-        {
-          "move": "Ingrain",
-          "level": 33
-        },
-        {
-          "move": "Petal Dance",
-          "level": 38
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 42
-        },
-        {
-          "move": "Sunny Day",
-          "level": 45
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 55
-        },
-        {
-          "move": "After You",
-          "level": 57
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Bullet Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Grass Whistle",
-          "egg_move": true
-        },
-        {
-          "move": "Leech Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Seed Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Wood Hammer",
-          "egg_move": true
-        },
-        {
-          "move": "Worry Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "After You",
-          "level": 1
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 1
-        },
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 3
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Pin Missile",
-          "level": 10
-        },
-        {
-          "move": "Mega Drain",
-          "level": 13
-        },
-        {
-          "move": "Synthesis",
-          "level": 15
-        },
-        {
-          "move": "Cotton Spore",
-          "level": 18
-        },
-        {
-          "move": "Needle Arm",
-          "level": 22
-        },
-        {
-          "move": "Giga Drain",
-          "level": 26
-        },
-        {
-          "move": "Acupressure",
-          "level": 29
-        },
-        {
-          "move": "Ingrain",
-          "level": 33
-        },
-        {
-          "move": "Petal Dance",
-          "level": 38
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 42
-        },
-        {
-          "move": "Sunny Day",
-          "level": 45
-        },
-        {
-          "move": "Petal Blizzard",
-          "level": 48
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 55
-        },
-        {
-          "move": "After You",
-          "level": 57
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Bullet Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Grass Whistle",
-          "egg_move": true
-        },
-        {
-          "move": "Grassy Terrain",
-          "egg_move": true
-        },
-        {
-          "move": "Leech Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Seed Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Wood Hammer",
-          "egg_move": true
-        },
-        {
-          "move": "Worry Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "After You",
-          "level": 1
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 1
-        },
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Spiky Shield",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 3
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Pin Missile",
-          "level": 10
-        },
-        {
-          "move": "Mega Drain",
-          "level": 13
-        },
-        {
-          "move": "Synthesis",
-          "level": 15
-        },
-        {
-          "move": "Cotton Spore",
-          "level": 18
-        },
-        {
-          "move": "Needle Arm",
-          "level": 22
-        },
-        {
-          "move": "Giga Drain",
-          "level": 26
-        },
-        {
-          "move": "Acupressure",
-          "level": 29
-        },
-        {
-          "move": "Ingrain",
-          "level": 33
-        },
-        {
-          "move": "Petal Dance",
-          "level": 38
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 42
-        },
-        {
-          "move": "Sunny Day",
-          "level": 45
-        },
-        {
-          "move": "Petal Blizzard",
-          "level": 48
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 55
-        },
-        {
-          "move": "After You",
-          "level": 57
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Bullet Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Grass Whistle",
-          "egg_move": true
-        },
-        {
-          "move": "Grassy Terrain",
-          "egg_move": true
-        },
-        {
-          "move": "Leech Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Seed Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Wood Hammer",
-          "egg_move": true
-        },
-        {
-          "move": "Worry Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "After You",
-          "level": 1
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 1
-        },
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Spiky Shield",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 3
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Pin Missile",
-          "level": 10
-        },
-        {
-          "move": "Mega Drain",
-          "level": 13
-        },
-        {
-          "move": "Synthesis",
-          "level": 15
-        },
-        {
-          "move": "Cotton Spore",
-          "level": 18
-        },
-        {
-          "move": "Needle Arm",
-          "level": 22
-        },
-        {
-          "move": "Giga Drain",
-          "level": 26
-        },
-        {
-          "move": "Acupressure",
-          "level": 29
-        },
-        {
-          "move": "Ingrain",
-          "level": 33
-        },
-        {
-          "move": "Petal Dance",
-          "level": 38
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 42
-        },
-        {
-          "move": "Sunny Day",
-          "level": 45
-        },
-        {
-          "move": "Petal Blizzard",
-          "level": 48
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 55
-        },
-        {
-          "move": "After You",
-          "level": 57
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Bullet Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Grass Whistle",
-          "egg_move": true
-        },
-        {
-          "move": "Grassy Terrain",
-          "egg_move": true
-        },
-        {
-          "move": "Leech Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Seed Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Wood Hammer",
-          "egg_move": true
-        },
-        {
-          "move": "Worry Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "After You",
-          "level": 1
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 1
-        },
-        {
-          "move": "Peck",
-          "level": 1
-        },
-        {
-          "move": "Spiky Shield",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 3
-        },
-        {
-          "move": "Growth",
-          "level": 6
-        },
-        {
-          "move": "Pin Missile",
-          "level": 10
-        },
-        {
-          "move": "Mega Drain",
-          "level": 13
-        },
-        {
-          "move": "Synthesis",
-          "level": 15
-        },
-        {
-          "move": "Cotton Spore",
-          "level": 18
-        },
-        {
-          "move": "Needle Arm",
-          "level": 22
-        },
-        {
-          "move": "Giga Drain",
-          "level": 26
-        },
-        {
-          "move": "Acupressure",
-          "level": 29
-        },
-        {
-          "move": "Ingrain",
-          "level": 33
-        },
-        {
-          "move": "Petal Dance",
-          "level": 38
-        },
-        {
-          "move": "Sucker Punch",
-          "level": 42
-        },
-        {
-          "move": "Sunny Day",
-          "level": 45
-        },
-        {
-          "move": "Petal Blizzard",
-          "level": 48
-        },
-        {
-          "move": "Solar Beam",
-          "level": 50
-        },
-        {
-          "move": "Cotton Guard",
-          "level": 55
-        },
-        {
-          "move": "After You",
-          "level": 57
-        },
-        {
-          "move": "Bounce",
-          "egg_move": true
-        },
-        {
-          "move": "Bullet Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Grass Whistle",
-          "egg_move": true
-        },
-        {
-          "move": "Grassy Terrain",
-          "egg_move": true
-        },
-        {
-          "move": "Leech Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Seed Bomb",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Wood Hammer",
-          "egg_move": true
-        },
-        {
-          "move": "Worry Seed",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Nature Power",
-          "tm": "TM96"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

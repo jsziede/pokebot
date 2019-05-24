@@ -1,1256 +1,251 @@
 {
-  "names": {
-    "fr": "Escargaume",
-    "de": "Schnuthelm",
-    "it": "Shelmet",
-    "en": "Shelmet"
-  },
-  "national_id": 616,
-  "types": [
-    "Bug"
-  ],
-  "abilities": [
-    {
-      "name": "Hydration"
-    },
-    {
-      "name": "Shell Armor"
-    },
-    {
-      "name": "Overcoat",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 200,
-  "egg_groups": [
-    "Bug"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "1'04\"",
-  "height_eu": "0.4 m",
-  "weight_us": "17.0 lbs.",
-  "weight_eu": "7.7 kg",
-  "base_exp_yield": 61,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 1,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Red",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 50,
-    "atk": 40,
-    "def": 85,
-    "sp_atk": 40,
-    "sp_def": 65,
-    "speed": 25
-  },
-  "evolutions": [
-    {
-      "to": "Accelgor",
-      "trade": true,
-      "hold_item": "Karrablast"
-    }
-  ],
-  "categories": {
-    "en": "Snail Pokémon",
-    "de": "Schnecke"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 122,
-  "kalos_id": 24,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "When attacked, it defends itself by closing the lid of its shell. It can spit a sticky, poisonous liquid.",
-      "de": "Bei Gefahr zieht es sich zum Schutz in seine Muschel zurück und schießt eine klebrige Flüssigkeit aus dem Spalt."
-    },
-    "White": {
-      "en": "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
-      "de": "Führt man ihm mit Laukaps elektrische Energie zu, entwickelt es sich. Niemand kennt den Grund dafür."
-    },
-    "Black 2": {
-      "en": "When it and Karrablast are together, and both receive electrical stimulation, they both evolve.",
-      "de": "Hält sich ein Laukaps in seiner Nähe auf und kommen beide mit Strom in Berührung, entwickeln sie sich."
-    },
-    "White 2": {
-      "en": "When it and Karrablast are together, and both receive electrical stimulation, they both evolve.",
-      "de": "Hält sich ein Laukaps in seiner Nähe auf und kommen beide mit Strom in Berührung, entwickeln sie sich."
-    },
-    "X": {
-      "en": "When it and Karrablast are together, and both receive electrical stimulation, they both evolve.",
-      "de": "Hält sich ein Laukaps in seiner Nähe auf und kommen beide mit Strom in Berührung, entwickeln sie sich."
-    },
-    "Y": {
-      "en": "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
-      "de": "Führt man ihm zusammen mit Laukaps elektrische Energie zu, entwickelt es sich. Niemand kennt den Grund dafür."
-    },
-    "Omega Ruby": {
-      "en": "When it and Karrablast are together, and both receive electrical stimulation, they both evolve.",
-      "de": "Führt man ihm zusammen mit Laukaps elektrische Energie zu, entwickelt es sich. Niemand kennt den Grund dafür."
-    },
-    "Alpha Sapphire": {
-      "en": "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
-      "de": "Führt man ihm zusammen mit Laukaps elektrische Energie zu, entwickelt es sich. Niemand kennt den Grund dafür."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Shelmet",
+    "national_id": 616,
+    "types": [
+        "Bug"
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Hydration"
+        },
+        {
+            "name": "Shell Armor"
+        },
+        {
+            "name": "Overcoat",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 200,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Bug"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        4080,
+        4334
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "17.0 lbs.",
+    "weight_eu": "7.7 kg",
+    "base_exp_yield": 61,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 1,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 50,
+        "atk": 40,
+        "def": 85,
+        "sp_atk": 40,
+        "sp_def": 65,
+        "speed": 25
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Accelgor",
+            "trade": true,
+            "hold_item": "Karrablast"
+        }
+    ],
+    "species": "Snail Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
+    "move_learnset": [
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Acid",
+            "level": 4
+        },
+        {
+            "move": "Bide",
+            "level": 8
+        },
+        {
+            "move": "Curse",
+            "level": 13
+        },
+        {
+            "move": "Struggle Bug",
+            "level": 16
+        },
+        {
+            "move": "Mega Drain",
+            "level": 20
+        },
+        {
+            "move": "Yawn",
+            "level": 25
+        },
+        {
+            "move": "Protect",
+            "level": 28
+        },
+        {
+            "move": "Acid Armor",
+            "level": 32
+        },
+        {
+            "move": "Giga Drain",
+            "level": 37
+        },
+        {
+            "move": "Body Slam",
+            "level": 40
+        },
+        {
+            "move": "Bug Buzz",
+            "level": 44
+        },
+        {
+            "move": "Recover",
+            "level": 49
+        },
+        {
+            "move": "Guard Swap",
+            "level": 50
+        },
+        {
+            "move": "Final Gambit",
+            "level": 56
+        },
+        {
+            "move": "Baton Pass",
+            "egg_move": true
+        },
+        {
+            "move": "Double-Edge",
+            "egg_move": true
+        },
+        {
+            "move": "Encore",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Feint",
+            "egg_move": true
+        },
+        {
+            "move": "Guard Split",
+            "egg_move": true
+        },
+        {
+            "move": "Mind Reader",
+            "egg_move": true
+        },
+        {
+            "move": "Mud-Slap",
+            "egg_move": true
+        },
+        {
+            "move": "Pursuit",
+            "egg_move": true
+        },
+        {
+            "move": "Spikes",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic Spikes",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Leech Life",
+            "tm": "TM28"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Leech Life",
-          "level": 1
-        },
-        {
-          "move": "Acid",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Curse",
-          "level": 13
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 16
-        },
-        {
-          "move": "Mega Drain",
-          "level": 20
-        },
-        {
-          "move": "Yawn",
-          "level": 25
-        },
-        {
-          "move": "Protect",
-          "level": 28
-        },
-        {
-          "move": "Acid Armor",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 37
-        },
-        {
-          "move": "Body Slam",
-          "level": 40
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 44
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Guard Swap",
-          "level": 52
-        },
-        {
-          "move": "Final Gambit",
-          "level": 56
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Split",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Leech Life",
-          "level": 1
-        },
-        {
-          "move": "Acid",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Curse",
-          "level": 13
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 16
-        },
-        {
-          "move": "Mega Drain",
-          "level": 20
-        },
-        {
-          "move": "Yawn",
-          "level": 25
-        },
-        {
-          "move": "Protect",
-          "level": 28
-        },
-        {
-          "move": "Acid Armor",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 37
-        },
-        {
-          "move": "Body Slam",
-          "level": 40
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 44
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Guard Swap",
-          "level": 52
-        },
-        {
-          "move": "Final Gambit",
-          "level": 56
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Split",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Leech Life",
-          "level": 1
-        },
-        {
-          "move": "Acid",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Curse",
-          "level": 13
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 16
-        },
-        {
-          "move": "Mega Drain",
-          "level": 20
-        },
-        {
-          "move": "Yawn",
-          "level": 25
-        },
-        {
-          "move": "Protect",
-          "level": 28
-        },
-        {
-          "move": "Acid Armor",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 37
-        },
-        {
-          "move": "Body Slam",
-          "level": 40
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 44
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Guard Swap",
-          "level": 50
-        },
-        {
-          "move": "Final Gambit",
-          "level": 56
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Split",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Leech Life",
-          "level": 1
-        },
-        {
-          "move": "Acid",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Curse",
-          "level": 13
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 16
-        },
-        {
-          "move": "Mega Drain",
-          "level": 20
-        },
-        {
-          "move": "Yawn",
-          "level": 25
-        },
-        {
-          "move": "Protect",
-          "level": 28
-        },
-        {
-          "move": "Acid Armor",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 37
-        },
-        {
-          "move": "Body Slam",
-          "level": 40
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 44
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Guard Swap",
-          "level": 50
-        },
-        {
-          "move": "Final Gambit",
-          "level": 56
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Split",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Acid",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Curse",
-          "level": 13
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 16
-        },
-        {
-          "move": "Mega Drain",
-          "level": 20
-        },
-        {
-          "move": "Yawn",
-          "level": 25
-        },
-        {
-          "move": "Protect",
-          "level": 28
-        },
-        {
-          "move": "Acid Armor",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 37
-        },
-        {
-          "move": "Body Slam",
-          "level": 40
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 44
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Guard Swap",
-          "level": 50
-        },
-        {
-          "move": "Final Gambit",
-          "level": 56
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Split",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Leech Life",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Acid",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Curse",
-          "level": 13
-        },
-        {
-          "move": "Struggle Bug",
-          "level": 16
-        },
-        {
-          "move": "Mega Drain",
-          "level": 20
-        },
-        {
-          "move": "Yawn",
-          "level": 25
-        },
-        {
-          "move": "Protect",
-          "level": 28
-        },
-        {
-          "move": "Acid Armor",
-          "level": 32
-        },
-        {
-          "move": "Giga Drain",
-          "level": 37
-        },
-        {
-          "move": "Body Slam",
-          "level": 40
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 44
-        },
-        {
-          "move": "Recover",
-          "level": 49
-        },
-        {
-          "move": "Guard Swap",
-          "level": 50
-        },
-        {
-          "move": "Final Gambit",
-          "level": 56
-        },
-        {
-          "move": "Baton Pass",
-          "egg_move": true
-        },
-        {
-          "move": "Double-Edge",
-          "egg_move": true
-        },
-        {
-          "move": "Encore",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Feint",
-          "egg_move": true
-        },
-        {
-          "move": "Guard Split",
-          "egg_move": true
-        },
-        {
-          "move": "Mind Reader",
-          "egg_move": true
-        },
-        {
-          "move": "Mud-Slap",
-          "egg_move": true
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true
-        },
-        {
-          "move": "Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic Spikes",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Leech Life",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

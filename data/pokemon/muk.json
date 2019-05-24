@@ -1,5467 +1,1089 @@
 {
-  "names": {
-    "fr": "Grotadmorv",
-    "de": "Sleimok",
-    "it": "Muk",
-    "en": "Muk"
-  },
-  "national_id": 89,
-  "types": [
-    "Poison"
-  ],
-  "items": [
-      {
-          "name": "Black Sludge",
-          "chance": 50
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Stench"
-    },
-    {
-      "name": "Sticky Hold"
-    },
-    {
-      "name": "Poison Touch",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 75,
-  "egg_groups": [
-    "Amorphous"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "3'11\"",
-  "height_eu": "1.2 m",
-  "weight_us": "66.1 lbs.",
-  "weight_eu": "30.0 kg",
-  "base_exp_yield": 175,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 1,
-    "atk": 1,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Purple",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 105,
-    "atk": 105,
-    "def": 75,
-    "sp_atk": 65,
-    "sp_def": 100,
-    "speed": 50
-  },
-  "evolution_from": "Grimer",
-  "alola_id": 51,
-  "categories": {
-    "en": "Sludge Pokémon",
-    "de": "Schlamm"
-  },
-  "kanto_id": 89,
-  "johto_id": 118,
-  "hoenn_id": 112,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-    {
-      "condition": "Alola",
-      "image_suffix": "alola",
-      "names": {
-        "en": "Alolan Muk",
-        "de": "Alola-Sleimok"
-      },
-      "types": [
-        "Poison",
-        "Dark"
-      ],
-      "abilities": [
+    "name": "Muk",
+    "national_id": 89,
+    "types": [
+        "Poison"
+    ],
+    "items": [
         {
-          "name": "Poison Touch"
-        },
-        {
-          "name": "Gluttony"
-        },
-        {
-          "name": "Power of Alchemy",
-          "hidden": true
+            "name": "Black Sludge",
+            "chance": 50
         }
-      ]
-    }
-  ],
-  "pokedex_entries": {
-    "Red": {
-      "en": "Thickly covered with a filthy, vile sludge. It is so toxic, even its footprints contain poison.",
-      "de": "Der Schleim dieses Pokémon ist so toxisch, dass selbst seine Fußspuren Gift enthalten."
-    },
-    "Blue": {
-      "en": "Thickly covered with a filthy, vile sludge. It is so toxic, even its footprints contain poison.",
-      "de": "Der Schleim dieses Pokémon ist so toxisch, dass selbst seine Fußspuren Gift enthalten."
-    },
-    "Yellow": {
-      "en": "Smells so awful, it can cause fainting. Through degeneration, it lost its sense of smell.",
-      "de": "Dieses Pokémon verbreitet einen so erbärmlichen Gestank, dass es sich selbst nicht riechen kann."
-    },
-    "Gold": {
-      "en": "They love to gather in smelly areas where sludge accumulates, making the stench around them worse.",
-      "de": "Sie treffen sich an stinkenden Orten, an denen der Schleim sich türmt. Dies merkt man am Gestank."
-    },
-    "Silver": {
-      "en": "Its body is made of a powerful poison. Touching it accidentally will cause a fever that requires bed rest.",
-      "de": "Sein Körper besteht aus Gift. Eine zufällige Berührung reicht aus, um fiebrig im Bett zu liegen."
-    },
-    "Crystal": {
-      "en": "As it moves, a very strong poison leaks from it, making the ground there barren for three years.",
-      "de": "Bei jeder Bewegung tropft Gift aus ihm heraus auf den Boden, der dadurch für drei Jahre verseucht ist."
-    },
-    "Ruby": {
-      "en": "From Muk's body seeps a foul fluid that gives off a nose-bendingly horrible stench. Just one drop of this Pokémon's body fluid can turn a pool stagnant and rancid.",
-      "de": "Sleimok scheidet eine widerlich stinkende Substanz aus. Ein einziger Tropfen seiner Körpersubstanz reicht aus, um ein Gewässer zu verseuchen."
-    },
-    "Sapphire": {
-      "en": "This Pokémon's favorite food is anything that is repugnantly filthy. In dirty towns where people think nothing of throwing away litter on the streets, Muk are certain to gather.",
-      "de": "Sleimoks Lieblingsspeise ist alles, was widerlich verschmutzt ist. In dreckigen Städten, in denen sich Menschen nichts dabei denken, wenn sie Müll auf die Straße werfen, lassen sich diese POKéMON mit Vorliebe in Scharen nieder."
-    },
-    "Emerald": {
-      "en": "It prefers warm and humid habitats. In the summertime, the toxic substances in its body intensify, making Muk reek like putrid kitchen garbage.",
-      "de": "Es liebt warme und feuchte Areale. Im Som mer verdichten sich die giftigen Sub stanzen in SLEIMOKs Körper und es entsteht ein ekliger Küchenabfallgestank."
-    },
-    "FireRed": {
-      "en": "It is usually undetectable because it blends in with the ground. Touching it can cause terrible poisoning.",
-      "de": "Normalerweise kann man es nicht aufspüren, da es mit dem Untergrund verschmilzt. Berührt man es, kann das zu heftigen Vergiftungen führen."
-    },
-    "LeafGreen": {
-      "en": "Thickly covered with a filthy, vile sludge. It is so toxic, even its footprints contain poison.",
-      "de": "Der Schleim dieses Pokémon ist so toxisch, dass selbst seine Schleimspuren Gift enthalten."
-    },
-    "Diamond": {
-      "en": "A toxic fluid seeps from its body. The fluid instantly kills plants and trees on contact.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "Pearl": {
-      "en": "A toxic fluid seeps from its body. The fluid instantly kills plants and trees on contact.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "Platinum": {
-      "en": "A toxic fluid seeps from its body. The fluid instantly kills plants and trees on contact.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "HeartGold": {
-      "en": "They love to gather in smelly areas where sludge accumulates, making the stench around them worse.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "SoulSilver": {
-      "en": "Its body is made of a powerful poison. Touching it accidentally will cause a fever that requires bed rest.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "Black": {
-      "en": "A toxic fluid seeps from its body. The fluid instantly kills plants and trees on contact.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "White": {
-      "en": "A toxic fluid seeps from its body. The fluid instantly kills plants and trees on contact.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "Black 2": {
-      "en": "It's so stinky! Muk's body contains toxic elements, and any plant will wilt when it passes by.",
-      "de": "Ihr Gestank ist unerträglich. Das starke Gift, aus dem ihr Körper besteht, macht jeder Pflanze in ihrem Weg den Garaus."
-    },
-    "White 2": {
-      "en": "It's so stinky! Muk's body contains toxic elements, and any plant will wilt when it passes by.",
-      "de": "Ihr Gestank ist unerträglich. Das starke Gift, aus dem ihr Körper besteht, macht jeder Pflanze in ihrem Weg den Garaus."
-    },
-    "X": {
-      "en": "They love to gather in smelly areas where sludge accumulates, making the stench around them worse.",
-      "de": "Sie treffen sich an stinkenden Orten, an denen der Schleim sich türmt. Dies merkt man am Gestank."
-    },
-    "Y": {
-      "en": "A toxic fluid seeps from its body. The fluid instantly kills plants and trees on contact.",
-      "de": "Sein Körper sondert eine giftige Substanz ab, die bei Kontakt Pflanzen und Bäume vernichtet."
-    },
-    "Omega Ruby": {
-      "en": "From Muk's body seeps a foul fluid that gives off a nose-bendingly horrible stench. Just one drop of this Pokémon's body fluid can turn a pool stagnant and rancid.",
-      "de": "Sleimok scheidet eine widerlich stinkende Substanz aus. Ein einziger Tropfen dieser Substanz reicht aus, um ein Gewässer zu verseuchen."
-    },
-    "Alpha Sapphire": {
-      "en": "This Pokémon's favorite food is anything that is repugnantly filthy. In dirty towns where people think nothing of throwing away litter on the streets, Muk are certain to gather.",
-      "de": "Sleimoks Lieblingsspeise ist alles, was widerlich verschmutzt ist. In dreckigen Städten, in denen sich Menschen nichts dabei denken, wenn sie Müll auf die Straße werfen, lassen sich diese Pokémon mit Vorliebe in Scharen nieder."
-    },
-    "Sun": {
-      "en": "The stench it gives off will make your nose scrunch up. Still, there are Muk fans who think that's a good thing.",
-      "de": "Es sondert einen widerlichen Gestank ab. In Fankreisen wird jedoch ausgerechnet diese Eigenschaft besonders geschätzt."
-    },
-    "Moon": {
-      "en": "After recent environmental improvements, this Pokémon is now hardly seen at all. People speculate that it may go extinct at some point.",
-      "de": "Es wird immer seltener gesehen, da zunehmend mehr Wert auf Umweltschutz gelegt wird. Man vermutet, dass es irgendwann ganz ausstirbt."
-    },
-    "Ultra Sun": {
-      "en": "Their food sources have decreased, and their numbers have declined sharply. Sludge ponds are being built to prevent their extinction.",
-      "de": "Alola-Form: In seinem Inneren befinden sich mehr als 100 verschiedene Toxine. Seine Lebenskraft zieht es aus den chemischen Reaktionen zwischen ihnen.\nStandard-Form: Aufgrund von Futtermangel sieht man es immer seltener. Um es vom Aussterben zu bewahren, werden nun künstliche Schlammteiche angelegt."
-    },
-    "Ultra Moon": {
-      "en": "Because they scatter germs everywhere, they’ve long been targeted for extermination, leading to a steep decline in their population.",
-      "de": "Alola-Form: Was nach Fangzähnen und Krallen aussieht, sind in Wirklichkeit kristalline Giftstoffe. Die bloße Berührung führt bereits zur Vergiftung.\nStandard-Form: Da es Krankheitskeime verbreitet, hat man lange versucht, es auszurotten. Heute sieht man es daher nur noch selten."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      1,
-      5
     ],
-    "power": [
-      4,
-      4
+    "abilities": [
+        {
+            "name": "Stench"
+        },
+        {
+            "name": "Sticky Hold"
+        },
+        {
+            "name": "Poison Touch",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      5,
-      5
+    "catch_rate": 75,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Amorphous"
     ],
-    "skill": [
-      1,
-      5
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      2,
-      5
+    "height_us": "3'11\"",
+    "height_eu": "1.2 m",
+    "weight_us": "66.1 lbs.",
+    "weight_eu": "30.0 kg",
+    "base_exp_yield": 175,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 1,
+        "atk": 1,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 105,
+        "atk": 105,
+        "def": 75,
+        "sp_atk": 65,
+        "sp_def": 100,
+        "speed": 50
+    },
+    "evolution_from": "Grimer",
+    "evolutions": [],
+    "species": "Sludge Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "This Pokémon's favorite food is anything that is repugnantly filthy. In dirty towns where people think nothing of throwing away litter on the streets, Muk are certain to gather.",
+    "move_learnset": [
+        {
+            "move": "Harden",
+            "level": 1,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 1,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Poison Gas",
+            "level": 1,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Pound",
+            "level": 1,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Venom Drench",
+            "level": 1,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Harden",
+            "level": 4,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 7,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Disable",
+            "level": 12,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sludge",
+            "level": 15,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Mud Bomb",
+            "level": 18,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Minimize",
+            "level": 21,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Fling",
+            "level": 26,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "level": 29,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sludge Wave",
+            "level": 32,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Screech",
+            "level": 37,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Gunk Shot",
+            "level": 40,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Acid Armor",
+            "level": 46,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Belch",
+            "level": 52,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Memento",
+            "level": 57,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Bite",
+            "level": 1,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Harden",
+            "level": 1,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Poison Gas",
+            "level": 1,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Pound",
+            "level": 1,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Venom Drench",
+            "level": 1,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Harden",
+            "level": 4,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Bite",
+            "level": 7,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Disable",
+            "level": 12,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Acid Spray",
+            "level": 15,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Poison Fang",
+            "level": 18,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Minimize",
+            "level": 21,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Fling",
+            "level": 26,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Knock Off",
+            "level": 29,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Crunch",
+            "level": 32,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Screech",
+            "level": 37,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Gunk Shot",
+            "level": 40,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Acid Armor",
+            "level": 46,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Belch",
+            "level": 52,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Memento",
+            "level": 57,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Acid Spray",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Curse",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Haze",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Imprison",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Lick",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Mean Look",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Power-Up Punch",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Scary Face",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Shadow Punch",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Shadow Sneak",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Spit Up",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Stockpile",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Swallow",
+            "egg_move": true,
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Assurance",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Clear Smog",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Curse",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Imprison",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Mean Look",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Power-Up Punch",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Pursuit",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Scary Face",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Shadow Sneak",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Spit Up",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Spite",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Stockpile",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Swallow",
+            "egg_move": true,
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Return",
+            "tm": "TM27",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": "TM34",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Flamethrower",
+            "tm": "TM35",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Fire Blast",
+            "tm": "TM38",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Round",
+            "tm": "TM48",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Focus Blast",
+            "tm": "TM52",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Explosion",
+            "tm": "TM64",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": "TM97",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100",
+            "variations": [
+                "Muk"
+            ]
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Return",
+            "tm": "TM27",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": "TM34",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Flamethrower",
+            "tm": "TM35",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Fire Blast",
+            "tm": "TM38",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Round",
+            "tm": "TM48",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Focus Blast",
+            "tm": "TM52",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": "TM59",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Quash",
+            "tm": "TM60",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Embargo",
+            "tm": "TM63",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Explosion",
+            "tm": "TM64",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Rock Polish",
+            "tm": "TM69",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Stone Edge",
+            "tm": "TM71",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Snarl",
+            "tm": "TM95",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": "TM97",
+            "variations": [
+                "Alolan Muk"
+            ]
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100",
+            "variations": [
+                "Alolan Muk"
+            ]
+        }
     ]
-  },
-  "ultra_alola_id": 29,
-  "move_learnsets": [
-    {
-      "games": [
-        "Red",
-        "Blue"
-      ],
-      "learnset": [
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 30
-        },
-        {
-          "move": "Minimize",
-          "level": 33
-        },
-        {
-          "move": "Sludge",
-          "level": 37
-        },
-        {
-          "move": "Harden",
-          "level": 45
-        },
-        {
-          "move": "Screech",
-          "level": 53
-        },
-        {
-          "move": "Acid Armor",
-          "level": 60
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Body Slam",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Rage",
-          "tm": "TM20"
-        },
-        {
-          "move": "Mega Drain",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Mimic",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Bide",
-          "tm": "TM34"
-        },
-        {
-          "move": "Self-Destruct",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM47"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM50"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Yellow"
-      ],
-      "learnset": [
-        {
-          "move": "Disable",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 30
-        },
-        {
-          "move": "Minimize",
-          "level": 33
-        },
-        {
-          "move": "Sludge",
-          "level": 37
-        },
-        {
-          "move": "Harden",
-          "level": 45
-        },
-        {
-          "move": "Screech",
-          "level": 53
-        },
-        {
-          "move": "Acid Armor",
-          "level": 60
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Body Slam",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Rage",
-          "tm": "TM20"
-        },
-        {
-          "move": "Mega Drain",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Mimic",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Bide",
-          "tm": "TM34"
-        },
-        {
-          "move": "Self-Destruct",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM47"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM50"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Gold",
-        "Silver"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Minimize",
-          "level": 23
-        },
-        {
-          "move": "Screech",
-          "level": 31
-        },
-        {
-          "move": "Harden",
-          "level": 33
-        },
-        {
-          "move": "Disable",
-          "level": 37
-        },
-        {
-          "move": "Acid Armor",
-          "level": 45
-        },
-        {
-          "move": "Sludge",
-          "level": 45
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 60
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Dynamic Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Curse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Zap Cannon",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Snore",
-          "tm": "TM13"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Mud-Slap",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Ice Punch",
-          "tm": "TM33"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Thunder Punch",
-          "tm": "TM41"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Fire Punch",
-          "tm": "TM48"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Crystal"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Minimize",
-          "level": 23
-        },
-        {
-          "move": "Screech",
-          "level": 31
-        },
-        {
-          "move": "Harden",
-          "level": 33
-        },
-        {
-          "move": "Disable",
-          "level": 37
-        },
-        {
-          "move": "Acid Armor",
-          "level": 45
-        },
-        {
-          "move": "Sludge",
-          "level": 45
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 60
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Dynamic Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Curse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Zap Cannon",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Snore",
-          "tm": "TM13"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Mud-Slap",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Ice Punch",
-          "tm": "TM33"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Thunder Punch",
-          "tm": "TM41"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Fire Punch",
-          "tm": "TM48"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ruby",
-        "Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Disable",
-          "level": 8
-        },
-        {
-          "move": "Sludge",
-          "level": 13
-        },
-        {
-          "move": "Minimize",
-          "level": 19
-        },
-        {
-          "move": "Screech",
-          "level": 26
-        },
-        {
-          "move": "Acid Armor",
-          "level": 34
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 47
-        },
-        {
-          "move": "Memento",
-          "level": 61
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "FireRed",
-        "LeafGreen"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Disable",
-          "level": 8
-        },
-        {
-          "move": "Sludge",
-          "level": 13
-        },
-        {
-          "move": "Minimize",
-          "level": 19
-        },
-        {
-          "move": "Screech",
-          "level": 26
-        },
-        {
-          "move": "Acid Armor",
-          "level": 34
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 47
-        },
-        {
-          "move": "Memento",
-          "level": 61
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Emerald"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Disable",
-          "level": 8
-        },
-        {
-          "move": "Sludge",
-          "level": 13
-        },
-        {
-          "move": "Minimize",
-          "level": 19
-        },
-        {
-          "move": "Screech",
-          "level": 26
-        },
-        {
-          "move": "Acid Armor",
-          "level": 34
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 47
-        },
-        {
-          "move": "Memento",
-          "level": 61
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Minimize",
-          "level": 17
-        },
-        {
-          "move": "Sludge",
-          "level": 20
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 23
-        },
-        {
-          "move": "Fling",
-          "level": 28
-        },
-        {
-          "move": "Screech",
-          "level": 33
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 36
-        },
-        {
-          "move": "Acid Armor",
-          "level": 44
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 54
-        },
-        {
-          "move": "Memento",
-          "level": 65
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM79"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Minimize",
-          "level": 17
-        },
-        {
-          "move": "Sludge",
-          "level": 20
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 23
-        },
-        {
-          "move": "Fling",
-          "level": 28
-        },
-        {
-          "move": "Screech",
-          "level": 33
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 36
-        },
-        {
-          "move": "Acid Armor",
-          "level": 44
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 54
-        },
-        {
-          "move": "Memento",
-          "level": 65
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM79"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Minimize",
-          "level": 17
-        },
-        {
-          "move": "Sludge",
-          "level": 20
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 23
-        },
-        {
-          "move": "Fling",
-          "level": 28
-        },
-        {
-          "move": "Screech",
-          "level": 33
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 36
-        },
-        {
-          "move": "Acid Armor",
-          "level": 44
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 54
-        },
-        {
-          "move": "Memento",
-          "level": 65
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Explosion",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Focus Punch",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Giga Drain",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Shock Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM79"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Minimize",
-          "level": 17
-        },
-        {
-          "move": "Sludge",
-          "level": 20
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 23
-        },
-        {
-          "move": "Fling",
-          "level": 28
-        },
-        {
-          "move": "Screech",
-          "level": 33
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 36
-        },
-        {
-          "move": "Acid Armor",
-          "level": 42
-        },
-        {
-          "move": "Sludge Wave",
-          "level": 50
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 58
-        },
-        {
-          "move": "Memento",
-          "level": 64
-        },
-        {
-          "move": "Acid Spray",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Incinerate",
-          "tm": "TM59"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Sludge",
-          "level": 15
-        },
-        {
-          "move": "Minimize",
-          "level": 18
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 21
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 26
-        },
-        {
-          "move": "Fling",
-          "level": 29
-        },
-        {
-          "move": "Screech",
-          "level": 32
-        },
-        {
-          "move": "Sludge Wave",
-          "level": 37
-        },
-        {
-          "move": "Acid Armor",
-          "level": 43
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 49
-        },
-        {
-          "move": "Memento",
-          "level": 57
-        },
-        {
-          "move": "Acid Spray",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Incinerate",
-          "tm": "TM59"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Sludge",
-          "level": 15
-        },
-        {
-          "move": "Minimize",
-          "level": 18
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 21
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 26
-        },
-        {
-          "move": "Fling",
-          "level": 29
-        },
-        {
-          "move": "Screech",
-          "level": 32
-        },
-        {
-          "move": "Sludge Wave",
-          "level": 37
-        },
-        {
-          "move": "Acid Armor",
-          "level": 43
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 49
-        },
-        {
-          "move": "Belch",
-          "level": 53
-        },
-        {
-          "move": "Memento",
-          "level": 57
-        },
-        {
-          "move": "Acid Spray",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Incinerate",
-          "tm": "TM59"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7
-        },
-        {
-          "move": "Disable",
-          "level": 12
-        },
-        {
-          "move": "Sludge",
-          "level": 15
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 18
-        },
-        {
-          "move": "Minimize",
-          "level": 21
-        },
-        {
-          "move": "Fling",
-          "level": 26
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 29
-        },
-        {
-          "move": "Sludge Wave",
-          "level": 32
-        },
-        {
-          "move": "Screech",
-          "level": 37
-        },
-        {
-          "move": "Venom Drench",
-          "level": 38
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 40
-        },
-        {
-          "move": "Acid Armor",
-          "level": 46
-        },
-        {
-          "move": "Belch",
-          "level": 52
-        },
-        {
-          "move": "Memento",
-          "level": 57
-        },
-        {
-          "move": "Acid Spray",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Haze",
-          "egg_move": true
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true
-        },
-        {
-          "move": "Lick",
-          "egg_move": true
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Incinerate",
-          "tm": "TM59"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Pound",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Venom Drench",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Harden",
-          "level": 4,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Disable",
-          "level": 12,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge",
-          "level": 15,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 18,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Minimize",
-          "level": 21,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "level": 26,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 29,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Wave",
-          "level": 32,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Screech",
-          "level": 37,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 40,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Acid Armor",
-          "level": 46,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Belch",
-          "level": 52,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Memento",
-          "level": 57,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Bite",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Harden",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Pound",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Venom Drench",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Harden",
-          "level": 4,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Bite",
-          "level": 7,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Disable",
-          "level": 12,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Acid Spray",
-          "level": 15,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Poison Fang",
-          "level": 18,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Minimize",
-          "level": 21,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "level": 26,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Knock Off",
-          "level": 29,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Crunch",
-          "level": 32,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Screech",
-          "level": 37,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 40,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Acid Armor",
-          "level": 46,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Belch",
-          "level": 52,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Memento",
-          "level": 57,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Acid Spray",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Curse",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Haze",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Lick",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Assurance",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Curse",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Spite",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Brutal Swing",
-          "tm": "TM59",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Quash",
-          "tm": "TM60",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Snarl",
-          "tm": "TM95",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Alolan Muk"
-          ]
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Harden",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Pound",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Venom Drench",
-          "level": 1,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Harden",
-          "level": 4,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mud-Slap",
-          "level": 7,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Disable",
-          "level": 12,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge",
-          "level": 15,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 18,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Minimize",
-          "level": 21,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "level": 26,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "level": 29,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Wave",
-          "level": 32,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Screech",
-          "level": 37,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 40,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Acid Armor",
-          "level": 46,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Belch",
-          "level": 52,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Memento",
-          "level": 57,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Bite",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Harden",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Poison Gas",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Pound",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Venom Drench",
-          "level": 1,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Harden",
-          "level": 4,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Bite",
-          "level": 7,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Disable",
-          "level": 12,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Acid Spray",
-          "level": 15,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Poison Fang",
-          "level": 18,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Minimize",
-          "level": 21,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "level": 26,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Knock Off",
-          "level": 29,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Crunch",
-          "level": 32,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Screech",
-          "level": 37,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Gunk Shot",
-          "level": 40,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Acid Armor",
-          "level": 46,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Belch",
-          "level": 52,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Memento",
-          "level": 57,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Acid Spray",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Curse",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Haze",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Lick",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Power-Up Punch",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Shadow Punch",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true,
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Assurance",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Curse",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Imprison",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Mean Look",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Power-Up Punch",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Pursuit",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Scary Face",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Shadow Sneak",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Spite",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true,
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Muk"
-          ]
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Venoshock",
-          "tm": "TM9",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Return",
-          "tm": "TM27",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Flamethrower",
-          "tm": "TM35",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Fire Blast",
-          "tm": "TM38",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Torment",
-          "tm": "TM41",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Round",
-          "tm": "TM48",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Brutal Swing",
-          "tm": "TM59",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Quash",
-          "tm": "TM60",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Embargo",
-          "tm": "TM63",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Snarl",
-          "tm": "TM95",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97",
-          "variations": [
-            "Alolan Muk"
-          ]
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100",
-          "variations": [
-            "Alolan Muk"
-          ]
-        }
-      ]
-    }
-  ]
 }

@@ -1,1436 +1,274 @@
 {
-  "names": {
-    "fr": "Déflaisan",
-    "de": "Fasasnob",
-    "it": "Unfezant",
-    "en": "Unfezant"
-  },
-  "national_id": 521,
-  "types": [
-    "Normal",
-    "Flying"
-  ],
-  "abilities": [
-    {
-      "name": "Big Pecks"
-    },
-    {
-      "name": "Super Luck"
-    },
-    {
-      "name": "Rivalry",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 45,
-  "egg_groups": [
-    "Flying"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "3'11\"",
-  "height_eu": "1.2 m",
-  "weight_us": "63.9 lbs.",
-  "weight_eu": "29.0 kg",
-  "base_exp_yield": 215,
-  "leveling_rate": "Medium Slow",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 3,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Gray",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 80,
-    "atk": 105,
-    "def": 80,
-    "sp_atk": 65,
-    "sp_def": 55,
-    "speed": 93
-  },
-  "evolution_from": "Tranquill",
-  "categories": {
-    "en": "Proud Pokémon",
-    "de": "Stolz"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 27,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-    {
-      "condition": "female",
-      "image_suffix": "female",
-      "names": {
-        "en": "Female",
-        "de": "Weiblich"
-      },
-      "types": [
+    "name": "Unfezant",
+    "national_id": 521,
+    "types": [
         "Normal",
         "Flying"
-      ]
-    }
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "Males swing their head plumage to threaten opponents. The females' flying abilities surpass those of the males.",
-      "de": "Männchen schrecken Gegner ab, indem sie ihren Kopfschmuck schütteln. Weibchen verfügen über bessere Flugfertigkeiten."
-    },
-    "White": {
-      "en": "Males have plumage on their heads. They will never let themselves feel close to anyone other than their Trainers.",
-      "de": "Männliche Exemplare tragen eine Verzierung am Kopf. Lässt sich von Natur aus nur auf seinen Trainer ein."
-    },
-    "Black 2": {
-      "en": "Males swing the plumage on their heads to threaten others, but females are better at flying.",
-      "de": "Männchen schrecken Gegner ab, indem sie ihren Kopfschmuck schütteln. Weibchen verfügen über bessere Flugfertigkeiten."
-    },
-    "White 2": {
-      "en": "Males swing the plumage on their heads to threaten others, but females are better at flying.",
-      "de": "Männchen schrecken Gegner ab, indem sie ihren Kopfschmuck schütteln. Weibchen verfügen über bessere Flugfertigkeiten."
-    },
-    "X": {
-      "en": "Males swing their head plumage to threaten opponents. The females' flying abilities surpass those of the males.",
-      "de": "Männchen schrecken Gegner ab, indem sie ihren Kopfschmuck schütteln. Weibchen verfügen über bessere Flugfertigkeiten."
-    },
-    "Y": {
-      "en": "Males have plumage on their heads. They will never let themselves feel close to anyone other than their Trainers.",
-      "de": "Männliche Exemplare tragen eine Verzierung am Kopf. Lässt sich von Natur aus nur auf seinen Trainer ein."
-    },
-    "Omega Ruby": {
-      "en": "Males swing their head plumage to threaten opponents. The females' flying abilities surpass those of the males.",
-      "de": "Männliche Exemplare tragen eine Verzierung am Kopf. Lässt sich von Natur aus nur auf seinen Trainer ein."
-    },
-    "Alpha Sapphire": {
-      "en": "Males have plumage on their heads. They will never let themselves feel close to anyone other than their Trainers.",
-      "de": "Männliche Exemplare tragen eine Verzierung am Kopf. Lässt sich von Natur aus nur auf seinen Trainer ein."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Big Pecks"
+        },
+        {
+            "name": "Super Luck"
+        },
+        {
+            "name": "Rivalry",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 45,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Flying"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        4080,
+        4334
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "3'11\"",
+    "height_eu": "1.2 m",
+    "weight_us": "63.9 lbs.",
+    "weight_eu": "29.0 kg",
+    "base_exp_yield": 215,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 3,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 80,
+        "atk": 105,
+        "def": 80,
+        "sp_atk": 65,
+        "sp_def": 55,
+        "speed": 93
+    },
+    "evolution_from": "Tranquill",
+    "evolutions": [],
+    "species": "Proud Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Males have plumage on their heads. They will never let themselves feel close to anyone other than their Trainers.",
+    "move_learnset": [
+        {
+            "move": "Growl",
+            "level": 1
+        },
+        {
+            "move": "Gust",
+            "level": 1
+        },
+        {
+            "move": "Leer",
+            "level": 1
+        },
+        {
+            "move": "Quick Attack",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 4
+        },
+        {
+            "move": "Leer",
+            "level": 8
+        },
+        {
+            "move": "Quick Attack",
+            "level": 11
+        },
+        {
+            "move": "Air Cutter",
+            "level": 15
+        },
+        {
+            "move": "Roost",
+            "level": 18
+        },
+        {
+            "move": "Detect",
+            "level": 23
+        },
+        {
+            "move": "Taunt",
+            "level": 27
+        },
+        {
+            "move": "Air Slash",
+            "level": 33
+        },
+        {
+            "move": "Razor Wind",
+            "level": 38
+        },
+        {
+            "move": "Feather Dance",
+            "level": 44
+        },
+        {
+            "move": "Swagger",
+            "level": 49
+        },
+        {
+            "move": "Facade",
+            "level": 55
+        },
+        {
+            "move": "Tailwind",
+            "level": 60
+        },
+        {
+            "move": "Sky Attack",
+            "level": 66
+        },
+        {
+            "move": "Bestow",
+            "egg_move": true
+        },
+        {
+            "move": "Hypnosis",
+            "egg_move": true
+        },
+        {
+            "move": "Lucky Chant",
+            "egg_move": true
+        },
+        {
+            "move": "Morning Sun",
+            "egg_move": true
+        },
+        {
+            "move": "Night Slash",
+            "egg_move": true
+        },
+        {
+            "move": "Steel Wing",
+            "egg_move": true
+        },
+        {
+            "move": "Uproar",
+            "egg_move": true
+        },
+        {
+            "move": "Wish",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Roost",
+            "tm": "TM19"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "Steel Wing",
+            "tm": "TM51"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Fly",
+            "tm": "TM76"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Quick Attack",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Leer",
-          "level": 8
-        },
-        {
-          "move": "Quick Attack",
-          "level": 11
-        },
-        {
-          "move": "Air Cutter",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 18
-        },
-        {
-          "move": "Detect",
-          "level": 23
-        },
-        {
-          "move": "Taunt",
-          "level": 27
-        },
-        {
-          "move": "Air Slash",
-          "level": 33
-        },
-        {
-          "move": "Razor Wind",
-          "level": 38
-        },
-        {
-          "move": "Feather Dance",
-          "level": 44
-        },
-        {
-          "move": "Swagger",
-          "level": 49
-        },
-        {
-          "move": "Facade",
-          "level": 55
-        },
-        {
-          "move": "Tailwind",
-          "level": 60
-        },
-        {
-          "move": "Sky Attack",
-          "level": 66
-        },
-        {
-          "move": "Bestow",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Morning Sun",
-          "egg_move": true
-        },
-        {
-          "move": "Steel Wing",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Fly",
-          "tm": "HM2"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Pluck",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Quick Attack",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Leer",
-          "level": 8
-        },
-        {
-          "move": "Quick Attack",
-          "level": 11
-        },
-        {
-          "move": "Air Cutter",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 18
-        },
-        {
-          "move": "Detect",
-          "level": 23
-        },
-        {
-          "move": "Taunt",
-          "level": 27
-        },
-        {
-          "move": "Air Slash",
-          "level": 33
-        },
-        {
-          "move": "Razor Wind",
-          "level": 38
-        },
-        {
-          "move": "Feather Dance",
-          "level": 44
-        },
-        {
-          "move": "Swagger",
-          "level": 49
-        },
-        {
-          "move": "Facade",
-          "level": 55
-        },
-        {
-          "move": "Tailwind",
-          "level": 60
-        },
-        {
-          "move": "Sky Attack",
-          "level": 66
-        },
-        {
-          "move": "Bestow",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Morning Sun",
-          "egg_move": true
-        },
-        {
-          "move": "Steel Wing",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Fly",
-          "tm": "HM2"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Pluck",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Quick Attack",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Leer",
-          "level": 8
-        },
-        {
-          "move": "Quick Attack",
-          "level": 11
-        },
-        {
-          "move": "Air Cutter",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 18
-        },
-        {
-          "move": "Detect",
-          "level": 23
-        },
-        {
-          "move": "Taunt",
-          "level": 27
-        },
-        {
-          "move": "Air Slash",
-          "level": 33
-        },
-        {
-          "move": "Razor Wind",
-          "level": 38
-        },
-        {
-          "move": "Feather Dance",
-          "level": 44
-        },
-        {
-          "move": "Swagger",
-          "level": 49
-        },
-        {
-          "move": "Facade",
-          "level": 55
-        },
-        {
-          "move": "Tailwind",
-          "level": 60
-        },
-        {
-          "move": "Sky Attack",
-          "level": 66
-        },
-        {
-          "move": "Bestow",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Morning Sun",
-          "egg_move": true
-        },
-        {
-          "move": "Night Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Steel Wing",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Fly",
-          "tm": "HM2"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Roost",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Quick Attack",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Leer",
-          "level": 8
-        },
-        {
-          "move": "Quick Attack",
-          "level": 11
-        },
-        {
-          "move": "Air Cutter",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 18
-        },
-        {
-          "move": "Detect",
-          "level": 23
-        },
-        {
-          "move": "Taunt",
-          "level": 27
-        },
-        {
-          "move": "Air Slash",
-          "level": 33
-        },
-        {
-          "move": "Razor Wind",
-          "level": 38
-        },
-        {
-          "move": "Feather Dance",
-          "level": 44
-        },
-        {
-          "move": "Swagger",
-          "level": 49
-        },
-        {
-          "move": "Facade",
-          "level": 55
-        },
-        {
-          "move": "Tailwind",
-          "level": 60
-        },
-        {
-          "move": "Sky Attack",
-          "level": 66
-        },
-        {
-          "move": "Bestow",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Morning Sun",
-          "egg_move": true
-        },
-        {
-          "move": "Night Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Steel Wing",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Fly",
-          "tm": "HM2"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Roost",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Quick Attack",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Leer",
-          "level": 8
-        },
-        {
-          "move": "Quick Attack",
-          "level": 11
-        },
-        {
-          "move": "Air Cutter",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 18
-        },
-        {
-          "move": "Detect",
-          "level": 23
-        },
-        {
-          "move": "Taunt",
-          "level": 27
-        },
-        {
-          "move": "Air Slash",
-          "level": 33
-        },
-        {
-          "move": "Razor Wind",
-          "level": 38
-        },
-        {
-          "move": "Feather Dance",
-          "level": 44
-        },
-        {
-          "move": "Swagger",
-          "level": 49
-        },
-        {
-          "move": "Facade",
-          "level": 55
-        },
-        {
-          "move": "Tailwind",
-          "level": 60
-        },
-        {
-          "move": "Sky Attack",
-          "level": 66
-        },
-        {
-          "move": "Bestow",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Morning Sun",
-          "egg_move": true
-        },
-        {
-          "move": "Night Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Steel Wing",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Roost",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Fly",
-          "tm": "TM76"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Quick Attack",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 4
-        },
-        {
-          "move": "Leer",
-          "level": 8
-        },
-        {
-          "move": "Quick Attack",
-          "level": 11
-        },
-        {
-          "move": "Air Cutter",
-          "level": 15
-        },
-        {
-          "move": "Roost",
-          "level": 18
-        },
-        {
-          "move": "Detect",
-          "level": 23
-        },
-        {
-          "move": "Taunt",
-          "level": 27
-        },
-        {
-          "move": "Air Slash",
-          "level": 33
-        },
-        {
-          "move": "Razor Wind",
-          "level": 38
-        },
-        {
-          "move": "Feather Dance",
-          "level": 44
-        },
-        {
-          "move": "Swagger",
-          "level": 49
-        },
-        {
-          "move": "Facade",
-          "level": 55
-        },
-        {
-          "move": "Tailwind",
-          "level": 60
-        },
-        {
-          "move": "Sky Attack",
-          "level": 66
-        },
-        {
-          "move": "Bestow",
-          "egg_move": true
-        },
-        {
-          "move": "Hypnosis",
-          "egg_move": true
-        },
-        {
-          "move": "Lucky Chant",
-          "egg_move": true
-        },
-        {
-          "move": "Morning Sun",
-          "egg_move": true
-        },
-        {
-          "move": "Night Slash",
-          "egg_move": true
-        },
-        {
-          "move": "Steel Wing",
-          "egg_move": true
-        },
-        {
-          "move": "Uproar",
-          "egg_move": true
-        },
-        {
-          "move": "Wish",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Roost",
-          "tm": "TM19"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "Steel Wing",
-          "tm": "TM51"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Fly",
-          "tm": "TM76"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

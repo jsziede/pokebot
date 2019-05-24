@@ -1,1623 +1,302 @@
 {
-  "names": {
-    "fr": "Charpenti",
-    "de": "Praktibalk",
-    "it": "Timburr",
-    "en": "Timburr"
-  },
-  "national_id": 532,
-  "types": [
-    "Fighting"
-  ],
-  "abilities": [
-    {
-      "name": "Guts"
-    },
-    {
-      "name": "Sheer Force"
-    },
-    {
-      "name": "Iron Fist",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 75.0,
-    "female": 25.0
-  },
-  "catch_rate": 180,
-  "egg_groups": [
-    "Human-Like"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "2'00\"",
-  "height_eu": "0.6 m",
-  "weight_us": "27.6 lbs.",
-  "weight_eu": "12.5 kg",
-  "base_exp_yield": 61,
-  "leveling_rate": "Medium Slow",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 1,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Gray",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 75,
-    "atk": 80,
-    "def": 55,
-    "sp_atk": 25,
-    "sp_def": 35,
-    "speed": 35
-  },
-  "evolutions": [
-    {
-      "to": "Gurdurr",
-      "level": 25
-    }
-  ],
-  "categories": {
-    "en": "Muscular Pokémon",
-    "de": "Muskel"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 38,
-  "kalos_id": 93,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "It fights by swinging a piece of lumber around. It is close to evolving when it can handle the lumber without difficulty.",
-      "de": "Greift Gegner mit einem Holzbalken an. Fällt es ihm leicht, den schweren Balken zu tragen, ist seine Entwicklung nah."
-    },
-    "White": {
-      "en": "These Pokémon appear at building sites and help out with construction. They always carry squared logs.",
-      "de": "Trägt stets einen Holzbalken bei sich. Es taucht hier und da auf Baustellen auf und hilft dort den Arbeitern aus."
-    },
-    "Black 2": {
-      "en": "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
-      "de": "Trägt stets einen Holzbalken bei sich und hilft auf Baustellen aus. Nach einer Weile sucht es sich einen größeren Balken."
-    },
-    "White 2": {
-      "en": "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
-      "de": "Trägt stets einen Holzbalken bei sich und hilft auf Baustellen aus. Nach einer Weile sucht es sich einen größeren Balken."
-    },
-    "X": {
-      "en": "These Pokémon appear at building sites and help out with construction. They always carry squared logs.",
-      "de": "Trägt stets einen Holzbalken bei sich. Es taucht hier und da auf Baustellen auf und hilft dort den Arbeitern aus."
-    },
-    "Y": {
-      "en": "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
-      "de": "Trägt stets einen Holzbalken bei sich und hilft auf Baustellen aus. Nach einer Weile sucht es sich einen größeren Balken."
-    },
-    "Omega Ruby": {
-      "en": "These Pokémon appear at building sites and help out with construction. They always carry squared logs.",
-      "de": "Trägt stets einen Holzbalken bei sich und hilft auf Baustellen aus. Nach einer Weile sucht es sich einen größeren Balken."
-    },
-    "Alpha Sapphire": {
-      "en": "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
-      "de": "Trägt stets einen Holzbalken bei sich und hilft auf Baustellen aus. Nach einer Weile sucht es sich einen größeren Balken."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Timburr",
+    "national_id": 532,
+    "types": [
+        "Fighting"
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Guts"
+        },
+        {
+            "name": "Sheer Force"
+        },
+        {
+            "name": "Iron Fist",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 180,
+    "gender_ratios": {
+        "male": 75,
+        "female": 25
+    },
+    "egg_groups": [
+        "Human-Like"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "2'00\"",
+    "height_eu": "0.6 m",
+    "weight_us": "27.6 lbs.",
+    "weight_eu": "12.5 kg",
+    "base_exp_yield": 61,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 1,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 75,
+        "atk": 80,
+        "def": 55,
+        "sp_atk": 25,
+        "sp_def": 35,
+        "speed": 35
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Gurdurr",
+            "level": 25
+        }
+    ],
+    "species": "Muscular Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Always carrying squared logs, they help out with construction. As they grow, they carry bigger logs.",
+    "move_learnset": [
+        {
+            "move": "Leer",
+            "level": 1
+        },
+        {
+            "move": "Pound",
+            "level": 1
+        },
+        {
+            "move": "Focus Energy",
+            "level": 4
+        },
+        {
+            "move": "Bide",
+            "level": 8
+        },
+        {
+            "move": "Low Kick",
+            "level": 12
+        },
+        {
+            "move": "Rock Throw",
+            "level": 16
+        },
+        {
+            "move": "Wake-Up Slap",
+            "level": 20
+        },
+        {
+            "move": "Chip Away",
+            "level": 24
+        },
+        {
+            "move": "Bulk Up",
+            "level": 28
+        },
+        {
+            "move": "Rock Slide",
+            "level": 31
+        },
+        {
+            "move": "Dynamic Punch",
+            "level": 34
+        },
+        {
+            "move": "Scary Face",
+            "level": 37
+        },
+        {
+            "move": "Hammer Arm",
+            "level": 40
+        },
+        {
+            "move": "Stone Edge",
+            "level": 43
+        },
+        {
+            "move": "Focus Punch",
+            "level": 46
+        },
+        {
+            "move": "Superpower",
+            "level": 49
+        },
+        {
+            "move": "Comet Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Counter",
+            "egg_move": true
+        },
+        {
+            "move": "Detect",
+            "egg_move": true
+        },
+        {
+            "move": "Drain Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Force Palm",
+            "egg_move": true
+        },
+        {
+            "move": "Foresight",
+            "egg_move": true
+        },
+        {
+            "move": "Mach Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Power-Up Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Reversal",
+            "egg_move": true
+        },
+        {
+            "move": "Smelling Salts",
+            "egg_move": true
+        },
+        {
+            "move": "Wide Guard",
+            "egg_move": true
+        },
+        {
+            "move": "Work Up",
+            "tm": "TM1"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Bulk Up",
+            "tm": "TM8"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Smack Down",
+            "tm": "TM23"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Low Sweep",
+            "tm": "TM47"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Focus Blast",
+            "tm": "TM52"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": "TM59"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Stone Edge",
+            "tm": "TM71"
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80"
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Focus Energy",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Low Kick",
-          "level": 12
-        },
-        {
-          "move": "Rock Throw",
-          "level": 16
-        },
-        {
-          "move": "Wake-Up Slap",
-          "level": 20
-        },
-        {
-          "move": "Chip Away",
-          "level": 24
-        },
-        {
-          "move": "Bulk Up",
-          "level": 28
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Dynamic Punch",
-          "level": 34
-        },
-        {
-          "move": "Scary Face",
-          "level": 37
-        },
-        {
-          "move": "Hammer Arm",
-          "level": 40
-        },
-        {
-          "move": "Stone Edge",
-          "level": 43
-        },
-        {
-          "move": "Focus Punch",
-          "level": 46
-        },
-        {
-          "move": "Superpower",
-          "level": 49
-        },
-        {
-          "move": "Comet Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Detect",
-          "egg_move": true
-        },
-        {
-          "move": "Drain Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Force Palm",
-          "egg_move": true
-        },
-        {
-          "move": "Foresight",
-          "egg_move": true
-        },
-        {
-          "move": "Mach Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Smelling Salts",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Bulk Up",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Focus Energy",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Low Kick",
-          "level": 12
-        },
-        {
-          "move": "Rock Throw",
-          "level": 16
-        },
-        {
-          "move": "Wake-Up Slap",
-          "level": 20
-        },
-        {
-          "move": "Chip Away",
-          "level": 24
-        },
-        {
-          "move": "Bulk Up",
-          "level": 28
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Dynamic Punch",
-          "level": 34
-        },
-        {
-          "move": "Scary Face",
-          "level": 37
-        },
-        {
-          "move": "Hammer Arm",
-          "level": 40
-        },
-        {
-          "move": "Stone Edge",
-          "level": 43
-        },
-        {
-          "move": "Focus Punch",
-          "level": 46
-        },
-        {
-          "move": "Superpower",
-          "level": 49
-        },
-        {
-          "move": "Comet Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Detect",
-          "egg_move": true
-        },
-        {
-          "move": "Drain Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Force Palm",
-          "egg_move": true
-        },
-        {
-          "move": "Foresight",
-          "egg_move": true
-        },
-        {
-          "move": "Mach Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Smelling Salts",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Bulk Up",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM83"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Focus Energy",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Low Kick",
-          "level": 12
-        },
-        {
-          "move": "Rock Throw",
-          "level": 16
-        },
-        {
-          "move": "Wake-Up Slap",
-          "level": 20
-        },
-        {
-          "move": "Chip Away",
-          "level": 24
-        },
-        {
-          "move": "Bulk Up",
-          "level": 28
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Dynamic Punch",
-          "level": 34
-        },
-        {
-          "move": "Scary Face",
-          "level": 37
-        },
-        {
-          "move": "Hammer Arm",
-          "level": 40
-        },
-        {
-          "move": "Stone Edge",
-          "level": 43
-        },
-        {
-          "move": "Focus Punch",
-          "level": 46
-        },
-        {
-          "move": "Superpower",
-          "level": 49
-        },
-        {
-          "move": "Comet Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Detect",
-          "egg_move": true
-        },
-        {
-          "move": "Drain Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Force Palm",
-          "egg_move": true
-        },
-        {
-          "move": "Foresight",
-          "egg_move": true
-        },
-        {
-          "move": "Mach Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Smelling Salts",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Bulk Up",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Focus Energy",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Low Kick",
-          "level": 12
-        },
-        {
-          "move": "Rock Throw",
-          "level": 16
-        },
-        {
-          "move": "Wake-Up Slap",
-          "level": 20
-        },
-        {
-          "move": "Chip Away",
-          "level": 24
-        },
-        {
-          "move": "Bulk Up",
-          "level": 28
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Dynamic Punch",
-          "level": 34
-        },
-        {
-          "move": "Scary Face",
-          "level": 37
-        },
-        {
-          "move": "Hammer Arm",
-          "level": 40
-        },
-        {
-          "move": "Stone Edge",
-          "level": 43
-        },
-        {
-          "move": "Focus Punch",
-          "level": 46
-        },
-        {
-          "move": "Superpower",
-          "level": 49
-        },
-        {
-          "move": "Comet Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Detect",
-          "egg_move": true
-        },
-        {
-          "move": "Drain Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Force Palm",
-          "egg_move": true
-        },
-        {
-          "move": "Foresight",
-          "egg_move": true
-        },
-        {
-          "move": "Mach Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Smelling Salts",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Bulk Up",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Focus Energy",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Low Kick",
-          "level": 12
-        },
-        {
-          "move": "Rock Throw",
-          "level": 16
-        },
-        {
-          "move": "Wake-Up Slap",
-          "level": 20
-        },
-        {
-          "move": "Chip Away",
-          "level": 24
-        },
-        {
-          "move": "Bulk Up",
-          "level": 28
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Dynamic Punch",
-          "level": 34
-        },
-        {
-          "move": "Scary Face",
-          "level": 37
-        },
-        {
-          "move": "Hammer Arm",
-          "level": 40
-        },
-        {
-          "move": "Stone Edge",
-          "level": 43
-        },
-        {
-          "move": "Focus Punch",
-          "level": 46
-        },
-        {
-          "move": "Superpower",
-          "level": 49
-        },
-        {
-          "move": "Comet Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Detect",
-          "egg_move": true
-        },
-        {
-          "move": "Drain Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Force Palm",
-          "egg_move": true
-        },
-        {
-          "move": "Foresight",
-          "egg_move": true
-        },
-        {
-          "move": "Mach Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Smelling Salts",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Bulk Up",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Brutal Swing",
-          "tm": "TM59"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Leer",
-          "level": 1
-        },
-        {
-          "move": "Pound",
-          "level": 1
-        },
-        {
-          "move": "Focus Energy",
-          "level": 4
-        },
-        {
-          "move": "Bide",
-          "level": 8
-        },
-        {
-          "move": "Low Kick",
-          "level": 12
-        },
-        {
-          "move": "Rock Throw",
-          "level": 16
-        },
-        {
-          "move": "Wake-Up Slap",
-          "level": 20
-        },
-        {
-          "move": "Chip Away",
-          "level": 24
-        },
-        {
-          "move": "Bulk Up",
-          "level": 28
-        },
-        {
-          "move": "Rock Slide",
-          "level": 31
-        },
-        {
-          "move": "Dynamic Punch",
-          "level": 34
-        },
-        {
-          "move": "Scary Face",
-          "level": 37
-        },
-        {
-          "move": "Hammer Arm",
-          "level": 40
-        },
-        {
-          "move": "Stone Edge",
-          "level": 43
-        },
-        {
-          "move": "Focus Punch",
-          "level": 46
-        },
-        {
-          "move": "Superpower",
-          "level": 49
-        },
-        {
-          "move": "Comet Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Detect",
-          "egg_move": true
-        },
-        {
-          "move": "Drain Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Endure",
-          "egg_move": true
-        },
-        {
-          "move": "Force Palm",
-          "egg_move": true
-        },
-        {
-          "move": "Foresight",
-          "egg_move": true
-        },
-        {
-          "move": "Mach Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Power-Up Punch",
-          "egg_move": true
-        },
-        {
-          "move": "Reversal",
-          "egg_move": true
-        },
-        {
-          "move": "Smelling Salts",
-          "egg_move": true
-        },
-        {
-          "move": "Wide Guard",
-          "egg_move": true
-        },
-        {
-          "move": "Work Up",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Bulk Up",
-          "tm": "TM8"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Smack Down",
-          "tm": "TM23"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Low Sweep",
-          "tm": "TM47"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Focus Blast",
-          "tm": "TM52"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Brutal Swing",
-          "tm": "TM59"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Stone Edge",
-          "tm": "TM71"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Poison Jab",
-          "tm": "TM84"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

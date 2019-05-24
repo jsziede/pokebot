@@ -1,1897 +1,255 @@
 {
-  "names": {
-    "fr": "Sancoki",
-    "de": "Schalellos",
-    "it": "Shellos",
-    "en": "Shellos"
-  },
-  "national_id": 422,
-  "types": [
-    "Water"
-  ],
-  "abilities": [
-    {
-      "name": "Sticky Hold"
-    },
-    {
-      "name": "Storm Drain"
-    },
-    {
-      "name": "Sand Force",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 190,
-  "egg_groups": [
-    "Water 1",
-    "Amorphous"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "1'00\"",
-  "height_eu": "0.3 m",
-  "weight_us": "13.9 lbs.",
-  "weight_eu": "6.3 kg",
-  "base_exp_yield": 65,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 1,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Purple",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 76,
-    "atk": 48,
-    "def": 48,
-    "sp_atk": 57,
-    "sp_def": 62,
-    "speed": 34
-  },
-  "evolutions": [
-    {
-      "to": "Gastrodon",
-      "level": 30
-    }
-  ],
-  "alola_id": 260,
-  "categories": {
-    "en": "Sea Slug Pokémon",
-    "de": "Seeschnecke"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": 60,
-  "unova_id": null,
-  "kalos_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variation_names": {
-    "en": "West Sea",
-    "de": "Westliches Meer"
-  },
-  "variations": [
-    {
-      "image_suffix": "east",
-      "condition": "East Sea",
-      "names": {
-        "en": "East Sea",
-        "de": "Östliches Meer"
-      },
-      "types": [
+    "name": "Shellos",
+    "national_id": 422,
+    "types": [
         "Water"
-      ]
-    }
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "Its color and shapes differ from region to region. In the Sinnoh region, two types are confirmed.",
-      "de": "Sein Aussehen ist von Region zu Region unterschiedlich. In Sinnoh finden sich zwei Arten."
-    },
-    "Pearl": {
-      "en": "It lives along bodies of water. Its body shape has changed to suit its habitat.",
-      "de": "Es lebt in der Nähe von Wasser. Seine Körperform hat sich seiner Umgebung angepasst."
-    },
-    "Platinum": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Nicht seinen Körper zusammendrücken, sonst sickert eine seltsame lilafarbene Flüssigkeit aus!"
-    },
-    "HeartGold": {
-      "en": "Its shape and coloration vary, depending on its habitat.",
-      "de": "Sein Aussehen ist von Region zu Region unterschiedlich. In Sinnoh finden sich zwei Arten."
-    },
-    "SoulSilver": {
-      "en": "Its shape and coloration vary, depending on its habitat.",
-      "de": "Sein Aussehen ist von Region zu Region unterschiedlich. In Sinnoh finden sich zwei Arten."
-    },
-    "Black": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Nicht seinen Körper zusammendrücken, sonst sickert eine seltsame lilafarbene Flüssigkeit aus!"
-    },
-    "White": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Nicht seinen Körper zusammendrücken, sonst sickert eine seltsame lilafarbene Flüssigkeit aus!"
-    },
-    "Black 2": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Nicht seinen Körper zusammendrücken, sonst sickert eine seltsame lilafarbene Flüssigkeit aus!"
-    },
-    "White 2": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Nicht seinen Körper zusammendrücken, sonst sickert eine seltsame lilafarbene Flüssigkeit aus!"
-    },
-    "X": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Nicht seinen Körper zusammendrücken, sonst sickert eine seltsame lilafarbene Flüssigkeit aus!"
-    },
-    "Y": {
-      "en": "Its shape and coloration vary, depending on its habitat.",
-      "de": "Form und Farbe dieses Pokémon ändern sich je nach der Umgebung, in der es lebt."
-    },
-    "Omega Ruby": {
-      "en": "Beware of pushing strongly on its squishy body, as it makes a mysterious purple fluid ooze out.",
-      "de": "Form und Farbe dieses Pokémon ändern sich je nach der Umgebung, in der es lebt."
-    },
-    "Alpha Sapphire": {
-      "en": "Its shape and coloration vary, depending on its habitat.",
-      "de": "Form und Farbe dieses Pokémon ändern sich je nach der Umgebung, in der es lebt."
-    },
-    "Ultra Sun": {
-      "en": "While they normally live in the sea, they can function on land, too, until their skin dries out.",
-      "de": "Westliches Meer: Es lebt zwar für gewöhnlich im Meer, kann sich aber auch an Land bewegen, bis seine Haut austrocknet.\nÖstliches Meer: Fühlt es sich bedroht, stößt es eine lilafarbene Flüssigkeit aus. Es heißt, dabei handele es sich um Angstschweiß."
-    },
-    "Ultra Moon": {
-      "en": "When it senses danger, a purple liquid oozes out of it. The liquid is thought to be something like greasy sweat.",
-      "de": "Westliches Meer: Spürt es Gefahr, stößt es eine lilafarbene Flüssigkeit aus. Man geht davon aus, dass es sich dabei um eine Art Angstschweiß handelt.\nÖstliches Meer: Seine hohe Regenerationskraft sicherte ihm die Aufmerksamkeit der Wissenschaft, die sich der Analyse seiner Zellbestandteile widmet."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      1,
-      3
     ],
-    "power": [
-      1,
-      4
+    "abilities": [
+        {
+            "name": "Sticky Hold"
+        },
+        {
+            "name": "Storm Drain"
+        },
+        {
+            "name": "Sand Force",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      3,
-      5
+    "catch_rate": 190,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Water 1",
+        "Amorphous"
     ],
-    "skill": [
-      1,
-      3
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      2,
-      2
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "13.9 lbs.",
+    "weight_eu": "6.3 kg",
+    "base_exp_yield": 65,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 1,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 76,
+        "atk": 48,
+        "def": 48,
+        "sp_atk": 57,
+        "sp_def": 62,
+        "speed": 34
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Gastrodon",
+            "level": 30
+        }
+    ],
+    "species": "Sea Slug Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Its shape and coloration vary, depending on its habitat.",
+    "move_learnset": [
+        {
+            "move": "Mud-Slap",
+            "level": 1
+        },
+        {
+            "move": "Mud Sport",
+            "level": 2
+        },
+        {
+            "move": "Harden",
+            "level": 4
+        },
+        {
+            "move": "Water Pulse",
+            "level": 7
+        },
+        {
+            "move": "Mud Bomb",
+            "level": 11
+        },
+        {
+            "move": "Hidden Power",
+            "level": 16
+        },
+        {
+            "move": "Rain Dance",
+            "level": 22
+        },
+        {
+            "move": "Body Slam",
+            "level": 29
+        },
+        {
+            "move": "Muddy Water",
+            "level": 37
+        },
+        {
+            "move": "Recover",
+            "level": 46
+        },
+        {
+            "move": "Acid Armor",
+            "egg_move": true
+        },
+        {
+            "move": "Amnesia",
+            "egg_move": true
+        },
+        {
+            "move": "Brine",
+            "egg_move": true
+        },
+        {
+            "move": "Clear Smog",
+            "egg_move": true
+        },
+        {
+            "move": "Counter",
+            "egg_move": true
+        },
+        {
+            "move": "Curse",
+            "egg_move": true
+        },
+        {
+            "move": "Fissure",
+            "egg_move": true
+        },
+        {
+            "move": "Memento",
+            "egg_move": true
+        },
+        {
+            "move": "Mirror Coat",
+            "egg_move": true
+        },
+        {
+            "move": "Mist",
+            "egg_move": true
+        },
+        {
+            "move": "Sludge",
+            "egg_move": true
+        },
+        {
+            "move": "Spit Up",
+            "egg_move": true
+        },
+        {
+            "move": "Stockpile",
+            "egg_move": true
+        },
+        {
+            "move": "Swallow",
+            "egg_move": true
+        },
+        {
+            "move": "Trump Card",
+            "egg_move": true
+        },
+        {
+            "move": "Yawn",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hail",
+            "tm": "TM7"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Ice Beam",
+            "tm": "TM13"
+        },
+        {
+            "move": "Blizzard",
+            "tm": "TM14"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Scald",
+            "tm": "TM55"
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Surf",
+            "tm": "TM94"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 88,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Brine",
-          "tm": "TM55"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Brine",
-          "tm": "TM55"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Whirlpool",
-          "tm": "HM5"
-        },
-        {
-          "move": "Water Pulse",
-          "tm": "TM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Brine",
-          "tm": "TM55"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Brine",
-          "egg_move": true
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Dive",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Brine",
-          "egg_move": true
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Dive",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Brine",
-          "egg_move": true
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Brine",
-          "egg_move": true
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Dive",
-          "tm": "HM7"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Brine",
-          "egg_move": true
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Surf",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Mud-Slap",
-          "level": 1
-        },
-        {
-          "move": "Mud Sport",
-          "level": 2
-        },
-        {
-          "move": "Harden",
-          "level": 4
-        },
-        {
-          "move": "Water Pulse",
-          "level": 7
-        },
-        {
-          "move": "Mud Bomb",
-          "level": 11
-        },
-        {
-          "move": "Hidden Power",
-          "level": 16
-        },
-        {
-          "move": "Rain Dance",
-          "level": 22
-        },
-        {
-          "move": "Body Slam",
-          "level": 29
-        },
-        {
-          "move": "Muddy Water",
-          "level": 37
-        },
-        {
-          "move": "Recover",
-          "level": 46
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Amnesia",
-          "egg_move": true
-        },
-        {
-          "move": "Brine",
-          "egg_move": true
-        },
-        {
-          "move": "Clear Smog",
-          "egg_move": true
-        },
-        {
-          "move": "Counter",
-          "egg_move": true
-        },
-        {
-          "move": "Curse",
-          "egg_move": true
-        },
-        {
-          "move": "Fissure",
-          "egg_move": true
-        },
-        {
-          "move": "Memento",
-          "egg_move": true
-        },
-        {
-          "move": "Mirror Coat",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Sludge",
-          "egg_move": true
-        },
-        {
-          "move": "Spit Up",
-          "egg_move": true
-        },
-        {
-          "move": "Stockpile",
-          "egg_move": true
-        },
-        {
-          "move": "Swallow",
-          "egg_move": true
-        },
-        {
-          "move": "Trump Card",
-          "egg_move": true
-        },
-        {
-          "move": "Yawn",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Surf",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

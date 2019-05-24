@@ -1,2491 +1,309 @@
 {
-  "names": {
-    "fr": "Archéodong",
-    "de": "Bronzong",
-    "it": "Bronzong",
-    "en": "Bronzong"
-  },
-  "national_id": 437,
-  "types": [
-    "Steel",
-    "Psychic"
-  ],
-  "items": [
-      {
-          "name": "Metal Coat",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Levitate"
-    },
-    {
-      "name": "Heatproof"
-    },
-    {
-      "name": "Heavy Metal",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": null,
-  "catch_rate": 90,
-  "egg_groups": [
-    "Mineral"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "4'03\"",
-  "height_eu": "1.3 m",
-  "weight_us": "412.3 lbs.",
-  "weight_eu": "187.0 kg",
-  "base_exp_yield": 175,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 1,
-    "sp_atk": 0,
-    "sp_def": 1,
-    "speed": 0
-  },
-  "color": "Green",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 67,
-    "atk": 89,
-    "def": 116,
-    "sp_atk": 79,
-    "sp_def": 116,
-    "speed": 33
-  },
-  "evolution_from": "Bronzor",
-  "categories": {
-    "en": "Bronze Bell Pokémon",
-    "de": "Bronzeglocke"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": 89,
-  "unova_id": null,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "One caused a news sensation when it was dug up at a construction site after a 2000-year sleep.",
-      "de": "Dieses PKMN fand man bei Grabungen auf einer Baustelle, an deren Ort es 2 000 Jahre geschlafen hatte."
-    },
-    "Pearl": {
-      "en": "It can summon rain clouds. People long ago revered it as the bringer of plentiful harvests.",
-      "de": "Es kann Regenwolken beschwören. Vor langer Zeit wurde es verehrt, da es so für gute Ernten sorgte."
-    },
-    "Platinum": {
-      "en": "It brought rains by opening portals to another world. It was revered as a bringer of plentiful harvests.",
-      "de": "Ihm wurden reiche Ernten zugeschrieben, da es durch Portale in andere Welten Regenfälle brachte."
-    },
-    "HeartGold": {
-      "en": "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
-      "de": "Dieses PKMN fand man bei Grabungen auf einer Baustelle, an deren Ort es 2 000 Jahre geschlafen hatte."
-    },
-    "SoulSilver": {
-      "en": "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
-      "de": "Dieses PKMN fand man bei Grabungen auf einer Baustelle, an deren Ort es 2 000 Jahre geschlafen hatte."
-    },
-    "Black": {
-      "en": "It brought rains by opening portals to another world. It was revered as a bringer of plentiful harvests.",
-      "de": "Ihm wurden reiche Ernten zugeschrieben, da es durch Portale in andere Welten Regenfälle brachte."
-    },
-    "White": {
-      "en": "It brought rains by opening portals to another world. It was revered as a bringer of plentiful harvests.",
-      "de": "Ihm wurden reiche Ernten zugeschrieben, da es durch Portale in andere Welten Regenfälle brachte."
-    },
-    "Black 2": {
-      "en": "In ages past, this Pokémon was revered as a bringer of rain. It was found buried in the ground.",
-      "de": "Man verehrt sie schon seit Urzeiten als Regenmacher. Manchmal findet man eines von ihnen im Boden vergraben."
-    },
-    "White 2": {
-      "en": "In ages past, this Pokémon was revered as a bringer of rain. It was found buried in the ground.",
-      "de": "Man verehrt sie schon seit Urzeiten als Regenmacher. Manchmal findet man eines von ihnen im Boden vergraben."
-    },
-    "X": {
-      "en": "In ages past, this Pokémon was revered as a bringer of rain. It was found buried in the ground.",
-      "de": "Man verehrt sie schon seit Urzeiten als Regenmacher. Manchmal findet man eines von ihnen im Boden vergraben."
-    },
-    "Y": {
-      "en": "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
-      "de": "Früher verehrten die Menschen die Bronzong, weil sie sich davon Regen oder gute Ernten erhofften."
-    },
-    "Omega Ruby": {
-      "en": "In ages past, this Pokémon was revered as a bringer of rain. It was found buried in the ground.",
-      "de": "Früher verehrten die Menschen die Bronzong, weil sie sich davon Regen oder gute Ernten erhofften."
-    },
-    "Alpha Sapphire": {
-      "en": "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
-      "de": "Früher verehrten die Menschen die Bronzong, weil sie sich davon Regen oder gute Ernten erhofften."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      1,
-      1
+    "name": "Bronzong",
+    "national_id": 437,
+    "types": [
+        "Steel",
+        "Psychic"
     ],
-    "power": [
-      3,
-      5
+    "items": [
+        {
+            "name": "Metal Coat",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      4,
-      5
+    "abilities": [
+        {
+            "name": "Levitate"
+        },
+        {
+            "name": "Heatproof"
+        },
+        {
+            "name": "Heavy Metal",
+            "hidden": true
+        }
     ],
-    "skill": [
-      3,
-      3
+    "catch_rate": 90,
+    "gender_ratios": null,
+    "egg_groups": [
+        "Mineral"
     ],
-    "jump": [
-      3,
-      5
+    "hatch_time": [
+        5355,
+        5609
+    ],
+    "height_us": "4'03\"",
+    "height_eu": "1.3 m",
+    "weight_us": "412.3 lbs.",
+    "weight_eu": "187.0 kg",
+    "base_exp_yield": 175,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 1,
+        "sp_atk": 0,
+        "sp_def": 1,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 67,
+        "atk": 89,
+        "def": 116,
+        "sp_atk": 79,
+        "sp_def": 116,
+        "speed": 33
+    },
+    "evolution_from": "Bronzor",
+    "evolutions": [],
+    "species": "Bronze Bell Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Ancient people believed that petitioning Bronzong for rain was the way to make crops grow.",
+    "move_learnset": [
+        {
+            "move": "Block",
+            "level": 1
+        },
+        {
+            "move": "Confusion",
+            "level": 1
+        },
+        {
+            "move": "Hypnosis",
+            "level": 1
+        },
+        {
+            "move": "Imprison",
+            "level": 1
+        },
+        {
+            "move": "Rain Dance",
+            "level": 1
+        },
+        {
+            "move": "Sunny Day",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Hypnosis",
+            "level": 5
+        },
+        {
+            "move": "Imprison",
+            "level": 9
+        },
+        {
+            "move": "Confuse Ray",
+            "level": 11
+        },
+        {
+            "move": "Psywave",
+            "level": 15
+        },
+        {
+            "move": "Iron Defense",
+            "level": 19
+        },
+        {
+            "move": "Feint Attack",
+            "level": 21
+        },
+        {
+            "move": "Safeguard",
+            "level": 25
+        },
+        {
+            "move": "Future Sight",
+            "level": 29
+        },
+        {
+            "move": "Metal Sound",
+            "level": 31
+        },
+        {
+            "move": "Gyro Ball",
+            "level": 36
+        },
+        {
+            "move": "Extrasensory",
+            "level": 42
+        },
+        {
+            "move": "Payback",
+            "level": 46
+        },
+        {
+            "move": "Heal Block",
+            "level": 52
+        },
+        {
+            "move": "Heavy Slam",
+            "level": 58
+        },
+        {
+            "move": "Psyshock",
+            "tm": "TM3"
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4"
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Light Screen",
+            "tm": "TM16"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Solar Beam",
+            "tm": "TM22"
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Reflect",
+            "tm": "TM33"
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37"
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57"
+        },
+        {
+            "move": "Explosion",
+            "tm": "TM64"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Rock Polish",
+            "tm": "TM69"
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": "TM74"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Bulldoze",
+            "tm": "TM78"
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": "TM91"
+        },
+        {
+            "move": "Trick Room",
+            "tm": "TM92"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 7
-        },
-        {
-          "move": "Imprison",
-          "level": 12
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 14
-        },
-        {
-          "move": "Extrasensory",
-          "level": 19
-        },
-        {
-          "move": "Iron Defense",
-          "level": 26
-        },
-        {
-          "move": "Safeguard",
-          "level": 30
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 38
-        },
-        {
-          "move": "Future Sight",
-          "level": 43
-        },
-        {
-          "move": "Feint Attack",
-          "level": 50
-        },
-        {
-          "move": "Payback",
-          "level": 61
-        },
-        {
-          "move": "Heal Block",
-          "level": 67
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Skill Swap",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Recycle",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 7
-        },
-        {
-          "move": "Imprison",
-          "level": 12
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 14
-        },
-        {
-          "move": "Extrasensory",
-          "level": 19
-        },
-        {
-          "move": "Iron Defense",
-          "level": 26
-        },
-        {
-          "move": "Safeguard",
-          "level": 30
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 38
-        },
-        {
-          "move": "Future Sight",
-          "level": 43
-        },
-        {
-          "move": "Feint Attack",
-          "level": 50
-        },
-        {
-          "move": "Payback",
-          "level": 61
-        },
-        {
-          "move": "Heal Block",
-          "level": 67
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Skill Swap",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Recycle",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 7
-        },
-        {
-          "move": "Imprison",
-          "level": 12
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 14
-        },
-        {
-          "move": "Extrasensory",
-          "level": 19
-        },
-        {
-          "move": "Iron Defense",
-          "level": 26
-        },
-        {
-          "move": "Safeguard",
-          "level": 30
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 38
-        },
-        {
-          "move": "Future Sight",
-          "level": 43
-        },
-        {
-          "move": "Feint Attack",
-          "level": 50
-        },
-        {
-          "move": "Payback",
-          "level": 61
-        },
-        {
-          "move": "Heal Block",
-          "level": 67
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Skill Swap",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Recycle",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Stealth Rock",
-          "tm": "TM76"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 7
-        },
-        {
-          "move": "Imprison",
-          "level": 12
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 14
-        },
-        {
-          "move": "Extrasensory",
-          "level": 19
-        },
-        {
-          "move": "Iron Defense",
-          "level": 26
-        },
-        {
-          "move": "Safeguard",
-          "level": 30
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 38
-        },
-        {
-          "move": "Future Sight",
-          "level": 43
-        },
-        {
-          "move": "Feint Attack",
-          "level": 50
-        },
-        {
-          "move": "Payback",
-          "level": 61
-        },
-        {
-          "move": "Heal Block",
-          "level": 67
-        },
-        {
-          "move": "Heavy Slam",
-          "level": 72
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 5
-        },
-        {
-          "move": "Imprison",
-          "level": 9
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 11
-        },
-        {
-          "move": "Psywave",
-          "level": 15
-        },
-        {
-          "move": "Iron Defense",
-          "level": 19
-        },
-        {
-          "move": "Feint Attack",
-          "level": 21
-        },
-        {
-          "move": "Safeguard",
-          "level": 25
-        },
-        {
-          "move": "Future Sight",
-          "level": 29
-        },
-        {
-          "move": "Metal Sound",
-          "level": 31
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 36
-        },
-        {
-          "move": "Extrasensory",
-          "level": 42
-        },
-        {
-          "move": "Payback",
-          "level": 46
-        },
-        {
-          "move": "Heal Block",
-          "level": 52
-        },
-        {
-          "move": "Heavy Slam",
-          "level": 58
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Telekinesis",
-          "tm": "TM19"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 5
-        },
-        {
-          "move": "Imprison",
-          "level": 9
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 11
-        },
-        {
-          "move": "Psywave",
-          "level": 15
-        },
-        {
-          "move": "Iron Defense",
-          "level": 19
-        },
-        {
-          "move": "Feint Attack",
-          "level": 21
-        },
-        {
-          "move": "Safeguard",
-          "level": 25
-        },
-        {
-          "move": "Future Sight",
-          "level": 29
-        },
-        {
-          "move": "Metal Sound",
-          "level": 31
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 36
-        },
-        {
-          "move": "Extrasensory",
-          "level": 42
-        },
-        {
-          "move": "Payback",
-          "level": 46
-        },
-        {
-          "move": "Heal Block",
-          "level": 52
-        },
-        {
-          "move": "Heavy Slam",
-          "level": 58
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 5
-        },
-        {
-          "move": "Imprison",
-          "level": 9
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 11
-        },
-        {
-          "move": "Psywave",
-          "level": 15
-        },
-        {
-          "move": "Iron Defense",
-          "level": 19
-        },
-        {
-          "move": "Feint Attack",
-          "level": 21
-        },
-        {
-          "move": "Safeguard",
-          "level": 25
-        },
-        {
-          "move": "Future Sight",
-          "level": 29
-        },
-        {
-          "move": "Metal Sound",
-          "level": 31
-        },
-        {
-          "move": "Block",
-          "level": 33
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 36
-        },
-        {
-          "move": "Extrasensory",
-          "level": 42
-        },
-        {
-          "move": "Payback",
-          "level": 46
-        },
-        {
-          "move": "Heal Block",
-          "level": 52
-        },
-        {
-          "move": "Heavy Slam",
-          "level": 58
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 5
-        },
-        {
-          "move": "Imprison",
-          "level": 9
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 11
-        },
-        {
-          "move": "Psywave",
-          "level": 15
-        },
-        {
-          "move": "Iron Defense",
-          "level": 19
-        },
-        {
-          "move": "Feint Attack",
-          "level": 21
-        },
-        {
-          "move": "Safeguard",
-          "level": 25
-        },
-        {
-          "move": "Future Sight",
-          "level": 29
-        },
-        {
-          "move": "Metal Sound",
-          "level": 31
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 36
-        },
-        {
-          "move": "Extrasensory",
-          "level": 42
-        },
-        {
-          "move": "Payback",
-          "level": 46
-        },
-        {
-          "move": "Heal Block",
-          "level": 52
-        },
-        {
-          "move": "Heavy Slam",
-          "level": 58
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Block",
-          "level": 1
-        },
-        {
-          "move": "Confusion",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 1
-        },
-        {
-          "move": "Imprison",
-          "level": 1
-        },
-        {
-          "move": "Rain Dance",
-          "level": 1
-        },
-        {
-          "move": "Sunny Day",
-          "level": 1
-        },
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Hypnosis",
-          "level": 5
-        },
-        {
-          "move": "Imprison",
-          "level": 9
-        },
-        {
-          "move": "Confuse Ray",
-          "level": 11
-        },
-        {
-          "move": "Psywave",
-          "level": 15
-        },
-        {
-          "move": "Iron Defense",
-          "level": 19
-        },
-        {
-          "move": "Feint Attack",
-          "level": 21
-        },
-        {
-          "move": "Safeguard",
-          "level": 25
-        },
-        {
-          "move": "Future Sight",
-          "level": 29
-        },
-        {
-          "move": "Metal Sound",
-          "level": 31
-        },
-        {
-          "move": "Gyro Ball",
-          "level": 36
-        },
-        {
-          "move": "Extrasensory",
-          "level": 42
-        },
-        {
-          "move": "Payback",
-          "level": 46
-        },
-        {
-          "move": "Heal Block",
-          "level": 52
-        },
-        {
-          "move": "Heavy Slam",
-          "level": 58
-        },
-        {
-          "move": "Psyshock",
-          "tm": "TM3"
-        },
-        {
-          "move": "Calm Mind",
-          "tm": "TM4"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Light Screen",
-          "tm": "TM16"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Solar Beam",
-          "tm": "TM22"
-        },
-        {
-          "move": "Earthquake",
-          "tm": "TM26"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Reflect",
-          "tm": "TM33"
-        },
-        {
-          "move": "Sandstorm",
-          "tm": "TM37"
-        },
-        {
-          "move": "Rock Tomb",
-          "tm": "TM39"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Explosion",
-          "tm": "TM64"
-        },
-        {
-          "move": "Payback",
-          "tm": "TM66"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Rock Polish",
-          "tm": "TM69"
-        },
-        {
-          "move": "Gyro Ball",
-          "tm": "TM74"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Bulldoze",
-          "tm": "TM78"
-        },
-        {
-          "move": "Rock Slide",
-          "tm": "TM80"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Flash Cannon",
-          "tm": "TM91"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

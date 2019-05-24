@@ -1,1632 +1,302 @@
 {
-  "names": {
-    "fr": "Moyade",
-    "de": "Apoquallyp",
-    "it": "Jellicent",
-    "en": "Jellicent"
-  },
-  "national_id": 593,
-  "types": [
-    "Water",
-    "Ghost"
-  ],
-  "abilities": [
-    {
-      "name": "Water Absorb"
-    },
-    {
-      "name": "Cursed Body"
-    },
-    {
-      "name": "Damp",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 60,
-  "egg_groups": [
-    "Amorphous"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "7'03\"",
-  "height_eu": "2.2 m",
-  "weight_us": "297.6 lbs.",
-  "weight_eu": "135.0 kg",
-  "base_exp_yield": 168,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 2,
-    "speed": 0
-  },
-  "color": "White",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 100,
-    "atk": 60,
-    "def": 70,
-    "sp_atk": 85,
-    "sp_def": 105,
-    "speed": 60
-  },
-  "evolution_from": "Frillish",
-  "categories": {
-    "en": "Floating Pokémon",
-    "de": "Gleit"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": 99,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-    {
-      "condition": "female",
-      "image_suffix": "female",
-      "names": {
-        "en": "Female",
-        "de": "Weiblich"
-      },
-      "types": [
+    "name": "Jellicent",
+    "national_id": 593,
+    "types": [
         "Water",
         "Ghost"
-      ]
-    }
-  ],
-  "pokedex_entries": {
-    "Black": {
-      "en": "The fate of the ships and crew that wander into Jellicent's habitat: all sunken, all lost, all vanished.",
-      "de": "Dringt ein Schiff in sein Revier ein, bringt es dieses zum Kentern und saugt die Lebensenergie aus der Besatzung."
-    },
-    "White": {
-      "en": "They propel themselves by expelling absorbed seawater from their bodies. Their favorite food is life energy.",
-      "de": "Es bewegt sich wie mit einer Düse fort, indem es Meerwasser ausstößt. Seine Leibspeise ist Lebensenergie."
-    },
-    "Black 2": {
-      "en": "Its body is mostly seawater. It's said there's a castle of ships Jellicent have sunk on the seafloor.",
-      "de": "Es heißt, am Meeresboden gebe es einen Palast aus Schiffen, die es versenkt hat. Es besteht fast nur aus Meerwasser."
-    },
-    "White 2": {
-      "en": "Its body is mostly seawater. It's said there's a castle of ships Jellicent have sunk on the seafloor.",
-      "de": "Es heißt, am Meeresboden gebe es einen Palast aus Schiffen, die es versenkt hat. Es besteht fast nur aus Meerwasser."
-    },
-    "X": {
-      "en": "Its body is mostly seawater. It's said there's a castle of ships Jellicent have sunk on the seafloor.",
-      "de": "Es heißt, am Meeresboden gebe es einen Palast aus Schiffen, die es versenkt hat. Es besteht fast nur aus Meerwasser."
-    },
-    "Y": {
-      "en": "The fate of the ships and crew that wander into Jellicent's habitat: all sunken, all lost, all vanished.",
-      "de": "Dringt ein Schiff in sein Revier ein, bringt es dieses zum Kentern und saugt die Lebensenergie aus der Besatzung."
-    },
-    "Omega Ruby": {
-      "en": "Its body is mostly seawater. It's said there's a castle of ships Jellicent have sunk on the seafloor.",
-      "de": "Dringt ein Schiff in sein Revier ein, bringt es dieses zum Kentern und saugt die Lebensenergie aus der Besatzung."
-    },
-    "Alpha Sapphire": {
-      "en": "The fate of the ships and crew that wander into Jellicent's habitat: all sunken, all lost, all vanished.",
-      "de": "Dringt ein Schiff in sein Revier ein, bringt es dieses zum Kentern und saugt die Lebensenergie aus der Besatzung."
-    },
-    "Ultra Sun": {
-      "en": "Jellicent is always hanging around fancy cruise ships and tankers, hoping to drag away its prey.",
-      "de": "Dieses Pokémon schwimmt Kreuzfahrtschiffen und Tankern hinterher. Bei Gelegenheit zieht es Beute zu sich ins Meer."
-    },
-    "Ultra Moon": {
-      "en": "Fishermen are terrified of Jellicent. It’s rumored to drag them into the sea and steal their lives away.",
-      "de": "Von Fischern wird es gefürchtet. Man sagt, es würde Menschen in die Tiefen des Meeres hinabzerren und ihnen das Leben rauben."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Water Absorb"
+        },
+        {
+            "name": "Cursed Body"
+        },
+        {
+            "name": "Damp",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 60,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Amorphous"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "7'03\"",
+    "height_eu": "2.2 m",
+    "weight_us": "297.6 lbs.",
+    "weight_eu": "135.0 kg",
+    "base_exp_yield": 168,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 2,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 100,
+        "atk": 60,
+        "def": 70,
+        "sp_atk": 85,
+        "sp_def": 105,
+        "speed": 60
+    },
+    "evolution_from": "Frillish",
+    "evolutions": [],
+    "species": "Floating Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "The fate of the ships and crew that wander into Jellicent's habitat: all sunken, all lost, all vanished.",
+    "move_learnset": [
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Bubble",
+            "level": 1
+        },
+        {
+            "move": "Night Shade",
+            "level": 1
+        },
+        {
+            "move": "Water Sport",
+            "level": 1
+        },
+        {
+            "move": "Water Spout",
+            "level": 1
+        },
+        {
+            "move": "Wring Out",
+            "level": 1
+        },
+        {
+            "move": "Absorb",
+            "level": 5
+        },
+        {
+            "move": "Night Shade",
+            "level": 9
+        },
+        {
+            "move": "Bubble Beam",
+            "level": 13
+        },
+        {
+            "move": "Recover",
+            "level": 17
+        },
+        {
+            "move": "Water Pulse",
+            "level": 22
+        },
+        {
+            "move": "Ominous Wind",
+            "level": 27
+        },
+        {
+            "move": "Brine",
+            "level": 32
+        },
+        {
+            "move": "Rain Dance",
+            "level": 37
+        },
+        {
+            "move": "Hex",
+            "level": 45
+        },
+        {
+            "move": "Hydro Pump",
+            "level": 53
+        },
+        {
+            "move": "Wring Out",
+            "level": 61
+        },
+        {
+            "move": "Water Spout",
+            "level": 69
+        },
+        {
+            "move": "Acid Armor",
+            "egg_move": true
+        },
+        {
+            "move": "Confuse Ray",
+            "egg_move": true
+        },
+        {
+            "move": "Constrict",
+            "egg_move": true
+        },
+        {
+            "move": "Mist",
+            "egg_move": true
+        },
+        {
+            "move": "Pain Split",
+            "egg_move": true
+        },
+        {
+            "move": "Recover",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hail",
+            "tm": "TM7"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Ice Beam",
+            "tm": "TM13"
+        },
+        {
+            "move": "Blizzard",
+            "tm": "TM14"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": "TM30"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": "TM34"
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Energy Ball",
+            "tm": "TM53"
+        },
+        {
+            "move": "Scald",
+            "tm": "TM55"
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": "TM61"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Psych Up",
+            "tm": "TM77"
+        },
+        {
+            "move": "Dream Eater",
+            "tm": "TM85"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Trick Room",
+            "tm": "TM92"
+        },
+        {
+            "move": "Surf",
+            "tm": "TM94"
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": "TM97"
+        },
+        {
+            "move": "Waterfall",
+            "tm": "TM98"
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": "TM99"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 140,
-  "move_learnsets": [
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Bubble",
-          "level": 1
-        },
-        {
-          "move": "Night Shade",
-          "level": 1
-        },
-        {
-          "move": "Water Sport",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 5
-        },
-        {
-          "move": "Night Shade",
-          "level": 9
-        },
-        {
-          "move": "Bubble Beam",
-          "level": 13
-        },
-        {
-          "move": "Recover",
-          "level": 17
-        },
-        {
-          "move": "Water Pulse",
-          "level": 22
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 27
-        },
-        {
-          "move": "Brine",
-          "level": 32
-        },
-        {
-          "move": "Rain Dance",
-          "level": 37
-        },
-        {
-          "move": "Hex",
-          "level": 45
-        },
-        {
-          "move": "Hydro Pump",
-          "level": 53
-        },
-        {
-          "move": "Wring Out",
-          "level": 61
-        },
-        {
-          "move": "Water Spout",
-          "level": 69
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Confuse Ray",
-          "egg_move": true
-        },
-        {
-          "move": "Constrict",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Pain Split",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Waterfall",
-          "tm": "HM5"
-        },
-        {
-          "move": "Dive",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Bubble",
-          "level": 1
-        },
-        {
-          "move": "Night Shade",
-          "level": 1
-        },
-        {
-          "move": "Water Sport",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 5
-        },
-        {
-          "move": "Night Shade",
-          "level": 9
-        },
-        {
-          "move": "Bubble Beam",
-          "level": 13
-        },
-        {
-          "move": "Recover",
-          "level": 17
-        },
-        {
-          "move": "Water Pulse",
-          "level": 22
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 27
-        },
-        {
-          "move": "Brine",
-          "level": 32
-        },
-        {
-          "move": "Rain Dance",
-          "level": 37
-        },
-        {
-          "move": "Hex",
-          "level": 45
-        },
-        {
-          "move": "Hydro Pump",
-          "level": 53
-        },
-        {
-          "move": "Wring Out",
-          "level": 61
-        },
-        {
-          "move": "Water Spout",
-          "level": 69
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Confuse Ray",
-          "egg_move": true
-        },
-        {
-          "move": "Constrict",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Pain Split",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Waterfall",
-          "tm": "HM5"
-        },
-        {
-          "move": "Dive",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Bubble",
-          "level": 1
-        },
-        {
-          "move": "Night Shade",
-          "level": 1
-        },
-        {
-          "move": "Water Sport",
-          "level": 1
-        },
-        {
-          "move": "Water Spout",
-          "level": 1
-        },
-        {
-          "move": "Wring Out",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 5
-        },
-        {
-          "move": "Night Shade",
-          "level": 9
-        },
-        {
-          "move": "Bubble Beam",
-          "level": 13
-        },
-        {
-          "move": "Recover",
-          "level": 17
-        },
-        {
-          "move": "Water Pulse",
-          "level": 22
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 27
-        },
-        {
-          "move": "Brine",
-          "level": 32
-        },
-        {
-          "move": "Rain Dance",
-          "level": 37
-        },
-        {
-          "move": "Hex",
-          "level": 45
-        },
-        {
-          "move": "Hydro Pump",
-          "level": 53
-        },
-        {
-          "move": "Wring Out",
-          "level": 61
-        },
-        {
-          "move": "Water Spout",
-          "level": 69
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Confuse Ray",
-          "egg_move": true
-        },
-        {
-          "move": "Constrict",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Pain Split",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Waterfall",
-          "tm": "HM5"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Bubble",
-          "level": 1
-        },
-        {
-          "move": "Night Shade",
-          "level": 1
-        },
-        {
-          "move": "Water Sport",
-          "level": 1
-        },
-        {
-          "move": "Water Spout",
-          "level": 1
-        },
-        {
-          "move": "Wring Out",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 5
-        },
-        {
-          "move": "Night Shade",
-          "level": 9
-        },
-        {
-          "move": "Bubble Beam",
-          "level": 13
-        },
-        {
-          "move": "Recover",
-          "level": 17
-        },
-        {
-          "move": "Water Pulse",
-          "level": 22
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 27
-        },
-        {
-          "move": "Brine",
-          "level": 32
-        },
-        {
-          "move": "Rain Dance",
-          "level": 37
-        },
-        {
-          "move": "Hex",
-          "level": 45
-        },
-        {
-          "move": "Hydro Pump",
-          "level": 53
-        },
-        {
-          "move": "Wring Out",
-          "level": 61
-        },
-        {
-          "move": "Water Spout",
-          "level": 69
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Confuse Ray",
-          "egg_move": true
-        },
-        {
-          "move": "Constrict",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Pain Split",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Surf",
-          "tm": "HM3"
-        },
-        {
-          "move": "Waterfall",
-          "tm": "HM5"
-        },
-        {
-          "move": "Dive",
-          "tm": "HM7"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Bubble",
-          "level": 1
-        },
-        {
-          "move": "Night Shade",
-          "level": 1
-        },
-        {
-          "move": "Water Sport",
-          "level": 1
-        },
-        {
-          "move": "Water Spout",
-          "level": 1
-        },
-        {
-          "move": "Wring Out",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 5
-        },
-        {
-          "move": "Night Shade",
-          "level": 9
-        },
-        {
-          "move": "Bubble Beam",
-          "level": 13
-        },
-        {
-          "move": "Recover",
-          "level": 17
-        },
-        {
-          "move": "Water Pulse",
-          "level": 22
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 27
-        },
-        {
-          "move": "Brine",
-          "level": 32
-        },
-        {
-          "move": "Rain Dance",
-          "level": 37
-        },
-        {
-          "move": "Hex",
-          "level": 45
-        },
-        {
-          "move": "Hydro Pump",
-          "level": 53
-        },
-        {
-          "move": "Wring Out",
-          "level": 61
-        },
-        {
-          "move": "Water Spout",
-          "level": 69
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Confuse Ray",
-          "egg_move": true
-        },
-        {
-          "move": "Constrict",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Pain Split",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Surf",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Waterfall",
-          "tm": "TM98"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Absorb",
-          "level": 1
-        },
-        {
-          "move": "Bubble",
-          "level": 1
-        },
-        {
-          "move": "Night Shade",
-          "level": 1
-        },
-        {
-          "move": "Water Sport",
-          "level": 1
-        },
-        {
-          "move": "Water Spout",
-          "level": 1
-        },
-        {
-          "move": "Wring Out",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 5
-        },
-        {
-          "move": "Night Shade",
-          "level": 9
-        },
-        {
-          "move": "Bubble Beam",
-          "level": 13
-        },
-        {
-          "move": "Recover",
-          "level": 17
-        },
-        {
-          "move": "Water Pulse",
-          "level": 22
-        },
-        {
-          "move": "Ominous Wind",
-          "level": 27
-        },
-        {
-          "move": "Brine",
-          "level": 32
-        },
-        {
-          "move": "Rain Dance",
-          "level": 37
-        },
-        {
-          "move": "Hex",
-          "level": 45
-        },
-        {
-          "move": "Hydro Pump",
-          "level": 53
-        },
-        {
-          "move": "Wring Out",
-          "level": 61
-        },
-        {
-          "move": "Water Spout",
-          "level": 69
-        },
-        {
-          "move": "Acid Armor",
-          "egg_move": true
-        },
-        {
-          "move": "Confuse Ray",
-          "egg_move": true
-        },
-        {
-          "move": "Constrict",
-          "egg_move": true
-        },
-        {
-          "move": "Mist",
-          "egg_move": true
-        },
-        {
-          "move": "Pain Split",
-          "egg_move": true
-        },
-        {
-          "move": "Recover",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hail",
-          "tm": "TM7"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Ice Beam",
-          "tm": "TM13"
-        },
-        {
-          "move": "Blizzard",
-          "tm": "TM14"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Safeguard",
-          "tm": "TM20"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Psychic",
-          "tm": "TM29"
-        },
-        {
-          "move": "Shadow Ball",
-          "tm": "TM30"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Sludge Wave",
-          "tm": "TM34"
-        },
-        {
-          "move": "Sludge Bomb",
-          "tm": "TM36"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Energy Ball",
-          "tm": "TM53"
-        },
-        {
-          "move": "Scald",
-          "tm": "TM55"
-        },
-        {
-          "move": "Will-O-Wisp",
-          "tm": "TM61"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Psych Up",
-          "tm": "TM77"
-        },
-        {
-          "move": "Dream Eater",
-          "tm": "TM85"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Trick Room",
-          "tm": "TM92"
-        },
-        {
-          "move": "Surf",
-          "tm": "TM94"
-        },
-        {
-          "move": "Dark Pulse",
-          "tm": "TM97"
-        },
-        {
-          "move": "Waterfall",
-          "tm": "TM98"
-        },
-        {
-          "move": "Dazzling Gleam",
-          "tm": "TM99"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

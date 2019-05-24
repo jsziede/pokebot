@@ -1,1802 +1,232 @@
 {
-  "names": {
-    "fr": "Mélokrik",
-    "de": "Zirpeise",
-    "it": "Kricketune",
-    "en": "Kricketune"
-  },
-  "national_id": 402,
-  "types": [
-    "Bug"
-  ],
-  "items": [
-      {
-          "name": "Metronome",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Swarm"
-    },
-    {
-      "name": "Technician",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 45,
-  "egg_groups": [
-    "Bug"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "3'03\"",
-  "height_eu": "1.0 m",
-  "weight_us": "56.2 lbs.",
-  "weight_eu": "25.5 kg",
-  "base_exp_yield": 134,
-  "leveling_rate": "Medium Slow",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 2,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 0
-  },
-  "color": "Red",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 77,
-    "atk": 85,
-    "def": 51,
-    "sp_atk": 55,
-    "sp_def": 51,
-    "speed": 65
-  },
-  "evolution_from": "Kricketot",
-  "categories": {
-    "en": "Cricket Pokémon",
-    "de": "Zirper"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": 16,
-  "unova_id": null,
-  "kalos_id": null,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "It crosses its knifelike arms in front of its chest when it cries. It can compose melodies ad lib.",
-      "de": "Wenn es ruft, verschränkt es seine messerartigen Arme vor der Brust. Es komponiert aus dem Stegreif."
-    },
-    "Pearl": {
-      "en": "It signals its emotions with its melodies. Scientists are studying these melodic patterns.",
-      "de": "Über seine Melodien teilt es seine Gefühle mit. Wissenschaftler unter- suchen das Muster der Melodien."
-    },
-    "Platinum": {
-      "en": "There is a village that hosts a contest based on the amazingly variable cries of this Pokémon.",
-      "de": "Es gibt ein Dorf, das basierend auf den imposanten Rufen dieses PKMN einen Wettbewerb veranstaltet."
-    },
-    "HeartGold": {
-      "en": "By allowing its cry to resonate in the hollow of its belly, it produces a captivating sound.",
-      "de": "Wenn es ruft, verschränkt es seine messerartigen Arme vor der Brust. Es komponiert aus dem Stegreif."
-    },
-    "SoulSilver": {
-      "en": "By allowing its cry to resonate in the hollow of its belly, it produces a captivating sound.",
-      "de": "Wenn es ruft, verschränkt es seine messerartigen Arme vor der Brust. Es komponiert aus dem Stegreif."
-    },
-    "Black": {
-      "en": "There is a village that hosts a contest based on the amazingly variable cries of this Pokémon.",
-      "de": "Es gibt ein Dorf, das basierend auf den imposanten Rufen dieses Pokémon einen Wettbewerb veranstaltet."
-    },
-    "White": {
-      "en": "There is a village that hosts a contest based on the amazingly variable cries of this Pokémon.",
-      "de": "Es gibt ein Dorf, das basierend auf den imposanten Rufen dieses Pokémon einen Wettbewerb veranstaltet."
-    },
-    "Black 2": {
-      "en": "There is a village that hosts a contest based on the amazingly variable cries of this Pokémon.",
-      "de": "Es gibt ein Dorf, das basierend auf den imposanten Rufen dieses Pokémon einen Wettbewerb veranstaltet."
-    },
-    "White 2": {
-      "en": "There is a village that hosts a contest based on the amazingly variable cries of this Pokémon.",
-      "de": "Es gibt ein Dorf, das basierend auf den imposanten Rufen dieses Pokémon einen Wettbewerb veranstaltet."
-    },
-    "X": {
-      "en": "It crosses its knifelike arms in front of its chest when it cries. It can compose melodies ad lib.",
-      "de": "Wenn es ruft, verschränkt es seine messerartigen Arme vor der Brust. Es komponiert aus dem Stegreif."
-    },
-    "Y": {
-      "en": "It signals its emotions with its melodies. Scientists are studying these melodic patterns.",
-      "de": "Über seine Melodien teilt es seine Gefühle mit. Wissenschaftler untersuchen das Muster der Melodien."
-    },
-    "Omega Ruby": {
-      "en": "It crosses its knifelike arms in front of its chest when it cries. It can compose melodies ad lib.",
-      "de": "Über seine Melodien teilt es seine Gefühle mit. Wissenschaftler untersuchen das Muster der Melodien."
-    },
-    "Alpha Sapphire": {
-      "en": "It signals its emotions with its melodies. Scientists are studying these melodic patterns.",
-      "de": "Über seine Melodien teilt es seine Gefühle mit. Wissenschaftler untersuchen das Muster der Melodien."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      3,
-      4
+    "name": "Kricketune",
+    "national_id": 402,
+    "types": [
+        "Bug"
     ],
-    "power": [
-      2,
-      3
+    "items": [
+        {
+            "name": "Metronome",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      3,
-      3
+    "abilities": [
+        {
+            "name": "Swarm"
+        },
+        {
+            "name": "Technician",
+            "hidden": true
+        }
     ],
-    "skill": [
-      4,
-      5
+    "catch_rate": 45,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Bug"
     ],
-    "jump": [
-      3,
-      3
+    "hatch_time": [
+        4080,
+        4334
+    ],
+    "height_us": "3'03\"",
+    "height_eu": "1.0 m",
+    "weight_us": "56.2 lbs.",
+    "weight_eu": "25.5 kg",
+    "base_exp_yield": 134,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 2,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 77,
+        "atk": 85,
+        "def": 51,
+        "sp_atk": 55,
+        "sp_def": 51,
+        "speed": 65
+    },
+    "evolution_from": "Kricketot",
+    "evolutions": [],
+    "species": "Cricket Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It signals its emotions with its melodies. Scientists are studying these melodic patterns.",
+    "move_learnset": [
+        {
+            "move": "Bide",
+            "level": 1
+        },
+        {
+            "move": "Fury Cutter",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 1
+        },
+        {
+            "move": "Absorb",
+            "level": 14
+        },
+        {
+            "move": "Sing",
+            "level": 18
+        },
+        {
+            "move": "Focus Energy",
+            "level": 22
+        },
+        {
+            "move": "Slash",
+            "level": 26
+        },
+        {
+            "move": "X-Scissor",
+            "level": 30
+        },
+        {
+            "move": "Screech",
+            "level": 34
+        },
+        {
+            "move": "Fell Stinger",
+            "level": 36
+        },
+        {
+            "move": "Taunt",
+            "level": 38
+        },
+        {
+            "move": "Night Slash",
+            "level": 42
+        },
+        {
+            "move": "Sticky Web",
+            "level": 44
+        },
+        {
+            "move": "Bug Buzz",
+            "level": 46
+        },
+        {
+            "move": "Perish Song",
+            "level": 50
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Taunt",
+            "tm": "TM12"
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Leech Life",
+            "tm": "TM28"
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49"
+        },
+        {
+            "move": "False Swipe",
+            "tm": "TM54"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Swords Dance",
+            "tm": "TM75"
+        },
+        {
+            "move": "X-Scissor",
+            "tm": "TM81"
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "X-Scissor",
-          "level": 26
-        },
-        {
-          "move": "Screech",
-          "level": 30
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 34
-        },
-        {
-          "move": "Perish Song",
-          "level": 38
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Silver Wind",
-          "tm": "TM62"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Silver Wind",
-          "tm": "TM62"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM43"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Endure",
-          "tm": "TM58"
-        },
-        {
-          "move": "Silver Wind",
-          "tm": "TM62"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Captivate",
-          "tm": "TM78"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM82"
-        },
-        {
-          "move": "Natural Gift",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 36
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Sticky Web",
-          "level": 44
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 10
-        },
-        {
-          "move": "Leech Life",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 36
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Sticky Web",
-          "level": 44
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Strength",
-          "tm": "HM4"
-        },
-        {
-          "move": "Rock Smash",
-          "tm": "HM6"
-        },
-        {
-          "move": "Hone Claws",
-          "tm": "TM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "Struggle Bug",
-          "tm": "TM76"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Power-Up Punch",
-          "tm": "TM98"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 36
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Sticky Web",
-          "level": 44
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Leech Life",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Bide",
-          "level": 1
-        },
-        {
-          "move": "Fury Cutter",
-          "level": 1
-        },
-        {
-          "move": "Growl",
-          "level": 1
-        },
-        {
-          "move": "Absorb",
-          "level": 14
-        },
-        {
-          "move": "Sing",
-          "level": 18
-        },
-        {
-          "move": "Focus Energy",
-          "level": 22
-        },
-        {
-          "move": "Slash",
-          "level": 26
-        },
-        {
-          "move": "X-Scissor",
-          "level": 30
-        },
-        {
-          "move": "Screech",
-          "level": 34
-        },
-        {
-          "move": "Fell Stinger",
-          "level": 36
-        },
-        {
-          "move": "Taunt",
-          "level": 38
-        },
-        {
-          "move": "Night Slash",
-          "level": 42
-        },
-        {
-          "move": "Sticky Web",
-          "level": 44
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 46
-        },
-        {
-          "move": "Perish Song",
-          "level": 50
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Taunt",
-          "tm": "TM12"
-        },
-        {
-          "move": "Hyper Beam",
-          "tm": "TM15"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Leech Life",
-          "tm": "TM28"
-        },
-        {
-          "move": "Brick Break",
-          "tm": "TM31"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Echoed Voice",
-          "tm": "TM49"
-        },
-        {
-          "move": "False Swipe",
-          "tm": "TM54"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Swords Dance",
-          "tm": "TM75"
-        },
-        {
-          "move": "X-Scissor",
-          "tm": "TM81"
-        },
-        {
-          "move": "Infestation",
-          "tm": "TM83"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }

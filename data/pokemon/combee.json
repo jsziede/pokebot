@@ -1,365 +1,89 @@
 {
-  "names": {
-    "fr": "Apitrini",
-    "de": "Wadribie",
-    "it": "Combee",
-    "en": "Combee"
-  },
-  "national_id": 415,
-  "types": [
-    "Bug",
-    "Flying"
-  ],
-  "items": [
-      {
-          "name": "Honey",
-          "chance": 5
-      }
-  ],
-  "abilities": [
-    {
-      "name": "Honey Gather"
-    },
-    {
-      "name": "Hustle",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 87.5,
-    "female": 12.5
-  },
-  "catch_rate": 120,
-  "egg_groups": [
-    "Bug"
-  ],
-  "hatch_time": [
-    4080,
-    4334
-  ],
-  "height_us": "1'00\"",
-  "height_eu": "0.3 m",
-  "weight_us": "12.1 lbs.",
-  "weight_eu": "5.5 kg",
-  "base_exp_yield": 49,
-  "leveling_rate": "Medium Slow",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 1
-  },
-  "color": "Yellow",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 30,
-    "atk": 30,
-    "def": 42,
-    "sp_atk": 30,
-    "sp_def": 42,
-    "speed": 70
-  },
-  "evolutions": [
-    {
-      "to": "Vespiquen",
-      "level": 21,
-      "conditions": [
-        "Female"
-      ]
-    }
-  ],
-  "categories": {
-    "en": "Tiny Bee Pokémon",
-    "de": "Kleinbiene"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": 53,
-  "unova_id": null,
-  "kalos_id": 76,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "Diamond": {
-      "en": "A Pokémon formed by three others. It busily carries sweet floral honey to Vespiquen.",
-      "de": "Ein PKMN, geformt aus 3 einzelnen PKMN. Fleißig bringt es Blütenhonig zu HONWEISEL."
-    },
-    "Pearl": {
-      "en": "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
-      "de": "Es sammelt Honig und bringt ihn in seine Kolonie. Nachts bilden sie einen Bienenstock und schlafen."
-    },
-    "Platinum": {
-      "en": "The trio is together from birth. It constantly gathers honey from flowers to please Vespiquen.",
-      "de": "Dieses Trio ist von Geburt an zusammen. Fleißig bringt es Blütenhonig zu HONWEISEL."
-    },
-    "HeartGold": {
-      "en": "At night, Combee sleep in a group of about a thousand, packed closely together in a lump.",
-      "de": "Ein PKMN, geformt aus 3 einzelnen PKMN. Fleißig bringt es Blütenhonig zu HONWEISEL."
-    },
-    "SoulSilver": {
-      "en": "At night, Combee sleep in a group of about a thousand, packed closely together in a lump.",
-      "de": "Ein PKMN, geformt aus 3 einzelnen PKMN. Fleißig bringt es Blütenhonig zu HONWEISEL."
-    },
-    "Black": {
-      "en": "The trio is together from birth. It constantly gathers honey from flowers to please Vespiquen.",
-      "de": "Dieses Trio ist von Geburt an zusammen. Fleißig bringt es Blütenhonig zu Honweisel."
-    },
-    "White": {
-      "en": "The trio is together from birth. It constantly gathers honey from flowers to please Vespiquen.",
-      "de": "Dieses Trio ist von Geburt an zusammen. Fleißig bringt es Blütenhonig zu Honweisel."
-    },
-    "Black 2": {
-      "en": "This Pokémon is a set of three. When they sleep, they gather up and form a giant hive of 100 Combee.",
-      "de": "Ein Pokémon-Trio. Zur Schlafenszeit scharen sie sich zu Hunderten und bilden einen riesigen Bienenstock."
-    },
-    "White 2": {
-      "en": "This Pokémon is a set of three. When they sleep, they gather up and form a giant hive of 100 Combee.",
-      "de": "Ein Pokémon-Trio. Zur Schlafenszeit scharen sie sich zu Hunderten und bilden einen riesigen Bienenstock."
-    },
-    "X": {
-      "en": "The trio is together from birth. It constantly gathers honey from flowers to please Vespiquen.",
-      "de": "Dieses Trio ist von Geburt an zusammen. Fleißig bringt es Blütenhonig zu Honweisel."
-    },
-    "Y": {
-      "en": "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
-      "de": "Es sammelt Honig und bringt ihn in seine Kolonie. Nachts bilden sie einen Bienenstock und schlafen."
-    },
-    "Omega Ruby": {
-      "en": "The trio is together from birth. It constantly gathers honey from flowers to please Vespiquen.",
-      "de": "Es sammelt Honig und bringt ihn in seine Kolonie. Nachts bilden sie einen Bienenstock und schlafen."
-    },
-    "Alpha Sapphire": {
-      "en": "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
-      "de": "Es sammelt Honig und bringt ihn in seine Kolonie. Nachts bilden sie einen Bienenstock und schlafen."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      5,
-      5
+    "name": "Combee",
+    "national_id": 415,
+    "types": [
+        "Bug",
+        "Flying"
     ],
-    "power": [
-      1,
-      2
+    "items": [
+        {
+            "name": "Honey",
+            "chance": 5
+        }
     ],
-    "stamina": [
-      1,
-      2
+    "abilities": [
+        {
+            "name": "Honey Gather"
+        },
+        {
+            "name": "Hustle",
+            "hidden": true
+        }
     ],
-    "skill": [
-      1,
-      1
+    "catch_rate": 120,
+    "gender_ratios": {
+        "male": 87.5,
+        "female": 12.5
+    },
+    "egg_groups": [
+        "Bug"
     ],
-    "jump": [
-      5,
-      5
+    "hatch_time": [
+        4080,
+        4334
+    ],
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "12.1 lbs.",
+    "weight_eu": "5.5 kg",
+    "base_exp_yield": 49,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 1
+    },
+    "base_stats": {
+        "hp": 30,
+        "atk": 30,
+        "def": 42,
+        "sp_atk": 30,
+        "sp_def": 42,
+        "speed": 70
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Vespiquen",
+            "level": 21,
+            "conditions": [
+                "Female"
+            ]
+        }
+    ],
+    "species": "Tiny Bee Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
+    "move_learnset": [
+        {
+            "move": "Gust",
+            "level": 1
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 1
+        },
+        {
+            "move": "Bug Bite",
+            "level": 13
+        },
+        {
+            "move": "Bug Buzz",
+            "level": 29
+        }
     ]
-  },
-  "ultra_alola_id": null,
-  "move_learnsets": [
-    {
-      "games": [
-        "Diamond",
-        "Pearl"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "games": [
-        "Platinum"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        }
-      ]
-    },
-    {
-      "games": [
-        "HeartGold",
-        "SoulSilver"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black",
-        "White"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        }
-      ]
-    },
-    {
-      "games": [
-        "Black 2",
-        "White 2"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 29
-        }
-      ]
-    },
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 29
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 29
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 29
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Gust",
-          "level": 1
-        },
-        {
-          "move": "Sweet Scent",
-          "level": 1
-        },
-        {
-          "move": "Bug Bite",
-          "level": 13
-        },
-        {
-          "move": "Bug Buzz",
-          "level": 29
-        }
-      ]
-    }
-  ]
 }

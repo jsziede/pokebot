@@ -9,6 +9,7 @@
  *  @todo Add table for users who are currently inputting responses. This way if a user tries to do a command while Pokebot is awaiting input, Pokebot won't give two warning messages to the user.
  *  @todo All message sends need to be awaited, otherwise weirdness may happen.
  *  @todo Standardize the file names for json and images.
+ *  @todo When a Pokemon learns a new move from leveling up or evolving (and possibly other methods besides TMs), it can learn a duplicate move. Currently no duplicate moves are allowed.
 */
 
 /**
@@ -1902,7 +1903,7 @@ function generateModelLink(name, shiny, gender, form) {
     let pkmn = parseJSON(generatePokemonJSONPath(name));
     let url;
 
-    let lower = pkmn.names.en.toLowerCase();
+    let lower = pkmn.name.toLowerCase();
     
     /* Pokemon names are not always the same as the file names. */
     if (lower === "mr. mime") {
@@ -4279,30 +4280,30 @@ async function useItem(message, item) {
         var alreadyKnowsMove = false;
         var canLearnTM = false;
         if (lead.form === "Alolan") {
-            for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-                if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("tm") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === (pokemon.form + " " + pokemon.name) && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].tm === moveName) {
+            for (i = 0; i < pkmn.move_learnset.length; i++) {
+                if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].hasOwnProperty("tm") && pkmn.move_learnset[i].variations[0] === (pokemon.form + " " + pokemon.name) && pkmn.move_learnset[i].tm === moveName) {
                     canLearnTM = true;
                     var m;
                     for (m = 0; m < moves.length; m++) {
-                        if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                        if (moves[m].name === pkmn.move_learnset[i].move) {
                             alreadyKnowsMove = true;
                         }
                     }
                     if ((moves[0].name === '---' || moves[0].name === null) && !alreadyKnowsMove) {
-                        moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[0].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if ((moves[1].name === '---' || moves[1].name === null) && !alreadyKnowsMove) {
-                        moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[1].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if ((moves[2].name === '---' || moves[2].name === null) && !alreadyKnowsMove) {
-                        moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[2].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if ((moves[3].name === '---' || moves[3].name === null) && !alreadyKnowsMove) {
-                        moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[3].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if (!alreadyKnowsMove) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
-                        moves = await teachNewMove(message, lead, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move, moves);
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[i].move);
+                        moves = await teachNewMove(message, lead, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
                         message.channel.send(message.author.username + " your " + lead.name + " already knows " + moveName + ".");
@@ -4314,30 +4315,30 @@ async function useItem(message, item) {
                 message.channel.send(message.author.username + " your " + lead.name + " is unable to learn " + moveName + ".");
             }
         } else {
-            for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-                if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("tm") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move === moveName) {
+            for (i = 0; i < pkmn.move_learnset.length; i++) {
+                if (pkmn.move_learnset[i].hasOwnProperty("tm") && pkmn.move_learnset[i].move === moveName) {
                     canLearnTM = true;
                     var m;
                     for (m = 0; m < moves.length; m++) {
-                        if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                        if (moves[m].name === pkmn.move_learnset[i].move) {
                             alreadyKnowsMove = true;
                         }
                     }
                     if ((moves[0].name === '---' || moves[0].name === null) && !alreadyKnowsMove) {
-                        moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[0].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if ((moves[1].name === '---' || moves[1].name === null) && !alreadyKnowsMove) {
-                        moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[1].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if ((moves[2].name === '---' || moves[2].name === null) && !alreadyKnowsMove) {
-                        moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[2].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if ((moves[3].name === '---' || moves[3].name === null) && !alreadyKnowsMove) {
-                        moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        moves[3].name = pkmn.move_learnset[i].move;
+                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
                     } else if (!alreadyKnowsMove) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
-                        moves = await teachNewMove(message, lead, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move, moves);
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[i].move);
+                        moves = await teachNewMove(message, lead, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
                         message.channel.send(message.author.username + " your " + lead.name + " already knows " + moveName + ".");
@@ -5743,48 +5744,48 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
     var alreadyKnowsMove = false;
 
     if (pokemon.form === "Alolan" && pokemon.name != "Rattata" && pokemon.name != "Raticate") {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level === pokemon.level_current && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === (pokemon.form + " " + pokemon.name)) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === pokemon.level_current && pkmn.move_learnset[i].variations[0] === (pokemon.form + " " + pokemon.name)) {
                 if (askForResponse) {
                     message.react(duck.id);
                 }
                 var m;
                 for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    if (moves[m].name === pkmn.move_learnset[i].move) {
                         alreadyKnowsMove = true;
                     }
                 }
                 if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[0].name = pkmn.move_learnset[i].move;
+                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[1].name = pkmn.move_learnset[i].move;
+                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[2].name = pkmn.move_learnset[i].move;
+                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[3].name = pkmn.move_learnset[i].move;
+                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move, moves);
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
+                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
                     }
                 } else {
                     //already knows the move
@@ -5792,97 +5793,97 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
             }
         }
     } else if (pokemon.name === "Wormadam" || pokemon.name === "Shaymin" || pokemon.name === "Deoxys" || pokemon.name === "Hoopa" || pokemon.name === "Lycanroc") {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level === pokemon.level_current && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === pokemon.form) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === pokemon.level_current && pkmn.move_learnset[i].variations[0] === pokemon.form) {
                 if (askForResponse) {
                     message.react(duck.id);
                 }
                 var m;
                 for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    if (moves[m].name === pkmn.move_learnset[i].move) {
                         alreadyKnowsMove = true;
                     }
                 }
                 if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[0].name = pkmn.move_learnset[i].move;
+                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[1].name = pkmn.move_learnset[i].move;
+                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[2].name = pkmn.move_learnset[i].move;
+                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[3].name = pkmn.move_learnset[i].move;
+                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move, moves);
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
+                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
                     }
                 } else {
                     //already knows the move
                 }
             }
         }
-    } else if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[0].hasOwnProperty("variations")) {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level === pokemon.level_current && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations === pokemon.name) {
+    } else if (pkmn.move_learnset[0].hasOwnProperty("variations")) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === pokemon.level_current && pkmn.move_learnset[i].variations === pokemon.name) {
                 if (askForResponse) {
                     message.react(duck.id);
                 }
                 var m;
                 for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    if (moves[m].name === pkmn.move_learnset[i].move) {
                         alreadyKnowsMove = true;
                     }
                 }
                 if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[0].name = pkmn.move_learnset[i].move;
+                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[1].name = pkmn.move_learnset[i].move;
+                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[2].name = pkmn.move_learnset[i].move;
+                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[3].name = pkmn.move_learnset[i].move;
+                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move, moves);
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
+                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
                     }
                 } else {
                     //already knows the move
@@ -5890,49 +5891,49 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
             }
         }
     } else {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level === pokemon.level_current) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if (pkmn.move_learnset[i].level === pokemon.level_current) {
                 if (askForResponse) {
                     message.react(duck.id);
                 }
                 var m;
                 for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    if (moves[m].name === pkmn.move_learnset[i].move) {
                         alreadyKnowsMove = true;
                     }
                 }
                 if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[0].name = pkmn.move_learnset[i].move;
+                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[1].name = pkmn.move_learnset[i].move;
+                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[2].name = pkmn.move_learnset[i].move;
+                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                 } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                    moves[3].name = pkmn.move_learnset[i].move;
+                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
                     if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move + "!");
+                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                     }
                     
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move, moves);
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
+                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move);
+                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
                     }
                 } else {
                     //already knows the move
@@ -6782,28 +6783,28 @@ async function generatePokemonByName(message, name, level, region, location, hid
     var lastMoveSlotOverwritten = 0;
     var moves = [null, null, null, null];
     if (form === "Alolan" && name != "Rattata" && name != "Raticate") {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level <= level && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === (form + " " + name)) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if(pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level <= level && pkmn.move_learnset[i].variations[0] === (form + " " + name)) {
                 if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[0] = pkmn.move_learnset[i].move;
+                } else if (moves[0] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[1] = pkmn.move_learnset[i].move;
+                } else if (moves[1] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[2] = pkmn.move_learnset[i].move;
+                } else if (moves[2] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[3] = pkmn.move_learnset[i].move;
+                } else if (moves[3] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else {
                     random = Math.floor(Math.random() * 100);
                     if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
+                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
                         if (lastMoveSlotOverwritten === 3) {
                             lastMoveSlotOverwritten = 0
                         } else {
@@ -6814,28 +6815,28 @@ async function generatePokemonByName(message, name, level, region, location, hid
             }
         }
     } else if (name === "Wormadam" || name === "Shaymin" || name === "Deoxys" || name === "Hoopa" || name === "Lycanroc") {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty("variations") && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level === level && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === form) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === level && pkmn.move_learnset[i].variations[0] === form) {
                 if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[0] = pkmn.move_learnset[i].move;
+                } else if (moves[0] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[1] = pkmn.move_learnset[i].move;
+                } else if (moves[1] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[2] = pkmn.move_learnset[i].move;
+                } else if (moves[2] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[3] = pkmn.move_learnset[i].move;
+                } else if (moves[3] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else {
                     random = Math.floor(Math.random() * 100);
                     if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
+                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
                         if (lastMoveSlotOverwritten === 3) {
                             lastMoveSlotOverwritten = 0
                         } else {
@@ -6845,29 +6846,29 @@ async function generatePokemonByName(message, name, level, region, location, hid
                 }
             }
         }
-    } else if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[0].hasOwnProperty("variations")) {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level <= level && pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].variations[0] === name) {
+    } else if (pkmn.move_learnset[0].hasOwnProperty("variations")) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if(pkmn.move_learnset[i].level <= level && pkmn.move_learnset[i].variations[0] === name) {
                 if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[0] = pkmn.move_learnset[i].move;
+                } else if (moves[0] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[1] = pkmn.move_learnset[i].move;
+                } else if (moves[1] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[2] = pkmn.move_learnset[i].move;
+                } else if (moves[2] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[3] = pkmn.move_learnset[i].move;
+                } else if (moves[3] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else {
                     random = Math.floor(Math.random() * 100);
                     if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
+                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
                         if (lastMoveSlotOverwritten === 3) {
                             lastMoveSlotOverwritten = 0
                         } else {
@@ -6878,28 +6879,28 @@ async function generatePokemonByName(message, name, level, region, location, hid
             }
         }
     } else {
-        for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-            if(pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].level <= level) {
+        for (i = 0; i < pkmn.move_learnset.length; i++) {
+            if(pkmn.move_learnset[i].level <= level) {
                 if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[0] = pkmn.move_learnset[i].move;
+                } else if (moves[0] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[1] = pkmn.move_learnset[i].move;
+                } else if (moves[1] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[2] = pkmn.move_learnset[i].move;
+                } else if (moves[2] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move) {
+                    moves[3] = pkmn.move_learnset[i].move;
+                } else if (moves[3] === pkmn.move_learnset[i].move) {
                            //do nothing
                 } else {
                     random = Math.floor(Math.random() * 100);
                     if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].move;
+                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
                         if (lastMoveSlotOverwritten === 3) {
                             lastMoveSlotOverwritten = 0
                         } else {
@@ -10168,18 +10169,18 @@ async function getDexInfo(message, name, form) {
     
     pkmn = JSON.parse(data);
     
-    var imageName = await getGifName(pkmn.names.en);
+    var imageName = await getGifName(pkmn.name);
     
     var userID = message.author.id;
     
-    var modelLink = generateModelLink(pkmn.names.en, false, "Male", "None");
+    var modelLink = generateModelLink(pkmn.name, false, "Male", "None");
     if (modelLink === null) {
         return new Promise(function(resolve) {
             resolve(null);
         });
     }
 
-    var spriteLink = generateSpriteLink(pkmn.names.en, "Male", "None");
+    var spriteLink = generateSpriteLink(pkmn.name, "Male", "None");
     if (spriteLink === null) {
         return new Promise(function(resolve) {
             resolve(null);
@@ -10193,24 +10194,13 @@ async function getDexInfo(message, name, form) {
         types += ("\n" + type_icon + " " + pkmn.types[1]);
     }
     
-    var desc;
-    if (pkmn.national_id === 808 || pkmn.national_id === 809) {
-        desc = pkmn.pokedex_entries[ 'Let\'s Go Pikachu' ].en;
-    } else if (pkmn.national_id <= 721) {
-        desc = pkmn.pokedex_entries[ 'Alpha Sapphire' ].en;
-    } else {
-        desc = pkmn.pokedex_entries[ 'Ultra Sun' ].en;
-    }
-    
-    
-    
     const infoEmbed = {
        "author": {
-            "name": pkmn.names.en,
+            "name": pkmn.name,
             "icon_url": spriteLink,
         },
-        "title": pkmn.categories.en,
-        "description": desc,
+        "title": pkmn.species,
+        "description": pkmn.pokedex_entry,
         "color": getTypeColor(pkmn.types[0]),
         "thumbnail": {
              "url": "attachment://" + imageName + ".gif"
@@ -10239,7 +10229,7 @@ async function getDexInfo(message, name, form) {
         ]
     };
     
-    var movesByLevelString = pkmn.names.en + " does not learn any moves by leveling up.";
+    var movesByLevelString = pkmn.name + " does not learn any moves by leveling up.";
     var movesByLevelStringCont = null;
     var movesByLevel = getPokemonMoves(pkmn, form, "level");
     if (movesByLevel.length > 0) {
@@ -10290,7 +10280,7 @@ async function getDexInfo(message, name, form) {
     
     const attackEmbed = {
        "author": {
-            "name": pkmn.names.en,
+            "name": pkmn.name,
             "icon_url": spriteLink,
         },
         "title": "Moveset (Leveling Up)",
@@ -10301,7 +10291,7 @@ async function getDexInfo(message, name, form) {
         "fields": attackEmbedFields
     };
     
-    var movesByTMString = [pkmn.names.en + " does not learn any moves by TM."];
+    var movesByTMString = [pkmn.name + " does not learn any moves by TM."];
     var movesByTM = getPokemonMoves(pkmn, form, "tm");
     var k = 0;
     if (movesByTM.length > 0) {
@@ -10352,7 +10342,7 @@ async function getDexInfo(message, name, form) {
     
     const attackTMEmbed = {
        "author": {
-            "name": pkmn.names.en,
+            "name": pkmn.name,
             "icon_url": spriteLink,
         },
         "title": "Moveset (TM)",
@@ -10363,7 +10353,7 @@ async function getDexInfo(message, name, form) {
         "fields": attackTMEmbedFields
     };
     
-    var movesByEggString = [pkmn.names.en + " does not learn any moves by breeding."];
+    var movesByEggString = [pkmn.name + " does not learn any moves by breeding."];
     var movesByEgg = getPokemonMoves(pkmn, form, "egg_move");
     var k = 0;
     if (movesByEgg.length > 0) {
@@ -10414,7 +10404,7 @@ async function getDexInfo(message, name, form) {
     
     const attackEggEmbed = {
        "author": {
-            "name": pkmn.names.en,
+            "name": pkmn.name,
             "icon_url": spriteLink,
         },
         "title": "Moveset (Breeding)",
@@ -10432,7 +10422,7 @@ async function getDexInfo(message, name, form) {
     var dexNum;
     var shuffle_icon;
     if (evolvesFrom == null) {
-        evoFromString = pkmn.names.en + " does not evolve from any Pokémon.";
+        evoFromString = pkmn.name + " does not evolve from any Pokémon.";
     } else {
         var pth = generatePokemonJSONPath(evolvesFrom[0].name);
         var dat;
@@ -10463,7 +10453,7 @@ async function getDexInfo(message, name, form) {
         }
     }
     if (evolvesTo == null) {
-        evoToString = pkmn.names.en + " does not evolve into any Pokémon.";
+        evoToString = pkmn.name + " does not evolve into any Pokémon.";
     } else {
         var pth = generatePokemonJSONPath(evolvesTo[0].name);
         var dat;
@@ -10499,7 +10489,7 @@ async function getDexInfo(message, name, form) {
     
     const evoEmbed = {
        "author": {
-            "name": pkmn.names.en,
+            "name": pkmn.name,
             "icon_url": spriteLink,
         },
         "title": "Evolution",
@@ -10582,7 +10572,7 @@ async function getDexInfo(message, name, form) {
 
     const findEmbed = {
         "author": {
-             "name": pkmn.names.en,
+             "name": pkmn.name,
              "icon_url": spriteLink,
          },
          "title": "Where to Find",
@@ -10713,7 +10703,7 @@ async function printMoveInfo(message, moveName) {
     await message.channel.send({
         "embed": {
             "author": {
-                "name": move.names.en,
+                "name": move.name,
                 "icon_url": cat,
             },
             "image": {
@@ -11119,7 +11109,7 @@ async function printDex(message) {
 function getNameByNumber(number) {
     let pkmn = oak.findPokemon(number);
     if (pkmn != null) {
-        return pkmn.names.en;
+        return pkmn.name;
     } else {
         return null;
     }
@@ -12493,9 +12483,9 @@ function checkForNewMoveUponEvo(to, form) {
 function getPokemonMoves(pkmn, form, method) {
     var i;
     var moves = [];
-    for (i = 0; i < pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset.length; i++) {
-        if (pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i].hasOwnProperty(method)) {
-            moves[moves.length] = pkmn.move_learnsets[pkmn.move_learnsets.length - 1].learnset[i];
+    for (i = 0; i < pkmn.move_learnset.length; i++) {
+        if (pkmn.move_learnset[i].hasOwnProperty(method)) {
+            moves[moves.length] = pkmn.move_learnset[i];
         }
     }
     
@@ -12521,7 +12511,7 @@ function getEvolvesFrom(pkmn) {
             return null;
         }
         var from = JSON.parse(data);
-        var evoFrom = getEvolvesTo(from, pkmn.names.en);
+        var evoFrom = getEvolvesTo(from, pkmn.name);
         return evoFrom;
     } else {
         return null;
@@ -12544,7 +12534,7 @@ function getEvolvesTo(pkmn, specific) {
     if (pkmn.evolutions.length < 1) {
         return null;
     } //cosmoem will evolve based on time
-    else if (pkmn.names.en === "Cosmoem") {
+    else if (pkmn.name === "Cosmoem") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Lunala",
@@ -12560,7 +12550,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     //mantyke requires user to own a remoraid
-    else if (pkmn.names.en === "Mantyke") {
+    else if (pkmn.name === "Mantyke") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Mantine",
@@ -12568,7 +12558,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     //pangoro requires user to have a dark type
-    else if (pkmn.names.en === "Pancham") {
+    else if (pkmn.name === "Pancham") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Pangoro",
@@ -12576,7 +12566,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     //inkay normally requires user to hold device upside down, but in this case only has level requirement
-    else if (pkmn.names.en === "Inkay") {
+    else if (pkmn.name === "Inkay") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Malamar",
@@ -12584,7 +12574,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     //sliggoo requires it to be raining
-    else if (pkmn.names.en === "Sliggoo") {
+    else if (pkmn.name === "Sliggoo") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Goodra",
@@ -12592,7 +12582,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     //tyrogue evolves based on its highest stat
-    else if (pkmn.names.en === "Tyrogue") {
+    else if (pkmn.name === "Tyrogue") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Hitmonlee",
@@ -12617,7 +12607,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     //wurmple normally evolves based on its personality value, but in this case it evolves based on its IV total
-    else if (pkmn.names.en === "Wurmple") {
+    else if (pkmn.name === "Wurmple") {
         var k = evolutions.length;
         evolutions[k] = {
             "name": "Silcoon",
@@ -12638,13 +12628,13 @@ function getEvolvesTo(pkmn, specific) {
                 for (i = 0; i < pkmn.evolutions.length; i++) {
                     //holding an item
                     if (pkmn.evolutions[i].hasOwnProperty('hold_item')) {
-                        if (pkmn.names.en === "Shelmet") {
+                        if (pkmn.name === "Shelmet") {
                             var k = evolutions.length;
                             evolutions[k] = {
                                 "name": "Accelgor",
                                 "method": "by trading for a Karrablast."
                             }
-                        } else if (pkmn.names.en === "Karrablast") {
+                        } else if (pkmn.name === "Karrablast") {
                             var k = evolutions.length;
                             evolutions[k] = {
                                 "name": "Escavalier",
@@ -12890,7 +12880,7 @@ function getEvolvesTo(pkmn, specific) {
         }
     }
     if (specific != null) {
-        evolutions[specIndex].name = pkmn.names.en;
+        evolutions[specIndex].name = pkmn.name;
         return [evolutions[specIndex]];
     } else {
         return evolutions;

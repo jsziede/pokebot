@@ -1,974 +1,259 @@
 {
-  "names": {
-    "fr": "Dedenne",
-    "de": "Dedenne",
-    "it": "Dedenne",
-    "en": "Dedenne"
-  },
-  "national_id": 702,
-  "types": [
-    "Electric",
-    "Fairy"
-  ],
-  "abilities": [
-    {
-      "name": "Cheek Pouch"
-    },
-    {
-      "name": "Pickup"
-    },
-    {
-      "name": "Plus",
-      "hidden": true
-    }
-  ],
-  "gender_ratios": {
-    "male": 50.0,
-    "female": 50.0
-  },
-  "catch_rate": 180,
-  "egg_groups": [
-    "Field",
-    "Fairy"
-  ],
-  "hatch_time": [
-    5355,
-    5609
-  ],
-  "height_us": "0'08\"",
-  "height_eu": "0.2 m",
-  "weight_us": "4.9 lbs.",
-  "weight_eu": "2.2 kg",
-  "base_exp_yield": 151,
-  "leveling_rate": "Medium Fast",
-  "ev_yield": {
-    "hp": 0,
-    "atk": 0,
-    "def": 0,
-    "sp_atk": 0,
-    "sp_def": 0,
-    "speed": 2
-  },
-  "color": "Yellow",
-  "base_friendship": 70,
-  "base_stats": {
-    "hp": 67,
-    "atk": 58,
-    "def": 57,
-    "sp_atk": 81,
-    "sp_def": 67,
-    "speed": 101
-  },
-  "categories": {
-    "en": "Antenna Pokémon",
-    "de": "Antennen"
-  },
-  "kanto_id": null,
-  "johto_id": null,
-  "hoenn_id": null,
-  "sinnoh_id": null,
-  "unova_id": null,
-  "kalos_id": 110,
-  "alola_id": null,
-  "mega_evolutions": [
-
-  ],
-  "evolutions": [
-
-  ],
-  "evolution_from": null,
-  "variations": [
-
-  ],
-  "pokedex_entries": {
-    "X": {
-      "en": "Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.",
-      "de": "Seine Schnurrhaare dienen ihm als Antennen. Durch das Senden und Empfangen von elektrischen Wellen kann es mit weit entfernten Freunden kommunizieren."
-    },
-    "Y": {
-      "en": "It uses its tail to absorb electricity from power plants or from outlets in houses, and then it fires the electricity from its whiskers.",
-      "de": "Mit seinem Schwanz zapft es Kraftwerke sowie Steckdosen in Häusern an, um Strom zu tanken, den es über seine Schnurrhaare wieder entlädt."
-    },
-    "Omega Ruby": {
-      "en": "Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.",
-      "de": "Mit seinem Schwanz zapft es Kraftwerke sowie Steckdosen in Häusern an, um Strom zu tanken, den es über seine Schnurrhaare wieder entlädt."
-    },
-    "Alpha Sapphire": {
-      "en": "It uses its tail to absorb electricity from power plants or from outlets in houses, and then it fires the electricity from its whiskers.",
-      "de": "Mit seinem Schwanz zapft es Kraftwerke sowie Steckdosen in Häusern an, um Strom zu tanken, den es über seine Schnurrhaare wieder entlädt."
-    },
-    "Ultra Sun": {
-      "en": "It sneaks into people’s homes and steals electricity from their outlets. When your electric bill seems off, it’s the handiwork of this rascal.",
-      "de": "Es schleicht sich in Häuser und zapft an den Steckdosen Strom ab. Fällt die Stromrechnung mal unerwartet hoch aus, ist Dedenne schuld."
-    },
-    "Ultra Moon": {
-      "en": "Its upper whiskers are sensors that survey its surroundings. Its lower whiskers are organs that shoot electricity.",
-      "de": "Seine oberen Schnurrhaare dienen ihm als Sensoren zum Abtasten der Umgebung. Seine unteren Schnurrhaare erzeugen Elektrizität."
-    }
-  },
-  "pokeathlon_stats": {
-    "speed": [
-      0,
-      0
+    "name": "Dedenne",
+    "national_id": 702,
+    "types": [
+        "Electric",
+        "Fairy"
     ],
-    "power": [
-      0,
-      0
+    "abilities": [
+        {
+            "name": "Cheek Pouch"
+        },
+        {
+            "name": "Pickup"
+        },
+        {
+            "name": "Plus",
+            "hidden": true
+        }
     ],
-    "stamina": [
-      0,
-      0
+    "catch_rate": 180,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Field",
+        "Fairy"
     ],
-    "skill": [
-      0,
-      0
+    "hatch_time": [
+        5355,
+        5609
     ],
-    "jump": [
-      0,
-      0
+    "height_us": "0'08\"",
+    "height_eu": "0.2 m",
+    "weight_us": "4.9 lbs.",
+    "weight_eu": "2.2 kg",
+    "base_exp_yield": 151,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 2
+    },
+    "base_stats": {
+        "hp": 67,
+        "atk": 58,
+        "def": 57,
+        "sp_atk": 81,
+        "sp_def": 67,
+        "speed": 101
+    },
+    "evolution_from": null,
+    "evolutions": [],
+    "species": "Antenna Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It uses its tail to absorb electricity from power plants or from outlets in houses, and then it fires the electricity from its whiskers.",
+    "move_learnset": [
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Tail Whip",
+            "level": 1
+        },
+        {
+            "move": "Thunder Shock",
+            "level": 7
+        },
+        {
+            "move": "Charge",
+            "level": 11
+        },
+        {
+            "move": "Charm",
+            "level": 14
+        },
+        {
+            "move": "Parabolic Charge",
+            "level": 17
+        },
+        {
+            "move": "Nuzzle",
+            "level": 20
+        },
+        {
+            "move": "Thunder Wave",
+            "level": 23
+        },
+        {
+            "move": "Volt Switch",
+            "level": 26
+        },
+        {
+            "move": "Rest",
+            "level": 30
+        },
+        {
+            "move": "Snore",
+            "level": 31
+        },
+        {
+            "move": "Charge Beam",
+            "level": 34
+        },
+        {
+            "move": "Entrainment",
+            "level": 39
+        },
+        {
+            "move": "Play Rough",
+            "level": 42
+        },
+        {
+            "move": "Thunder",
+            "level": 45
+        },
+        {
+            "move": "Discharge",
+            "level": 50
+        },
+        {
+            "move": "Covet",
+            "egg_move": true
+        },
+        {
+            "move": "Eerie Impulse",
+            "egg_move": true
+        },
+        {
+            "move": "Helping Hand",
+            "egg_move": true
+        },
+        {
+            "move": "Natural Gift",
+            "egg_move": true
+        },
+        {
+            "move": "Tearful Look",
+            "egg_move": true
+        },
+        {
+            "move": "Toxic",
+            "tm": "TM6"
+        },
+        {
+            "move": "Hidden Power",
+            "tm": "TM10"
+        },
+        {
+            "move": "Sunny Day",
+            "tm": "TM11"
+        },
+        {
+            "move": "Protect",
+            "tm": "TM17"
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18"
+        },
+        {
+            "move": "Frustration",
+            "tm": "TM21"
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24"
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25"
+        },
+        {
+            "move": "Return",
+            "tm": "TM27"
+        },
+        {
+            "move": "Double Team",
+            "tm": "TM32"
+        },
+        {
+            "move": "Aerial Ace",
+            "tm": "TM40"
+        },
+        {
+            "move": "Facade",
+            "tm": "TM42"
+        },
+        {
+            "move": "Rest",
+            "tm": "TM44"
+        },
+        {
+            "move": "Attract",
+            "tm": "TM45"
+        },
+        {
+            "move": "Thief",
+            "tm": "TM46"
+        },
+        {
+            "move": "Round",
+            "tm": "TM48"
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56"
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57"
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68"
+        },
+        {
+            "move": "Volt Switch",
+            "tm": "TM72"
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": "TM73"
+        },
+        {
+            "move": "Grass Knot",
+            "tm": "TM86"
+        },
+        {
+            "move": "Swagger",
+            "tm": "TM87"
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": "TM88"
+        },
+        {
+            "move": "U-turn",
+            "tm": "TM89"
+        },
+        {
+            "move": "Substitute",
+            "tm": "TM90"
+        },
+        {
+            "move": "Wild Charge",
+            "tm": "TM93"
+        },
+        {
+            "move": "Confide",
+            "tm": "TM100"
+        }
     ]
-  },
-  "ultra_alola_id": 112,
-  "move_learnsets": [
-    {
-      "games": [
-        "X",
-        "Y"
-      ],
-      "learnset": [
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Thunder Shock",
-          "level": 7
-        },
-        {
-          "move": "Charge",
-          "level": 11
-        },
-        {
-          "move": "Charm",
-          "level": 14
-        },
-        {
-          "move": "Parabolic Charge",
-          "level": 17
-        },
-        {
-          "move": "Nuzzle",
-          "level": 20
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 23
-        },
-        {
-          "move": "Volt Switch",
-          "level": 26
-        },
-        {
-          "move": "Rest",
-          "level": 30
-        },
-        {
-          "move": "Snore",
-          "level": 31
-        },
-        {
-          "move": "Charge Beam",
-          "level": 34
-        },
-        {
-          "move": "Entrainment",
-          "level": 39
-        },
-        {
-          "move": "Play Rough",
-          "level": 42
-        },
-        {
-          "move": "Thunder",
-          "level": 45
-        },
-        {
-          "move": "Discharge",
-          "level": 50
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Eerie Impulse",
-          "egg_move": true
-        },
-        {
-          "move": "Helping Hand",
-          "egg_move": true
-        },
-        {
-          "move": "Natural Gift",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Wild Charge",
-          "tm": "TM93"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Omega Ruby",
-        "Alpha Sapphire"
-      ],
-      "learnset": [
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Thunder Shock",
-          "level": 7
-        },
-        {
-          "move": "Charge",
-          "level": 11
-        },
-        {
-          "move": "Charm",
-          "level": 14
-        },
-        {
-          "move": "Parabolic Charge",
-          "level": 17
-        },
-        {
-          "move": "Nuzzle",
-          "level": 20
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 23
-        },
-        {
-          "move": "Volt Switch",
-          "level": 26
-        },
-        {
-          "move": "Rest",
-          "level": 30
-        },
-        {
-          "move": "Snore",
-          "level": 31
-        },
-        {
-          "move": "Charge Beam",
-          "level": 34
-        },
-        {
-          "move": "Entrainment",
-          "level": 39
-        },
-        {
-          "move": "Play Rough",
-          "level": 42
-        },
-        {
-          "move": "Thunder",
-          "level": 45
-        },
-        {
-          "move": "Discharge",
-          "level": 50
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Eerie Impulse",
-          "egg_move": true
-        },
-        {
-          "move": "Helping Hand",
-          "egg_move": true
-        },
-        {
-          "move": "Natural Gift",
-          "egg_move": true
-        },
-        {
-          "move": "Cut",
-          "tm": "HM1"
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Dig",
-          "tm": "TM28"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Retaliate",
-          "tm": "TM67"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Flash",
-          "tm": "TM70"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Wild Charge",
-          "tm": "TM93"
-        },
-        {
-          "move": "Secret Power",
-          "tm": "TM94"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Sun",
-        "Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Thunder Shock",
-          "level": 7
-        },
-        {
-          "move": "Charge",
-          "level": 11
-        },
-        {
-          "move": "Charm",
-          "level": 14
-        },
-        {
-          "move": "Parabolic Charge",
-          "level": 17
-        },
-        {
-          "move": "Nuzzle",
-          "level": 20
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 23
-        },
-        {
-          "move": "Volt Switch",
-          "level": 26
-        },
-        {
-          "move": "Rest",
-          "level": 30
-        },
-        {
-          "move": "Snore",
-          "level": 31
-        },
-        {
-          "move": "Charge Beam",
-          "level": 34
-        },
-        {
-          "move": "Entrainment",
-          "level": 39
-        },
-        {
-          "move": "Play Rough",
-          "level": 42
-        },
-        {
-          "move": "Thunder",
-          "level": 45
-        },
-        {
-          "move": "Discharge",
-          "level": 50
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Eerie Impulse",
-          "egg_move": true
-        },
-        {
-          "move": "Helping Hand",
-          "egg_move": true
-        },
-        {
-          "move": "Natural Gift",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Wild Charge",
-          "tm": "TM93"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    },
-    {
-      "games": [
-        "Ultra Sun",
-        "Ultra Moon"
-      ],
-      "learnset": [
-        {
-          "move": "Tackle",
-          "level": 1
-        },
-        {
-          "move": "Tail Whip",
-          "level": 1
-        },
-        {
-          "move": "Thunder Shock",
-          "level": 7
-        },
-        {
-          "move": "Charge",
-          "level": 11
-        },
-        {
-          "move": "Charm",
-          "level": 14
-        },
-        {
-          "move": "Parabolic Charge",
-          "level": 17
-        },
-        {
-          "move": "Nuzzle",
-          "level": 20
-        },
-        {
-          "move": "Thunder Wave",
-          "level": 23
-        },
-        {
-          "move": "Volt Switch",
-          "level": 26
-        },
-        {
-          "move": "Rest",
-          "level": 30
-        },
-        {
-          "move": "Snore",
-          "level": 31
-        },
-        {
-          "move": "Charge Beam",
-          "level": 34
-        },
-        {
-          "move": "Entrainment",
-          "level": 39
-        },
-        {
-          "move": "Play Rough",
-          "level": 42
-        },
-        {
-          "move": "Thunder",
-          "level": 45
-        },
-        {
-          "move": "Discharge",
-          "level": 50
-        },
-        {
-          "move": "Covet",
-          "egg_move": true
-        },
-        {
-          "move": "Eerie Impulse",
-          "egg_move": true
-        },
-        {
-          "move": "Helping Hand",
-          "egg_move": true
-        },
-        {
-          "move": "Natural Gift",
-          "egg_move": true
-        },
-        {
-          "move": "Tearful Look",
-          "egg_move": true
-        },
-        {
-          "move": "Toxic",
-          "tm": "TM6"
-        },
-        {
-          "move": "Hidden Power",
-          "tm": "TM10"
-        },
-        {
-          "move": "Sunny Day",
-          "tm": "TM11"
-        },
-        {
-          "move": "Protect",
-          "tm": "TM17"
-        },
-        {
-          "move": "Rain Dance",
-          "tm": "TM18"
-        },
-        {
-          "move": "Frustration",
-          "tm": "TM21"
-        },
-        {
-          "move": "Thunderbolt",
-          "tm": "TM24"
-        },
-        {
-          "move": "Thunder",
-          "tm": "TM25"
-        },
-        {
-          "move": "Return",
-          "tm": "TM27"
-        },
-        {
-          "move": "Double Team",
-          "tm": "TM32"
-        },
-        {
-          "move": "Aerial Ace",
-          "tm": "TM40"
-        },
-        {
-          "move": "Facade",
-          "tm": "TM42"
-        },
-        {
-          "move": "Rest",
-          "tm": "TM44"
-        },
-        {
-          "move": "Attract",
-          "tm": "TM45"
-        },
-        {
-          "move": "Thief",
-          "tm": "TM46"
-        },
-        {
-          "move": "Round",
-          "tm": "TM48"
-        },
-        {
-          "move": "Fling",
-          "tm": "TM56"
-        },
-        {
-          "move": "Charge Beam",
-          "tm": "TM57"
-        },
-        {
-          "move": "Giga Impact",
-          "tm": "TM68"
-        },
-        {
-          "move": "Volt Switch",
-          "tm": "TM72"
-        },
-        {
-          "move": "Thunder Wave",
-          "tm": "TM73"
-        },
-        {
-          "move": "Grass Knot",
-          "tm": "TM86"
-        },
-        {
-          "move": "Swagger",
-          "tm": "TM87"
-        },
-        {
-          "move": "Sleep Talk",
-          "tm": "TM88"
-        },
-        {
-          "move": "U-turn",
-          "tm": "TM89"
-        },
-        {
-          "move": "Substitute",
-          "tm": "TM90"
-        },
-        {
-          "move": "Wild Charge",
-          "tm": "TM93"
-        },
-        {
-          "move": "Confide",
-          "tm": "TM100"
-        }
-      ]
-    }
-  ]
 }
