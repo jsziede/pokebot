@@ -3817,7 +3817,7 @@ async function addItemToBag(userId, itemName, amount, isHoldable, cat) {
  * 
  * @returns {boolean} True if the item was removed from the user's bag.
  */
-function removeItemFromBag(userId, itemName, amount) {
+async function removeItemFromBag(userId, itemName, amount) {
     let wasItemRemoved = false;
     let itemToRemove = await doQuery("SELECT * from item WHERE item.owner = ? AND item.name = ? AND item.quantity > 0", [userId, itemName]);
     if (itemToRemove != null) {
@@ -4041,7 +4041,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Water Stone") {
         if (lead.form === "Alolan") {
@@ -4066,7 +4066,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Thunder Stone") {
         if (lead.form === "Alolan") {
@@ -4085,7 +4085,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Leaf Stone") {
         if (lead.form === "Alolan") {
@@ -4108,7 +4108,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Moon Stone") {
         if (lead.form === "Alolan") {
@@ -4133,7 +4133,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Sun Stone") {
         if (lead.form === "Alolan") {
@@ -4156,7 +4156,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Shiny Stone") {
         if (lead.form === "Alolan") {
@@ -4178,7 +4178,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Dusk Stone") {
         if (lead.form === "Alolan") {
@@ -4199,7 +4199,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Dawn Stone") {
         if (lead.form === "Alolan") {
@@ -4216,7 +4216,7 @@ async function useItem(message, item) {
         evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
         await addEvolutionToPokemon(lead);
         disposedItem = item;
-        removeItemFromBag(message.author.id, disposedItem, 1);
+        await removeItemFromBag(message.author.id, disposedItem, 1);
         await evolve(message);
     } else if (item === "Ice Stone") {
         if (lead.form === "Alolan") {
@@ -4231,7 +4231,7 @@ async function useItem(message, item) {
             evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
             await addEvolutionToPokemon(lead);
             disposedItem = item;
-            removeItemFromBag(message.author.id, disposedItem, 1);
+            await removeItemFromBag(message.author.id, disposedItem, 1);
             await evolve(message);
         } else {
             return false;
@@ -5269,7 +5269,7 @@ async function evolve(message) {
             });
         }
         if (doesUserHaveHoldableItem(bag, "Poké Ball") != false) {
-            removeItemFromBag(user.items, "Poké Ball", 1);
+            await removeItemFromBag(user.items, "Poké Ball", 1);
             var shedinja = await generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
             shedinja.otid = message.author.id;
             await addPokemon(user.user_id, shedinja);
