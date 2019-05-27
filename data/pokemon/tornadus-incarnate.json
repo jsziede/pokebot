@@ -1,187 +1,145 @@
 {
-    "name": "Greninja",
-    "national_id": 658,
+    "name": "Tornadus",
+    "national_id": 641,
     "types": [
-        "Water",
-        "Dark"
+        "Flying"
     ],
     "abilities": [
         {
-            "name": "Torrent"
+            "name": "Prankster"
         },
         {
-            "name": "Protean",
+            "name": "Defiant",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 3,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 100
     },
     "egg_groups": [
-        "Water 1"
+        "Undiscovered"
     ],
     "hatch_time": [
-        5355,
-        5609
+        30855,
+        31109
     ],
     "height_us": "4'11\"",
     "height_eu": "1.5 m",
-    "weight_us": "88.2 lbs.",
-    "weight_eu": "40.0 kg",
-    "base_exp_yield": 239,
-    "leveling_rate": "Medium Slow",
-    "base_friendship": 70,
+    "weight_us": "138.9 lbs.",
+    "weight_eu": "63.0 kg",
+    "base_exp_yield": 261,
+    "leveling_rate": "Slow",
+    "base_friendship": 90,
     "ev_yield": {
         "hp": 0,
-        "atk": 0,
+        "atk": 3,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 3
+        "speed": 0
     },
     "base_stats": {
-        "hp": 72,
-        "atk": 95,
-        "def": 67,
-        "sp_atk": 103,
-        "sp_def": 71,
-        "speed": 122
+        "hp": 79,
+        "atk": 115,
+        "def": 70,
+        "sp_atk": 125,
+        "sp_def": 80,
+        "speed": 111
     },
-    "evolution_from": "Frogadier",
+    "evolution_from": null,
     "evolutions": [],
-    "species": "Ninja Pokémon",
+    "species": "Cyclone Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It appears and vanishes with a ninja’s grace. It toys with its enemies using swift movements, while slicing them with throwing stars of sharpest water.",
+    "pokedex_entry": "Tornadus expels massive energy from its tail, causing severe storms. Its power is great enough to blow houses away.",
     "move_learnset": [
         {
-            "move": "Bubble",
+            "move": "Astonish",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Gust",
             "level": 1
         },
         {
-            "move": "Haze",
+            "move": "Hammer Arm",
             "level": 1
         },
         {
-            "move": "Mat Block",
+            "move": "Hurricane",
             "level": 1
         },
         {
-            "move": "Night Slash",
+            "move": "Swagger",
             "level": 1
         },
         {
-            "move": "Pound",
+            "move": "Thrash",
             "level": 1
         },
         {
-            "move": "Quick Attack",
+            "move": "Uproar",
             "level": 1
         },
         {
-            "move": "Role Play",
-            "level": 1
+            "move": "Bite",
+            "level": 7
         },
         {
-            "move": "Water Shuriken",
-            "level": 1
+            "move": "Revenge",
+            "level": 13
         },
         {
-            "move": "Bubble",
-            "level": 5
-        },
-        {
-            "move": "Quick Attack",
-            "level": 8
-        },
-        {
-            "move": "Lick",
-            "level": 10
-        },
-        {
-            "move": "Water Pulse",
-            "level": 14
-        },
-        {
-            "move": "Smokescreen",
+            "move": "Air Cutter",
             "level": 19
         },
         {
-            "move": "Shadow Sneak",
-            "level": 23
-        },
-        {
-            "move": "Spikes",
-            "level": 28
-        },
-        {
-            "move": "Feint Attack",
-            "level": 33
-        },
-        {
-            "move": "Substitute",
-            "level": 42
-        },
-        {
             "move": "Extrasensory",
+            "level": 25
+        },
+        {
+            "move": "Agility",
+            "level": 31
+        },
+        {
+            "move": "Air Slash",
+            "level": 37
+        },
+        {
+            "move": "Crunch",
+            "level": 43
+        },
+        {
+            "move": "Tailwind",
             "level": 49
         },
         {
-            "move": "Double Team",
-            "level": 56
+            "move": "Rain Dance",
+            "level": 55
         },
         {
-            "move": "Hydro Pump",
-            "level": 68
+            "move": "Hurricane",
+            "level": 61
         },
         {
-            "move": "Haze",
-            "level": 70
+            "move": "Dark Pulse",
+            "level": 67
         },
         {
-            "move": "Night Slash",
-            "level": 77
+            "move": "Hammer Arm",
+            "level": 73
         },
         {
-            "move": "Bestow",
-            "egg_move": true
-        },
-        {
-            "move": "Camouflage",
-            "egg_move": true
-        },
-        {
-            "move": "Mind Reader",
-            "egg_move": true
-        },
-        {
-            "move": "Mud Sport",
-            "egg_move": true
-        },
-        {
-            "move": "Power-Up Punch",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic Spikes",
-            "egg_move": true
-        },
-        {
-            "move": "Water Sport",
-            "egg_move": true
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
+            "move": "Thrash",
+            "level": 79
         },
         {
             "move": "Toxic",
             "tm": "TM6"
+        },
+        {
+            "move": "Bulk Up",
+            "tm": "TM8"
         },
         {
             "move": "Hidden Power",
@@ -190,14 +148,6 @@
         {
             "move": "Taunt",
             "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
         },
         {
             "move": "Hyper Beam",
@@ -224,16 +174,32 @@
             "tm": "TM27"
         },
         {
+            "move": "Psychic",
+            "tm": "TM29"
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31"
+        },
+        {
             "move": "Double Team",
             "tm": "TM32"
         },
         {
-            "move": "Rock Tomb",
-            "tm": "TM39"
+            "move": "Sludge Wave",
+            "tm": "TM34"
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36"
         },
         {
             "move": "Aerial Ace",
             "tm": "TM40"
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41"
         },
         {
             "move": "Facade",
@@ -256,16 +222,16 @@
             "tm": "TM48"
         },
         {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
+            "move": "Focus Blast",
+            "tm": "TM52"
         },
         {
             "move": "Fling",
             "tm": "TM56"
+        },
+        {
+            "move": "Sky Drop",
+            "tm": "TM58"
         },
         {
             "move": "Brutal Swing",
@@ -276,12 +242,20 @@
             "tm": "TM62"
         },
         {
+            "move": "Embargo",
+            "tm": "TM63"
+        },
+        {
+            "move": "Payback",
+            "tm": "TM66"
+        },
+        {
             "move": "Giga Impact",
             "tm": "TM68"
         },
         {
-            "move": "Rock Slide",
-            "tm": "TM80"
+            "move": "Fly",
+            "tm": "TM76"
         },
         {
             "move": "Grass Knot",
@@ -304,16 +278,8 @@
             "tm": "TM90"
         },
         {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
             "move": "Dark Pulse",
             "tm": "TM97"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
         },
         {
             "move": "Confide",
