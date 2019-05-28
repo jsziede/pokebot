@@ -1900,7 +1900,7 @@ function removeTrade(userID) {
  * @returns {string} The relative file path to the Pokemon model image.
  */
 function generateModelLink(name, shiny, gender, form) {
-    let pkmn = parseJSON(generatePokemonJSONPath(name));
+    let pkmn = parseJSON(generatePokemonJSONPath(name, form));
     let url;
 
     let lower = pkmn.name.toLowerCase();
@@ -2035,6 +2035,9 @@ function generateModelLink(name, shiny, gender, form) {
  * @returns {string} URL to the Pokemon sprite.
  */
 function generateSpriteLink(name, gender, form) {
+    /**
+     * @todo Standardize sprite icon names for forms.
+     */
     let pkmn = parseJSON(generatePokemonJSONPath(name));
     
     let dexnum = pkmn.national_id;
@@ -2124,8 +2127,9 @@ function generateLocationImagePath(region, location) {
  * 
  * @returns {string} File path to the JSON file.
  */
-function generatePokemonJSONPath(name) {
+function generatePokemonJSONPath(name, form) {
     let lower = name.toLowerCase();
+
     /* Pokemon names are not always the same as the file names. */
     if (lower === "mr. mime") {
         lower = "mr_mime";
@@ -2169,6 +2173,23 @@ function generatePokemonJSONPath(name) {
     
     if (lower === "jangmo-o") {
         lower = "jangmo_o";
+    }
+
+    if (form != null) {
+        form = form.toLowerCase();
+        /**
+         * Oricorio has a form name with an apostrophe in it.
+         */
+        form = form.replace(/'/g,"-");
+        /**
+         * Multiple Pokemon have form names with spaces in it.
+         */
+        form = form.replace(/ /g,"-");
+        /**
+         * Vivillon has a form name with an acute e in it.
+         */
+        form = form.replace(/é/g,"e");
+        lower = lower + "-" + form;
     }
 
     let path = '../data/pokemon/' + lower + '.json';
@@ -4237,7 +4258,7 @@ async function useItem(message, item) {
             return false;
         }
     } else if (item.startsWith("TM")) {
-        var ppath = generatePokemonJSONPath(lead.name);
+        var ppath = generatePokemonJSONPath(lead.name, lead.form);
         var pdata;
         try {
             pdata = fs.readFileSync(ppath, "utf8");
@@ -5018,7 +5039,7 @@ async function evolve(message) {
         });
     }
 
-    var ppath = generatePokemonJSONPath(evolvingPokemon.name);
+    var ppath = generatePokemonJSONPath(evolvingPokemon.name, evolvingPokemon.form);
     var pdata;
     try {
         pdata = fs.readFileSync(ppath, "utf8");
@@ -5042,7 +5063,10 @@ async function evolve(message) {
     
     evolvingPokemon.name = evo.to;
     
-    ppath = generatePokemonJSONPath(evo.to);
+    /**
+     * @todo rework this function so that we know which form the Pokemon will be in when it evolves.
+     */
+    ppath = generatePokemonJSONPath(evo.to, null);
     pdata;
     try {
         pdata = fs.readFileSync(ppath, "utf8");
@@ -5386,7 +5410,7 @@ async function checkEvolve(user, pokemon, method) {
         }
     }
 
-    var path = generatePokemonJSONPath(pokemon.name);
+    var path = generatePokemonJSONPath(pokemon.name, pokemon.form);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -5653,7 +5677,7 @@ async function checkEvolve(user, pokemon, method) {
  * if an error was encountered.
  */
 function levelUp(pokemon) {
-    var path = generatePokemonJSONPath(pokemon.name);
+    var path = generatePokemonJSONPath(pokemon.name, pokemon.form);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -5731,7 +5755,7 @@ function levelUp(pokemon) {
  * @returns {move[]} The list of moves known by the Pokemon.
  */
 async function checkForNewMove(message, pokemon, askForResponse, moves) {
-    var path = generatePokemonJSONPath(pokemon.name);
+    var path = generatePokemonJSONPath(pokemon.name, pokemon.form);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -6583,7 +6607,10 @@ function getXpToNextLevel(name, currentTotalXp, currentLevel) {
     if(currentLevel === 100) {
         return null;
     }
-    var path = generatePokemonJSONPath(name);
+    /**
+     * @todo Pass whole Pokemon instead of name.
+     */
+    var path = generatePokemonJSONPath(name, null);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -6684,7 +6711,10 @@ function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
  * @returns {Pokemon} The Pokemon that was generated, or null if the Pokemon failed to generate.
  */
 async function generatePokemonByName(message, name, level, region, location, hidden) {
-    var path = generatePokemonJSONPath(name);
+    /**
+     * @todo form should be determined before the JSON file is opened.
+     */
+    var path = generatePokemonJSONPath(name, null);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -8639,7 +8669,7 @@ async function battleWildPokemon(message, wild) {
  * @returns {boolean} True if the user caught the Pokemon.
  */
 async function throwPokeBall(message, wild, user, lead) {
-    var path = generatePokemonJSONPath(wild.name);
+    var path = generatePokemonJSONPath(wild.name, wild.form);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -9630,7 +9660,10 @@ async function printPossibleEncounters(message) {
 
     var i;
     for (i = 0; i < location.pokemon.length; i++) {
-        var pth = generatePokemonJSONPath(location.pokemon[i].name);
+        /**
+         * @todo determine a Pokemon's default form based on region and location and send it to the json function below.
+         */
+        var pth = generatePokemonJSONPath(location.pokemon[i].name, null);
         var dat;
         try {
             dat = fs.readFileSync(pth, "utf8");
@@ -10160,7 +10193,10 @@ async function getDexInfo(message, name, form) {
         }
     }
     
-    path = generatePokemonJSONPath(name);
+    /**
+     * @todo get default form of the Pokemon.
+     */
+    path = generatePokemonJSONPath(name, null);
     try {
         data = fs.readFileSync(path, "utf8");
     } catch (err) {
@@ -10424,7 +10460,10 @@ async function getDexInfo(message, name, form) {
     if (evolvesFrom == null) {
         evoFromString = pkmn.name + " does not evolve from any Pokémon.";
     } else {
-        var pth = generatePokemonJSONPath(evolvesFrom[0].name);
+        /**
+         * @todo get default form of Pokemon.
+         */
+        var pth = generatePokemonJSONPath(evolvesFrom[0].name, null);
         var dat;
         try {
             dat = fs.readFileSync(pth, "utf8");
@@ -10435,10 +10474,17 @@ async function getDexInfo(message, name, form) {
         pkm = JSON.parse(dat);
         shuffle_icon = await getShuffleEmoji(pkm.national_id);
         evoFromString = shuffle_icon + " Evolves from " + evolvesFrom[0].name + " " + evolvesFrom[0].method;
+
+        /**
+         * @todo Is this necessary? A Pokemon can't evolve from multiple Pokemon.
+         */
         if (evolvesFrom.length > 1) {
             var f;
             for (f = 1; f < evolvesFrom.length; f++) {
-                var pth = generatePokemonJSONPath(evolvesFrom[f].name);
+                /**
+                 * @todo Get default form?
+                 */
+                var pth = generatePokemonJSONPath(evolvesFrom[f].name, null);
                 var dat;
                 try {
                     dat = fs.readFileSync(pth, "utf8");
@@ -10455,7 +10501,10 @@ async function getDexInfo(message, name, form) {
     if (evolvesTo == null) {
         evoToString = pkmn.name + " does not evolve into any Pokémon.";
     } else {
-        var pth = generatePokemonJSONPath(evolvesTo[0].name);
+        /**
+         * @todo Get default form.
+         */
+        var pth = generatePokemonJSONPath(evolvesTo[0].name, null);
         var dat;
         try {
             dat = fs.readFileSync(pth, "utf8");
@@ -10469,7 +10518,10 @@ async function getDexInfo(message, name, form) {
         if (evolvesTo.length > 1) {
             var f;
             for (f = 1; f < evolvesTo.length; f++) {
-                var pth = generatePokemonJSONPath(evolvesTo[f].name);
+                /**
+                 * @todo Get default form.
+                 */
+                var pth = generatePokemonJSONPath(evolvesTo[f].name, null);
                 var dat;
                 try {
                     dat = fs.readFileSync(pth, "utf8");
@@ -12502,7 +12554,10 @@ function getPokemonMoves(pkmn, form, method) {
  */
 function getEvolvesFrom(pkmn) {
     if (pkmn.hasOwnProperty("evolution_from") && pkmn.evolution_from != null) {
-        var path = generatePokemonJSONPath(pkmn.evolution_from);
+        /**
+         * @todo Get default form.
+         */
+        var path = generatePokemonJSONPath(pkmn.evolution_from, null);
         var data;
         try {
             data = fs.readFileSync(path, "utf8");
