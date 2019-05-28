@@ -2807,7 +2807,7 @@ async function printLocation(message) {
     let user = await getUser(message.author.id);
     if (user != null) {
         let imageOfLocation = generateLocationImagePath(user.region, user.location);
-        let field = "Walking in the grass.";
+        let field = "Walking around.";
         if (user.field === "Rock Smash") {
             field = "Smashing rocks into pieces.";
         } else if (user.field === "Headbutt") {
@@ -2893,24 +2893,24 @@ function getFullLocationName(region, name) {
  * @returns {string} The default location of a region.
  */
 function getDefaultLocationOfRegion(region) {
-    let defaultRegion = null;
+    let defaultLocation = null;
      if (region === "Kanto") {
-        defaultRegion = "Pallet Town";
+        defaultLocation = "Pallet Town";
     } else if (region === "Johto") {
-        defaultRegion = "New Bark Town";
+        defaultLocation = "New Bark Town";
     } else if (region === "Hoenn") {
-        defaultRegion = "Littleroot Town";
+        defaultLocation = "Littleroot Town";
     } else if (region === "Sinnoh") {
-        defaultRegion = "Twinleaf Town";
+        defaultLocation = "Twinleaf Town";
     } else if (region === "Unova") {
-        defaultRegion = "Aspertia City";
+        defaultLocation = "Aspertia City";
     } else if (region === "Kalos") {
-        defaultRegion = "Vaniville Town";
+        defaultLocation = "Vaniville Town";
     } else if (region === "Alola") {
-        defaultRegion = "Route 1";
+        defaultLocation = "Route 1";
     }
 
-    return defaultRegion;
+    return defaultLocation;
 }
 
 /**
@@ -3100,8 +3100,10 @@ async function getRods(userId) {
  */
 async function getItem(itemId) {
     let item = await doQuery('SELECT * FROM item WHERE item.item_id = ?', [itemId]);
-    if (item != null) {
+    if (item != null && item.length > 0) {
         item = item[0];
+    } else {
+        item = null;
     }
     return new Promise(function(resolve) {
         resolve(item);
@@ -3858,91 +3860,88 @@ async function removeItemFromBag(userId, itemName, amount) {
  * @param {Message} message The Discord message sent from the user.
  * @param {string} item The name of the item to give.
  * 
- * @returns {boolean} False if any errors are encountered.
+ * @returns {boolean} True if the item was given.
  */
 async function giveItem(message, item) {
-    var bag = await getBag(message.author.id);
+    let wereNoErrorsEncountered = true;
+    let wasItemGiven = false;
+
+    let bag = await getBag(message.author.id);
     if (bag === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
 
     item = doesUserHaveHoldableItem(bag, item);
     if (item == null) {
-        return false;
+        wereNoErrorsEncountered = false;
     }
     
-    var lead = await getLeadPokemon(message.author.id);
+    let lead = await getLeadPokemon(message.author.id);
     if (lead === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
-    if (lead.item === "None" || lead.item == null) {
-        var query = " UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?";
-        con.query(query, [item.item_id, lead.pokemon_id], function(err) {
-            if (err) {
-                console.log(err);
-                return false;
-            } else {
-                message.channel.send(message.author.username + " gave the " + item.name + " to " + lead.name + ".");
-                removeItemFromBag(message.author.id, item.name, 1);
-                return true;
-            }
-        });
-    } else {
-        var heldItem = await getItem(lead.item);
-        if (heldItem === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
-        }
-        message.channel.send(message.author.username + ", your " + lead.name + " is currently holding one " + heldItem.name + ". Would you like to swap items? Type \"Yes\" to swap or \"No\" to cancel the item assignment.");
-        var cancel = false;
-        var input = null;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                input = 0;
-                cancel = true;
-            });
 
-            if (input === "no") {
-                cancel = true;
-                input = 0;
-            } else if (input === "yes") {
-                cancel = true;
-                input = 1;
-            } else if (input != null) {
-                message.channel.send(message.author.username + ", your response was not recognized. Type \"Yes\" to swap " + heldItem.name + " with " + item.name + " or \"No\" to cancel the item assignment.");
-                input = 0;
-            } else {
-                input = 0;
+    if (wereNoErrorsEncountered === true) {
+        if (lead.item == null) {
+            if (await doQuery("UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?", [item.item_id, lead.pokemon_id]) != null) {
+                await sendMessage(message.channel, (message.author.username + " gave the " + item.name + " to " + lead.name + "."));
+                if (await removeItemFromBag(message.author.id, item.name, 1) === true) {
+                    wasItemGiven = true;
+                }
+            }
+        } else {
+            let heldItem = await getItem(lead.item);
+            if (heldItem != null) {
+                await sendMessage(message.channel, (message.author.username + ", your " + lead.name + " is currently holding one " + heldItem.name + ". Would you like to swap items? Type \"Yes\" to swap or \"No\" to cancel the item assignment."));
+                let cancel = false;
+                let input = null;
+                const RESPONSE_YES = 1;
+                const RESPONSE_NO = -1;
+                const RESPONSE_UNDECIDED = 0;
+                while(cancel == false) {
+                    await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
+                    .then(collected => {
+                        input = collected.first().content.toString().toLowerCase();
+                    })
+                    .catch(collected => {
+                        console.error(collected);
+                        input = RESPONSE_UNDECIDED;
+                        cancel = true;
+                    });
+    
+                    if (input === "no") {
+                        cancel = true;
+                        input = RESPONSE_NO;
+                    } else if (input === "yes") {
+                        cancel = true;
+                        input = RESPONSE_YES;
+                    } else if (input != null) {
+                        await sendMessage(message.channel, (message.author.username + ", your response was not recognized. Type \"Yes\" to swap " + heldItem.name + " with " + item.name + " or \"No\" to cancel the item assignment."));
+                        input = RESPONSE_UNDECIDED;
+                    } else {
+                        input = RESPONSE_UNDECIDED;
+                    }
+                }
+                
+                if (input === RESPONSE_YES) {
+                    if (await doQuery("UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?", [item.item_id, lead.pokemon_id]) != null) {
+                        await sendMessage(message.channel, (message.author.username + " gave the " + item.name + " to " + lead.name + "."));
+                        if (
+                            await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.cat) === true
+                            &&
+                            await removeItemFromBag(message.author.id, item.name, 1) === true
+                        ) {
+                            wasItemGiven = true;
+                        }
+                    }
+                }
             }
         }
-        
-        if (input === 1) {
-            var query = " UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [item.item_id, lead.pokemon_id], function(err) {
-                if (err) {
-                    console.log(err);
-                    return false;
-                } else {
-                    message.channel.send(message.author.username + " gave the " + item.name + " to " + lead.name + ".");
-                    addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.cat);
-                    removeItemFromBag(message.author.id, item.name, 1);
-                    return true;
-                }
-            });
-        } else {
-            return false;
-        }
     }
-    return true;
+    
+    return new Promise(function(resolve) {
+        resolve(wasItemGiven);
+    });
 }
 
 /**
@@ -3952,16 +3951,13 @@ async function giveItem(message, item) {
  * 
  * @returns {boolean} True if no errors are encountered.
  */
-function addEvolutionToPokemon(pokemon) {
-    return new Promise(function(resolve, reject) {
-        var query_str = 'UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?';
-        con.query(query_str, [pokemon.pokemon_id], function (err) {
-            if (err) {
-                return reject(err);
-            } else {
-                resolve(true);
-            }
-        });
+async function addEvolutionToPokemon(pokemon) {
+    let wasEvolutionAdded = false;
+    if (await doQuery("UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?", [pokemon.pokemon_id]) != null) {
+        wasEvolutionAdded = true;
+    }
+    return new Promise(function(resolve) {
+        resolve(wasEvolutionAdded);
     });
 }
 
@@ -3973,10 +3969,12 @@ function addEvolutionToPokemon(pokemon) {
  * @param {Pokemon} pokemon The Pokemon object that is having its moves updated.
  * @param {move[]} moves The list of four move objects that is being assigned to the Pokemon.
  * 
+ * @todo Allow multiple moves with the same name.
+ * 
  * @returns {boolean} True if the Pokemon's moves were updated.
  */
 async function updateMoves(pokemon, moves) {
-    const moveNames = moves.map(move => move.name);
+    let moveNames = moves.map(move => move.name);
     await doQuery('UPDATE move SET move.slot = NULL WHERE move.pokemon = ? AND NOT move.name IN (?)', [pokemon.pokemon_id, moveNames]);
     let i = 0;
     for (i; i < moves.length; i++) {
@@ -3997,6 +3995,43 @@ async function updateMoves(pokemon, moves) {
 }
 
 /**
+ * Creates a list of four empty moves and populates each move with
+ * the name and PP of moves known by the Pokemon, leaving some moves
+ * empty if the Pokemon knows less than four moves.
+ * 
+ * @param {Move[]} knownMoves The moves known by the Pokemon.
+ * 
+ * @returns {any[]} A list of four moves.
+ */
+function populateMoves(knownMoves) {
+    let moves = [
+        {
+            name: null,
+            pp: null
+        },
+        {
+            name: null,
+            pp: null
+        },
+        {
+            name: null,
+            pp: null
+        },
+        {
+            name: null,
+            pp: null
+        }
+    ]
+    let knownMoveIndex = 0;
+    for (knownMoveIndex; knownMoveIndex < knownMoves.length; knownMoveIndex++) {
+        moves[knownMoveIndex].name = knownMoves[knownMoveIndex].name;
+        moves[knownMoveIndex].pp = knownMoves[knownMoveIndex].current_pp;
+    }
+
+    return moves;
+}
+
+/**
  * Performs the use action of an item owned by a user.
  * 
  * @param {Message} message The Discord message sent from the user.
@@ -4005,369 +4040,253 @@ async function updateMoves(pokemon, moves) {
  * @returns {boolean} True if the item was used.
  */
 async function useItem(message, item) {
-    var user = await getUser(message.author.id);
+    let wereNoErrorsEncountered = true;
+    let user = await getUser(message.author.id);
     if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
 
-    var bag = await getBag(user.user_id);
+    let bag = await getBag(user.user_id);
     if (bag === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
     
     item = doesUserHaveUsableItem(bag, item);
-
-    if (item == null) {
-        return false;
+    if (item === null) {
+        wereNoErrorsEncountered = false;
     }
     
-    item = item.name;
-
-    var lead = await getLeadPokemon(user.user_id);
+    let lead = await getLeadPokemon(user.user_id);
     if (lead === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
-    var disposedItem = "None";
-    var to;
+
+    if (wereNoErrorsEncountered) {
+        if (item.name.endsWith("Stone")) {
+            wereNoErrorsEncountered = await useEvolutionStoneItem(message, item.name, lead);
+        } else if (item.name.startsWith("TM")) {
+            wereNoErrorsEncountered = await useTMItem(message, item.name, lead);
+        }
+    }
+    
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
+}
+
+/**
+ * Uses an evolutionary stone on a Pokemon and evolves it
+ * if the stone is compatible. Evolutionary stone evolutions
+ * cannot be cancelled, so the user is not prompted to evolve
+ * their Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} item The name of the evolutionary stone used.
+ * @param {Pokemon} lead The user's lead Pokemon.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
+async function useEvolutionStoneItem(message, item, lead) {
+    let wereNoErrorsEncountered = true;
+    let speciesToEvolveInto = null;
     if (item === "Fire Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
-        if (lead.name === "Vulpix") {
-            to = "Ninetails";
+        if (lead.name === "Vulpix" && lead.form != "Alolan") {
+            speciesToEvolveInto = "Ninetails";
         } else if (lead.name === "Growlithe") {
-            to = "Arcanine";
+            speciesToEvolveInto = "Arcanine";
         } else if (lead.name === "Eevee") {
-            to = "Flareon";
+            speciesToEvolveInto = "Flareon";
         } else if (lead.name === "Pansear") {
-            to = "Simisear";
-        } else {
-            return false;
+            speciesToEvolveInto = "Simisear";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Water Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Poliwhirl") {
-            to = "Poliwrath";
+            speciesToEvolveInto = "Poliwrath";
         } else if (lead.name === "Shellder") {
-            to = "Cloyster";
+            speciesToEvolveInto = "Cloyster";
         } else if (lead.name === "Staryu") {
-            to = "Starmie";
+            speciesToEvolveInto = "Starmie";
         } else if (lead.name === "Eevee") {
-            to = "Vaporeon";
+            speciesToEvolveInto = "Vaporeon";
         } else if (lead.name === "Lombre") {
-            to = "Ludicolo";
+            speciesToEvolveInto = "Ludicolo";
         } else if (lead.name === "Panpour") {
-            to = "Simipour";
-        } else {
-            return false;
+            speciesToEvolveInto = "Simipour";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Thunder Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Pikachu") {
-            to = "Raichu";
+            speciesToEvolveInto = "Raichu";
         } else if (lead.name === "Eevee") {
-            to = "Jolteon";
+            speciesToEvolveInto = "Jolteon";
         } else if (lead.name === "Eelektrik") {
-            to = "Eelektross";
-        } else {
-            return false;
+            speciesToEvolveInto = "Eelektross";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Leaf Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Gloom") {
-            to = "Vileplume";
+            speciesToEvolveInto = "Vileplume";
         } else if (lead.name === "Weepinbell") {
-            to = "Victreebel";
+            speciesToEvolveInto = "Victreebel";
         } else if (lead.name === "Exeggcute") {
-            to = "Exeggutor";
+            speciesToEvolveInto = "Exeggutor";
         } else if (lead.name === "Nuzleaf") {
-            to = "Shiftry";
+            speciesToEvolveInto = "Shiftry";
         } else if (lead.name === "Pansage") {
-            to = "Simisage";
-        } else {
-            return false;
+            speciesToEvolveInto = "Simisage";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Moon Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Nidorina") {
-            to = "Nidoqueen";
+            speciesToEvolveInto = "Nidoqueen";
         } else if (lead.name === "Nidorino") {
-            to = "Nidoking";
+            speciesToEvolveInto = "Nidoking";
         } else if (lead.name === "Clefairy") {
-            to = "Clefable";
+            speciesToEvolveInto = "Clefable";
         } else if (lead.name === "Jigglypuff") {
-            to = "Wigglytuff";
+            speciesToEvolveInto = "Wigglytuff";
         } else if (lead.name === "Skitty") {
-            to = "Delcatty";
+            speciesToEvolveInto = "Delcatty";
         } else if (lead.name === "Munna") {
-            to = "Musharna";
-        } else {
-            return false;
+            speciesToEvolveInto = "Musharna";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Sun Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Gloom") {
-            to = "Bellossom";
+            speciesToEvolveInto = "Bellossom";
         } else if (lead.name === "Sunkern") {
-            to = "Sunflora";
+            speciesToEvolveInto = "Sunflora";
         } else if (lead.name === "Cottonee") {
-            to = "Whimsicott";
+            speciesToEvolveInto = "Whimsicott";
         } else if (lead.name === "Petilil") {
-            to = "Lilligant";
+            speciesToEvolveInto = "Lilligant";
         } else if (lead.name === "Helioptile") {
-            to = "Heliolisk";
-        } else {
-            return false;
+            speciesToEvolveInto = "Heliolisk";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Shiny Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Togetic") {
-            to = "Togekiss";
+            speciesToEvolveInto = "Togekiss";
         } else if (lead.name === "Roselia") {
-            to = "Roserade";
+            speciesToEvolveInto = "Roserade";
         } else if (lead.name === "Minccino") {
-            to = "Cinccino";
-            await evolve(message);
+            speciesToEvolveInto = "Cinccino";
         } else if (lead.name === "Floette") {
-            to = "Florges";
-        } else {
-            return false;
+            speciesToEvolveInto = "Florges";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Dusk Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Murkrow") {
-            to = "Honchkrow";
+            speciesToEvolveInto = "Honchkrow";
         } else if (lead.name === "Misdreavus") {
-            to = "Mismagius";
+            speciesToEvolveInto = "Mismagius";
         } else if (lead.name === "Lampent") {
-            to = "Chandelure";
+            speciesToEvolveInto = "Chandelure";
         } else if (lead.name === "Doublade") {
-            to = "Aegislash";
-        } else {
-            return false;
+            speciesToEvolveInto = "Aegislash";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Dawn Stone") {
-        if (lead.form === "Alolan") {
-            return false;
-        }
         if (lead.name === "Kirlia" && lead.gender === "Male") {
-            to = "Gallade";
+            speciesToEvolveInto = "Gallade";
         } else if (lead.name === "Snorunt" && lead.gender === "Female") {
-            to = "Frosslass";
-        } else {
-            return false;
+            speciesToEvolveInto = "Frosslass";
         }
-        message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-        evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-        await addEvolutionToPokemon(lead);
-        disposedItem = item;
-        await removeItemFromBag(message.author.id, disposedItem, 1);
-        await evolve(message);
     } else if (item === "Ice Stone") {
-        if (lead.form === "Alolan") {
-            if (lead.name === "Sandshrew") {
-                to = "Sandslash";
-            } else if (lead.name === "Vulpix") {
-                to = "Ninetails";
-            } else {
-                return false;
-            }
-            message.channel.send("<@" + message.author.id + "> your " + lead.name + " is evolving into " + to + "!");
-            evolving[evolving.length] = new Evolution(message.author.id, lead.name, to);
-            await addEvolutionToPokemon(lead);
-            disposedItem = item;
-            await removeItemFromBag(message.author.id, disposedItem, 1);
-            await evolve(message);
-        } else {
-            return false;
+        if (lead.name === "Sandshrew" && lead.form === "Alolan") {
+            speciesToEvolveInto = "Sandslash";
+        } else if (lead.name === "Vulpix" && lead.form === "Alolan") {
+            speciesToEvolveInto = "Ninetails";
         }
-    } else if (item.startsWith("TM")) {
-        var ppath = generatePokemonJSONPath(lead.name, lead.form);
-        var pdata;
-        try {
-            pdata = fs.readFileSync(ppath, "utf8");
-        } catch (err) {
-            console.log(err);
-            return false;
+    }
+
+    if (speciesToEvolveInto != null) {
+        await sendMessage(message.channel, ("<@" + message.author.id + "> your " + lead.name + " is evolving into " + speciesToEvolveInto + "!"));
+        evolving[evolving.length] = new Evolution(message.author.id, lead.name, speciesToEvolveInto);
+        if (
+            await addEvolutionToPokemon(lead) === false
+            ||
+            await removeItemFromBag(message.author.id, item, 1) === false
+            ||
+            await evolve(message) === false
+        ) {
+            wereNoErrorsEncountered = false;
         }
-        var pkmn = JSON.parse(pdata);
-        
-        var moveName;
+    } else {
+        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " the " + item + " could not be used on your " + lead.name));
+    }
+
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
+}
+
+/**
+ * Uses a Technical Machine (TM) on a Pokemon. This will automatically
+ * teach the move to the Pokemon if the Pokemon has an available
+ * move slot, doesn't already know the move, and can learn the TM.
+ * If the Pokemon can learn the TM but doesn't have a free move
+ * slot and doesn't already know the TM, then the user will be 
+ * prompted to select a known move to replace or cancel teaching
+ * the TM.
+ * 
+ * @todo Check if TMs can be used to teach a Pokemon a duplicate attack.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {string} item The name of the TM used, including the 'TM' prefix.
+ * @param {Pokemon} lead The user's lead Pokemon.
+ * 
+ * @returns {boolean} True if no errors were encountered.
+ */
+async function useTMItem(message, item, lead) {
+    let wereNoErrorsEncountered = true;
+    let pkmn = parseJSON(generatePokemonJSONPath(lead.name, lead.form));
+    if (pkmn != null) {
+        let moveName;
         if (item.includes("Confide")) {
             moveName = item.substring(6, item.length);
         } else {
             moveName = item.substring(5, item.length);
         }
         let knownMoves = await getPokemonKnownMoves(lead.pokemon_id);
-        let moves = [
-            {
-                name: null,
-                pp: null
-            },
-            {
-                name: null,
-                pp: null
-            },
-            {
-                name: null,
-                pp: null
-            },
-            {
-                name: null,
-                pp: null
+        let moves = populateMoves(knownMoves);
+        let alreadyKnowsMove = false;
+        let canLearnTM = false;
+        let moveLearnsetIndex;
+        for (moveLearnsetIndex = 0; moveLearnsetIndex < pkmn.move_learnset.length; moveLearnsetIndex++) {
+            if (pkmn.move_learnset[moveLearnsetIndex].hasOwnProperty("tm") && pkmn.move_learnset[moveLearnsetIndex].tm === moveName) {
+                canLearnTM = true;
+                let knownMovesIndex;
+                for (knownMovesIndex = 0; knownMovesIndex < moves.length; knownMovesIndex++) {
+                    if (moves[knownMovesIndex].name === pkmn.move_learnset[moveLearnsetIndex].move) {
+                        alreadyKnowsMove = true;
+                    }
+                }
+                if ((moves[0].name === null) && !alreadyKnowsMove) {
+                    moves[0].name = pkmn.move_learnset[moveLearnsetIndex].move;
+                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
+                } else if ((moves[1].name === null) && !alreadyKnowsMove) {
+                    moves[1].name = pkmn.move_learnset[moveLearnsetIndex].move;
+                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
+                } else if ((moves[2].name === null) && !alreadyKnowsMove) {
+                    moves[2].name = pkmn.move_learnset[moveLearnsetIndex].move;
+                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
+                } else if ((moves[3].name === null) && !alreadyKnowsMove) {
+                    moves[3].name = pkmn.move_learnset[moveLearnsetIndex].move;
+                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
+                } else if (!alreadyKnowsMove) {
+                    transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[moveLearnsetIndex].move);
+                    moves = await teachNewMove(message, lead, pkmn.move_learnset[moveLearnsetIndex].move, moves);
+                    removeTransaction(message.author.id);
+                } else {
+                    await sendMessage(message.channel, (message.author.username + " your " + lead.name + " already knows " + moveName + "."));
+                }
+                wereNoErrorsEncountered = await updateMoves(lead, moves);
             }
-        ]
-        let i = 0;
-        for (i; i < knownMoves.length; i++) {
-            moves[i].name = knownMoves[i].name;
-            moves[i].pp = knownMoves[i].current_pp;
         }
-        var alreadyKnowsMove = false;
-        var canLearnTM = false;
-        if (lead.form === "Alolan") {
-            for (i = 0; i < pkmn.move_learnset.length; i++) {
-                if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].hasOwnProperty("tm") && pkmn.move_learnset[i].variations[0] === (pokemon.form + " " + pokemon.name) && pkmn.move_learnset[i].tm === moveName) {
-                    canLearnTM = true;
-                    var m;
-                    for (m = 0; m < moves.length; m++) {
-                        if (moves[m].name === pkmn.move_learnset[i].move) {
-                            alreadyKnowsMove = true;
-                        }
-                    }
-                    if ((moves[0].name === '---' || moves[0].name === null) && !alreadyKnowsMove) {
-                        moves[0].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if ((moves[1].name === '---' || moves[1].name === null) && !alreadyKnowsMove) {
-                        moves[1].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if ((moves[2].name === '---' || moves[2].name === null) && !alreadyKnowsMove) {
-                        moves[2].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if ((moves[3].name === '---' || moves[3].name === null) && !alreadyKnowsMove) {
-                        moves[3].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if (!alreadyKnowsMove) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[i].move);
-                        moves = await teachNewMove(message, lead, pkmn.move_learnset[i].move, moves);
-                        removeTransaction(message.author.id);
-                    } else {
-                        message.channel.send(message.author.username + " your " + lead.name + " already knows " + moveName + ".");
-                    }
-                    await updateMoves(lead, moves);
-                }
-            }
-            if (!canLearnTM) {
-                message.channel.send(message.author.username + " your " + lead.name + " is unable to learn " + moveName + ".");
-            }
-        } else {
-            for (i = 0; i < pkmn.move_learnset.length; i++) {
-                if (pkmn.move_learnset[i].hasOwnProperty("tm") && pkmn.move_learnset[i].move === moveName) {
-                    canLearnTM = true;
-                    var m;
-                    for (m = 0; m < moves.length; m++) {
-                        if (moves[m].name === pkmn.move_learnset[i].move) {
-                            alreadyKnowsMove = true;
-                        }
-                    }
-                    if ((moves[0].name === '---' || moves[0].name === null) && !alreadyKnowsMove) {
-                        moves[0].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if ((moves[1].name === '---' || moves[1].name === null) && !alreadyKnowsMove) {
-                        moves[1].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if ((moves[2].name === '---' || moves[2].name === null) && !alreadyKnowsMove) {
-                        moves[2].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if ((moves[3].name === '---' || moves[3].name === null) && !alreadyKnowsMove) {
-                        moves[3].name = pkmn.move_learnset[i].move;
-                        message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    } else if (!alreadyKnowsMove) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[i].move);
-                        moves = await teachNewMove(message, lead, pkmn.move_learnset[i].move, moves);
-                        removeTransaction(message.author.id);
-                    } else {
-                        message.channel.send(message.author.username + " your " + lead.name + " already knows " + moveName + ".");
-                    }
-                    await updateMoves(lead, moves);
-                }
-            }
-            if (!canLearnTM) {
-                message.channel.send(message.author.username + " your " + lead.name + " is unable to learn " + moveName + ".");
-            }
+        if (!canLearnTM) {
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your " + lead.name + " is unable to learn " + moveName + "."));
         }
     } else {
-        return false;
+        wereNoErrorsEncountered = false;
     }
-    
-    return true;
+
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
 }
 
 /**
@@ -4383,22 +4302,26 @@ async function useItem(message, item) {
  * @returns {boolean} True if no errors were encountered.
  */
 async function takeItem(message) {
-    var user = await getUser(message.author.id);
+    let wereNoErrorsEncountered = true;
+
+    let user = await getUser(message.author.id);
     if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
-    var lead = await getLeadPokemon(user.user_id);
+
+    let lead = await getLeadPokemon(user.user_id);
     if (lead === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
-    if (lead.item === "None" || lead.item === null) {
-        message.channel.send(message.author.username + " your " + lead.name + " is not holding anything.");
-    } else {
-        var heldItem = await getItem(lead.item);
+
+    if (lead.item === null) {
+        wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your " + lead.name + " is not holding anything."));
+    } else if (wereNoErrorsEncountered) {
+        let heldItem = await getItem(lead.item);
+        /**
+         * If Pokemon is holding an item that the user does not have in their bag,
+         * then create a new item object to insert into the user's bag.
+         */
         if (heldItem === null) {
             heldItem = {
                 name: lead.item,
@@ -4407,16 +4330,20 @@ async function takeItem(message) {
             }
         }
         lead.item = null;
-        message.channel.send(message.author.username + " took the " + heldItem.name + " from " + lead.name + " and put it in their bag.");
-        await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.category);
-        var query = "UPDATE pokemon SET pokemon.item = null WHERE pokemon.pokemon_id = ?";
-        await con.query(query, [lead.pokemon_id], function (err) {
-            if (err) {
-                return reject(err);
-            }
-        });
+        if (
+            await sendMessage(message.channel, (message.author.username + " took the " + heldItem.name + " from " + lead.name + " and put it in their bag.")) === false
+            ||
+            await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.category) === false
+            ||
+            await doQuery("UPDATE pokemon SET pokemon.item = null WHERE pokemon.pokemon_id = ?", [lead.pokemon_id]) === null
+        ) {
+            wereNoErrorsEncountered = false;
+        }
     }
-    return true;
+    
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
 }
 
 /**
@@ -5223,28 +5150,7 @@ async function evolve(message) {
     
     var evoMove = checkForNewMoveUponEvo(evo.to, evolvingPokemon.form);
     var knownMoves = await getPokemonKnownMoves(evolvingPokemon.pokemon_id);
-    let evolvingMoves = [
-        {
-            name: null,
-            pp: null
-        },
-        {
-            name: null,
-            pp: null
-        },
-        {
-            name: null,
-            pp: null
-        },
-        {
-            name: null,
-            pp: null
-        }
-    ];
-    let i;
-    for (i = 0; i < knownMoves.length; i++) {
-        evolvingMoves[i] = knownMoves[i];
-    }
+    let evolvingMoves = populateMoves(knownMoves);
     if (evoMove[0] != "None") {
         message.react(duck.id);
         var x;
@@ -5385,11 +5291,7 @@ async function checkEvolve(user, pokemon, method) {
     }
 
     var knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
-    let moves = [null, null, null, null];
-    let k;
-    for (k = 0; k < knownMoves.length; k++) {
-        moves[k] = knownMoves[k].name;
-    }
+    let moves = populateMoves(knownMoves);
     
 
     var heldItem = "None";
@@ -5556,14 +5458,14 @@ async function checkEvolve(user, pokemon, method) {
                 }
                 //know a specific move
                 if (pkmn.evolutions[i].hasOwnProperty('move_learned')) {
-                    if (moves[0] === pkmn.evolutions[i].move_learned || moves[1] === pkmn.evolutions[i].move_learned || moves[2] === pkmn.evolutions[i].move_learned || moves[3] === pkmn.evolutions[i].move_learned) {
+                    if (moves[0].name === pkmn.evolutions[i].move_learned || moves[1].name === pkmn.evolutions[i].move_learned || moves[2].name === pkmn.evolutions[i].move_learned || moves[3].name === pkmn.evolutions[i].move_learned) {
                         return pkmn.evolutions[i].to; 
                     }
                 }
                 if (pkmn.evolutions[i].hasOwnProperty('conditions')) {
                     //specific to sylveon, only checks for Fairy moves that eevee can learn
                     if (pkmn.evolutions[i].conditions[0] === "Fairy Type Move") {
-                        if (moves[0] === "Charm" || moves[0] === "Baby-Doll Eyes" || moves[1] === "Charm" || moves[1] === "Baby-Doll Eyes" || moves[2] === "Charm" || moves[2] === "Baby-Doll Eyes" || moves[3] === "Charm" || moves[3] === "Baby-Doll Eyes") {
+                        if (moves[0].name === "Charm" || moves[0].name === "Baby-Doll Eyes" || moves[1].name === "Charm" || moves[1].name === "Baby-Doll Eyes" || moves[2].name === "Charm" || moves[2].name === "Baby-Doll Eyes" || moves[3].name === "Charm" || moves[3].name === "Baby-Doll Eyes") {
                             return pkmn.evolutions[i].to; 
                         }
                     }
@@ -6353,30 +6255,10 @@ async function giveXP(message, amount) {
     pokemon.xp += givenXP;
     var done = false;
     var evolveTo = null;
-    let moves = [
-        {
-            name: null,
-            pp: null
-        },
-        {
-            name: null,
-            pp: null
-        },
-        {
-            name: null,
-            pp: null
-        },
-        {
-            name: null,
-            pp: null
-        }
-    ]
+
     let knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
-    let i = 0;
-    for (i; i < knownMoves.length; i++) {
-        moves[i].name = knownMoves[i].name;
-        moves[i].pp = knownMoves[i].current_pp;
-    }
+    let moves = populateMoves(knownMoves);
+    
     while (done === false) {
         var next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
         if (next != null && next <= 0) {
