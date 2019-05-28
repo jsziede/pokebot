@@ -3974,13 +3974,14 @@ async function addEvolutionToPokemon(pokemon) {
  * @returns {boolean} True if the Pokemon's moves were updated.
  */
 async function updateMoves(pokemon, moves) {
-    let moveNames = moves.map(move => move.name);
-    await doQuery('UPDATE move SET move.slot = NULL WHERE move.pokemon = ? AND NOT move.name IN (?)', [pokemon.pokemon_id, moveNames]);
+    let moveIds = moves.map(move => move.id);
+    await doQuery('UPDATE move SET move.slot = NULL WHERE move.pokemon = ? AND move.move_id IN (?)', [pokemon.pokemon_id, moveIds]);
     let i = 0;
     for (i; i < moves.length; i++) {
         if (moves[i].name != null && moves[i].pp != null) {
-            let status = await doQuery('UPDATE move SET move.slot = ? WHERE move.pokemon = ? AND move.name = ?', [(i + 1), pokemon.pokemon_id, moves[i].name]);
-            if (status.affectedRows === 0) {
+            if (moves[i].id != 0) {
+                await doQuery('UPDATE move SET move.slot = ? WHERE move.move_id = ?', [(i + 1), moves[i].id]);
+            } else {
                 let move_set = {
                     pokemon: pokemon.pokemon_id,
                     name: moves[i].name,
@@ -4007,25 +4008,30 @@ function populateMoves(knownMoves) {
     let moves = [
         {
             name: null,
-            pp: null
+            pp: null,
+            id: null
         },
         {
             name: null,
-            pp: null
+            pp: null,
+            id: null
         },
         {
             name: null,
-            pp: null
+            pp: null,
+            id: null
         },
         {
             name: null,
-            pp: null
+            pp: null,
+            id: null
         }
     ]
     let knownMoveIndex = 0;
     for (knownMoveIndex; knownMoveIndex < knownMoves.length; knownMoveIndex++) {
         moves[knownMoveIndex].name = knownMoves[knownMoveIndex].name;
         moves[knownMoveIndex].pp = knownMoves[knownMoveIndex].current_pp;
+        moves[knownMoveIndex].id = knownMoves[knownMoveIndex].move_id;
     }
 
     return moves;
@@ -4277,19 +4283,26 @@ async function useTMItem(message, item, lead) {
                             if (moves[knownMovesIndex].pp > newMovePP) {
                                 moves[knownMovesIndex].pp = newMovePP;
                             }
+
+                            /**
+                             * Erase the move id to prevent overwriting an existing move in the database.
+                             */
+                            moves[knownMovesIndex].id = 0;
+
                             wasMoveLearnedAutomatically = true;
                             break;
                         }
                     }
 
                     if (wasMoveLearnedAutomatically) {
-                        wereNoErrorsEncountered = await updateMoves(lead, moves);
                         await sendMessage(message.channel, (message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!"));
                     } else {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[moveLearnsetIndex].move);
                         moves = await replaceMove(message, lead, pkmn.move_learnset[moveLearnsetIndex].move, moves);
                         removeTransaction(message.author.id);
                     }
+
+                    wereNoErrorsEncountered = await updateMoves(lead, moves);
                 } else {
                     await sendMessage(message.channel, (message.author.username + " your " + lead.name + " already knows " + moveName + "."));
                 }
@@ -6049,18 +6062,22 @@ async function replaceMove(message, pokemon, moveName, moves) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[0].name + " and learned " + moveName + ".");
         moves[0].name = moveName;
         moves[0].pp = getMovePP(moveName);
+        moves[0].id = 0;
     } else if (input === 2) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[1].name + " and learned " + moveName + ".");
         moves[1].name = moveName;
         moves[1].pp = getMovePP(moveName);
+        moves[1].id = 0;
     } else if (input === 3) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[2].name + " and learned " + moveName + ".");
         moves[2].name = moveName;
         moves[2].pp = getMovePP(moveName);
+        moves[2].id = 0;
     } else if (input === 4) {
         message.channel.send(message.author.username + "'s " + name + " forgot " + moves[3].name + " and learned " + moveName + ".");
         moves[3].name = moveName;
         moves[3].pp = getMovePP(moveName);
+        moves[3].id = 0;
     }
 
     return moves;
