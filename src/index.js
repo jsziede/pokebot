@@ -1930,10 +1930,6 @@ function generateModelLink(name, shiny, gender, form) {
         lower = "nidoran-f";
     }
 
-    if (lower === "farfetch'd") {
-        lower = "farfetch_d";
-    }
-
     if (lower === "farfetch\'d") {
         lower = "farfetch_d";
     }
