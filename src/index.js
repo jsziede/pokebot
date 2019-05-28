@@ -4249,32 +4249,51 @@ async function useTMItem(message, item, lead) {
         for (moveLearnsetIndex = 0; moveLearnsetIndex < pkmn.move_learnset.length; moveLearnsetIndex++) {
             if (pkmn.move_learnset[moveLearnsetIndex].hasOwnProperty("tm") && pkmn.move_learnset[moveLearnsetIndex].tm === moveName) {
                 canLearnTM = true;
+                /**
+                 * Check if Pokemon already knows the TM move. 
+                 */
                 let knownMovesIndex;
                 for (knownMovesIndex = 0; knownMovesIndex < moves.length; knownMovesIndex++) {
                     if (moves[knownMovesIndex].name === pkmn.move_learnset[moveLearnsetIndex].move) {
                         alreadyKnowsMove = true;
                     }
                 }
-                if ((moves[0].name === null) && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnset[moveLearnsetIndex].move;
-                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
-                } else if ((moves[1].name === null) && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnset[moveLearnsetIndex].move;
-                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
-                } else if ((moves[2].name === null) && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnset[moveLearnsetIndex].move;
-                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
-                } else if ((moves[3].name === null) && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnset[moveLearnsetIndex].move;
-                    message.channel.send(message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!");
-                } else if (!alreadyKnowsMove) {
-                    transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[moveLearnsetIndex].move);
-                    moves = await teachNewMove(message, lead, pkmn.move_learnset[moveLearnsetIndex].move, moves);
-                    removeTransaction(message.author.id);
+
+                /**
+                 * If the Pokemon does not already know the TM move.
+                 */
+                if (!alreadyKnowsMove) {
+                    let newMovePP = getMovePP(pkmn.move_learnset[moveLearnsetIndex].move);
+                    let wasMoveLearnedAutomatically = false;
+                    /**
+                     * Automatically teach the TM move if Pokemon has a free move slot.
+                     */
+                    for (knownMovesIndex = 0; knownMovesIndex < knownMoves.length; knownMovesIndex++) {
+                        if (moves[knownMovesIndex].name === null) {
+                            moves[knownMovesIndex].name = pkmn.move_learnset[moveLearnsetIndex].move;
+                            /**
+                             * Prevent the newly taught move from having more current PP than its max PP.
+                             */
+                            if (moves[knownMovesIndex].pp > newMovePP) {
+                                moves[knownMovesIndex].pp = newMovePP;
+                            }
+                            wasMoveLearnedAutomatically = true;
+                            break;
+                        }
+                    }
+
+                    if (wasMoveLearnedAutomatically) {
+                        wereNoErrorsEncountered = await updateMoves(lead, moves);
+                        await sendMessage(message.channel, (message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!"));
+                    } else {
+                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[moveLearnsetIndex].move);
+                        moves = await replaceMove(message, lead, pkmn.move_learnset[moveLearnsetIndex].move, moves);
+                        removeTransaction(message.author.id);
+                    }
                 } else {
                     await sendMessage(message.channel, (message.author.username + " your " + lead.name + " already knows " + moveName + "."));
                 }
-                wereNoErrorsEncountered = await updateMoves(lead, moves);
+                break;
             }
         }
         if (!canLearnTM) {
@@ -5174,7 +5193,7 @@ async function evolve(message) {
                     await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!"));
                 } else {
                     transactions[transactions.length] = new Transaction(message.author.id, ("teaching your " + evo.to + " " + evoMove[x]));
-                    evolvingMoves = await teachNewMove(message, evolvingPokemon, evoMove[x], evolvingMoves);
+                    evolvingMoves = await replaceMove(message, evolvingPokemon, evoMove[x], evolvingMoves);
                     removeTransaction(message.author.id);
                 }
             }
@@ -5700,7 +5719,7 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
+                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
                         moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
@@ -5749,7 +5768,7 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
+                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
                         moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
@@ -5798,7 +5817,7 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
+                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
                         moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
@@ -5848,7 +5867,7 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
                 } else if (!alreadyKnowsMove) {
                     if (askForResponse) {
                         transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await teachNewMove(message, pokemon, pkmn.move_learnset[i].move, moves);
+                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
                         removeTransaction(message.author.id);
                     } else {
                         moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
@@ -5877,7 +5896,7 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
  * 
  * @returns {move[]} The Pokemon's moveset after the owner has made a choice. 
  */
-async function teachNewMove(message, pokemon, moveName, moves) {
+async function replaceMove(message, pokemon, moveName, moves) {
     var m;
     var fields = [];
     var name;
