@@ -4417,7 +4417,7 @@ async function tradeOffer(message, tradeTo) {
     trading[tradeToIndex] = new Trade(tradeTo.id, message.author.id, null, null);
 
     if (wereNoErrorsEncountered) {
-        await sendMessage(message.channel, (tradeTo.username + " you have received a trade offer from " + message.author.username + ". Do you accept?"));
+        await sendMessage(message.channel, (tradeTo.username + " you have received a trade offer from " + message.author.username + ". Type \'Yes\' to accept or \'No\' to decline."));
         
         const ACCEPT_TRADE = 1;
         const DECLINE_TRADE = -1;
@@ -4433,6 +4433,7 @@ async function tradeOffer(message, tradeTo) {
             await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
                 .then(collected => {
                     input = collected.first().content;
+                    input = input.toLowerCase();
                 })
                 .catch(collected => {
                     console.error(collected);
@@ -4447,6 +4448,7 @@ async function tradeOffer(message, tradeTo) {
                 cancel = true;
                 input = ACCEPT_TRADE;
             } else {
+                await sendMessage(message.channel, (tradeTo.username + " I did not understand your response. Type \'Yes\' to accept or \'No\' to decline the trade with " + message.author.username));
                 input = AWAIT_USER_INPUT;
             }
         }
@@ -4477,7 +4479,7 @@ async function tradeOffer(message, tradeTo) {
                 /**
                  * Prompt the sender to select which of their Pokemon they want to trade.
                  */
-                selectedPokemon = await selectOwnedPokemon(message, user.user_id, message.author.username, pokemon);
+                selectedPokemon = await selectOwnedPokemon(message, user, message.author.username, pokemon);
                 if (selectedPokemon != null) {
                     await sendMessage(message.channel, (message.author.username + " selected a " + selectedPokemon.name + " to trade."));
                 
@@ -4495,7 +4497,7 @@ async function tradeOffer(message, tradeTo) {
                         /**
                          * Prompt the receiver to select which of their Pokemon they want to trade.
                          */
-                        tselectedPokemon = await selectOwnedPokemon(message, tradeTo.id, tradeTo.username, tpokemon);
+                        tselectedPokemon = await selectOwnedPokemon(message, tuser, tradeTo.username, tpokemon);
 
                         if (tselectedPokemon != null) {
                             await sendMessage(message.channel, (tradeTo.username + " selected a " + tselectedPokemon.name + " to trade."));
@@ -4513,7 +4515,7 @@ async function tradeOffer(message, tradeTo) {
             /**
              * If both sender and receiver selected a Pokemon to trade.
              */
-            if (selectOwnedPokemon != null && tselectedPokemon != null) {
+            if (selectedPokemon != null && tselectedPokemon != null) {
                 trading[tradeFromIndex].askPokemon = selectedPokemon.name;
                 trading[tradeFromIndex].respondPokemon = tselectedPokemon.name;
                 trading[tradeToIndex].askPokemon = tselectedPokemon.name;
@@ -4646,19 +4648,18 @@ async function tradeOffer(message, tradeTo) {
  * then the user is again prompted to select one from that group.
  * 
  * @param {Message} message The message sent from the user.
- * @param {string} userId The id of the user who is selecting a Pokemon.
- * @param {string} username The name of the user who is selecting a Pokemon.
+ * @param {User} user The Pokebot user who is selecting a Pokemon.
  * @param {Pokemon[]} pokemon All Pokemon currently owned by the user.
  * 
  * @returns {Pokemon} The one Pokemon selected by the user, or null if the user
  * did not select a Pokeon.
  */
-async function selectOwnedPokemon(message, userId, username, pokemon) {
+async function selectOwnedPokemon(message, user, username, pokemon) {
     let matchedPokemon = [];
     let userIsSelectingAPokemon = true;
     let selectedPokemon = null;
 
-    await printPokemon(message, user);
+    printPokemon(message, user.user_id);
 
     while (userIsSelectingAPokemon) {
         await sendMessage(message.channel, (username + " please enter the name of the Pokémon you want to trade."));
@@ -4667,7 +4668,7 @@ async function selectOwnedPokemon(message, userId, username, pokemon) {
         let cancel = false;
 
         while (cancel === false) {
-            await message.channel.awaitMessages(response => response.author.id === userId, { max: 1, time: 30000, errors: ['time'] })
+            await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 name = collected.first().content.toString().toLowerCase();
             })
@@ -4731,7 +4732,7 @@ async function selectOwnedPokemon(message, userId, username, pokemon) {
                 cancel = false;
                 let input = null;
                 while(cancel == false) {
-                    await message.channel.awaitMessages(response => response.author.id === userId, { max: 1, time: 30000, errors: ['time'] })
+                    await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
                     .then(collected => {
                         input = collected.first().content.toString().toLowerCase();
                     })
@@ -7149,7 +7150,7 @@ async function dayCare(message) {
             if (daycarePokemon.length >= 2) {
                 await message.channel.send(message.author.username + " you cannot have more than two Pokémon at the Day Care. You must pick up one of your Pokémon before you can drop off another. " + duck);
             } else {
-                printPokemon(message);
+                printPokemon(message, null);
 
                 var prompt = "Please enter the name or nickname of the Pokémon you want to drop off, or type \"Cancel\" to exit the Day Care.";
                 await message.channel.send(prompt);
@@ -10673,7 +10674,7 @@ async function printPokemon(message, otherUser) {
     var userID = message.author.id;
     
     if (otherUser != null) {
-        userID = otherUser.id;
+        userID = otherUser;
         username = otherUser.username;
     }
 
