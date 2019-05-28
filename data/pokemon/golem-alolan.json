@@ -1,29 +1,29 @@
 {
-    "name": "Graveler",
-    "national_id": 75,
+    "name": "Golem",
+    "national_id": 76,
     "types": [
         "Rock",
-        "Ground"
+        "Electric"
     ],
     "items": [
         {
-            "name": "Everstone",
-            "chance": 5
+            "name": "Cell Battery",
+            "chance": 50
         }
     ],
     "abilities": [
         {
-            "name": "Rock Head"
+            "name": "Magnet Pull"
         },
         {
             "name": "Sturdy"
         },
         {
-            "name": "Sand Veil",
+            "name": "Galvanize",
             "hidden": true
         }
     ],
-    "catch_rate": 120,
+    "catch_rate": 45,
     "gender_ratios": {
         "male": 50,
         "female": 50
@@ -35,444 +35,530 @@
         4080,
         4334
     ],
-    "height_us": "3'03\"",
-    "height_eu": "1.0 m",
-    "weight_us": "231.5 lbs.",
-    "weight_eu": "105.0 kg",
-    "base_exp_yield": 137,
+    "height_us": "5'07\"",
+    "height_eu": "1.7 m",
+    "weight_us": "696.7 lbs.",
+    "weight_eu": "316.0 kg",
+    "base_exp_yield": 218,
     "leveling_rate": "Medium Slow",
     "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
-        "def": 2,
+        "def": 3,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 55,
-        "atk": 95,
-        "def": 115,
-        "sp_atk": 45,
-        "sp_def": 45,
-        "speed": 35
+        "hp": 80,
+        "atk": 120,
+        "def": 130,
+        "sp_atk": 55,
+        "sp_def": 65,
+        "speed": 45
     },
-    "evolution_from": "Geodude",
-    "evolutions": [
-        {
-            "to": "Golem",
-            "trade": true
-        }
-    ],
-    "species": "Rock Pokémon",
+    "evolution_from": "Graveler",
+    "evolutions": [],
+    "species": "Megaton Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Rocks are Graveler's favorite food. This Pokémon will climb a mountain from the base to the summit, crunchingly feasting on rocks all the while. Upon reaching the peak, it rolls back down to the bottom.",
+    "pokedex_entry": "Golem is known for rolling down from mountains. To prevent them from rolling into the homes of people downhill, grooves have been dug into the sides of mountains to serve as guideways for diverting this Pokémon's course.",
     "move_learnset": [
+        {
+            "move": "Charge",
+            "level": 1,
+            "variations": [
+                "Alolan Golem"
+            ]
+        },
         {
             "move": "Defense Curl",
             "level": 1,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Mud Sport",
+            "move": "Heavy Slam",
             "level": 1,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Polish",
             "level": 1,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Tackle",
             "level": 1,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Mud Sport",
+            "move": "Charge",
             "level": 4,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Polish",
             "level": 6,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Rollout",
+            "move": "Steamroller",
             "level": 10,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Magnitude",
+            "move": "Spark",
             "level": 12,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Throw",
             "level": 16,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Smack Down",
             "level": 18,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Bulldoze",
+            "move": "Thunder Punch",
             "level": 22,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Self-Destruct",
             "level": 24,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Stealth Rock",
             "level": 30,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Blast",
             "level": 34,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Earthquake",
+            "move": "Discharge",
             "level": 40,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Explosion",
             "level": 44,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Double-Edge",
             "level": 50,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Stone Edge",
             "level": 54,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Heavy Slam",
+            "level": 60,
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Autotomize",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Block",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Counter",
+            "egg_move": true,
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Curse",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Endure",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Flail",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
-            "move": "Focus Punch",
+            "move": "Magnet Rise",
             "egg_move": true,
             "variations": [
-                "Graveler"
-            ]
-        },
-        {
-            "move": "Hammer Arm",
-            "egg_move": true,
-            "variations": [
-                "Graveler"
-            ]
-        },
-        {
-            "move": "Mega Punch",
-            "egg_move": true,
-            "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Climb",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Screech",
+            "egg_move": true,
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Wide Guard",
             "egg_move": true,
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Roar",
+            "tm": "TM5",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Smack Down",
             "tm": "TM23",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": "TM24",
+            "variations": [
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Earthquake",
             "tm": "TM26",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Brick Break",
             "tm": "TM31",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Flamethrower",
             "tm": "TM35",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Sandstorm",
             "tm": "TM37",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Fire Blast",
             "tm": "TM38",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Tomb",
             "tm": "TM39",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49",
+            "variations": [
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Focus Blast",
+            "tm": "TM52",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Fling",
             "tm": "TM56",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57",
+            "variations": [
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": "TM59",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Explosion",
             "tm": "TM64",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Polish",
             "tm": "TM69",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Stone Edge",
             "tm": "TM71",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Volt Switch",
+            "tm": "TM72",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Gyro Ball",
             "tm": "TM74",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Bulldoze",
             "tm": "TM78",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Rock Slide",
             "tm": "TM80",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
+            ]
+        },
+        {
+            "move": "Wild Charge",
+            "tm": "TM93",
+            "variations": [
+                "Alolan Golem"
             ]
         },
         {
             "move": "Nature Power",
             "tm": "TM96",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Graveler"
+                "Alolan Golem"
             ]
         }
     ]

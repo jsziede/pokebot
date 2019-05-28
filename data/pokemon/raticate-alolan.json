@@ -1,28 +1,29 @@
 {
-    "name": "Meowth",
-    "national_id": 52,
+    "name": "Raticate",
+    "national_id": 20,
     "types": [
+        "Dark",
         "Normal"
     ],
     "items": [
         {
-            "name": "Quick Claw",
+            "name": "Pecha Berry",
             "chance": 5
         }
     ],
     "abilities": [
         {
-            "name": "Pickup"
+            "name": "Gluttony"
         },
         {
-            "name": "Technician"
+            "name": "Hustle"
         },
         {
-            "name": "Unnerve",
+            "name": "Thick Fat",
             "hidden": true
         }
     ],
-    "catch_rate": 255,
+    "catch_rate": 127,
     "gender_ratios": {
         "male": 50,
         "female": 50
@@ -31,14 +32,14 @@
         "Field"
     ],
     "hatch_time": [
-        5355,
-        5609
+        4080,
+        4334
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "9.3 lbs.",
-    "weight_eu": "4.2 kg",
-    "base_exp_yield": 58,
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "56.2 lbs.",
+    "weight_eu": "25.5 kg",
+    "base_exp_yield": 145,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
@@ -47,438 +48,424 @@
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 1
+        "speed": 2
     },
     "base_stats": {
-        "hp": 40,
-        "atk": 45,
-        "def": 35,
+        "hp": 75,
+        "atk": 71,
+        "def": 70,
         "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 90
+        "sp_def": 80,
+        "speed": 77
     },
-    "evolution_from": null,
-    "evolutions": [
-        {
-            "to": "Persian",
-            "level": 28
-        }
-    ],
-    "species": "Scratch Cat Pokémon",
+    "evolution_from": "Rattata",
+    "evolutions": [],
+    "species": "Mouse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
+    "pokedex_entry": "Raticate’s sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.",
     "move_learnset": [
         {
-            "move": "Growl",
-            "level": 1,
-            "variations": [
-                "Meowth"
-            ]
+            "move": "Focus Energy",
+            "level": 1
         },
         {
-            "move": "Scratch",
-            "level": 1,
-            "variations": [
-                "Meowth"
-            ]
+            "move": "Quick Attack",
+            "level": 1
+        },
+        {
+            "move": "Scary Face",
+            "level": 1
+        },
+        {
+            "move": "Swords Dance",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
+            "move": "Tail Whip",
+            "level": 1
+        },
+        {
+            "move": "Quick Attack",
+            "level": 4
+        },
+        {
+            "move": "Focus Energy",
+            "level": 7
         },
         {
             "move": "Bite",
-            "level": 6,
+            "level": 10
+        },
+        {
+            "move": "Pursuit",
+            "level": 13
+        },
+        {
+            "move": "Hyper Fang",
+            "level": 16
+        },
+        {
+            "move": "Assurance",
+            "level": 19
+        },
+        {
+            "move": "Crunch",
+            "level": 24
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 29
+        },
+        {
+            "move": "Super Fang",
+            "level": 34
+        },
+        {
+            "move": "Double-Edge",
+            "level": 39
+        },
+        {
+            "move": "Endeavor",
+            "level": 44
+        },
+        {
+            "move": "Counter",
+            "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Fake Out",
-            "level": 9,
+            "move": "Final Gambit",
+            "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Fury Swipes",
-            "level": 14,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Screech",
-            "level": 17,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Feint Attack",
-            "level": 22,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Taunt",
-            "level": 25,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Pay Day",
-            "level": 30,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Slash",
-            "level": 33,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Nasty Plot",
-            "level": 38,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Assurance",
-            "level": 41,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Captivate",
-            "level": 46,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Night Slash",
-            "level": 49,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Feint",
-            "level": 50,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Amnesia",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Assist",
+            "move": "Me First",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Charm",
+            "move": "Revenge",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Flail",
+            "move": "Reversal",
             "egg_move": true,
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Foul Play",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Hypnosis",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Iron Tail",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Last Resort",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Odor Sleuth",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Punishment",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Snatch",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Spite",
+            "move": "Stockpile",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Tail Whip",
+            "move": "Swallow",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Work Up",
-            "tm": "TM1",
+            "move": "Switcheroo",
+            "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Uproar",
+            "egg_move": true,
+            "variations": [
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Roar",
+            "tm": "TM5",
+            "variations": [
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Bulk Up",
+            "tm": "TM8",
+            "variations": [
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9",
+            "variations": [
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Taunt",
             "tm": "TM12",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Ice Beam",
+            "tm": "TM13",
+            "variations": [
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Blizzard",
+            "tm": "TM14",
+            "variations": [
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15",
+            "variations": [
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Rain Dance",
             "tm": "TM18",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24",
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Shadow Ball",
             "tm": "TM30",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Aerial Ace",
-            "tm": "TM40",
+            "move": "Sludge Wave",
+            "tm": "TM34",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Torment",
             "tm": "TM41",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Echoed Voice",
-            "tm": "TM49",
+            "move": "Quash",
+            "tm": "TM60",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Embargo",
+            "tm": "TM63",
+            "variations": [
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Shadow Claw",
             "tm": "TM65",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Payback",
-            "tm": "TM66",
+            "move": "Giga Impact",
+            "tm": "TM68",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77",
+            "move": "Swords Dance",
+            "tm": "TM75",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85",
+            "move": "Grass Knot",
+            "tm": "TM86",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "U-turn",
             "tm": "TM89",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
+            ]
+        },
+        {
+            "move": "Snarl",
+            "tm": "TM95",
+            "variations": [
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Dark Pulse",
             "tm": "TM97",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Meowth"
+                "Alolan Raticate"
             ]
         }
     ]

@@ -1,28 +1,29 @@
 {
-    "name": "Meowth",
-    "national_id": 52,
+    "name": "Dugtrio",
+    "national_id": 51,
     "types": [
-        "Normal"
+        "Ground",
+        "Steel"
     ],
     "items": [
         {
-            "name": "Quick Claw",
+            "name": "Soft Sand",
             "chance": 5
         }
     ],
     "abilities": [
         {
-            "name": "Pickup"
+            "name": "Sand Veil"
         },
         {
-            "name": "Technician"
+            "name": "Tangling Hair"
         },
         {
-            "name": "Unnerve",
+            "name": "Sand Force",
             "hidden": true
         }
     ],
-    "catch_rate": 255,
+    "catch_rate": 50,
     "gender_ratios": {
         "male": 50,
         "female": 50
@@ -34,451 +35,460 @@
         5355,
         5609
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "9.3 lbs.",
-    "weight_eu": "4.2 kg",
-    "base_exp_yield": 58,
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "146.8 lbs.",
+    "weight_eu": "66.6 kg",
+    "base_exp_yield": 142,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
-        "atk": 0,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 1
+        "speed": 0
     },
     "base_stats": {
-        "hp": 40,
-        "atk": 45,
-        "def": 35,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 90
+        "hp": 35,
+        "atk": 100,
+        "def": 60,
+        "sp_atk": 50,
+        "sp_def": 70,
+        "speed": 110
     },
-    "evolution_from": null,
-    "evolutions": [
-        {
-            "to": "Persian",
-            "level": 28
-        }
-    ],
-    "species": "Scratch Cat Pokémon",
+    "evolution_from": "Diglett",
+    "evolutions": [],
+    "species": "Mole Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
+    "pokedex_entry": "Dugtrio are actually triplets that emerged from one body. As a result, each triplet thinks exactly like the other two triplets. They work cooperatively to burrow endlessly.",
     "move_learnset": [
         {
             "move": "Growl",
             "level": 1,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Scratch",
+            "move": "Metal Claw",
             "level": 1,
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Bite",
-            "level": 6,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Fake Out",
-            "level": 9,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Fury Swipes",
-            "level": 14,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Screech",
-            "level": 17,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Feint Attack",
-            "level": 22,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Taunt",
-            "level": 25,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Pay Day",
-            "level": 30,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Slash",
-            "level": 33,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Nasty Plot",
-            "level": 38,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Assurance",
-            "level": 41,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Captivate",
-            "level": 46,
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Night Slash",
-            "level": 49,
+            "level": 1,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Feint",
-            "level": 50,
+            "move": "Rototiller",
+            "level": 1,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Amnesia",
+            "move": "Sand Attack",
+            "level": 1,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Sand Tomb",
+            "level": 1,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Tri Attack",
+            "level": 1,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Growl",
+            "level": 4,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Astonish",
+            "level": 7,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 10,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Magnitude",
+            "level": 14,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Bulldoze",
+            "level": 18,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 22,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Mud Bomb",
+            "level": 25,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Earth Power",
+            "level": 30,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Dig",
+            "level": 35,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Iron Head",
+            "level": 41,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "level": 47,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Fissure",
+            "level": 53,
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Ancient Power",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Assist",
+            "move": "Beat Up",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Charm",
+            "move": "Endure",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Flail",
+            "move": "Feint Attack",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Foul Play",
+            "move": "Final Gambit",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Hypnosis",
+            "move": "Headbutt",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Iron Tail",
+            "move": "Memento",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Last Resort",
+            "move": "Metal Sound",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Odor Sleuth",
+            "move": "Pursuit",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Punishment",
+            "move": "Reversal",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Snatch",
+            "move": "Thrash",
             "egg_move": true,
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Spite",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Tail Whip",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Work Up",
             "tm": "TM1",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Taunt",
-            "tm": "TM12",
+            "move": "Hyper Beam",
+            "tm": "TM15",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18",
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Thunderbolt",
-            "tm": "TM24",
+            "move": "Earthquake",
+            "tm": "TM26",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30",
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": "TM34",
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37",
+            "variations": [
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Aerial Ace",
             "tm": "TM40",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41",
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Echoed Voice",
             "tm": "TM49",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Shadow Claw",
             "tm": "TM65",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Payback",
-            "tm": "TM66",
+            "move": "Giga Impact",
+            "tm": "TM68",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77",
+            "move": "Stone Edge",
+            "tm": "TM71",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85",
+            "move": "Bulldoze",
+            "tm": "TM78",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
+            ]
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80",
+            "variations": [
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89",
-            "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
-            "move": "Dark Pulse",
-            "tm": "TM97",
+            "move": "Flash Cannon",
+            "tm": "TM91",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Meowth"
+                "Alolan Dugtrio"
             ]
         }
     ]

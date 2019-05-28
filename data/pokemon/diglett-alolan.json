@@ -1,24 +1,25 @@
 {
-    "name": "Meowth",
-    "national_id": 52,
+    "name": "Diglett",
+    "national_id": 50,
     "types": [
-        "Normal"
+        "Ground",
+        "Steel"
     ],
     "items": [
         {
-            "name": "Quick Claw",
+            "name": "Soft Sand",
             "chance": 5
         }
     ],
     "abilities": [
         {
-            "name": "Pickup"
+            "name": "Sand Veil"
         },
         {
-            "name": "Technician"
+            "name": "Tangling Hair"
         },
         {
-            "name": "Unnerve",
+            "name": "Sand Force",
             "hidden": true
         }
     ],
@@ -34,11 +35,11 @@
         5355,
         5609
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "9.3 lbs.",
-    "weight_eu": "4.2 kg",
-    "base_exp_yield": 58,
+    "height_us": "0'08\"",
+    "height_eu": "0.2 m",
+    "weight_us": "2.2 lbs.",
+    "weight_eu": "1.0 kg",
+    "base_exp_yield": 53,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
@@ -50,435 +51,386 @@
         "speed": 1
     },
     "base_stats": {
-        "hp": 40,
-        "atk": 45,
-        "def": 35,
-        "sp_atk": 40,
-        "sp_def": 40,
+        "hp": 10,
+        "atk": 55,
+        "def": 30,
+        "sp_atk": 35,
+        "sp_def": 45,
         "speed": 90
     },
     "evolution_from": null,
     "evolutions": [
         {
-            "to": "Persian",
-            "level": 28
+            "to": "Dugtrio",
+            "level": 26
         }
     ],
-    "species": "Scratch Cat Pokémon",
+    "species": "Mole Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
+    "pokedex_entry": "Diglett are raised in most farms. The reason is simple—wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.",
     "move_learnset": [
         {
+            "move": "Metal Claw",
+            "level": 1,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sand Attack",
+            "level": 1,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
             "move": "Growl",
-            "level": 1,
+            "level": 4,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Scratch",
-            "level": 1,
+            "move": "Astonish",
+            "level": 7,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Bite",
-            "level": 6,
+            "move": "Mud-Slap",
+            "level": 10,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Fake Out",
-            "level": 9,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Fury Swipes",
+            "move": "Magnitude",
             "level": 14,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Screech",
-            "level": 17,
+            "move": "Bulldoze",
+            "level": 18,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 22,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Mud Bomb",
+            "level": 25,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Earth Power",
+            "level": 28,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Dig",
+            "level": 31,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Iron Head",
+            "level": 35,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "level": 39,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Fissure",
+            "level": 43,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Ancient Power",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Beat Up",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Endure",
+            "egg_move": true,
+            "variations": [
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Feint Attack",
-            "level": 22,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Taunt",
-            "level": 25,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Pay Day",
-            "level": 30,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Slash",
-            "level": 33,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Nasty Plot",
-            "level": 38,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Assurance",
-            "level": 41,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Captivate",
-            "level": 46,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Night Slash",
-            "level": 49,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Feint",
-            "level": 50,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Amnesia",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Assist",
+            "move": "Final Gambit",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Charm",
+            "move": "Headbutt",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Flail",
+            "move": "Memento",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Foul Play",
+            "move": "Metal Sound",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Hypnosis",
+            "move": "Pursuit",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Iron Tail",
+            "move": "Reversal",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Last Resort",
+            "move": "Thrash",
             "egg_move": true,
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Odor Sleuth",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Punishment",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Snatch",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Spite",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Tail Whip",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Work Up",
             "tm": "TM1",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Thunderbolt",
-            "tm": "TM24",
+            "move": "Earthquake",
+            "tm": "TM26",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Sandstorm",
+            "tm": "TM37",
+            "variations": [
+                "Alolan Diglett"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Aerial Ace",
             "tm": "TM40",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Echoed Voice",
             "tm": "TM49",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Shadow Claw",
             "tm": "TM65",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Payback",
-            "tm": "TM66",
+            "move": "Bulldoze",
+            "tm": "TM78",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77",
+            "move": "Rock Slide",
+            "tm": "TM80",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89",
-            "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
-            "move": "Dark Pulse",
-            "tm": "TM97",
+            "move": "Flash Cannon",
+            "tm": "TM91",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Meowth"
+                "Alolan Diglett"
             ]
         }
     ]

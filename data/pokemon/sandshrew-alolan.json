@@ -1,28 +1,26 @@
 {
-    "name": "Persian",
-    "national_id": 53,
+    "name": "Sandshrew",
+    "national_id": 27,
     "types": [
-        "Normal"
+        "Ice",
+        "Steel"
     ],
     "items": [
         {
-            "name": "Quick Claw",
+            "name": "Grip Claw",
             "chance": 5
         }
     ],
     "abilities": [
         {
-            "name": "Limber"
+            "name": "Snow Cloak"
         },
         {
-            "name": "Technician"
-        },
-        {
-            "name": "Unnerve",
+            "name": "Slush Rush",
             "hidden": true
         }
     ],
-    "catch_rate": 90,
+    "catch_rate": 255,
     "gender_ratios": {
         "male": 50,
         "female": 50
@@ -34,509 +32,479 @@
         5355,
         5609
     ],
-    "height_us": "3'03\"",
-    "height_eu": "1.0 m",
-    "weight_us": "70.5 lbs.",
-    "weight_eu": "32.0 kg",
-    "base_exp_yield": 154,
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "88.2 lbs.",
+    "weight_eu": "40.0 kg",
+    "base_exp_yield": 60,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
-        "def": 0,
+        "def": 1,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 2
+        "speed": 0
     },
     "base_stats": {
-        "hp": 65,
-        "atk": 70,
-        "def": 60,
-        "sp_atk": 65,
-        "sp_def": 65,
-        "speed": 115
+        "hp": 50,
+        "atk": 75,
+        "def": 90,
+        "sp_atk": 10,
+        "sp_def": 35,
+        "speed": 40
     },
-    "evolution_from": "Meowth",
-    "evolutions": [],
-    "species": "Classy Cat Pokémon",
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Sandslash",
+            "level": 22
+        }
+    ],
+    "species": "Mouse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.",
+    "pokedex_entry": "Sandshrew has a very dry hide that is extremely tough. The Pokémon can roll into a ball that repels any attack. At night, it burrows into the desert to sleep.",
     "move_learnset": [
         {
-            "move": "Bite",
+            "move": "Defense Curl",
             "level": 1,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Fake Out",
-            "level": 1,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Growl",
-            "level": 1,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Play Rough",
-            "level": 1,
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Scratch",
             "level": 1,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Bide",
+            "level": 3,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Powder Snow",
+            "level": 5,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Ice Ball",
+            "level": 7,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Rapid Spin",
+            "level": 9,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Fury Cutter",
+            "level": 11,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Metal Claw",
+            "level": 14,
+            "variations": [
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Swift",
-            "level": 1,
+            "level": 17,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Switcheroo",
-            "level": 1,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Bite",
-            "level": 6,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Fake Out",
-            "level": 9,
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Fury Swipes",
-            "level": 14,
+            "level": 20,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Screech",
-            "level": 17,
+            "move": "Iron Defense",
+            "level": 23,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Feint Attack",
-            "level": 22,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Taunt",
-            "level": 25,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Power Gem",
-            "level": 32,
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Slash",
-            "level": 37,
+            "level": 26,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Nasty Plot",
-            "level": 44,
+            "move": "Iron Head",
+            "level": 30,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Assurance",
-            "level": 49,
+            "move": "Gyro Ball",
+            "level": 34,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Captivate",
-            "level": 56,
+            "move": "Swords Dance",
+            "level": 38,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Night Slash",
-            "level": 61,
+            "move": "Hail",
+            "level": 42,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Feint",
-            "level": 65,
+            "move": "Blizzard",
+            "level": 46,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Amnesia",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Assist",
+            "move": "Chip Away",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Charm",
+            "move": "Counter",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Crush Claw",
+            "egg_move": true,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Curse",
+            "egg_move": true,
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Endure",
+            "egg_move": true,
+            "variations": [
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Flail",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Foul Play",
+            "move": "Hone Claws",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Hypnosis",
+            "move": "Icicle Crash",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Iron Tail",
+            "move": "Icicle Spear",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Last Resort",
+            "move": "Metal Claw",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Odor Sleuth",
+            "move": "Night Slash",
             "egg_move": true,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Punishment",
-            "egg_move": true,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Snatch",
-            "egg_move": true,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Spite",
-            "egg_move": true,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Tail Whip",
-            "egg_move": true,
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Work Up",
             "tm": "TM1",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Hail",
+            "tm": "TM7",
+            "variations": [
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Taunt",
-            "tm": "TM12",
+            "move": "Blizzard",
+            "tm": "TM14",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Rain Dance",
-            "tm": "TM18",
+            "move": "Safeguard",
+            "tm": "TM20",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Thunderbolt",
-            "tm": "TM24",
+            "move": "Earthquake",
+            "tm": "TM26",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Shadow Ball",
-            "tm": "TM30",
+            "move": "Leech Life",
+            "tm": "TM28",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31",
+            "variations": [
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Aerial Ace",
             "tm": "TM40",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Echoed Voice",
-            "tm": "TM49",
+            "move": "Fling",
+            "tm": "TM56",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Shadow Claw",
             "tm": "TM65",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Payback",
-            "tm": "TM66",
+            "move": "Aurora Veil",
+            "tm": "TM70",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Giga Impact",
-            "tm": "TM68",
+            "move": "Gyro Ball",
+            "tm": "TM74",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77",
+            "move": "Swords Dance",
+            "tm": "TM75",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85",
+            "move": "Bulldoze",
+            "tm": "TM78",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Frost Breath",
+            "tm": "TM79",
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Rock Slide",
+            "tm": "TM80",
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "X-Scissor",
+            "tm": "TM81",
+            "variations": [
+                "Alolan Sandshrew"
+            ]
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84",
+            "variations": [
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97",
-            "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Persian"
+                "Alolan Sandshrew"
             ]
         }
     ]

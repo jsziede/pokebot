@@ -1,542 +1,541 @@
 {
-    "name": "Persian",
-    "national_id": 53,
+    "name": "Grimer",
+    "national_id": 88,
     "types": [
-        "Normal"
+        "Poison",
+        "Dark"
     ],
     "items": [
         {
-            "name": "Quick Claw",
+            "name": "Black Sludge",
             "chance": 5
         }
     ],
     "abilities": [
         {
-            "name": "Limber"
+            "name": "Poison Touch"
         },
         {
-            "name": "Technician"
+            "name": "Gluttony"
         },
         {
-            "name": "Unnerve",
+            "name": "Power of Alchemy",
             "hidden": true
         }
     ],
-    "catch_rate": 90,
+    "catch_rate": 190,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Field"
+        "Amorphous"
     ],
     "hatch_time": [
         5355,
         5609
     ],
-    "height_us": "3'03\"",
-    "height_eu": "1.0 m",
-    "weight_us": "70.5 lbs.",
-    "weight_eu": "32.0 kg",
-    "base_exp_yield": 154,
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "92.6 lbs.",
+    "weight_eu": "42.0 kg",
+    "base_exp_yield": 65,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
-        "hp": 0,
+        "hp": 1,
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 2
+        "speed": 0
     },
     "base_stats": {
-        "hp": 65,
-        "atk": 70,
-        "def": 60,
-        "sp_atk": 65,
-        "sp_def": 65,
-        "speed": 115
+        "hp": 80,
+        "atk": 80,
+        "def": 50,
+        "sp_atk": 40,
+        "sp_def": 50,
+        "speed": 25
     },
-    "evolution_from": "Meowth",
-    "evolutions": [],
-    "species": "Classy Cat Pokémon",
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Muk",
+            "level": 38
+        }
+    ],
+    "species": "Sludge Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.",
+    "pokedex_entry": "Grimer emerged from the sludge that settled on a polluted seabed. This Pokémon loves anything filthy. It constantly leaks a horribly germ- infested fluid from all over its body.",
     "move_learnset": [
         {
-            "move": "Bite",
+            "move": "Poison Gas",
             "level": 1,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Fake Out",
+            "move": "Pound",
             "level": 1,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Growl",
-            "level": 1,
+            "move": "Harden",
+            "level": 4,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Play Rough",
-            "level": 1,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Scratch",
-            "level": 1,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Swift",
-            "level": 1,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Switcheroo",
-            "level": 1,
-            "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Bite",
-            "level": 6,
+            "level": 7,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Fake Out",
-            "level": 9,
+            "move": "Disable",
+            "level": 12,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Fury Swipes",
-            "level": 14,
+            "move": "Acid Spray",
+            "level": 15,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Poison Fang",
+            "level": 18,
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Minimize",
+            "level": 21,
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Fling",
+            "level": 26,
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Knock Off",
+            "level": 29,
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Crunch",
+            "level": 32,
+            "variations": [
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Screech",
-            "level": 17,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Feint Attack",
-            "level": 22,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Taunt",
-            "level": 25,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Power Gem",
-            "level": 32,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Slash",
             "level": 37,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Nasty Plot",
-            "level": 44,
+            "move": "Gunk Shot",
+            "level": 40,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Acid Armor",
+            "level": 43,
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Belch",
+            "level": 46,
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Memento",
+            "level": 48,
+            "variations": [
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Assurance",
-            "level": 49,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Captivate",
-            "level": 56,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Night Slash",
-            "level": 61,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Feint",
-            "level": 65,
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Amnesia",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Assist",
+            "move": "Clear Smog",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Charm",
+            "move": "Curse",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Flail",
+            "move": "Imprison",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Foul Play",
+            "move": "Mean Look",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Hypnosis",
+            "move": "Power-Up Punch",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Iron Tail",
+            "move": "Pursuit",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Last Resort",
+            "move": "Scary Face",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Odor Sleuth",
+            "move": "Shadow Sneak",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Punishment",
+            "move": "Spit Up",
             "egg_move": true,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Snatch",
-            "egg_move": true,
-            "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Spite",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Tail Whip",
+            "move": "Stockpile",
             "egg_move": true,
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Work Up",
-            "tm": "TM1",
+            "move": "Swallow",
+            "egg_move": true,
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5",
-            "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Venoshock",
+            "tm": "TM9",
+            "variations": [
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Taunt",
             "tm": "TM12",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15",
-            "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Rain Dance",
             "tm": "TM18",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24",
-            "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Shadow Ball",
             "tm": "TM30",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Aerial Ace",
-            "tm": "TM40",
+            "move": "Sludge Wave",
+            "tm": "TM34",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Flamethrower",
+            "tm": "TM35",
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Fire Blast",
+            "tm": "TM38",
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": "TM39",
+            "variations": [
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Torment",
             "tm": "TM41",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Echoed Voice",
-            "tm": "TM49",
+            "move": "Fling",
+            "tm": "TM56",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": "TM59",
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Quash",
+            "tm": "TM60",
+            "variations": [
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Embargo",
             "tm": "TM63",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Shadow Claw",
-            "tm": "TM65",
+            "move": "Explosion",
+            "tm": "TM64",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Payback",
             "tm": "TM66",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Giga Impact",
-            "tm": "TM68",
+            "move": "Rock Polish",
+            "tm": "TM69",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77",
+            "move": "Stone Edge",
+            "tm": "TM71",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85",
+            "move": "Rock Slide",
+            "tm": "TM80",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Infestation",
+            "tm": "TM83",
+            "variations": [
+                "Alolan Grimer"
+            ]
+        },
+        {
+            "move": "Poison Jab",
+            "tm": "TM84",
+            "variations": [
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Persian"
-            ]
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89",
-            "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
-            "move": "Dark Pulse",
-            "tm": "TM97",
+            "move": "Snarl",
+            "tm": "TM95",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Persian"
+                "Alolan Grimer"
             ]
         }
     ]

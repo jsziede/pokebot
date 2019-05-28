@@ -1,22 +1,29 @@
 {
-    "name": "Raticate",
-    "national_id": 20,
+    "name": "Rattata",
+    "national_id": 19,
     "types": [
+        "Dark",
         "Normal"
+    ],
+    "items": [
+        {
+            "name": "Pecha Berry",
+            "chance": 5
+        }
     ],
     "abilities": [
         {
-            "name": "Run Away"
+            "name": "Gluttony"
         },
         {
-            "name": "Guts"
+            "name": "Hustle"
         },
         {
-            "name": "Hustle",
+            "name": "Thick Fat",
             "hidden": true
         }
     ],
-    "catch_rate": 127,
+    "catch_rate": 255,
     "gender_ratios": {
         "male": 50,
         "female": 50
@@ -28,11 +35,11 @@
         4080,
         4334
     ],
-    "height_us": "2'04\"",
-    "height_eu": "0.7 m",
-    "weight_us": "40.8 lbs.",
-    "weight_eu": "18.5 kg",
-    "base_exp_yield": 145,
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "8.4 lbs.",
+    "weight_eu": "3.8 kg",
+    "base_exp_yield": 51,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
@@ -41,38 +48,27 @@
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 2
+        "speed": 1
     },
     "base_stats": {
-        "hp": 55,
-        "atk": 81,
-        "def": 60,
-        "sp_atk": 50,
-        "sp_def": 70,
-        "speed": 97
+        "hp": 30,
+        "atk": 56,
+        "def": 35,
+        "sp_atk": 25,
+        "sp_def": 35,
+        "speed": 72
     },
-    "evolution_from": "Rattata",
-    "evolutions": [],
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Raticate",
+            "level": 20
+        }
+    ],
     "species": "Mouse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Raticate’s sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.",
+    "pokedex_entry": "Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.",
     "move_learnset": [
-        {
-            "move": "Focus Energy",
-            "level": 1
-        },
-        {
-            "move": "Quick Attack",
-            "level": 1
-        },
-        {
-            "move": "Scary Face",
-            "level": 1
-        },
-        {
-            "move": "Swords Dance",
-            "level": 1
-        },
         {
             "move": "Tackle",
             "level": 1
@@ -107,330 +103,309 @@
         },
         {
             "move": "Crunch",
-            "level": 24
+            "level": 22
         },
         {
             "move": "Sucker Punch",
-            "level": 29
+            "level": 25
         },
         {
             "move": "Super Fang",
-            "level": 34
+            "level": 28
         },
         {
             "move": "Double-Edge",
-            "level": 39
+            "level": 31
         },
         {
             "move": "Endeavor",
-            "level": 44
-        },
-        {
-            "move": "Bite",
-            "egg_move": true,
-            "variations": [
-                "Raticate"
-            ]
+            "level": 34
         },
         {
             "move": "Counter",
             "egg_move": true,
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Final Gambit",
             "egg_move": true,
             "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Flame Wheel",
-            "egg_move": true,
-            "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Fury Swipes",
             "egg_move": true,
             "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Last Resort",
-            "egg_move": true,
-            "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Me First",
             "egg_move": true,
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Revenge",
             "egg_move": true,
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Reversal",
             "egg_move": true,
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
-            "move": "Screech",
+            "move": "Snatch",
             "egg_move": true,
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
+            ]
+        },
+        {
+            "move": "Stockpile",
+            "egg_move": true,
+            "variations": [
+                "Alolan Rattata"
+            ]
+        },
+        {
+            "move": "Swallow",
+            "egg_move": true,
+            "variations": [
+                "Alolan Rattata"
+            ]
+        },
+        {
+            "move": "Switcheroo",
+            "egg_move": true,
+            "variations": [
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Uproar",
             "egg_move": true,
             "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1",
-            "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5",
-            "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Taunt",
             "tm": "TM12",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Ice Beam",
             "tm": "TM13",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Blizzard",
             "tm": "TM14",
             "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15",
-            "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Rain Dance",
             "tm": "TM18",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24",
-            "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Shadow Ball",
             "tm": "TM30",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
+            ]
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": "TM36",
+            "variations": [
+                "Alolan Rattata"
+            ]
+        },
+        {
+            "move": "Torment",
+            "tm": "TM41",
+            "variations": [
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
-            "move": "Charge Beam",
-            "tm": "TM57",
+            "move": "Quash",
+            "tm": "TM60",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
-            "move": "Giga Impact",
-            "tm": "TM68",
+            "move": "Embargo",
+            "tm": "TM63",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
-            "move": "Thunder Wave",
-            "tm": "TM73",
+            "move": "Shadow Claw",
+            "tm": "TM65",
             "variations": [
-                "Raticate"
-            ]
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75",
-            "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Grass Knot",
             "tm": "TM86",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "U-turn",
             "tm": "TM89",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         },
         {
-            "move": "Wild Charge",
-            "tm": "TM93",
+            "move": "Snarl",
+            "tm": "TM95",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
+            ]
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": "TM97",
+            "variations": [
+                "Alolan Rattata"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Raticate"
+                "Alolan Rattata"
             ]
         }
     ]

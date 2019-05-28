@@ -1,8 +1,8 @@
 {
-    "name": "Meowth",
-    "national_id": 52,
+    "name": "Persian",
+    "national_id": 53,
     "types": [
-        "Normal"
+        "Dark"
     ],
     "items": [
         {
@@ -12,17 +12,17 @@
     ],
     "abilities": [
         {
-            "name": "Pickup"
+            "name": "Fur Coat"
         },
         {
             "name": "Technician"
         },
         {
-            "name": "Unnerve",
+            "name": "Rattled",
             "hidden": true
         }
     ],
-    "catch_rate": 255,
+    "catch_rate": 90,
     "gender_ratios": {
         "male": 50,
         "female": 50
@@ -34,11 +34,11 @@
         5355,
         5609
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "9.3 lbs.",
-    "weight_eu": "4.2 kg",
-    "base_exp_yield": 58,
+    "height_us": "3'07\"",
+    "height_eu": "1.1 m",
+    "weight_us": "72.8 lbs.",
+    "weight_eu": "33.0 kg",
+    "base_exp_yield": 154,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
@@ -47,438 +47,517 @@
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 1
+        "speed": 2
     },
     "base_stats": {
-        "hp": 40,
-        "atk": 45,
-        "def": 35,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 90
+        "hp": 65,
+        "atk": 60,
+        "def": 60,
+        "sp_atk": 75,
+        "sp_def": 65,
+        "speed": 115
     },
-    "evolution_from": null,
-    "evolutions": [
-        {
-            "to": "Persian",
-            "level": 28
-        }
-    ],
-    "species": "Scratch Cat Pokémon",
+    "evolution_from": "Meowth",
+    "evolutions": [],
+    "species": "Classy Cat Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.",
+    "pokedex_entry": "Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.",
     "move_learnset": [
+        {
+            "move": "Bite",
+            "level": 1,
+            "variations": [
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Fake Out",
+            "level": 1,
+            "variations": [
+                "Alolan Persian"
+            ]
+        },
         {
             "move": "Growl",
             "level": 1,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Play Rough",
+            "level": 1,
+            "variations": [
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Quash",
+            "level": 1,
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Scratch",
             "level": 1,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Swift",
+            "level": 1,
+            "variations": [
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Switcheroo",
+            "level": 1,
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Bite",
             "level": 6,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Fake Out",
             "level": 9,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Fury Swipes",
             "level": 14,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Screech",
             "level": 17,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Feint Attack",
             "level": 22,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Taunt",
             "level": 25,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
-            "move": "Pay Day",
-            "level": 30,
+            "move": "Power Gem",
+            "level": 32,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Slash",
-            "level": 33,
+            "level": 37,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Nasty Plot",
-            "level": 38,
+            "level": 44,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Assurance",
-            "level": 41,
+            "level": 49,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Captivate",
-            "level": 46,
+            "level": 56,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Night Slash",
-            "level": 49,
+            "level": 61,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Feint",
-            "level": 50,
+            "level": 65,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Dark Pulse",
+            "level": 69,
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Amnesia",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Assist",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Charm",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Covet",
+            "egg_move": true,
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Flail",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Flatter",
+            "egg_move": true,
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Foul Play",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Hypnosis",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
-            "move": "Iron Tail",
+            "move": "Parting Shot",
             "egg_move": true,
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Last Resort",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Odor Sleuth",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Punishment",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Snatch",
             "egg_move": true,
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Spite",
             "egg_move": true,
             "variations": [
-                "Meowth"
-            ]
-        },
-        {
-            "move": "Tail Whip",
-            "egg_move": true,
-            "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Work Up",
             "tm": "TM1",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Roar",
+            "tm": "TM5",
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Taunt",
             "tm": "TM12",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": "TM15",
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Rain Dance",
             "tm": "TM18",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Thunderbolt",
             "tm": "TM24",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Thunder",
             "tm": "TM25",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Shadow Ball",
             "tm": "TM30",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Aerial Ace",
             "tm": "TM40",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Torment",
             "tm": "TM41",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Echoed Voice",
             "tm": "TM49",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Quash",
+            "tm": "TM60",
+            "variations": [
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Embargo",
+            "tm": "TM63",
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Shadow Claw",
             "tm": "TM65",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Payback",
             "tm": "TM66",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Giga Impact",
+            "tm": "TM68",
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Psych Up",
             "tm": "TM77",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Dream Eater",
             "tm": "TM85",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "U-turn",
             "tm": "TM89",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
+            ]
+        },
+        {
+            "move": "Snarl",
+            "tm": "TM95",
+            "variations": [
+                "Alolan Persian"
             ]
         },
         {
             "move": "Dark Pulse",
             "tm": "TM97",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Meowth"
+                "Alolan Persian"
             ]
         }
     ]

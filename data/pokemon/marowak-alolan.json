@@ -1,24 +1,19 @@
 {
-    "name": "Muk",
-    "national_id": 89,
+    "name": "Marowak",
+    "national_id": 105,
     "types": [
-        "Poison"
-    ],
-    "items": [
-        {
-            "name": "Black Sludge",
-            "chance": 50
-        }
+        "Fire",
+        "Ghost"
     ],
     "abilities": [
         {
-            "name": "Stench"
+            "name": "Cursed Body"
         },
         {
-            "name": "Sticky Hold"
+            "name": "Lightning Rod"
         },
         {
-            "name": "Poison Touch",
+            "name": "Rock Head",
             "hidden": true
         }
     ],
@@ -28,536 +23,531 @@
         "female": 50
     },
     "egg_groups": [
-        "Amorphous"
+        "Monster"
     ],
     "hatch_time": [
         5355,
         5609
     ],
-    "height_us": "3'11\"",
-    "height_eu": "1.2 m",
-    "weight_us": "66.1 lbs.",
-    "weight_eu": "30.0 kg",
-    "base_exp_yield": 175,
+    "height_us": "3'03\"",
+    "height_eu": "1.0 m",
+    "weight_us": "75.0 lbs.",
+    "weight_eu": "34.0 kg",
+    "base_exp_yield": 149,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
-        "hp": 1,
-        "atk": 1,
-        "def": 0,
+        "hp": 0,
+        "atk": 0,
+        "def": 2,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 105,
-        "atk": 105,
-        "def": 75,
-        "sp_atk": 65,
-        "sp_def": 100,
-        "speed": 50
+        "hp": 60,
+        "atk": 80,
+        "def": 110,
+        "sp_atk": 50,
+        "sp_def": 80,
+        "speed": 45
     },
-    "evolution_from": "Grimer",
+    "evolution_from": "Cubone",
     "evolutions": [],
-    "species": "Sludge Pokémon",
+    "species": "Bone Keeper Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "This Pokémon's favorite food is anything that is repugnantly filthy. In dirty towns where people think nothing of throwing away litter on the streets, Muk are certain to gather.",
+    "pokedex_entry": "Marowak is the evolved form of a Cubone that has overcome its sadness at the loss of its mother and grown tough. This Pokemon's tempered and hardened spirit is not easily broken.",
     "move_learnset": [
         {
-            "move": "Harden",
+            "move": "Bone Club",
             "level": 1,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Mud-Slap",
+            "move": "Flame Wheel",
             "level": 1,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Poison Gas",
+            "move": "Growl",
             "level": 1,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Pound",
+            "move": "Tail Whip",
             "level": 1,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Venom Drench",
-            "level": 1,
+            "move": "Tail Whip",
+            "level": 3,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Harden",
-            "level": 4,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Mud-Slap",
+            "move": "Bone Club",
             "level": 7,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Disable",
-            "level": 12,
+            "move": "Flame Wheel",
+            "level": 11,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Sludge",
-            "level": 15,
+            "move": "Leer",
+            "level": 13,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Mud Bomb",
-            "level": 18,
+            "move": "Hex",
+            "level": 17,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Minimize",
+            "move": "Bonemerang",
             "level": 21,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Will-O-Wisp",
+            "level": 23,
+            "variations": [
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Shadow Bone",
+            "level": 27,
+            "variations": [
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Thrash",
+            "level": 33,
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Fling",
-            "level": 26,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Sludge Bomb",
-            "level": 29,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Sludge Wave",
-            "level": 32,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Screech",
             "level": 37,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Gunk Shot",
-            "level": 40,
+            "move": "Stomping Tantrum",
+            "level": 43,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Acid Armor",
-            "level": 46,
+            "move": "Endeavor",
+            "level": 49,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Belch",
-            "level": 52,
+            "move": "Flare Blitz",
+            "level": 53,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Memento",
-            "level": 57,
+            "move": "Retaliate",
+            "level": 59,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Acid Spray",
-            "egg_move": true,
+            "move": "Bone Rush",
+            "level": 65,
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
+        },
+        {
+            "move": "Ancient Power",
+            "egg_move": true
+        },
+        {
+            "move": "Belly Drum",
+            "egg_move": true
+        },
+        {
+            "move": "Chip Away",
+            "egg_move": true
         },
         {
             "move": "Curse",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "egg_move": true
         },
         {
-            "move": "Haze",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Detect",
+            "egg_move": true
         },
         {
-            "move": "Imprison",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Double Kick",
+            "egg_move": true
         },
         {
-            "move": "Lick",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Endure",
+            "egg_move": true
         },
         {
-            "move": "Mean Look",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Iron Head",
+            "egg_move": true
         },
         {
-            "move": "Power-Up Punch",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Perish Song",
+            "egg_move": true
         },
         {
-            "move": "Scary Face",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Screech",
+            "egg_move": true
         },
         {
-            "move": "Shadow Punch",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Shadow Sneak",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Spit Up",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Stockpile",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Swallow",
-            "egg_move": true,
-            "variations": [
-                "Muk"
-            ]
+            "move": "Skull Bash",
+            "egg_move": true
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9",
-            "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Sunny Day",
             "tm": "TM11",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Taunt",
-            "tm": "TM12",
+            "move": "Ice Beam",
+            "tm": "TM13",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Blizzard",
+            "tm": "TM14",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Hyper Beam",
             "tm": "TM15",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Rain Dance",
             "tm": "TM18",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Smack Down",
+            "tm": "TM23",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Thunderbolt",
             "tm": "TM24",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Thunder",
             "tm": "TM25",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Earthquake",
+            "tm": "TM26",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Shadow Ball",
             "tm": "TM30",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Brick Break",
             "tm": "TM31",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34",
-            "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Flamethrower",
             "tm": "TM35",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Sludge Bomb",
-            "tm": "TM36",
+            "move": "Sandstorm",
+            "tm": "TM37",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Fire Blast",
             "tm": "TM38",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Rock Tomb",
             "tm": "TM39",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Torment",
-            "tm": "TM41",
+            "move": "Aerial Ace",
+            "tm": "TM40",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Flame Charge",
+            "tm": "TM43",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Echoed Voice",
+            "tm": "TM49",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Focus Blast",
             "tm": "TM52",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "False Swipe",
+            "tm": "TM54",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Fling",
             "tm": "TM56",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Explosion",
-            "tm": "TM64",
+            "move": "Brutal Swing",
+            "tm": "TM59",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Payback",
-            "tm": "TM66",
+            "move": "Will-O-Wisp",
+            "tm": "TM61",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Giga Impact",
             "tm": "TM68",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Stone Edge",
+            "tm": "TM71",
+            "variations": [
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Swords Dance",
+            "tm": "TM75",
+            "variations": [
+                "Alolan Marowak"
+            ]
+        },
+        {
+            "move": "Bulldoze",
+            "tm": "TM78",
+            "variations": [
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Rock Slide",
             "tm": "TM80",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
-            "move": "Infestation",
-            "tm": "TM83",
+            "move": "Dream Eater",
+            "tm": "TM85",
             "variations": [
-                "Muk"
-            ]
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84",
-            "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Dark Pulse",
             "tm": "TM97",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Muk"
+                "Alolan Marowak"
             ]
         }
     ]

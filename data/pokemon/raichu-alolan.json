@@ -1,149 +1,137 @@
 {
-    "name": "Exeggutor",
-    "national_id": 103,
+    "name": "Raichu",
+    "national_id": 26,
     "types": [
-        "Grass",
+        "Electric",
         "Psychic"
     ],
     "abilities": [
         {
-            "name": "Chlorophyll"
-        },
-        {
-            "name": "Harvest",
-            "hidden": true
+            "name": "Surge Surfer"
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 75,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Grass"
+        "Field",
+        "Fairy"
     ],
     "hatch_time": [
         5355,
         5609
     ],
-    "height_us": "6'07\"",
-    "height_eu": "2.0 m",
-    "weight_us": "264.6 lbs.",
-    "weight_eu": "120.0 kg",
-    "base_exp_yield": 182,
-    "leveling_rate": "Slow",
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "46.3 lbs.",
+    "weight_eu": "21.0 kg",
+    "base_exp_yield": 214,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 2,
+        "sp_atk": 0,
         "sp_def": 0,
-        "speed": 0
+        "speed": 3
     },
     "base_stats": {
-        "hp": 95,
-        "atk": 95,
-        "def": 85,
-        "sp_atk": 125,
-        "sp_def": 75,
-        "speed": 55
+        "hp": 60,
+        "atk": 85,
+        "def": 50,
+        "sp_atk": 95,
+        "sp_def": 85,
+        "speed": 110
     },
-    "evolution_from": "Exeggcute",
+    "evolution_from": "Pikachu",
     "evolutions": [],
-    "species": "Coconut Pokémon",
+    "species": "Mouse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Exeggutor originally came from the tropics. Its heads steadily grow larger from exposure to strong sunlight. It is said that when the heads fall off, they group together to form Exeggcute.",
+    "pokedex_entry": "This Pokémon exudes a weak electrical charge from all over its body that makes it take on a slight glow in darkness. Raichu plants its tail in the ground to discharge electricity.",
     "move_learnset": [
         {
-            "move": "Barrage",
+            "move": "Psychic",
             "level": 1,
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Confusion",
+            "move": "Quick Attack",
             "level": 1,
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Hypnosis",
+            "move": "Speed Swap",
             "level": 1,
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Seed Bomb",
+            "move": "Tail Whip",
             "level": 1,
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Stomp",
+            "move": "Thunder Shock",
             "level": 1,
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Psyshock",
-            "level": 17,
+            "move": "Thunderbolt",
+            "level": 1,
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Egg Bomb",
-            "level": 27,
-            "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Wood Hammer",
-            "level": 37,
-            "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Leaf Storm",
-            "level": 47,
-            "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Ancient Power",
+            "move": "Bestow",
             "egg_move": true
         },
         {
-            "move": "Block",
+            "move": "Bide",
             "egg_move": true
         },
         {
-            "move": "Curse",
+            "move": "Charge",
             "egg_move": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Disarming Voice",
             "egg_move": true
         },
         {
-            "move": "Grassy Terrain",
+            "move": "Double Slap",
             "egg_move": true
         },
         {
-            "move": "Ingrain",
+            "move": "Electric Terrain",
             "egg_move": true
         },
         {
-            "move": "Leaf Storm",
+            "move": "Encore",
+            "egg_move": true
+        },
+        {
+            "move": "Endure",
+            "egg_move": true
+        },
+        {
+            "move": "Fake Out",
+            "egg_move": true
+        },
+        {
+            "move": "Flail",
             "egg_move": true
         },
         {
@@ -151,258 +139,268 @@
             "egg_move": true
         },
         {
-            "move": "Moonlight",
+            "move": "Present",
             "egg_move": true
         },
         {
-            "move": "Natural Gift",
+            "move": "Reversal",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Thunder Punch",
             "egg_move": true
         },
         {
-            "move": "Power Swap",
+            "move": "Tickle",
             "egg_move": true
         },
         {
-            "move": "Skill Swap",
-            "egg_move": true
-        },
-        {
-            "move": "Synthesis",
+            "move": "Wish",
             "egg_move": true
         },
         {
             "move": "Psyshock",
             "tm": "TM3",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Calm Mind",
+            "tm": "TM4",
+            "variations": [
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Toxic",
             "tm": "TM6",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Hidden Power",
             "tm": "TM10",
             "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11",
-            "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Hyper Beam",
             "tm": "TM15",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Light Screen",
             "tm": "TM16",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Protect",
             "tm": "TM17",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Rain Dance",
+            "tm": "TM18",
+            "variations": [
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Safeguard",
+            "tm": "TM20",
+            "variations": [
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Frustration",
             "tm": "TM21",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Solar Beam",
-            "tm": "TM22",
+            "move": "Thunderbolt",
+            "tm": "TM24",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Thunder",
+            "tm": "TM25",
+            "variations": [
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Return",
             "tm": "TM27",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Psychic",
             "tm": "TM29",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Brick Break",
+            "tm": "TM31",
+            "variations": [
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Double Team",
             "tm": "TM32",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Reflect",
             "tm": "TM33",
             "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36",
-            "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Facade",
             "tm": "TM42",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Rest",
             "tm": "TM44",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Attract",
             "tm": "TM45",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Thief",
             "tm": "TM46",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Round",
             "tm": "TM48",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Energy Ball",
-            "tm": "TM53",
+            "move": "Echoed Voice",
+            "tm": "TM49",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Explosion",
-            "tm": "TM64",
+            "move": "Focus Blast",
+            "tm": "TM52",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Fling",
+            "tm": "TM56",
+            "variations": [
+                "Alolan Raichu"
+            ]
+        },
+        {
+            "move": "Charge Beam",
+            "tm": "TM57",
+            "variations": [
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Giga Impact",
             "tm": "TM68",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Swords Dance",
-            "tm": "TM75",
+            "move": "Volt Switch",
+            "tm": "TM72",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77",
+            "move": "Thunder Wave",
+            "tm": "TM73",
             "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83",
-            "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85",
-            "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Grass Knot",
             "tm": "TM86",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Swagger",
             "tm": "TM87",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Sleep Talk",
             "tm": "TM88",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Substitute",
             "tm": "TM90",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
-            "move": "Trick Room",
-            "tm": "TM92",
+            "move": "Wild Charge",
+            "tm": "TM93",
             "variations": [
-                "Exeggutor"
-            ]
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96",
-            "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         },
         {
             "move": "Confide",
             "tm": "TM100",
             "variations": [
-                "Exeggutor"
+                "Alolan Raichu"
             ]
         }
     ]
