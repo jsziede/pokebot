@@ -2155,10 +2155,6 @@ function generatePokemonJSONPath(name, form) {
         lower = "nidoran_f";
     }
 
-    if (lower === "farfetch'd") {
-        lower = "farfetch_d";
-    }
-
     if (lower === "farfetch\'d") {
         lower = "farfetch_d";
     }
