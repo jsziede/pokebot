@@ -4381,8 +4381,6 @@ async function takeItem(message) {
 /**
  * Allows a user to trade a Pokemon with another user.
  * 
- * @todo This function could use some serious modularity.
- * 
  * @param {Message} message The Discord message sent from the user.
  * @param {string} tradeTo The Discord id of the trainer that the
  * user wants to trade with.
@@ -4390,231 +4388,291 @@ async function takeItem(message) {
  * @returns {boolean} True if the item was added to the user's bag.
  */
 async function tradeOffer(message, tradeTo) {
-    var tradeFromIndex = trading.length;
-    trading[trading.length] = new Trade(message.author.id, tradeTo.id, null, null);
+    let wasTradeCancelled = false;
+    let wereNoErrorsEncountered = true;
+
+    let tradeFromIndex = trading.length;
+    trading[tradeFromIndex] = new Trade(message.author.id, tradeTo.id, null, null);
     
     if (tradeTo.id === message.author.id) {
-        message.channel.send(message.author.username + " you cannot trade with yourself.");
+        await sendMessage(message.channel, (message.author.username + " you cannot trade with yourself."));
         removeTrade(message.author.id);
-        return false;
+        wereNoErrorsEncountered = false;
     }
-    var exists = await userExists(tradeTo.id);
+
+    let exists = await userExists(tradeTo.id);
     if (!exists) {
-        message.channel.send(message.author.username + " that user is unknown to me.");
+        await sendMessage(message.channel, (message.author.username + " that user is unknown to me."));
         removeTrade(message.author.id);
-        return false;
+        wereNoErrorsEncountered = false;
     }
     
     if (isInEvolution(tradeTo.id) != null || (isInTrade(tradeTo.id) != null) || (isInTransaction(tradeTo.id) != null)) {
-        message.channel.send(tradeTo.username + " is currently unavailable to trade.");
+        await sendMessage(message.channel, (tradeTo.username + " is currently unavailable to trade."));
         removeTrade(message.author.id);
-        return false;
+        wereNoErrorsEncountered = false;
     }
     
-    var tradeToIndex = trading.length;
-    trading[trading.length] = new Trade(tradeTo.id, message.author.id, null, null);
-    
-    message.channel.send(tradeTo.username + " you have received a trade offer from " + message.author.username + ". Do you accept?");
-    var inp = null;
-    var cancl = false;
-    while(cancl == false) {
-        inp = null;
-        await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                inp = collected.first().content;
-            })
-            .catch(collected => {
-                inp = "cancel";
-                cancel = true;
-            });
+    let tradeToIndex = trading.length;
+    trading[tradeToIndex] = new Trade(tradeTo.id, message.author.id, null, null);
 
-        if (inp === "cancel" || inp === "no") {
-            cancl = true;
-            inp = false;
-            t = 60;
-        } else if (inp === "accept" || inp === "yes") {
-            cancl = true;
-            inp = true;
-            t = 60;
-        } else {
-            inp = null;
-        }
-    }
-    
-    if (inp == null || inp === false) {
-        message.channel.send(tradeTo.username + " denied the trade request.");
-        removeTrade(message.author.id);
-        removeTrade(tradeTo.id);
-        return false;
-    } else {
-        message.channel.send(tradeTo.username + " accepted the trade request.");
-    }
-    
-    var askIndex;
-    var receiveIndex;
-    
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var pokemon = await getPokemon(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    var matchedIndexes = [];
-    
-    function pkmnObj(pkmn, index) {
-        this.pkmn = pkmn;
-        this.index = index;
-    }
-    
-    printPokemon(message, null);
-    
-    var selecting = true;
-    var selectedPokemon = null;
-    while (selecting) {
-        message.channel.send(message.author.username + " please enter the name of the Pokémon you want to trade.");
-        var cancel = false;
-        var name = null;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                name = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                name = "cancel";
-                cancel = true;
-            });
-
-            if (name === "cancel") {
-                cancel = true;
-                name = null;
-            } else if (name != null) {
-                cancel = true;
-            } else {
-                name = null;
-            }
-        }
+    if (wereNoErrorsEncountered) {
+        await sendMessage(message.channel, (tradeTo.username + " you have received a trade offer from " + message.author.username + ". Do you accept?"));
         
-        if (name == null) {
-            message.channel.send(message.author.username + " cancelled the trade.");
-            removeTrade(message.author.id);
-            removeTrade(tradeTo.id);
-            return false;
-        }
-        
-        var i;
-        for (i = 0; i < pokemon.length; i++) {
-            if (name === pokemon[i].name.toLowerCase() || (pokemon[i].nickname != null && name === pokemon[i].nickname.toLowerCase())) {
-                ind = i;
-                matchedIndexes[matchedIndexes.length] = new pkmnObj(pokemon[i], i);
-            }
-        }
+        const ACCEPT_TRADE = 1;
+        const DECLINE_TRADE = -1;
+        const AWAIT_USER_INPUT = 0;
 
-        if (matchedIndexes.length <= 0) {
-            message.channel.send(message.author.username + " you do not have that Pokémon.");
-        } if (matchedIndexes.length === 1) {
-            selectedPokemon = pokemon[matchedIndexes[0].index];
-            selectedIndex = matchedIndexes[0].index;
-            askIndex = matchedIndexes[0].index;
-            selecting = false;
-        } else if (matchedIndexes.length > 1) {
-            var string = message.author.username + " you have multiple " + matchedIndexes[0].pkmn.name + " . Please select which one you would like to trade by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.\n```";
-            for (i = 0; i < matchedIndexes.length; i++) {
-                string += ((i + 1).toString() + ". " + matchedIndexes[i].pkmn.name);
-                if (matchedIndexes[i].pkmn.shiny === 1) {
-                    string += " ⭐";
-                }
-                string += (" | " + matchedIndexes[i].pkmn.gender + " | Level: " + matchedIndexes[i].pkmn.level_current + "\n");
-            }
-            string += "```\n";
+        let input = AWAIT_USER_INPUT;
+        let cancel = false;
 
-            message.channel.send(string);
-
-            cancel = false;
-            var input = null;
-            while(cancel == false) {
-                await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-                .then(collected => {
-                    input = collected.first().content.toString().toLowerCase();
-                })
-                .catch(collected => {
-                    input = "cancel";
-                    cancel = true;
-                });
-
-                if (input === "cancel") {
-                    cancel = true;
-                    input = null;
-                } else if (/^\d+$/.test(input)) {
-                    var num = Number(input);
-                    if (num > 0 && num <= matchedIndexes.length) {
-                        cancel = true;
-                        input = (num - 1);
-                    } else {
-                        message.channel.send("Number is out of range. " + string);
-                        input = -1;
-                    }
-                } else if (input != null) {
-                    message.channel.send("Command not recognized. " + string);
-                    input = -1;
-                } else {
-                    input = null;
-                }
-            }
-
-            if (input == null) {
-                message.channel.send(message.author.username + " cancelled the trade.");
-                removeTrade(message.author.id);
-                removeTrade(tradeTo.id);
-                return false;
-            } else if (input === -1) {
-                //do nothing
-            } else {
-                selectedPokemon = pokemon[matchedIndexes[input].index];
-                selectedIndex = matchedIndexes[input].index;
-                askIndex = matchedIndexes[input].index;
-                selecting = false;
-            }
-        }
-    }
-    
-    message.channel.send(message.author.username + " selected a " + selectedPokemon.name + " to trade.");
-    
-    var tuser = await getUser(tradeTo.id);
-    if (tuser === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var tpokemon = await getPokemon(tradeTo.id);
-    if (tpokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    matchedIndexes = [];
-    
-    printPokemon(message, tradeTo);
-    
-    var selecting = true;
-    var tselectedPokemon = null;
-    while (selecting) {
-        message.channel.send(tradeTo.username + " please enter the name of the Pokémon you want to trade.");
-        cancel = false;
-        name = null;
-        while(cancel == false) {
+        /**
+         * Ask the receiver of the trade if they want to trade with the sender.
+         */
+        while (cancel === false) {
             await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
+                .then(collected => {
+                    input = collected.first().content;
+                })
+                .catch(collected => {
+                    console.error(collected);
+                    input = "cancel";
+                    cancel = true;
+                });
+    
+            if (input === "cancel" || input === "no") {
+                cancel = true;
+                input = DECLINE_TRADE;
+            } else if (input === "accept" || input === "yes") {
+                cancel = true;
+                input = ACCEPT_TRADE;
+            } else {
+                input = AWAIT_USER_INPUT;
+            }
+        }
+        
+        if (input === DECLINE_TRADE) {
+            await sendMessage(message.channel, (tradeTo.username + " declined the trade request."));
+            wasTradeCancelled = true;
+        /**
+         * If the receiver accepts the trade offer.
+         */
+        } else {
+            await sendMessage(message.channel, (tradeTo.username + " accepted the trade request."));
+            
+            let user = await getUser(message.author.id);
+            if (user === null) {
+                wereNoErrorsEncountered = false;
+            }
+
+            let pokemon = await getPokemon(message.author.id);
+            if (pokemon === null) {
+                wereNoErrorsEncountered = false;
+            }
+
+            let selectedPokemon = null;
+            let tselectedPokemon = null;
+
+            if (wereNoErrorsEncountered) {
+                /**
+                 * Prompt the sender to select which of their Pokemon they want to trade.
+                 */
+                selectedPokemon = await selectOwnedPokemon(message, user.user_id, message.author.username, pokemon);
+                if (selectedPokemon != null) {
+                    await sendMessage(message.channel, (message.author.username + " selected a " + selectedPokemon.name + " to trade."));
+                
+                    let tuser = await getUser(tradeTo.id);
+                    if (tuser === null) {
+                        wereNoErrorsEncountered = false;
+                    }
+    
+                    let tpokemon = await getPokemon(tradeTo.id);
+                    if (tpokemon === null) {
+                        wereNoErrorsEncountered = false;
+                    }
+
+                    if (wereNoErrorsEncountered) {
+                        /**
+                         * Prompt the receiver to select which of their Pokemon they want to trade.
+                         */
+                        tselectedPokemon = await selectOwnedPokemon(message, tradeTo.id, tradeTo.username, tpokemon);
+
+                        if (tselectedPokemon != null) {
+                            await sendMessage(message.channel, (tradeTo.username + " selected a " + tselectedPokemon.name + " to trade."));
+                        } else {
+                            await sendMessage(message.channel, (tradeTo.username + " cancelled the trade."));
+                            wasTradeCancelled = true;
+                        }
+                    }
+                } else {
+                    await sendMessage(message.channel, (message.author.username + " cancelled the trade."));
+                    wasTradeCancelled = true;
+                }
+            }
+
+            /**
+             * If both sender and receiver selected a Pokemon to trade.
+             */
+            if (selectOwnedPokemon != null && tselectedPokemon != null) {
+                trading[tradeFromIndex].askPokemon = selectedPokemon.name;
+                trading[tradeFromIndex].respondPokemon = tselectedPokemon.name;
+                trading[tradeToIndex].askPokemon = tselectedPokemon.name;
+                trading[tradeToIndex].respondPokemon = selectedPokemon.name;
+                
+                await displayAnOwnedPkmn(tselectedPokemon, message);
+                await sendMessage(message.channel, (message.author.username + " are you ok with the selected " + tselectedPokemon.name + "? Type \"Yes\" to accept or \"No\" to cancel the trade."));
+                
+                await displayAnOwnedPkmn(selectedPokemon, message);
+                await sendMessage(message.channel, (tradeTo.username + " are you ok with the selected " + selectedPokemon.name + "? Type \"Yes\" to accept or \"No\" to cancel the trade."));
+                
+                let timeout = 60;
+                let accept = null;
+                let taccept = null;
+                let inputConfirm = null;
+                let tinputConfirm = null;
+                /**
+                 * After details about both offered Pokemon are shown, both the sender and receiver are asked
+                 * to verify that they want to trade those Pokemon with each other.
+                 * 
+                 * @todo Change this so it can listen for a response from both users
+                 * instead of checking every second.
+                 */
+                while((accept == null || taccept == null) && timeout > 0) {
+                    timeout--;
+                    await message.channel.awaitMessages(msg => {
+                        if (msg.author.id === message.author.id) {
+                            inputConfirm = msg.content.toLowerCase();
+                        }
+                        if (msg.author.id === tradeTo.id) {
+                            tinputConfirm = msg.content.toLowerCase();
+                        }
+                    }, {max: 1, time: 1000});
+            
+                    if (inputConfirm === "cancel" || inputConfirm === "no") {
+                        accept = false;
+                    } else if (inputConfirm === "yes") {
+                        accept = true;
+                    } else {
+                        accept = null;
+                    }
+            
+                    if (tinputConfirm === "cancel" || tinputConfirm === "no") {
+                        taccept = false;
+                    } else if (tinputConfirm === "yes") {
+                        taccept = true;
+                    } else {
+                        taccept = null;
+                    }
+
+                    if (accept != null && taccept != null) {
+                        timeout = 0;
+                    }
+                }
+            
+                /**
+                 * If sender and receiver both accepted the trade offers.
+                 */
+                if (accept != null && accept != false && taccept != null && taccept != false) {
+                    /**
+                     * Update Pokemon trainer ownership.
+                     */
+                    if (selectedPokemon.lead === 1) {
+                        /**
+                         * If sender traded their lead Pokemon, update their lead Pokemon to be the Pokemon they just received
+                         * from the trade.
+                         */
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?", [tradeTo.id, selectedPokemon.pokemon_id]);
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 1, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?", [message.author.id, tselectedPokemon.pokemon_id]);
+                        await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [tselectedPokemon.pokemon_id, message.author.id]);
+                    } else {
+                        /**
+                         * If sender did not trade their lead Pokemon, make sure the Pokemon they just received
+                         * is not marked as a lead Pokemon.
+                         */
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?", [message.author.id, tselectedPokemon.pokemon_id]);
+                    }
+                    if (tselectedPokemon.lead === 1) {
+                        /**
+                         * If receiver traded their lead Pokemon, update their lead Pokemon to be the Pokemon they just received
+                         * from the trade.
+                         */
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?", [message.author.id, selectedPokemon.pokemon_id]);
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 1, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?", [tradeTo.id, selectedPokemon.pokemon_id]);
+                        await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [selectedPokemon.pokemon_id, tradeTo.id]);
+                    } else {
+                        /**
+                         * If receiver did not trade their lead Pokemon, make sure the Pokemon they just received
+                         * is not marked as a lead Pokemon.
+                         */
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?", [tradeTo.id, selectedPokemon.pokemon_id]);
+                    }
+
+                    await sendMessage(message.channel, ("Congratulations! " + message.author.username + " traded their " + selectedPokemon.name + " for " + tradeTo.username + "'s " + tselectedPokemon.name + "!"));
+                    
+                    removeTrade(message.author.id);
+                    removeTrade(tradeTo.id);
+
+                    /**
+                     * Do not await, otherwise the person who received the trade offer may be stuck
+                     * waiting for the user who initiated the trade to evolve their Pokemon.
+                     */
+                    checkForTradeEvolve(message, tselectedPokemon, message.author.id);
+                    checkForTradeEvolve(message, selectedPokemon, tradeTo.id);
+
+                    wasTradeCancelled = false;
+                } else {
+                    wasTradeCancelled = true;
+                }
+            } else {
+                wasTradeCancelled = true;
+            }
+        }
+
+        if (wasTradeCancelled) {
+            await sendMessage(message.channel, ("The trade between " + message.author.username + " and " + tradeTo.username + " has been cancelled."));
+            removeTrade(message.author.id);
+            removeTrade(tradeTo.id);
+        }
+    }
+
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
+}
+
+/**
+ * Prompts a user to select one Pokemon that the user owns.
+ * If a user responds with a Pokemon that they own multiple of,
+ * then the user is again prompted to select one from that group.
+ * 
+ * @param {Message} message The message sent from the user.
+ * @param {string} userId The id of the user who is selecting a Pokemon.
+ * @param {string} username The name of the user who is selecting a Pokemon.
+ * @param {Pokemon[]} pokemon All Pokemon currently owned by the user.
+ * 
+ * @returns {Pokemon} The one Pokemon selected by the user, or null if the user
+ * did not select a Pokeon.
+ */
+async function selectOwnedPokemon(message, userId, username, pokemon) {
+    let matchedPokemon = [];
+    let userIsSelectingAPokemon = true;
+    let selectedPokemon = null;
+
+    await printPokemon(message, user);
+
+    while (userIsSelectingAPokemon) {
+        await sendMessage(message.channel, (username + " please enter the name of the Pokémon you want to trade."));
+
+        let name = null;
+        let cancel = false;
+
+        while (cancel === false) {
+            await message.channel.awaitMessages(response => response.author.id === userId, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 name = collected.first().content.toString().toLowerCase();
             })
             .catch(collected => {
+                console.log(collected);
                 name = "cancel";
                 cancel = true;
             });
@@ -4629,344 +4687,167 @@ async function tradeOffer(message, tradeTo) {
             }
         }
         
-        if (name == null) {
-            message.channel.send(tradeTo.username + " cancelled the trade.");
-            removeTrade(message.author.id);
-            removeTrade(tradeTo.id);
-            return false;
-        }
-    
-        ind = 0;
-        for (i = 0; i < tpokemon.length; i++) {
-            if (name === tpokemon[i].name.toLowerCase() || (tpokemon[i].nickname != null && name === tpokemon[i].nickname.toLowerCase())) {
-                ind = i;
-                matchedIndexes[matchedIndexes.length] = new pkmnObj(tpokemon[i], i);
-            }
-        }
-
-        if (matchedIndexes.length <= 0) {
-            message.channel.send(tradeTo.username + " you do not have that Pokémon.");
-        } if (matchedIndexes.length === 1) {
-            tselectedPokemon = tpokemon[matchedIndexes[0].index];
-            tselectedIndex = matchedIndexes[0].index;
-            receiveIndex = matchedIndexes[0].index;
-            selecting = false;
-        } else if (matchedIndexes.length > 1) {
-            var string = tradeTo.username + " you have multiple " + matchedIndexes[0].pkmn.name + " . Please select which one you would like to trade by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.\n```";
-            for (i = 0; i < matchedIndexes.length; i++) {
-                string += ((i + 1).toString() + ". " + matchedIndexes[i].pkmn.name);
-                if (matchedIndexes[i].pkmn.shiny === 1) {
-                    string += " ⭐";
+        if (name != null) {
+            /**
+             * Gets all Pokemon whose name or nickname match the user's input.
+             */
+            let ownedPokemonIndex;
+            for (ownedPokemonIndex = 0; ownedPokemonIndex < pokemon.length; ownedPokemonIndex++) {
+                if (
+                    name === pokemon[ownedPokemonIndex].name.toLowerCase()
+                    ||
+                    (
+                        pokemon[ownedPokemonIndex].nickname != null
+                        &&
+                        name === pokemon[ownedPokemonIndex].nickname.toLowerCase()
+                    )
+                ) {
+                    matchedPokemon[matchedPokemon.length] = pokemon[ownedPokemonIndex];
                 }
-                string += (" | " + matchedIndexes[i].pkmn.gender + " | Level: " + matchedIndexes[i].pkmn.level_current + "\n");
             }
-            string += "```\n";
-
-            message.channel.send(string);
-
-            cancel = false;
-            input = null;
-            while(cancel == false) {
-                await message.channel.awaitMessages(response => response.author.id === tradeTo.id, { max: 1, time: 30000, errors: ['time'] })
-                .then(collected => {
-                    input = collected.first().content.toString().toLowerCase();
-                })
-                .catch(collected => {
-                    input = "cancel";
-                    cancel = true;
-                });
-
-                if (input === "cancel") {
-                    cancel = true;
-                    input = null;
-                } else if (/^\d+$/.test(input)) {
-                    var num = Number(input);
-                    if (num > 0 && num <= matchedIndexes.length) {
+    
+            if (matchedPokemon.length <= 0) {
+                await sendMessage(message.channel, (username + " you do not have that Pokémon."));
+            } if (matchedPokemon.length === 1) {
+                selectedPokemon = matchedPokemon[0];
+                userIsSelectingAPokemon = false;
+            } else if (matchedPokemon.length > 1) {
+                /**
+                 * Need to paginate by awaiting reactions in case user has a lot of Pokemon with the same name,
+                 * to prevent message limit from being reached.
+                 */
+                let string = username + " you have multiple " + matchedPokemon[0].name + " . Please select which one you would like to trade by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.\n```";
+                for (ownedPokemonIndex = 0; ownedPokemonIndex < matchedPokemon.length; ownedPokemonIndex++) {
+                    string += ((ownedPokemonIndex + 1).toString() + ". " + matchedPokemon[ownedPokemonIndex].name) + (" (" + matchedPokemon[ownedPokemonIndex].gender + ") Level " + matchedPokemon[ownedPokemonIndex].level_current);
+                    if (matchedPokemon[ownedPokemonIndex].shiny === 1) {
+                        string += " ⭐";
+                    }
+                    string += "\n";
+                }
+                string += "```\n";
+    
+                await sendMessage(message.channel, (string));
+    
+                cancel = false;
+                let input = null;
+                while(cancel == false) {
+                    await message.channel.awaitMessages(response => response.author.id === userId, { max: 1, time: 30000, errors: ['time'] })
+                    .then(collected => {
+                        input = collected.first().content.toString().toLowerCase();
+                    })
+                    .catch(collected => {
+                        console.log(collected);
+                        input = "cancel";
                         cancel = true;
-                        input = (num - 1);
-                    } else {
-                        message.channel.send("Number is out of range. " + string);
+                    });
+    
+                    if (input === "cancel") {
+                        cancel = true;
+                        input = null;
+                    } else if (/^\d+$/.test(input)) {
+                        let num = Number(input);
+                        if (num > 0 && num <= matchedPokemon.length) {
+                            cancel = true;
+                            input = (num - 1);
+                        } else {
+                            await sendMessage(message.channel, ("Number is out of range. " + string));
+                            input = -1;
+                        }
+                    } else if (input != null) {
+                        await sendMessage(message.channel, ("Response not recognized. " + string));
                         input = -1;
+                    } else {
+                        input = null;
                     }
-                } else if (input != null) {
-                    message.channel.send("Command not recognized. " + string);
-                    input = -1;
-                } else {
-                    input = null;
                 }
-            }
-
-            if (input == null) {
-                message.channel.send(tradeTo.username + " cancelled the trade.");
-                removeTrade(message.author.id);
-                removeTrade(tradeTo.id);
-                return false;
-            } else if (input === -1) {
-                //do nothing
-            } else {
-                tselectedPokemon = tpokemon[matchedIndexes[input].index];
-                tselectedIndex = matchedIndexes[input].index;
-                receiveIndex = matchedIndexes[input].index;
-                selecting = false;
+    
+                if (input != null) {
+                    selectedPokemon = matchedPokemon[input];
+                    userIsSelectingAPokemon = false;
+                }
             }
         }
     }
-    
-    message.channel.send(tradeTo.username + " selected a " + tselectedPokemon.name + " to trade.");
-    
-    trading[tradeFromIndex].askPokemon = selectedPokemon.name;
-    trading[tradeFromIndex].respondPokemon = tselectedPokemon.name;
-    trading[tradeToIndex].askPokemon = tselectedPokemon.name;
-    trading[tradeToIndex].respondPokemon = selectedPokemon.name;
-    
-    await displayAnOwnedPkmn(tselectedPokemon, message);
-    await message.channel.send(message.author.username + " are you ok with the selected " + tselectedPokemon.name + "? Type \"Yes\" to accept or \"No\" to cancel the trade.");
-    
-    await displayAnOwnedPkmn(selectedPokemon, message);
-    await message.channel.send(tradeTo.username + " are you ok with the selected " + selectedPokemon.name + "? Type \"Yes\" to accept or \"No\" to cancel the trade.");
-    
-    i = 0;
-    var accept = null;
-    var taccept = null;
-    var inputConfirm = null;
-    var tinputConfirm = null;
-    while((accept == null || taccept == null) && i < 60) {
-        i++;
-        const response = await message.channel.awaitMessages(msg => {
-            if (msg.author.id === message.author.id) {
-                inputConfirm = msg.content.toLowerCase();
-            }
-            if (msg.author.id === tradeTo.id) {
-                tinputConfirm = msg.content.toLowerCase();
-            }
-        }, {max: 1, time: 1000});
 
-        if (inputConfirm === "cancel" || inputConfirm === "no") {
-            accept = false;
-        } else if (inputConfirm === "yes") {
-            accept = true;
-        } else {
-            accept = null;
-        }
+    return new Promise(function(resolve) {
+        resolve(selectedPokemon);
+    });
+}
 
-        if (tinputConfirm === "cancel" || tinputConfirm === "no") {
-            taccept = false;
-        } else if (tinputConfirm === "yes") {
-            taccept = true;
-        } else {
-            taccept = null;
-        }
-    }
+/**
+ * Checks if a Pokemon evolves after being traded, and attempts
+ * to evolve that Pokemon if it meets its evolution criteria.
+ *  
+ * @param {Message} message The Discord message sent from the user. 
+ * @param {Pokemon} pokemon The Pokemon to check the trade evolution for.
+ * @param {string} userId The id of the user who ownes the Pokemon.
+ */
+async function checkForTradeEvolve(message, pokemon, userId) {
+    let tradeEvos = ["Kadabra", "Machoke", "Graveler", "Haunter", "Boldore", "Gurdurr", "Phantump", "Pumpkaboo"];
+    let tradeEvosTo = ["Alakazam", "Machamp", "Golem", "Gengar", "Gigalith", "Conkeldurr", "Gourgeist", "Trevenant"];
+    let tradeEvoIndex = -1;
 
-    if (accept != null && accept != false && taccept != null && taccept != false) {
-        if (pokemon[askIndex].lead === 1) {
-            var query = "UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [tradeTo.id, selectedPokemon.pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.lead = 1, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [message.author.id, tselectedPokemon.pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-            con.query(query, [tselectedPokemon.pokemon_id, message.author.id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-        } else {
-            query = "UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [message.author.id, tselectedPokemon.pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-        }
-        if (tpokemon[receiveIndex].lead === 1) {
-            var query = "UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [message.author.id, selectedPokemon.pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.lead = 1, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [tradeTo.id, selectedPokemon.pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-            con.query(query, [selectedPokemon.pokemon_id, tradeTo.id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-        } else {
-            query = "UPDATE pokemon SET pokemon.lead = 0, pokemon.current_trainer = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [tradeTo.id, selectedPokemon.pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-        }
-        message.channel.send("Congratulations! " + message.author.username + " traded their " + selectedPokemon.name + " for " + tradeTo.username + "'s " + tselectedPokemon.name + "!");
-        
-        var tradeEvos = ["Kadabra", "Machoke", "Graveler", "Haunter", "Boldore", "Gurdurr", "Phantump", "Pumpkaboo"];
-        var tradeEvosTo = ["Alakazam", "Machamp", "Golem", "Gengar", "Gigalith", "Conkeldurr", "Gourgeist", "Trevenant"];
-        var tradeEvoIndex = -1;
-
-        var item = await getItem(tselectedPokemon.item);
-        if (item === null) {
-            item = tselectedPokemon.item;
-        } else {
-            item = item.name;
-        }
-        
-        if (tselectedPokemon.item != "Everstone") {
-            var evolveTo = null;
-            if (tselectedPokemon.name === "Shelmet") {
-                if (selectedPokemon.name === "Karrablast") {
-                    evolveTo = "Accelgor";
-                }
-            } else if (tselectedPokemon.name === "Karrablast") {
-                if (selectedPokemon.name === "Shelmet") {
-                    evolveTo = "Escavalier";
-                }
-            } else if ((tradeEvoIndex = tradeEvos.indexOf(tselectedPokemon.name)) >= 0) {
-                evolveTo = tradeEvosTo[tradeEvoIndex];
-            } else if (tselectedPokemon.name === "Poliwhirl" && item === "King's Rock") {
-                evolveTo = "Politoed";
-            } else if (tselectedPokemon.name === "Slowpoke" && item === "King's Rock") {
-                evolveTo = "Slowking";
-            } else if (tselectedPokemon.name === "Onix" && item === "Metal Coat") {
-                evolveTo = "Steelix";
-            } else if (tselectedPokemon.name === "Seadra" && item === "Dragon Scale") {
-                evolveTo = "Kindgra";
-            } else if (tselectedPokemon.name === "Scyther" && item === "Metal Coat") {
-                evolveTo = "Scizor";
-            } else if (tselectedPokemon.name === "Porygon" && item === "Up-Grade") {
-                evolveTo = "Porygon2";
-            } else if (tselectedPokemon.name === "Clamperl" && item === "Deep Sea Tooth") {
-                evolveTo = "Huntail";
-            } else if (tselectedPokemon.name === "Clamperl" && item === "Deep Sea Scale") {
-                evolveTo = "Gorebyss";
-            } else if (tselectedPokemon.name === "Feebas" && item === "Prism Scale") {
-                evolveTo = "Milotic";
-            } else if (tselectedPokemon.name === "Rhydon" && item === "Protector") {
-                evolveTo = "Rhyperior";
-            } else if (tselectedPokemon.name === "Electabuzz" && item === "Electirizer") {
-                evolveTo = "Electivire";
-            } else if (tselectedPokemon.name === "Magmar" && item === "Magmarizer") {
-                evolveTo = "Magmortar";
-            } else if (tselectedPokemon.name === "Porygon2" && item === "Dubious Disc") {
-                evolveTo = "Porygon-Z";
-            } else if (tselectedPokemon.name === "Dusclops" && item === "Reaper Cloth") {
-                evolveTo = "Dusknoir";
-            } else if (tselectedPokemon.name === "Feebas" && item === "Prism Scale") {
-                evolveTo = "Milotic";
-            } else if (tselectedPokemon.name === "Spritzee" && item === "Sachet") {
-                evolveTo = "Aromatisse";
-            } else if (tselectedPokemon.name === "Swirlix" && item === "Whipped Dream") {
-                evolveTo = "Slurpuff";
-            }
-            
-            if (evolveTo != null) {
-                message.channel.send("<@" + message.author.id + "> your " + tselectedPokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
-                query = "UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?";
-                con.query(query, [tselectedPokemon.pokemon_id], function (err) {
-                    if (err) {
-                        return reject(err);
-                    }
-                });
-                evolving[evolving.length] = new Evolution(message.author.id, tselectedPokemon.name, evolveTo);
-            }
-        }
-        
-        evolveTo = null;
-        
-        item = await getItem(selectedPokemon.item);
-        if (item === null) {
-            item = selectedPokemon.item;
-        } else {
-            item = item.name;
-        }
-
-        if (selectedPokemon.item != "Everstone") {
-            var evolveTo = null;
-            if (selectedPokemon.name === "Shelmet") {
-                if (tselectedPokemon.name === "Karrablast") {
-                    evolveTo = "Accelgor";
-                }
-            } else if (selectedPokemon.name === "Karrablast") {
-                if (tselectedPokemon.name === "Shelmet") {
-                    evolveTo = "Escavalier";
-                }
-            } else if ((tradeEvoIndex = tradeEvos.indexOf(selectedPokemon.name)) >= 0) {
-                evolveTo = tradeEvosTo[tradeEvoIndex];
-            } else if (selectedPokemon.name === "Poliwhirl" && item === "King's Rock") {
-                evolveTo = "Politoed";
-            } else if (selectedPokemon.name === "Slowpoke" && item === "King's Rock") {
-                evolveTo = "Slowking";
-            } else if (selectedPokemon.name === "Onix" && item === "Metal Coat") {
-                evolveTo = "Steelix";
-            } else if (selectedPokemon.name === "Seadra" && item === "Dragon Scale") {
-                evolveTo = "Kindgra";
-            } else if (selectedPokemon.name === "Scyther" && item === "Metal Coat") {
-                evolveTo = "Scizor";
-            } else if (selectedPokemon.name === "Porygon" && item === "Up-Grade") {
-                evolveTo = "Porygon2";
-            } else if (selectedPokemon.name === "Clamperl" && item === "Deep Sea Tooth") {
-                evolveTo = "Huntail";
-            } else if (selectedPokemon.name === "Clamperl" && item === "Deep Sea Scale") {
-                evolveTo = "Gorebyss";
-            } else if (selectedPokemon.name === "Feebas" && item === "Prism Scale") {
-                evolveTo = "Milotic";
-            } else if (selectedPokemon.name === "Rhydon" && item === "Protector") {
-                evolveTo = "Rhyperior";
-            } else if (selectedPokemon.name === "Electabuzz" && item === "Electirizer") {
-                evolveTo = "Electivire";
-            } else if (selectedPokemon.name === "Magmar" && item === "Magmarizer") {
-                evolveTo = "Magmortar";
-            } else if (selectedPokemon.name === "Porygon2" && item === "Dubious Disc") {
-                evolveTo = "Porygon-Z";
-            } else if (selectedPokemon.name === "Dusclops" && item === "Reaper Cloth") {
-                evolveTo = "Dusknoir";
-            } else if (selectedPokemon.name === "Feebas" && item === "Prism Scale") {
-                evolveTo = "Milotic";
-            } else if (selectedPokemon.name === "Spritzee" && item === "Sachet") {
-                evolveTo = "Aromatisse";
-            } else if (selectedPokemon.name === "Swirlix" && item === "Whipped Dream") {
-                evolveTo = "Slurpuff";
-            }
-            
-            if (evolveTo != null) {
-                message.channel.send("<@" + tradeTo.id + "> your " + selectedPokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
-                query = "UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?";
-                con.query(query, [selectedPokemon.pokemon_id], function (err) {
-                    if (err) {
-                        return reject(err);
-                    }
-                });
-                evolving[evolving.length] = new Evolution(tradeTo.id, selectedPokemon.name, evolveTo);
-            }
-        }
-        
-        removeTrade(message.author.id);
-        removeTrade(tradeTo.id);
-        
-        return true;
-        
+    let item = await getItem(pokemon.item);
+    if (item === null) {
+        item = pokemon.item;
     } else {
-        message.channel.send("The trade between " + message.author.username + " and " + tradeTo.username + " has been cancelled.");
-        removeTrade(message.author.id);
-        removeTrade(tradeTo.id);
-        return false;
+        item = item.name;
     }
     
+    if (pokemon.item != "Everstone") {
+        var evolveTo = null;
+        if (pokemon.name === "Shelmet") {
+            if (selectedPokemon.name === "Karrablast") {
+                evolveTo = "Accelgor";
+            }
+        } else if (pokemon.name === "Karrablast") {
+            if (selectedPokemon.name === "Shelmet") {
+                evolveTo = "Escavalier";
+            }
+        } else if ((tradeEvoIndex = tradeEvos.indexOf(pokemon.name)) >= 0) {
+            evolveTo = tradeEvosTo[tradeEvoIndex];
+        } else if (pokemon.name === "Poliwhirl" && item === "King's Rock") {
+            evolveTo = "Politoed";
+        } else if (pokemon.name === "Slowpoke" && item === "King's Rock") {
+            evolveTo = "Slowking";
+        } else if (pokemon.name === "Onix" && item === "Metal Coat") {
+            evolveTo = "Steelix";
+        } else if (pokemon.name === "Seadra" && item === "Dragon Scale") {
+            evolveTo = "Kindgra";
+        } else if (pokemon.name === "Scyther" && item === "Metal Coat") {
+            evolveTo = "Scizor";
+        } else if (pokemon.name === "Porygon" && item === "Up-Grade") {
+            evolveTo = "Porygon2";
+        } else if (pokemon.name === "Clamperl" && item === "Deep Sea Tooth") {
+            evolveTo = "Huntail";
+        } else if (pokemon.name === "Clamperl" && item === "Deep Sea Scale") {
+            evolveTo = "Gorebyss";
+        } else if (pokemon.name === "Feebas" && item === "Prism Scale") {
+            evolveTo = "Milotic";
+        } else if (pokemon.name === "Rhydon" && item === "Protector") {
+            evolveTo = "Rhyperior";
+        } else if (pokemon.name === "Electabuzz" && item === "Electirizer") {
+            evolveTo = "Electivire";
+        } else if (pokemon.name === "Magmar" && item === "Magmarizer") {
+            evolveTo = "Magmortar";
+        } else if (pokemon.name === "Porygon2" && item === "Dubious Disc") {
+            evolveTo = "Porygon-Z";
+        } else if (pokemon.name === "Dusclops" && item === "Reaper Cloth") {
+            evolveTo = "Dusknoir";
+        } else if (pokemon.name === "Feebas" && item === "Prism Scale") {
+            evolveTo = "Milotic";
+        } else if (pokemon.name === "Spritzee" && item === "Sachet") {
+            evolveTo = "Aromatisse";
+        } else if (pokemon.name === "Swirlix" && item === "Whipped Dream") {
+            evolveTo = "Slurpuff";
+        }
+        
+        if (evolveTo != null) {
+            await sendMessage(message.channel, ("<@" + userId + "> your " + pokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept."));
+            await doQuery("UPDATE pokemon SET pokemon.evolving = 1 WHERE pokemon.pokemon_id = ?", [pokemon.pokemon_id]);
+            evolving[evolving.length] = new Evolution(message.author.id, pokemon.name, evolveTo);
+        }
+    }
 }
 
 /**
