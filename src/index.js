@@ -137,7 +137,7 @@ function Pokemon(name, nick, no, form, type, item, level, totalxp, moves, abilit
     this.form = form;
     this.friendship = 50;
     this.evolving = 0;
-    this.status = "None";
+    this.status = null;
     this.pv = Math.floor(Math.random() * 4294967296);
 }
 
@@ -475,7 +475,7 @@ async function getShuffleEmoji(number) {
     let pattern = /^\d+$/;
     if (pattern.test(number)) {
         let dexnum = number.toString();
-        dexnum = dexnum.padStart((3 - dexnum.length), '0');
+        dexnum = dexnum.padStart(3, '0');
 
         shuffle_icon = await client.emojis.find(shuffle_icon => shuffle_icon.name === dexnum);
     } else {
@@ -1946,67 +1946,26 @@ function generateModelLink(name, shiny, gender, form) {
         lower = "jangmo_o";
     }
     
-    if (form === "Alolan") {
-        lower += "-alola";
-    } else if (gender === "Female") {
-        if (hasGenderDifference(name) === true) {
-            lower += "-f";
-        }
-    }
-    
-    if (name === "Burmy" || name === "Wormadam") {
-        if (form === "Sandy Cloak") {
-            lower += "-sandy";
-        } else if (form == "Trash Cloak") {
-            lower += "-trash";
-        }
-    } else if (name === "Flabébé" || name === "Floette" || name === "Florges") {
-        if (form === "Orange") {
-            lower += "-orange";
-        } else if (form == "Yellow") {
-            lower += "-yellow";
-        } else if (form == "Blue") {
-            lower += "-blue";
-        } else if (form == "White") {
-            lower += "-white";
-        }
-    } else if (name === "Unown") {
-        if (form === "!") {
-            lower += "-exclamation";
-        } else if (form === "?") {
-            lower += "-question";
-        } else {
-            lower += "-" + form.toLowerCase();
-        }
-    } else if (name === "Shellos" || name === "Gastrodon") {
-        if (form === "East Sea") {
-            lower += "-east";
-        }
-    } else if (name === "Basculin") {
-        if (form === "Blue-Striped") {
-            lower += "-blue";
-        }
-    } else if (name === "Pumpkaboo" || name === "Gourgeist") {
-        if (form === "Small Size") {
-            lower += "-small";
-        } else if (form === "Large Size") {
-            lower += "-large";
-        } else if (form === "Super Size") {
-            lower += "-super";
-        }
-    } else if (name === "Oricorio") {
-        if (form === "Pom-Pom Style") {
-            lower += "-pompom";
-        } else if (form === "Pa'u Style") {
-            lower += "-pau";
-        } else if (form === "Sensu Style") {
-            lower += "-sensu";
-        }
-    } else if (name === "Lycanroc") {
-        if (form === "Midnight") {
-            lower += "-midnight";
-        } else if (form === "Dusk") {
-            lower += "-dusk";
+    if (form != null) {
+        form = form.toLowerCase();
+        /**
+         * Oricorio has a form name with an apostrophe in it.
+         */
+        form = form.replace(/'/g,"-");
+        /**
+         * Multiple Pokemon have form names with spaces in it.
+         */
+        form = form.replace(/ /g,"-");
+        /**
+         * Vivillon has a form name with an acute e in it.
+         */
+        form = form.replace(/é/g,"e");
+        lower += "-" + form;
+    } else {
+        if (gender === "Female") {
+            if (hasGenderDifference(name) === true) {
+                lower += "-f";
+            }
         }
     }
     
@@ -2040,7 +1999,7 @@ function generateSpriteLink(name, gender, form) {
     let url;
     url = dexnum.toString();
     /* Prepends 0s to the string if less than three characters long. */
-    url = url.padStart((3 - url.length), '0');
+    url = url.padStart(3, '0');
     
     /* Gets proper image if the pokemon has a form. */
     if (form === "Alolan") {
@@ -2784,8 +2743,7 @@ async function printAllLocations(message) {
             "fields": embedfields
         };
 
-
-        wasMessageSent = await sendMessage(message.channel, embed);
+        wasMessageSent = await sendMessage(message.channel, {embed});
     }
 
     return new Promise(function(resolve) {
@@ -3484,8 +3442,8 @@ async function nicknamePokemon(message, name) {
             if (input != NO_NICKNAME) {
                 input = input.trim();
                 if (input === name) {
-                    await sendMessage(message.channel, (message.author.username + " decided not to nickname their " + name + "."));
                     cancel = true;
+                    input = NO_NICKNAME;
                 } else if (input.length > 0 && input.length <= 20) {
                     cancel = true;
                 } else if (input.length <= 0 || input.length > 20) {
@@ -3504,6 +3462,8 @@ async function nicknamePokemon(message, name) {
     
     if (input != null) {
         await sendMessage(message.channel, (message.author.username + " nicknamed their " + name + " '" + input + "'."));
+    } else {
+        await sendMessage(message.channel, (message.author.username + " decided not to nickname their " + name + "."));
     }
 
     return new Promise(function(resolve) {
@@ -3626,7 +3586,7 @@ async function addPokemon(userid, pokemon) {
     }
 
     let national_id = pokemon.no.toString();
-    national_id = national_id.padStart((3 - national_id.length), '0');
+    national_id = national_id.padStart(3, '0');
 
     let pokemon_set = {
         original_trainer: userid.toString(),
@@ -3974,8 +3934,8 @@ async function addEvolutionToPokemon(pokemon) {
  * @returns {boolean} True if the Pokemon's moves were updated.
  */
 async function updateMoves(pokemon, moves) {
-    let moveIds = moves.map(move => move.id);
-    await doQuery('UPDATE move SET move.slot = NULL WHERE move.pokemon = ? AND move.move_id IN (?)', [pokemon.pokemon_id, moveIds]);
+    await doQuery('UPDATE move SET move.slot = NULL WHERE move.pokemon = ? AND move.slot IS NOT NULL', [pokemon.pokemon_id]);
+    
     let i = 0;
     for (i; i < moves.length; i++) {
         if (moves[i].name != null && moves[i].pp != null) {
@@ -4027,6 +3987,7 @@ function populateMoves(knownMoves) {
             id: null
         }
     ]
+    
     let knownMoveIndex = 0;
     for (knownMoveIndex; knownMoveIndex < knownMoves.length; knownMoveIndex++) {
         moves[knownMoveIndex].name = knownMoves[knownMoveIndex].name;
@@ -4673,7 +4634,7 @@ async function selectOwnedPokemon(message, user, username, pokemon) {
                 name = collected.first().content.toString().toLowerCase();
             })
             .catch(collected => {
-                console.log(collected);
+                console.error(collected);
                 name = "cancel";
                 cancel = true;
             });
@@ -4713,19 +4674,8 @@ async function selectOwnedPokemon(message, user, username, pokemon) {
                 selectedPokemon = matchedPokemon[0];
                 userIsSelectingAPokemon = false;
             } else if (matchedPokemon.length > 1) {
-                /**
-                 * Need to paginate by awaiting reactions in case user has a lot of Pokemon with the same name,
-                 * to prevent message limit from being reached.
-                 */
-                let string = username + " you have multiple " + matchedPokemon[0].name + " . Please select which one you would like to trade by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.\n```";
-                for (ownedPokemonIndex = 0; ownedPokemonIndex < matchedPokemon.length; ownedPokemonIndex++) {
-                    string += ((ownedPokemonIndex + 1).toString() + ". " + matchedPokemon[ownedPokemonIndex].name) + (" (" + matchedPokemon[ownedPokemonIndex].gender + ") Level " + matchedPokemon[ownedPokemonIndex].level_current);
-                    if (matchedPokemon[ownedPokemonIndex].shiny === 1) {
-                        string += " ⭐";
-                    }
-                    string += "\n";
-                }
-                string += "```\n";
+                printPokemon(message, user.user_id, matchedPokemon);
+                let string = username + " you have multiple " + matchedPokemon[0].name + " . Please select which one you would like to trade by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.";
     
                 await sendMessage(message.channel, (string));
     
@@ -4922,7 +4872,7 @@ async function evolve(message) {
     }
     
     let national_id = pkmn.national_id.toString();
-    national_id = national_id.padStart((3 - national_id.length), '0');
+    national_id = national_id.padStart(3, '0');
 
     var hidden = [];
     var abilities = [];
@@ -5575,204 +5525,58 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
 
     var alreadyKnowsMove = false;
 
-    if (pokemon.form === "Alolan" && pokemon.name != "Rattata" && pokemon.name != "Raticate") {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === pokemon.level_current && pkmn.move_learnset[i].variations[0] === (pokemon.form + " " + pokemon.name)) {
-                if (askForResponse) {
-                    message.react(duck.id);
-                }
-                var m;
-                for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnset[i].move) {
-                        alreadyKnowsMove = true;
-                    }
-                }
-                if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (!alreadyKnowsMove) {
-                    if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
-                        removeTransaction(message.author.id);
-                    } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
-                    }
-                } else {
-                    //already knows the move
+    for (i = 0; i < pkmn.move_learnset.length; i++) {
+        if (pkmn.move_learnset[i].hasOwnProperty("level") && pkmn.move_learnset[i].level === pokemon.level_current) {
+            if (askForResponse) {
+                message.react(duck.id);
+            }
+            var m;
+            for (m = 0; m < moves.length; m++) {
+                if (moves[m].name === pkmn.move_learnset[i].move) {
+                    alreadyKnowsMove = true;
                 }
             }
-        }
-    } else if (pokemon.name === "Wormadam" || pokemon.name === "Shaymin" || pokemon.name === "Deoxys" || pokemon.name === "Hoopa" || pokemon.name === "Lycanroc") {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === pokemon.level_current && pkmn.move_learnset[i].variations[0] === pokemon.form) {
+            if (moves[0].name == null && !alreadyKnowsMove) {
+                moves[0].name = pkmn.move_learnset[i].move;
+                moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
+                moves[0].id = 0;
                 if (askForResponse) {
-                    message.react(duck.id);
+                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                 }
-                var m;
-                for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnset[i].move) {
-                        alreadyKnowsMove = true;
-                    }
+            } else if (moves[1].name == null && !alreadyKnowsMove) {
+                moves[1].name = pkmn.move_learnset[i].move;
+                moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
+                moves[1].id = 0;
+                if (askForResponse) {
+                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
                 }
-                if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (!alreadyKnowsMove) {
-                    if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
-                        removeTransaction(message.author.id);
-                    } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
-                    }
+            } else if (moves[2].name == null && !alreadyKnowsMove) {
+                moves[2].name = pkmn.move_learnset[i].move;
+                moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
+                moves[2].id = 0;
+                if (askForResponse) {
+                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
+                }
+            } else if (moves[3].name == null && !alreadyKnowsMove) {
+                moves[3].name = pkmn.move_learnset[i].move;
+                moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
+                moves[3].id = 0;
+                if (askForResponse) {
+                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
+                }
+            } else if (!alreadyKnowsMove) {
+                if (askForResponse) {
+                    transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
+                    moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
+                    removeTransaction(message.author.id);
                 } else {
-                    //already knows the move
+                    moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
                 }
+            } else {
+                //already knows the move
             }
         }
-    } else if (pkmn.move_learnset[0].hasOwnProperty("variations")) {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === pokemon.level_current && pkmn.move_learnset[i].variations === pokemon.name) {
-                if (askForResponse) {
-                    message.react(duck.id);
-                }
-                var m;
-                for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnset[i].move) {
-                        alreadyKnowsMove = true;
-                    }
-                }
-                if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (!alreadyKnowsMove) {
-                    if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
-                        removeTransaction(message.author.id);
-                    } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
-                    }
-                } else {
-                    //already knows the move
-                }
-            }
-        }
-    } else {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if (pkmn.move_learnset[i].level === pokemon.level_current) {
-                if (askForResponse) {
-                    message.react(duck.id);
-                }
-                var m;
-                for (m = 0; m < moves.length; m++) {
-                    if (moves[m].name === pkmn.move_learnset[i].move) {
-                        alreadyKnowsMove = true;
-                    }
-                }
-                if (moves[0].name == null && !alreadyKnowsMove) {
-                    moves[0].name = pkmn.move_learnset[i].move;
-                    moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[1].name == null && !alreadyKnowsMove) {
-                    moves[1].name = pkmn.move_learnset[i].move;
-                    moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[2].name == null && !alreadyKnowsMove) {
-                    moves[2].name = pkmn.move_learnset[i].move;
-                    moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                } else if (moves[3].name == null && !alreadyKnowsMove) {
-                    moves[3].name = pkmn.move_learnset[i].move;
-                    moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
-                    if (askForResponse) {
-                        message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                    }
-                    
-                } else if (!alreadyKnowsMove) {
-                    if (askForResponse) {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                        moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
-                        removeTransaction(message.author.id);
-                    } else {
-                        moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
-                    }
-                } else {
-                    //already knows the move
-                }
-            }
-        }
-    }  
+    }
 
     return new Promise(function(resolve) {
         resolve(moves);
@@ -6503,10 +6307,14 @@ function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
  * @returns {Pokemon} The Pokemon that was generated, or null if the Pokemon failed to generate.
  */
 async function generatePokemonByName(message, name, level, region, location, hidden) {
+    //it is ok for user to be null in this function
+    var user = await getUser(message.author.id);
+    var form = getForm(user, name, region, location);
+    
     /**
      * @todo form should be determined before the JSON file is opened.
      */
-    var path = generatePokemonJSONPath(name, null);
+    var path = generatePokemonJSONPath(name, form);
     var data;
     try {
         data = fs.readFileSync(path, "utf8");
@@ -6525,34 +6333,18 @@ async function generatePokemonByName(message, name, level, region, location, hid
     var hidden_ability = [];
     var ability = [];
     
-    if (form === "Alolan") {
-        if (hidden === true) {
-            for (i = 0; i < pkmn.variations[0].abilities.length; i++) {
-                if(pkmn.variations[0].abilities[i].hasOwnProperty('hidden')) {
-                    hidden_ability[hidden_ability.length] = pkmn.variations[0].abilities[i].name;
-                }
-            }   
-        } else {
-            for (i = 0; i < pkmn.variations[0].abilities.length; i++) {
-                if(!pkmn.variations[0].abilities[i].hasOwnProperty('hidden')) {
-                    ability[ability.length] = pkmn.variations[0].abilities[i].name;
-                }
-            }   
-        }
+    if (hidden === true) {
+        for (i = 0; i < pkmn.abilities.length; i++) {
+            if(pkmn.abilities[i].hasOwnProperty('hidden')) {
+                hidden_ability[hidden_ability.length] = pkmn.abilities[i].name;
+            }
+        }   
     } else {
-        if (hidden === true) {
-            for (i = 0; i < pkmn.abilities.length; i++) {
-                if(pkmn.abilities[i].hasOwnProperty('hidden')) {
-                    hidden_ability[hidden_ability.length] = pkmn.abilities[i].name;
-                }
-            }   
-        } else {
-            for (i = 0; i < pkmn.abilities.length; i++) {
-                if(!pkmn.abilities[i].hasOwnProperty('hidden')) {
-                    ability[ability.length] = pkmn.abilities[i].name;
-                }
-            }   
-        }
+        for (i = 0; i < pkmn.abilities.length; i++) {
+            if(!pkmn.abilities[i].hasOwnProperty('hidden')) {
+                ability[ability.length] = pkmn.abilities[i].name;
+            }
+        }   
     }
     
     var abilitySlot = 0;
@@ -6575,159 +6367,36 @@ async function generatePokemonByName(message, name, level, region, location, hid
         final_ability = hidden_ability[0];
         abilitySlot = 2;
     }
-    
-    if (name === "Basculin") {
-        if (form === "Blue-Striped" && !hidden) {
-            if (abilitySlot === 0) {
-                final_ability = "Rock Head";
-            } else {
-                final_ability = "Adaptibility";
-            }
-        } else if (form === "Red-Striped" && !hidden) {
-            if (abilitySlot === 0) {
-                final_ability = "Reckless";
-            } else {
-                final_ability = "Adaptibility";
-            }
-        } else {
-            final_ability = "Mold Breaker";
-        }
-    } else if (name === "Lycanroc") {
-        if (form === "Midday") {
-            final_ability = pkmn.abilities[abilitySlot];
-        } else if (form === "Midnight") {
-            final_ability = pkmn.variations[0].abilities[abilitySlot];
-        } else {
-            final_ability = "Tough Claws";
-        }
-    }
+
     
     var lastMoveSlotOverwritten = 0;
     var moves = [null, null, null, null];
-    if (form === "Alolan" && name != "Rattata" && name != "Raticate") {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if(pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level <= level && pkmn.move_learnset[i].variations[0] === (form + " " + name)) {
-                if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else {
-                    random = Math.floor(Math.random() * 100);
-                    if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
-                        if (lastMoveSlotOverwritten === 3) {
-                            lastMoveSlotOverwritten = 0
-                        } else {
-                            lastMoveSlotOverwritten++;
-                        }
-                    }
-                }
-            }
-        }
-    } else if (name === "Wormadam" || name === "Shaymin" || name === "Deoxys" || name === "Hoopa" || name === "Lycanroc") {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if (pkmn.move_learnset[i].hasOwnProperty("variations") && pkmn.move_learnset[i].level === level && pkmn.move_learnset[i].variations[0] === form) {
-                if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else {
-                    random = Math.floor(Math.random() * 100);
-                    if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
-                        if (lastMoveSlotOverwritten === 3) {
-                            lastMoveSlotOverwritten = 0
-                        } else {
-                            lastMoveSlotOverwritten++;
-                        }
-                    }
-                }
-            }
-        }
-    } else if (pkmn.move_learnset[0].hasOwnProperty("variations")) {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if(pkmn.move_learnset[i].level <= level && pkmn.move_learnset[i].variations[0] === name) {
-                if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else {
-                    random = Math.floor(Math.random() * 100);
-                    if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
-                        if (lastMoveSlotOverwritten === 3) {
-                            lastMoveSlotOverwritten = 0
-                        } else {
-                            lastMoveSlotOverwritten++;
-                        }
-                    }
-                }
-            }
-        }
-    } else {
-        for (i = 0; i < pkmn.move_learnset.length; i++) {
-            if(pkmn.move_learnset[i].level <= level) {
-                if(moves[0] === null) {
-                    moves[0] = pkmn.move_learnset[i].move;
-                } else if (moves[0] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[1] === null) {
-                    moves[1] = pkmn.move_learnset[i].move;
-                } else if (moves[1] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[2] === null) {
-                    moves[2] = pkmn.move_learnset[i].move;
-                } else if (moves[2] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else if(moves[3] === null) {
-                    moves[3] = pkmn.move_learnset[i].move;
-                } else if (moves[3] === pkmn.move_learnset[i].move) {
-                           //do nothing
-                } else {
-                    random = Math.floor(Math.random() * 100);
-                    if(random >= 30) {
-                        moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
-                        if (lastMoveSlotOverwritten === 3) {
-                            lastMoveSlotOverwritten = 0
-                        } else {
-                            lastMoveSlotOverwritten++;
-                        }
+    for (i = 0; i < pkmn.move_learnset.length; i++) {
+        if(pkmn.move_learnset[i].level <= level) {
+            if(moves[0] === null) {
+                moves[0] = pkmn.move_learnset[i].move;
+            } else if (moves[0] === pkmn.move_learnset[i].move) {
+                       //do nothing
+            } else if(moves[1] === null) {
+                moves[1] = pkmn.move_learnset[i].move;
+            } else if (moves[1] === pkmn.move_learnset[i].move) {
+                       //do nothing
+            } else if(moves[2] === null) {
+                moves[2] = pkmn.move_learnset[i].move;
+            } else if (moves[2] === pkmn.move_learnset[i].move) {
+                       //do nothing
+            } else if(moves[3] === null) {
+                moves[3] = pkmn.move_learnset[i].move;
+            } else if (moves[3] === pkmn.move_learnset[i].move) {
+                       //do nothing
+            } else {
+                random = Math.floor(Math.random() * 100);
+                if(random >= 30) {
+                    moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
+                    if (lastMoveSlotOverwritten === 3) {
+                        lastMoveSlotOverwritten = 0
+                    } else {
+                        lastMoveSlotOverwritten++;
                     }
                 }
             }
@@ -6776,23 +6445,7 @@ async function generatePokemonByName(message, name, level, region, location, hid
     }
     
     var baseStats;
-    if ((name === "Pumpkaboo" || name === "Gourgeist") && form != "Small Size") {
-        if (form === "Average Size") {
-            baseStats = [pkmn.variations[0].base_stats.hp, pkmn.variations[0].base_stats.atk, pkmn.variations[0].base_stats.def, pkmn.variations[0].base_stats.sp_atk, pkmn.variations[0].base_stats.sp_def, pkmn.variations[0].base_stats.speed];
-        } else if (form === "Large Size") {
-            baseStats = [pkmn.variations[1].base_stats.hp, pkmn.variations[1].base_stats.atk, pkmn.variations[1].base_stats.def, pkmn.variations[1].base_stats.sp_atk, pkmn.variations[1].base_stats.sp_def, pkmn.variations[1].base_stats.speed];
-        } else {
-            baseStats = [pkmn.variations[2].base_stats.hp, pkmn.variations[2].base_stats.atk, pkmn.variations[2].base_stats.def, pkmn.variations[2].base_stats.sp_atk, pkmn.variations[2].base_stats.sp_def, pkmn.variations[2].base_stats.speed];
-        }
-    } else if (name === "Lycanroc" && form != "Midday") {
-        if (form === "Midnight") {
-            baseStats = [pkmn.variations[0].base_stats.hp, pkmn.variations[0].base_stats.atk, pkmn.variations[0].base_stats.def, pkmn.variations[0].base_stats.sp_atk, pkmn.variations[0].base_stats.sp_def, pkmn.variations[0].base_stats.speed];
-        } else {
-            baseStats = [pkmn.variations[1].base_stats.hp, pkmn.variations[1].base_stats.atk, pkmn.variations[1].base_stats.def, pkmn.variations[1].base_stats.sp_atk, pkmn.variations[1].base_stats.sp_def, pkmn.variations[1].base_stats.speed];
-        }
-    } else {
-        baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
-    }
+    baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
     
     var stats = [];
     stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
@@ -6813,26 +6466,9 @@ async function generatePokemonByName(message, name, level, region, location, hid
     }
     
     var type = [null, null];
-    if (form === "Alolan") {
-        type[0] = pkmn.variations[0].types[0];
-        if(pkmn.variations[0].types.length === 2) {
-            type[1] = pkmn.variations[0].types[1];
-        }
-    } else if (name === "Oricorio") {
-        if (form === "Baile Style") {
-            type = ["Fire", "Flying"];
-        } else if (form === "Pom-Pom Style") {
-            type = ["Electric", "Flying"];
-        } else if (form === "Pa'u Style") {
-            type = ["Psychic", "Flying"];
-        } else {
-            type = ["Ghost", "Flying"];
-        }
-    } else {
-        type[0] = pkmn.types[0];
-        if(pkmn.types.length === 2) {
-            type[1] = pkmn.types[1];
-        }
+    type[0] = pkmn.types[0];
+    if(pkmn.types.length === 2) {
+        type[1] = pkmn.types[1];
     }
     
     var item = null;
@@ -6841,11 +6477,7 @@ async function generatePokemonByName(message, name, level, region, location, hid
         for (itemCount = 0; itemCount < pkmn.items.length; itemCount++) {
             var itemChance = Math.ceil(Math.random() * 100);
             if (itemChance <= pkmn.items[itemCount].chance) {
-                if (pkmn.items[itemCount].hasOwnProperty("form") && (form === pkmn.items[itemCount].form)) {
-                    item = pkmn.items[itemCount].name;
-                } else if (!pkmn.items[itemCount].hasOwnProperty("form")) {
-                    item = pkmn.items[itemCount].name;
-                }
+                item = pkmn.items[itemCount].name;
             }
         }
     }
@@ -8975,16 +8607,37 @@ async function displayAWildPkmn(pkmn, message) {
     }
     
     var imageName = await getGifName(pkmn.name);
-    
-    var movesString = pkmn.moves[0];
-    if (pkmn.moves[1] != "---" && pkmn.moves[1] != null) {
-        movesString += "\n" + pkmn.moves[1];
+
+    let movesString = "";
+    let moveTypeIcon = getMoveType(pkmn.moves[0]);
+    if (moveTypeIcon != null) {
+        moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
+        movesString += moveTypeIcon;
     }
-    if (pkmn.moves[2] != "---" && pkmn.moves[2] != null) {
-        movesString += "\n" + pkmn.moves[2];
+    movesString += pkmn.moves[0] + "\n";
+    if (pkmn.moves[1] != null) {
+        moveTypeIcon = getMoveType(pkmn.moves[1]);
+        if (moveTypeIcon != null) {
+            moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
+            movesString += moveTypeIcon;
+        }
+        movesString += pkmn.moves[1] + "\n";
     }
-    if (pkmn.moves[3] != "---" && pkmn.moves[3] != null) {
-        movesString += "\n" + pkmn.moves[3];
+    if (pkmn.moves[2] != null) {
+        moveTypeIcon = getMoveType(pkmn.moves[2]);
+        if (moveTypeIcon != null) {
+            moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
+            movesString += moveTypeIcon;
+        }
+        movesString += pkmn.moves[2] + "\n";
+    }
+    if (pkmn.moves[3] != null) {
+        moveTypeIcon = getMoveType(pkmn.moves[3]);
+        if (moveTypeIcon != null) {
+            moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
+            movesString += moveTypeIcon;
+        }
+        movesString += pkmn.moves[3] + "\n";
     }
 
     message.channel.send({
@@ -9466,7 +9119,7 @@ async function printPossibleEncounters(message) {
 
         let pkm = JSON.parse(dat);
         let dexNum = pkm.national_id.toString();
-        dexnum = dexnum.padStart((3 - dexNum.length), '0');
+        dexNum = dexNum.padStart(3, '0');
 
         var hasIt = user.pokedex.charAt(pkm.national_id - 1);
         if (hasIt === '1') {
@@ -10001,7 +9654,7 @@ async function getDexInfo(message, name, form) {
     
     var userID = message.author.id;
     
-    var modelLink = generateModelLink(pkmn.name, false, "Male", "None");
+    var modelLink = generateModelLink(pkmn.name, false, "Male", null);
     if (modelLink === null) {
         return new Promise(function(resolve) {
             resolve(null);
@@ -10323,7 +9976,7 @@ async function getDexInfo(message, name, form) {
 
                 pkm = JSON.parse(dat);
                 dexNum = pkm.national_id.toString();
-                dexNum = national_id.padStart((3 - dexNum.length), '0');
+                dexNum = national_id.padStart(3, '0');
 
                 shuffle_icon = await getShuffleEmoji(pkm.national_id);
                 evoToString += "\n" + shuffle_icon + "Evolves into " + evolvesTo[f].name + " " + evolvesTo[f].method;
@@ -10664,81 +10317,84 @@ async function printAbilityInfo(channel, name, description) {
 /**
  * Sends a message listing all Pokemon owned by a user.
  * 
- * @param {Message} message The Discord message sent from the user.
+ * @param {Message} message The Discord message sent from the user to print the Pokemon for.
  * @param {string} otherUser An optional overwrite to print Pokemon for a different user.
- * This is used when trading Pokemon.
+ * @param {Pokemon[]} pokemon An optioanl confined list of Pokemon to print instead of all Pokemon owned by a user.
  * 
  * @returns {boolean} True if no errors are encountered.
  */
-async function printPokemon(message, otherUser) {
+async function printPokemon(message, otherUser, pokemon = undefined) {
     var userID = message.author.id;
+    let enableNumbering = true;
     
     if (otherUser != null) {
         userID = otherUser;
         username = otherUser.username;
     }
 
-    var pokemon = await getPokemon(userID);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+    if (pokemon === undefined) {
+        pokemon = await getPokemon(userID);
+
+        if (pokemon.length > 1) {
+            function compare(a,b) {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+            }
+            pokemon.sort(compare);
+        }
+
+        enableNumbering = false;
     }
 
     var i;
-
-    function compare(a,b) {
-        if (a.name < b.name) {
-            return -1;
-        }
-        if (a.name > b.name) {
-            return 1;
-        }
-        return 0;
-    }
-
-    pokemon.sort(compare);
     
     let fields = [];
     let fieldCount = 0;
-    let fieldString = null;
+    let fieldString = "";
 
     for (i = 0; i < pokemon.length; i++) {
-        let shuffle_icon = await getShuffleEmoji(pokemon[i].number);
-        let form = pokemon[i].form;
-        if (form == null) {
-            form = "";
-        } else {
-            form = " [" + form + " Form]";
-        }
-        if (fieldString === null) {
-            if (pokemon[i].nickname === null) {
-                fieldString = shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
-            } else {
-                fieldString = shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
-            }
-        } else if (i % 15 === 0) {
+        if (i % 15 === 0 && i > 0) {
             fields[fieldCount] = {
                 "name": '\u200b',
                 "value": fieldString,
                 "inline": false
             }
             fieldCount++;
-            if (pokemon[i].nickname === null) {
-                fieldString = shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
-            } else {
-                fieldString = shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
-            }
-        } else {
-            if (pokemon[i].nickname === null) {
-                fieldString += shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
-            } else {
-                fieldString += shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", " + pokemon[i].ability + "\n";
-            }
+            fieldString = "";
         }
+        
+        if (enableNumbering) {
+            fieldString += "**" + (i + 1).toString() + ".** ";
+        }
+        
+        let form = pokemon[i].form;
+        if (form === null) {
+            form = "";
+        } else {
+            form = " [" + form + "]";
+        }
+
+        let shuffle_icon = await getShuffleEmoji(pokemon[i].number);
+
+        if (pokemon[i].nickname === null) {
+            fieldString += shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", *" + pokemon[i].ability + "*";
+        } else {
+            fieldString += shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", *" + pokemon[i].ability + "*";
+        }
+
+        if (pokemon[i].shiny) {
+            fieldString += " ⭐";
+        }
+        fieldString += "\n";
+
     }
 
-    if (fieldString != null) {
+    if (fieldString != "") {
         fields[fieldCount] = {
             "name": '\u200b',
             "value": fieldString,
@@ -10845,7 +10501,7 @@ async function printDex(message) {
         let shuffle_icon;
         let name = "----------";
         let num = i.toString();
-        num = num.padStart((3 - num.length), '0');
+        num = num.padStart(3, '0');
 
         if (pokedex.charAt(i - 1) === '1') {
             shuffle_icon = await getShuffleEmoji(i);
