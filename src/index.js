@@ -328,45 +328,41 @@ client.on('message', async (message) => {
     /** Ignore messages from bot accounts. */
     if (message.author.bot) {
         return;
-    }
-
     /** Don't do anything if user is trading a Pokemon.  */
-    if (isInTrade(message.author.id) != null) {
+    } else if (isInTrade(message.author.id) != null) {
         return;
-    }
-
     /** @todo replace this with a function to check if message begins with the guild's prefix once prefix customization has been added. */
-    if (message.content.trim() === `!pb activate`) {
+    } else if (message.content.trim() === `!pb activate`) {
         await setBotChannel(message);
         return;
-    }
+    } else {
+        con.beginTransaction(async function(err) {
+            if (err) { console.error(err); }
     
-    con.beginTransaction(async function(err) {
-        if (err) { console.error(err); }
-
-        /** Only read commands sent in the bot channel. */
-        if (await isBotChannel(message)) {
-            /** Splits message into an array of words. */
-            let input = message.content.trim().split(/ +/g);
-            /** The command is the first word in the message, not including the prefix. */
-            const command = input.shift().toLowerCase();
-            
-            /** Only allow some commands if a user is evolving one of their Pokemon. */
-            if (await checkIfUserIsEvolving(message, command, input)) {
-                return;
+            /** Only read commands sent in the bot channel. */
+            if (await isBotChannel(message)) {
+                /** Splits message into an array of words. */
+                let input = message.content.trim().split(/ +/g);
+                /** The command is the first word in the message, not including the prefix. */
+                const command = input.shift().toLowerCase();
+                
+                /** Only allow some commands if a user is evolving one of their Pokemon. */
+                if (await checkIfUserIsEvolving(message, command, input)) {
+                    return;
+                }
+                
+                /** Perform the command action if message contains a command. */
+                if (await doCommand(message, input, command)) {
+                    return;
+                }
             }
-            
-            /** Perform the command action if message contains a command. */
-            if (await doCommand(message, input, command)) {
-                return;
+    
+            let exists = await userExists(message.author.id);
+            if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
+                await doNonCommandMessage(message);
             }
-        }
-
-        let exists = await userExists(message.author.id);
-        if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
-            await doNonCommandMessage(message);
-        }
-    });
+        });
+    }
 });
 
 /**
@@ -533,20 +529,23 @@ function getEncounterChanceForLocation(ability, item, region, location, field) {
     /** Halves encounter chance in sandstorm. */
     } else if (ability === "Sand Veil") {
         for (location in sandstorm) {
-            if (location.region === region && location.location === location) {
+            if (location.region === region && location.location === sandstorm[location]) {
                 encounterChance = encounterChance / 2;
+                break;
             }
         }
     /** Halves encounter chance in snow and hail. */
     } else if (ability === "Snow Cloak") {
         for (location in hailing) {
-            if (location.region === region && location.location === location) {
+            if (location.region === region && location.location === hailing[location]) {
                 encounterChance = encounterChance / 2;
+                break;
             }
         }
         for (location in snowing) {
-            if (location.region === region && location.location === location) {
+            if (location.region === region && location.location === snowing[location]) {
                 encounterChance = encounterChance / 2;
+                break;
             }
         }
     /** Doubles encounter rate while fishing. */
@@ -3001,7 +3000,7 @@ async function fixEvolutions() {
                 if (user === null) {
                     wereAllEvolutionsFixed = false;
                 } else {
-                    let evolvingInto = await checkEvolve(user, evolvingPokemon[evolvingPokemonIndex], "level");
+                    let evolvingInto = await checkEvolveUponLevelUp(user, evolvingPokemon[evolvingPokemonIndex]);
                     if (evolvingInto != null) {
                         evolving[evolving.length] = new Evolution(evolvingPokemon[evolvingPokemonIndex].current_trainer, evolvingPokemon[evolvingPokemonIndex].name, evolvingInto);
                     } else {
@@ -4802,6 +4801,76 @@ async function checkForTradeEvolve(message, pokemon, userId) {
 }
 
 /**
+ * Determines which form a Pokemon should be in after it evolves.
+ * 
+ * @param {string} fromForm The name of the form that the evolving
+ * Pokemon is currently in, or null if it doesn't have a form.
+ * @param {string} toName The name of the Pokemon that is being evolved into.
+ * @param {User} user The user who owns the evolving Pokemon.
+ * 
+ * @returns {string} The name of the form that the Pokemon will
+ * be in after it evolves.
+ */
+function getFormOfEvolvedPokemon(fromForm, toName, user) {
+    let form = null;
+    if (toName === "Wormadam") {
+        form = fromForm;
+    } else if (fromForm === "Alolan") {
+        /**
+         * @todo Do Alolan Pokemon maintain their form if not evolved in Alola?
+         * Currently they will maintain their Alolan form.
+         */
+        form = fromForm;
+    } else if (
+        /**
+         * Add Alolan form if a compatible non-Alolan Pokemon is evolving in Alola.
+         */
+        (toName === "Raichu")
+        ||
+        (toName === "Exeggutor")
+        ||
+        (toName === "Marowak")
+        ) {
+        if (user.region === "Alola" && !(user.location.startsWith("Ultra"))) {
+            form = "Alolan";
+        }
+    } else if (toName === "Cherrim") {
+        form = "Overcast";
+    } else if (toName === "Gastrodon") {
+        form = fromForm;
+    } else if (toName === "Darmanitan") {
+        form = "Standard";
+    } else if (toName === "Sawsbuck") {
+        form = fromForm;
+    } else if (toName === "Vivillon") {
+        /**
+         * @todo Create function to determine Vivillon form.
+         */
+        form = "Continental";
+    } else if (toName === "Floette") {
+        form = fromForm;
+    } else if (toName === "Florges") {
+        form = fromForm;
+    } else if (toName === "Aegislash") {
+        form = "Shield";
+    } else if (toName === "Gourgeist") {
+        form = fromForm;
+    } else if (toName === "Lycanroc") {
+        let cur = convertToTimeZone(user);
+        let n = moment(cur).format('H');
+        if (n == 17) {
+            form = "Dusk";
+        } else if (n > 17 || n < 6) {
+            form = "Midnight";
+        } else {
+            form = "Midday";
+        }
+    }
+
+    return form;
+}
+
+/**
  * Evolves a user's evolving Pokemon and updates all its stats.
  * 
  * @param {Message} message The Discord message sent from the user.
@@ -4809,289 +4878,235 @@ async function checkForTradeEvolve(message, pokemon, userId) {
  * @returns {boolean} True if the Pokemon successfully evolved.
  */
 async function evolve(message) {
-    var user = await getUser(message.author.id);
+    let wereNoErrorsEncountered = true;
+
+    let user = await getUser(message.author.id);
     if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
-    var evolvingPokemon = await getEvolvingPokemon(message.author.id);
+
+    let evolvingPokemon = await getEvolvingPokemon(message.author.id);
     if (evolvingPokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+        wereNoErrorsEncountered = false;
     }
-
-    var ppath = generatePokemonJSONPath(evolvingPokemon.name, evolvingPokemon.form);
-    var pdata;
-    try {
-        pdata = fs.readFileSync(ppath, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var pkmn = JSON.parse(pdata);
     
-    var evo = isInEvolution(message.author.id);
+    let evo = isInEvolution(message.author.id);
     if (evo === null) {
-        console.warn("Evolve function called but isInEvolution() returned null for user= " + message.author.id);
-        return new Promise(function(resolve) {
-            resolve(false);
-        })
+        wereNoErrorsEncountered = false;
     }
     
-    if (evolvingPokemon.name === evolvingPokemon.nickname) {
-        evolvingPokemon.nickname = null;
+    let toForm = getFormOfEvolvedPokemon(evolvingPokemon.form, evo.to, user);
+    let newPokemon = parseJSON(generatePokemonJSONPath(evo.to, toForm));
+    if (newPokemon === null) {
+        wereNoErrorsEncountered = false;
     }
-    
-    evolvingPokemon.name = evo.to;
-    
-    /**
-     * @todo rework this function so that we know which form the Pokemon will be in when it evolves.
-     */
-    ppath = generatePokemonJSONPath(evo.to, null);
-    pdata;
-    try {
-        pdata = fs.readFileSync(ppath, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    pkmn = JSON.parse(pdata);
-    
-    if (evo.to === "Lycanroc") {
-        var cur = convertToTimeZone(user);
-        var n = moment(cur).format('H');
-        if (n == 17) {
-            evolvingPokemon.form = "Dusk";
-        } else if (n > 17 || n < 6) {
-            evolvingPokemon.form = "Midnight";
-        } else {
-            evolvingPokemon.form = "Midday";
-        }
-    }
-    
-    let national_id = pkmn.national_id.toString();
-    national_id = national_id.padStart(3, '0');
 
-    var hidden = [];
-    var abilities = [];
-    
-    if (user.region === "Alola" && !user.location.includes("Ultra Space")) {
-        if (evo.to === "Exeggutor" || evo.to === "Marowak" || evo.to === "Raichu") {
-            evolvingPokemon.form = "Alolan";
-        }
-    }
-    
-    var f;
-    if (evolvingPokemon.form === "Alolan") {
-        for (f = 0; f < pkmn.variations[0].abilities.length; f++) {
-            if(pkmn.variations[0].abilities[f].hasOwnProperty('hidden')) {
-                hidden[hidden.length] = pkmn.variations[0].abilities[f].name;
-            } else {
-                abilities[abilities.length] = pkmn.variations[0].abilities[f].name;
-            }
-        }
-    } else {
-        for (f = 0; f < pkmn.abilities.length; f++) {
-            if(pkmn.abilities[f].hasOwnProperty('hidden')) {
-                hidden[hidden.length] = pkmn.abilities[f].name;
-            } else {
-                abilities[abilities.length] = pkmn.abilities[f].name;
-            }
-        }
-    }
-    
-    var final_ability;
-    var abilitySlot = evolvingPokemon.abilitySlot;
-    
-    if (abilitySlot === 2 && hidden.length > 0) {
-        final_ability = hidden[0];
-    } else if (abilitySlot === 1 && abilities.length > 1) {
-        final_ability = abilities[1];
-    } else {
-        final_ability = abilities[0];
-    }
-    
-    if (evolvingPokemon.name === "Espurr" && evolvingPokemon.abilitySlot === 2) {
-        if (evolvingPokemon.gender === "Female") {
-            evolvingPokemon.abilitySlot = 3;
-            final_ability = "Competitive";
-        }
-    }
-    
-    if (evo.to === "Lycanroc") {
-        if (evolvingPokemon.form === "Midday") {
-            evolvingPokemon.ability = pkmn.abilities[evolvingPokemon.abilitySlot].name;
-        } else if (evolvingPokemon.form === "Midnight") {
-            evolvingPokemon.ability = pkmn.variations[0].abilities[evolvingPokemon.abilitySlot].name;
-        } else {
-            evolvingPokemon.ability = "Tough Claws";
-        }
-    }
-    
-    evolvingPokemon.ability = final_ability;
-    evolvingPokemon.no = pkmn.national_id;
-    var stats = [evolvingPokemon.stat_hp, evolvingPokemon.stat_atk, evolvingPokemon.stat_def, evolvingPokemon.stat_spatk, evolvingPokemon.stat_spdef, evolvingPokemon.stat_spd];
-    var EVs = [evolvingPokemon.ev_hp, evolvingPokemon.ev_atk, evolvingPokemon.ev_def, evolvingPokemon.ev_spatk, evolvingPokemon.ev_spdef, evolvingPokemon.ev_spd];
-    var IVs = [evolvingPokemon.iv_hp, evolvingPokemon.iv_atk, evolvingPokemon.iv_def, evolvingPokemon.iv_spatk, evolvingPokemon.iv_spdef, evolvingPokemon.iv_spd];
-    var nature = evolvingPokemon.nature;
-    
-    var level = evolvingPokemon.level_current;
-    
-    var baseStats;
-    if ((evolvingPokemon.name === "Pumpkaboo" || evolvingPokemon.name === "Gourgeist") && evolvingPokemon.form != "Small Size") {
-        if (evolving.form === "Average Size") {
-            baseStats = [pkmn.variations[0].base_stats.hp, pkmn.variations[0].base_stats.atk, pkmn.variations[0].base_stats.def, pkmn.variations[0].base_stats.sp_atk, pkmn.variations[0].base_stats.sp_def, pkmn.variations[0].base_stats.speed];
-        } else if (evolvingPokemon.form === "Large Size") {
-            baseStats = [pkmn.variations[1].base_stats.hp, pkmn.variations[1].base_stats.atk, pkmn.variations[1].base_stats.def, pkmn.variations[1].base_stats.sp_atk, pkmn.variations[1].base_stats.sp_def, pkmn.variations[1].base_stats.speed];
-        } else {
-            baseStats = [pkmn.variations[2].base_stats.hp, pkmn.variations[2].base_stats.atk, pkmn.variations[2].base_stats.def, pkmn.variations[2].base_stats.sp_atk, pkmn.variations[2].base_stats.sp_def, pkmn.variations[2].base_stats.speed];
-        }
-    } else if (evolvingPokemon.name === "Lycanroc" && evolvingPokemon.form != "Midday") {
-        if (evolvingPokemon.form === "Midnight") {
-            baseStats = [pkmn.variations[0].base_stats.hp, pkmn.variations[0].base_stats.atk, pkmn.variations[0].base_stats.def, pkmn.variations[0].base_stats.sp_atk, pkmn.variations[0].base_stats.sp_def, pkmn.variations[0].base_stats.speed];
-        } else {
-            baseStats = [pkmn.variations[1].base_stats.hp, pkmn.variations[1].base_stats.atk, pkmn.variations[1].base_stats.def, pkmn.variations[1].base_stats.sp_atk, pkmn.variations[1].base_stats.sp_def, pkmn.variations[1].base_stats.speed];
-        }
-    } else {
-        baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
-    }
-    
-    stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
-    stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
-    stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
-    stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
-    stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
-    stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
-    
-    evolvingPokemon.stat_hp = stats[0];
-    evolvingPokemon.stat_atk = stats[1];
-    evolvingPokemon.stat_def = stats[2];
-    evolvingPokemon.stat_spatk = stats[3];
-    evolvingPokemon.stat_spdef = stats[4];
-    evolvingPokemon.stat_spd = stats[5];
-    
-    if (evolvingPokemon.form === "Alolan") {
-        evolvingPokemon.type_1 = pkmn.variations[0].types[0];
-        if(pkmn.variations[0].types.length > 1) {
-            evolvingPokemon.type_2 = pkmn.variations[0].types[1];
-        } else {
-            evolvingPokemon.type_2 = null;
-        }
-    } else {
-        evolvingPokemon.type_1 = pkmn.types[0];
-        if(pkmn.types.length > 1) {
-            evolvingPokemon.type_2 = pkmn.types[1];
-        } else {
-            evolvingPokemon.type_2 = null;
-        }
-    }
-    
-    if (evolvingPokemon.name === "Wormadam") {
-        if (evolvingPokemon.form === "Sandy Cloak") {
-            evolvingPokemon.type_1 = pkmn.variations[0].types[1];
-        } else if (evolvingPokemon.form === "Trash Cloak") {
-            evolvingPokemon.type_2 = pkmn.variations[1].types[1];
-        }
-    } else if (evolvingPokemon.name === "Mothim") {
-        evolvingPokemon.form = null;
-    }
-    
-    var heldItemEvoPokemon = ["Chansey", "Gliscor", "Weavile", "Politoed", "Slowking", "Steelix", "Kindgra", "Scizor", "Porygon2", "Huntail", "Gorebyss", "Milotic", "Rhyperior", "Electivire", "Magmortar", "Porygon-Z", "Dusknoir", "Milotic", "Aromatisse", "Slurpuff"];
+    if (wereNoErrorsEncountered) {
+        /**
+         * Update the evolved Pokemon's name and form.
+         */
+        evolvingPokemon.name = evo.to;
+        evolvingPokemon.form = toForm;
 
-    if (heldItemEvoPokemon.indexOf(evolvingPokemon.name) >= 0) {
-        evolvingPokemon.item = null;
-    }
+        /**
+         * Update the evolved Pokemon's national Pokedex number.
+         */
+        let national_id = newPokemon.national_id.toString();
+        national_id = national_id.padStart(3, '0');
+        evolvingPokemon.no = newPokemon.national_id;
     
-    if (evo.to === "Malamar") {
-        message.channel.send("¡ɹɐɯɐlɐW oʇuᴉ pǝʌloʌǝ sɐɥ ʎɐʞuI s," + flipString(message.author.username));
-    } else {
-        message.channel.send(message.author.username + "'s " + evo.from + " has evolved into " + evo.to + "!");
-    }
-    
-    removeEvolution(message.author.id);
-    
-    var evoMove = checkForNewMoveUponEvo(evo.to, evolvingPokemon.form);
-    var knownMoves = await getPokemonKnownMoves(evolvingPokemon.pokemon_id);
-    let evolvingMoves = populateMoves(knownMoves);
-    if (evoMove[0] != "None") {
-        message.react(duck.id);
-        var x;
-        for (x = 0; x < evoMove.length; x++) {
-            if (evolvingMoves[0].name != evoMove[x] && evolvingMoves[1].name != evoMove[x] && evolvingMoves[2].name != evoMove[x] && evolvingMoves[3].name != evoMove[x]) {
-                if (evolvingMoves[0].name === null) {
-                    evolvingMoves[0].name = evoMove[x];
-                    evolvingMoves[0].pp = getMovePP(evoMove[x]);
-                    await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!"));
-                } else if (evolvingMoves[1].name === null) {
-                    evolvingMoves[1].name = evoMove[x];
-                    evolvingMoves[1].pp = getMovePP(evoMove[x]);
-                    await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!"));
-                } else if (evolvingMoves[2].name === null) {
-                    evolvingMoves[2].name = evoMove[x];
-                    evolvingMoves[2].pp = getMovePP(evoMove[x]);
-                    await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!"));
-                } else if (evolvingMoves[3].name === null) {
-                    evolvingMoves[3].name = evoMove[x];
-                    evolvingMoves[3].pp = getMovePP(evoMove[x]);
-                    await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[x] + "!"));
+        /**
+         * Update the evolved Pokemon's ability.
+         */
+        let hidden = [];
+        let abilities = [];
+        let abilitiesIndex;
+        let final_ability;
+        /**
+         * Meowstic is unique in that it is the only Pokemon species to have different abilities
+         * based on its gender.
+         */
+        if (evolvingPokemon.name === "Meowstic" && evolvingPokemon.abilitySlot === 2) {
+            if (evolvingPokemon.gender === "Female") {
+                evolvingPokemon.abilitySlot = 3;
+                final_ability = "Competitive";
+            }
+        } else {
+            for (abilitiesIndex = 0; abilitiesIndex < newPokemon.abilities.length; abilitiesIndex++) {
+                if(newPokemon.abilities[abilitiesIndex].hasOwnProperty('hidden')) {
+                    hidden[hidden.length] = newPokemon.abilities[abilitiesIndex].name;
                 } else {
-                    transactions[transactions.length] = new Transaction(message.author.id, ("teaching your " + evo.to + " " + evoMove[x]));
-                    evolvingMoves = await replaceMove(message, evolvingPokemon, evoMove[x], evolvingMoves);
-                    removeTransaction(message.author.id);
+                    abilities[abilities.length] = newPokemon.abilities[abilitiesIndex].name;
+                }
+            }
+            if (evolvingPokemon.abilitySlot === 2 && hidden.length > 0) {
+                /**
+                 * No Pokemon has more than one possible hidden ability, excluding forms.
+                 */
+                final_ability = hidden[0];
+            } else if (evolvingPokemon.abilitySlot === 1 && abilities.length > 1) {
+                final_ability = abilities[1];
+            } else {
+                final_ability = abilities[0];
+            }
+        }
+        evolvingPokemon.ability = final_ability;
+
+        /**
+         * Update the evolved Pokemon's stats.
+         */
+        let stats = [evolvingPokemon.stat_hp, evolvingPokemon.stat_atk, evolvingPokemon.stat_def, evolvingPokemon.stat_spatk, evolvingPokemon.stat_spdef, evolvingPokemon.stat_spd];
+        let EVs = [evolvingPokemon.ev_hp, evolvingPokemon.ev_atk, evolvingPokemon.ev_def, evolvingPokemon.ev_spatk, evolvingPokemon.ev_spdef, evolvingPokemon.ev_spd];
+        let IVs = [evolvingPokemon.iv_hp, evolvingPokemon.iv_atk, evolvingPokemon.iv_def, evolvingPokemon.iv_spatk, evolvingPokemon.iv_spdef, evolvingPokemon.iv_spd];
+        let nature = evolvingPokemon.nature;
+        let level = evolvingPokemon.level_current;
+        let baseStats;
+        baseStats = [newPokemon.base_stats.hp, newPokemon.base_stats.atk, newPokemon.base_stats.def, newPokemon.base_stats.sp_atk, newPokemon.base_stats.sp_def, newPokemon.base_stats.speed];
+        stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
+        stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
+        stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
+        stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
+        stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
+        stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
+        evolvingPokemon.stat_hp = stats[0];
+        evolvingPokemon.stat_atk = stats[1];
+        evolvingPokemon.stat_def = stats[2];
+        evolvingPokemon.stat_spatk = stats[3];
+        evolvingPokemon.stat_spdef = stats[4];
+        evolvingPokemon.stat_spd = stats[5];
+        
+        /**
+         * Update the evolved Pokemon's types.
+         */
+        evolvingPokemon.type_1 = newPokemon.types[0];
+        if(newPokemon.types.length > 1) {
+            evolvingPokemon.type_2 = newPokemon.types[1];
+        } else {
+            evolvingPokemon.type_2 = null;
+        }
+        
+        /**
+         * Hold items that cause an evolution are deleted after the Pokemon evolves.
+         */
+        let heldItemEvoPokemon = ["Chansey", "Gliscor", "Weavile", "Politoed", "Slowking", "Steelix", "Kindgra", "Scizor", "Porygon2", "Huntail", "Gorebyss", "Milotic", "Rhyperior", "Electivire", "Magmortar", "Porygon-Z", "Dusknoir", "Milotic", "Aromatisse", "Slurpuff"];
+        if (heldItemEvoPokemon.indexOf(evolvingPokemon.name) >= 0) {
+            evolvingPokemon.item = null;
+        }
+        
+        /**
+         * Inkay evolves by holding the 3DS handheld device upside-down. Since that isn't possible to check for
+         * within Discord's API, that evolution requirement is replaced with flavor text.
+         */
+        if (evo.to === "Malamar") {
+            await sendMessage(message.channel, ("¡ɹɐɯɐlɐW oʇuᴉ pǝʌloʌǝ sɐɥ ʎɐʞuI s," + flipString(message.author.username)));
+        } else {
+            await sendMessage(message.channel, (message.author.username + "'s " + evo.from + " has evolved into " + evo.to + "!"));
+        }
+        
+        removeEvolution(message.author.id);
+        
+        /**
+         * Check if the Pokemon learns a move specifically when it evolves.
+         */
+        let evoMove = checkForNewMoveUponEvo(evo.to, evolvingPokemon.form);
+        let knownMoves = await getPokemonKnownMoves(evolvingPokemon.pokemon_id);
+        let evolvingMoves = populateMoves(knownMoves);
+        if (evoMove.length > 0) {
+            message.react(duck.id);
+            let evolutionMovesIndex;
+            for (evolutionMovesIndex = 0; evolutionMovesIndex < evoMove.length; evolutionMovesIndex++) {
+                if (evolvingMoves[0].name != evoMove[evolutionMovesIndex] && evolvingMoves[1].name != evoMove[evolutionMovesIndex] && evolvingMoves[2].name != evoMove[evolutionMovesIndex] && evolvingMoves[3].name != evoMove[evolutionMovesIndex]) {
+                    if (evolvingMoves[0].name === null) {
+                        evolvingMoves[0].name = evoMove[evolutionMovesIndex];
+                        evolvingMoves[0].pp = getMovePP(evoMove[evolutionMovesIndex]);
+                        evolvingMoves[0].id = 0;
+                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
+                    } else if (evolvingMoves[1].name === null) {
+                        evolvingMoves[1].name = evoMove[evolutionMovesIndex];
+                        evolvingMoves[1].pp = getMovePP(evoMove[evolutionMovesIndex]);
+                        evolvingMoves[1].id = 0;
+                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
+                    } else if (evolvingMoves[2].name === null) {
+                        evolvingMoves[2].name = evoMove[evolutionMovesIndex];
+                        evolvingMoves[2].pp = getMovePP(evoMove[evolutionMovesIndex]);
+                        evolvingMoves[2].id = 0;
+                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
+                    } else if (evolvingMoves[3].name === null) {
+                        evolvingMoves[3].name = evoMove[evolutionMovesIndex];
+                        evolvingMoves[3].pp = getMovePP(evoMove[evolutionMovesIndex]);
+                        evolvingMoves[3].id = 0;
+                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
+                    } else {
+                        transactions[transactions.length] = new Transaction(message.author.id, ("teaching your " + evo.to + " " + evoMove[evolutionMovesIndex]));
+                        evolvingMoves = await replaceMove(message, evolvingPokemon, evoMove[evolutionMovesIndex], evolvingMoves);
+                        removeTransaction(message.author.id);
+                    }
                 }
             }
         }
-    }
-    
-    evolvingMoves = await checkForNewMove(message, evolvingPokemon, true, evolvingMoves);
-    
-    if (evo.from === "Nincada" && evo.to === "Ninjask") {
-        var bag = await getBag(user.user_id);
-        if (bag === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
+        
+        /**
+         * Check if the Pokemon happened to evolve at a level where its
+         * evolution learns a new move.
+         */
+        evolvingMoves = await checkForNewMove(message, evolvingPokemon, true, evolvingMoves);
+        
+        /**
+         * If Nincada evolves into Ninjask, then the user
+         * will also receive a Shedinja if the user has a
+         * spare Poke Ball. That spare Poke Ball will be
+         * removed from the user's bag.
+         */
+        if (evo.from === "Nincada" && evo.to === "Ninjask") {
+            let bag = await getBag(user.user_id);
+            if (bag != null) {
+                if (doesUserHaveHoldableItem(bag, "Poké Ball") != false) {
+                    await removeItemFromBag(user.items, "Poké Ball", 1);
+                    let shedinja = await generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
+                    shedinja.otid = message.author.id;
+                    await addPokemon(user.user_id, shedinja);
+                }
+            }
         }
-        if (doesUserHaveHoldableItem(bag, "Poké Ball") != false) {
-            await removeItemFromBag(user.items, "Poké Ball", 1);
-            var shedinja = await generatePokemonByName(message, "Shedinja", evolvingPokemon.level_current, user.region, user.location, false);
-            shedinja.otid = message.author.id;
-            await addPokemon(user.user_id, shedinja);
+    
+        let finishedEvolvedPokemon = {
+            name: evolvingPokemon.name,
+            nickname: evolvingPokemon.nickname,
+            number: national_id,
+            friendship: evolvingPokemon.friendship,
+            stat_hp: evolvingPokemon.stat_hp,
+            stat_atk: evolvingPokemon.stat_atk,
+            stat_def: evolvingPokemon.stat_def,
+            stat_spatk: evolvingPokemon.stat_spatk,
+            stat_spdef: evolvingPokemon.stat_spdef,
+            stat_spd: evolvingPokemon.stat_spd,
+            type_1: evolvingPokemon.type_1,
+            type_2: evolvingPokemon.type_2,
+            item: evolvingPokemon.item,
+            ability: evolvingPokemon.ability,
+            form: evolvingPokemon.form,
+            evolving: 0
+        }
+
+        /**
+         * All of these need to be completed successfully for the evolution to complete.
+         */
+        if (
+            (await doQuery("UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?", [finishedEvolvedPokemon, evolvingPokemon.pokemon_id]) != null)
+            &&
+            (await addToPokedex(user, newPokemon.national_id) != null)
+            &&
+            (await updateMoves(evolvingPokemon, evolvingMoves) != false)
+        ) {
+            wereNoErrorsEncountered = true;
+        } else {
+            wereNoErrorsEncountered = false;
         }
     }
 
-    var set = {
-        name: evolvingPokemon.name,
-        nickname: evolvingPokemon.nickname,
-        number: national_id,
-        friendship: evolvingPokemon.friendship,
-        stat_hp: evolvingPokemon.stat_hp,
-        stat_atk: evolvingPokemon.stat_atk,
-        stat_def: evolvingPokemon.stat_def,
-        stat_spatk: evolvingPokemon.stat_spatk,
-        stat_spdef: evolvingPokemon.stat_spdef,
-        stat_spd: evolvingPokemon.stat_spd,
-        type_1: evolvingPokemon.type_1,
-        type_2: evolvingPokemon.type_2,
-        item: evolvingPokemon.item,
-        ability: evolvingPokemon.ability,
-        form: evolvingPokemon.form,
-        evolving: 0
-    }
-    var query = "UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?";
-    con.query(query, [set, evolvingPokemon.pokemon_id], function (err) {
-        if (err) {
-            console.log(err);
-            return false;
-        }
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
     });
-
-    await addToPokedex(user, pkmn.national_id);
-    await updateMoves(evolvingPokemon, evolvingMoves);
-
-    return true;
 }
 
 /**
@@ -5102,36 +5117,26 @@ async function evolve(message) {
  * @returns {boolean} True if the evolution was successfully cancelled.
  */
 async function cancelEvolve(message) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
+    let wasEvolutionCancelled = false;
 
-    var pokemon = await getPokemon(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
+    let user = await getUser(message.author.id);
+    let pokemon = await getPokemon(message.author.id);
 
-    var i;
-    for (i = 0; i < pokemon.length; i++) {
-        if(pokemon[i].evolving === 1) {
-            var query = "UPDATE pokemon SET pokemon.evolving = 0 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[i].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return false;
+    if (user != null && pokemon != null) {
+        let ownedPokemonIndex;
+        for (ownedPokemonIndex = 0; ownedPokemonIndex < pokemon.length; ownedPokemonIndex++) {
+            if(pokemon[ownedPokemonIndex].evolving === 1) {
+                if (await doQuery("UPDATE pokemon SET pokemon.evolving = 0 WHERE pokemon.pokemon_id = ?", [pokemon[ownedPokemonIndex].pokemon_id]) != null) {
+                    await sendMessage(message.channel, (message.author.username + " has cancelled " + user.pokemon[ownedPokemonIndex].name + "'s evolution."));
+                    removeEvolution(message.author.id);
+                    wasEvolutionCancelled = true;
                 }
-                message.channel.send(message.author.username + " has canceled " + user.pokemon[i].name + "'s evolution.");
-                removeEvolution(message.author.id);
-                return true;
-            });
+            }
         }
     }
-    return true;
+    return new Promise(function(resolve) {
+        resolve(wasEvolutionCancelled);
+    });
 }
 
 /**
@@ -5146,20 +5151,16 @@ async function cancelEvolve(message) {
  * @returns {string} The name of the Pokemon that it will evolve into, or null
  * if the Pokemon is not ready to evolve.
  */
-async function checkEvolve(user, pokemon, method) {
-    var ownedPokemon = await getPokemon(user.user_id);
-    if (ownedPokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    var knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
-    let moves = populateMoves(knownMoves);
+async function checkEvolveUponLevelUp(user, pokemon) {
+    let evolutionName = null;
     
+    let ownedPokemon = await getPokemon(user.user_id);
 
-    var heldItem = "None";
-    if (pokemon.item != "None" && pokemon.item != null) {
+    let knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
+    let moves = populateMoves(knownMoves);
+
+    let heldItem = null;
+    if (pokemon.item != null) {
         heldItem = await getItem(pokemon.item);
         if (heldItem != null) {
             heldItem = heldItem.name;
@@ -5168,262 +5169,228 @@ async function checkEvolve(user, pokemon, method) {
         }
     }
 
-    var path = generatePokemonJSONPath(pokemon.name, pokemon.form);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var pkmn = JSON.parse(data);
+    let pkmn = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
 
-    var cur = convertToTimeZone(user);
-    var n = moment(cur).format('H');
+    let cur = convertToTimeZone(user);
+    let n = moment(cur).format('H');
     
-    if (method === "level") {
+    if (pkmn != null) {
         if (pokemon.form === "Alolan") { //alolan forms
             if (pokemon.name === "Meowth") {
                 if (pokemon.friendship >= 220) {
-                    return "Persian";
+                    evolutionName = "Persian";
                 }
             } else if (pokemon.name === "Rattata") {
                 if (pokemon.level_current >= 20 && ((n >= 0 && n < 6) || n >= 18)) {
-                    return "Raticate";
+                    evolutionName = "Raticate";
                 }
             } else if (pokemon.name === "Diglett") {
                 if (pokemon.level_current >= 26) {
-                    return "Dugtrio";
+                    evolutionName = "Dugtrio";
                 }
             } else if (pokemon.name === "Geodude") {
                 if (pokemon.level_current >= 25) {
-                    return "Graveler";
+                    evolutionName = "Graveler";
                 }
             } else if (pokemon.name === "Grimer") {
                 if (pokemon.level_current >= 38) {
-                    return "Muk";
+                    evolutionName = "Muk";
                 }
-            } else {
-                return null;
             }
-        }
-        
-        if(pkmn.hasOwnProperty('evolutions')) {
+        } else if(pkmn.hasOwnProperty('evolutions')) {
             //cosmoem will evolve based on time
             if (pokemon.name === "Cosmoem") {
                 if (pokemon.level_current >= 53) {
                     if ((n >= 0 && n < 6) || n >= 18) {
-                        return "Lunala"; 
+                        evolutionName = "Lunala"; 
                     } else {
-                        return "Solgaleo";
+                        evolutionName = "Solgaleo";
                     }
                 }
             }
             //mantyke requires user to own a remoraid
-            if (pokemon.name === "Mantyke") {
-                var m;
-                for (m = 0; m < ownedPokemon.length; m++) {
-                    if (ownedPokemon[m].name === "Remoraid") {
-                        return "Mantine";
+            else if (pokemon.name === "Mantyke") {
+                let ownedPokemonIndex;
+                for (ownedPokemonIndex = 0; ownedPokemonIndex < ownedPokemon.length; ownedPokemonIndex++) {
+                    if (ownedPokemon[ownedPokemonIndex].name === "Remoraid") {
+                        evolutionName = "Mantine";
                     }
                 }
             }
             //pangoro requires user to have a dark type
-            if (pokemon.name === "Pancham") {
+            else if (pokemon.name === "Pancham") {
                 if (pokemon.level_current >= 32) {
-                    var m;
-                    for (m = 0; m < ownedPokemon.length; m++) {
-                        if ((ownedPokemon[m].type_1 === "Dark" || ownedPokemon[m].type_2 === "Dark") && ownedPokemon[m].lead === 0) {
-                            return "Pangoro";
+                    let ownedPokemonIndex;
+                    for (ownedPokemonIndex = 0; ownedPokemonIndex < ownedPokemon.length; ownedPokemonIndex++) {
+                        if ((ownedPokemon[ownedPokemonIndex].type_1 === "Dark" || ownedPokemon[ownedPokemonIndex].type_2 === "Dark") && ownedPokemon[ownedPokemonIndex].lead === 0) {
+                            evolutionName = "Pangoro";
                         }
                     }
                 }
             }
             //inkay normally requires user to hold device upside down, but in this case only has level requirement
-            if (pokemon.name === "Inkay") {
+            else if (pokemon.name === "Inkay") {
                 if (pokemon.level_current >= 30) {
-                    return "Malamar";
+                    evolutionName = "Malamar";
                 }
             }
             //sliggoo requires it to be raining
-            if (pokemon.name === "Sliggoo") {
+            else if (pokemon.name === "Sliggoo") {
                 if (pokemon.level_current >= 50) {
-                    if (user.region === "Johto") {
-                        if (user.location === "Route 33" || user.location === "Lake of Rage") {
-                            return "Goodra";
-                        }
-                    }
-                    if (user.region === "Hoenn") {
-                        if (user.location === "Route 119" || user.location === "Route 120" || user.location === "Route 123") {
-                            return "Goodra";
-                        }
-                    }
-                    if (user.region === "Sinnoh") {
-                        if (user.location === "Route 212" || user.location === "Route 213" || user.location === "Route 214" || user.location === "Route 215") {
-                            return "Goodra";
-                        }
-                    }
-                    if (user.region === "Unova") {
-                        if (user.location === "Route 6" || user.location === "Route 7" || user.location === "Route 8" || user.location === "Route 12") {
-                            return "Goodra";
-                        }
-                    }
-                    if (user.region === "Kalos") {
-                        if (user.location === "Route 14 (Laverre Nature Trail)" || user.location === "Route 19 (Grande Vallée Way)" || user.location === "Route 21 (Dernière Way)" || user.location === "Laverre City") {
-                            return "Goodra";
-                        }
-                    }
-                    if (user.region === "Alola") {
-                        if (user.location === "Po Town" || user.location === "Route 17") {
-                            return "Goodra";
+                    for (location in raining) {
+                        if (raining[location].region === user.region && raining[location].location === user.location) {
+                            evolutionName = "Goodra";
+                            break;
                         }
                     }
                 }
             }
             //tyrogue evolves based on its highest stat
-            if (pokemon.name === "Tyrogue") {
+            else if (pokemon.name === "Tyrogue") {
                 if (pokemon.level_current >= 20) {
                     if (pokemon.stats_atk > pokemon.stat_def) {
-                        return "Hitmonlee";
+                        evolutionName = "Hitmonlee";
                     } else if (pokemon.stat_def > pokemon.stat_atk) {
-                        return "Hitmonchan";
+                        evolutionName = "Hitmonchan";
                     } else {
-                        return "Hitmontop";
+                        evolutionName = "Hitmontop";
                     }
                 }
             }
-            //wurmple normally evolves based on its personality value, but in this case it evolves based on its IV total
-            if (pokemon.name === "Wurmple") {
+            //wurmple evolves based on its personality value
+            else if (pokemon.name === "Wurmple") {
                 if (pokemon.level_current >= 7) {
-                    var pval = Math.trunc(pokemon.personality / 65536);
+                    let pval = Math.trunc(pokemon.personality / 65536);
                     if (pval % 10 < 5) {
-                        return "Silcoon";
+                        evolutionName = "Silcoon";
                     } else {
-                        return "Cascoon";
+                        evolutionName = "Cascoon";
+                    }
+                }
+            } else {
+                let possibleEvolutionsIndex;
+                for (possibleEvolutionsIndex = 0; possibleEvolutionsIndex < pkmn.evolutions.length; possibleEvolutionsIndex++) {
+                    //holding an item
+                    if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('hold_item')) {
+                        if (heldItem.name === pkmn.evolutions[possibleEvolutionsIndex].hold_item) {
+                            if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Nighttime") { //night holding an item
+                                if ((n >= 0 && n < 6) || n >= 18) {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Daytime") { //day holding an item
+                                if (n >= 6 && n < 18) {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                        }
+                    }
+                    //know a specific move
+                    else if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('move_learned')) {
+                        if (moves[0].name === pkmn.evolutions[possibleEvolutionsIndex].move_learned || moves[1].name === pkmn.evolutions[possibleEvolutionsIndex].move_learned || moves[2].name === pkmn.evolutions[possibleEvolutionsIndex].move_learned || moves[3].name === pkmn.evolutions[possibleEvolutionsIndex].move_learned) {
+                            evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                        }
+                    }
+                    //locations based evolutions and unique methods
+                    else if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('conditions')) {
+                        //specific to sylveon, only checks for Fairy moves that eevee can learn
+                        if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Fairy Type Move") {
+                            if (moves[0].name === "Charm" || moves[0].name === "Baby-Doll Eyes" || moves[1].name === "Charm" || moves[1].name === "Baby-Doll Eyes" || moves[2].name === "Charm" || moves[2].name === "Baby-Doll Eyes" || moves[3].name === "Charm" || moves[3].name === "Baby-Doll Eyes") {
+                                evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                            }
+                        }
+                        //level up in a magnetic field area
+                        else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "In a Magnetic Field area") {
+                            let magnetic_fields = ["New Mauville", "Mt. Coronet", "Chargestone Cave", "Route 13 (Lumiose Badlands)", "Vast Poni Canyon", "Blush Mountain"];
+                            if (magnetic_fields.indexOf(user.location) >= 0) {
+                                evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                            }
+                        }
+                        //level up near a mossy rock
+                        else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Near a Mossy Rock") {
+                            let mossy_rocks = ["Petalburg Woods", "Eterna Forest", "Pinwheel Forest", "Route 20 (Winding Woods)", "Lush Jungle"];
+                            if (mossy_rocks.indexOf(user.location) >= 0) {
+                                evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                            }
+                        }
+                        //level up near an icy rock
+                        else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Near an Icy Rock") {
+                            let mossy_rocks = ["Shoal Cave", "Route 217", "Twist Mountain", "Frost Cavern", "Mount Lanakila"];
+                            if (mossy_rocks.indexOf(user.location) >= 0) {
+                                evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                            }
+                        }
+                        //level up at mount lanakila (aka Crabrawler -> Crabominable)
+                        if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "At Mount Lanakila") {
+                            if (user.location === "Mount Lanakila") {
+                                evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                            }
+                        }
+                    }
+                    //friendship
+                    else if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('happiness') && pokemon.friendship >= 220) {
+                        //no special conditions
+                        if(!pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('conditions')) {
+                            evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to;
+                        } else if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('conditions')) {
+                            if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Nighttime") { //night friendship
+                                if ((n >= 0 && n < 6) || n >= 18) {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Daytime") { //day friendship
+                                if (n >= 6 && n < 18) {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Male") { //male only
+                                if (pokemon.gender === "Male") {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Female") { //female only
+                                if (pokemon.gender === "Female") {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                        }
+                    }
+                    //level
+                    else if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('level')) {
+                        //no special conditions
+                        if (pkmn.evolutions[possibleEvolutionsIndex].level <= pokemon.level_current && !pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('conditions')) {
+                            evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to;
+                        } else if (pkmn.evolutions[possibleEvolutionsIndex].level <= pokemon.level_current && pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('conditions')) {
+                            if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Nighttime") { //night level up
+                                if ((n >= 0 && n < 6) || n >= 18) {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Daytime") { //day level up
+                                if (n >= 6 && n < 18) {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Male") { //male only
+                                if (pokemon.gender === "Male") {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                            else if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Female") { //female only
+                                if (pokemon.gender === "Female") {
+                                    evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
+                                }
+                            }
+                        }
                     }
                 }
             }
-            var i;
-            for (i = 0; i < pkmn.evolutions.length; i++) {
-                //holding an item
-                if (pkmn.evolutions[i].hasOwnProperty('hold_item')) {
-                    if (heldItem.name === pkmn.evolutions[i].hold_item) {
-                        if (pkmn.evolutions[i].conditions[0] === "Nighttime") { //night holding an item
-                            if ((n >= 0 && n < 6) || n >= 18) {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Daytime") { //day holding an item
-                            if (n >= 6 && n < 18) {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                    }
-                }
-                //know a specific move
-                if (pkmn.evolutions[i].hasOwnProperty('move_learned')) {
-                    if (moves[0].name === pkmn.evolutions[i].move_learned || moves[1].name === pkmn.evolutions[i].move_learned || moves[2].name === pkmn.evolutions[i].move_learned || moves[3].name === pkmn.evolutions[i].move_learned) {
-                        return pkmn.evolutions[i].to; 
-                    }
-                }
-                if (pkmn.evolutions[i].hasOwnProperty('conditions')) {
-                    //specific to sylveon, only checks for Fairy moves that eevee can learn
-                    if (pkmn.evolutions[i].conditions[0] === "Fairy Type Move") {
-                        if (moves[0].name === "Charm" || moves[0].name === "Baby-Doll Eyes" || moves[1].name === "Charm" || moves[1].name === "Baby-Doll Eyes" || moves[2].name === "Charm" || moves[2].name === "Baby-Doll Eyes" || moves[3].name === "Charm" || moves[3].name === "Baby-Doll Eyes") {
-                            return pkmn.evolutions[i].to; 
-                        }
-                    }
-                    //level up in a magnetic field area
-                    if (pkmn.evolutions[i].conditions[0] === "In a Magnetic Field area") {
-                        var magnetic_fields = ["New Mauville", "Mt. Coronet", "Chargestone Cave", "Route 13 (Lumiose Badlands)", "Vast Poni Canyon", "Blush Mountain"];
-                        if (magnetic_fields.indexOf(user.location) >= 0) {
-                            return pkmn.evolutions[i].to; 
-                        }
-                    }
-                    //level up near a mossy rock
-                    if (pkmn.evolutions[i].conditions[0] === "Near a Mossy Rock") {
-                        var mossy_rocks = ["Petalburg Woods", "Eterna Forest", "Pinwheel Forest", "Route 20 (Winding Woods)", "Lush Jungle"];
-                        if (mossy_rocks.indexOf(user.location) >= 0) {
-                            return pkmn.evolutions[i].to; 
-                        }
-                    }
-                    //level up near an icy rock
-                    if (pkmn.evolutions[i].conditions[0] === "Near an Icy Rock") {
-                        var mossy_rocks = ["Shoal Cave", "Route 217", "Twist Mountain", "Frost Cavern", "Mount Lanakila"];
-                        if (mossy_rocks.indexOf(user.location) >= 0) {
-                            return pkmn.evolutions[i].to; 
-                        }
-                    }
-                    //level up at mount lanakila (aka Crabrawler -> Crabominable)
-                    if (pkmn.evolutions[i].conditions[0] === "At Mount Lanakila") {
-                        if (user.location === "Mount Lanakila") {
-                            return pkmn.evolutions[i].to; 
-                        }
-                    }
-                }
-                //friendship
-                if (pkmn.evolutions[i].hasOwnProperty('happiness') && pokemon.friendship >= 220) {
-                    if(!pkmn.evolutions[i].hasOwnProperty('conditions')) {
-                        return pkmn.evolutions[i].to;
-                    } else if (pkmn.evolutions[i].hasOwnProperty('conditions')) {
-                        if (pkmn.evolutions[i].conditions[0] === "Nighttime") { //night friendship
-                            if ((n >= 0 && n < 6) || n >= 18) {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Daytime") { //day friendship
-                            if (n >= 6 && n < 18) {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Male") { //male only
-                            if (pokemon.gender === "Male") {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Female") { //female only
-                            if (pokemon.gender === "Female") {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                    }
-                }
-                //level
-                if (pkmn.evolutions[i].hasOwnProperty('level')) {
-                    if (pkmn.evolutions[i].level <= pokemon.level_current && !pkmn.evolutions[i].hasOwnProperty('conditions')) {
-                        return pkmn.evolutions[i].to;
-                    } else if (pkmn.evolutions[i].level <= pokemon.level_current && pkmn.evolutions[i].hasOwnProperty('conditions')) {
-                        if (pkmn.evolutions[i].conditions[0] === "Nighttime") { //night level up
-                            if ((n >= 0 && n < 6) || n >= 18) {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Daytime") { //day level up
-                            if (n >= 6 && n < 18) {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Male") { //male only
-                            if (pokemon.gender === "Male") {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                        if (pkmn.evolutions[i].conditions[0] === "Female") { //female only
-                            if (pokemon.gender === "Female") {
-                                return pkmn.evolutions[i].to; 
-                            }
-                        }
-                    }
-                }
-            }
-        } else {
-            return null;
         }
-    } else if (method === "trade") {
-        return null;
-    } else if (method === "item") {
-        return null;
     }
+
+    return new Promise(function(resolve) {
+        resolve(evolutionName);
+    });
 }
 
 /**
@@ -6022,7 +5989,7 @@ async function giveXP(message, amount) {
             next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
             evolveTo = null;
             if (pokemon.item != "Everstone") {
-                evolveTo = await checkEvolve(user, pokemon, "level");
+                evolveTo = await checkEvolveUponLevelUp(user, pokemon);
             }
         } else {
             if (isInEvolution(message.author.id) === null && evolveTo != null) {
@@ -11390,584 +11357,402 @@ function getForm(user, name, region, location) {
  * @returns {string} The name of the move that is learned when evolving.
  */
 function checkForNewMoveUponEvo(to, form) {
+    let evoMove = [];
     if (to === "Venusaur") {
-        return ["Petal Dance"];
-    }
-    if (to === "Charizard") {
-        return ["Wing Attack"];
-    }
-    if (to === "Metapod") {
-        return ["Harden"];
-    }
-    if (to === "Butterfree") {
-        return ["Gust"];
-    }
-    if (to === "Kakuna") {
-        return ["Harden"];
-    }
-    if (to === "Beedrill") {
-        return ["Twineedle"];
-    }
-    if (to === "Raticate") {
-        return ["Scary Face"];
-    }
-    if (to === "Arbok") {
-        return ["Crunch"];
-    }
-    if (to === "Raichu") {
+        evoMove[evoMove.length] = "Petal Dance";
+    } else if (to === "Charizard") {
+        evoMove[evoMove.length] = "Wing Attack";
+    } else if (to === "Metapod") {
+        evoMove[evoMove.length] = "Harden";
+    } else if (to === "Butterfree") {
+        evoMove[evoMove.length] = "Gust";
+    } else if (to === "Kakuna") {
+        evoMove[evoMove.length] = "Harden";
+    } else if (to === "Beedrill") {
+        evoMove[evoMove.length] = "Twineedle";
+    } else if (to === "Raticate") {
+        evoMove[evoMove.length] = "Scary Face";
+    } else if (to === "Arbok") {
+        evoMove[evoMove.length] = "Crunch";
+    } else if (to === "Raichu") {
         if (form === "Alolan") {
-            return ["Psychic"];
-        } else {
-            return ["None"];
+            evoMove[evoMove.length] = "Psychic";
         }
-    }
-    if (to === "Sandslash") {
+    } else if (to === "Sandslash") {
         if (form === "Alolan") {
-            return ["Icicle Spear"];
-        } else {
-            return ["None"];
+            evoMove[evoMove.length] = "Icicle Spear";
         }
-    }
-    if (to === "Ninetails") {
+    } else if (to === "Ninetails") {
         if (form === "Alolan") {
-            return ["Dazzling Gleam"];
-        } else {
-            return ["None"];
+            evoMove[evoMove.length] = "Dazzling Gleam";
         }
-    }
-    if (to === "Venomoth") {
-        return ["Gust"];
-    }
-    if (to === "Dugtrio") {
-        return ["Sand Tomb"];
-    }
-    if (to === "Persian") {
-        return ["Swift"];
-    }
-    if (to === "Primeape") {
-        return ["Rage"];
-    }
-    if (to === "Poliwrath") {
-        return ["Submission"];
-    }
-    if (to === "Kadabra") {
-        return ["Kinesis"];
-    }
-    if (to === "Alakazam") {
-        return ["Kinesis"];
-    }
-    if (to === "Machamp") {
-        return ["Strength"];
-    }
-    if (to === "Victreebel") {
-        return ["Leaf Tornado"];
-    }
-    if (to === "Rapidash") {
-        return ["Fury Attack"];
-    }
-    if (to === "Slowbro") {
-        return ["Withdraw"];
-    }
-    if (to === "Magneton") {
-        return ["Tri Attack"];
-    }
-    if (to === "Dodrio") {
-        return ["Tri Attack"];
-    }
-    if (to === "Dewgong") {
-        return ["Sheer Cold"];
-    }
-    if (to === "Muk") {
-        return ["Venom Drench"];
-    }
-    if (to === "Haunter") {
-        return ["Shadow Punch"];
-    }
-    if (to === "Gengar") {
-        return ["Shadow Punch"];
-    }
-    if (to === "Exeggutor") {
+    } else if (to === "Venomoth") {
+        evoMove[evoMove.length] = "Gust";
+    } else if (to === "Dugtrio") {
+        evoMove[evoMove.length] = "Sand Tomb";
+    } else if (to === "Persian") {
+        evoMove[evoMove.length] = "Swift";
+    } else if (to === "Primeape") {
+        evoMove[evoMove.length] = "Rage";
+    } else if (to === "Poliwrath") {
+        evoMove[evoMove.length] = "Submission";
+    } else if (to === "Kadabra") {
+        evoMove[evoMove.length] = "Kinesis";
+    } else if (to === "Alakazam") {
+        evoMove[evoMove.length] ="Kinesis";
+    } else if (to === "Machamp") {
+        evoMove[evoMove.length] = "Strength";
+    } else if (to === "Victreebel") {
+        evoMove[evoMove.length] = "Leaf Tornado";
+    } else if (to === "Rapidash") {
+        evoMove[evoMove.length] = "Fury Attack";
+    } else if (to === "Slowbro") {
+        evoMove[evoMove.length] = "Withdraw";
+    } else if (to === "Magneton") {
+        evoMove[evoMove.length] = "Tri Attack";
+    } else if (to === "Dodrio") {
+        evoMove[evoMove.length] = "Tri Attack";
+    } else if (to === "Dewgong") {
+        evoMove[evoMove.length] = "Sheer Cold";
+    } else if (to === "Muk") {
+        evoMove[evoMove.length] = "Venom Drench";
+    } else if (to === "Haunter") {
+        evoMove[evoMove.length] = "Shadow Punch";
+    } else if (to === "Gengar") {
+        evoMove[evoMove.length] = "Shadow Punch";
+    } else if (to === "Exeggutor") {
         if (form === "Alolan") {
-            return ["Dragon Hammer"];
+            evoMove[evoMove.length] = "Dragon Hammer";
         } else {
-            return ["Stomp"];
+            evoMove[evoMove.length] = "Stomp";
         }
-    }
-    if (to === "Hitmonlee") {
-        return ["Double Kick"];
-    }
-    if (to === "Hitmonchan") {
-        return ["Comet Punch"];
-    }
-    if (to === "Weezing") {
-        return ["Double Hit"];
-    }
-    if (to === "Rhydon") {
-        return ["Hammer Arm"];
-    }
-    if (to === "Gyarados") {
-        return ["Bite"];
-    }
-    if (to === "Vaporeon") {
-        return ["Water Gun"];
-    }
-    if (to === "Jolteon") {
-        return ["Thunder Shock"];
-    }
-    if (to === "Flareon") {
-        return ["Ember"];
-    }
-    if (to === "Omastar") {
-        return ["Spike Cannon"];
-    }
-    if (to === "Kabutops") {
-        return ["Slash"];
-    }
-    if (to === "Dragonite") {
-        return ["Wing Attack"];
-    }
-    if (to === "Meganium") {
-        return ["Petal Dance"];
-    }
-    if (to === "Furret") {
-        return ["Agility"];
-    }
-    if (to === "Ariados") {
-        return ["Swords Dance"];
-    }
-    if (to === "Crobat") {
-        return ["Cross Poison"];
-    }
-    if (to === "Lanturn") {
-        return ["Stockpile", "Swallow", "Spit Up"];
-    }
-    if (to === "Xatu") {
-        return ["Air Slash"];
-    }
-    if (to === "Ampharos") {
-        return ["Thunder Punch"];
-    }
-    if (to === "Bellossom") {
-        return ["Magical Leaf"];
-    }
-    if (to === "Sudowoodo") {
-        return ["Slam"];
-    }
-    if (to === "Espeon") {
-        return ["Confusion"];
-    }
-    if (to === "Umbreon") {
-        return ["Pursuit"];
-    }
-    if (to === "Forretress") {
-        return ["Mirror Shot", "Autonomize"];
-    }
-    if (to === "Magcargo") {
-        return ["Shell Smash"];
-    }
-    if (to === "Piloswine") {
-        return ["Fury Attack"];
-    }
-    if (to === "Octillery") {
-        return ["Octazooka"];
-    }
-    if (to === "Donphan") {
-        return ["Fury Attack"];
-    }
-    if (to === "Hitmontop") {
-        return ["Rolling Kick"];
-    }
-    if (to === "Grovyle") {
-        return ["Fury Cutter"];
-    }
-    if (to === "Sceptile") {
-        return ["Dual Chop"];
-    }
-    if (to === "Combusken") {
-        return ["Double Kick"];
-    }
-    if (to === "Blaziken") {
-        return ["Blaze Kick"];
-    }
-    if (to === "Marshtomp") {
-        return ["Mud Shot"];
-    }
-    if (to === "Mightyena") {
-        return ["Snarl"];
-    }
-    if (to === "Silcoon") {
-        return ["Harden"];
-    }
-    if (to === "Beautifly") {
-        return ["Gust"];
-    }
-    if (to === "Cascoon") {
-        return ["Harden"];
-    }
-    if (to === "Dustox") {
-        return ["Gust"];
-    }
-    if (to === "Lombre") {
-        return ["Razor Leaf"];
-    }
-    if (to === "Pelipper") {
-        return ["Protect"];
-    }
-    if (to === "Breloom") {
-        return ["Mach Punch"];
-    }
-    if (to === "Slaking") {
-        return ["Swagger"];
-    }
-    if (to === "Ninjask") {
-        return ["Double Team", "Screech", "Fury Cutter"];
-    }
-    if (to === "Loudred") {
-        return ["Bite"];
-    }
-    if (to === "Exploud") {
-        return ["Crunch"];
-    }
-    if (to === "Swalot") {
-        return ["Body Slam"];
-    }
-    if (to === "Sharpedo") {
-        return ["Slash"];
-    }
-    if (to === "Camerupt") {
-        return ["Rock Slide"];
-    }
-    if (to === "Grumpig") {
-        return ["Teeter Dance"];
-    }
-    if (to === "Vibrava") {
-        return ["Dragon Breath"];
-    }
-    if (to === "Flygon") {
-        return ["Dragon Claw"];
-    }
-    if (to === "Cacturne") {
-        return ["Spiky Shield"];
-    }
-    if (to === "Altaria") {
-        return ["Dragon Breath"];
-    }
-    if (to === "Whiscash") {
-        return ["Thrash"];
-    }
-    if (to === "Crawdaunt") {
-        return ["Swift"];
-    }
-    if (to === "Claydol") {
-        return ["Hyper Beam"];
-    }
-    if (to === "Milotic") {
-        return ["Water Pulse"];
-    }
-    if (to === "Dusclops") {
-        return ["Shadow Punch"];
-    }
-    if (to === "Glalie") {
-        return ["Freeze-Dry"];
-    }
-    if (to === "Sealeo") {
-        return ["Swagger"];
-    }
-    if (to === "Walrein") {
-        return ["Ice Fang"];
-    }
-    if (to === "Shelgon") {
-        return ["Protect"];
-    }
-    if (to === "Salamence") {
-        return ["Fly"];
-    }
-    if (to === "Metang") {
-        return ["Confusion", "Metal Claw"];
-    }
-    if (to === "Metagross") {
-        return ["Hammer Arm"];
-    }
-    if (to === "Torterra") {
-        return ["Earthquake"];
-    }
-    if (to === "Monferno") {
-        return ["Mach Punch"];
-    }
-    if (to === "Infernape") {
-        return ["Close Combat"];
-    }
-    if (to === "Prinplup") {
-        return ["Metal Claw"];
-    }
-    if (to === "Empoleon") {
-        return ["Aqua Jet"];
-    }
-    if (to === "Staraptor") {
-        return ["Close Combat"];
-    }
-    if (to === "Bibarel") {
-        return ["Water Gun"];
-    }
-    if (to === "Kricketune") {
-        return ["Fury Cutter"];
-    }
-    if (to === "Rampardos") {
-        return ["Endeavor"];
-    }
-    if (to === "Bastiodon") {
-        return ["Block"];
-    }
-    if (to === "Wormadam") {
-        return ["Quiver Dance"];
-    }
-    if (to === "Mothim") {
-        return ["Quiver Dance"];
-    }
-    if (to === "Vespiquen") {
-        return ["Slash"];
-    }
-    if (to === "Cherrim") {
-        return ["Petal Dance"];
-    }
-    if (to === "Lopunny") {
-        return ["Return"];
-    }
-    if (to === "Purugly") {
-        return ["Swagger"];
-    }
-    if (to === "Skuntank") {
-        return ["Flamethrower"];
-    }
-    if (to === "Bronzong") {
-        return ["Block"];
-    }
-    if (to === "Gabite") {
-        return ["Dual Chop"];
-    }
-    if (to === "Garchomp") {
-        return ["Crunch"];
-    }
-    if (to === "Lucario") {
-        return ["Aura Sphere"];
-    }
-    if (to === "Garchomp") {
-        return ["Crunch"];
-    }
-    if (to === "Lucario") {
-        return ["Aura Sphere"];
-    }
-    if (to === "Magnezone") {
-        return ["Tri Attack"];
-    }
-    if (to === "Leafeon") {
-        return ["Razor Leaf"];
-    }
-    if (to === "Glaceon") {
-        return ["Icy Wind"];
-    }
-    if (to === "Gallade") {
-        return ["Slash"];
-    }
-    if (to === "Froslass") {
-        return ["Ominous Wind"];
-    }
-    if (to === "Pignite") {
-        return ["Arm Thrust"];
-    }
-    if (to === "Samurott") {
-        return ["Slash"];
-    }
-    if (to === "Watchog") {
-        return ["Confuse Ray"];
-    }
-    if (to === "Gigalith") {
-        return ["Power Gem"];
-    }
-    if (to === "Excadrill") {
-        return ["Horn Drill"];
-    }
-    if (to === "Seismitoad") {
-        return ["Acid"];
-    }
-    if (to === "Swadloon") {
-        return ["Protect"];
-    }
-    if (to === "Leavanny") {
-        return ["Slash"];
-    }
-    if (to === "Whirlipede") {
-        return ["Iron Defense"];
-    }
-    if (to === "Scolipede") {
-        return ["Baton Pass"];
-    }
-    if (to === "Darmanitan") {
-        return ["Hammer Arm"];
-    }
-    if (to === "Cofagrigus") {
-        return ["Scary Face"];
-    }
-    if (to === "Zoroark") {
-        return ["Night Slash"];
-    }
-    if (to === "Reuniclus") {
-        return ["Dizzy Punch"];
-    }
-    if (to === "Sawsbuck") {
-        return ["Horn Leech"];
-    }
-    if (to === "Galvantula") {
-        return ["Sticky Web"];
-    }
-    if (to === "Ferrothorn") {
-        return ["Power Whip"];
-    }
-    if (to === "Klinklang") {
-        return ["Magnetic Flux"];
-    }
-    if (to === "Eelektross") {
-        return ["Crunch"];
-    }
-    if (to === "Beartic") {
-        return ["Icicle Crash"];
-    }
-    if (to === "Golurk") {
-        return ["Heavy Slam"];
-    }
-    if (to === "Braviary") {
-        return ["Superpower"];
-    }
-    if (to === "Mandibuzz") {
-        return ["Bone Rush"];
-    }
-    if (to === "Volcarona") {
-        return ["Quiver Dance"];
-    }
-    if (to === "Quilladin") {
-        return ["Needle Arm"];
-    }
-    if (to === "Chesnaught") {
-        return ["Spiky Shield"];
-    }
-    if (to === "Delphox") {
-        return ["Mystical Fire"];
-    }
-    if (to === "Greninja") {
-        return ["Water Shuriken"];
-    }
-    if (to === "Fletchinder") {
-        return ["Ember"];
-    }
-    if (to === "Spewpa") {
-        return ["Protect"];
-    }
-    if (to === "Vivillon") {
-        return ["Gust"];
-    }
-    if (to === "Gogoat") {
-        return ["Aerial Ace"];
-    }
-    if (to === "Pangoro") {
-        return ["Bullet Punch"];
-    }
-    if (to === "Dragalge") {
-        return ["Twister"];
-    }
-    if (to === "Clawitzer") {
-        return ["Aura Sphere"];
-    }
-    if (to === "Tyrantrum") {
-        return ["Rock Slide"];
-    }
-    if (to === "Aurorus") {
-        return ["Freeze-Dry"];
-    }
-    if (to === "Sylveon") {
-        return ["Fairy Wind"];
-    }
-    if (to === "Goodra") {
-        return ["Aqua Tail"];
-    }
-    if (to === "Trevenant") {
-        return ["Shadow Claw"];
-    }
-    if (to === "Avalugg") {
-        return ["Body Slam"];
-    }
-    if (to === "Decidueye") {
-        return ["Spirit Shackle"];
-    }
-    if (to === "Incineroar") {
-        return ["Darkest Lariat"];
-    }
-    if (to === "Primarina") {
-        return ["Sparkling Aria"];
-    }
-    if (to === "Toucannon") {
-        return ["Beak Blast"];
-    }
-    if (to === "Charjabug") {
-        return ["Charge"];
-    }
-    if (to === "Vikavolt") {
-        return ["Thunderbolt"];
-    }
-    if (to === "Crabominable") {
-        return ["Ice Punch"];
-    }
-    if (to === "Ribombee") {
-        return ["Pollen Puff"];
-    }
-    if (to === "Lycanroc") {
+    } else if (to === "Hitmonlee") {
+        evoMove[evoMove.length] = "Double Kick";
+    } else if (to === "Hitmonchan") {
+        evoMove[evoMove.length] = "Comet Punch";
+    } else if (to === "Weezing") {
+        evoMove[evoMove.length] = "Double Hit";
+    } else if (to === "Rhydon") {
+        evoMove[evoMove.length] = "Hammer Arm";
+    } else if (to === "Gyarados") {
+        evoMove[evoMove.length] = "Bite";
+    } else if (to === "Vaporeon") {
+        evoMove[evoMove.length] = "Water Gun";
+    } else if (to === "Jolteon") {
+        evoMove[evoMove.length] = "Thunder Shock";
+    } else if (to === "Flareon") {
+        evoMove[evoMove.length] = "Ember";
+    } else if (to === "Omastar") {
+        evoMove[evoMove.length] = "Spike Cannon";
+    } else if (to === "Kabutops") {
+        evoMove[evoMove.length] = "Slash";
+    } else if (to === "Dragonite") {
+        evoMove[evoMove.length] = "Wing Attack";
+    } else if (to === "Meganium") {
+        evoMove[evoMove.length] = "Petal Dance";
+    } else if (to === "Furret") {
+        evoMove[evoMove.length] = "Agility";
+    } else if (to === "Ariados") {
+        evoMove[evoMove.length] = "Swords Dance";
+    } else if (to === "Crobat") {
+        evoMove[evoMove.length] = "Cross Poison";
+    } else if (to === "Lanturn") {
+        evoMove[evoMove.length] = "Stockpile";
+        evoMove[evoMove.length] = "Swallow";
+        evoMove[evoMove.length] = "Spit Up";
+    } else if (to === "Xatu") {
+        evoMove[evoMove.length] = "Air Slash";
+    } else if (to === "Ampharos") {
+        evoMove[evoMove.length] = "Thunder Punch";
+    } else if (to === "Bellossom") {
+        evoMove[evoMove.length] = "Magical Leaf";
+    } else if (to === "Sudowoodo") {
+        evoMove[evoMove.length] = "Slam";
+    } else if (to === "Espeon") {
+        evoMove[evoMove.length] = "Confusion";
+    } else if (to === "Umbreon") {
+        evoMove[evoMove.length] = "Pursuit";
+    } else if (to === "Forretress") {
+        evoMove[evoMove.length] = "Mirror Shot";
+        evoMove[evoMove.length] = "Autonomize";
+    } else if (to === "Magcargo") {
+        evoMove[evoMove.length] = "Shell Smash";
+    } else if (to === "Piloswine") {
+        evoMove[evoMove.length] = "Fury Attack";
+    } else if (to === "Octillery") {
+        evoMove[evoMove.length] = "Octazooka";
+    } else if (to === "Donphan") {
+        evoMove[evoMove.length] = "Fury Attack";
+    } else if (to === "Hitmontop") {
+        evoMove[evoMove.length] = "Rolling Kick";
+    } else if (to === "Grovyle") {
+        evoMove[evoMove.length] = "Fury Cutter";
+    } else if (to === "Sceptile") {
+        evoMove[evoMove.length] = "Dual Chop";
+    } else if (to === "Combusken") {
+        evoMove[evoMove.length] = "Double Kick";
+    } else if (to === "Blaziken") {
+        evoMove[evoMove.length] = "Blaze Kick";
+    } else if (to === "Marshtomp") {
+        evoMove[evoMove.length] = "Mud Shot";
+    } else if (to === "Mightyena") {
+        evoMove[evoMove.length] = "Snarl";
+    } else if (to === "Silcoon") {
+        evoMove[evoMove.length] = "Harden";
+    } else if (to === "Beautifly") {
+        evoMove[evoMove.length] = "Gust";
+    } else if (to === "Cascoon") {
+        evoMove[evoMove.length] = "Harden";
+    } else if (to === "Dustox") {
+        evoMove[evoMove.length] = "Gust";
+    } else if (to === "Lombre") {
+        evoMove[evoMove.length] = "Razor Leaf";
+    } else if (to === "Pelipper") {
+        evoMove[evoMove.length] = "Protect";
+    } else if (to === "Breloom") {
+        evoMove[evoMove.length] = "Mach Punch";
+    } else if (to === "Slaking") {
+        evoMove[evoMove.length] = "Swagger";
+    } else if (to === "Ninjask") {
+        evoMove[evoMove.length] = "Double Team";
+        evoMove[evoMove.length] = "Screech";
+        evoMove[evoMove.length] = "Fury Cutter";
+    } else if (to === "Loudred") {
+        evoMove[evoMove.length] = "Bite";
+    } else if (to === "Exploud") {
+        evoMove[evoMove.length] = "Crunch";
+    } else if (to === "Swalot") {
+        evoMove[evoMove.length] = "Body Slam";
+    } else if (to === "Sharpedo") {
+        evoMove[evoMove.length] = "Slash";
+    } else if (to === "Camerupt") {
+        evoMove[evoMove.length] = "Rock Slide";
+    } else if (to === "Grumpig") {
+        evoMove[evoMove.length] = "Teeter Dance";
+    } else if (to === "Vibrava") {
+        evoMove[evoMove.length] = "Dragon Breath";
+    } else if (to === "Flygon") {
+        evoMove[evoMove.length] = "Dragon Claw";
+    } else if (to === "Cacturne") {
+        evoMove[evoMove.length] = "Spiky Shield";
+    } else if (to === "Altaria") {
+        evoMove[evoMove.length] = "Dragon Breath";
+    } else if (to === "Whiscash") {
+        evoMove[evoMove.length] = "Thrash";
+    } else if (to === "Crawdaunt") {
+        evoMove[evoMove.length] = "Swift";
+    } else if (to === "Claydol") {
+        evoMove[evoMove.length] = "Hyper Beam";
+    } else if (to === "Milotic") {
+        evoMove[evoMove.length] = "Water Pulse";
+    } else if (to === "Dusclops") {
+        evoMove[evoMove.length] = "Shadow Punch";
+    } else if (to === "Glalie") {
+        evoMove[evoMove.length] = "Freeze-Dry";
+    } else if (to === "Sealeo") {
+        evoMove[evoMove.length] = "Swagger";
+    } else if (to === "Walrein") {
+        evoMove[evoMove.length] = "Ice Fang";
+    } else if (to === "Shelgon") {
+        evoMove[evoMove.length] = "Protect";
+    } else if (to === "Salamence") {
+        evoMove[evoMove.length] = "Fly";
+    } else if (to === "Metang") {
+        evoMove[evoMove.length] = "Confusion";
+        evoMove[evoMove.length] = "Metal Claw";
+    } else if (to === "Metagross") {
+        evoMove[evoMove.length] = "Hammer Arm";
+    } else if (to === "Torterra") {
+        evoMove[evoMove.length] = "Earthquake";
+    } else if (to === "Monferno") {
+        evoMove[evoMove.length] = "Mach Punch";
+    } else if (to === "Infernape") {
+        evoMove[evoMove.length] = "Close Combat";
+    } else if (to === "Prinplup") {
+        evoMove[evoMove.length] = "Metal Claw";
+    } else if (to === "Empoleon") {
+        evoMove[evoMove.length] = "Aqua Jet";
+    } else if (to === "Staraptor") {
+        evoMove[evoMove.length] = "Close Combat";
+    } else if (to === "Bibarel") {
+        evoMove[evoMove.length] = "Water Gun";
+    } else if (to === "Kricketune") {
+        evoMove[evoMove.length] = "Fury Cutter";
+    } else if (to === "Rampardos") {
+        evoMove[evoMove.length] = "Endeavor";
+    } else if (to === "Bastiodon") {
+        evoMove[evoMove.length] = "Block";
+    } else if (to === "Wormadam") {
+        evoMove[evoMove.length] = "Quiver Dance";
+    } else if (to === "Mothim") {
+        evoMove[evoMove.length] = "Quiver Dance";
+    } else if (to === "Vespiquen") {
+        evoMove[evoMove.length] = "Slash";
+    } else if (to === "Cherrim") {
+        evoMove[evoMove.length] = "Petal Dance";
+    } else if (to === "Lopunny") {
+        evoMove[evoMove.length] = "Return";
+    } else if (to === "Purugly") {
+        evoMove[evoMove.length] = "Swagger";
+    } else if (to === "Skuntank") {
+        evoMove[evoMove.length] = "Flamethrower";
+    } else if (to === "Bronzong") {
+        evoMove[evoMove.length] = "Block";
+    } else if (to === "Gabite") {
+        evoMove[evoMove.length] = "Dual Chop";
+    } else if (to === "Garchomp") {
+        evoMove[evoMove.length] = "Crunch";
+    } else if (to === "Lucario") {
+        evoMove[evoMove.length] = "Aura Sphere";
+    } else if (to === "Garchomp") {
+        evoMove[evoMove.length] = "Crunch";
+    } else if (to === "Lucario") {
+        evoMove[evoMove.length] = "Aura Sphere";
+    } else if (to === "Magnezone") {
+        evoMove[evoMove.length] = "Tri Attack";
+    } else if (to === "Leafeon") {
+        evoMove[evoMove.length] = "Razor Leaf";
+    } else if (to === "Glaceon") {
+        evoMove[evoMove.length] = "Icy Wind";
+    } else if (to === "Gallade") {
+        evoMove[evoMove.length] = "Slash";
+    } else if (to === "Froslass") {
+        evoMove[evoMove.length] = "Ominous Wind";
+    } else if (to === "Pignite") {
+        evoMove[evoMove.length] = "Arm Thrust";
+    } else if (to === "Samurott") {
+        evoMove[evoMove.length] = "Slash";
+    } else if (to === "Watchog") {
+        evoMove[evoMove.length] = "Confuse Ray";
+    } else if (to === "Gigalith") {
+        evoMove[evoMove.length] = "Power Gem";
+    } else if (to === "Excadrill") {
+        evoMove[evoMove.length] = "Horn Drill";
+    } else if (to === "Seismitoad") {
+        evoMove[evoMove.length] = "Acid";
+    } else if (to === "Swadloon") {
+        evoMove[evoMove.length] = "Protect";
+    } else if (to === "Leavanny") {
+        evoMove[evoMove.length] = "Slash";
+    } else if (to === "Whirlipede") {
+        evoMove[evoMove.length] = "Iron Defense";
+    } else if (to === "Scolipede") {
+        evoMove[evoMove.length] = "Baton Pass";
+    } else if (to === "Darmanitan") {
+        evoMove[evoMove.length] = "Hammer Arm";
+    } else if (to === "Cofagrigus") {
+        evoMove[evoMove.length] = "Scary Face";
+    } else if (to === "Zoroark") {
+        evoMove[evoMove.length] = "Night Slash";
+    } else if (to === "Reuniclus") {
+        evoMove[evoMove.length] = "Dizzy Punch";
+    } else if (to === "Sawsbuck") {
+        evoMove[evoMove.length] = "Horn Leech";
+    } else if (to === "Galvantula") {
+        evoMove[evoMove.length] = "Sticky Web";
+    } else if (to === "Ferrothorn") {
+        evoMove[evoMove.length] = "Power Whip";
+    } else if (to === "Klinklang") {
+        evoMove[evoMove.length] = "Magnetic Flux";
+    } else if (to === "Eelektross") {
+        evoMove[evoMove.length] = "Crunch";
+    } else if (to === "Beartic") {
+        evoMove[evoMove.length] = "Icicle Crash";
+    } else if (to === "Golurk") {
+        evoMove[evoMove.length] = "Heavy Slam";
+    } else if (to === "Braviary") {
+        evoMove[evoMove.length] = "Superpower";
+    } else if (to === "Mandibuzz") {
+        evoMove[evoMove.length] = "Bone Rush";
+    } else if (to === "Volcarona") {
+        evoMove[evoMove.length] = "Quiver Dance";
+    } else if (to === "Quilladin") {
+        evoMove[evoMove.length] = "Needle Arm";
+    } else if (to === "Chesnaught") {
+        evoMove[evoMove.length] = "Spiky Shield";
+    } else if (to === "Delphox") {
+        evoMove[evoMove.length] = "Mystical Fire";
+    } else if (to === "Greninja") {
+        evoMove[evoMove.length] = "Water Shuriken";
+    } else if (to === "Fletchinder") {
+        evoMove[evoMove.length] = "Ember";
+    } else if (to === "Spewpa") {
+        evoMove[evoMove.length] = "Protect";
+    } else if (to === "Vivillon") {
+        evoMove[evoMove.length] = "Gust";
+    } else if (to === "Gogoat") {
+        evoMove[evoMove.length] = "Aerial Ace";
+    } else if (to === "Pangoro") {
+        evoMove[evoMove.length] = "Bullet Punch";
+    } else if (to === "Dragalge") {
+        evoMove[evoMove.length] = "Twister";
+    } else if (to === "Clawitzer") {
+        evoMove[evoMove.length] = "Aura Sphere";
+    } else if (to === "Tyrantrum") {
+        evoMove[evoMove.length] = "Rock Slide";
+    } else if (to === "Aurorus") {
+        evoMove[evoMove.length] = "Freeze-Dry";
+    } else if (to === "Sylveon") {
+        evoMove[evoMove.length] = "Fairy Wind";
+    } else if (to === "Goodra") {
+        evoMove[evoMove.length] = "Aqua Tail";
+    } else if (to === "Trevenant") {
+        evoMove[evoMove.length] = "Shadow Claw";
+    } else if (to === "Avalugg") {
+        evoMove[evoMove.length] = "Body Slam";
+    } else if (to === "Decidueye") {
+        evoMove[evoMove.length] = "Spirit Shackle";
+    } else if (to === "Incineroar") {
+        evoMove[evoMove.length] = "Darkest Lariat";
+    } else if (to === "Primarina") {
+        evoMove[evoMove.length] = "Sparkling Aria";
+    } else if (to === "Toucannon") {
+        evoMove[evoMove.length] = "Beak Blast";
+    } else if (to === "Charjabug") {
+        evoMove[evoMove.length] = "Charge";
+    } else if (to === "Vikavolt") {
+        evoMove[evoMove.length] = "Thunderbolt";
+    } else if (to === "Crabominable") {
+        evoMove[evoMove.length] = "Ice Punch";
+    } else if (to === "Ribombee") {
+        evoMove[evoMove.length] = "Pollen Puff";
+    } else if (to === "Lycanroc") {
         if (form === "Midday") {
-            return ["Accelerock"];
+            evoMove[evoMove.length] = "Accelerock";
         } else if (form === "Midnight") {
-            return ["Counter"];
+            evoMove[evoMove.length] = "Counter";
         } else {
-            return ["Thrash"];
+            evoMove[evoMove.length] = "Thrash";
         }
+    } else if (to === "Toxapex") {
+        evoMove[evoMove.length] = "Baneful Bunker";
+    } else if (to === "Lurantis") {
+        evoMove[evoMove.length] = "Petal Blizzard";
+    } else if (to === "Salazzle") {
+        evoMove[evoMove.length] = "Captivate";
+    } else if (to === "Bewear") {
+        evoMove[evoMove.length] = "Bind";
+    } else if (to === "Steenee") {
+        evoMove[evoMove.length] = "Double Slap";
+    } else if (to === "Tsareena") {
+        evoMove[evoMove.length] = "Trop Kick";
+    } else if (to === "Golisopod") {
+        evoMove[evoMove.length] = "First Impression";
+    } else if (to === "Silvally") {
+        evoMove[evoMove.length] = "Multi-Attack";
+    } else if (to === "Hakamo-o") {
+        evoMove[evoMove.length] = "Sky Uppercut";
+    } else if (to === "Kommo-o") {
+        evoMove[evoMove.length] = "Clanging Scales";
+    } else if (to === "Cosmoem") {
+        evoMove[evoMove.length] = "Cosmic Power";
+    } else if (to === "Solgaleo") {
+        evoMove[evoMove.length] = "Sunsteel Strike";
+    } else if (to === "Lunala") {
+        evoMove[evoMove.length] = "Moongeist Beam";
     }
-    if (to === "Toxapex") {
-        return ["Baneful Bunker"];
-    }
-    if (to === "Lurantis") {
-        return ["Petal Blizzard"];
-    }
-    if (to === "Salazzle") {
-        return ["Captivate"];
-    }
-    if (to === "Bewear") {
-        return ["Bind"];
-    }
-    if (to === "Steenee") {
-        return ["Double Slap"];
-    }
-    if (to === "Tsareena") {
-        return ["Trop Kick"];
-    }
-    if (to === "Golisopod") {
-        return ["First Impression"];
-    }
-    if (to === "Silvally") {
-        return ["Multi-Attack"];
-    }
-    if (to === "Hakamo-o") {
-        return ["Sky Uppercut"];
-    }
-    if (to === "Kommo-o") {
-        return ["Clanging Scales"];
-    }
-    if (to === "Cosmoem") {
-        return ["Cosmic Power"];
-    }
-    if (to === "Solgaleo") {
-        return ["Sunsteel Strike"];
-    }
-    if (to === "Lunala") {
-        return ["Moongeist Beam"];
-    }
-    return ["None"];
+
+    return evoMove;
 }
 
 /**
