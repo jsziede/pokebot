@@ -529,7 +529,7 @@ function getEncounterChanceForLocation(ability, item, region, location, field) {
     /** Halves encounter chance in sandstorm. */
     } else if (ability === "Sand Veil") {
         for (location in sandstorm) {
-            if (location.region === region && location.location === sandstorm[location]) {
+            if (region === sandstorm[location].region && location === sandstorm[location].location) {
                 encounterChance = encounterChance / 2;
                 break;
             }
@@ -537,13 +537,13 @@ function getEncounterChanceForLocation(ability, item, region, location, field) {
     /** Halves encounter chance in snow and hail. */
     } else if (ability === "Snow Cloak") {
         for (location in hailing) {
-            if (location.region === region && location.location === hailing[location]) {
+            if (region === hailing[location].region && location === hailing[location].location) {
                 encounterChance = encounterChance / 2;
                 break;
             }
         }
         for (location in snowing) {
-            if (location.region === region && location.location === snowing[location]) {
+            if (region === snowing[location].region && location === snowing[location].loction) {
                 encounterChance = encounterChance / 2;
                 break;
             }
@@ -3944,7 +3944,7 @@ async function updateMoves(pokemon, moves) {
                 let move_set = {
                     pokemon: pokemon.pokemon_id,
                     name: moves[i].name,
-                    max_pp: moves[i].pp,
+                    max_pp: moves[i].pp_max,
                     current_pp: moves[i].pp,
                     slot: (i + 1)
                 }
@@ -3968,21 +3968,25 @@ function populateMoves(knownMoves) {
         {
             name: null,
             pp: null,
+            max_pp: null,
             id: null
         },
         {
             name: null,
             pp: null,
+            max_pp: null,
             id: null
         },
         {
             name: null,
             pp: null,
+            max_pp: null,
             id: null
         },
         {
             name: null,
             pp: null,
+            max_pp: null,
             id: null
         }
     ]
@@ -3991,6 +3995,7 @@ function populateMoves(knownMoves) {
     for (knownMoveIndex; knownMoveIndex < knownMoves.length; knownMoveIndex++) {
         moves[knownMoveIndex].name = knownMoves[knownMoveIndex].name;
         moves[knownMoveIndex].pp = knownMoves[knownMoveIndex].current_pp;
+        moves[knownMoveIndex].max_pp = knownMoves[knownMoveIndex].max_pp;
         moves[knownMoveIndex].id = knownMoves[knownMoveIndex].move_id;
     }
 
@@ -4207,73 +4212,111 @@ async function useTMItem(message, item, lead) {
         } else {
             moveName = item.substring(5, item.length);
         }
-        let knownMoves = await getPokemonKnownMoves(lead.pokemon_id);
-        let moves = populateMoves(knownMoves);
-        let alreadyKnowsMove = false;
+
         let canLearnTM = false;
         let moveLearnsetIndex;
         for (moveLearnsetIndex = 0; moveLearnsetIndex < pkmn.move_learnset.length; moveLearnsetIndex++) {
             if (pkmn.move_learnset[moveLearnsetIndex].hasOwnProperty("tm") && pkmn.move_learnset[moveLearnsetIndex].tm === moveName) {
                 canLearnTM = true;
-                /**
-                 * Check if Pokemon already knows the TM move. 
-                 */
-                let knownMovesIndex;
-                for (knownMovesIndex = 0; knownMovesIndex < moves.length; knownMovesIndex++) {
-                    if (moves[knownMovesIndex].name === pkmn.move_learnset[moveLearnsetIndex].move) {
-                        alreadyKnowsMove = true;
-                    }
-                }
-
-                /**
-                 * If the Pokemon does not already know the TM move.
-                 */
-                if (!alreadyKnowsMove) {
-                    let newMovePP = getMovePP(pkmn.move_learnset[moveLearnsetIndex].move);
-                    let wasMoveLearnedAutomatically = false;
-                    /**
-                     * Automatically teach the TM move if Pokemon has a free move slot.
-                     */
-                    for (knownMovesIndex = 0; knownMovesIndex < knownMoves.length; knownMovesIndex++) {
-                        if (moves[knownMovesIndex].name === null) {
-                            moves[knownMovesIndex].name = pkmn.move_learnset[moveLearnsetIndex].move;
-                            /**
-                             * Prevent the newly taught move from having more current PP than its max PP.
-                             */
-                            if (moves[knownMovesIndex].pp > newMovePP) {
-                                moves[knownMovesIndex].pp = newMovePP;
-                            }
-
-                            /**
-                             * Erase the move id to prevent overwriting an existing move in the database.
-                             */
-                            moves[knownMovesIndex].id = 0;
-
-                            wasMoveLearnedAutomatically = true;
-                            break;
-                        }
-                    }
-
-                    if (wasMoveLearnedAutomatically) {
-                        await sendMessage(message.channel, (message.author.username + "'s " + lead.name + " learned " + pkmn.move_learnset[moveLearnsetIndex].move + "!"));
-                    } else {
-                        transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + lead.name + " " + pkmn.move_learnset[moveLearnsetIndex].move);
-                        moves = await replaceMove(message, lead, pkmn.move_learnset[moveLearnsetIndex].move, moves);
-                        removeTransaction(message.author.id);
-                    }
-
-                    wereNoErrorsEncountered = await updateMoves(lead, moves);
-                } else {
-                    await sendMessage(message.channel, (message.author.username + " your " + lead.name + " already knows " + moveName + "."));
-                }
+                await teachMove(message, lead, pkmn.move_learnset[moveLearnsetIndex].move, false, false);
                 break;
             }
         }
         if (!canLearnTM) {
-            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your " + lead.name + " is unable to learn " + moveName + "."));
+            wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your **" + lead.name + "** is unable to learn *" + moveName + "*."));
         }
     } else {
         wereNoErrorsEncountered = false;
+    }
+
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
+}
+
+/**
+ * Teaches a new move to a Pokemon. If the Pokemon doesn't have a free
+ * move slot, then the owner of the Pokemon is prompted to select an
+ * existing move to replace.
+ * 
+ * @param {Message} message The Discord message sent from the user that triggered the Pokemon to learn a new move.
+ * @param {Pokemon} pokemon The Pokemon that is learning the new move.
+ * @param {string} newMove The name of the new move to teach.
+ * @param {Move[]} currentMoves The list of moves known by the Pokemon.
+ * @param {boolean} enableDuplicate If the Pokemon is allowed to learn the new move if it already knows the move.
+ * @param {boolean} replacePP If the new move's Power Points should replace the Power Points of the move it replaces.
+ * 
+ * @returns {Move[]} The list of mo
+ */
+async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) {
+    let currentMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
+    currentMoves = populateMoves(currentMoves);
+
+    let wereNoErrorsEncountered = true;
+
+    const NO_MOVE_REPLACED = -1;
+    let replacedMoveIndex = NO_MOVE_REPLACED;
+
+    let newMovePP = getMovePP(newMove);
+    let wasMoveLearned = false;
+    
+    /**
+     * Check if Pokemon already knows the TM move. 
+     */
+    let alreadyKnowsMove = false;
+    let currentMovesIndex;
+    for (currentMovesIndex = 0; currentMovesIndex < currentMoves.length; currentMovesIndex++) {
+        if (currentMoves[currentMovesIndex].name === newMove) {
+            alreadyKnowsMove = true;
+            break;
+        }
+    }
+
+    if (enableDuplicate || !alreadyKnowsMove) {
+        /**
+         * Check if the Pokemon has a free move slot.
+         */
+        for (currentMovesIndex = 0; currentMovesIndex < knownMoves.length; currentMovesIndex++) {
+            if (moves[currentMovesIndex].name === null) {
+                await sendMessage(message.channel, (message.author.username + "'s **" + pokemon.name + "** learned *" + newMove + "*!"));
+                replacedMoveIndex = currentMovesIndex;
+                wasMoveLearned = true;
+                break;
+            }
+        }
+        
+        /**
+         * If Pokemon has no free move slot.
+         */
+        if (!wasMoveLearned) {
+            transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + newMove);
+            replacedMoveIndex = await replaceMove(message, pokemon, newMove, currentMoves);
+            removeTransaction(message.author.id);
+            //await sendMessage(message.channel, (message.author.username + "'s **" + pokemon.name + "** learned *" + newMove + "*!"));
+        }
+
+        /**
+         * If a known move was selected by the user to be replaced with the new move,
+         * or if there was a free move slot.
+         */
+        if (replacedMoveIndex > NO_MOVE_REPLACED) {
+            await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + moves[0].name + "* and learned *" + moveName + "*!");
+            currentMoves[replacedMoveIndex].name = newMove;
+            currentMoves[replacedMoveIndex].pp_max = newMovePP;
+            currentMoves[replacedMoveIndex].id = 0;
+
+            /**
+             * Prevent the new move from having more current PP than its max PP.
+             */
+            if (currentMoves[replacedMoveIndex].pp > newMovePP || replacePP) {
+                currentMoves[replacedMoveIndex].pp = newMovePP;
+            }
+        } else {
+            //cancel
+            await sendMessage(message.channel, (message.author.username + " decided not to teach their **" + pokemon.name + "** learned *" + newMove + "*!"));
+        }
+
+        wereNoErrorsEncountered = await updateMoves(pokemon, currentMoves);
     }
 
     return new Promise(function(resolve) {
@@ -5009,39 +5052,11 @@ async function evolve(message) {
          * Check if the Pokemon learns a move specifically when it evolves.
          */
         let evoMove = checkForNewMoveUponEvo(evo.to, evolvingPokemon.form);
-        let knownMoves = await getPokemonKnownMoves(evolvingPokemon.pokemon_id);
-        let evolvingMoves = populateMoves(knownMoves);
         if (evoMove.length > 0) {
             message.react(duck.id);
             let evolutionMovesIndex;
             for (evolutionMovesIndex = 0; evolutionMovesIndex < evoMove.length; evolutionMovesIndex++) {
-                if (evolvingMoves[0].name != evoMove[evolutionMovesIndex] && evolvingMoves[1].name != evoMove[evolutionMovesIndex] && evolvingMoves[2].name != evoMove[evolutionMovesIndex] && evolvingMoves[3].name != evoMove[evolutionMovesIndex]) {
-                    if (evolvingMoves[0].name === null) {
-                        evolvingMoves[0].name = evoMove[evolutionMovesIndex];
-                        evolvingMoves[0].pp = getMovePP(evoMove[evolutionMovesIndex]);
-                        evolvingMoves[0].id = 0;
-                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
-                    } else if (evolvingMoves[1].name === null) {
-                        evolvingMoves[1].name = evoMove[evolutionMovesIndex];
-                        evolvingMoves[1].pp = getMovePP(evoMove[evolutionMovesIndex]);
-                        evolvingMoves[1].id = 0;
-                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
-                    } else if (evolvingMoves[2].name === null) {
-                        evolvingMoves[2].name = evoMove[evolutionMovesIndex];
-                        evolvingMoves[2].pp = getMovePP(evoMove[evolutionMovesIndex]);
-                        evolvingMoves[2].id = 0;
-                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
-                    } else if (evolvingMoves[3].name === null) {
-                        evolvingMoves[3].name = evoMove[evolutionMovesIndex];
-                        evolvingMoves[3].pp = getMovePP(evoMove[evolutionMovesIndex]);
-                        evolvingMoves[3].id = 0;
-                        await sendMessage(message.channel, (message.author.username + "'s " + evolvingPokemon.name + " learned " + evoMove[evolutionMovesIndex] + "!"));
-                    } else {
-                        transactions[transactions.length] = new Transaction(message.author.id, ("teaching your " + evo.to + " " + evoMove[evolutionMovesIndex]));
-                        evolvingMoves = await replaceMove(message, evolvingPokemon, evoMove[evolutionMovesIndex], evolvingMoves);
-                        removeTransaction(message.author.id);
-                    }
-                }
+                await teachMove(message, evolvingPokemon, evoMove[evolutionMovesIndex], true, true);
             }
         }
         
@@ -5049,7 +5064,10 @@ async function evolve(message) {
          * Check if the Pokemon happened to evolve at a level where its
          * evolution learns a new move.
          */
-        evolvingMoves = await checkForNewMove(message, evolvingPokemon, true, evolvingMoves);
+        let levelMoves = await checkForMoveAtLevel(evolvingPokemon);
+        for (move in levelMoves) {
+            await teachMove(message, evolvingPokemon, levelMoves[move], true, true);
+        }
         
         /**
          * If Nincada evolves into Ninjask, then the user
@@ -5463,90 +5481,25 @@ function levelUp(pokemon) {
 /**
  * Checks if a Pokemon can learn a new move based on its level.
  * 
- * @todo Maybe check if the Pokemon is in the Day Care from this
- * function rather than pass an argument.
- * @todo This should simply return a list of moves that the Pokemon can learn
- * and the actual move learning should be handled in a different function.
- * @todo Add a flag that determines whether or not moves were changed so that a DB hit
- * isn't always needed.
+ * @todo Maybe check if the Pokemon is in the Day Care.
  * 
  * @param {Message} message The Discord message sent from the user.
- * @param {Pokemon} pokemon The Pokemon that is being checked for a new move,
- * @param {boolean} askForResponse If the owner of the Pokemon should be asked
- * if they want their Pokemon to learn a new move if the Pokemon already knows
- * four moves. This should only be false if the Pokemon is in the Day Care.
- * @param {Move[]} moves The list of four moves (including null) known by the Pokemon.
+ * @param {Pokemon} pokemon The Pokemon that is being checked for a new move.
  * 
- * @returns {move[]} The list of moves known by the Pokemon.
+ * @returns {string[]} The list of move names the Pokemon learns at its current level, if any.
  */
-async function checkForNewMove(message, pokemon, askForResponse, moves) {
-    var path = generatePokemonJSONPath(pokemon.name, pokemon.form);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var pkmn = JSON.parse(data);
-
-    var alreadyKnowsMove = false;
+function checkForMoveAtLevel(pokemon) {
+    let pkmn = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
+    let newMoves = [];
 
     for (i = 0; i < pkmn.move_learnset.length; i++) {
         if (pkmn.move_learnset[i].hasOwnProperty("level") && pkmn.move_learnset[i].level === pokemon.level_current) {
-            if (askForResponse) {
-                message.react(duck.id);
-            }
-            var m;
-            for (m = 0; m < moves.length; m++) {
-                if (moves[m].name === pkmn.move_learnset[i].move) {
-                    alreadyKnowsMove = true;
-                }
-            }
-            if (moves[0].name == null && !alreadyKnowsMove) {
-                moves[0].name = pkmn.move_learnset[i].move;
-                moves[0].pp = getMovePP(pkmn.move_learnset[i].move);
-                moves[0].id = 0;
-                if (askForResponse) {
-                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                }
-            } else if (moves[1].name == null && !alreadyKnowsMove) {
-                moves[1].name = pkmn.move_learnset[i].move;
-                moves[1].pp = getMovePP(pkmn.move_learnset[i].move);
-                moves[1].id = 0;
-                if (askForResponse) {
-                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                }
-            } else if (moves[2].name == null && !alreadyKnowsMove) {
-                moves[2].name = pkmn.move_learnset[i].move;
-                moves[2].pp = getMovePP(pkmn.move_learnset[i].move);
-                moves[2].id = 0;
-                if (askForResponse) {
-                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                }
-            } else if (moves[3].name == null && !alreadyKnowsMove) {
-                moves[3].name = pkmn.move_learnset[i].move;
-                moves[3].pp = getMovePP(pkmn.move_learnset[i].move);
-                moves[3].id = 0;
-                if (askForResponse) {
-                    message.channel.send(message.author.username + "'s " + pokemon.name + " learned " + pkmn.move_learnset[i].move + "!");
-                }
-            } else if (!alreadyKnowsMove) {
-                if (askForResponse) {
-                    transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + pkmn.move_learnset[i].move);
-                    moves = await replaceMove(message, pokemon, pkmn.move_learnset[i].move, moves);
-                    removeTransaction(message.author.id);
-                } else {
-                    moves = await teachNewMoveAI(pokemon, pkmn.move_learnset[i].move);
-                }
-            } else {
-                //already knows the move
-            }
+            newMoves[newMoves].length = pkmn.move_learnset[i].name;
         }
     }
 
     return new Promise(function(resolve) {
-        resolve(moves);
+        resolve(newMoves);
     });
 }
 
@@ -5555,12 +5508,15 @@ async function checkForNewMove(message, pokemon, askForResponse, moves) {
  * Pokemon already knows four moves but wants to learn a new move. The
  * move selected by the user is replaced with the new move.
  * 
+ * @todo Change user response so that it is done using reactions.
+ * 
  * @param {Message} message The Discord message sent from the user.
  * @param {Pokemon} pokemon The Pokemon that wants to learn a new move.
  * @param {string} moveName The name of the new move the Pokemon wants to learn.
  * @param {Move[]} moves The list of four moves (including null) known by the Pokemon.
  * 
- * @returns {move[]} The Pokemon's moveset after the owner has made a choice. 
+ * @returns {number} The index of the move list (beginning at 0) for the move being replaced,
+ * or -1 if user chose not to replace any moves.
  */
 async function replaceMove(message, pokemon, moveName, moves) {
     var m;
@@ -5709,31 +5665,7 @@ async function replaceMove(message, pokemon, moveName, moves) {
         }
     }
 
-    if (input === 0) {
-        message.channel.send(message.author.username + " cancelled teaching " + name + " the move " + moveName + ".");
-    } else if (input === 1) {
-        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[0].name + " and learned " + moveName + ".");
-        moves[0].name = moveName;
-        moves[0].pp = getMovePP(moveName);
-        moves[0].id = 0;
-    } else if (input === 2) {
-        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[1].name + " and learned " + moveName + ".");
-        moves[1].name = moveName;
-        moves[1].pp = getMovePP(moveName);
-        moves[1].id = 0;
-    } else if (input === 3) {
-        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[2].name + " and learned " + moveName + ".");
-        moves[2].name = moveName;
-        moves[2].pp = getMovePP(moveName);
-        moves[2].id = 0;
-    } else if (input === 4) {
-        message.channel.send(message.author.username + "'s " + name + " forgot " + moves[3].name + " and learned " + moveName + ".");
-        moves[3].name = moveName;
-        moves[3].pp = getMovePP(moveName);
-        moves[3].id = 0;
-    }
-
-    return moves;
+    return (input - 1);
 }
 
 /**
@@ -5880,6 +5812,9 @@ async function teachNewMoveAI(pokemon, move) {
 /**
  * Gives experience to a Pokemon.
  * 
+ * @todo Split up this function so friendship is calculated separately.
+ * @todo Probably should have this function return the number of times the Pokemon leveled up.
+ * 
  * @param {Message} message The Discord message sent from the user.
  * @param {number} amount The amount of exp. to give to the Pokemon.
  * 
@@ -5985,7 +5920,10 @@ async function giveXP(message, amount) {
             }
             
             message.channel.send(message.author.username + " your " + pokemon.name + " reached level " + pokemon.level_current + "!\nHP +" + (statsAfter[0] - statsBefore[0]) + "\nAttack +" + (statsAfter[1] - statsBefore[1]) + "\nDefense +" + (statsAfter[2] - statsBefore[2]) + "\nSp. Attack +" + (statsAfter[3] - statsBefore[3]) + "\nSp. Defense +" + (statsAfter[4] - statsBefore[4]) + "\nSpeed +" + (statsAfter[5] - statsBefore[5]));
-            moves = await checkForNewMove(message, pokemon, true, moves);
+            let levelMoves = await checkForMoveAtLevel(pokemon);
+            for (move in levelMoves) {
+                await teachMove(message, pokemon, levelMoves[move], true, true);
+            }
             next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
             evolveTo = null;
             if (pokemon.item != "Everstone") {
@@ -6006,13 +5944,14 @@ async function giveXP(message, amount) {
     }
 
     await doQuery("UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?", [pokemon, pokemon.pokemon_id]);
-    await updateMoves(pokemon, moves);
 
     return true;
 }
 
 /**
  * Gives experience to all Pokemon owned by a user that are in the Day Care.
+ * 
+ * @todo This function is currently mega broken, will fix later.
  * 
  * @param {Message} message The Discord message sent from the user.
  * 
@@ -6094,7 +6033,7 @@ async function giveDayCareXP(message) {
                         pp: pokemon[i].move_4_pp
                     }
                 ]
-                moves = await checkForNewMove(message, pokemon[i], false, moves);
+                let levelMoves = await checkForMoveAtLevel(pokemon[i]);
                 next = getXpToNextLevel(pokemon[i].name, pokemon[i].xp, pokemon[i].level_current);
                 pokemon[i].move_1 = moves[0].name;
                 pokemon[i].move_1_pp = moves[0].pp;
@@ -8705,7 +8644,7 @@ function getGifName(name) {
 /**
  * Gets all moves currently known by an owned Pokemon.
  * 
- * @param {number} pokemonId The id of the owned Pokemon.
+ * @param {string} pokemonId The id of the owned Pokemon.
  * 
  * @returns {any[]} All moves currently known by the Pokemon.
  */
