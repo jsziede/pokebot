@@ -4249,7 +4249,7 @@ async function useTMItem(message, item, lead) {
 /**
  * Teaches a new move to a Pokemon. If the Pokemon doesn't have a free
  * move slot, then the owner of the Pokemon is prompted to select an
- * existing move to replace.
+ * existing move to replace. This function will update the move database.
  * 
  * @param {Message} message The Discord message sent from the user that triggered the Pokemon to learn a new move.
  * @param {Pokemon} pokemon The Pokemon that is learning the new move.
@@ -4258,7 +4258,7 @@ async function useTMItem(message, item, lead) {
  * @param {boolean} enableDuplicate If the Pokemon is allowed to learn the new move if it already knows the move.
  * @param {boolean} replacePP If the new move's Power Points should replace the Power Points of the move it replaces.
  * 
- * @returns {Move[]} The list of mo
+ * @returns {boolean} The list of mo
  */
 async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) {
     let currentMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
@@ -4304,7 +4304,12 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
             transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + newMove);
             replacedMoveIndex = await replaceMove(message, pokemon, newMove, currentMoves);
             removeTransaction(message.author.id);
-            //await sendMessage(message.channel, (message.author.username + "'s **" + pokemon.name + "** learned *" + newMove + "*!"));
+
+            if (replacedMoveIndex === NO_MOVE_REPLACED) {
+                await sendMessage(message.channel, (message.author.username + " decided not to teach their **" + pokemon.name + "** *" + newMove + "*."));
+            } else {
+                await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + currentMoves[replacedMoveIndex].name + "* and learned *" + newMove + "*!");
+            }
         }
 
         /**
@@ -4312,7 +4317,6 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
          * or if there was a free move slot.
          */
         if (replacedMoveIndex > NO_MOVE_REPLACED) {
-            await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + currentMoves[replacedMoveIndex].name + "* and learned *" + newMove + "*!");
             currentMoves[replacedMoveIndex].name = newMove;
             currentMoves[replacedMoveIndex].pp_max = newMovePP;
             currentMoves[replacedMoveIndex].id = 0;
@@ -4323,12 +4327,10 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
             if (currentMoves[replacedMoveIndex].pp > newMovePP || replacePP) {
                 currentMoves[replacedMoveIndex].pp = newMovePP;
             }
-        } else {
-            //cancel
-            await sendMessage(message.channel, (message.author.username + " decided not to teach their **" + pokemon.name + "** learned *" + newMove + "*!"));
+
+            wereNoErrorsEncountered = await updateMoves(pokemon, currentMoves);
         }
 
-        wereNoErrorsEncountered = await updateMoves(pokemon, currentMoves);
     }
 
     return new Promise(function(resolve) {
@@ -5452,13 +5454,13 @@ function updateStats(pokemon) {
     if (pokemon.name === "Shedinja") {
         stats[0] = 1;
     } else {
-        stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
+        stats[0] = calculateStatAtLevel(pokemon.level_current, baseStats[0], IVs[0], EVs[0], pokemon.nature, "hp");
     }
-    stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
-    stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
-    stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
-    stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
-    stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
+    stats[1] = calculateStatAtLevel(pokemon.level_current, baseStats[1], IVs[1], EVs[1], pokemon.nature, "atk");
+    stats[2] = calculateStatAtLevel(pokemon.level_current, baseStats[2], IVs[2], EVs[2], pokemon.nature, "def");
+    stats[3] = calculateStatAtLevel(pokemon.level_current, baseStats[3], IVs[3], EVs[3], pokemon.nature, "sp_atk");
+    stats[4] = calculateStatAtLevel(pokemon.level_current, baseStats[4], IVs[4], EVs[4], pokemon.nature, "sp_def");
+    stats[5] = calculateStatAtLevel(pokemon.level_current, baseStats[5], IVs[5], EVs[5], pokemon.nature, "speed");
     
     pokemon.stat_hp = stats[0];
     pokemon.stat_atk = stats[1];
@@ -5829,7 +5831,7 @@ async function giveXP(message, amount) {
         }
     }
 
-    if (pokemon != null && user != null && pokemon.level_current === 100) {
+    if (pokemon != null && user != null && pokemon.level_current < 100) {
         let finalXP = (((pokemon.level_current / 10) + 1).toFixed(1) * amount);
         if (pokemon.original_trainer != pokemon.current_trainer) {
             finalXP += (finalXP * 1.5);
@@ -6040,9 +6042,6 @@ async function giveDayCareXP(message) {
         while (done === false) {
             var next = getXpToNextLevel(pokemon[i].name, pokemon[i].xp, pokemon[i].level_current);
             if (next != null && next <= 0) {
-                var statsBefore = [pokemon[i].stat_hp, pokemon[i].stat_atk, pokemon[i].stat_def, pokemon[i].stat_spatk, pokemon[i].stat_spdef, pokemon[i].stat_spd];
-                var statsAfter = updateStats(pokemon[i]);
-                
                 if(pokemon[i].level_current >= user.level) {
                     var query = "UPDATE user SET user.level = ? WHERE user.user_id = ?";
                     con.query(query, [pokemon[i].level_current, message.author.id], function (err) {
