@@ -771,21 +771,27 @@ async function checkIfUserIsEvolving(message, command, input) {
  * 
  * @param {TextChannel} channel The Discord channel to send the message to.
  * @param {any} content The content of the message. Can be a string or an embed object.
+ * @param {boolean} returnMessage If the function should instead return the message object.
+ * This is useful when adding reactions to the sent message.
  * 
- * @returns {boolean} True if message was sent.
+ * @returns {Message} The message if it was sent, otherwise null.
  */
-async function sendMessage(channel, content) {
-    let didMessageGetSent = false;
+async function sendMessage(channel, content, returnMessage = false) {
+    let message = false;
     await channel.send(content)
-    .then(() => {
-        didMessageGetSent = true;
+    .then(msg => {
+        if (returnMessage) {
+            message = msg;
+        } else {
+            message = true;
+        }
     })
     .catch(err => {
         console.error(chalk`{red [ERROR]} Failed to send message: ` + err);
     });
 
     return new Promise(function(resolve) {
-        resolve(didMessageGetSent);
+        resolve(message);
     });
 }
 
@@ -795,21 +801,27 @@ async function sendMessage(channel, content) {
  * @param {TextChannel} channel The Discord channel to send the message to.
  * @param {embed} content The content of the message. Must be a Discord embed object.
  * @param {any[]} attachments The list of attachement objects.
+ * @param {boolean} returnMessage If the function should instead return the message object.
+ * This is useful when adding reactions to the sent message.
  * 
- * @returns {boolean} True if message was sent.
+ * @returns {Message} The message if it was sent, otherwise null.
  */
-async function sendMessageWithAttachments(channel, content, attachments) {
-    let didMessageGetSent = false;
+async function sendMessageWithAttachments(channel, content, attachments, returnMessage = false) {
+    let message = null;
     await channel.send({embed: content, files: attachments })
-    .then(() => {
-        didMessageGetSent = true;
+    .then(msg => {
+        if (returnMessage) {
+            message = msg;
+        } else {
+            message = true;
+        }
     })
     .catch(err => {
         console.error(chalk`{red [ERROR]} Failed to send message: ` + err);
     });
 
     return new Promise(function(resolve) {
-        resolve(didMessageGetSent);
+        resolve(message);
     });
 }
 
@@ -4276,8 +4288,8 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
         /**
          * Check if the Pokemon has a free move slot.
          */
-        for (currentMovesIndex = 0; currentMovesIndex < knownMoves.length; currentMovesIndex++) {
-            if (moves[currentMovesIndex].name === null) {
+        for (currentMovesIndex = 0; currentMovesIndex < currentMoves.length; currentMovesIndex++) {
+            if (currentMoves[currentMovesIndex].name === null) {
                 await sendMessage(message.channel, (message.author.username + "'s **" + pokemon.name + "** learned *" + newMove + "*!"));
                 replacedMoveIndex = currentMovesIndex;
                 wasMoveLearned = true;
@@ -4300,7 +4312,7 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
          * or if there was a free move slot.
          */
         if (replacedMoveIndex > NO_MOVE_REPLACED) {
-            await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + moves[0].name + "* and learned *" + moveName + "*!");
+            await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + currentMoves[replacedMoveIndex].name + "* and learned *" + newMove + "*!");
             currentMoves[replacedMoveIndex].name = newMove;
             currentMoves[replacedMoveIndex].pp_max = newMovePP;
             currentMoves[replacedMoveIndex].id = 0;
@@ -5494,7 +5506,7 @@ function checkForMoveAtLevel(pokemon) {
 
     for (i = 0; i < pkmn.move_learnset.length; i++) {
         if (pkmn.move_learnset[i].hasOwnProperty("level") && pkmn.move_learnset[i].level === pokemon.level_current) {
-            newMoves[newMoves].length = pkmn.move_learnset[i].name;
+            newMoves[newMoves.length] = pkmn.move_learnset[i].move;
         }
     }
 
@@ -5508,83 +5520,82 @@ function checkForMoveAtLevel(pokemon) {
  * Pokemon already knows four moves but wants to learn a new move. The
  * move selected by the user is replaced with the new move.
  * 
- * @todo Change user response so that it is done using reactions.
- * 
  * @param {Message} message The Discord message sent from the user.
  * @param {Pokemon} pokemon The Pokemon that wants to learn a new move.
- * @param {string} moveName The name of the new move the Pokemon wants to learn.
+ * @param {string} newMove The name of the new move the Pokemon wants to learn.
  * @param {Move[]} moves The list of four moves (including null) known by the Pokemon.
  * 
  * @returns {number} The index of the move list (beginning at 0) for the move being replaced,
  * or -1 if user chose not to replace any moves.
  */
-async function replaceMove(message, pokemon, moveName, moves) {
-    var m;
-    var fields = [];
-    var name;
-    for (m = 0; m <= moves.length; m++) {
-        if (m < 4) {
-            if (moves[m].name != null) {
-                name = moves[m].name.toLowerCase();
+async function replaceMove(message, pokemon, newMove, moves) {
+    /**
+     * By default, have no move be replaced in case an error occurs.
+     */
+    let moveSlotToReplace = -1;
+    
+    let knownMovesIndex;
+    let fields = [];
+    let name;
+
+    /**
+     * First four iterations of the loop are for the known moves;
+     * fifth iteration is for the new move.
+     */
+    for (knownMovesIndex = 0; knownMovesIndex <= moves.length; knownMovesIndex++) {
+        if (knownMovesIndex < 4) {
+            if (moves[knownMovesIndex].name != null) {
+                name = moves[knownMovesIndex].name;
             }
         } else {
-            name = moveName.toLowerCase();
-        }
-        
-        if (name === "10000000 volt thunderbolt" || name === "10,000,000 volt thunderbolt") {
-            name = "10 000 000 volt thunderbolt";
+            name = newMove;
         }
 
-        name = name.replace(/-/g,"_");
-        name = name.replace(/'/g,"_");
-        name = name.replace(/ /g,"_");
+        var move = parseJSON(generateMoveJSONPath(name));
 
-        var path = "../data/move/" + name + ".json";
-        var data;
-        try {
-            data = fs.readFileSync(path, "utf8");
-        } catch (err) {
-            return null;
-        }
+        if (move != null) {
+            let acc = move.accuracy;
+            if (acc === 0) {
+                acc = "---"
+            }
+    
+            let pow = move.power;
+            if (pow === 0) {
+                pow = "---"
+            }
+    
+            let pp = move.pp;
+            if (pp === 0) {
+                pp = "---"
+            }
+            
+            let type_icon = client.emojis.find(type_icon => type_icon.name === move.type);
+            let nameField;
+            let valueField;
+            let cat_icon = client.emojis.find(cat_icon => cat_icon.name === move.category);
+            let moveCat = `${move.category[0].toUpperCase()}${move.category.slice(1)}`;
 
-        var move = JSON.parse(data);
-
-        var acc = move.accuracy;
-        if (acc === 0) {
-            acc = "---"
-        }
-
-        var pow = move.power;
-        if (pow === 0) {
-            pow = "---"
-        }
-
-        var pp = move.pp;
-        if (pp === 0) {
-            pp = "---"
-        }
-        
-        var type_icon = client.emojis.find(type_icon => type_icon.name === move.type);
-        var nameField;
-        var valueField;
-        var cat_icon = client.emojis.find(cat_icon => cat_icon.name === move.category);
-        var moveCat = `${move.category[0].toUpperCase()}${move.category.slice(1)}`;
-        if (m < 4) {
-            nameField = "Known move " + (m + 1).toString() + ":";
-            valueField = type_icon + " " + moves[m].name + "\n" + cat_icon + " " + moveCat + "\nPower: " + pow + "\nAccuracy: " + acc + "\nPP: " + pp;
-        } else {
-            nameField = "New move to learn:";
-            valueField = type_icon + " " + moveName + "\n" + cat_icon + " " + moveCat + "\nPower: " + pow + "\nAccuracy: " + acc + "\nPP: " + pp;
-        }
-        
-        fields[fields.length] = {
-            "name": nameField,
-            "value": valueField,
-            "inline": true
+            if (knownMovesIndex < 4) {
+                nameField = "Known move " + (knownMovesIndex + 1).toString() + ":";
+                valueField = type_icon + " " + name + "\n"+ cat_icon + " " + moveCat + "\nPower: " + pow + "\nAccuracy: " + acc + "\nPP: " + pp;
+            } else {
+                nameField = "New move to learn:";
+                valueField = type_icon + " " + name + "\n" + cat_icon + " " + moveCat + "\nPower: " + pow + "\nAccuracy: " + acc + "\nPP: " + pp;
+            }
+            
+            fields[fields.length] = {
+                "name": nameField,
+                "value": valueField,
+                "inline": true
+            }
         }
     }
     
-    fields[fields.length] = {
+    /**
+     * If all five moves were successfully read.
+     */
+    if (fields.length === 5) {
+        fields[fields.length] = {
             "name": "Stats",
             "value": "HP: " + pokemon.stat_hp + "\n" +
                     "Attack: " + pokemon.stat_atk + "\n" +
@@ -5595,77 +5606,78 @@ async function replaceMove(message, pokemon, moveName, moves) {
             "inline": true
         }
     
-    var spriteLink = generateSpriteLink(pokemon.name, pokemon.gender, pokemon.form);
-    if (spriteLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+        
+        let spriteLink = generateSpriteLink(pokemon.name, pokemon.gender, pokemon.form);
+        if (spriteLink === null) {
+            return new Promise(function(resolve) {
+                resolve(null);
+            });
+        }
 
-    var modelLink = generateModelLink(pokemon.name, pokemon.shiny, pokemon.gender, pokemon.form);
-    if (modelLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+        let modelLink = generateModelLink(pokemon.name, pokemon.shiny, pokemon.gender, pokemon.form);
+        if (modelLink === null) {
+            return new Promise(function(resolve) {
+                resolve(null);
+            });
+        }
 
-    var name = pokemon.name;
-    if (pokemon.nickname != null) {
-        name = pokemon.nickname;
-    }
-    const embed = {
-       "author": {
-            "name": name,
-            "icon_url": spriteLink,
-        },
-        "title": "Teach a new move",
-        "description": "<@" + message.author.id + "> your " + name + " wants to learn " + moveName + ", but already knows four moves. Please select a move to replace by typing its name or number as shown in this message, or type \"Cancel\" to keep the current moves.",
-        "color": getTypeColor(pokemon.type_1),
-        "thumbnail": {
-             "url": "attachment://" + pokemon.name + ".gif"
-        },
-        "fields": fields
-    };
-    
-    var mssg = await message.channel.send({ embed, files: [{ attachment: modelLink, name: (pokemon.name + '.gif') }] });
-    
-    var cancel = false;
-    var input = null;
-    while(cancel == false) {
-        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 300000, errors: ['time'] })
+        let name = pokemon.name;
+        if (pokemon.nickname != null) {
+            name = pokemon.nickname;
+        }
+        let embed = {
+        "author": {
+                "name": name,
+                "icon_url": spriteLink,
+            },
+            "title": "Teach a new move",
+            "description": "<@" + message.author.id + "> your " + name + " wants to learn " + newMove + ", but already knows four moves. Please select a move to replace by reacting with the number emoji that corresponds to the move's slot, or ❌ to cancel learning the new move.",
+            "color": getTypeColor(pokemon.type_1),
+            "thumbnail": {
+                "url": "attachment://" + pokemon.name + ".gif"
+            },
+            "fields": fields
+        };
+        
+        let moveMessage = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }], true);
+        
+        await moveMessage.react('1⃣');
+        await moveMessage.react('2⃣');
+        await moveMessage.react('3⃣');
+        await moveMessage.react('4⃣');
+        await moveMessage.react('❌');
+        
+        const filter = (reaction, user) => {
+            return ['1⃣', '2⃣', '3⃣', '4⃣', '❌'].includes(reaction.emoji.name) && user.id === message.author.id;
+        };
+        
+        await moveMessage.awaitReactions(filter, { max: 1, time: 300000, errors: ['time'] })
         .then(collected => {
-            input = collected.first().content.toString().toLowerCase();
+            const reaction = collected.first();
+
+            if (reaction.emoji.name === '1⃣') {
+                moveSlotToReplace = 0;
+            } else if (reaction.emoji.name === '2⃣') {
+                moveSlotToReplace = 1;
+            } else if (reaction.emoji.name === '3⃣') {
+                moveSlotToReplace = 2;
+            } else if (reaction.emoji.name === '4⃣') {
+                moveSlotToReplace = 3;
+            } else if (reaction.emoji.name === '❌') {
+                moveSlotToReplace = -1;
+            }
         })
         .catch(collected => {
-            input = "cancel";
-            cancel = true;
+            console.error(collected);
+            moveSlotToReplace = -1;
         });
 
-        if (input === "cancel") {
-            cancel = true;
-            input = 0;
-        } else if (input === "1" || input === moves[0].name.toLowerCase()) {
-            cancel = true;
-            input = 1;
-        } else if (input === "2" || input === moves[1].name.toLowerCase()) {
-            cancel = true;
-            input = 2;
-        } else if (input === "3" || input === moves[2].name.toLowerCase()) {
-            cancel = true;
-            input = 3;
-        } else if (input === "4" || input === moves[3].name.toLowerCase()) {
-            cancel = true;
-            input = 4;
-        } else if (input != null) {
-            message.channel.send("Command not recognized.");
-            message.channel.send({ embed, files: [{ attachment: modelLink, name: (pokemon.name + '.gif') }] });
-            input = 0;
-        } else {
-            input = 0;
-        }
+        await moveMessage.clearReactions();
     }
 
-    return (input - 1);
+    return new Promise(function(resolve) {
+        resolve(moveSlotToReplace);
+    });
 }
 
 /**
@@ -5879,9 +5891,6 @@ async function giveXP(message, amount) {
     pokemon.xp += givenXP;
     var done = false;
     var evolveTo = null;
-
-    let knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
-    let moves = populateMoves(knownMoves);
     
     while (done === false) {
         var next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
@@ -5921,7 +5930,7 @@ async function giveXP(message, amount) {
             
             message.channel.send(message.author.username + " your " + pokemon.name + " reached level " + pokemon.level_current + "!\nHP +" + (statsAfter[0] - statsBefore[0]) + "\nAttack +" + (statsAfter[1] - statsBefore[1]) + "\nDefense +" + (statsAfter[2] - statsBefore[2]) + "\nSp. Attack +" + (statsAfter[3] - statsBefore[3]) + "\nSp. Defense +" + (statsAfter[4] - statsBefore[4]) + "\nSpeed +" + (statsAfter[5] - statsBefore[5]));
             let levelMoves = await checkForMoveAtLevel(pokemon);
-            for (move in levelMoves) {
+            for (let move in levelMoves) {
                 await teachMove(message, pokemon, levelMoves[move], true, true);
             }
             next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
