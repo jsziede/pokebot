@@ -5631,7 +5631,7 @@ async function replaceMove(message, pokemon, newMove, moves) {
                 "icon_url": spriteLink,
             },
             "title": "Teach a new move",
-            "description": "<@" + message.author.id + "> your " + name + " wants to learn " + newMove + ", but already knows four moves. Please select a move to replace by reacting with the number emoji that corresponds to the move's slot, or ❌ to cancel learning the new move.",
+            "description": "<@" + message.author.id + "> your " + name + " wants to learn " + newMove + ", but already knows four moves. Please select a move to replace by reacting with the number that corresponds to the move's slot, or ❌ to cancel learning the new move.",
             "color": getTypeColor(pokemon.type_1),
             "thumbnail": {
                 "url": "attachment://" + pokemon.name + ".gif"
@@ -5927,8 +5927,37 @@ async function giveXP(message, amount) {
                     }
                 });
             }
-            
-            message.channel.send(message.author.username + " your " + pokemon.name + " reached level " + pokemon.level_current + "!\nHP +" + (statsAfter[0] - statsBefore[0]) + "\nAttack +" + (statsAfter[1] - statsBefore[1]) + "\nDefense +" + (statsAfter[2] - statsBefore[2]) + "\nSp. Attack +" + (statsAfter[3] - statsBefore[3]) + "\nSp. Defense +" + (statsAfter[4] - statsBefore[4]) + "\nSpeed +" + (statsAfter[5] - statsBefore[5]));
+
+            let spriteLink = generateSpriteLink(pokemon.name);
+            let modelLink = generateModelLink(pokemon.name);
+
+            let embed = {
+                "author": {
+                    "name": pokemon.name,
+                    "icon_url": spriteLink,
+                },
+                "title": "Level Up ️⬆️",
+                "description": message.author.username + " your **" + pokemon.name + "** reached *Level " + pokemon.level_current + "*!",
+                "color": getTypeColor(pokemon.type_1),
+                "thumbnail": {
+                    "url": "attachment://" + pokemon.name + ".gif"
+                },
+                "fields": [
+                    {
+                        "name": "Stats",
+                        "value": "**HP:** " + statsAfter[0] + "*(+" + (statsAfter[0] - statsBefore[0]) + ")*\n" +
+                                "**Attack:** " + statsAfter[1] + "*(+" + (statsAfter[1] - statsBefore[1]) + ")*\n" +
+                                "**Defense:** " + statsAfter[2] + "*(+" + (statsAfter[2] - statsBefore[2]) + ")*\n" +
+                                "**Sp. Attack:** " + statsAfter[3] + "*(+" + (statsAfter[3] - statsBefore[3]) + ")*\n" +
+                                "**Sp. Defense:** " + statsAfter[4] + "*(+" + (statsAfter[4] - statsBefore[4]) + ")*\n" +
+                                "**Speed:** " + statsAfter[5] + "*(+" + (statsAfter[5] - statsBefore[5]) + ")*",
+                        "inline": true
+                    }
+                ]
+            };
+
+            await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }]);
+
             let levelMoves = await checkForMoveAtLevel(pokemon);
             for (let move in levelMoves) {
                 await teachMove(message, pokemon, levelMoves[move], true, true);
