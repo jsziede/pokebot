@@ -5424,61 +5424,41 @@ async function checkEvolveUponLevelUp(user, pokemon) {
 }
 
 /**
- * Raises a Pokemon's level by one and updates its stats accordingly.
+ * Updates the stats of a Pokemon based on its base stats,
+ * current level, EVs, IVs, and nature. This function does
+ * not make any changes to the databse.
  * 
- * @param {Pokemon} Pokemon The Pokemon to level up.
+ * @todo Raise level before calling function.
  * 
- * @returns {number[]} The Pokemon's stats after it leveled up, or null
- * if an error was encountered.
+ * @param {Pokemon} Pokemon The Pokemon to update stats for.
+ * 
+ * @returns {number[]} The Pokemon's stats after applying
+ * all the Pokemon's current stat modifiers.
  */
-function levelUp(pokemon) {
-    var path = generatePokemonJSONPath(pokemon.name, pokemon.form);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var pkmn = JSON.parse(data);
+function updateStats(pokemon) {
+    let pkmn = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
     
-    var stats = [pokemon.stat_hp, pokemon.stat_atk, pokemon.stat_def, pokemon.stat_spatk, pokemon.stat_spdef, pokemon.stat_spd];
-    var EVs = [pokemon.ev_hp, pokemon.ev_atk, pokemon.ev_def, pokemon.ev_spatk, pokemon.ev_spdef, pokemon.ev_spd];
-    var IVs = [pokemon.iv_hp, pokemon.iv_atk, pokemon.iv_def, pokemon.iv_spatk, pokemon.iv_spdef, pokemon.iv_spd];
-    var nature = pokemon.nature;
+    /**
+     * Convert modifiers into lists.
+     */
+    let stats = [pokemon.stat_hp, pokemon.stat_atk, pokemon.stat_def, pokemon.stat_spatk, pokemon.stat_spdef, pokemon.stat_spd];
+    let EVs = [pokemon.ev_hp, pokemon.ev_atk, pokemon.ev_def, pokemon.ev_spatk, pokemon.ev_spdef, pokemon.ev_spd];
+    let IVs = [pokemon.iv_hp, pokemon.iv_atk, pokemon.iv_def, pokemon.iv_spatk, pokemon.iv_spdef, pokemon.iv_spd];
+    let baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
     
-    pokemon.level_current++;
-    var level = pokemon.level_current;
-    
-    var baseStats;
-    if ((pokemon.name === "Pumpkaboo" || pokemon.name === "Gourgeist") && pokemon.form != "Small Size") {
-        if (pokemon.form === "Average Size") {
-            baseStats = [pkmn.variations[0].base_stats.hp, pkmn.variations[0].base_stats.atk, pkmn.variations[0].base_stats.def, pkmn.variations[0].base_stats.sp_atk, pkmn.variations[0].base_stats.sp_def, pkmn.variations[0].base_stats.speed];
-        } else if (pokemon.form === "Large Size") {
-            baseStats = [pkmn.variations[1].base_stats.hp, pkmn.variations[1].base_stats.atk, pkmn.variations[1].base_stats.def, pkmn.variations[1].base_stats.sp_atk, pkmn.variations[1].base_stats.sp_def, pkmn.variations[1].base_stats.speed];
-        } else {
-            baseStats = [pkmn.variations[2].base_stats.hp, pkmn.variations[2].base_stats.atk, pkmn.variations[2].base_stats.def, pkmn.variations[2].base_stats.sp_atk, pkmn.variations[2].base_stats.sp_def, pkmn.variations[2].base_stats.speed];
-        }
-    } else if (pokemon.name === "Lycanroc" && pokemon.form != "Midday") {
-        if (pokemon.form === "Midnight") {
-            baseStats = [pkmn.variations[0].base_stats.hp, pkmn.variations[0].base_stats.atk, pkmn.variations[0].base_stats.def, pkmn.variations[0].base_stats.sp_atk, pkmn.variations[0].base_stats.sp_def, pkmn.variations[0].base_stats.speed];
-        } else {
-            baseStats = [pkmn.variations[1].base_stats.hp, pkmn.variations[1].base_stats.atk, pkmn.variations[1].base_stats.def, pkmn.variations[1].base_stats.sp_atk, pkmn.variations[1].base_stats.sp_def, pkmn.variations[1].base_stats.speed];
-        }
+    /**
+     * Shedinja should never have an HP value that isn't 1.
+     */
+    if (pokemon.name === "Shedinja") {
+        stats[0] = 1;
     } else {
-        baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
+        stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
     }
-    
-    stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
     stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
     stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
     stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
     stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
     stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
-    
-    if (pokemon.name === "Shedinja") {
-        stats[0] = 1;
-    }
     
     pokemon.stat_hp = stats[0];
     pokemon.stat_atk = stats[1];
@@ -5833,20 +5813,14 @@ async function teachNewMoveAI(pokemon, move) {
  * @returns {boolean} True if no errors were encountered.
  */
 async function giveXP(message, amount) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var pokemon = await getLeadPokemon(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var item = "None";
-    if (pokemon.item != "None" && pokemon.item != null) {
+    let levelsGained = 0;
+
+    let user = await getUser(message.author.id);
+
+    let pokemon = await getLeadPokemon(message.author.id);
+
+    let item = "None";
+    if (pokemon.item != null) {
         item = await getItem(pokemon.item);
         if (item === null) {
             item = pokemon.item;
@@ -5855,135 +5829,160 @@ async function giveXP(message, amount) {
         }
     }
 
-    if (pokemon.level_current === 100) {
-        return false;
-    }
-    
-    var friend = 0.2;
-    if (pokemon.friendship >= 200) {
-        friend = 0.1;
-    }
-    
-    if (pokemon.ball === "Luxury Ball") {
-        friend = friend * 2;
-    }
-    
-    if (item.name === "Soothe Bell") {
-        friend = friend * 1.5;
-    }
-    
-    if ((pokemon.friendship + friend) > 255) {
-        pokemon.friendship = 255;
-    } else {
-        pokemon.friendship += friend;
-    }
-    
-    var givenXP = Math.floor(((pokemon.level_current / 10) + 1).toFixed(1) * amount);
-    
-    if (pokemon.original_trainer != pokemon.current_trainer) {
-        givenXP += Math.floor(givenXP * 1.5);
-    }
-    
-    if (item.name === "Lucky Egg") {
-        givenXP += Math.floor(givenXP * 1.5);
-    }
-    
-    pokemon.xp += givenXP;
-    var done = false;
-    var evolveTo = null;
-    
-    while (done === false) {
-        var next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
-        if (next != null && next <= 0) {
-            message.react(pew.id);
-            var statsBefore = [pokemon.stat_hp, pokemon.stat_atk, pokemon.stat_def, pokemon.stat_spatk, pokemon.stat_spdef, pokemon.stat_spd];
-            var statsAfter = levelUp(pokemon);
-            
-            friend = 5;
-            if (pokemon.friendship >= 100 && pokemon.friendship < 200) {
-                friend = 4;
-            } else if (pokemon.friendship >= 200) {
-                friend = 3;
-            }
-            if (pokemon.ball === "Luxury Ball") {
-                friend = friend * 2;
-            }
-            
-            if (item.name === "Soothe Bell") {
-                friend = friend * 1.5;
-            }
-            
-            if ((pokemon.friendship + friend) > 255) {
-                pokemon.friendship = 255;
-            } else {
-                pokemon.friendship += friend;
-            }
-            
-            if (pokemon.level_current >= user.level) {
-                var query = "UPDATE user SET user.level = ? WHERE user.user_id = ?";
-                con.query(query, [pokemon.level_current, message.author.id], function (err) {
-                    if (err) {
-                        return reject(err);
-                    }
-                });
-            }
+    if (pokemon != null && user != null && pokemon.level_current === 100) {
+        let finalXP = (((pokemon.level_current / 10) + 1).toFixed(1) * amount);
+        if (pokemon.original_trainer != pokemon.current_trainer) {
+            finalXP += (finalXP * 1.5);
+        }
+        if (item.name === "Lucky Egg") {
+            finalXP += (finalXP * 1.5);
+        }
+        pokemon.xp += Math.floor(finalXP);
 
-            let spriteLink = generateSpriteLink(pokemon.name);
-            let modelLink = generateModelLink(pokemon.name);
-
-            let embed = {
-                "author": {
-                    "name": pokemon.name,
-                    "icon_url": spriteLink,
-                },
-                "title": "Level Up ️⬆️",
-                "description": message.author.username + " your **" + pokemon.name + "** reached *Level " + pokemon.level_current + "*!",
-                "color": getTypeColor(pokemon.type_1),
-                "thumbnail": {
-                    "url": "attachment://" + pokemon.name + ".gif"
-                },
-                "fields": [
-                    {
-                        "name": "Stats",
-                        "value": "**HP:** " + statsAfter[0] + "*(+" + (statsAfter[0] - statsBefore[0]) + ")*\n" +
-                                "**Attack:** " + statsAfter[1] + "*(+" + (statsAfter[1] - statsBefore[1]) + ")*\n" +
-                                "**Defense:** " + statsAfter[2] + "*(+" + (statsAfter[2] - statsBefore[2]) + ")*\n" +
-                                "**Sp. Attack:** " + statsAfter[3] + "*(+" + (statsAfter[3] - statsBefore[3]) + ")*\n" +
-                                "**Sp. Defense:** " + statsAfter[4] + "*(+" + (statsAfter[4] - statsBefore[4]) + ")*\n" +
-                                "**Speed:** " + statsAfter[5] + "*(+" + (statsAfter[5] - statsBefore[5]) + ")*",
-                        "inline": true
-                    }
-                ]
-            };
-
-            await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }]);
-
-            let levelMoves = await checkForMoveAtLevel(pokemon);
-            for (let move in levelMoves) {
-                await teachMove(message, pokemon, levelMoves[move], true, true);
-            }
-            next = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
-            evolveTo = null;
-            if (pokemon.item != "Everstone") {
-                evolveTo = await checkEvolveUponLevelUp(user, pokemon);
-            }
-        } else {
-            if (isInEvolution(message.author.id) === null && evolveTo != null) {
-                if (evolveTo === "Malamar") {
-                    message.channel.send("˙ʇdǝɔɔɐ oʇ ,,∀,,  ɹo lǝɔuɐɔ oʇ ,,q,, ǝdʎ┴ ¡ɹɐɯɐlɐW oʇuᴉ ƃuᴉʌloʌǝ sᴉ ʎɐʞuI ɹnoʎ <@" + message.author.id + ">");
-                } else {
-                    message.channel.send("<@" + message.author.id + "> your " + pokemon.name + " is evolving into " + evolveTo + "! Type \"B\" to cancel or  \"A\" to accept.");
+        let pokemonIsLevelingUp = true;
+        let evolveTo = null;
+        
+        while (pokemonIsLevelingUp) {
+            let xpToNextLevel = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
+            if (xpToNextLevel != null && xpToNextLevel <= 0) {
+                levelsGained++;
+                pokemon = await levelUp(message, pokemon, user, item);
+                xpToNextLevel = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
+                if (pokemon.item != "Everstone") {
+                    evolveTo = await checkEvolveUponLevelUp(user, pokemon);
                 }
-                pokemon.evolving = 1;
-                evolving[evolving.length] = new Evolution(message.author.id, pokemon.name, evolveTo);
+            } else {
+                if (isInEvolution(message.author.id) === null && evolveTo != null) {
+                    if (evolveTo === "Malamar") {
+                        await sendMessage(message.channel, ("˙ʇdǝɔɔɐ oʇ ,,∀,,  ɹo lǝɔuɐɔ oʇ ,,q,, ǝdʎ┴ ¡**ɹɐɯɐlɐW** oʇuᴉ ƃuᴉʌloʌǝ sᴉ **ʎɐʞuI** ɹnoʎ <@" + message.author.id + ">"));
+                    } else {
+                        await sendMessage(message.channel, ("<@" + message.author.id + "> your **" + pokemon.name + "** is evolving into **" + evolveTo + "**! Type \"B\" to cancel or  \"A\" to accept."));
+                    }
+                    pokemon.evolving = 1;
+                    evolving[evolving.length] = new Evolution(message.author.id, pokemon.name, evolveTo);
+                }
+                pokemonIsLevelingUp = false;
             }
-            done = true;
+        }
+    
+        await doQuery("UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?", [pokemon, pokemon.pokemon_id]);
+    }
+    
+    return new Promise(function(resolve) {
+        resolve(levelsGained);
+    });
+}
+
+/**
+ * Levels up a Pokemon. This function will increment the Pokemon's level by one,
+ * update its stats, teach new moves the Pokemon may learn at its new level, and
+ * increase its friendship.
+ * 
+ * @param {Message} message The Discord message sent from the user that triggered the level up.
+ * @param {Pokemon} pokemon The Pokemon that is leveling up.
+ * @param {User} user The Pokebot user that owns the leveling up Pokemon.
+ * @param {Item} item The item held by the Pokemon.
+ * 
+ * @returns {Pokemon} The Pokemon after its level, stats, and friendship have updated.
+ */
+async function levelUp(message, pokemon, user, item) {
+    if (pokemon.level_current < 100) {
+        /* Doesn't need to be awaited. */
+        message.react(pew.id);
+
+        /**
+         * Increment the Pokemon's level.
+         */
+        pokemon.level_current++;
+
+        /**
+         * Update the Pokemon's stats.
+         */
+        let statsBeforeLevelingUp = [pokemon.stat_hp, pokemon.stat_atk, pokemon.stat_def, pokemon.stat_spatk, pokemon.stat_spdef, pokemon.stat_spd];
+        let statsAfterLevelingUp = updateStats(pokemon);
+        pokemon.stat_hp = statsAfterLevelingUp[0];
+        pokemon.stat_atk = statsAfterLevelingUp[1];
+        pokemon.stat_def = statsAfterLevelingUp[2];
+        pokemon.stat_spatk = statsAfterLevelingUp[3];
+        pokemon.stat_spdef = statsAfterLevelingUp[4];
+        pokemon.stat_spd = statsAfterLevelingUp[5];
+
+        let spriteLink = generateSpriteLink(pokemon.name);
+        let modelLink = generateModelLink(pokemon.name);
+
+        /**
+         * Embedded message showing the Pokemon's new level and stats, along with how much each stat increased.
+         */
+        let embed = {
+            "author": {
+                "name": pokemon.name,
+                "icon_url": spriteLink,
+            },
+            "title": "Level Up ️⬆️",
+            "description": message.author.username + " your **" + pokemon.name + "** reached *Level " + pokemon.level_current + "*!",
+            "color": getTypeColor(pokemon.type_1),
+            "thumbnail": {
+                "url": "attachment://" + pokemon.name + ".gif"
+            },
+            "fields": [
+                {
+                    "name": "Stats",
+                    "value": "**HP:** " + statsAfterLevelingUp[0] + "*(+" + (statsAfterLevelingUp[0] - statsBeforeLevelingUp[0]) + ")*\n" +
+                            "**Attack:** " + statsAfterLevelingUp[1] + "*(+" + (statsAfterLevelingUp[1] - statsBeforeLevelingUp[1]) + ")*\n" +
+                            "**Defense:** " + statsAfterLevelingUp[2] + "*(+" + (statsAfterLevelingUp[2] - statsBeforeLevelingUp[2]) + ")*\n" +
+                            "**Sp. Attack:** " + statsAfterLevelingUp[3] + "*(+" + (statsAfterLevelingUp[3] - statsBeforeLevelingUp[3]) + ")*\n" +
+                            "**Sp. Defense:** " + statsAfterLevelingUp[4] + "*(+" + (statsAfterLevelingUp[4] - statsBeforeLevelingUp[4]) + ")*\n" +
+                            "**Speed:** " + statsAfterLevelingUp[5] + "*(+" + (statsAfterLevelingUp[5] - statsBeforeLevelingUp[5]) + ")*",
+                    "inline": true
+                }
+            ]
+        };
+
+        await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }]);
+
+        /**
+         * Increase the Pokemon's friendship.
+         */
+        let friend = 5;
+        if (pokemon.friendship >= 100 && pokemon.friendship < 200) {
+            friend = 4;
+        } else if (pokemon.friendship >= 200) {
+            friend = 3;
+        }
+        if (pokemon.ball === "Luxury Ball") {
+            friend = friend * 2;
+        }
+        
+        if (item.name === "Soothe Bell") {
+            friend = friend * 1.5;
+        }
+        
+        if ((pokemon.friendship + friend) > 255) {
+            pokemon.friendship = 255;
+        } else {
+            pokemon.friendship += friend;
+        }
+        
+        /**
+         * Increase the user's level.
+         * @todo User levels will probably be deprecated or calculated differently.
+         */
+        if (pokemon.level_current >= user.level) {
+            await doQuery("UPDATE user SET user.level = ? WHERE user.user_id = ?", [pokemon.level_current, message.author.id]);
+        }
+
+        /**
+         * Teach the Pokemon any new moves it learns at its new level.
+         */
+        let levelMoves = await checkForMoveAtLevel(pokemon);
+        for (let move in levelMoves) {
+            await teachMove(message, pokemon, levelMoves[move], true, true);
         }
     }
 
-    await doQuery("UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?", [pokemon, pokemon.pokemon_id]);
-
-    return true;
+    return new Promise(function(resolve) {
+        resolve(pokemon);
+    });
 }
 
 /**
@@ -6042,7 +6041,7 @@ async function giveDayCareXP(message) {
             var next = getXpToNextLevel(pokemon[i].name, pokemon[i].xp, pokemon[i].level_current);
             if (next != null && next <= 0) {
                 var statsBefore = [pokemon[i].stat_hp, pokemon[i].stat_atk, pokemon[i].stat_def, pokemon[i].stat_spatk, pokemon[i].stat_spdef, pokemon[i].stat_spd];
-                var statsAfter = levelUp(pokemon[i]);
+                var statsAfter = updateStats(pokemon[i]);
                 
                 if(pokemon[i].level_current >= user.level) {
                     var query = "UPDATE user SET user.level = ? WHERE user.user_id = ?";
@@ -6108,26 +6107,24 @@ async function giveDayCareXP(message) {
  * @returns {number} The minium amount of experience a Pokemon must have earned to reach its current level.
  */
 function getTotalXpAtLevel(rate, currentLevel) {
-    var xpData;
-    try {
-        xpData = fs.readFileSync("../data/xp.json", "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
+    let totalXp = -1;
+    let xpTable = parseJSON("../data/xp.json");
+
+    if (xpTable != null) {
+        if (rate === "Erratic") {
+            totalXp = xpTable.erratic[currentLevel - 1];
+        } else if (rate === "Fast") {
+            totalXp = xpTable.fast[currentLevel - 1];
+        } else if (rate === "Medium Fast") {
+            totalXp = xpTable.medium_fast[currentLevel - 1];
+        } else if (rate === "Medium Slow") {
+            totalXp = xpTable.medium_slow[currentLevel - 1];
+        } else {
+            totalXp = xpTable.slow[currentLevel - 1];
+        }
     }
-    var xpTable = JSON.parse(xpData);
-    
-    if (rate === "Erratic") {
-       return xpTable.erratic[currentLevel - 1];
-    } else if (rate === "Fast") {
-        return xpTable.fast[currentLevel - 1];
-    } else if (rate === "Medium Fast") {
-        return xpTable.medium_fast[currentLevel - 1];
-    } else if (rate === "Medium Slow") {
-        return xpTable.medium_slow[currentLevel - 1];
-    } else {
-        return xpTable.slow[currentLevel - 1];
-    }
+
+    return totalXp;
 }
 
 /**
@@ -6144,43 +6141,32 @@ function getTotalXpAtLevel(rate, currentLevel) {
  * if either Pokemon is level 100 or an error was encountered.
  */
 function getXpToNextLevel(name, currentTotalXp, currentLevel) {
-    if(currentLevel === 100) {
-        return null;
-    }
-    /**
-     * @todo Pass whole Pokemon instead of name.
-     */
-    var path = generatePokemonJSONPath(name, null);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var pkmn = JSON.parse(data);
+    let xpToNextLevel = null;
     
-    var xpData;
-    try {
-        xpData = fs.readFileSync('../data/xp.json', "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
+    if(currentLevel < 100) {
+        /**
+         * Forms changes do not affect a Pokemon's leveling rate,
+         * so we can safely pretend that the Pokemon has a null form.
+         */
+        let pkmn = parseJSON(generatePokemonJSONPath(name, null));
+        let xpTable = parseJSON("../data/xp.json");
+
+        if (pkmn != null && xpTable != null) {
+            if (pkmn.leveling_rate === "Erratic") {
+                xpToNextLevel = (xpTable.erratic[currentLevel] - currentTotalXp);
+            } else if (pkmn.leveling_rate === "Fast") {
+                xpToNextLevel = (xpTable.fast[currentLevel] - currentTotalXp);
+            } else if (pkmn.leveling_rate === "Medium Fast") {
+                xpToNextLevel = (xpTable.medium_fast[currentLevel] - currentTotalXp);
+            } else if (pkmn.leveling_rate === "Medium Slow") {
+                xpToNextLevel = (xpTable.medium_slow[currentLevel] - currentTotalXp);
+            } else {
+                xpToNextLevel = (xpTable.slow[currentLevel] - currentTotalXp);
+            }
+        }
     }
-    var xpTable = JSON.parse(xpData);
-    
-    var rate = pkmn.leveling_rate;
-    if (rate === "Erratic") {
-       return (xpTable.erratic[currentLevel] - currentTotalXp);
-    } else if (rate === "Fast") {
-        return (xpTable.fast[currentLevel] - currentTotalXp);
-    } else if (rate === "Medium Fast") {
-        return (xpTable.medium_fast[currentLevel] - currentTotalXp);
-    } else if (rate === "Medium Slow") {
-        return (xpTable.medium_slow[currentLevel] - currentTotalXp);
-    } else {
-        return (xpTable.slow[currentLevel] - currentTotalXp);
-    }
+
+    return xpToNextLevel;
 }
 
 /**
@@ -6193,22 +6179,17 @@ function getXpToNextLevel(name, currentTotalXp, currentLevel) {
  * or null if an error is encountered.
  */
 function getNatureStatMultiplier(nature, statName) {
-    var path = generateNatureJSONPath(nature);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var effect = JSON.parse(data);
+    let multiplier = 1;
+
+    let effect = parseJSON(generateNatureJSONPath(nature));
     
-    if(effect.increased_stat === statName) {
-        return 1.1;
+    if (effect.increased_stat === statName) {
+        multiplier = 1.1;
     } else if (effect.decreased_stat === statName) {
-        return 0.9;
+        multiplier = 0.9;
     }
-    return 1;
+
+    return multiplier;
 }
 
 /**
@@ -6226,14 +6207,13 @@ function getNatureStatMultiplier(nature, statName) {
  * @returns {number} The Pokemon's stat for its current level.
  */
 function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
-    var stat;
+    let stat;
     if (statName === "hp") {
         stat = Math.floor(((2 * baseValue + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
-        return stat;
     } else {
         stat = Math.floor(((Math.floor(((2 * baseValue + iv + Math.floor(ev / 4)) * level) / 100)) + 5) * getNatureStatMultiplier(nature, statName));
-        return stat;
     }
+    return stat;
 }
 
 /**
@@ -10186,6 +10166,8 @@ async function printMoveInfo(message, moveName) {
 
 /**
  * Gets data from a JSON file in JSON format.
+ * 
+ * @todo Consider making this an async function.
  * 
  * @param {string} path Path of the JSON file.
  * 
