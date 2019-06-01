@@ -5174,11 +5174,8 @@ async function cancelEvolve(message) {
 /**
  * Checks if a Pokemon has met its evolution requirement.
  * 
- * @todo The `method` argument seems to do nothing, is it necessary?
- * 
  * @param {User} user The Pokebot user who owns the Pokemon.
  * @param {Pokemon} pokemon The Pokemon that is being checked for evolution.
- * @param {string} method The evolution method. Should only be "`level`", "`trade`", or "`item`".
  * 
  * @returns {string} The name of the Pokemon that it will evolve into, or null
  * if the Pokemon is not ready to evolve.
@@ -5844,8 +5841,14 @@ async function giveXP(message, amount) {
         let pokemonIsLevelingUp = true;
         let evolveTo = null;
         
+        /**
+         * Loop once and one more additional loop for each level the Pokemon gains.
+         */
         while (pokemonIsLevelingUp) {
             let xpToNextLevel = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
+            /**
+             * If Pokemon gained enough xp to reach its next level.
+             */
             if (xpToNextLevel != null && xpToNextLevel <= 0) {
                 levelsGained++;
                 pokemon = await levelUp(message, pokemon, user, item);
@@ -5854,6 +5857,9 @@ async function giveXP(message, amount) {
                     evolveTo = await checkEvolveUponLevelUp(user, pokemon);
                 }
             } else {
+                /**
+                 * If a level up triggered a Pokemon's evolution.
+                 */
                 if (isInEvolution(message.author.id) === null && evolveTo != null) {
                     if (evolveTo === "Malamar") {
                         await sendMessage(message.channel, ("˙ʇdǝɔɔɐ oʇ ,,∀,,  ɹo lǝɔuɐɔ oʇ ,,q,, ǝdʎ┴ ¡**ɹɐɯɐlɐW** oʇuᴉ ƃuᴉʌloʌǝ sᴉ **ʎɐʞuI** ɹnoʎ <@" + message.author.id + ">"));
@@ -6230,122 +6236,24 @@ function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
  * @returns {Pokemon} The Pokemon that was generated, or null if the Pokemon failed to generate.
  */
 async function generatePokemonByName(message, name, level, region, location, hidden) {
-    //it is ok for user to be null in this function
-    var user = await getUser(message.author.id);
-    var form = getForm(user, name, region, location);
-    
     /**
-     * @todo form should be determined before the JSON file is opened.
+     * It is ok for user to be null in this function.
+     * User should only be null when generating a starter Pokemon.
+     * @todo Maybe a seperate generator function could be made for starter Pokemon.
      */
-    var path = generatePokemonJSONPath(name, form);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
-    var pkmn = JSON.parse(data);
+    let user = await getUser(message.author.id);
+    let form = getForm(user, name, region, location);
     
-    //it is ok for user to be null in this function
-    var user = await getUser(message.author.id);
-    var form = getForm(user, name, region, location);
+    let pkmn = parseJSON(generatePokemonJSONPath(name, form));
     
-    var no = pkmn.national_id;
-    
-    var hidden_ability = [];
-    var ability = [];
-    
-    if (hidden === true) {
-        for (i = 0; i < pkmn.abilities.length; i++) {
-            if(pkmn.abilities[i].hasOwnProperty('hidden')) {
-                hidden_ability[hidden_ability.length] = pkmn.abilities[i].name;
-            }
-        }   
-    } else {
-        for (i = 0; i < pkmn.abilities.length; i++) {
-            if(!pkmn.abilities[i].hasOwnProperty('hidden')) {
-                ability[ability.length] = pkmn.abilities[i].name;
-            }
-        }   
-    }
-    
-    var abilitySlot = 0;
-    var random = Math.floor(Math.random() * 100);
-    if ((random % 2) === 1) {
-        abilitySlot = 1;
-    }
-        
-    
-    var final_ability;
-    
-    
-    if (hidden_ability.length === 0) {
-        if (abilitySlot > (ability.length - 1) || abilitySlot === 0) {
-            final_ability = ability[0];
-        } else {
-            final_ability = ability[1];
-        } 
-    } else {
-        final_ability = hidden_ability[0];
-        abilitySlot = 2;
-    }
+    let final_ability;
+    let abilitySlot = 0;
 
-    
-    var lastMoveSlotOverwritten = 0;
-    var moves = [null, null, null, null];
-    for (i = 0; i < pkmn.move_learnset.length; i++) {
-        if(pkmn.move_learnset[i].level <= level) {
-            if(moves[0] === null) {
-                moves[0] = pkmn.move_learnset[i].move;
-            } else if (moves[0] === pkmn.move_learnset[i].move) {
-                       //do nothing
-            } else if(moves[1] === null) {
-                moves[1] = pkmn.move_learnset[i].move;
-            } else if (moves[1] === pkmn.move_learnset[i].move) {
-                       //do nothing
-            } else if(moves[2] === null) {
-                moves[2] = pkmn.move_learnset[i].move;
-            } else if (moves[2] === pkmn.move_learnset[i].move) {
-                       //do nothing
-            } else if(moves[3] === null) {
-                moves[3] = pkmn.move_learnset[i].move;
-            } else if (moves[3] === pkmn.move_learnset[i].move) {
-                       //do nothing
-            } else {
-                random = Math.floor(Math.random() * 100);
-                if(random >= 30) {
-                    moves[lastMoveSlotOverwritten] = pkmn.move_learnset[i].move;
-                    if (lastMoveSlotOverwritten === 3) {
-                        lastMoveSlotOverwritten = 0
-                    } else {
-                        lastMoveSlotOverwritten++;
-                    }
-                }
-            }
-        }
-    }
-    
-    var xp = getTotalXpAtLevel(pkmn.leveling_rate, level, region);
-    
-    var gender;
-    if (pkmn.gender_ratios === null) {
-        gender = "None";
-    } else if (!pkmn.gender_ratios.hasOwnProperty('male')) {
-               gender = "Female";
-    } else if (!pkmn.gender_ratios.hasOwnProperty('female')) {
-               gender = "Male";
-    } else {
-        var chance = pkmn.gender_ratios.male;
-        random = Math.random() * 100;
-        if (random < chance) {
-            gender = "Male";
-        } else {
-            gender = "Female";
-        }
-    }
-    
-    if (name === "Meowstic") {
+    /**
+     * Meowstic is the only Pokemon to have exclusive (hidden) abilites
+     * based on its gender rather than form.
+     */
+    if (name === "Meowstic" && hidden) {
         if (gender === "Female") {
             abilitySlot = 3;
             final_ability = "Competitive";
@@ -6353,65 +6261,189 @@ async function generatePokemonByName(message, name, level, region, location, hid
             abilitySlot = 2;
             final_ability = "Prankster";
         }
+    } else {
+        /**
+         * Randomly determine the ability of the Pokemon.
+         */
+        let hiddenAbilities = [];
+        let abilities = [];
+
+        let abilityIndex = 0;
+
+        if (hidden === true) {
+            for (abilityIndex; abilityIndex < pkmn.abilities.length; abilityIndex++) {
+                if(pkmn.abilities[abilityIndex].hasOwnProperty('hidden')) {
+                    hiddenAbilities[hiddenAbilities.length] = pkmn.abilities[abilityIndex].name;
+                }
+            }   
+        } else {
+            for (abilityIndex; abilityIndex < pkmn.abilities.length; abilityIndex++) {
+                if(!pkmn.abilities[abilityIndex].hasOwnProperty('hidden')) {
+                    abilities[abilities.length] = pkmn.abilities[abilityIndex].name;
+                }
+            }   
+        }
+
+        let random = Math.floor(Math.random() * 100);
+        if ((random % 2) === 1) {
+            abilitySlot = 1;
+        }
+        
+        if (hiddenAbilities.length === 0) {
+            if (abilitySlot > (abilities.length - 1) || abilitySlot === 0) {
+                final_ability = abilities[0];
+            } else {
+                final_ability = abilities[1];
+            } 
+        } else {
+            final_ability = hiddenAbilities[0];
+            abilitySlot = 2;
+        }
+    }
+
+    /**
+     * Assign moves to the Pokemon based on the Pokemon's level.
+     */
+    let moves = [null, null, null, null];
+    let moveIndex = 0;
+    for (moveIndex = 0; moveIndex < pkmn.move_learnset.length; moveIndex++) {
+        if(pkmn.move_learnset[moveIndex].level <= level) {
+            if (moves[0] === null) {
+                moves[0] = pkmn.move_learnset[moveIndex].move;
+            }  else if(moves[1] === null) {
+                moves[1] = pkmn.move_learnset[moveIndex].move;
+            }  else if(moves[2] === null) {
+                moves[2] = pkmn.move_learnset[moveIndex].move;
+            } else if(moves[3] === null) {
+                moves[3] = pkmn.move_learnset[moveIndex].move;
+            } else { /* If Pokemon knows four moves. */
+                /**
+                 * Replace a random move, or 20% chance to not teach the new move at all.
+                 * @todo Learn how moves are assigned to wild Pokemon in the games and apply it here.
+                 */
+                let random = Math.floor(Math.random() * 100);
+                if(random >= 20) {
+                    if (random <= 40) {
+                        moves[0] = pkmn.move_learnset[moveIndex].move;
+                    } else if (random <= 60) {
+                        moves[1] = pkmn.move_learnset[moveIndex].move;
+                    } else if (random <= 80) {
+                        moves[2] = pkmn.move_learnset[moveIndex].move;
+                    } else {
+                        moves[3] = pkmn.move_learnset[moveIndex].move;
+                    }
+                }
+            }
+        }
     }
     
-    var natures = ["Hardy", "Lonely", "Brave", "Adamant", "Naughty", "Bold", "Docile", "Relaxed", "Impish", "Lax", "Timid", "Hasty", "Serious", "Jolly", "Naive", "Modest", "Mild", "Quiet", "Bashful", "Rash", "Calm", "Gentle", "Sassy", "Careful", "Quirky"];
+    /**
+     * Determine the minimum amount of XP the Pokemon should have at its current level.
+     */
+    let xp = getTotalXpAtLevel(pkmn.leveling_rate, level, region);
     
-    random = Math.floor(Math.random() * natures.length);
-    var nature = natures[random];
-    
-    var EVs = [0,0,0,0,0,0];
-    var IVs = [0,0,0,0,0,0];
-    var a;
-    for (a = 0; a < 6; a++) {
-        IVs[a] = Math.floor(Math.random() * 32);
+    /**
+     * Randomly determine the Pokemon's gender, or assign a specific gender
+     * if the Pokemon only has one possible gender.
+     */
+    let gender;
+    if (pkmn.gender_ratios === null) {
+        gender = "None";
+    } else if (!pkmn.gender_ratios.hasOwnProperty('male')) {
+               gender = "Female";
+    } else if (!pkmn.gender_ratios.hasOwnProperty('female')) {
+               gender = "Male";
+    } else {
+        let random = Math.floor(Math.random() * 100);
+        if (random <= pkmn.gender_ratios.male) {
+            gender = "Male";
+        } else {
+            gender = "Female";
+        }
     }
     
-    var baseStats;
-    baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
+    /**
+     * Randomly assign a nature to the Pokemon.
+     * Natures apply a small bonus to one stat and a small malus to another stat.
+     */
+    let natures = ["Hardy", "Lonely", "Brave", "Adamant", "Naughty", "Bold", "Docile", "Relaxed", "Impish", "Lax", "Timid", "Hasty", "Serious", "Jolly", "Naive", "Modest", "Mild", "Quiet", "Bashful", "Rash", "Calm", "Gentle", "Sassy", "Careful", "Quirky"];
+    let naturesIndex = Math.floor(Math.random() * natures.length);
+    let nature = natures[naturesIndex];
     
-    var stats = [];
+    /**
+     * Randomly generate Individual Values (IVs) and initialize all Effort Values (EVs) at 0.
+     */
+    let EVs = [0,0,0,0,0,0];
+    let IVs = [0,0,0,0,0,0];
+    let ivIndex = 0;
+    for (ivIndex; ivIndex < IVs.length; ivIndex++) {
+        IVs[ivIndex] = Math.floor(Math.random() * 32);
+    }
+    
+    /**
+     * Determine the Pokemon's stats based on its base stats, level, IVs, EVs, and nature.
+     * 
+     * @todo Change this so it uses the updateStats() function.
+     */
+    let baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
+    let stats = [0,0,0,0,0,0];
+
     stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
     stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
     stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
     stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
     stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
     stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
-    
+
     if (name === "Shedinja") {
         stats[0] = 1;
     }
     
-    var shiny = 0;
-    random = Math.floor(Math.random() * 4096);
-    if (random === 1234) {
+    /**
+     * Randomly determine if the Pokemon is shiny.
+     * 1/4096 chance, very rare.
+     * 
+     * @todo Add an argument to multiply the lucky number, so that a multiplier of
+     * 0 disables any chance of shininess and a multiplier of 4095 guarantees shininess.
+     */
+    let shiny = 0;
+    let luckyNumber = Math.floor(Math.random() * 4096);
+    if (luckyNumber >= 4095) {
         shiny = 1;
     }
     
-    var type = [null, null];
+    /**
+     * Get the Pokemon's type(s).
+     */
+    let type = [null, null];
     type[0] = pkmn.types[0];
     if(pkmn.types.length === 2) {
         type[1] = pkmn.types[1];
     }
     
-    var item = null;
+    /**
+     * Randomly determine if the Pokemon spawns with any possible hold item it can have in the wild.
+     */
+    let item = null;
     if (pkmn.hasOwnProperty("items")) {
-        var itemCount;
+        let itemCount;
         for (itemCount = 0; itemCount < pkmn.items.length; itemCount++) {
-            var itemChance = Math.ceil(Math.random() * 100);
+            let itemChance = Math.ceil(Math.random() * 100);
             if (itemChance <= pkmn.items[itemCount].chance) {
                 item = pkmn.items[itemCount].name;
             }
         }
     }
     
-    var nick = null;
+    let nick = null;
     
-    var newPokemon = new Pokemon(name, nick, no, form, type, item, level, xp, moves, final_ability, abilitySlot, nature, stats, IVs, EVs, gender, region, location, level, shiny);
+    let newPokemon = new Pokemon(name, nick, pkmn.national_id, form, type, item, level, xp, moves, final_ability, abilitySlot, nature, stats, IVs, EVs, gender, region, location, level, shiny);
     
     newPokemon.friendship = pkmn.base_friendship;
     
-    return newPokemon;
+    return new Promise(function(resolve) {
+        resolve(newPokemon);
+    });
 }
 
 /**
