@@ -4,12 +4,9 @@
 */
 
 /**
- *  @todo Check TM learning for pokemon who have different movesets based on form but still have the same TM learnset.
- *  @todo In the games, when a Pokemon is in the Day Care, its moves are replaced one by one in order of the move slot. Pokebot currently does an experimental optimal move replacement calculation instead. Will need to run tests to see how optimal this algorithm is, otherwise it should fall back to the day care method.
  *  @todo Add table for users who are currently inputting responses. This way if a user tries to do a command while Pokebot is awaiting input, Pokebot won't give two warning messages to the user.
  *  @todo All message sends need to be awaited, otherwise weirdness may happen.
  *  @todo Standardize the file names for json and images.
- *  @todo When a Pokemon learns a new move from leveling up or evolving (and possibly other methods besides TMs), it can learn a duplicate move. Currently no duplicate moves are allowed.
 */
 
 /**
@@ -422,16 +419,17 @@ async function doNonCommandMessage(message) {
         moneyAmnt += Math.ceil(Math.random() * 100);
         moneyAmnt += Math.ceil(Math.random() * 50);
         await giveMoney(message, moneyAmnt, user);
-    /* User's lead Pokemon is given XP. */
+    /* User's Pokemon are given XP. */
     } else {
         /* Give a random amount of XP to the user lead Pokemon. */
         let xpAmount = Math.ceil(Math.random() * 5);
         xpAmount += Math.ceil(Math.random() * 10);
         xpAmount += Math.ceil(Math.random() * 20);
         xpAmount = xpAmount * spamXpMult;
-        await giveXP(message, xpAmount);
-        await giveDayCareXP(message);
+        await giveXP(message, lead, xpAmount);
     }
+
+    await giveDayCareXP(message);
 }
 
 /**
@@ -2967,7 +2965,7 @@ async function getBag(userId) {
  * by the user.
  */
 async function getPokemon(userId) {
-    let pokemon = await doQuery('SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage IS NULL', [userId]);
+    let pokemon = await doQuery('SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.daycare IS NULL', [userId]);
     /* Need to return the whole list of Pokemon, not just a single row. */
     return new Promise(function(resolve) {
         resolve(pokemon);
@@ -2984,7 +2982,7 @@ async function getPokemon(userId) {
  * that are currently in the day care.
  */
 async function getDaycare(userId) {
-    let daycarePokemon = await doQuery(`SELECT * FROM pokemon WHERE current_trainer = ? AND pokemon.storage = "daycare"`, [userId]);
+    let daycarePokemon = await doQuery(`SELECT * FROM daycare WHERE trainer = ?`, [userId]);
     /* Need to return the whole list of Pokemon, not just a single row. */
     return new Promise(function(resolve) {
         resolve(daycarePokemon);
@@ -4258,9 +4256,14 @@ async function useTMItem(message, item, lead) {
  * @param {boolean} enableDuplicate If the Pokemon is allowed to learn the new move if it already knows the move.
  * @param {boolean} replacePP If the new move's Power Points should replace the Power Points of the move it replaces.
  * 
- * @returns {boolean} The list of mo
+ * @returns {boolean} True if no errors were encountered.
  */
 async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) {
+    let isInDaycare = true;
+    if (pokemon.daycare != null) {
+        isInDaycare = false;
+    }
+
     let currentMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
     currentMoves = populateMoves(currentMoves);
 
@@ -4290,7 +4293,9 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
          */
         for (currentMovesIndex = 0; currentMovesIndex < currentMoves.length; currentMovesIndex++) {
             if (currentMoves[currentMovesIndex].name === null) {
-                await sendMessage(message.channel, (message.author.username + "'s **" + pokemon.name + "** learned *" + newMove + "*!"));
+                if (!isInDaycare) {
+                    await sendMessage(message.channel, (message.author.username + "'s **" + pokemon.name + "** learned *" + newMove + "*!"));
+                }
                 replacedMoveIndex = currentMovesIndex;
                 wasMoveLearned = true;
                 break;
@@ -4301,14 +4306,18 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
          * If Pokemon has no free move slot.
          */
         if (!wasMoveLearned) {
-            transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + newMove);
-            replacedMoveIndex = await replaceMove(message, pokemon, newMove, currentMoves);
-            removeTransaction(message.author.id);
+            if (!isInDaycare) {
+                transactions[transactions.length] = new Transaction(message.author.id, "teaching your " + pokemon.name + " " + newMove);
+                replacedMoveIndex = await replaceMove(message, pokemon, newMove, currentMoves);
+                removeTransaction(message.author.id);
 
-            if (replacedMoveIndex === NO_MOVE_REPLACED) {
-                await sendMessage(message.channel, (message.author.username + " decided not to teach their **" + pokemon.name + "** *" + newMove + "*."));
+                if (replacedMoveIndex === NO_MOVE_REPLACED) {
+                    await sendMessage(message.channel, (message.author.username + " decided not to teach their **" + pokemon.name + "** *" + newMove + "*."));
+                } else {
+                    await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + currentMoves[replacedMoveIndex].name + "* and learned *" + newMove + "*!");
+                }
             } else {
-                await sendMessage(message.channel, message.author.username + "'s **" + pokemon.name + "** forgot *" + currentMoves[replacedMoveIndex].name + "* and learned *" + newMove + "*!");
+                replacedMoveIndex = await replaceMoveDayCare(pokemon);
             }
         }
 
@@ -4774,7 +4783,7 @@ async function selectOwnedPokemon(message, user, pokemon, description) {
     let selectedPokemon = null;
 
     while (userIsSelectingAPokemon) {
-        printPokemon(message, user.user_id, pokemon, description);
+        printPokemon(message, user.user_id, undefined, description);
 
         let name = null;
         let cancel = false;
@@ -4923,7 +4932,7 @@ function getFormOfEvolvedPokemon(fromForm, toName, user) {
         (toName === "Exeggutor")
         ||
         (toName === "Marowak")
-        ) {
+        ) { /* Ultra Space does not trigger Alolan forms. */
         if (user.region === "Alola" && !(user.location.startsWith("Ultra"))) {
             form = "Alolan";
         }
@@ -5690,143 +5699,34 @@ async function replaceMove(message, pokemon, newMove, moves) {
 }
 
 /**
- * An experimental algorithm that automatically decides which move to
- * replace, if any, when a Pokemon with four moves wants to learn a
- * new move, and replaces that move. This is used by the day care.
+ * Automatically determines which move to replace when a Pokemon in the Day Care
+ * wants to learn a new move with no free move slots. The Day Care replaces moves
+ * in order of the move's index, so that the Pokemon's first move will be replaced
+ * first, its second move will be replaced second, and so on, repeating after the
+ * fourth move is replaced.
  * 
  * @param {Pokemon} pokemon The Pokemon that wants to learn a new move.
- * @param {string} move The name of the new move the Pokemon wants to learn.
  * 
- * @returns {move[]} The Pokemon's moveset after a decision has been made.
+ * @returns {number} The move index to replace.
  */
-async function teachNewMoveAI(pokemon, move) {
-    var highestStat;
-    if (((pokemon.stat_atk / pokemon.stat_spatk) > 1.25)) {
-        highestStat = "atk";
-    } else if (((pokemon.stat_atk / pokemon.stat_spatk) < 0.75)) {
-        highestStat = "spatk";
-    } else {
-        highestStat = "both";
-    }
-
-    var moves = [
-        {
-            name: pokemon.move_1,
-            pp: pokemon.move_1_pp
-        },
-        {
-            name: pokemon.move_2,
-            pp: pokemon.move_2_pp
-        },
-        {
-            name: pokemon.move_3,
-            pp: pokemon.move_3_pp
-        },
-        {
-            name: pokemon.move_4,
-            pp: pokemon.move_4_pp
-        }
-    ]
-
-    var name = move.toLowerCase();
-    
-    if (name === "10000000 volt thunderbolt" || name === "10,000,000 volt thunderbolt") {
-        name = "10 000 000 volt thunderbolt";
-    }
-
-    name = name.replace(/-/g,"_");
-    name = name.replace(/'/g,"_");
-    name = name.replace(/ /g,"_");
-
-    var path = "../data/move/" + name + ".json";
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        return null;
-    }
-
-    var newMove = JSON.parse(data);
-
-    var weights = [0,0,0,0];
-
-    var i;
-    for (i = 0; i < moves.length; i++) {
-        var currentMove = moves[i].name.toLowerCase();
-        
-        if (currentMove === "10000000 volt thunderbolt" || currentMove === "10,000,000 volt thunderbolt") {
-            currentMove = "10 000 000 volt thunderbolt";
-        }
-
-        currentMove = currentMove.replace(/-/g,"_");
-        currentMove = currentMove.replace(/'/g,"_");
-        currentMove = currentMove.replace(/ /g,"_");
-
-        var mpath = "../data/move/" + currentMove + ".json";
-        var mdata;
-        try {
-            mdata = fs.readFileSync(mpath, "utf8");
-        } catch (err) {
-            return null;
-        }
-
-        var knownMove = JSON.parse(mdata);
-
-        weights[i] += (3 * newMove.priority);
-        weights[i] += (2 * newMove.critical_hit);
-
-        if (knownMove.category === "status" && newMove.category === "status") {
-            weights[i] = 100;
-            weights[i] += (newMove.pp - knownMove.pp);
-            weights[i] += (2 * (newMove.accuracy - knownMove.accuracy));
+async function replaceMoveDayCare(pokemon) {
+    let moveIndex = null;
+    let daycarePokemon = await doQuery("SELECT * FROM daycare WHERE daycare.pokemon = ?", [pokemon.pokemon_id]);
+    if (daycarePokemon != null) {
+        if (daycarePokemon[0].last_move_replaced === null) {
+            moveIndex = 0;
         } else {
-            if (newMove.category === "physical" && highestStat === "atk") {
-                weights[i] += 20;
-            } else if (newMove.category === "special" && highestStat === "spatk") {
-                weights[i] += 20;
-            } else if (newMove.category != "status" && knownMove.category === "status") {
-                weights[i] += 50;
-            } else if (newMove.category === "status" && knownMove.category != "status") {
-                weights[i] -= 50;
+            moveIndex = (daycarePokemon[0].last_move_replaced + 1);
+            if (moveIndex === 4) {
+                moveIndex = 0;
             }
-    
-            if (knownMove.category === "physical" && highestStat === "atk") {
-                weights[i] -= 20;
-            } else if (knownMove.category === "special" && highestStat === "spatk") {
-                weights[i] -= 20;
-            }
-    
-            if ((knownMove.type === newMove.type) && (knownMove.power <= newMove.power) && (knownMove.accuracy <= (newMove.accuracy - 15))) {
-                weights[i] = 200;
-            } else {
-                if (knownMove.type === newMove.type) {
-                    weights[i] += 10;
-                }
-        
-                weights[i] += (newMove.pp - knownMove.pp);
-                weights[i] += (newMove.power - knownMove.power);
-                weights[i] += (2 * (newMove.accuracy - knownMove.accuracy));
-            }
-    
-            if (knownMove.type === newMove.type) {
-                weights[i] += 10;
-            }
-    
-            weights[i] += (newMove.pp - knownMove.pp);
-            weights[i] += (newMove.power - knownMove.power);
-            weights[i] += (2 * (newMove.accuracy - knownMove.accuracy));
         }
-    }
-
-    var max = Math.max(...weights);
-    var index = weights.indexOf(max);
-    moves[index] = {
-        name: move,
-        pp: newMove.pp
+        
+        await doQuery("UPDATE daycare SET last_move_replaced = ? WHERE daycare.pokemon = ?", [moveIndex, pokemon.pokemon_id]);
     }
 
     return new Promise(function(resolve) {
-        resolve(moves);
+        resolve(moveIndex);
     });
 }
 
@@ -5837,16 +5737,15 @@ async function teachNewMoveAI(pokemon, move) {
  * @todo Probably should have this function return the number of times the Pokemon leveled up.
  * 
  * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} pokemon The Pokemon to give XP to.
  * @param {number} amount The amount of exp. to give to the Pokemon.
  * 
- * @returns {boolean} True if no errors were encountered.
+ * @returns {number} The amount of levels gained.
  */
-async function giveXP(message, amount) {
+async function giveXP(message, pokemon, amount) {
     let levelsGained = 0;
 
     let user = await getUser(message.author.id);
-
-    let pokemon = await getLeadPokemon(message.author.id);
 
     let item = "None";
     if (pokemon.item != null) {
@@ -5883,7 +5782,7 @@ async function giveXP(message, amount) {
                 levelsGained++;
                 pokemon = await levelUp(message, pokemon, user, item);
                 xpToNextLevel = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
-                if (pokemon.item != "Everstone") {
+                if (pokemon.item != "Everstone" && pokemon.daycare === null) {
                     evolveTo = await checkEvolveUponLevelUp(user, pokemon);
                 }
             } else {
@@ -5925,9 +5824,6 @@ async function giveXP(message, amount) {
  */
 async function levelUp(message, pokemon, user, item) {
     if (pokemon.level_current < 100) {
-        /* Doesn't need to be awaited. */
-        message.react(pew.id);
-
         /**
          * Increment the Pokemon's level.
          */
@@ -5950,58 +5846,64 @@ async function levelUp(message, pokemon, user, item) {
         let spriteLink = generateSpriteLink(pokemon.name);
         let modelLink = generateModelLink(pokemon.name);
 
-        /**
-         * Embedded message showing the Pokemon's new level and stats, along with how much each stat increased.
-         */
-        let embed = {
-            "author": {
-                "name": pokemon.name,
-                "icon_url": spriteLink,
-            },
-            "title": "⬆️ Level Up",
-            "description": message.author.username + " your **" + pokemon.name + "** reached *Level " + pokemon.level_current + "*!",
-            "color": getTypeColor(pokemon.type_1),
-            "thumbnail": {
-                "url": "attachment://" + pokemon.name + ".gif"
-            },
-            "fields": [
-                {
-                    "name": "Stats",
-                    "value": "**HP:** " + statsAfterLevelingUp[0] + "*(+" + (statsAfterLevelingUp[0] - statsBeforeLevelingUp[0]) + ")*\n" +
-                            "**Attack:** " + statsAfterLevelingUp[1] + "*(+" + (statsAfterLevelingUp[1] - statsBeforeLevelingUp[1]) + ")*\n" +
-                            "**Defense:** " + statsAfterLevelingUp[2] + "*(+" + (statsAfterLevelingUp[2] - statsBeforeLevelingUp[2]) + ")*\n" +
-                            "**Sp. Attack:** " + statsAfterLevelingUp[3] + "*(+" + (statsAfterLevelingUp[3] - statsBeforeLevelingUp[3]) + ")*\n" +
-                            "**Sp. Defense:** " + statsAfterLevelingUp[4] + "*(+" + (statsAfterLevelingUp[4] - statsBeforeLevelingUp[4]) + ")*\n" +
-                            "**Speed:** " + statsAfterLevelingUp[5] + "*(+" + (statsAfterLevelingUp[5] - statsBeforeLevelingUp[5]) + ")*",
-                    "inline": true
-                }
-            ]
-        };
+        if (pokemon.daycare === null) {
+            /* Doesn't need to be awaited. */
+            message.react(pew.id);
 
-        await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }]);
+            /**
+             * Embedded message showing the Pokemon's new level and stats, along with how much each stat increased.
+             */
+            let embed = {
+                "author": {
+                    "name": pokemon.name,
+                    "icon_url": spriteLink,
+                },
+                "title": "⬆️ Level Up",
+                "description": message.author.username + " your **" + pokemon.name + "** reached *Level " + pokemon.level_current + "*!",
+                "color": getTypeColor(pokemon.type_1),
+                "thumbnail": {
+                    "url": "attachment://" + pokemon.name + ".gif"
+                },
+                "fields": [
+                    {
+                        "name": "Stats",
+                        "value": "**HP:** " + statsAfterLevelingUp[0] + "*(+" + (statsAfterLevelingUp[0] - statsBeforeLevelingUp[0]) + ")*\n" +
+                                "**Attack:** " + statsAfterLevelingUp[1] + "*(+" + (statsAfterLevelingUp[1] - statsBeforeLevelingUp[1]) + ")*\n" +
+                                "**Defense:** " + statsAfterLevelingUp[2] + "*(+" + (statsAfterLevelingUp[2] - statsBeforeLevelingUp[2]) + ")*\n" +
+                                "**Sp. Attack:** " + statsAfterLevelingUp[3] + "*(+" + (statsAfterLevelingUp[3] - statsBeforeLevelingUp[3]) + ")*\n" +
+                                "**Sp. Defense:** " + statsAfterLevelingUp[4] + "*(+" + (statsAfterLevelingUp[4] - statsBeforeLevelingUp[4]) + ")*\n" +
+                                "**Speed:** " + statsAfterLevelingUp[5] + "*(+" + (statsAfterLevelingUp[5] - statsBeforeLevelingUp[5]) + ")*",
+                        "inline": true
+                    }
+                ]
+            };
 
-        /**
-         * Increase the Pokemon's friendship.
-         */
-        let friend = 5;
-        if (pokemon.friendship >= 100 && pokemon.friendship < 200) {
-            friend = 4;
-        } else if (pokemon.friendship >= 200) {
-            friend = 3;
+            await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }]);
+
+            /**
+             * Increase the Pokemon's friendship.
+             */
+            let friend = 5;
+            if (pokemon.friendship >= 100 && pokemon.friendship < 200) {
+                friend = 4;
+            } else if (pokemon.friendship >= 200) {
+                friend = 3;
+            }
+            if (pokemon.ball === "Luxury Ball") {
+                friend = friend * 2;
+            }
+            
+            if (item.name === "Soothe Bell") {
+                friend = friend * 1.5;
+            }
+            
+            if ((pokemon.friendship + friend) > 255) {
+                pokemon.friendship = 255;
+            } else {
+                pokemon.friendship += friend;
+            }
         }
-        if (pokemon.ball === "Luxury Ball") {
-            friend = friend * 2;
-        }
-        
-        if (item.name === "Soothe Bell") {
-            friend = friend * 1.5;
-        }
-        
-        if ((pokemon.friendship + friend) > 255) {
-            pokemon.friendship = 255;
-        } else {
-            pokemon.friendship += friend;
-        }
+
         
         /**
          * Increase the user's level.
@@ -6028,111 +5930,16 @@ async function levelUp(message, pokemon, user, item) {
 /**
  * Gives experience to all Pokemon owned by a user that are in the Day Care.
  * 
- * @todo This function is currently mega broken, will fix later.
- * 
  * @param {Message} message The Discord message sent from the user.
- * 
- * @returns {boolean} True if no errors were encountered.
  */
 async function giveDayCareXP(message) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
+    let daycarePokemon = await getDaycare(message.author.id);
+    if (daycarePokemon != null) {
+        for (let pkmn in daycarePokemon) {
+            let levels = await giveXP(message, daycarePokemon[pkmn], 15);
+            await doQuery("UPDATE daycare SET daycare.levels_gained = ? WHERE daycare.pokemon = ?", [(levels + pokemon.levels_gained), daycarePokemon[pkmn].pokemon]);
+        }
     }
-    
-    var pokemon = await getDaycare(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    var item = "None";
-    var i;
-    for (i = 0; i < pokemon.length; i++) {
-        if (pokemon[i].item != "None" && pokemon[i].item != null) {
-            item = await getItem(pokemon[i].item);
-            if (item === null) {
-                item = pokemon[i].item;
-            } else {
-                item = item.name;
-            }
-        }
-
-        if (pokemon[i].level_current === 100) {
-            return false;
-        }
-        
-        var amount = Math.floor(Math.random() * 30);
-        amount += Math.floor(Math.random() * 30);
-        amount += Math.floor(Math.random() * 30);
-        var givenXP = Math.floor(((pokemon[i].level_current / 10) + 1).toFixed(1) * amount);
-        
-        if (item.name === "Lucky Egg") {
-            givenXP += Math.floor(givenXP * 1.5);
-        }
-        
-        pokemon[i].xp += givenXP;
-        var done = false;
-        var evolveTo = null;
-        while (done === false) {
-            var next = getXpToNextLevel(pokemon[i].name, pokemon[i].xp, pokemon[i].level_current);
-            if (next != null && next <= 0) {
-                if(pokemon[i].level_current >= user.level) {
-                    var query = "UPDATE user SET user.level = ? WHERE user.user_id = ?";
-                    con.query(query, [pokemon[i].level_current, message.author.id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                }
-                
-                var moves = [
-                    {
-                        name: pokemon[i].move_1,
-                        pp: pokemon[i].move_1_pp
-                    },
-                    {
-                        name: pokemon[i].move_2,
-                        pp: pokemon[i].move_2_pp
-                    },
-                    {
-                        name: pokemon[i].move_3,
-                        pp: pokemon[i].move_3_pp
-                    },
-                    {
-                        name: pokemon[i].move_4,
-                        pp: pokemon[i].move_4_pp
-                    }
-                ]
-                let levelMoves = await checkForMoveAtLevel(pokemon[i]);
-                next = getXpToNextLevel(pokemon[i].name, pokemon[i].xp, pokemon[i].level_current);
-                pokemon[i].move_1 = moves[0].name;
-                pokemon[i].move_1_pp = moves[0].pp;
-                pokemon[i].move_2 = moves[1].name;
-                pokemon[i].move_2_pp = moves[1].pp;
-                pokemon[i].move_3 = moves[2].name;
-                pokemon[i].move_3_pp = moves[2].pp;
-                pokemon[i].move_4 = moves[3].name;
-                pokemon[i].move_4_pp = moves[3].pp;
-            } else {
-                done = true;
-            }
-        }
-
-        var query = "UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?";
-        con.query(query, [pokemon[i], pokemon[i].pokemon_id], function (err) {
-            if (err) {
-                console.log(err);
-                return false;
-            }
-        });
-    }
-    return new Promise(function(resolve) {
-        resolve(true);
-    });
 }
 
 /**
@@ -6585,133 +6392,171 @@ async function setLeadPokemon(message, name) {
  * @returns {boolean} True if no errors are encountered.
  */
 async function dayCare(message) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    if (user.region === "Kanto") {
-        if (user.location != "Route 5" && user.location != "Four Island") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 5 or Four Island in the Kanto region. " + duck);
-            return true;
-        }
-    } else  if (user.region === "Johto") {
-        if (user.location != "Route 34") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 34 in the Johto region. " + duck);
-            return true;
-        }
-    } else  if (user.region === "Hoenn") {
-        if (user.location != "Route 117" && user.location != "Battle Resort") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 117 or the Battle Resort in the Hoenn region. " + duck);
-            return true;
-        }
-    } else  if (user.region === "Sinnoh") {
-        if (user.location != "Solaceon Town") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Solaceon Town in the Sinnoh region. " + duck);
-            return true;
-        }
-    } else  if (user.region === "Unova") {
-        if (user.location != "Route 3") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 3 in the Unova region. " + duck);
-            return true;
-        }
-    } else  if (user.region === "Kalos") {
-        if (user.location != "Route 7 (Rivière Walk)") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Route 7 (Rivière Walk) in the Kalos region. " + duck);
-            return true;
-        }
-    } else  if (user.region === "Alola") {
-        if (user.location != "Paniola Ranch") {
-            message.channel.send(message.author.username + " there is no Day Care here. You may find one at Paniola Ranch in the Alola region. " + duck);
-            return true;
-        }
-    }
-
-    var string = "What would you like to do?\n```1. View Pokémon\n2. Drop off a Pokémon\n3. Pick up a Pokémon\n4. Leave the Day Care``` Type the number of the option as shown in the list.";
-    await message.channel.send("Hello " + message.author.username + ", welcome to the Pokémon Day Care! " + string);
-    let visitingDaycare = true;
-    while (visitingDaycare) {
-        string = "\n```1. View Pokémon\n2. Drop off a Pokémon\n3. Pick up a Pokémon\n4. Leave the Day Care``` Type the number of the option as shown in the list.";
-        var input = null;
-        var cancel = false;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                input = 4;
-                cancel = true;
-            });
-            if (input === "cancel") {
-                cancel = true;
-                input = null;
-            } else if (/^\d+$/.test(input)) {
-                var num = Number(input);
-                if (num > 0 && num <= 4) {
-                    cancel = true;
-                    input = (num - 1);
-                } else {
-                    message.channel.send("Number is out of range. " + string);
-                    input = null;
-                }
-            } else if (input != null) {
-                message.channel.send("Command not recognized. " + string);
-                input = null;
-            } else {
-                input = null;
+    /**
+     * Check if user is in a location where there is a Day Care.
+     */
+    let user = await getUser(message.author.id);
+    if (user != null) {
+        let userIsInDayCareLocation = true;
+        if (user.region === "Kanto") {
+            if (user.location != "Route 5" && user.location != "Four Island") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Route 5** or **Four Island** in the **Kanto** region."));
+                userIsInDayCareLocation = false;
+            }
+        } else  if (user.region === "Johto") {
+            if (user.location != "Route 34") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Route 34** in the **Johto** region."));
+                userIsInDayCareLocation = false;
+            }
+        } else  if (user.region === "Hoenn") {
+            if (user.location != "Route 117" && user.location != "Battle Resort") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Route 117** or the **Battle Resort** in the Hoenn region."));
+                userIsInDayCareLocation = false;
+            }
+        } else  if (user.region === "Sinnoh") {
+            if (user.location != "Solaceon Town") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Solaceon Town** in the **Sinnoh** region."));
+                userIsInDayCareLocation = false;
+            }
+        } else  if (user.region === "Unova") {
+            if (user.location != "Route 3") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Route 3** in the **Unova** region."));
+                userIsInDayCareLocation = false;
+            }
+        } else  if (user.region === "Kalos") {
+            if (user.location != "Route 7 (Rivière Walk)") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Route 7 (Rivière Walk)** in the **Kalos** region."));
+                userIsInDayCareLocation = false;
+            }
+        } else  if (user.region === "Alola") {
+            if (user.location != "Paniola Ranch") {
+                await sendMessage(message.channel, (message.author.username + " there is no Day Care here. You may find one at **Paniola Ranch** in the **Alola** region."));
+                userIsInDayCareLocation = false;
             }
         }
 
-        if (input == 0) {
-            await viewDayCare(message);
-            await message.channel.send(message.author.username + " is there anything else you would like to do? " + string);
-        } else if (input == 1) {
-            var daycarePokemon = await getDaycare(message.author.id);
-            if (daycarePokemon === null) {
-                return new Promise(function(resolve) {
-                    resolve(false);
-                });
-            }
-            if (daycarePokemon.length >= 2) {
-                await message.channel.send(message.author.username + " you cannot have more than two Pokémon at the Day Care. You must pick up one of your Pokémon before you can drop off another. " + duck);
-            } else {
-                printPokemon(message, null);
+        if (userIsInDayCareLocation) {
+            const DROP_OFF = 1;
+            const PICK_UP = 2;
+            const VIEW = 3;
+            const LEAVE = 0;
 
-                var prompt = "Please enter the name or nickname of the Pokémon you want to drop off, or type \"Cancel\" to exit the Day Care.";
-                await message.channel.send(prompt);
-                cancel = false;
-                var name = null;
-                while(cancel == false) {
-                    await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 60000, errors: ['time'] })
-                    .then(collected => {
-                        name = collected.first().content.toString().toLowerCase();
-                    })
-                    .catch(collected => {
-                        name = "cancel";
-                        cancel = true;
-                    });
+            let dayCareSelection = LEAVE;
+            let visitingDaycare = true;
+
+            /**
+             * Allow user to do things at the Day Care until the user either times out or decides to leave.
+             */
+            while (visitingDaycare) {
+                let fields = [];
+                let allowedEmotes = [];
+
+                /**
+                 * Only allow user to select a choice that does something.
+                 */
+                let daycarePokemon = await getDaycare(message.author.id);
+                if (daycarePokemon != null) {
+                    /**
+                     * If user isn't at the limit of two Pokemon in the Day Care.
+                     */
+                    if (daycarePokemon.length < 2) {
+                        fields[fields.length] = {
+                            "name": "📥 Drop Off",
+                            "value": "Drop off a Pokémon at the Day Care. It will passively earn experience and the Day Care will automatically teach it new moves that it learns as it levels up. Your Pokémon will be unable to evolve, however.",
+                            "inline": false
+                        }
+                        allowedEmotes[allowedEmotes.length] = '📥';
+                    }
                     
-                    if (name === "cancel") {
-                        cancel = true;
-                    } else if (name != null) {
-                        await placeInDaycare(message, name);
-                        cancel = true;
-                    } else {
-                        name = null;
+                    /**
+                     * If user has any Pokemon in the Day Care.
+                     */
+                    if (daycarePokemon.length > 0) {
+                        fields[fields.length] = {
+                            "name": "📤 Pick Up",
+                            "value": "Pick up a Pokémon from the Day Care. There is a base cost of " + dollar + "100 to pick up a Pokémon, plus an additional " + dollar + "100 for each level it gained.",
+                            "inline": false
+                        }
+                        fields[fields.length] = {
+                            "name": "ℹ View Pokémon",
+                            "value": "View your Pokémon that are currently in the Day Care.",
+                            "inline": false
+                        }
+                        allowedEmotes[allowedEmotes.length] = '📤';
+                        allowedEmotes[allowedEmotes.length] = 'ℹ';
                     }
                 }
+
+                /**
+                 * User will always be able to leave Day Care regardless of how many Pokemon they have in it.
+                 */
+                fields[fields.length] = {
+                    "name": "❌ Leave",
+                    "value": "Leave the Day Care.",
+                    "inline": false
+                }
+                allowedEmotes[allowedEmotes.length] = '❌';
+
+                /**
+                 * Send a message showing the Day Care choices to the user.
+                 */
+                let embed = {
+                    "author": {
+                        "name": "Day Care"
+                    },
+                    "title": "Welcome to the Day Care!",
+                    "description": message.author.username + " please react using the emote corresponding to the choices below to make a decision.",
+                    "fields": fields
+                };
+                let dayCareMessage = await sendMessage(message.channel, {embed}, true);
+
+                for (let emote in allowedEmotes) {
+                    await dayCareMessage.react(allowedEmotes[emote]);
+                }
+
+                const filter = (reaction, user) => {
+                    return allowedEmotes.includes(reaction.emoji.name) && user.id === message.author.id;
+                };
+                
+                /**
+                 * User selects a choice by reacting to the message.
+                 */
+                await dayCareMessage.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                .then(collected => {
+                    const reaction = collected.first();
+
+                    if (reaction.emoji.name === '📥') {
+                        dayCareSelection = DROP_OFF;
+                    } else if (reaction.emoji.name === '📤') {
+                        dayCareSelection = PICK_UP;
+                    } else if (reaction.emoji.name === 'ℹ') {
+                        dayCareSelection = VIEW;
+                    } else if (reaction.emoji.name === '❌') {
+                        dayCareSelection = LEAVE;
+                    }
+                })
+
+                dayCareMessage.clearReactions();
+                dayCareMessage.delete(0);
+        
+                if (dayCareSelection === VIEW) {
+                    await viewDayCare(message);
+                } else if (dayCareSelection === DROP_OFF) {
+                    let pokemon = await getPokemon(message.author.id);
+                    let description = message.author.username + " please enter the name or nickname of the Pokémon you want to drop off, or type `Cancel` to exit the Day Care.";
+                    let selectedPokemon = await selectOwnedPokemon(message, user, pokemon, description);
+                    if (selectedPokemon != null) {
+                        await placeInDaycare(message, selectedPokemon);
+                    }
+                } else if (dayCareSelection === PICK_UP) {
+                    await pickUpFromDayCare(message);
+                } else if (dayCareSelection === LEAVE) {
+                    visitingDaycare = false;
+                }
             }
-            await message.channel.send(message.author.username + " is there anything else you would like to do? " + string);
-        } else if (input == 2) {
-            await pickUpFromDayCare(message);
-            await message.channel.send(message.author.username + " is there anything else you would like to do? " + string);
-        } else if (input == 3 || input == null) {
-            await message.channel.send(message.author.username + " left the Day Care.");
-            visitingDaycare = false;
-        }
+
+            await sendMessage(message.channel, (message.author.username + " left the Day Care."));
+        }  
     }
 
     return new Promise(function(resolve) {
@@ -6818,7 +6663,7 @@ async function pickUpFromDayCare(message) {
                 await message.channel.send("Would you like to pick up your other Pokémon as well? It will cost you " + dollar + cost + ". Type \"Yes\" or \"No\".");
                 cancel = false;
                 input = null;
-                while(cancel == false) {
+                while (cancel == false) {
                     await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
                     .then(collected => {
                         input = collected.first().content.toString().toLowerCase();
@@ -9485,12 +9330,12 @@ async function printPossibleEncounters(message) {
             .catch(() => {
                 if (!didReact) {
                     reacting = false;
-                    msg.clearReactions();
                 } else {
                     didReact = false;
                 }
             });
     }
+    msg.clearReactions();
     return true;
 }
 
@@ -10322,51 +10167,53 @@ async function printPokemon(message, otherUser = undefined, pokemon = undefined,
             };
 
             await msg.awaitReactions(filter, { max: 1, time: 20000, errors: ['time'] })
-                .then(collected => {
-                    const reaction = collected.first();
+            .then(collected => {
+                const reaction = collected.first();
 
-                    if (reaction.emoji.name === '◀') {
-                        reaction.remove(userID);
-                        if (fieldCount === 0) {
-                            fieldCount = 0;
-                        } else {
-                            fieldCount--;
-                        }
-                        embed = {
-                            "author": {
-                                "name": message.author.username + "'s Pokémon"
-                            },
-                            "fields": [fields[fieldCount]]
-                        };
-                        msg.edit({embed});
-                        didReact = true;
-                    } else if (reaction.emoji.name === '▶') {
-                        reaction.remove(userID);
-                        if (fieldCount >= (fields.length - 1)) {
-                            fieldCount = fields.length - 1;
-                        } else {
-                            fieldCount++;
-                        }
-                        embed = {
-                            "author": {
-                                "name": message.author.username + "'s Pokémon"
-                            },
-                            "fields": [fields[fieldCount]]
-                        };
-                        msg.edit({embed});
-                        didReact = true;
-                    }
-                
-                })
-                .catch(collected => {
-                    if (!didReact) {
-                        reacting = false;
-                        msg.clearReactions();
+                if (reaction.emoji.name === '◀') {
+                    reaction.remove(userID);
+                    if (fieldCount === 0) {
+                        fieldCount = 0;
                     } else {
-                        didReact = false;
+                        fieldCount--;
                     }
-                });
+                    embed = {
+                        "author": {
+                            "name": message.author.username + "'s Pokémon"
+                        },
+                        "fields": [fields[fieldCount]]
+                    };
+                    msg.edit({embed});
+                    didReact = true;
+                } else if (reaction.emoji.name === '▶') {
+                    reaction.remove(userID);
+                    if (fieldCount >= (fields.length - 1)) {
+                        fieldCount = fields.length - 1;
+                    } else {
+                        fieldCount++;
+                    }
+                    embed = {
+                        "author": {
+                            "name": message.author.username + "'s Pokémon"
+                        },
+                        "fields": [fields[fieldCount]]
+                    };
+                    msg.edit({embed});
+                    didReact = true;
+                }
+            
+            })
+            .catch(collected => {
+                if (!didReact) {
+                    reacting = false;
+                    msg.clearReactions();
+                } else {
+                    didReact = false;
+                }
+            });
         }
+
+        msg.clearReactions();
     }
     return true;
 }
