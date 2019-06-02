@@ -4666,6 +4666,8 @@ async function tradeOffer(message, tradeTo) {
  * 
  * @param {string} name The name to search for.
  * @param {Pokemon[]} pokemon The list of Pokemon to search from.
+ * 
+ * @returns {Pokemon[]} All Pokemon from the list that match the name query.
  */
 function getAllOwnedPokemonWithName(name, pokemon) {
     let ownedPokemonIndex;
@@ -4688,6 +4690,19 @@ function getAllOwnedPokemonWithName(name, pokemon) {
     return matchedPokemon;
 }
 
+/**
+ * Shows a numbered list of Pokemon to the user with matching names/nicknames
+ * and lets the user select one of the Pokemon based on its list number.
+ * 
+ * @todo Username arguments isn't 100% necessary but it saves a function call so might be worth to keep it.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {User} user The Pokebot user who is selecting the Pokemon.
+ * @param {string} username The name of the Pokebot user who is selecting the Pokemon.
+ * @param {Pokemon[]} pokemon The list of Pokemon to select from.
+ * 
+ * @returns {Pokemon[]} All Pokemon from the list that match the name query.
+ */
 async function selectDuplicatePokemon(message, user, username, pokemon) {
     let selectedPokemon = null;
 
@@ -10202,15 +10217,16 @@ async function printAbilityInfo(channel, name, description) {
  * 
  * @param {Message} message The Discord message sent from the user to print the Pokemon for.
  * @param {string} otherUser An optional overwrite to print Pokemon for a different user.
- * @param {Pokemon[]} pokemon An optioanl confined list of Pokemon to print instead of all Pokemon owned by a user.
+ * @param {Pokemon[]} pokemon An optional confined list of Pokemon to print instead of all Pokemon owned by a user.
+ * @param {string} description An optional descriptive message that tells the user why their Pokemon are being shown to them.
  * 
  * @returns {boolean} True if no errors are encountered.
  */
-async function printPokemon(message, otherUser, pokemon = undefined, description = undefined) {
+async function printPokemon(message, otherUser = undefined, pokemon = undefined, description = undefined) {
     var userID = message.author.id;
     let enableNumbering = true;
     
-    if (otherUser != null) {
+    if (otherUser != undefined) {
         userID = otherUser;
         username = otherUser.username;
     }
