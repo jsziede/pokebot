@@ -1399,7 +1399,7 @@ async function runSetLeadCommand(message, input) {
         if (await printTransactionIfTrue(message, " before trying to change your lead Pokémon.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current leader assignment");
             input = input.join(' ');
-            if (await setActivePokemon(message, input) === false) {
+            if (await setLeadPokemon(message, input) === false) {
                 commandStatus = await sendMessage(message.channel, (message.author.username + " failed to change their lead Pokémon."));
             }
             removeTransaction(message.author.id);
@@ -4496,7 +4496,8 @@ async function tradeOffer(message, tradeTo) {
                 /**
                  * Prompt the sender to select which of their Pokemon they want to trade.
                  */
-                selectedPokemon = await selectOwnedPokemon(message, user, message.author.username, pokemon);
+                let desc = message.author.username + " please select a Pokémon to trade by typing its name, or type `Cancel` to cancel the trade."
+                selectedPokemon = await selectOwnedPokemon(message, user, pokemon, desc);
                 if (selectedPokemon != null) {
                     await sendMessage(message.channel, (message.author.username + " selected a " + selectedPokemon.name + " to trade."));
                 
@@ -4514,7 +4515,8 @@ async function tradeOffer(message, tradeTo) {
                         /**
                          * Prompt the receiver to select which of their Pokemon they want to trade.
                          */
-                        tselectedPokemon = await selectOwnedPokemon(message, tuser, tradeTo.username, tpokemon);
+                        desc = tradeTo.username + " please select a Pokémon to trade by typing its name, or type `Cancel` to cancel the trade."
+                        tselectedPokemon = await selectOwnedPokemon(message, tuser, tpokemon, desc);
 
                         if (tselectedPokemon != null) {
                             await sendMessage(message.channel, (tradeTo.username + " selected a " + tselectedPokemon.name + " to trade."));
@@ -4660,6 +4662,82 @@ async function tradeOffer(message, tradeTo) {
 }
 
 /**
+ * Gets all Pokemon whose name or nickname match the `name` argument.
+ * 
+ * @param {string} name The name to search for.
+ * @param {Pokemon[]} pokemon The list of Pokemon to search from.
+ */
+function getAllOwnedPokemonWithName(name, pokemon) {
+    let ownedPokemonIndex;
+    let matchedPokemon = [];
+
+    for (ownedPokemonIndex = 0; ownedPokemonIndex < pokemon.length; ownedPokemonIndex++) {
+        if (
+            name === pokemon[ownedPokemonIndex].name.toLowerCase()
+            ||
+            (
+                pokemon[ownedPokemonIndex].nickname != null
+                &&
+                name === pokemon[ownedPokemonIndex].nickname.toLowerCase()
+            )
+        ) {
+            matchedPokemon[matchedPokemon.length] = pokemon[ownedPokemonIndex];
+        }
+    }
+
+    return matchedPokemon;
+}
+
+async function selectDuplicatePokemon(message, user, username, pokemon) {
+    let selectedPokemon = null;
+
+    let description = username + " you have multiple " + pokemon[0].name + " . Please select one by typing its number as shown in the list, or type `Cancel` to cancel selecting a Pokémon.";
+    
+    printPokemon(message, user.user_id, pokemon, description);
+
+    let cancel = false;
+    let input = null;
+    while(cancel == false) {
+        await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
+        .then(collected => {
+            input = collected.first().content.toString().toLowerCase();
+        })
+        .catch(collected => {
+            console.log(collected);
+            input = "cancel";
+            cancel = true;
+        });
+
+        if (input === "cancel") {
+            cancel = true;
+            input = null;
+        } else if (/^\d+$/.test(input)) {
+            let num = Number(input);
+            if (num > 0 && num <= pokemon.length) {
+                cancel = true;
+                input = (num - 1);
+            } else {
+                await sendMessage(message.channel, ("Number is out of range. " + string));
+                input = -1;
+            }
+        } else if (input != null) {
+            await sendMessage(message.channel, ("Response not recognized. " + string));
+            input = -1;
+        } else {
+            input = null;
+        }
+    }
+
+    if (input != null) {
+        selectedPokemon = pokemon[input];
+    }
+
+    return new Promise(function(resolve) {
+        resolve(selectedPokemon);
+    });
+}
+
+/**
  * Prompts a user to select one Pokemon that the user owns.
  * If a user responds with a Pokemon that they own multiple of,
  * then the user is again prompted to select one from that group.
@@ -4667,19 +4745,21 @@ async function tradeOffer(message, tradeTo) {
  * @param {Message} message The message sent from the user.
  * @param {User} user The Pokebot user who is selecting a Pokemon.
  * @param {Pokemon[]} pokemon All Pokemon currently owned by the user.
+ * @param {string} description Descriptive text that tells the user why they are selecting a Pokemon.
  * 
  * @returns {Pokemon} The one Pokemon selected by the user, or null if the user
  * did not select a Pokeon.
  */
-async function selectOwnedPokemon(message, user, username, pokemon) {
-    let matchedPokemon = [];
+async function selectOwnedPokemon(message, user, pokemon, description) {
+    let username = await client.fetchUser(user.user_id).then(myUser => {
+        return myUser.username;
+    });
+
     let userIsSelectingAPokemon = true;
     let selectedPokemon = null;
 
-    printPokemon(message, user.user_id);
-
     while (userIsSelectingAPokemon) {
-        await sendMessage(message.channel, (username + " please enter the name of the Pokémon you want to trade."));
+        printPokemon(message, user.user_id, pokemon, description);
 
         let name = null;
         let cancel = false;
@@ -4688,41 +4768,20 @@ async function selectOwnedPokemon(message, user, username, pokemon) {
             await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
             .then(collected => {
                 name = collected.first().content.toString().toLowerCase();
+                cancel = true;
             })
-            .catch(collected => {
-                console.error(collected);
+            .catch(() => {
                 name = "cancel";
                 cancel = true;
             });
 
             if (name === "cancel") {
-                cancel = true;
-                name = null;
-            } else if (name != null) {
-                cancel = true;
-            } else {
                 name = null;
             }
         }
         
         if (name != null) {
-            /**
-             * Gets all Pokemon whose name or nickname match the user's input.
-             */
-            let ownedPokemonIndex;
-            for (ownedPokemonIndex = 0; ownedPokemonIndex < pokemon.length; ownedPokemonIndex++) {
-                if (
-                    name === pokemon[ownedPokemonIndex].name.toLowerCase()
-                    ||
-                    (
-                        pokemon[ownedPokemonIndex].nickname != null
-                        &&
-                        name === pokemon[ownedPokemonIndex].nickname.toLowerCase()
-                    )
-                ) {
-                    matchedPokemon[matchedPokemon.length] = pokemon[ownedPokemonIndex];
-                }
-            }
+            let matchedPokemon = getAllOwnedPokemonWithName(name, pokemon);
     
             if (matchedPokemon.length <= 0) {
                 await sendMessage(message.channel, (username + " you do not have that Pokémon."));
@@ -4730,49 +4789,11 @@ async function selectOwnedPokemon(message, user, username, pokemon) {
                 selectedPokemon = matchedPokemon[0];
                 userIsSelectingAPokemon = false;
             } else if (matchedPokemon.length > 1) {
-                printPokemon(message, user.user_id, matchedPokemon);
-                let string = username + " you have multiple " + matchedPokemon[0].name + " . Please select which one you would like to trade by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.";
-    
-                await sendMessage(message.channel, (string));
-    
-                cancel = false;
-                let input = null;
-                while(cancel == false) {
-                    await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
-                    .then(collected => {
-                        input = collected.first().content.toString().toLowerCase();
-                    })
-                    .catch(collected => {
-                        console.log(collected);
-                        input = "cancel";
-                        cancel = true;
-                    });
-    
-                    if (input === "cancel") {
-                        cancel = true;
-                        input = null;
-                    } else if (/^\d+$/.test(input)) {
-                        let num = Number(input);
-                        if (num > 0 && num <= matchedPokemon.length) {
-                            cancel = true;
-                            input = (num - 1);
-                        } else {
-                            await sendMessage(message.channel, ("Number is out of range. " + string));
-                            input = -1;
-                        }
-                    } else if (input != null) {
-                        await sendMessage(message.channel, ("Response not recognized. " + string));
-                        input = -1;
-                    } else {
-                        input = null;
-                    }
-                }
-    
-                if (input != null) {
-                    selectedPokemon = matchedPokemon[input];
-                    userIsSelectingAPokemon = false;
-                }
+                selectedPokemon = await selectDuplicatePokemon(message, user, username, matchedPokemon);
+                userIsSelectingAPokemon = false;
             }
+        } else {
+            userIsSelectingAPokemon = false;
         }
     }
 
@@ -5429,42 +5450,36 @@ async function checkEvolveUponLevelUp(user, pokemon) {
  * 
  * @todo Raise level before calling function.
  * 
- * @param {Pokemon} Pokemon The Pokemon to update stats for.
+ * @param {string} name The name of the Pokemon to update stats for.
+ * @param {string} form The form that the Pokemon is in.
+ * @param {number[]} EVs A list of the Pokemon's six effort values.
+ * @param {number[]} IVs A list of the Pokemon's six individual values.
+ * @param {number} level The current level of the Pokemon.
+ * @param {string} nature The nature of the Pokemon. 
  * 
  * @returns {number[]} The Pokemon's stats after applying
  * all the Pokemon's current stat modifiers.
  */
-function updateStats(pokemon) {
-    let pkmn = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
+function updateStats(name, form, EVs, IVs, level, nature) {
+    let pkmn = parseJSON(generatePokemonJSONPath(name, form));
     
-    /**
-     * Convert modifiers into lists.
-     */
-    let stats = [pokemon.stat_hp, pokemon.stat_atk, pokemon.stat_def, pokemon.stat_spatk, pokemon.stat_spdef, pokemon.stat_spd];
-    let EVs = [pokemon.ev_hp, pokemon.ev_atk, pokemon.ev_def, pokemon.ev_spatk, pokemon.ev_spdef, pokemon.ev_spd];
-    let IVs = [pokemon.iv_hp, pokemon.iv_atk, pokemon.iv_def, pokemon.iv_spatk, pokemon.iv_spdef, pokemon.iv_spd];
     let baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
     
+    let stats = [0,0,0,0,0,0];
+
     /**
      * Shedinja should never have an HP value that isn't 1.
      */
-    if (pokemon.name === "Shedinja") {
+    if (name === "Shedinja") {
         stats[0] = 1;
     } else {
-        stats[0] = calculateStatAtLevel(pokemon.level_current, baseStats[0], IVs[0], EVs[0], pokemon.nature, "hp");
+        stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
     }
-    stats[1] = calculateStatAtLevel(pokemon.level_current, baseStats[1], IVs[1], EVs[1], pokemon.nature, "atk");
-    stats[2] = calculateStatAtLevel(pokemon.level_current, baseStats[2], IVs[2], EVs[2], pokemon.nature, "def");
-    stats[3] = calculateStatAtLevel(pokemon.level_current, baseStats[3], IVs[3], EVs[3], pokemon.nature, "sp_atk");
-    stats[4] = calculateStatAtLevel(pokemon.level_current, baseStats[4], IVs[4], EVs[4], pokemon.nature, "sp_def");
-    stats[5] = calculateStatAtLevel(pokemon.level_current, baseStats[5], IVs[5], EVs[5], pokemon.nature, "speed");
-    
-    pokemon.stat_hp = stats[0];
-    pokemon.stat_atk = stats[1];
-    pokemon.stat_def = stats[2];
-    pokemon.stat_spatk = stats[3]
-    pokemon.stat_spdef = stats[4]
-    pokemon.stat_spd = stats[5];
+    stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
+    stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
+    stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
+    stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
+    stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
     
     return stats;
 }
@@ -5906,8 +5921,10 @@ async function levelUp(message, pokemon, user, item) {
         /**
          * Update the Pokemon's stats.
          */
+        let EVs = [pokemon.ev_hp, pokemon.ev_atk, pokemon.ev_def, pokemon.ev_spatk, pokemon.ev_spdef, pokemon.ev_spd];
+        let IVs = [pokemon.iv_hp, pokemon.iv_atk, pokemon.iv_def, pokemon.iv_spatk, pokemon.iv_spdef, pokemon.iv_spd];
         let statsBeforeLevelingUp = [pokemon.stat_hp, pokemon.stat_atk, pokemon.stat_def, pokemon.stat_spatk, pokemon.stat_spdef, pokemon.stat_spd];
-        let statsAfterLevelingUp = updateStats(pokemon);
+        let statsAfterLevelingUp = updateStats(pokemon.name, pokemon.form, EVs, IVs, pokemon.level_current, pokemon.nature);
         pokemon.stat_hp = statsAfterLevelingUp[0];
         pokemon.stat_atk = statsAfterLevelingUp[1];
         pokemon.stat_def = statsAfterLevelingUp[2];
@@ -5926,7 +5943,7 @@ async function levelUp(message, pokemon, user, item) {
                 "name": pokemon.name,
                 "icon_url": spriteLink,
             },
-            "title": "Level Up ️⬆️",
+            "title": "⬆️ Level Up",
             "description": message.author.username + " your **" + pokemon.name + "** reached *Level " + pokemon.level_current + "*!",
             "color": getTypeColor(pokemon.type_1),
             "thumbnail": {
@@ -6348,7 +6365,7 @@ async function generatePokemonByName(message, name, level, region, location, hid
      */
     let gender;
     if (pkmn.gender_ratios === null) {
-        gender = "None";
+        gender = null;
     } else if (!pkmn.gender_ratios.hasOwnProperty('male')) {
                gender = "Female";
     } else if (!pkmn.gender_ratios.hasOwnProperty('female')) {
@@ -6382,22 +6399,8 @@ async function generatePokemonByName(message, name, level, region, location, hid
     
     /**
      * Determine the Pokemon's stats based on its base stats, level, IVs, EVs, and nature.
-     * 
-     * @todo Change this so it uses the updateStats() function.
      */
-    let baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
-    let stats = [0,0,0,0,0,0];
-
-    stats[0] = calculateStatAtLevel(level, baseStats[0], IVs[0], EVs[0], nature, "hp");
-    stats[1] = calculateStatAtLevel(level, baseStats[1], IVs[1], EVs[1], nature, "atk");
-    stats[2] = calculateStatAtLevel(level, baseStats[2], IVs[2], EVs[2], nature, "def");
-    stats[3] = calculateStatAtLevel(level, baseStats[3], IVs[3], EVs[3], nature, "sp_atk");
-    stats[4] = calculateStatAtLevel(level, baseStats[4], IVs[4], EVs[4], nature, "sp_def");
-    stats[5] = calculateStatAtLevel(level, baseStats[5], IVs[5], EVs[5], nature, "speed");
-
-    if (name === "Shedinja") {
-        stats[0] = 1;
-    }
+    let stats = updateStats(name, form, EVs, IVs, level, nature);
     
     /**
      * Randomly determine if the Pokemon is shiny.
@@ -6458,181 +6461,104 @@ async function generatePokemonByName(message, name, level, region, location, hid
  * 
  * @returns {boolean} True if no errors are encountered.
  */
-async function setActivePokemon(message, name) {
+async function setLeadPokemon(message, name) {
     name = name.toLowerCase();
     
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var pokemon = await getPokemon(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
+    let user = await getUser(message.author.id);
+    let pokemon = await getPokemon(message.author.id);
+    let lead = await getLeadPokemon(message.author.id);
 
-    var lead = await getLeadPokemon(message.author.id);
-    if (lead === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    var matchedIndexes = [];
-    var onlyOptionIsLead = false;
-    
-    function pkmnObj(pkmn, index) {
-        this.pkmn = pkmn;
-        this.index = index;
-    }
+    let wereNoErrorsEncountered = true;
 
-    var i;
-    var ind = 0;
-    for (i = 0; i < pokemon.length; i++) {
-        if (name === pokemon[i].name.toLowerCase() || (pokemon[i].nickname != null && name === pokemon[i].nickname.toLowerCase())) {
-            name = pokemon[i].name.toLowerCase();
-            if (pokemon[i].lead === 1) {
-                onlyOptionIsLead = true;
-                ind = i;
-            } else {
-                matchedIndexes[matchedIndexes.length] = new pkmnObj(pokemon[i], i);
-            }
+    let selectedPokemon = null;
+
+    if (
+        (user != null)
+        &&
+        (pokemon != null)
+        &&
+        (lead != null)
+    ) {
+        let matchedPokemon = getAllOwnedPokemonWithName(name, pokemon);
+
+        /**
+         * Check if user tried to set their current lead Pokemon as their new lead Pokemon.
+         */
+        let onlyMatchIsLead = false;
+        if (matchedPokemon.length === 1 && matchedPokemon[0].lead === 1) {
+            onlyMatchIsLead = true;
         }
-    }
-    
-    if (matchedIndexes.length < 1 && !onlyOptionIsLead) {
-        return false;
-    } else if (matchedIndexes.length < 1 && onlyOptionIsLead) {
-        message.channel.send(message.author.username + " your " + pokemon[ind].name + " is already your lead Pokémon.");
-        return "lead";
-    } else if (matchedIndexes.length === 1) {
-        if (user.field === "Surfing") {
-            var moves = [pokemon[matchedIndexes[0].index].move_1, pokemon[matchedIndexes[0].index].move_2, pokemon[matchedIndexes[0].index].move_3, pokemon[matchedIndexes[0].index].move_4];
-            if (moves.indexOf("Surf") < 0) {
-                var query = "UPDATE user SET user.field = ? WHERE user.user_id = ?";
-                con.query(query, ["Walking", message.author.id], function (err) {
-                    if (err) {
-                        console.log(err);
-                        return false;
-                    }
-                    message.channel.send(message.author.username + " stopped surfing on their " + lead.name + " and is now walking.");
-                });
-            }
-        }
-        var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-        con.query(query, [lead.pokemon_id], function (err) {
-            if (err) {
-                console.log(err);
-                return false;
-            }
-            var leadQuery = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-            con.query(leadQuery, [pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return false;
-                }
-                var userQuery = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-                con.query(userQuery, [pokemon[matchedIndexes[0].index].pokemon_id, message.author.id], function (err) {
-                    if (err) {
-                        console.log(err);
-                        return false;
-                    }
-                    message.channel.send(message.author.username + " set " + pokemon[matchedIndexes[0].index].name + " as their lead Pokémon.");
-                    return true;
-                });
-            });
-        });
-    } else if (matchedIndexes.length > 1) {
-        var string = message.author.username + " you have multiple " + matchedIndexes[0].pkmn.name + " . Please select which one you would like to set as your lead Pokémon by typing its number as shown in the list, or type \"Cancel\" to keep your current leader.\n```";
-        for (i = 0; i < matchedIndexes.length; i++) {
-            string += ((i + 1).toString() + ". " + matchedIndexes[i].pkmn.name);
-            if (matchedIndexes[i].pkmn.shiny === 1) {
-                string += " ⭐";
-            }
-            string += (" | " + matchedIndexes[i].pkmn.gender + " | Level: " + matchedIndexes[i].pkmn.level_current + " | " + matchedIndexes[i].pkmn.ability + "\n");
-        }
-        string += "```\n";
         
-        message.channel.send(string);
-        
-        var cancel = false;
-        var input = null;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                input = "cancel";
-                cancel = true;
-            });
-            
-            if (input === "cancel") {
-                cancel = true;
-                input = 0;
-            } else if (/^\d+$/.test(input)) {
-                var num = Number(input);
-                if (num > 0 && num <= matchedIndexes.length) {
-                    cancel = true;
-                    input = (num - 1);
+        /**
+         * If the user tried to set their current lead Pokemon as their new lead Pokemon.
+         */
+        if (onlyMatchIsLead) {
+            await sendMessage(message.channel, (message.author.username + " your **" + matchedPokemon[0].name + "** is already your lead Pokémon."));
+        /**
+         * If only one Pokemon matched the user's name query.
+         */
+        } else if (matchedPokemon.length === 1) {
+            selectedPokemon = matchedPokemon[0];
+        /**
+         * If user has multiple Pokemon that matched the name query.
+         */
+        } else if (matchedPokemon.length > 1) {
+            let userIsSelectingAPokemon = true;
+            while (userIsSelectingAPokemon) {
+                selectedPokemon = await selectDuplicatePokemon(message, user, message.author.username, matchedPokemon);
+                if (selectedPokemon != null && selectedPokemon.lead === 1) {
+                    await sendMessage(message.channel, (message.author.username + " your **" + selectedPokemon.name + "** is already your lead Pokémon."));
                 } else {
-                    message.channel.send("Number is out of range. " + string);
-                    input = null;
+                    userIsSelectingAPokemon = false;
                 }
-            } else if (input != null) {
-                message.channel.send("Command not recognized. " + string);
-                input = null;
-            } else {
-                input = null;
             }
         }
 
-        if (input < 0 || input == null) {
-            return false;
-        } else {
+        if (selectedPokemon != null) {
+            let moves = await getPokemonKnownMoves(selectedPokemon.pokemon_id);
+            moves = moves.map(move => move.name);
+            
             if (user.field === "Surfing") {
-                var moves = [pokemon[matchedIndexes[input].index].move_1, pokemon[matchedIndexes[input].index].move_2, pokemon[matchedIndexes[input].index].move_3, pokemon[matchedIndexes[input].index].move_4];
                 if (moves.indexOf("Surf") < 0) {
-                    var query = "UPDATE user SET user.field = ? WHERE user.user_id = ?";
-                    con.query(query, ["Walking", message.author.id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return false;
-                        }
-                        message.channel.send(message.author.username + " stopped surfing on their " + lead.name + " and is now walking.");
-                    });
+                    await doQuery("UPDATE user SET user.field = ? WHERE user.user_id = ?", ["Walking", message.author.id]);
+                    await sendMessage(message.channel, (message.author.username + " stopped surfing on their **" + lead.name + "** and is now walking."));
+                }
+            } else if (user.field === "Rock Smash") {
+                if (moves.indexOf("Rock Smash") < 0) {
+                    await doQuery("UPDATE user SET user.field = ? WHERE user.user_id = ?", ["Walking", message.author.id]);
+                    await sendMessage(message.channel, (message.author.username + " stopped smashing rocks with **" + lead.name + "** and is now walking."));
+                } 
+            } else if (user.field === "Headbutt") {
+                if (moves.indexOf("Headbutt") < 0) {
+                    await doQuery("UPDATE user SET user.field = ? WHERE user.user_id = ?", ["Walking", message.author.id]);
+                    await sendMessage(message.channel, (message.author.username + " stopped headbutting trees with **" + lead.name + "** and is now walking."));
+                }
+            } else if (user.field === "Dive") {
+                if (moves.indexOf("Dive") < 0) {
+                    await doQuery("UPDATE user SET user.field = ? WHERE user.user_id = ?", ["Walking", message.author.id]);
+                    await sendMessage(message.channel, (message.author.username + " stopped diving underwater on their **" + lead.name + "** and is now walking."));
                 }
             }
-            
-            var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [lead.pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return false;
-                }
-                var leadQuery = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-                con.query(leadQuery, [pokemon[matchedIndexes[input].index].pokemon_id], function (err) {
-                    if (err) {
-                        console.log(err);
-                        return false;
-                    }
-                    var userQuery = "UPDATE user SET user.lead = ? WHERE user_id = ?";
-                    con.query(userQuery, [pokemon[matchedIndexes[input].index].pokemon_id, message.author.id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return false;
-                        }
-                        message.channel.send(message.author.username + " set " + pokemon[matchedIndexes[input].index].name + " as their lead Pokémon.");
-                        return true;
-                    });
-                });
-            });
+
+            if (
+                (await doQuery("UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?", [lead.pokemon_id]) != null)
+                &&
+                (await doQuery("UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?", [selectedPokemon.pokemon_id]) != null)
+                &&
+                (await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [selectedPokemon.pokemon_id, message.author.id]) != null)
+            ) {
+                wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " set **" + selectedPokemon.name + "** as their lead Pokémon."));
+            } else {
+                wereNoErrorsEncountered = false;
+            }
         }
+    } else {
+        wereNoErrorsEncountered = false;
     }
-    return true;
+    
+    return new Promise(function(resolve) {
+        resolve(wereNoErrorsEncountered);
+    });
 }
 
 
@@ -10280,7 +10206,7 @@ async function printAbilityInfo(channel, name, description) {
  * 
  * @returns {boolean} True if no errors are encountered.
  */
-async function printPokemon(message, otherUser, pokemon = undefined) {
+async function printPokemon(message, otherUser, pokemon = undefined, description = undefined) {
     var userID = message.author.id;
     let enableNumbering = true;
     
@@ -10364,6 +10290,7 @@ async function printPokemon(message, otherUser, pokemon = undefined) {
         "author": {
             "name": message.author.username + "'s Pokémon"
         },
+        "description": description,
         "fields": [fields[fieldCount]]
     };
 
