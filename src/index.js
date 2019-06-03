@@ -4928,12 +4928,19 @@ function getFormOfEvolvedPokemon(fromForm, toName, user) {
     } else if (fromForm === "Alolan") {
         /**
          * @todo Do Alolan Pokemon maintain their form if not evolved in Alola?
-         * Currently they will maintain their Alolan form.
+         * Currently they maintain their Alolan form but I need to see
          */
         form = fromForm;
     } else if (
         /**
          * Add Alolan form if a compatible non-Alolan Pokemon is evolving in Alola.
+         * 
+         * Apparently non Alolan form Pokemon that evolve in Alola will keep their non-Alolan forms.
+         * Example: Vulpix and Sandshrew.
+         * 
+         * But apparently Pikachu, Exeggcute, and Cubone are exceptions?
+         * 
+         * @todo Check if Pikachu etc only evolve into Alolan forms if they were caught in Alola.
          */
         (toName === "Raichu")
         ||
@@ -5180,8 +5187,6 @@ async function evolve(message) {
             (await doQuery("UPDATE pokemon SET ? WHERE pokemon.pokemon_id = ?", [finishedEvolvedPokemon, evolvingPokemon.pokemon_id]) != null)
             &&
             (await addToPokedex(user, newPokemon.national_id) != null)
-            &&
-            (await updateMoves(evolvingPokemon, evolvingMoves) != false)
         ) {
             wereNoErrorsEncountered = true;
         } else {
