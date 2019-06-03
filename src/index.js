@@ -4266,9 +4266,9 @@ async function useTMItem(message, item, lead) {
  * @returns {boolean} True if no errors were encountered.
  */
 async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) {
-    let isInDaycare = true;
+    let isInDaycare = false;
     if (pokemon.daycare != null) {
-        isInDaycare = false;
+        isInDaycare = true;
     }
 
     let currentMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
@@ -5720,7 +5720,7 @@ async function replaceMove(message, pokemon, newMove, moves) {
 async function replaceMoveDayCare(pokemon) {
     let moveIndex = null;
     let daycarePokemon = await doQuery("SELECT * FROM daycare WHERE daycare.pokemon = ?", [pokemon.pokemon_id]);
-    if (daycarePokemon != null) {
+    if (daycarePokemon.length > 0) {
         if (daycarePokemon[0].last_move_replaced === null) {
             moveIndex = 0;
         } else {
