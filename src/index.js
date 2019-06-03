@@ -5860,8 +5860,8 @@ async function levelUp(message, pokemon, user, item) {
         pokemon.stat_spdef = statsAfterLevelingUp[4];
         pokemon.stat_spd = statsAfterLevelingUp[5];
 
-        let spriteLink = generateSpriteLink(pokemon.name);
-        let modelLink = generateModelLink(pokemon.name);
+        let spriteLink = generateSpriteLink(pokemon.name, pokemon.gender, pokemon.form);
+        let modelLink = generateModelLink(pokemon.name, pokemon.shiny, pokemon.gender, pokemon.form);
 
         if (pokemon.daycare === null) {
             /* Doesn't need to be awaited. */
