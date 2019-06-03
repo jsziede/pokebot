@@ -227,7 +227,7 @@ client.on('ready', () => {
     kukui = client.emojis.find(kukui => kukui.name === "004");
     blobSweat = client.emojis.find(blobSweat => blobSweat.name === "005");
     lfcparty = client.emojis.find(lfcparty => lfcparty.name === "006");
-    dollar = client.emojis.find(dollar => dollar.name === "007");
+    dollar = client.emojis.find(dollar => dollar.name === "pokedollar");
     birb = client.emojis.find(birb => birb.name === "008");
 
     /**
@@ -353,7 +353,7 @@ client.on('message', async (message) => {
                     return;
                 }
             }
-    
+
             let exists = await userExists(message.author.id);
             if (exists && (isInEvolution(message.author.id) === null) && (isInTransaction(message.author.id) === null)) {
                 await doNonCommandMessage(message);
@@ -6536,20 +6536,15 @@ async function dayCare(message) {
                     }
                 })
 
-                dayCareMessage.clearReactions();
+                await dayCareMessage.clearReactions();
                 dayCareMessage.delete(0);
         
                 if (dayCareSelection === VIEW) {
-                    await viewDayCare(message);
+                    visitingDaycare = await viewDayCare(message, daycarePokemon);
                 } else if (dayCareSelection === DROP_OFF) {
-                    let pokemon = await getPokemon(message.author.id);
-                    let description = message.author.username + " please enter the name or nickname of the Pokémon you want to drop off, or type `Cancel` to exit the Day Care.";
-                    let selectedPokemon = await selectOwnedPokemon(message, user, pokemon, description);
-                    if (selectedPokemon != null) {
-                        await placeInDaycare(message, selectedPokemon);
-                    }
+                    await placeInDaycare(message, user);
                 } else if (dayCareSelection === PICK_UP) {
-                    await pickUpFromDayCare(message);
+                    visitingDaycare = await pickUpFromDayCare(message, user);
                 } else if (dayCareSelection === LEAVE) {
                     visitingDaycare = false;
                 }
@@ -6570,145 +6565,166 @@ async function dayCare(message) {
  * in the Day Care.
  * 
  * @param {Message} message The Discord message sent from the user.
+ * @param {User} user The Pokebot user who is accessing the Day Care.
+ * @param {Pokemon[]} daycarePokemon The list of Pokemon owned by the user who are in the Day Care.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {boolean} False is user opted to leave the Day Care.
  */
-async function pickUpFromDayCare(message) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    var daycarePokemon = await getDaycare(message.author.id);
-    if (daycarePokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
+async function pickUpFromDayCare(message, user) {
+    let returnToDayCare = true;
+    let pickingUp = true;
 
-    if (daycarePokemon.length < 1) {
-        await message.channel.send(message.author.username + " you have no Pokémon currently in the Day Care.");
-        return new Promise(function(resolve) {
-            resolve(true);
-        });
-    } else {
-        var cancel = false;
-        var input = null;
-        while(cancel == false) {
-            await viewDayCare(message);
-            var string = message.author.username + " select the number of the Pokémon shown above that you want to retrieve from the Day Care, or type \"Cancel\" to go back.";
-            await message.channel.send(string);
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                input = "cancel";
-                cancel = true;
-            });
-            
-            if (input === "cancel") {
-                cancel = true;
-                input = 0;
-                await message.channel.send(message.author.username + " decided to leave their Pokémon in the Day Care.");
-            } else if (/^\d+$/.test(input)) {
-                var num = Number(input);
-                if (num > 0 && num <= daycarePokemon.length) {
-                    var cost = 100 + ((daycarePokemon[(num - 1)].level_current - daycarePokemon[(num - 1)].level_at_daycare) * 100);
-                    if (user.money < cost) {
-                        await message.channel.send("You cannot afford to retrieve that Pokémon.");
-                    } else {
-                        cancel = true;
-                        input = (num - 1);
+    while (pickingUp) {
+        let fields = [];
+        let reactions = [];
+        let cost = [];
+        let costForAllPokemon = 0;
+
+        let pokemonNames = [];
+
+        let daycarePokemon = await getDaycare(user.user_id);
+    
+        let description = message.author.username + " please react using the emote corresponding to the Pokémon below to pick it up. You can return to the other Day Care interactions by reacting with 🔙 or leave the Day Care with ❌.";
+        
+        if (daycarePokemon.length > 0) {
+            /**
+             * Get information about the Pokemon in the user's Day Care.
+             */
+            for (let pkmn in daycarePokemon) {
+                cost[cost.length] = (100 + (daycarePokemon[pkmn].levels_gained * 100));
+                costForAllPokemon += cost[pkmn];
+
+                let pokemon = await doQuery("SELECT * FROM pokemon WHERE pokemon.pokemon_id = ?", [daycarePokemon[pkmn].pokemon]);
+                pokemon = pokemon[0];
+                pokemonNames[pokemonNames.length] = pokemon.name;
+        
+                let value = "**Level:** " + pokemon.level_current + "(+" + daycarePokemon[pkmn].levels_gained + ")\n**Cost:** " + dollar + cost[pkmn] + "\n";
+
+                /**
+                 * Tell the user if they can afford to pick up the Pokemon or not.
+                 * If so, allow them to pick it up.
+                 */
+                if (user.money < cost[pkmn]) {
+                    value += "**Can't afford!**";
+
+                    fields[fields.length] = {
+                        "name": pokemon.name,
+                        "value": value,
+                        "inline": true
                     }
                 } else {
-                    message.channel.send("Number is out of range. " + string);
-                    input = null;
+                    if (pkmn === "0") {
+                        reactions[reactions.length] = "1⃣";
+                    } else if (pkmn === "1") {
+                        reactions[reactions.length] = "2⃣";
+                    }
+
+                    fields[fields.length] = {
+                        "name": reactions[pkmn] + " " + pokemon.name,
+                        "value": value,
+                        "inline": true
+                    }
                 }
-            } else if (input != null) {
-                message.channel.send("Command not recognized. " + string);
-                input = null;
-            } else {
-                input = null;
+            }
+        }
+        /**
+         * If user has no Pokemon in the Day Care.
+         */
+        else {
+            fields[fields.length] = {
+                "name": "No Pokémon",
+                "value": "You currently don't have any Pokémon in the Day Care.",
+                "inline": true
             }
         }
 
-        if (input != null) {
-            var cost = 100 + ((daycarePokemon[input].level_current - daycarePokemon[input].level_at_daycare) * 100);
-            var query = "UPDATE pokemon SET pokemon.storage = ?, pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [null, null, null, daycarePokemon[input].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    query = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
-                    con.query(query, [(user.money - cost), user.user_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                        }
-                    });
-                }
-            });
-
-            await message.channel.send(message.author.username + " picked up their " + daycarePokemon[input].name + " from the Day Care.");
-            if (daycarePokemon.length > 1) {
-                var otherIndex;
-                if (input == 1) {
-                    otherIndex = 0;
-                } else {
-                    otherIndex = 1;
-                }
-                cost = 100 + ((daycarePokemon[otherIndex].level_current - daycarePokemon[otherIndex].level_at_daycare) * 100);
-                await message.channel.send("Would you like to pick up your other Pokémon as well? It will cost you " + dollar + cost + ". Type \"Yes\" or \"No\".");
-                cancel = false;
-                input = null;
-                while (cancel == false) {
-                    await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-                    .then(collected => {
-                        input = collected.first().content.toString().toLowerCase();
-                    })
-                    .catch(collected => {
-                        input = "no";
-                        cancel = true;
-                    });
-                    
-                    if (input === "no") {
-                        cancel = true;
-                        await message.channel.send(message.author.username + " decided to leave their other Pokémon in the Day Care.");
-                    } else if (input === "yes") {
-                        cancel = true;
-                        if (user.money < cost) {
-                            await message.channel.send("You cannot afford to retrieve that Pokémon.");
-                        } else {
-                            query = "UPDATE pokemon SET pokemon.storage = ?, pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-                            con.query(query, [null, null, null, daycarePokemon[otherIndex].pokemon_id], function (err) {
-                                if (err) {
-                                    console.log(err);
-                                } else {
-                                    query = "UPDATE user SET user.money = ? WHERE user.user_id = ?";
-                                    con.query(query, [(user.money - cost), user.user_id], function (err) {
-                                        if (err) {
-                                            console.log(err);
-                                        }
-                                    });
-                                }
-                            });
-                            await message.channel.send(message.author.username + " picked up their " + daycarePokemon[otherIndex].name + " from the Day Care.");
-                        }
-                    } else if (input != null) {
-                        message.channel.send("Command not recognized. " + string);
-                        input = null;
-                    } else {
-                        input = null;
-                    }
-                }
+        /**
+         * If user has two Pokemon in the Day Care and can afford to pick both of them up.
+         */
+        if (user.money >= costForAllPokemon && daycarePokemon.length == 2) {
+            reactions[reactions.length] = '👥';
+            description = message.author.username + " please react using the emote corresponding to the Pokémon below to pick it up, or 👥 to pick up both. You can return to the other Day Care interactions by reacting with 🔙 or leave the Day Care with ❌.";
+        }
+    
+        reactions[reactions.length] = '🔙';
+        reactions[reactions.length] = '❌';
+    
+        let embed = {
+            "author": {
+                "name": "Day Care"
+            },
+            "title": "Day Care Pick Up",
+            "description": description,
+            "fields": fields
+        };
+        
+        let dayCareMessage = await sendMessage(message.channel, {embed}, true);
+    
+        for (let emote in reactions) {
+            await dayCareMessage.react(reactions[emote]);
+        }
+    
+        const filter = (reaction, user) => {
+            return reactions.includes(reaction.emoji.name) && user.id === message.author.id;
+        };
+    
+        const FIRST_POKEMON = 0;
+        const SECOND_POKEMON = 1;
+        const BOTH_POKEMON = 2;
+        const RETURN = 3;
+        const LEAVE = 4;
+    
+        let selectedOption = LEAVE;
+        
+        /**
+         * User selects a choice by reacting to the message.
+         */
+        await dayCareMessage.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+        .then(collected => {
+            const reaction = collected.first();
+    
+            if (reaction.emoji.name === "1⃣") {
+                selectedOption = FIRST_POKEMON;
+            } else if (reaction.emoji.name === "2⃣") {
+                selectedOption = SECOND_POKEMON;
+            } else if (reaction.emoji.name === '👥') {
+                selectedOption = BOTH_POKEMON;
+            } else if (reaction.emoji.name === '🔙') {
+                selectedOption = RETURN;
+            } else if (reaction.emoji.name === '❌') {
+                selectedOption = LEAVE;
             }
+        })
+    
+        await dayCareMessage.clearReactions();
+        dayCareMessage.delete(0);
+
+        if (selectedOption === FIRST_POKEMON) {
+            await doQuery("DELETE FROM daycare WHERE daycare.daycare_id = ?", [daycarePokemon[0].daycare_id]);
+            await doQuery("UPDATE user SET user.money = ? WHERE user.user_id = ?", [(user.money - cost[0]), user.user_id]);
+
+            await sendMessage(message.channel, (message.author.username + " picked up their **" + pokemonNames[0] + "** from the Day Care."));
+        } else if (selectedOption === SECOND_POKEMON) {
+            await doQuery("DELETE FROM daycare WHERE daycare.daycare_id = ?", [daycarePokemon[1].daycare_id]);
+            await doQuery("UPDATE user SET user.money = ? WHERE user.user_id = ?", [(user.money - cost[1]), user.user_id]);
+
+            await sendMessage(message.channel, (message.author.username + " picked up their **" + pokemonNames[1] + "** from the Day Care."));
+        } else if (selectedOption === BOTH_POKEMON) {
+            await doQuery("DELETE FROM daycare WHERE daycare.daycare_id = ?", [daycarePokemon[0].daycare_id]);
+            await doQuery("DELETE FROM daycare WHERE daycare.daycare_id = ?", [daycarePokemon[1].daycare_id]);
+            await doQuery("UPDATE user SET user.money = ? WHERE user.user_id = ?", [(user.money - costForAllPokemon), user.user_id]);
+
+            await sendMessage(message.channel, (message.author.username + " picked up their **" + pokemonNames[0] + "** and **" + pokemonNames[1] + "** from the Day Care."));
+        } else if (selectedOption === RETURN) {
+            pickingUp = false;
+        } else if (selectedOption === LEAVE) {
+            pickingUp = false;
+            returnToDayCare = false;
         }
     }
 
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(returnToDayCare);
     });
 }
 
@@ -6717,434 +6733,175 @@ async function pickUpFromDayCare(message) {
  * a user's Pokemon that are in the Day Care.
  * 
  * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon[]} daycarePokemon The list of Pokemon owned by the user who are in the Day Care.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {boolean} False is user opted to leave the Day Care.
  */
-async function viewDayCare(message) {
-    var userID = message.author.id;
-    var username = message.author.username;
+async function viewDayCare(message, daycarePokemon) {
+    let fields = [];
+    let reactions = [];
 
-    var pokemon = await getDaycare(userID);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
+    let description = message.author.username + " these are your Pokémon that are currently in the Day Care. You can return to the other Day Care interactions by reacting with 🔙 or leave the Day Care with ❌.";
+    
+    if (daycarePokemon.length > 0) {
+        /**
+         * Get information about the Pokemon in the user's Day Care.
+         */
+        for (let pkmn in daycarePokemon) {
+            let pokemon = await doQuery("SELECT * FROM pokemon WHERE pokemon.pokemon_id = ?", [daycarePokemon[pkmn].pokemon]);
+            pokemon = pokemon[0];
 
-    if (pokemon.length < 1) {
-        message.channel.send(username + " you have no Pokémon in the Day Care.");
-    } else {
-        var fields = [];
-        var i;
-        for (i = 0; i < pokemon.length; i++) {
-            var cost = 100 + ((pokemon[i].level_current - pokemon[i].level_at_daycare) * 100);
-            let shuffle_icon = await getShuffleEmoji(pokemon[i].number);
-            var moves;
-            if (pokemon[i].move_1 != null) {
-                moves = pokemon[i].move_1;
+            let pokemonJSON = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
+            let shuffle_icon = await getShuffleEmoji(pokemon.number);
+            
+            /**
+             * Convert moves into a list of just the move names.
+             */
+            let moveString = "";
+            let moves = await getPokemonKnownMoves(daycarePokemon[pkmn].pokemon);
+            moves = moves.map(move => move.name);
+            for (let move in moves) {
+                if (moves[move] != null) {
+                    moveString += ("\n" + moves[move]);
+                }
             }
-            if (pokemon[i].move_2 != null) {
-                moves += "\n" + pokemon[i].move_2;
+
+            /**
+             * Get list of the Pokemon's egg groups.
+             */
+            let eggGroupsString = "";
+            for (group in pokemonJSON.egg_groups) {
+                eggGroupsString += ("\n" + pokemonJSON.egg_groups[group]);
             }
-            if (pokemon[i].move_3 != null) {
-                moves += "\n" + pokemon[i].move_3;
-            }
-            if (pokemon[i].move_4 != null) {
-                moves += "\n" + pokemon[i].move_4;
-            }
-            fields[i] = {
-                "name": ((i + 1).toString()) + ". " + shuffle_icon + " " + pokemon[i].name,
-                "value": "**Level:**\n" + pokemon[i].level_current + "\n**Ability:**\n" + pokemon[i].ability + "\n**Moves:**\n" + moves + "\n**Cost:**\n" + dollar + cost,
+    
+            /**
+             * @todo Other stats relevant to Pokemon breeding should go here.
+             */
+            let value = "**Level:** " + pokemon.level_current + " (+" + daycarePokemon[pkmn].levels_gained + ")\n**Gender:** " + pokemon.gender + "\n**Ability:** " + pokemon.ability + "\n**Moves:**" + moveString + "\n**Egg Groups:**" + eggGroupsString;
+
+            fields[fields.length] = {
+                "name": shuffle_icon + " " + pokemon.name,
+                "value": value,
                 "inline": true
             }
         }
-        var embed = {
-            "title": "Pokémon in Day Care",
-            "fields": fields
+    }
+    /**
+     * If user has no Pokemon in the Day Care.
+     */
+    else {
+        fields[fields.length] = {
+            "name": "No Pokémon",
+            "value": "You currently don't have any Pokémon in the Day Care.",
+            "inline": true
         }
-        await message.channel.send({embed});
+    }
+
+    reactions[reactions.length] = '🔙';
+    reactions[reactions.length] = '❌';
+
+    let embed = {
+        "author": {
+            "name": "Day Care"
+        },
+        "title": "Viewing Pokémon",
+        "description": description,
+        "fields": fields
+    };
+    
+    let dayCareMessage = await sendMessage(message.channel, {embed}, true);
+
+    for (let emote in reactions) {
+        await dayCareMessage.react(reactions[emote]);
+    }
+
+    const filter = (reaction, user) => {
+        return reactions.includes(reaction.emoji.name) && user.id === message.author.id;
+    };
+
+    const RETURN = 0;
+    const LEAVE = 1;
+
+    let selectedOption = LEAVE;
+    let returnToDayCare = true;
+    
+    /**
+     * User selects a choice by reacting to the message.
+     */
+    await dayCareMessage.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
+
+        if (reaction.emoji.name === '🔙') {
+            selectedOption = RETURN;
+        } else if (reaction.emoji.name === '❌') {
+            selectedOption = LEAVE;
+        }
+    })
+
+    await dayCareMessage.clearReactions();
+    dayCareMessage.delete(0);
+
+    if (selectedOption === RETURN) {
+        returnToDayCare = true;
+    } else if (selectedOption === LEAVE) {
+        returnToDayCare = false;
     }
 
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(returnToDayCare);
     });
 }
 
 /**
- * Places a Pokemon in the Day Care. If user has multiple Pokemon with the
- * same name, the user will be asked which Pokemon they want to place.
- * 
- * @todo Rather than `name`, a Pokemon's id should be passed.
+ * Prompts the user to select a Pokemon to place in the Day Care
+ * and then places that Pokemon into the Day Care.
  * 
  * @param {Message} message The Discord message sent from the user.
- * @param {string} name The name or nickname of the Pokemon to be placed in the Day Care.
+ * @param {User} user The Pokebot user who is placing a Pokemon in the Day Care.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {boolean} True if a Pokemon was placed in the Day Care.
  */
-async function placeInDaycare(message, name) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-
-    var pokemon = await getPokemon(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    var matchedIndexes = [];
-    
-    var onlyOptionIsLead = false;
-    
-    function pkmnObj(pkmn, index) {
-        this.pkmn = pkmn;
-        this.index = index;
-    }
-    
+async function placeInDaycare(message, user) {
+    let wasPokemonPlacedInDayCare = false;
+    let pokemon = await getPokemon(message.author.id);
     if (pokemon.length === 1) {
-        message.channel.send(message.author.username + " you cannot send your only Pokémon to the day care! " + duck);
-        return new Promise(function(resolve) {
-            resolve(true);
-        });
-    }
+        await sendMessage(message.channel, (message.author.username + " you cannot put your only available Pokémon in the Day Care."));
+    } else {
+        let description = message.author.username + " please enter the name or nickname of the Pokémon you want to drop off, or type `Cancel` to exit the Day Care.";
+        let selectedPokemon = await selectOwnedPokemon(message, user, pokemon, description);
+        if (selectedPokemon != null) {
+            let dayCareInsert = {
+                "pokemon": selectedPokemon.pokemon_id,
+                "trainer": user.user_id,
+                "region": user.region,
+                "location": user.location
+            }
     
-    var i;
-    for (i = 0; i < pokemon.length; i++) {
-        if (name.toLowerCase() === pokemon[i].name.toLowerCase() || (pokemon[i].nickname != null && name.toLowerCase() === pokemon[i].nickname.toLowerCase())) {
-            name = pokemon[i].name.toLowerCase();
-            if (pokemon[i].lead === 1) {
-                onlyOptionIsLead = true;
+            let dropOff = await doQuery("INSERT INTO daycare SET ?", [dayCareInsert]);
+            if (dropOff != null) {
+                if (await doQuery("UPDATE pokemon SET pokemon.lead = 0, pokemon.daycare = ? WHERE pokemon.pokemon_id = ?", [dropOff.insertId, selectedPokemon.pokemon_id]) != null) {
+                    wasPokemonPlacedInDayCare = true;
+                }
             }
-            matchedIndexes[matchedIndexes.length] = new pkmnObj(pokemon[i], i);
-        }
-    }
-    
-    var confirm = false;
-    
-    if (matchedIndexes.length < 1) {
-        message.channel.send(message.author.username + " failed to send any Pokémon to the daycare. " + duck);
-        return new Promise(function(resolve) {
-            resolve(true);
-        });
-    } else if (matchedIndexes.length === 1 && onlyOptionIsLead) {
-        if (matchedIndexes[0].index === 0) {
-            confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return new Promise(function(resolve) {
-                    resolve(true);
-                });
-            }
-            var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[1].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-            con.query(query, [pokemon[1].pokemon_id, user.user_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [user.region, pokemon[0].level_current, pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-            message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
-        } else {
-            confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return false;
-            }
-            var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-            con.query(query, [pokemon[0].pokemon_id, user.user_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [user.region, pokemon[matchedIndexes[0].index].level_current, pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-            message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[0].index].name + " to the day care." + birb);
-        }
-    } else if (matchedIndexes.length === 1 && !onlyOptionIsLead) {
-        if (matchedIndexes[0].index === 0) {
-            confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return new Promise(function(resolve) {
-                    resolve(true);
-                });
-            }
-            var query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [user.region, pokemon[0].level_current, pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
-        } else {
-            confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return false;
-            }
-            var query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-            con.query(query, [user.region, pokemon[matchedIndexes[0].index].level_current, pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    console.log(err);
-                    return new Promise(function(resolve) {
-                        resolve(false);
-                    });
-                }
-            });
-            message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[0].index].name + " to the day care." + birb);
-        }
-    } else if (matchedIndexes.length > 1) {
-        var string = message.author.username + " you have multiple " + matchedIndexes[0].pkmn.name + ". Please select which one you would like to release by typing its number as shown in the list, or type \"Cancel\" to keep your Pokémon.\n```";
-        for (i = 0; i < matchedIndexes.length; i++) {
-            string += ((i + 1).toString() + ". " + matchedIndexes[i].pkmn.name);
-            if (matchedIndexes[i].pkmn.shiny === 1) {
-                string += " ⭐";
-            }
-            string += (" | " + matchedIndexes[i].pkmn.gender + " | Level: " + matchedIndexes[i].pkmn.level_current + "\n");
-        }
-        string += "```\n";
-        
-        message.channel.send(string);
-        
-        var cancel = false;
-        var input = null;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                input = "cancel";
-                cancel = true;
-            });
             
-            if (input === "cancel") {
-                cancel = true;
-                input = 0;
-            } else if (/^\d+$/.test(input)) {
-                var num = Number(input);
-                if (num > 0 && num <= matchedIndexes.length) {
-                    cancel = true;
-                    input = (num - 1);
-                } else {
-                    message.channel.send("Number is out of range. " + string);
-                    input = null;
-                }
-            } else if (input != null) {
-                message.channel.send("Command not recognized. " + string);
-                input = null;
-            } else {
-                input = null;
-            }
-        }
-
-        if (input < 0 || input == null) {
-            message.channel.send(message.author.username + " failed to send a Pokémon to the day care. " + duck);
-            return false;
-        } else {
-            if (pokemon[matchedIndexes[input].index].lead === 1) {
-                if (matchedIndexes[input].index === 0) {
-                    confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return new Promise(function(resolve) {
-                            resolve(true);
-                        });
+            if (selectedPokemon.lead === 1) {
+                for (pkmn in pokemon) {
+                    if (pokemon[pkmn].pokemon_id != selectedPokemon.pokemon_id) {
+                        await doQuery("UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?", [pokemon[pkmn].pokemon_id]);
+                        await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [pokemon[pkmn].pokemon_id, user.user_id]);
+                        await sendMessage(message.channel, (message.author.username + " dropped off their **" + selectedPokemon.name + "** at the Day Care and set **" + pokemon[pkmn].name + "** as their new lead Pokémon."));
+                        break;
                     }
-                    var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[1].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-                    con.query(query, [pokemon[1].pokemon_id, user.user_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [user.region, pokemon[0].level_current, pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-                    message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
-                } else {
-                    confirm = await confirmDayCare(message, pokemon[matchedIndexes[input].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return new Promise(function(resolve) {
-                            resolve(true);
-                        });
-                    }
-                    var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id, user.user_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [user.region, pokemon[matchedIndexes[input].index].level_current, pokemon[matchedIndexes[input].index].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-                    message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[input].index].name + " to the day care." + birb);
                 }
             } else {
-                if (matchedIndexes[input].index === 0) {
-                    confirm = await confirmDayCare(message, pokemon[matchedIndexes[0].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return new Promise(function(resolve) {
-                            resolve(true);
-                        });
-                    }
-                    var query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [user.region, pokemon[0].level_current, pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    message.channel.send(message.author.username + " sent their " + pokemon[0].name + " to the day care." + birb);
-                } else {
-                    confirm = await confirmDayCare(message, pokemon[matchedIndexes[input].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return new Promise(function(resolve) {
-                            resolve(true);
-                        });
-                    }
-                    var query = "UPDATE pokemon SET pokemon.storage = 'daycare', pokemon.storage_region = ?, pokemon.level_at_daycare = ? WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [user.region, pokemon[matchedIndexes[input].index].level_current, pokemon[matchedIndexes[input].index].pokemon_id], function (err) {
-                        if (err) {
-                            console.log(err);
-                            return new Promise(function(resolve) {
-                                resolve(false);
-                            });
-                        }
-                    });
-                    message.channel.send(message.author.username + " sent their " + pokemon[matchedIndexes[input].index].name + " to the day care." + birb);
-                }   
+                await sendMessage(message.channel, (message.author.username + " dropped off their **" + selectedPokemon.name + "** at the Day Care."));
             }
         }
     }
 
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(wasPokemonPlacedInDayCare);
     });
 }
 
