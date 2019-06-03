@@ -2921,8 +2921,10 @@ async function getLeadPokemon(userId) {
  */
 async function getEvolvingPokemon(userId) {
     let evolvingPokemon = await doQuery('SELECT * FROM pokemon WHERE pokemon.evolving = 1 AND pokemon.current_trainer = ?', [userId]);
-    if (evolvingPokemon != null) {
+    if (evolvingPokemon != null && evolvingPokemon.length > 0) {
         evolvingPokemon = evolvingPokemon[0];
+    } else {
+        evolvingPokemon = null;
     }
     return new Promise(function(resolve) {
         resolve(evolvingPokemon);
@@ -4938,7 +4940,7 @@ function getFormOfEvolvedPokemon(fromForm, toName, user) {
          * Apparently non Alolan form Pokemon that evolve in Alola will keep their non-Alolan forms.
          * Example: Vulpix and Sandshrew.
          * 
-         * But apparently Pikachu, Exeggcute, and Cubone are exceptions?
+         * But Pikachu, Exeggcute, and Cubone are exceptions?
          * 
          * @todo Check if Pikachu etc only evolve into Alolan forms if they were caught in Alola.
          */
@@ -5006,6 +5008,8 @@ async function evolve(message) {
     if (evolvingPokemon === null) {
         wereNoErrorsEncountered = false;
     }
+
+    
     
     let evo = isInEvolution(message.author.id);
     if (evo === null) {
