@@ -6,6 +6,7 @@
 /**
  *  @todo Add table for users who are currently inputting responses. This way if a user tries to do a command while Pokebot is awaiting input, Pokebot won't give two warning messages to the user.
  *  @todo All message sends need to be awaited, otherwise weirdness may happen.
+ *  @todo Change message sending functions to return the sent message object rather than a boolean.
  *  @todo Standardize the file names for json and images.
 */
 
@@ -664,8 +665,11 @@ async function doCommand(message, input, command) {
         if (!commandStatus) {
             console.log("[ERROR] runPokemonCommand()");
         }
-    } else if ((command === "r" || command === "release") && input.length > 0) {
-        commandStatus = await runReleaseCommand(message);
+    } else if ((command === "r" || command === "release")) {
+        if  (input.length === 0) {
+            input = undefined;
+        }
+        commandStatus = await runReleaseCommand(message, input);
         if (!commandStatus) {
             console.log("[ERROR] runReleaseCommand()");
         }
@@ -1328,10 +1332,11 @@ async function runPokemonCommand(message) {
  * releases a Pokemon owned by the user.
  * 
  * @param {Message} message Discord message sent by a user.
+ * @param {string} input The name of the Pokemon to release.
  * 
  * @returns {boolean} False if an error is encountered, otherwise true.
  */
-async function runReleaseCommand(message) {
+async function runReleaseCommand(message, input) {
     let commandStatus = true;
     let exists = await userExists(message.author.id);
     if (!exists) {
@@ -1339,7 +1344,9 @@ async function runReleaseCommand(message) {
     } else {
         if (await printTransactionIfTrue(message, " before trying to release a Pokémon.") === false) {
             transactions[transactions.length] = new Transaction(message.author.id, "your current Pokémon release");
-            input = input.join(' ');
+            if (input != undefined) {
+                input = input.join(' ');
+            }
             commandStatus = await releasePokemon(message, input);
             removeTransaction(message.author.id);  
         } 
@@ -4774,7 +4781,7 @@ async function selectDuplicatePokemon(message, user, username, pokemon) {
  * @returns {Pokemon} The one Pokemon selected by the user, or null if the user
  * did not select a Pokeon.
  */
-async function selectOwnedPokemon(message, user, pokemon, description) {
+async function selectOwnedPokemon(message, user, pokemon, description, name = undefined) {
     let username = await client.fetchUser(user.user_id).then(myUser => {
         return myUser.username;
     });
@@ -4783,27 +4790,28 @@ async function selectOwnedPokemon(message, user, pokemon, description) {
     let selectedPokemon = null;
 
     while (userIsSelectingAPokemon) {
-        printPokemon(message, user.user_id, undefined, description);
+        if (name === undefined) {
+            printPokemon(message, user.user_id, undefined, description);
 
-        let name = null;
-        let cancel = false;
-
-        while (cancel === false) {
-            await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                name = collected.first().content.toString().toLowerCase();
-                cancel = true;
-            })
-            .catch(() => {
-                name = "cancel";
-                cancel = true;
-            });
-
-            if (name === "cancel") {
-                name = null;
+            let cancel = false;
+    
+            while (cancel === false) {
+                await message.channel.awaitMessages(response => response.author.id === user.user_id, { max: 1, time: 30000, errors: ['time'] })
+                .then(collected => {
+                    name = collected.first().content.toString().toLowerCase();
+                    cancel = true;
+                })
+                .catch(() => {
+                    name = "cancel";
+                    cancel = true;
+                });
+    
+                if (name === "cancel") {
+                    name = null;
+                }
             }
         }
-        
+            
         if (name != null) {
             let matchedPokemon = getAllOwnedPokemonWithName(name, pokemon);
     
@@ -6696,7 +6704,6 @@ async function pickUpFromDayCare(message, user) {
             }
         })
     
-        await dayCareMessage.clearReactions();
         dayCareMessage.delete(0);
 
         if (selectedOption === FIRST_POKEMON) {
@@ -6839,7 +6846,6 @@ async function viewDayCare(message, daycarePokemon) {
         }
     })
 
-    await dayCareMessage.clearReactions();
     dayCareMessage.delete(0);
 
     if (selectedOption === RETURN) {
@@ -6913,347 +6919,67 @@ async function placeInDaycare(message, user) {
  * @param {Message} message The Discord message sent from the user.
  * @param {string} name The name or nickname of the Pokemon to be released.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {boolean} True if a Pokemon was released.
  */
 async function releasePokemon(message, name) {
-    var user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var pokemon = await getPokemon(message.author.id);
-    if (pokemon === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    
-    var matchedIndexes = [];
-    
-    var onlyOptionIsLead = false;
-    
-    function pkmnObj(pkmn, index) {
-        this.pkmn = pkmn;
-        this.index = index;
-    }
-    
-    if (pokemon.length === 1) {
-        message.channel.send(message.author.username + " you cannot release your only Pokémon! " + duck);
-        return false;
-    }
-    
-    var i;
-    for (i = 0; i < pokemon.length; i++) {
-        if (name.toLowerCase() === pokemon[i].name.toLowerCase() || (pokemon[i].nickname != null && name.toLowerCase() === pokemon[i].nickname.toLowerCase())) {
-            name = pokemon[i].name.toLowerCase();
-            if (pokemon[i].lead === 1) {
-                onlyOptionIsLead = true;
-            }
-            matchedIndexes[matchedIndexes.length] = new pkmnObj(pokemon[i], i);
-        }
-    }
-    
-    var confirm = false;
-    
-    if (matchedIndexes.length < 1) {
-        message.channel.send(message.author.username + " failed to release any Pokémon. " + duck);
-        return false;
-    } else if (matchedIndexes.length === 1 && onlyOptionIsLead) {
-        if (matchedIndexes[0].index === 0) {
-            confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return false;
-            }
-            var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[1].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-            con.query(query, [pokemon[1].pokemon_id, user.user_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-            message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
-        } else {
-            confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return false;
-            }
-            var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-            con.query(query, [pokemon[0].pokemon_id, user.user_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-            message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[0].index].name + "." + tail);
-        }
-    } else if (matchedIndexes.length === 1 && !onlyOptionIsLead) {
-        if (matchedIndexes[0].index === 0) {
-            confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return false;
-            }
-            var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-            con.query(query, [pokemon[0].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
-        } else {
-            confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
-            if (confirm === false) {
-                message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                return false;
-            }
-            var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-            con.query(query, [ pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                if (err) {
-                    return reject(err);
-                }
-            });
-            message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[0].index].name + "." + tail);
-        }
-    } else if (matchedIndexes.length > 1) {
-        var string = message.author.username + " you have multiple " + matchedIndexes[0].pkmn.name + ". Please select which one you would like to release by typing its number as shown in the list, or type \"Cancel\" to keep your Pokémon.\n```";
-        for (i = 0; i < matchedIndexes.length; i++) {
-            string += ((i + 1).toString() + ". " + matchedIndexes[i].pkmn.name);
-            if (matchedIndexes[i].pkmn.shiny === 1) {
-                string += " ⭐";
-            }
-            string += (" | " + matchedIndexes[i].pkmn.gender + " | Level: " + matchedIndexes[i].pkmn.level_current + "\n");
-        }
-        string += "```\n";
-        
-        message.channel.send(string);
-        
-        var cancel = false;
-        var input = null;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-            })
-            .catch(collected => {
-                input = "cancel";
-                cancel = true;
-            });
-            
-            if (input === "cancel") {
-                cancel = true;
-                input = 0;
-            } else if (/^\d+$/.test(input)) {
-                var num = Number(input);
-                if (num > 0 && num <= matchedIndexes.length) {
-                    cancel = true;
-                    input = (num - 1);
-                } else {
-                    message.channel.send("Number is out of range. " + string);
-                    input = null;
-                }
-            } else if (input != null) {
-                message.channel.send("Command not recognized. " + string);
-                input = null;
-            } else {
-                input = null;
-            }
-        }
+    let wasPokemonReleased = false;
 
-        if (input < 0 || input == null) {
-            message.channel.send(message.author.username + " failed to release any Pokémon. " + duck);
-            return false;
-        } else {
-            if (pokemon[matchedIndexes[input].index].lead === 1) {
-                if (matchedIndexes[input].index === 0) {
-                    confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return false;
-                    }
-                    var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[1].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-                    con.query(query, [pokemon[1].pokemon_id, user.user_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    message.channel.send(message.author.username + " set " + pokemon[1].name + " as their lead Pokémon.");
-                    message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
-                } else {
-                    confirm = await confirmRelease(message, pokemon[matchedIndexes[input].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return false;
-                    }
-                    var query = "UPDATE pokemon SET pokemon.lead = 0 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[matchedIndexes[0].index].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    query = "UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    query = "UPDATE user SET user.lead = ? WHERE user.user_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id, user.user_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[matchedIndexes[input].index].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    message.channel.send(message.author.username + " set " + pokemon[0].name + " as their lead Pokémon.");
-                    message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[input].index].name + "." + tail);
-                }
-            } else {
-                if (matchedIndexes[input].index === 0) {
-                    confirm = await confirmRelease(message, pokemon[matchedIndexes[0].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return false;
-                    }
-                    var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [pokemon[0].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    message.channel.send(message.author.username + " released their " + pokemon[0].name + "." + tail);
-                } else {
-                    confirm = await confirmRelease(message, pokemon[matchedIndexes[input].index]);
-                    if (confirm === false) {
-                        message.channel.send(message.author.username + " decided to keep their " + pokemon[matchedIndexes[0].index].name + ".");
-                        return false;
-                    }
-                    var query = "DELETE FROM pokemon WHERE pokemon.pokemon_id = ?";
-                    con.query(query, [ pokemon[matchedIndexes[input].index].pokemon_id], function (err) {
-                        if (err) {
-                            return reject(err);
-                        }
-                    });
-                    message.channel.send(message.author.username + " released their " + pokemon[matchedIndexes[input].index].name + "." + tail);
-                }   
-            }
-        }
-    }
-
-    return true;
-}
-
-/**
- * Promps a user to confirm a Day Care drop off.
- * 
- * @param {Message} message The Discord message sent from the user.
- * @param {Pokemon} pkmn The Pokemon the user is dropping off at the Day Care.
- * 
- * @returns {boolean} True if user confirmed the drop off.
- */
-async function confirmDayCare(message, pkmn) {
-    var string = message.author.username + " are you sure you want to send this " + pkmn.name + " to the Day Care? It will be unusable while at the day care and you will have no choice over what moves it may learn when leveling up nor will it be able to evolve. If you were looking to breed this Pokémon, use the \"nursery\" command instead. Type \"Yes\" to confirm or \"No\" to cancel the drop off.";
+    let user = await getUser(message.author.id);
+    let pokemon = await getPokemon(message.author.id);
     
-    message.channel.send(string);
-
-    await displayAnOwnedPkmn(pkmn, message);
-    
-    var response;
-    var cancel = false;
-    var input = null;
-    while(cancel == false) {
-        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-        .then(collected => {
-            input = collected.first().content.toString().toLowerCase();
-        })
-        .catch(collected => {
-            input = "cancel";
-            cancel = true;
-        });
-
-        if (input === "cancel" || input === "no") {
-            cancel = true;
-            input = false;
-        } else if (input === "yes" || input === "confirm") {
-            cancel = true;
-            input = true;
-        } else if (input != null) {
-            message.channel.send("Command not recognized. " + string);
-            await displayAnOwnedPkmn(pkmn, message);
-            input = null;
-        } else {
-            input = null;
-        }
-    }
-    
-    if (input === true) {
-        respone = true;
+    /**
+     * If user only has one Pokemon.
+     */
+    if (pokemon.length < 2) {
+        await sendMessage(message.channel, (message.author.username + " you cannot release your only Pokémon."));
     } else {
-        response = false;
+        let description = (message.author.username + " please enter the name or nickname of the Pokémon you would like to release.");
+        let pokemonToRelease = await selectOwnedPokemon(message, user, pokemon, description, name);
+    
+        if (pokemonToRelease != null) {
+            let confirm = await confirmRelease(message, pokemonToRelease);
+            /**
+             * If user confirms the release.
+             */
+            if (confirm) {
+                /**
+                 * If released Pokemon was the user's lead Pokemon, automatically
+                 * set a different Pokemon from the user as lead.
+                 */
+                if (pokemonToRelease.lead === 1) {
+                    for (pkmn in pokemon) {
+                        if (pokemon[pkmn].pokemon_id != pokemonToRelease.pokemon_id) {
+                            await doQuery("UPDATE user SET user.lead = ? WHERE user.user_id = ?", [pokemon[pkmn].pokemon_id, user.user_id]);
+                            await doQuery("DELETE FROM pokemon WHERE pokemon.pokemon_id = ?", [pokemonToRelease.pokemon_id]);
+                            await doQuery("UPDATE pokemon SET pokemon.lead = 1 WHERE pokemon.pokemon_id = ?", [pokemon[pkmn].pokemon_id]);
+                            await sendMessage(message.channel, (message.author.username + " released their **" + pokemonToRelease.name + "** into the wild and set **" + pokemon[pkmn].name + "** as their new lead Pokémon."));
+                            wasPokemonReleased = true;
+                            break;
+                        }
+                    }
+                /**
+                 * User released a Pokemon that wasn't their lead.
+                 */
+                } else {
+                    await sendMessage(message.channel, (message.author.username + " released their **" + pokemonToRelease.name + "** into the wild."));
+                    wasPokemonReleased = true;
+                }
+            /**
+             * User chose a Pokemon to release but decided to keep it.
+             */
+            } else {
+                await sendMessage(message.channel, (message.author.username + " decided not to release their **" + pokemonToRelease.name + "**."));
+            }
+        /**
+         * User did not choose a Pokemon to release.
+         */
+        } else {
+            await sendMessage(message.channel, (message.author.username + " decided not to release any of their Pokémon."));
+        }
     }
 
     return new Promise(function(resolve) {
-        resolve(response);
+        resolve(wasPokemonReleased);
     });
 }
 
@@ -7267,48 +6993,40 @@ async function confirmDayCare(message, pkmn) {
  * @returns {boolean} True if user responded with yes.
  */
 async function confirmRelease(message, pkmn) {
-    var string = message.author.username + " are you sure you want to release this " + pkmn.name + "? Type \"Yes\" to confirm or \"No\" to cancel the release.";
-    
-    message.channel.send(string);
+    var description = message.author.username + " are you sure you want to release this " + pkmn.name + "? React with ✅ to confirm or ❌ to cancel the release.";
 
-    await displayAnOwnedPkmn(pkmn, message);
-    
-    var response;
-    var cancel = false;
-    var input = null;
-    while(cancel == false) {
-        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-        .then(collected => {
-            input = collected.first().content.toString().toLowerCase();
-        })
-        .catch(collected => {
-            input = "cancel";
-            cancel = true;
-        });
+    /**
+     * Show detailed stats about the Pokemon.
+     */
+    let releaseMessage = await displayAnOwnedPkmn(pkmn, message, description, true);
 
-        if (input === "cancel" || input === "no") {
-            cancel = true;
-            input = false;
-        } else if (input === "yes" || input === "confirm") {
-            cancel = true;
-            input = true;
-        } else if (input != null) {
-            message.channel.send("Command not recognized. " + string);
-            await displayAnOwnedPkmn(pkmn, message);
-            input = null;
-        } else {
-            input = null;
+    await releaseMessage.react("✅");
+    await releaseMessage.react("❌");
+
+    const filter = (reaction, user) => {
+        return ["✅","❌"].includes(reaction.emoji.name) && user.id === message.author.id;
+    };
+
+    let releaseDecision = false;
+    
+    /**
+     * User makes a choice by reacting to the message.
+     */
+    await releaseMessage.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
+
+        if (reaction.emoji.name === "✅") {
+            releaseDecision = true;
+        } else if (reaction.emoji.name === "❌") {
+            releaseDecision = false;
         }
-    }
+    })
     
-    if (input === true) {
-        respone = true;
-    } else {
-        response = false;
-    }
+    releaseMessage.delete(0);
 
     return new Promise(function(resolve) {
-        resolve(response);
+        resolve(releaseDecision);
     });
 }
 
@@ -8253,10 +7971,11 @@ async function getPokemonKnownMoves(pokemonId) {
  * 
  * @param {Pokemon} pkmn The Pokemon object to be represented in the message.
  * @param {Message} message The Discord message sent from the user.
+ * @param {string} description Optional descriptive text to explain why the Pokemon is being shown.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {Message} The Discord message showing the Pokemon details.
  */
-async function displayAnOwnedPkmn(pkmn, message) {
+async function displayAnOwnedPkmn(pkmn, message, description = undefined) {
     var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
     if (modelLink === null) {
         return new Promise(function(resolve) {
@@ -8330,14 +8049,20 @@ async function displayAnOwnedPkmn(pkmn, message) {
         movesString += "\n";
     }
     
-    await message.channel.send({
+    if (description === undefined) {
+        description = getCharacteristic(pkmn);
+    } else {
+        description = (description + "\n\n" + getCharacteristic(pkmn));
+    }
+
+    let pkmnMsg = await message.channel.send({
         "embed": {
             "author": {
                 "name": nick,
                 "icon_url": spriteLink,
             },
             "title": name,
-            "description": getCharacteristic(pkmn),
+            "description": description,
             "color": getTypeColor(pkmn.type_1),
             "thumbnail": {
                 "url": "attachment://" + imageName + ".gif"
@@ -8403,7 +8128,7 @@ async function displayAnOwnedPkmn(pkmn, message) {
     });
 
     return new Promise(function(resolve) {
-        resolve(true);
+        resolve(pkmnMsg);
     });
 }
 
