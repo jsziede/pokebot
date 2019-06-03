@@ -7043,257 +7043,219 @@ async function confirmRelease(message, pkmn) {
  * @returns {Pokemon} The Pokemon that was generated.
  */
 async function generateWildPokemon(message, user, lead) {
-    var region = user.region;
-    var location = user.location;
-    var leadLevel = lead.level_current;
-    var field = user.field;
+    let region = user.region;
+    let location = user.location;
+    let leadLevel = lead.level_current;
+    let field = user.field;
 
-    var possiblePokemonRare = [];
-    var possiblePokemonNotRare = [];
+    let possiblePokemonRare = [];
+    let possiblePokemonNotRare = [];
 
-    var selectedPokemon = null;
+    let hasHiddenAbility = false;
 
-    var locationData;
-    var lpath = generateLocationJSONPath(user.region, user.location);
-    var ldata;
-    try {
-        ldata = fs.readFileSync(lpath, "utf8");
-        locationData = JSON.parse(ldata);
-    } catch (err) {
-        return null;
-    }
+    let selectedPokemon = null;
+
+    let locationData = parseJSON(generateLocationJSONPath(user.region, user.location));
+
+    /**
+     * If a location file for the user's location exists.
+     * If it doesn't, then that means the user is in a location with no wild Pokemon.
+     */
+    if (locationData != null) {
+        let rarityIndex = 0;
+
+        /**
+         * Get current time of the user. This is needed
+         * for regions that have time-based encounters.
+         */
+        let cur = convertToTimeZone(user);
+        let hour = moment(cur).hour();
+        if (region === "Kanto" || region === "Johto" || region === "Sinnoh") {
+            /**
+             * Kanto, Johto, and Sinnoh in Gen. 4 have morning, noon, and evening encounters.
+             */
+            if (hour >= 10 && hour < 20) {
+                rarityIndex = 1;
+            } else if (hour >= 20 || hour < 4) {
+                rarityIndex = 2;
+            }
+        } else if (region === "Unova") {
+            /**
+             * Unova has seasonal encounters.
+             */
+            rarityIndex = moment().month() % 4;
+        } else if (region === "Alola") {
+            /**
+             * Alola only has day and night encounters.
+             */
+            if (hour < 6 || hour >= 18) {
+                rarityIndex = 1;
+            }
+        }
     
-    var rarityIndex = 0;
-    var cur = convertToTimeZone(user);
-    var hour = moment(cur).hour();
-    if (region === "Kanto" || region === "Johto" || region === "Sinnoh") {
-        if (hour >= 10 && hour < 20) {
-            rarityIndex = 1;
-        } else if (hour >= 20 || hour < 4) {
-            rarityIndex = 2;
+        /**
+         * Check if user has the Poke Radar.
+         * The Poke Radar is needed for certain
+         * encounters in some regions.
+         */
+        let hasRadar = false;
+        let bag = await getBag(user.user_id);
+        if (bag != null) {
+            let doesUserHaveIt = bag.map(function(t) { return t.name.toLowerCase(); }).indexOf("Poké Radar");
+            if (doesUserHaveIt >= 0) {
+                hasRadar = true;
+            }
         }
-    } else if (region === "Unova") {
-        rarityIndex = moment().month() % 4;
-    } else if (region === "Alola") {
-        if (hour < 6 || hour >= 18) {
-            rarityIndex = 1;
-        }
-    }
-
-    var bag = await getBag(user.user_id);
-    if (bag === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
-    var hasRadar = false;
-    var doesUserHaveIt = bag.map(function(t) { return t.name.toLowerCase(); }).indexOf("Poké Radar");
-    if (doesUserHaveIt >= 0) {
-        hasRadar = true;
-    }
-
-    var isSwarming = false;
-
-    var p;
-    for (p = 0; p < locationData.pokemon.length; p++) {
-        if ((locationData.pokemon[p].min_level <= leadLevel) && (locationData.pokemon[p].field === field) && locationData.pokemon[p].rarity[rarityIndex] > 0) {
-            if (locationData.pokemon[p].hasOwnProperty("swarm")) {
-                if (isSwarming === true) {
-                    if (locationData.pokemon[p].rarity[rarityIndex] <= 15) {
-                        possiblePokemonRare[possiblePokemonRare.length] = new WildPokemon(locationData.pokemon[p].name, level, locationData.pokemon[p].rarity[rarityIndex], locationData.pokemon[p].field);
-                    } else {
-                        possiblePokemonNotRare[possiblePokemonNotRare.length] = new WildPokemon(locationData.pokemon[p].name, level, locationData.pokemon[p].rarity[rarityIndex], locationData.pokemon[p].field);
+    
+        /**
+         * @todo Add Pokemon swarms to the weather functions.
+         */
+        let isSwarming = false;
+    
+        /**
+         * Add all Pokemon with an encounter rate greater than 0 to the wild Pokemon lists.
+         * There are two lists: one that stores wild pokemon with less than or equal to 15 encounter rate
+         * and the other for pokemon with more than 15 encounter rate.
+         */
+        let wildPokemonIndex;
+        for (wildPokemonIndex = 0; wildPokemonIndex < locationData.pokemon.length; wildPokemonIndex++) {
+            if ((locationData.pokemon[wildPokemonIndex].min_level <= leadLevel) && (locationData.pokemon[wildPokemonIndex].field === field) && locationData.pokemon[wildPokemonIndex].rarity[rarityIndex] > 0) {
+                /**
+                 * If the Pokemon is only encountered during a swarm.
+                 */
+                if (locationData.pokemon[wildPokemonIndex].hasOwnProperty("swarm")) {
+                    if (isSwarming === true) {
+                        if (locationData.pokemon[wildPokemonIndex].rarity[rarityIndex] <= 15) {
+                            possiblePokemonRare[possiblePokemonRare.length] = new WildPokemon(locationData.pokemon[wildPokemonIndex].name, level, locationData.pokemon[wildPokemonIndex].rarity[rarityIndex], locationData.pokemon[wildPokemonIndex].field);
+                        } else {
+                            possiblePokemonNotRare[possiblePokemonNotRare.length] = new WildPokemon(locationData.pokemon[wildPokemonIndex].name, level, locationData.pokemon[wildPokemonIndex].rarity[rarityIndex], locationData.pokemon[wildPokemonIndex].field);
+                        }
                     }
-                }
-            } else if (locationData.pokemon[p].hasOwnProperty("dexnav")) {
-                if (hasRadar === true) {
-                    if (locationData.pokemon[p].rarity[rarityIndex] <= 15) {
-                        possiblePokemonRare[possiblePokemonRare.length] = new WildPokemon(locationData.pokemon[p].name, level, locationData.pokemon[p].rarity[rarityIndex], locationData.pokemon[p].field);
-                    } else {
-                        possiblePokemonNotRare[possiblePokemonNotRare.length] = new WildPokemon(locationData.pokemon[p].name, level, locationData.pokemon[p].rarity[rarityIndex], locationData.pokemon[p].field);
+                /**
+                 * If Pokemon requires some type of the Poke Radar.
+                 */
+                } else if (locationData.pokemon[wildPokemonIndex].hasOwnProperty("dexnav")) {
+                    if (hasRadar === true) {
+                        if (locationData.pokemon[wildPokemonIndex].rarity[rarityIndex] <= 15) {
+                            possiblePokemonRare[possiblePokemonRare.length] = new WildPokemon(locationData.pokemon[wildPokemonIndex].name, level, locationData.pokemon[wildPokemonIndex].rarity[rarityIndex], locationData.pokemon[wildPokemonIndex].field);
+                        } else {
+                            possiblePokemonNotRare[possiblePokemonNotRare.length] = new WildPokemon(locationData.pokemon[wildPokemonIndex].name, level, locationData.pokemon[wildPokemonIndex].rarity[rarityIndex], locationData.pokemon[wildPokemonIndex].field);
+                        }
                     }
-                }
-            } else {
-                var highestLevel = locationData.pokemon[p].max_level;
-                if (highestLevel > lead.level) {
-                    highestLevel = lead.level;
-                }
-                var level = Math.floor(Math.random() * (highestLevel - locationData.pokemon[p].min_level + 1)) + locationData.pokemon[p].min_level;
-                if (locationData.pokemon[p].rarity[rarityIndex] <= 15) {
-                    possiblePokemonRare[possiblePokemonRare.length] = new WildPokemon(locationData.pokemon[p].name, level, locationData.pokemon[p].rarity[rarityIndex], locationData.pokemon[p].field);
+                /**
+                 * If Pokemon doesn't require any special items or phenomena to encounter.
+                 */
                 } else {
-                    possiblePokemonNotRare[possiblePokemonNotRare.length] = new WildPokemon(locationData.pokemon[p].name, level, locationData.pokemon[p].rarity[rarityIndex], locationData.pokemon[p].field);
+                    let highestLevel = locationData.pokemon[wildPokemonIndex].max_level;
+                    if (highestLevel > lead.level) {
+                        highestLevel = lead.level;
+                    }
+                    let level = Math.floor(Math.random() * (highestLevel - locationData.pokemon[wildPokemonIndex].min_level + 1)) + locationData.pokemon[wildPokemonIndex].min_level;
+                    if (locationData.pokemon[wildPokemonIndex].rarity[rarityIndex] <= 15) {
+                        possiblePokemonRare[possiblePokemonRare.length] = new WildPokemon(locationData.pokemon[wildPokemonIndex].name, level, locationData.pokemon[wildPokemonIndex].rarity[rarityIndex], locationData.pokemon[wildPokemonIndex].field);
+                    } else {
+                        possiblePokemonNotRare[possiblePokemonNotRare.length] = new WildPokemon(locationData.pokemon[wildPokemonIndex].name, level, locationData.pokemon[wildPokemonIndex].rarity[rarityIndex], locationData.pokemon[wildPokemonIndex].field);
+                    }
                 }
             }
         }
-    }
-
-    if (possiblePokemonNotRare.length === 0 && possiblePokemonRare.length == 0) {
-        return null;
-    }
-
-    if (possiblePokemonRare.length > 0) {
-        function compare(a,b) {
-            if (a.rarity < b.rarity) {
-                return -1;
-            }
-            if (a.rarity > b.rarity) {
-                return 1;
-            }
-            return 0;
-        }
     
-        possiblePokemonRare.sort(compare);
-
-        var r;
-        for (r = 0; r < possiblePokemonRare.length; r++) {
-            if ((Math.random() * 100) <= possiblePokemonRare[r].rarity) {
-                selectedPokemon = possiblePokemonRare[r];
+        /**
+         * Sort list of rare wild Pokemon from more rare to least rare.
+         */
+        if (possiblePokemonNotRare.length != 0 || possiblePokemonRare.length != 0) {
+            if (possiblePokemonRare.length > 0) {
+                function compare(a,b) {
+                    if (a.rarity < b.rarity) {
+                        return -1;
+                    }
+                    if (a.rarity > b.rarity) {
+                        return 1;
+                    }
+                    return 0;
+                }
+            
+                possiblePokemonRare.sort(compare);
+        
+                /**
+                 * For each rare Pokemon, roll a number between 1 and 100.
+                 * If that number is less than or equal to the Pokemon's rarity,
+                 * then that Pokemon is selected and the other Pokemon are disregarded.
+                 */
+                let r;
+                for (r = 0; r < possiblePokemonRare.length; r++) {
+                    if (Math.ceil((Math.random() * 100)) <= possiblePokemonRare[r].rarity) {
+                        selectedPokemon = possiblePokemonRare[r];
+                        break;
+                    }
+                }
+        
+                /**
+                 * If no rare Pokemon were selected but there aren't any Pokemon that
+                 * aren't rare, then select the least rarest of the rare Pokemon.
+                 */
+                if (selectedPokemon == null && possiblePokemonNotRare.length === 0) {
+                    selectedPokemon = possiblePokemonRare[possiblePokemonRare.length - 1];
+                }
             }
-            r = possiblePokemonRare.length;
-        }
-
-        if (selectedPokemon == null && possiblePokemonNotRare.length === 0) {
-            selectedPokemon = possiblePokemonRare[possiblePokemonRare.length - 1];
-        }
-    }
-
-    if (selectedPokemon == null) {
-        function shuffle(arr) {
-            for (var i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
+        
+            /**
+             * If no rare Pokemon was selected but there are non rare Pokemon
+             * to select from.
+             */
+            if (selectedPokemon == null) {
+                function shuffle(arr) {
+                    for (let i = arr.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [arr[i], arr[j]] = [arr[j], arr[i]];
+                    }
+                    return arr;
+                }
+        
+                /**
+                 * Randomly shuffle the non rare Pokemon.
+                 */
+                shuffle(possiblePokemonNotRare);
+        
+                /**
+                 * For each rare Pokemon, roll a number between 1 and 100.
+                 * If that number is less than or equal to the Pokemon's rarity,
+                 * then that Pokemon is selected and the other Pokemon are disregarded.
+                 */
+                let n;
+                for (n = 0; n < possiblePokemonNotRare.length; n++) {
+                    if (Math.ceil((Math.random() * 100)) <= possiblePokemonNotRare[n].rarity) {
+                        selectedPokemon = possiblePokemonNotRare[n];
+                        break;
+                    }
+                }
+        
+                /**
+                 * If no Pokemon was randomly selected, then select whichever non rare Pokemon
+                 * was shuffled to the end of the list.
+                 */
+                if (selectedPokemon == null) {
+                    selectedPokemon = possiblePokemonNotRare[possiblePokemonNotRare.length - 1];
+                }
             }
-            return arr;
-        }
-
-        shuffle(possiblePokemonNotRare);
-
-        var n;
-        for (n = 0; n < possiblePokemonNotRare.length; n++) {
-            if ((Math.random() * 100) <= possiblePokemonNotRare[n].rarity) {
-                selectedPokemon = possiblePokemonNotRare[n];
+        
+            /**
+             * 5% chance to find a Pokemon with a hidden ability.
+             */
+            if(Math.ceil((Math.random() * 100) > 95)) {
+                hasHiddenAbility = true;
             }
-            n = possiblePokemonNotRare.length;
-        }
-
-        if (selectedPokemon == null) {
-            selectedPokemon = possiblePokemonNotRare[possiblePokemonNotRare.length - 1];
         }
     }
 
-    var hasHidden = false;
-    if((Math.random() * 100) > 90) {
-        hasHidden = false;
+    if (selectedPokemon != null) {
+        selectedPokemon = await generatePokemonByName(message, selectedPokemon.name, selectedPokemon.level, region, location, hasHiddenAbility)
     }
 
-    return await generatePokemonByName(message, selectedPokemon.name, selectedPokemon.level, region, location, hasHidden);
-}
-
-/*
-async function convertDBToSimPokemon(pokemon) {
-    var moves = [];
-    moves[moves.length] = pokemon.move_1.replace(/\W/g, '').toLowerCase();
-    moves[moves.length] = pokemon.move_2.replace(/\W/g, '').toLowerCase();
-    moves[moves.length] = pokemon.move_3.replace(/\W/g, '').toLowerCase();
-    moves[moves.length] = pokemon.move_4.replace(/\W/g, '').toLowerCase();
-    var ident = "p1: " + pokemon.name;
-    var details;
-    if (pokemon.gender === "Male") {
-        details = pokemon.name + ", L" + pokemon.level_current + ", M";
-    } else {
-        details = pokemon.name + ", L" + pokemon.level_current + ", F";
-    }
-    var condition = pokemon.stat_hp + "/" + pokemon.stat_hp;
-    var stats = {
-        "atk": pokemon.stat_atk,
-        "def": pokemon.stat_def,
-        "spa": pokemon.stat_spatk,
-        "spd": pokemon.stat_spdef,
-        "spe": pokemon.stat_spd
-    };
-    var ability = pokemon.ability.replace(/\W/g, '').toLowerCase();
     return new Promise(function(resolve) {
-        resolve([{
-            "ident": ident,
-            "details": details,
-            "condition": condition,
-            "active": true,
-            "stats": stats,
-            "moves": moves,
-            "baseAbility": ability,
-            "item": "luckyegg",
-            "pokeball": "pokeball",
-            "ability": ability
-        }]);
+        resolve(selectedPokemon);
     });
 }
-
-async function convertWildToSimPokemon(pokemon) {
-    var moves = [];
-    moves[moves.length] = pokemon.moves[0].replace(/\W/g, '').toLowerCase();
-    moves[moves.length] = pokemon.moves[1].replace(/\W/g, '').toLowerCase();
-    moves[moves.length] = pokemon.moves[2].replace(/\W/g, '').toLowerCase();
-    moves[moves.length] = pokemon.moves[3].replace(/\W/g, '').toLowerCase();
-    var ident = "p2: " + pokemon.name;
-    var details;
-    if (pokemon.gender === "Male") {
-        details = pokemon.name + ", L" + pokemon.level + ", M";
-    } else {
-        details = pokemon.name + ", L" + pokemon.level + ", F";
-    }
-    var condition = pokemon.stats[0] + "/" + pokemon.stats[0];
-    var stats = {
-        "atk": pokemon.stats[1],
-        "def": pokemon.stats[2],
-        "spa": pokemon.stats[3],
-        "spd": pokemon.stats[4],
-        "spe": pokemon.stats[5]
-    };
-    var ability = pokemon.ability.replace(/\W/g, '').toLowerCase();
-    return new Promise(function(resolve) {
-        resolve([{
-            "ident": ident,
-            "details": details,
-            "condition": condition,
-            "active": true,
-            "stats": stats,
-            "moves": moves,
-            "baseAbility": ability,
-            "item": "luckyegg",
-            "pokeball": "pokeball",
-            "ability": ability
-        }]);
-    });
-}
-
-async function battleWildPokemon(message, wild) {
-    var stream = new Sim.BattleStream();
-    var lead = await getLeadPokemon(message.author.id);
-    var leadSim = await convertDBToSimPokemon(lead);
-    var wildSim = await convertWildToSimPokemon(wild);
-
-    (async () => {
-        var output;
-        while ((output = await stream.read())) {
-            console.log(output);
-        }
-    })();
-
-    var Config = require('./Pokemon-Showdown/config/config-example.js');
-    
-    stream.write(`>start {"format":"gen7randombattle"}`);
-    stream.write(`>player p1 {"name":"${message.author.username}"}`);
-    stream.write(`>player p2 {"name":"${wild.name}"}`);
-    stream.write(`>p1 team 1`);
-    stream.write(`>p2 team 1`);
-    stream.write(`>p1 move 1`);
-    stream.write(`>p2 move 4`);
-    stream.write(`>p1 move 3`);
-    stream.write(`>p2 move 2`);
-}
-
-*/
 
 /**
  * Allows a user to catch a Pokemon. The user is continuously prompted
