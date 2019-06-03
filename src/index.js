@@ -5657,7 +5657,7 @@ async function replaceMove(message, pokemon, newMove, moves) {
                 "icon_url": spriteLink,
             },
             "title": "Teach a new move",
-            "description": "<@" + message.author.id + "> your " + name + " wants to learn " + newMove + ", but already knows four moves. Please select a move to replace by reacting with the number that corresponds to the move's slot, or ❌ to cancel learning the new move.",
+            "description": "<@" + message.author.id + "> your **" + name + "** wants to learn **" + newMove + "**, but already knows four moves. Please select a move to replace by reacting with the number that corresponds to the move's slot, or ❌ to cancel learning the new move.",
             "color": getTypeColor(pokemon.type_1),
             "thumbnail": {
                 "url": "attachment://" + pokemon.name + ".gif"
