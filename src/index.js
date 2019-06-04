@@ -4518,6 +4518,8 @@ async function takeItem(message) {
 /**
  * Allows a user to trade a Pokemon with another user.
  * 
+ * @todo Automatically remove items without a cost value.
+ * 
  * @param {Message} message The Discord message sent from the user.
  * @param {string} tradeTo The Discord id of the trainer that the
  * user wants to trade with.
@@ -4941,6 +4943,8 @@ async function selectOwnedPokemon(message, user, pokemon, description, name = un
 /**
  * Checks if a Pokemon evolves after being traded, and attempts
  * to evolve that Pokemon if it meets its evolution criteria.
+ * 
+ * @todo "If either Karrablast or Shelmet holds an Everstone when traded for the other, neither can evolve."
  *  
  * @param {Message} message The Discord message sent from the user. 
  * @param {Pokemon} pokemon The Pokemon to check the trade evolution for.
