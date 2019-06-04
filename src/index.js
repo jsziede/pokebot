@@ -365,8 +365,8 @@ client.on('message', async (message) => {
 
 /**
  * Performs various actions for the user if the user
- * sent a message that wasn't a command, including giving
- * experience to the user's lead Pokemon, possibly
+ * sent a message that wasn't a command, includding giving
+ * experience to the user's lead Pokemon (and Day Care Pokemon), possibly
  * having the user encounter a wild Pokemon, and possibly
  * giving money to the user.
  * 
@@ -1752,46 +1752,46 @@ async function doLotto(message) {
         if (matches === 0) {
             await sendMessage(message.channel, (message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball."));
             user.money += 1000;
-            await addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball");
+            await addItemToBag(message.author.id, "Poké Ball", 1, true, "Ball", true);
         } else if (matches === 1) {
             await sendMessage(message.channel, (message.author.username + " you had 1 match! You won " + dollar + "2000 and an Ultra Ball!"));
             user.money += 2000;
-            await addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball");
+            await addItemToBag(message.author.id, "Ultra Ball", 1, true, "Ball", true);
         } else if (matches === 2) {
             await sendMessage(message.channel, (message.author.username + " you had 2 matches! You won " + dollar + "4000 and three Ultra Balls!"));
             user.money += 4000;
-            await addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball");
+            await addItemToBag(message.author.id, "Ultra Ball", 3, true, "Ball", true);
         } else if (matches === 3) {
             await sendMessage(message.channel, (message.author.username + " you had 3 matches! You won " + dollar + "7000 and five Ultra Balls!"));
             user.money += 7000;
-            await addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball");
+            await addItemToBag(message.author.id, "Ultra Ball", 5, true, "Ball", true);
         } else if (matches === 4) {
             await sendMessage(message.channel, (message.author.username + " you had 4 matches! You won " + dollar + "10000 and a Leaf Stone!"));
             user.money += 10000;
-            await addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item");
+            await addItemToBag(message.author.id, "Leaf Stone", 1, true, "Item", false);
         } else if (matches === 5) {
             await sendMessage(message.channel, (message.author.username + " you had 5 matches! You won " + dollar + "13000 and a Fire Stone!"));
             user.money += 13000;
-            await addItemToBag(message.author.id, "Fire Stone", 1, true, "Item");
+            await addItemToBag(message.author.id, "Fire Stone", 1, true, "Item", false);
         } else if (matches === 6) {
             await sendMessage(message.channel, (message.author.username + " you had 6 matches! You won " + dollar + "18000 and a Water Stone!"));
             user.money += 18000;
-            await addItemToBag(message.author.id, "Water Stone", 1, true, "Item");
+            await addItemToBag(message.author.id, "Water Stone", 1, true, "Item", false);
         } else if (matches === 7) {
             await sendMessage(message.channel, (message.author.username + " you had 7 matches! You won " + dollar + "25000 and 10 Ultra Balls!"));
             user.money += 25000;
-            await addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball");
+            await addItemToBag(message.author.id, "Ultra Ball", 10, true, "Ball", true);
         } else if (matches === 8) {
             await sendMessage(message.channel, (message.author.username + " you had 8 matches! You won " + dollar + "35000, 30 Ultra Balls, and 5 Rare Candies!"));
             user.money += 35000;
-            await addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball");
-            await addItemToBag(message.author.id, "Rare Candy", 5, true, "Item");
+            await addItemToBag(message.author.id, "Ultra Ball", 30, true, "Ball", true);
+            await addItemToBag(message.author.id, "Rare Candy", 5, true, "Item", false);
         } else if (matches === 9) {
             await sendMessage(message.channel, (message.author.username + " you had 9 matches! You won " + dollar + "50000, 50 Ultra Balls, 10 Rare Candies, and a Master Ball!"));
             user.money += 50000;
-            await addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball");
-            await addItemToBag(message.author.id, "Rare Candy", 10, true, "Item");
-            await addItemToBag(message.author.id, "Master Ball", 1, true, "Ball");
+            await addItemToBag(message.author.id, "Ultra Ball", 50, true, "Ball", true);
+            await addItemToBag(message.author.id, "Rare Candy", 10, true, "Item", false);
+            await addItemToBag(message.author.id, "Master Ball", 1, true, "Ball", true);
         } 
 
         /* Tell user what their id is and what the winning number is. */
@@ -2393,7 +2393,8 @@ async function createNewUser(userID, name, message, region) {
             name: everstone.name,
             quantity: 1,
             holdable: 1,
-            category: "Item"
+            category: "Item",
+            battle: 0
         }
 
         let ballSet = {
@@ -2401,7 +2402,8 @@ async function createNewUser(userID, name, message, region) {
             name: balls.name,
             quantity: 10,
             holdable: 1,
-            category: "Ball"
+            category: "Ball",
+            battle: 1
         }
 
         let visaSet = {
@@ -2409,7 +2411,8 @@ async function createNewUser(userID, name, message, region) {
             name: visa.name,
             quantity: 1,
             holdable: 0,
-            category: "Key"
+            category: "Key",
+            battle: 0
         }
 
         try {
@@ -3857,10 +3860,11 @@ function doesUserHaveHoldableItem(bag, item) {
  * @param {number} amount The quantity of the item being added.
  * @param {boolean} isHoldable If the item can be held by a Pokemon.
  * @param {string} cat The category of the item being added (key, medicine, etc).
+ * @param {boolean} useInBattle If the item can be used during a battle.
  * 
  * @returns {boolean} True if the item was added to the user's bag.
  */
-async function addItemToBag(userId, itemName, amount, isHoldable, cat) {
+async function addItemToBag(userId, itemName, amount, isHoldable, cat, useInBattle) {
     let wasItemAdded = false;
     let itemQuantity = await doQuery("SELECT * from item WHERE item.owner = ? AND item.name = ?", [userId, itemName]);
     if (itemQuantity != null) {
@@ -3870,12 +3874,17 @@ async function addItemToBag(userId, itemName, amount, isHoldable, cat) {
             if (isHoldable) {
                 hold = 1;
             }
+            let batt = 0;
+            if (useBagInBattle) {
+                batt = 1;
+            }
             let itemSet = {
                 owner: userId,
                 name: itemName,
                 quantity: amount,
                 holdable: hold,
-                category: cat
+                category: cat,
+                battle: batt
             }
             if (await doQuery("INSERT INTO item SET ?", [itemSet]) != null) {
                 wasItemAdded = true;
@@ -3998,7 +4007,7 @@ async function giveItem(message, item) {
                     if (await doQuery("UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?", [item.item_id, lead.pokemon_id]) != null) {
                         await sendMessage(message.channel, (message.author.username + " gave the " + item.name + " to " + lead.name + "."));
                         if (
-                            await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.cat) === true
+                            await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.cat, heldItem.batt) === true
                             &&
                             await removeItemFromBag(message.author.id, item.name, 1) === true
                         ) {
