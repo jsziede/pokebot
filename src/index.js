@@ -442,18 +442,107 @@ async function doNonCommandMessage(message) {
  * @param {Pokemon} lead The user's lead Pokemon.
  */
 async function encounterWildPokemon(message, encounter, user, lead) {
-    /* Show details about the wild Pokemon. */
-    await displayAWildPkmn(encounter, message);
-
     transactions[transactions.length] = new Transaction(message.author.id, "your encounter with " + encounter.name);
     
     let shuffle_icon = await getShuffleEmoji(encounter.no);
     await message.react(shuffle_icon.id);
 
-    //waits for user to either catch pokemon or run away
-    await throwPokeBall(message, encounter, user, lead);
+    await showMainBattleScreen(message, encounter, user, lead);
 
     removeTransaction(message.author.id);
+}
+
+/**
+ * Shows a wild Pokemon to a user and allows the user to make
+ * choices regarding the wild Pokemon.
+ * 
+ * @param {Message} message The Discord message sent from the user.
+ * @param {Pokemon} encounter The wild Pokemon being encountered.
+ * @param {User} user The Pokebot user who is encountering the Pokemon.
+ * @param {Pokemon} lead The user's lead Pokemon.
+ * 
+ * @returns {any} To be determined.
+ */
+async function showMainBattleScreen(message, encounter, user, lead) {
+    let reactions = ["🥊", "🎒", "👟"];
+    let description = message.author.username + " please react to this message to make a selection.\n🥊 Fight\n🎒 View Bag\n👟 Run Away";
+    let modelLink = generateModelLink(encounter.name, encounter.shiny, encounter.gender, encounter.form);
+    let imageName = await getGifName(encounter.name);
+
+    const FIGHT = 0;
+    const BAG = 1;
+    const RUN = 2;
+
+    let encountering = true;
+    while (encountering) {
+        let embed = await generateWildPokemonEmbed(encounter, message, description);
+        let baseEncounterMsg = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }], true);
+        
+        for (let emote in reactions) {
+            await baseEncounterMsg.react(reactions[emote]);
+        }
+        
+        const filter = (reaction, user) => {
+            return reactions.includes(reaction.emoji.name) && user.id === message.author.id;
+        };
+        
+        let selectedOption = RUN;
+
+        await baseEncounterMsg.awaitReactions(filter, { max: 1, time: 600000, errors: ['time'] })
+        .then(collected => {
+            const reaction = collected.first();
+
+            if (reaction.emoji.name === reactions[0]) {
+                selectedOption = FIGHT;
+            } else if (reaction.emoji.name === reactions[1]) {
+                selectedOption = BAG;
+            } else if (reaction.emoji.name === reactions[2]) {
+                selectedOption = RUN;
+            }
+        })
+        .catch(() => {
+            selectedOption = RUN;
+        })
+
+        baseEncounterMsg.delete(0);
+        
+        if (selectedOption === FIGHT) {
+            /**
+             * @todo add battling, might do something generic in the mean time.
+             */
+        } else if (selectedOption === BAG) {
+            encountering = await useBagInBattle(message, encounter, user, lead);
+        } else if (selectedOption === RUN) {
+            /**
+             * @todo check for ability/move that prevents escape after battling has been added.
+             */
+            encountering = false;
+            await sendMessage(message.channel, (message.author.username + " ran away from the wild **" + encounter.name + "**."));
+        }
+    }
+}
+
+/**
+ * 
+ */
+async function useBagInBattle(message, encounter, user, lead) {
+    let bag = await getBag(user.user_id);
+
+    /**
+     * @todo
+     * Items usable in battle include:
+     *  -flutes
+     *  -medicine (except wings)?
+     *  -x attack, x defense, etc.
+     *  -escape items (poke doll, fluffy tail, poke toy)
+     *  -poke balls
+     *  -some berries
+     */
+    for (let item in bag) {
+        /**
+         * @todo Finish making this after items are overhauled.
+         */
+    }
 }
 
 /**
@@ -2257,7 +2346,11 @@ async function createNewUser(userID, name, message, region) {
     starter.otid = message.author.id;
     starter.lead = 1;
     
-    displayAWildPkmn(starter, message);
+    let description = message.author.username + " please react to this message to make a selection.\n🥊 Fight\n🎒 View Bag\n👟 Run Away";
+    let embed = generateWildPokemonEmbed(starter, message, description);
+    let modelLink = generateModelLink(starter.name, starter.shiny, starter.gender, starter.form);
+    let imageName = await getGifName(starter.name);
+    await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }]);
     
     let accept = await confirmStarter(message, userID);
     /* If user rejects starter. */
@@ -5703,7 +5796,6 @@ async function replaceMove(message, pokemon, newMove, moves) {
             }
         })
         .catch(collected => {
-            console.error(collected);
             moveSlotToReplace = -1;
         });
 
@@ -6552,6 +6644,9 @@ async function dayCare(message) {
                         dayCareSelection = LEAVE;
                     }
                 })
+                .catch(collected => {
+                    dayCareSelection = LEAVE;
+                });
 
                 await dayCareMessage.clearReactions();
                 dayCareMessage.delete(0);
@@ -6712,6 +6807,9 @@ async function pickUpFromDayCare(message, user) {
                 selectedOption = LEAVE;
             }
         })
+        .catch(collected => {
+            selectedOption = LEAVE;
+        });
     
         dayCareMessage.delete(0);
 
@@ -6853,6 +6951,9 @@ async function viewDayCare(message, daycarePokemon) {
         } else if (reaction.emoji.name === '❌') {
             selectedOption = LEAVE;
         }
+    })
+    .catch(collected => {
+        selectedOption = LEAVE;
     })
 
     dayCareMessage.delete(0);
@@ -7031,6 +7132,9 @@ async function confirmRelease(message, pkmn) {
             releaseDecision = false;
         }
     })
+    .catch(collected => {
+        releaseDecision = false;
+    });
     
     releaseMessage.delete(0);
 
@@ -7280,21 +7384,9 @@ async function generateWildPokemon(message, user, lead) {
  * @returns {boolean} True if the user caught the Pokemon.
  */
 async function throwPokeBall(message, wild, user, lead) {
-    var path = generatePokemonJSONPath(wild.name, wild.form);
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
-    }
+    let pkmn = parseJSON(generatePokemonJSONPath(wild.name, wild.form));
     
-    var pkmn = JSON.parse(data);
-
-    var leadLevel = lead.level_current;
-    var leadGender = lead.gender;
-    var leadName = lead.name;
-    
+    /* This will be put in a different function that occurs after catching a Pokemon.
     let heldItem = await getItem(lead.item);
     if (heldItem === null) {
         heldItem = lead.item;
@@ -7305,7 +7397,7 @@ async function throwPokeBall(message, wild, user, lead) {
     if (heldItem === "Macho Brace") {
         evMult = 2;
     }
-    
+
     var EVs = [lead.ev_hp, lead.ev_atk, lead.ev_def, lead.ev_spatk, lead.ev_spdef, lead.ev_spd];
     var oldEV = 0;
     var evsum = EVs[0] + EVs[1] + EVs[2] + EVs[3] + EVs[4] + EVs[5];
@@ -7413,14 +7505,11 @@ async function throwPokeBall(message, wild, user, lead) {
             }
         }
     }
-
-    var i;
-    
-    await message.channel.send("<@" + message.author.id + ">, a wild " + wild.name + " appeared!");
+    */
     
     var numTurns = 0;
     var encounter = true;
-    while(encounter) {
+    while (encounter) {
         var Balls = await getBalls(message.author.id);
         if (Balls === null) {
             return new Promise(function(resolve) {
@@ -7697,7 +7786,7 @@ async function throwPokeBall(message, wild, user, lead) {
                 await message.channel.send("Oh no! The Pokémon broke free!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
             } else if (shakes === 1) {
-                await message.channel.send("	Aww! It appeared to be caught!");
+                await message.channel.send("Aww! It appeared to be caught!");
                 await removeItemFromBag(message.author.id, Balls[input].name, 1);
             } else if (shakes === 2) {
                 await message.channel.send("Aargh! Almost had it!");
@@ -7739,13 +7828,14 @@ async function throwPokeBall(message, wild, user, lead) {
  * 
  * @param {Pokemon} pkmn The Pokemon object to be represented in the message.
  * @param {Message} message The Discord message sent from the user.
+ * @param {string} description Descriptive text that explains the reactions that the message may have.
  * 
- * @returns {boolean} True if no errors are encountered.
+ * @returns {RichEmbed} A rich embedded message.
  */
-async function displayAWildPkmn(pkmn, message) {
-    var footerLink = "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png";
-    var footerText = "You already have this Pokémon.";
-    var user = await getUser(message.author.id);
+async function generateWildPokemonEmbed(pkmn, message, description) {
+    let footerLink = "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png";
+    let footerText = "You already have this Pokémon.";
+    let user = await getUser(message.author.id);
     if (user != null) {
         if (user.pokedex.charAt(pkmn.no - 1) === '0') {
             footerLink = "https://cdn.bulbagarden.net/upload/7/74/Bag_Heavy_Ball_Sprite.png";
@@ -7755,31 +7845,20 @@ async function displayAWildPkmn(pkmn, message) {
         footerLink = "https://cdn.bulbagarden.net/upload/7/74/Bag_Heavy_Ball_Sprite.png";
         footerText = "You do not have this Pokémon.";
     }
-    
-    var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
-    if (modelLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
 
-    var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
-    if (spriteLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+    let spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
 
-    var nextLevel = getXpToNextLevel(pkmn.name, pkmn.totalxp, pkmn.level);
+    let nextLevel = getXpToNextLevel(pkmn.name, pkmn.totalxp, pkmn.level);
     
-    var type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.type[0]);
-    var typeString = type_icon + " " + pkmn.type[0];
+    let type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.type[0]);
+    let typeString = type_icon + " " + pkmn.type[0];
+
     if (pkmn.type[1] != "---" && pkmn.type[1] != null) {
         type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.type[1]);
         typeString += ("\n" + type_icon + " " + pkmn.type[1]);
     }
 
-    var name = pkmn.name;
+    let name = pkmn.name;
     if (pkmn.shiny === 1) {
         name += " ⭐";
     }
@@ -7788,12 +7867,12 @@ async function displayAWildPkmn(pkmn, message) {
         name = name + " (" + pkmn.form + ")";
     }
     
-    var item = "None";
+    let item = "None";
     if (pkmn.item != "None" && pkmn.item != null) {
         item = pkmn.item;
     }
     
-    var imageName = await getGifName(pkmn.name);
+    let imageName = await getGifName(pkmn.name);
 
     let movesString = "";
     let moveTypeIcon = getMoveType(pkmn.moves[0]);
@@ -7827,68 +7906,71 @@ async function displayAWildPkmn(pkmn, message) {
         movesString += pkmn.moves[3] + "\n";
     }
 
-    message.channel.send({
-        "embed": {
-            "author": {
-                "name": name,
-                "icon_url": spriteLink,
+    let embed = {
+        "author": {
+            "name": name,
+            "icon_url": spriteLink,
+        },
+        "color": getTypeColor(pkmn.type[0]),
+        "description": description,
+        "thumbnail": {
+            "url": "attachment://" + imageName + ".gif"
+        },
+        "footer": {
+            "icon_url": footerLink,
+            "text": footerText
+        },
+        "fields": [
+            {
+                "name": "Level " + pkmn.level.toString(),
+                "value": "Total XP: " + pkmn.totalxp + "\n" + "To next level: " + nextLevel,
+                "inline": true
             },
-            "color": getTypeColor(pkmn.type[0]),
-            "thumbnail": {
-                "url": "attachment://" + imageName + ".gif"
+            {
+                "name": "Type",
+                "value": typeString,
+                "inline": true
             },
-            "footer": {
-                "icon_url": footerLink,
-                "text": footerText
+            {
+                "name": "Gender",
+                "value": pkmn.gender,
+                "inline": true
             },
-            "fields": [
-                {
-                    "name": "Level " + pkmn.level.toString(),
-                    "value": "Total XP: " + pkmn.totalxp + "\n" + "To next level: " + nextLevel,
-                    "inline": true
-                },
-                {
-                    "name": "Type",
-                    "value": typeString,
-                    "inline": true
-                },
-                {
-                    "name": "Gender",
-                    "value": pkmn.gender,
-                    "inline": true
-                },
-                {
-                    "name": "Ability",
-                    "value": pkmn.ability,
-                    "inline": true
-                },
-                {
-                    "name": "Nature",
-                    "value": pkmn.nature,
-                    "inline": true
-                },
-                {
-                    "name": "Item",
-                    "value": item,
-                    "inline": true
-                },
-                {
-                    "name": "Stats",
-                    "value": "HP: " + pkmn.stats[0] + "\n" +
-                    "Attack: " + pkmn.stats[1] + "\n" +
-                    "Defense: " + pkmn.stats[2] + "\n" +
-                    "Sp. Attack: " + pkmn.stats[3] + "\n" +
-                    "Sp. Defense: " + pkmn.stats[4] + "\n" +
-                    "Speed: " + pkmn.stats[5],
-                    "inline": true
-                },
-                {
-                    "name": "Moves",
-                    "value": movesString,
-                    "inline": true
-                }
-            ]
-        }, files: [{ attachment: modelLink, name: (imageName + '.gif') }]
+            {
+                "name": "Ability",
+                "value": pkmn.ability,
+                "inline": true
+            },
+            {
+                "name": "Nature",
+                "value": pkmn.nature,
+                "inline": true
+            },
+            {
+                "name": "Item",
+                "value": item,
+                "inline": true
+            },
+            {
+                "name": "Stats",
+                "value": "HP: " + pkmn.stats[0] + "\n" +
+                "Attack: " + pkmn.stats[1] + "\n" +
+                "Defense: " + pkmn.stats[2] + "\n" +
+                "Sp. Attack: " + pkmn.stats[3] + "\n" +
+                "Sp. Defense: " + pkmn.stats[4] + "\n" +
+                "Speed: " + pkmn.stats[5],
+                "inline": true
+            },
+            {
+                "name": "Moves",
+                "value": movesString,
+                "inline": true
+            }
+        ]
+    }
+
+    return new Promise(function(resolve) {
+        resolve(embed);
     });
 }
 
