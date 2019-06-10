@@ -32,6 +32,6 @@
     "uws": "^9.148.0"
   },
   "scripts": {
-    "test": "nyc --reporter=text --reporter=lcov --check-coverage mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   }
 }
