@@ -26,7 +26,7 @@ function testItemFiles() {
         itemName = itemName.replace(/ /gi, '_');
         itemName = itemName.replace(/\é/gi, 'e');
         itemName = itemName + ".json";
-        assert.equal(file, itemName);
+        assert.equal(itemName, file);
 
         /**
          * Check if item has all properties.
