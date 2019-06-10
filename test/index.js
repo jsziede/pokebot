@@ -16,9 +16,12 @@ function convertStringToJsonFilename(name) {
 }
 
 /**
- * Determine integrity of item data files.
+ * Determine integrity of data files.
  */
 describe('Data File Integrity', function() {
+    /**
+     * Determine integrity of item data files.
+     */
     it('Items', function(done) {
         let itemDir = "./data/items";
         fs.readdirSync(itemDir).forEach(file => {
@@ -56,7 +59,7 @@ describe('Data File Integrity', function() {
     });
 
     /**
-     * Determine integrity of item data files.
+     * Determine integrity of Pokemon data files.
      */
     it('Pokemon', function(done) {
         let itemDir = "./data/items";
