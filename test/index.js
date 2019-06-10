@@ -47,8 +47,6 @@ function testItemFiles() {
         expect(item.sell_price).to.satisfy(function(value) {
             return (value === null || (typeof value === "number"));
         });
-
-        console.log(file + " has integrity.");
     });
 }
 

@@ -1,0 +1,54 @@
+{
+  "names": {
+    "en": "Baneful Bunker",
+    "fr": "Blockhaus",
+    "de": "Bunker",
+    "it": "Fortino",
+    "es": "Búnker"
+  },
+  "index_number": 661,
+  "makes_contact": false,
+  "affected_by_protect": false,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": false,
+  "type": "Poison",
+  "category": "status",
+  "pp": 10,
+  "max_pp": 16,
+  "power": 0,
+  "accuracy": 0,
+  "priority": 4,
+  "target": "user",
+  "critical_hit": 0,
+  "contests": [
+
+  ],
+  "pokedex_entries": {
+    "Sun": {
+      "en": "In addition to protecting the user from attacks, this move also poisons any attacker that makes direct contact.",
+      "de": "Der Anwender wird vor Angriffen geschützt. Gleichzeitig werden alle Pokémon, die mit ihm in Berührung kommen, vergiftet."
+    },
+    "Moon": {
+      "en": "In addition to protecting the user from attacks, this move also poisons any attacker that makes direct contact.",
+      "de": "Der Anwender wird vor Angriffen geschützt. Gleichzeitig werden alle Pokémon, die mit ihm in Berührung kommen, vergiftet."
+    },
+    "Ultra Sun": {
+      "en": "In addition to protecting the user from attacks, this move also poisons any attacker that makes direct contact.",
+      "de": "Der Anwender wird vor Angriffen geschützt. Gleichzeitig werden alle Pokémon, die mit ihm in Berührung kommen, vergiftet."
+    },
+    "Ultra Moon": {
+      "en": "In addition to protecting the user from attacks, this move also poisons any attacker that makes direct contact.",
+      "de": "Der Anwender wird vor Angriffen geschützt. Gleichzeitig werden alle Pokémon, die mit ihm in Berührung kommen, vergiftet."
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "poison",
+        "probability": 100
+      }
+    ]
+  }
+}

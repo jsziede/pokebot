@@ -1,0 +1,110 @@
+{
+  "index_number": 553,
+  "pp": 5,
+  "max_pp": 8,
+  "power": 140,
+  "accuracy": 90,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Éclair Gelé",
+    "de": "Frostvolt",
+    "it": "Elettrogelo",
+    "en": "Freeze Shock"
+  },
+  "type": "Ice",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Beautiful"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Beautiful"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Beautiful"
+    }
+  ],
+  "pokedex_entries": {
+    "Black": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. It may leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "White": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. It may leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "Black 2": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. It may leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "White 2": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. It may leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "X": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "Y": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "O.Ruby": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "Moon": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "Ultra Sun": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "Ultra Moon": {
+      "en": "On the second turn, the user hits the target with electrically charged ice. This may also leave the target with paralysis.",
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell."
+    },
+    "Omega Ruby": {
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Feuert in der zweiten Runde elektrisch geladene Eisklumpen auf das Ziel ab. Paralysiert das Ziel eventuell.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "paralysis",
+        "probability": 30
+      }
+    ]
+  }
+}

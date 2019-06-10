@@ -1,0 +1,149 @@
+{
+  "index_number": 309,
+  "pp": 10,
+  "max_pp": 16,
+  "power": 90,
+  "accuracy": 90,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Poing Météor",
+    "de": "Sternenhieb",
+    "gr": "Μετεωρική Πολτοποίηση",
+    "it": "Meteorpugno",
+    "en": "Meteor Mash"
+  },
+  "type": "Steel",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "atk",
+      "change_by": 1
+    }
+  ],
+  "pokedex_entries": {
+    "Ruby": {
+      "en": "Fires a meteor-like punch. May raise ATTACK.",
+      "de": "Ein Schlag wie ein Meteor. Erhöht evtl. ANGR.-Wert."
+    },
+    "Sapphire": {
+      "en": "Fires a meteor-like punch. May raise ATTACK.",
+      "de": "Ein Schlag wie ein Meteor. Erhöht evtl. ANGR.-Wert."
+    },
+    "Emerald": {
+      "en": "Fires a meteor-like punch. May raise ATTACK.",
+      "de": "Ein Schlag wie ein Meteor. Erhöht evtl. ANGR.-Wert."
+    },
+    "FireRed": {
+      "en": "The foe is hit with a hard, fast punch. It may also raise the user’s ATTACK.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht evtl. ANGR.-Wert."
+    },
+    "LeafGreen": {
+      "en": "The foe is hit with a hard, fast punch. It may also raise the user’s ATTACK.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht evtl. ANGR.-Wert."
+    },
+    "Diamond": {
+      "en": "The foe is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert."
+    },
+    "Pearl": {
+      "en": "The foe is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert."
+    },
+    "Platinum": {
+      "en": "The foe is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert."
+    },
+    "HeartGold": {
+      "en": "The foe is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angr.-Wert des Anwenders."
+    },
+    "SoulSilver": {
+      "en": "The foe is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angr.-Wert des Anwenders."
+    },
+    "Black": {
+      "en": "The target is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "White": {
+      "en": "The target is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "Black 2": {
+      "en": "The target is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "White 2": {
+      "en": "The target is hit with a hard punch fired like a meteor. It may also raise the user’s Attack.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "X": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "Y": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "O.Ruby": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "Moon": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "Ultra Sun": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "Ultra Moon": {
+      "en": "The target is hit with a hard punch fired like a meteor. This may also raise the user’s Attack stat.",
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders."
+    },
+    "Omega Ruby": {
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Angriff mit einem harten, schnellen Schlag. Erhöht eventuell Angriffs-Wert des Anwenders.",
+      "en": "Unknown"
+    }
+  }
+}

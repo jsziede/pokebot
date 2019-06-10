@@ -1,0 +1,163 @@
+{
+  "index_number": 231,
+  "pp": 15,
+  "max_pp": 24,
+  "power": 100,
+  "accuracy": 75,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": false,
+  "names": {
+    "dk": "Jernhale",
+    "fr": "Queue de Fer",
+    "de": "Eisenschweif",
+    "gr": "Σιδερένια Ουρά",
+    "it": "Codacciaio",
+    "pl": "Stalowy Ogon",
+    "en": "Iron Tail"
+  },
+  "type": "Steel",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 1,
+      "jam": 4,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 2,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 4,
+      "jam": 0,
+      "condition": "Cool"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "def",
+      "change_by": -1
+    }
+  ],
+  "pokedex_entries": {
+    "Gold": {
+      "en": "An attack that may reduce DEFENSE.",
+      "de": "Senkt evtl. VERT-Wert des Gegners."
+    },
+    "Silver": {
+      "en": "An attack that may reduce DEFENSE.",
+      "de": "Senkt evtl. VERT-Wert des Gegners."
+    },
+    "Crystal": {
+      "en": "An attack that may reduce DEFENSE.",
+      "de": "Senkt evtl. VERT-Wert des Gegners."
+    },
+    "Ruby": {
+      "en": "Attacks with a rock-hard tail. May lower DEFENSE.",
+      "de": "Att. mit hartem Schweif. Senkt evtl. VERT.-Wert.* (Attacken-Beschreibung)Schlag mit harter Rute. Kann gleichz. VERT.-Wert senken.* (TM-Beschreibung)"
+    },
+    "Sapphire": {
+      "en": "Attacks with a rock-hard tail. May lower DEFENSE.",
+      "de": "Att. mit hartem Schweif. Senkt evtl. VERT.-Wert.* (Attacken-Beschreibung)Schlag mit harter Rute. Kann gleichz. VERT.-Wert senken.* (TM-Beschreibung)"
+    },
+    "Emerald": {
+      "en": "Attacks with a rock-hard tail. May lower DEFENSE.",
+      "de": "Att. mit hartem Schweif. Senkt evtl. VERT.-Wert.* (Attacken-Beschreibung)Schlag mit harter Rute. Kann gleichz. VERT.-Wert senken.* (TM-Beschreibung)"
+    },
+    "FireRed": {
+      "en": "An attack with a steel-hard tail. It may lower the foe’s DEFENSE stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt evtl. den VERT.-Wert.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann der VERT.-Wert sinken.* (TM-Beschreibung)"
+    },
+    "LeafGreen": {
+      "en": "An attack with a steel-hard tail. It may lower the foe’s DEFENSE stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt evtl. den VERT.-Wert.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann der VERT.-Wert sinken.* (TM-Beschreibung)"
+    },
+    "Diamond": {
+      "en": "The foe is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Gegners.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann sein Verteidigungs-Wert sinken.* (TM-Beschreibung)"
+    },
+    "Pearl": {
+      "en": "The foe is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Gegners.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann sein Verteidigungs-Wert sinken.* (TM-Beschreibung)"
+    },
+    "Platinum": {
+      "en": "The foe is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Gegners.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann sein Verteidigungs-Wert sinken.* (TM-Beschreibung)"
+    },
+    "HeartGold": {
+      "en": "The foe is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Gegners.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann sein Verteidigungs-Wert sinken.* (TM-Beschreibung)"
+    },
+    "SoulSilver": {
+      "en": "The foe is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Gegners.* (Attacken-Beschreibung)Der Gegner wird mit der harten Rute attackiert. Gleichzeitig kann sein Verteidigungs-Wert sinken.* (TM-Beschreibung)"
+    },
+    "Black": {
+      "en": "The target is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "White": {
+      "en": "The target is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "Black 2": {
+      "en": "The target is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "White 2": {
+      "en": "The target is slammed with a steel-hard tail. It may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "X": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "Y": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "O.Ruby": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "Moon": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "Ultra Sun": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "Ultra Moon": {
+      "en": "The target is slammed with a steel-hard tail. This may also lower the target’s Defense stat.",
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles."
+    },
+    "Omega Ruby": {
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Attacke mit hartem Eisenschweif. Senkt eventuell den Verteidigungs-Wert des Zieles.",
+      "en": "Unknown"
+    }
+  }
+}

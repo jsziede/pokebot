@@ -1,0 +1,78 @@
+{
+  "index_number": 620,
+  "pp": 5,
+  "max_pp": 8,
+  "power": 120,
+  "accuracy": 100,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Draco Ascension",
+    "de": "Zenitstürmer",
+    "it": "Ascesa del Drago",
+    "en": "Dragon Ascent"
+  },
+  "type": "Flying",
+  "contests": [
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 6,
+      "jam": 0,
+      "condition": "Beautiful"
+    }
+  ],
+  "stat_modifiers": [
+    {
+      "stat": "def",
+      "change_by": -1,
+      "affects_user": true
+    },
+    {
+      "stat": "sp_def",
+      "change_by": -1,
+      "affects_user": true
+    }
+  ],
+  "pokedex_entries": {
+    "O.Ruby": {
+      "en": "After soaring upward, the user attacks its target by dropping out of the sky at high speeds, although it lowers its own Defense and Sp. Def in the process.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "After soaring upward, the user attacks its target by dropping out of the sky at high speeds, although it lowers its own Defense and Sp. Def in the process.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "After soaring upward, the user attacks its target by dropping out of the sky at high speeds. But it lowers its own Defense and Sp. Def stats in the process.",
+      "de": "Der Anwender greift das Ziel aus atemberaubender Höhe im Sturzflug an. Senkt Verteidigung und Spezial-Verteidigung des Anwenders."
+    },
+    "Moon": {
+      "en": "After soaring upward, the user attacks its target by dropping out of the sky at high speeds. But it lowers its own Defense and Sp. Def stats in the process.",
+      "de": "Der Anwender greift das Ziel aus atemberaubender Höhe im Sturzflug an. Senkt Verteidigung und Spezial-Verteidigung des Anwenders."
+    },
+    "Ultra Sun": {
+      "en": "After soaring upward, the user attacks its target by dropping out of the sky at high speeds. But it lowers its own Defense and Sp. Def stats in the process.",
+      "de": "Der Anwender greift das Ziel aus atemberaubender Höhe im Sturzflug an. Senkt Verteidigung und Spezial-Verteidigung des Anwenders."
+    },
+    "Ultra Moon": {
+      "en": "After soaring upward, the user attacks its target by dropping out of the sky at high speeds. But it lowers its own Defense and Sp. Def stats in the process.",
+      "de": "Der Anwender greift das Ziel aus atemberaubender Höhe im Sturzflug an. Senkt Verteidigung und Spezial-Verteidigung des Anwenders."
+    },
+    "Omega Ruby": {
+      "de": "Der Anwender greift das Ziel aus atemberaubender Höhe im Sturzflug an. Senkt Verteidigung und Spezial-Verteidigung des Anwenders.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Der Anwender greift das Ziel aus atemberaubender Höhe im Sturzflug an. Senkt Verteidigung und Spezial-Verteidigung des Anwenders.",
+      "en": "Unknown"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "index_number": 545,
+  "pp": 5,
+  "max_pp": 8,
+  "power": 100,
+  "accuracy": 100,
+  "category": "special",
+  "priority": 0,
+  "target": "all_adjacent",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Incendie",
+    "de": "Flammenball",
+    "it": "Sparafuoco",
+    "en": "Searing Shot"
+  },
+  "type": "Fire",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 0,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    }
+  ],
+  "pokedex_entries": {
+    "Black": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Opfer erleidet eventuell Verbrennungen."
+    },
+    "White": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Opfer erleidet eventuell Verbrennungen."
+    },
+    "Black 2": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Opfer erleidet eventuell Verbrennungen."
+    },
+    "White 2": {
+      "en": "An inferno of scarlet flames torches everything around the user. It may leave targets with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Opfer erleidet eventuell Verbrennungen."
+    },
+    "X": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "Y": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden."
+    },
+    "O.Ruby": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user torches everything around it with an inferno of scarlet flames. This may also leave those hit with a burn.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Anwender greift alles in seiner Umgebung mit tiefroten Flammen an. Ziele erleiden eventuell Verbrennungen."
+    },
+    "Moon": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Anwender greift alles in seiner Umgebung mit tiefroten Flammen an. Ziele erleiden eventuell Verbrennungen."
+    },
+    "Ultra Sun": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Anwender greift alles in seiner Umgebung mit tiefroten Flammen an. Ziele erleiden eventuell Verbrennungen."
+    },
+    "Ultra Moon": {
+      "en": "The user torches everything around it in an inferno of scarlet flames. This may also leave those it hits with a burn.",
+      "de": "Anwender greift alles in seiner Umgebung mit tiefroten Flammen an. Ziele erleiden eventuell Verbrennungen."
+    },
+    "Omega Ruby": {
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Greift alles in seiner Umgebung mit tiefroten Flammen an. Ziel kann Verbrennungen erleiden.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "burn",
+        "probability": 30
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "index_number": 441,
+  "pp": 5,
+  "max_pp": 8,
+  "power": 120,
+  "accuracy": 80,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": false,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Détricanon",
+    "de": "Mülltreffer",
+    "gr": "Βολή Λιπαντικού",
+    "it": "Sporcolancio",
+    "pl": "Błotostrzał",
+    "en": "Gunk Shot"
+  },
+  "type": "Poison",
+  "contests": [
+    {
+      "contest": "Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Super Contests",
+      "appeal": 3,
+      "jam": 0,
+      "condition": "Cool"
+    },
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 2,
+      "jam": 1,
+      "condition": "Tough"
+    }
+  ],
+  "pokedex_entries": {
+    "Diamond": {
+      "en": "The user shoots filthy garbage at the foe to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf den Gegner. Vergiftet den Gegner eventuell."
+    },
+    "Pearl": {
+      "en": "The user shoots filthy garbage at the foe to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf den Gegner. Vergiftet den Gegner eventuell."
+    },
+    "Platinum": {
+      "en": "The user shoots filthy garbage at the foe to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf den Gegner. Vergiftet den Gegner eventuell."
+    },
+    "HeartGold": {
+      "en": "The user shoots filthy garbage at the foe to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf den Gegner. Vergiftet den Gegner eventuell."
+    },
+    "SoulSilver": {
+      "en": "The user shoots filthy garbage at the foe to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf den Gegner. Vergiftet den Gegner eventuell."
+    },
+    "Black": {
+      "en": "The user shoots filthy garbage at the target to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "White": {
+      "en": "The user shoots filthy garbage at the target to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "Black 2": {
+      "en": "The user shoots filthy garbage at the target to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "White 2": {
+      "en": "The user shoots filthy garbage at the target to attack. It may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "X": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "Y": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "O.Ruby": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "Moon": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "Ultra Sun": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "Ultra Moon": {
+      "en": "The user shoots filthy garbage at the target to attack. This may also poison the target.",
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell."
+    },
+    "Omega Ruby": {
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Anwender schießt mit Müll auf das Ziel. Vergiftet dieses eventuell.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "poison",
+        "probability": 30
+      }
+    ]
+  }
+}

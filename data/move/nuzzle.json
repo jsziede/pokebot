@@ -1,0 +1,83 @@
+{
+  "index_number": 609,
+  "pp": 20,
+  "max_pp": 32,
+  "power": 20,
+  "accuracy": 100,
+  "category": "physical",
+  "priority": 0,
+  "target": "target_adjacent_single",
+  "critical_hit": 0,
+  "makes_contact": true,
+  "affected_by_protect": true,
+  "affected_by_magic_coat": false,
+  "affected_by_snatch": false,
+  "affected_by_mirror_move": false,
+  "affected_by_kings_rock": true,
+  "names": {
+    "fr": "Frotte-Frimousse",
+    "de": "Wangenrubbler",
+    "it": "Elettrococcola",
+    "pl": "Mizianie",
+    "en": "Nuzzle"
+  },
+  "type": "Electric",
+  "contests": [
+    {
+      "contest": "Contest Spectaculars",
+      "appeal": 2,
+      "jam": 1,
+      "condition": "Cute"
+    }
+  ],
+  "pokedex_entries": {
+    "X": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert."
+    },
+    "Y": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert."
+    },
+    "O.Ruby": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Unbekannt"
+    },
+    "A.Sapphire": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Unbekannt"
+    },
+    "Sun": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert."
+    },
+    "Moon": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert."
+    },
+    "Ultra Sun": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert."
+    },
+    "Ultra Moon": {
+      "en": "The user attacks by nuzzling its electrified cheeks against the target. This also leaves the target with paralysis.",
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert."
+    },
+    "Omega Ruby": {
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert.",
+      "en": "Unknown"
+    },
+    "Alpha Sapphire": {
+      "de": "Der Anwender lädt seine Wangen elektrisch auf und greift an, indem er sich damit am Ziel reibt. Das Ziel wird paralysiert.",
+      "en": "Unknown"
+    }
+  },
+  "in_battle_properties": {
+    "status_conditions": [
+      {
+        "condition": "paralysis",
+        "probability": 100
+      }
+    ]
+  }
+}
