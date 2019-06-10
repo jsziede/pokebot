@@ -26,25 +26,25 @@ function testItemFiles() {
         itemName = itemName.replace(/ /gi, '_');
         itemName = itemName.replace(/\é/gi, 'e');
         itemName = itemName + ".json";
-        assert.equal(itemName, file);
+        assert.equal(itemName, file, (itemName + " does not match the file name of " + file));
 
         /**
          * Check if item has all properties.
          */
-        expect(item).to.have.property('name');
-        expect(item).to.have.property('sell_price');
-        expect(item).to.have.property('holdable');
-        expect(item).to.have.property('battle');
-        expect(item).to.have.property('category');
-        expect(item).to.have.property('subcategory');
+        expect(item, (file + " does not have name property.")).to.have.property('name');
+        expect(item, (file + " does not have sell_price property.")).to.have.property('sell_price');
+        expect(item, (file + " does not have holdable property.")).to.have.property('holdable');
+        expect(item, (file + " does not have battle property.")).to.have.property('battle');
+        expect(item, (file + " does not have category property.")).to.have.property('category');
+        expect(item, (file + " does not have subcategory property.")).to.have.property('subcategory');
 
         /**
          * Assert item properties are proper types.
          */
-        assert.isString(item.name);
-        assert.isBoolean(item.holdable);
-        assert.isBoolean(item.battle);
-        expect(item.sell_price).to.satisfy(function(value) {
+        assert.isString(item.name, (file + " name property is not a string."));
+        assert.isBoolean(item.holdable, (file + " holdable property is not a boolean."));
+        assert.isBoolean(item.battle, (file + " battle property is not a boolean."));
+        expect(item.sell_price, (file + " sell_price property is not a number or null.")).to.satisfy(function(value) {
             return (value === null || (typeof value === "number"));
         });
     });
