@@ -6,8 +6,6 @@ const should = require('chai').should();
 
 const fs = require('fs');
 
-const errors = 0;
-
 /**
  * Determine integrity of file items.
  */
@@ -21,12 +19,12 @@ function testItemFiles() {
         /**
          * Assert file name is consistent with the item name.
          */
-        let itemName = item.name;
-        itemName = itemName.replace(/./gi, '');
-        itemName = itemName.replace(/-/gi, '_');
-        itemName = itemName.replace(/'/gi, '_');
+        let itemName = item.name.toLowerCase();
+        itemName = itemName.replace(/\./gi, '');
+        itemName = itemName.replace(/\-/gi, '_');
+        itemName = itemName.replace(/\'/gi, '_');
         itemName = itemName.replace(/ /gi, '_');
-        itemName = itemName.replace(/é/gi, 'e');
+        itemName = itemName.replace(/\é/gi, 'e');
         itemName = itemName + ".json";
         assert.equal(file, itemName);
 
@@ -34,7 +32,7 @@ function testItemFiles() {
          * Check if item has all properties.
          */
         expect(item).to.have.property('name');
-        expect(item).to.have.property('sell_value');
+        expect(item).to.have.property('sell_price');
         expect(item).to.have.property('holdable');
         expect(item).to.have.property('battle');
         expect(item).to.have.property('category');
@@ -46,10 +44,11 @@ function testItemFiles() {
         assert.isString(item.name);
         assert.isBoolean(item.holdable);
         assert.isBoolean(item.battle);
-        expect(item.sell_value).to.satisfy(function(value) {
-            return (isNull(value) || (typeof value === "number"));
+        expect(item.sell_price).to.satisfy(function(value) {
+            return (value === null || (typeof value === "number"));
         });
 
+        console.log(file + " has integrity.");
     });
 }
 

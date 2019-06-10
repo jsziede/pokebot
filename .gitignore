@@ -1,6 +1,6 @@
 
 # Do not track package-lock
-src/package-lock.json
+package-lock.json
 
 # Do not track local database backups.
 backup/
@@ -10,7 +10,7 @@ todo.txt
 
 # Do not track dependencies.
 Pokemon-Showdown/
-src/node_modules/
+node_modules/
 
 # Do not track sensitive config file.
 config/my_config.js
