@@ -1,3 +1,0 @@
-# Pokébot / config
-
-The `config` directory contains the configuration file for Pokébot. This file is used to allow Pokébot to connect to your MySQL Database without exposing the database credentials and to keep your bot's unique token private. The `my_config_example.js` file shows what the `my_config.js` file should look like. Simply change the `password` value to match your own database's password and the `token` value to your bot's unique token.
