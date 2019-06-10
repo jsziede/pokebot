@@ -1,0 +1,5 @@
+include setup.py
+include py/COPYING
+include setup.cfg
+recursive-include py/erlpack *.pyx *.cpp
+recursive-include cpp *.h *.cpp
