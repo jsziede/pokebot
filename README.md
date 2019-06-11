@@ -46,7 +46,7 @@ This will install all dependencies needed for Pokébot. [Some dependencies may n
 
 ### Database Setup
 
-Database creation file coming soon TM!
+The `schema.sql` file contains the statements to build the Pokébot schema. This file can be imported into MySQL Workbench to build the schema automatically. Note that the schema is subject to change, as new tables will be added and existing tables will be modified.
 
 To connect the bot to your database, copy the `my_config_example.js` file from the `config` directory and rename it to `config.js` and update the username, password, and token with your own credentials.
 
