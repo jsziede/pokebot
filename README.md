@@ -27,7 +27,7 @@ Note: these instructions are for Linux only. Windows instructions will be provid
 *Node.js* and *npm* must be installed on your machine in order to run Pokébot. To install Node.js, run
 
 ```bash
-sudo apt install nodejs npm
+sudo apt install nodejs
 ```
 
 and to install npm, run
