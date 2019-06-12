@@ -3964,9 +3964,8 @@ async function giveItem(message, item) {
                 }
             }
         } else {
-            let heldItem = await getItem(lead.item);
-            if (heldItem != null) {
-                await sendMessage(message.channel, (message.author.username + ", your " + lead.name + " is currently holding one " + heldItem.name + ". Would you like to swap items? Type \"Yes\" to swap or \"No\" to cancel the item assignment."));
+            if (lead.item != null) {
+                await sendMessage(message.channel, (message.author.username + ", your " + lead.name + " is currently holding one " + lead.item + ". Would you like to swap items? Type \"Yes\" to swap or \"No\" to cancel the item assignment."));
                 let cancel = false;
                 let input = null;
                 const RESPONSE_YES = 1;
@@ -3990,7 +3989,7 @@ async function giveItem(message, item) {
                         cancel = true;
                         input = RESPONSE_YES;
                     } else if (input != null) {
-                        await sendMessage(message.channel, (message.author.username + ", your response was not recognized. Type \"Yes\" to swap " + heldItem.name + " with " + item.name + " or \"No\" to cancel the item assignment."));
+                        await sendMessage(message.channel, (message.author.username + ", your response was not recognized. Type \"Yes\" to swap " + lead.item + " with " + item.name + " or \"No\" to cancel the item assignment."));
                         input = RESPONSE_UNDECIDED;
                     } else {
                         input = RESPONSE_UNDECIDED;
@@ -4001,7 +4000,7 @@ async function giveItem(message, item) {
                     if (await doQuery("UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?", [item.item_id, lead.pokemon_id]) != null) {
                         await sendMessage(message.channel, (message.author.username + " gave the " + item.name + " to " + lead.name + "."));
                         if (
-                            await addItemToBag(message.author.id, heldItem.name, 1) === true
+                            await addItemToBag(message.author.id, lead.item, 1) === true
                             &&
                             await removeItemFromBag(message.author.id, item.name, 1) === true
                         ) {
@@ -4937,13 +4936,6 @@ async function checkForTradeEvolve(message, pokemon, userId) {
     let tradeEvos = ["Kadabra", "Machoke", "Graveler", "Haunter", "Boldore", "Gurdurr", "Phantump", "Pumpkaboo"];
     let tradeEvosTo = ["Alakazam", "Machamp", "Golem", "Gengar", "Gigalith", "Conkeldurr", "Gourgeist", "Trevenant"];
     let tradeEvoIndex = -1;
-
-    let item = await getItem(pokemon.item);
-    if (item === null) {
-        item = pokemon.item;
-    } else {
-        item = item.name;
-    }
     
     if (pokemon.item != "Everstone") {
         var evolveTo = null;
@@ -4957,39 +4949,39 @@ async function checkForTradeEvolve(message, pokemon, userId) {
             }
         } else if ((tradeEvoIndex = tradeEvos.indexOf(pokemon.name)) >= 0) {
             evolveTo = tradeEvosTo[tradeEvoIndex];
-        } else if (pokemon.name === "Poliwhirl" && item === "King's Rock") {
+        } else if (pokemon.name === "Poliwhirl" && pokemon.item === "King's Rock") {
             evolveTo = "Politoed";
-        } else if (pokemon.name === "Slowpoke" && item === "King's Rock") {
+        } else if (pokemon.name === "Slowpoke" && pokemon.item === "King's Rock") {
             evolveTo = "Slowking";
-        } else if (pokemon.name === "Onix" && item === "Metal Coat") {
+        } else if (pokemon.name === "Onix" && pokemon.item === "Metal Coat") {
             evolveTo = "Steelix";
-        } else if (pokemon.name === "Seadra" && item === "Dragon Scale") {
+        } else if (pokemon.name === "Seadra" && pokemon.item === "Dragon Scale") {
             evolveTo = "Kindgra";
-        } else if (pokemon.name === "Scyther" && item === "Metal Coat") {
+        } else if (pokemon.name === "Scyther" && pokemon.item === "Metal Coat") {
             evolveTo = "Scizor";
-        } else if (pokemon.name === "Porygon" && item === "Up-Grade") {
+        } else if (pokemon.name === "Porygon" && pokemon.item === "Up-Grade") {
             evolveTo = "Porygon2";
-        } else if (pokemon.name === "Clamperl" && item === "Deep Sea Tooth") {
+        } else if (pokemon.name === "Clamperl" && pokemon.item === "Deep Sea Tooth") {
             evolveTo = "Huntail";
-        } else if (pokemon.name === "Clamperl" && item === "Deep Sea Scale") {
+        } else if (pokemon.name === "Clamperl" && pokemon.item === "Deep Sea Scale") {
             evolveTo = "Gorebyss";
-        } else if (pokemon.name === "Feebas" && item === "Prism Scale") {
+        } else if (pokemon.name === "Feebas" && pokemon.item === "Prism Scale") {
             evolveTo = "Milotic";
-        } else if (pokemon.name === "Rhydon" && item === "Protector") {
+        } else if (pokemon.name === "Rhydon" && pokemon.item === "Protector") {
             evolveTo = "Rhyperior";
-        } else if (pokemon.name === "Electabuzz" && item === "Electirizer") {
+        } else if (pokemon.name === "Electabuzz" && pokemon.item === "Electirizer") {
             evolveTo = "Electivire";
-        } else if (pokemon.name === "Magmar" && item === "Magmarizer") {
+        } else if (pokemon.name === "Magmar" && pokemon.item === "Magmarizer") {
             evolveTo = "Magmortar";
-        } else if (pokemon.name === "Porygon2" && item === "Dubious Disc") {
+        } else if (pokemon.name === "Porygon2" && pokemon.item === "Dubious Disc") {
             evolveTo = "Porygon-Z";
-        } else if (pokemon.name === "Dusclops" && item === "Reaper Cloth") {
+        } else if (pokemon.name === "Dusclops" && pokemon.item === "Reaper Cloth") {
             evolveTo = "Dusknoir";
-        } else if (pokemon.name === "Feebas" && item === "Prism Scale") {
+        } else if (pokemon.name === "Feebas" && pokemon.item === "Prism Scale") {
             evolveTo = "Milotic";
-        } else if (pokemon.name === "Spritzee" && item === "Sachet") {
+        } else if (pokemon.name === "Spritzee" && pokemon.item === "Sachet") {
             evolveTo = "Aromatisse";
-        } else if (pokemon.name === "Swirlix" && item === "Whipped Dream") {
+        } else if (pokemon.name === "Swirlix" && pokemon.item === "Whipped Dream") {
             evolveTo = "Slurpuff";
         }
         
@@ -5339,16 +5331,6 @@ async function checkEvolveUponLevelUp(user, pokemon) {
     let knownMoves = await getPokemonKnownMoves(pokemon.pokemon_id);
     let moves = populateMoves(knownMoves);
 
-    let heldItem = null;
-    if (pokemon.item != null) {
-        heldItem = await getItem(pokemon.item);
-        if (heldItem != null) {
-            heldItem = heldItem.name;
-        } else {
-            heldItem = pokemon.item;
-        }
-    }
-
     let pkmn = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
 
     let cur = convertToTimeZone(user);
@@ -5452,7 +5434,7 @@ async function checkEvolveUponLevelUp(user, pokemon) {
                 for (possibleEvolutionsIndex = 0; possibleEvolutionsIndex < pkmn.evolutions.length; possibleEvolutionsIndex++) {
                     //holding an item
                     if (pkmn.evolutions[possibleEvolutionsIndex].hasOwnProperty('hold_item')) {
-                        if (heldItem.name === pkmn.evolutions[possibleEvolutionsIndex].hold_item) {
+                        if (pokemon.item === pkmn.evolutions[possibleEvolutionsIndex].hold_item) {
                             if (pkmn.evolutions[possibleEvolutionsIndex].conditions[0] === "Nighttime") { //night holding an item
                                 if ((n >= 0 && n < 6) || n >= 18) {
                                     evolutionName = pkmn.evolutions[possibleEvolutionsIndex].to; 
@@ -5852,22 +5834,13 @@ async function giveXP(message, pokemon, amount) {
 
     let user = await getUser(message.author.id);
 
-    let item = "None";
-    if (pokemon.item != null) {
-        item = await getItem(pokemon.item);
-        if (item === null) {
-            item = pokemon.item;
-        } else {
-            item = item.name;
-        }
-    }
 
     if (pokemon != null && user != null && pokemon.level_current < 100) {
         let finalXP = (((pokemon.level_current / 10) + 1).toFixed(1) * amount);
         if (pokemon.original_trainer != pokemon.current_trainer) {
             finalXP += (finalXP * 1.5);
         }
-        if (item.name === "Lucky Egg") {
+        if (pokemon.item === "Lucky Egg") {
             finalXP += (finalXP * 1.5);
         }
         pokemon.xp += Math.floor(finalXP);
@@ -5885,7 +5858,7 @@ async function giveXP(message, pokemon, amount) {
              */
             if (xpToNextLevel != null && xpToNextLevel <= 0) {
                 levelsGained++;
-                pokemon = await levelUp(message, pokemon, user, item);
+                pokemon = await levelUp(message, pokemon, user, pokemon.item);
                 xpToNextLevel = getXpToNextLevel(pokemon.name, pokemon.xp, pokemon.level_current);
                 if (pokemon.item != "Everstone" && pokemon.daycare === null) {
                     evolveTo = await checkEvolveUponLevelUp(user, pokemon);
@@ -5923,7 +5896,7 @@ async function giveXP(message, pokemon, amount) {
  * @param {Message} message The Discord message sent from the user that triggered the level up.
  * @param {Pokemon} pokemon The Pokemon that is leveling up.
  * @param {User} user The Pokebot user that owns the leveling up Pokemon.
- * @param {Item} item The item held by the Pokemon.
+ * @param {string} item The item held by the Pokemon.
  * 
  * @returns {Pokemon} The Pokemon after its level, stats, and friendship have updated.
  */
@@ -5998,7 +5971,7 @@ async function levelUp(message, pokemon, user, item) {
                 friend = friend * 2;
             }
             
-            if (item.name === "Soothe Bell") {
+            if (item === "Soothe Bell") {
                 friend = friend * 1.5;
             }
             
@@ -6169,6 +6142,7 @@ function calculateStatAtLevel(level, baseValue, iv, ev, nature, statName) {
  * Generates a Pokemon object based on its name.
  * 
  * @todo The `region` and `location` parameters are not necessary and can be easily determined from the `message` parameter.
+ * @todo Pass an ability name as an argument. Some abilities affect wild Pokemon, like Compound Eyes and Intimidate.
  * 
  * @param {Message} message The Discord message sent from the user.
  * @param {string} name The name of the Pokemon to generate.
@@ -6353,6 +6327,7 @@ async function generatePokemonByName(message, name, level, region, location, hid
     
     /**
      * Randomly determine if the Pokemon spawns with any possible hold item it can have in the wild.
+     * @todo Some abilities increase the liklihood of encountering a Pokemon holding an item.
      */
     let item = null;
     if (pkmn.hasOwnProperty("items")) {
@@ -6803,7 +6778,7 @@ async function pickUpFromDayCare(message, user) {
                 selectedOption = LEAVE;
             }
         })
-        .catch(collected => {
+        .catch(() => {
             selectedOption = LEAVE;
         });
     
@@ -6948,7 +6923,7 @@ async function viewDayCare(message, daycarePokemon) {
             selectedOption = LEAVE;
         }
     })
-    .catch(collected => {
+    .catch(() => {
         selectedOption = LEAVE;
     })
 
@@ -7067,7 +7042,16 @@ async function releasePokemon(message, name) {
                  * User released a Pokemon that wasn't their lead.
                  */
                 } else {
-                    await sendMessage(message.channel, (message.author.username + " released their **" + pokemonToRelease.name + "** into the wild."));
+                    /**
+                     * Take the Pokemon's held item if it gets released. This is to prevent
+                     * unique items from being permanently lost.
+                     */
+                    if (pokemonToRelease.item != null) {
+                        await addItemToBag(message.author.id, pokemonToRelease.item, 1);
+                        await sendMessage(message.channel, (message.author.username + " took the *" + pokemonToRelease.item + "* from their **" + pokemonToRelease.name + "** and released the Pokémon into the wild."));
+                    } else {
+                        await sendMessage(message.channel, (message.author.username + " released their **" + pokemonToRelease.name + "** into the wild."));
+                    }
                     wasPokemonReleased = true;
                 }
             /**
