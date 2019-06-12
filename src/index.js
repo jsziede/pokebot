@@ -531,7 +531,10 @@ async function battlePokemon(message, encounter, user, lead) {
         } else if (selectedOption === BALL) {
             let selectedBall = await selectPokeBall(message);
             if (selectedBall != null) {
-                encountering = await throwPokeBall(message, encounter, user, selectedBall, turns);
+                let caught = await throwPokeBall(message, encounter, user, selectedBall, turns);
+                if (caught) {
+                    encountering = false;
+                }
             }
         }
     }
@@ -2537,7 +2540,7 @@ async function createNewUser(userID, name, message, region) {
     if (!accept) {
         wasUserCreated = false;
     } else {
-        starter.nick = await nicknamePokemon(message, starter.name);
+        starter.nick = await nicknamePokemon(message, starter);
 
         let userSet = {
             user_id: userID,
@@ -3664,41 +3667,52 @@ async function setField(message, field) {
  * the user, or the Pokemon's regular name if the user opts
  * out of nicknaming the Pokemon.
  */
-async function nicknamePokemon(message, name) {
-    await sendMessage(message.channel, (message.author.username + " would you like to nickname your " + name + "? Type \"Yes\" to enter a nickname or \"No\" to keep its current name."));
+async function nicknamePokemon(message, pokemon) {
+    let spriteLink = generateSpriteLink(pokemon.name, pokemon.gender, pokemon.form);
+    let embed = {
+        "author": {
+            "name": pokemon.name,
+            "icon_url": spriteLink,
+        },
+        "title": "Nickname",
+        "description": message.author.username + " would you like to nickname your **" + pokemon.name + "** ? React with ✅ to accept or ❌ to decline.",
+        "thumbnail": {
+            "url": "attachment://" + pokemon.name + ".gif"
+        }
+    };
 
-    const YES_NICKNAME = 1;
-    const NO_NICKNAME = null;
-    let cancel = false;
+    let modelLink = generateModelLink(pokemon.name, pokemon.shiny, pokemon.gender, pokemon.form);
+    let nicknameMessage = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pokemon.name + '.gif') }], true);
+
+    await nicknameMessage.react('✅');
+    await nicknameMessage.react('❌');
+
+    const filter = (reaction, user) => {
+        return ['✅','❌'].includes(reaction.emoji.name) && user.id === message.author.id;
+    };
+
+    const YES_NICKNAME = true;
+    const NO_NICKNAME = false;
     let input = NO_NICKNAME;
 
-    while(cancel === false) {
-        await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
-        .then(collected => {
-            input = collected.first().content.toString().toLowerCase();
-        })
-        .catch(collected => {
-            console.error(collected);
-            input = NO_NICKNAME;
-            cancel = true;
-        });
+    await nicknameMessage.awaitReactions(filter, { max: 1, time: 300000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
 
-        if (input === "no" || input === "cancel") {
-            cancel = true;
-            input = NO_NICKNAME;
-        } else if (input === "yes") {
-            cancel = true;
+        if (reaction.emoji.name === "✅") {
             input = YES_NICKNAME;
-        } else if (input != null) {
-            await sendMessage(message.channel, (message.author.username + ", your response was not recognized. Type \"Yes\" to enter a nickname for " + name + " or \"No\" to keep its current name."));
-            input = NO_NICKNAME;
-        } else {
+        } else if (reaction.emoji.name === "❌") {
             input = NO_NICKNAME;
         }
-    }
+    })
+    .catch(() => {
+        selectedBall = null;
+    });
+
+    nicknameMessage.delete(0);
     
     if (input === YES_NICKNAME) {
-        await sendMessage(message.channel, (message.author.username + " enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty."));
+        await sendMessage(message.channel, (message.author.username + " enter the nickname of the **" + pokemon.name + "** you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters."));
     
         cancel = false;
         /* After this assingment, input represents the Pokemon's nickname rather than the user's
@@ -3724,7 +3738,7 @@ async function nicknamePokemon(message, name) {
                 } else if (input.length > 0 && input.length <= 20) {
                     cancel = true;
                 } else if (input.length <= 0 || input.length > 20) {
-                    await sendMessage(message.channel, (message.author.username + ", your nickname was not valid. Enter the nickname of the " + name + " you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters and must not be empty."));
+                    await sendMessage(message.channel, (message.author.username + " that nickname was not valid. Enter the nickname of the **" + name + "** you just received. Type its name exactly how you want it to be nicknamed, or type its current name to cancel the nicknaming. The nickname cannot be longer than 20 characters."));
                     input = NO_NICKNAME;
                 } else {
                     input = NO_NICKNAME;
@@ -3737,10 +3751,10 @@ async function nicknamePokemon(message, name) {
         }
     }
     
-    if (input != null) {
-        await sendMessage(message.channel, (message.author.username + " nicknamed their " + name + " '" + input + "'."));
+    if (input != NO_NICKNAME) {
+        await sendMessage(message.channel, (message.author.username + " nicknamed their **" + pokemon.name + "** '**" + input + "**'."));
     } else {
-        await sendMessage(message.channel, (message.author.username + " decided not to nickname their " + name + "."));
+        await sendMessage(message.channel, (message.author.username + " decided not to nickname their **" + pokemon.name + "**."));
     }
 
     return new Promise(function(resolve) {
@@ -7865,7 +7879,7 @@ async function throwPokeBall(message, wild, user, ball, turns) {
         }
 
         wild.caughtIn = ball;
-        wild.nick = await nicknamePokemon(message, wild.name);
+        wild.nick = await nicknamePokemon(message, wild);
         await addPokemon(message.author.id, wild);
         await addToPokedex(user, wild.no);
 
