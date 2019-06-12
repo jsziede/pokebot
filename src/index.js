@@ -8,6 +8,7 @@
  *  @todo All message sends need to be awaited, otherwise weirdness may happen.
  *  @todo Change message sending functions to return the sent message object rather than a boolean.
  *  @todo Standardize the file names for json and images.
+ *  @todo Add evolution table to database that keeps track of trainer, pokemon, name evolving into, and guild where evolution was triggered.
 */
 
 /**
@@ -527,20 +528,10 @@ async function showMainBattleScreen(message, encounter, user, lead) {
  */
 async function useBagInBattle(message, encounter, user, lead) {
     let bag = await getBag(user.user_id);
-
-    /**
-     * @todo
-     * Items usable in battle include:
-     *  -flutes
-     *  -medicine (except wings)?
-     *  -x attack, x defense, etc.
-     *  -escape items (poke doll, fluffy tail, poke toy)
-     *  -poke balls
-     *  -some berries
-     */
     for (let item in bag) {
         /**
          * @todo Finish making this after items are overhauled.
+         * Get items with battle = true.
          */
     }
 }
@@ -1749,6 +1740,9 @@ async function doLotto(message) {
         }
 
         /* Lotto prizes. */
+        /**
+         * @todo Change this so prizes are from a selection.
+         * 
         if (matches === 0) {
             await sendMessage(message.channel, (message.author.username + " you had 0 matches. As a consolation prize, you won " + dollar + "1000 and a Poké Ball."));
             user.money += 1000;
@@ -1793,6 +1787,7 @@ async function doLotto(message) {
             await addItemToBag(message.author.id, "Rare Candy", 10, true, "Item", false);
             await addItemToBag(message.author.id, "Master Ball", 1, true, "Ball", true);
         } 
+        */
 
         /* Tell user what their id is and what the winning number is. */
         await sendMessage(message.channel, ("Your trainer id: " + uid + "\nYour lotto number: " + winNum));
@@ -2181,6 +2176,24 @@ function generateLocationImagePath(region, location) {
 }
 
 /**
+ * Generates a relative file path for an items's JSON file.
+ * 
+ * @param {string} name The name of the item.
+ * 
+ * @returns {string} Relative file path to the item's JSON file.
+ */
+function generateItemJSONPath(name) {
+    name = name.toLowerCase();
+    name = name.replace(/\./gi, '');
+    name = name.replace(/\-/gi, '_');
+    name = name.replace(/\'/gi, '_');
+    name = name.replace(/ /gi, '_');
+    name = name.replace(/\é/gi, 'e');
+    let path = '../data/items/' + name + '.json';
+    return path;
+}
+
+/**
  * Generates a file path to the JSON file for a specific Pokemon species.
  * 
  * @param {string} name The name of the Pokemon.
@@ -2357,11 +2370,6 @@ async function createNewUser(userID, name, message, region) {
     if (!accept) {
         wasUserCreated = false;
     } else {
-        /* User begins with an everstone, 10 poke balls, and a visa for their region. */
-        let everstone = new Item("Everstone", 1, true, false);
-        let balls = new Item("Poké Ball", 10, true, false);
-        let visa = new Item((region + " Visa"), 1, false, true);
-        
         starter.nick = await nicknamePokemon(message, starter.name);
 
         let userSet = {
@@ -2388,37 +2396,25 @@ async function createNewUser(userID, name, message, region) {
             timezone: "America/Detroit"
         }
 
-        let everstoneSet = {
-            owner: userID,
-            name: everstone.name,
-            quantity: 1,
-            holdable: 1,
-            category: "Item",
-            battle: 0
-        }
-
         let ballSet = {
             owner: userID,
-            name: balls.name,
+            name: "Poké Ball",
             quantity: 10,
-            holdable: 1,
             category: "Ball",
-            battle: 1
+            subcategory: "Ball"
         }
 
         let visaSet = {
             owner: userID,
-            name: visa.name,
+            name: (region + " Visa"),
             quantity: 1,
-            holdable: 0,
-            category: "Key",
-            battle: 0
+            category: "Key Item",
+            subcategory: "Visa"
         }
 
         try {
             await doQuery("INSERT INTO user SET ?", [userSet]);
             await doQuery("INSERT INTO user_prefs SET ?", [prefsSet]);
-            await doQuery("INSERT INTO item SET ?", [everstoneSet]);
             await doQuery("INSERT INTO item SET ?", [ballSet]);
             await doQuery("INSERT INTO item SET ?", [visaSet]);
             let newPokemon = await addPokemon(userID, starter);
@@ -3155,7 +3151,7 @@ async function getBalls(userId) {
  * @returns {Item[]} All fishing rods owned by the user.
  */
 async function getRods(userId) {
-    let rods = await doQuery(`SELECT * FROM pokebot.item WHERE owner = ? AND category = "Key" AND name LIKE '% Rod' AND quantity > 0`, [userId]);
+    let rods = await doQuery(`SELECT * FROM pokebot.item WHERE owner = ? AND category = "Key Item" AND name LIKE '% Rod' AND quantity > 0`, [userId]);
     /* Need to return the whole list of rods, not just a single row. */
     return new Promise(function(resolve) {
         resolve(rods);
@@ -3786,7 +3782,6 @@ function doesUserHaveUsableItem(bag, item) {
     item = item.toLowerCase();
     
     let doesOnlyContainDigits = /^\d+$/.test(item);
-
     let itemInBag = null;
     
     /**
@@ -3799,13 +3794,14 @@ function doesUserHaveUsableItem(bag, item) {
         let bagIndex;
         for (bagIndex = 0; bagIndex < bag.length; bagIndex++) {
             let lowerItem = bag[bagIndex].name.toLowerCase();
-            if(lowerItem === item && (bag[bagIndex].category === "Item" || bag[bagIndex].category === "TM")) {
+            if (lowerItem === item && (bag[bagIndex].category === "Item" || bag[bagIndex].category === "TM" || bag[bagIndex].category === "Key Item")) {
                 itemInBag = bag[bagIndex];
+                break;
             }
         }
     /* If user input the index of an item. */
     } else {
-        if (item <= bag.length && bag[item].holdable === 1 && (bag[item].category === "Item" || bag[item].category === "TM") && bag[item].category != "Key") {
+        if (item <= bag.length && (bag[item].category === "Item" || bag[item].category === "TM" || bag[item].category === "Key Item")) {
             itemInBag = bag[item];
         }
     }
@@ -3827,6 +3823,7 @@ function doesUserHaveHoldableItem(bag, item) {
     
     let doesOnlyContainDigits = /^\d+$/.test(item);
     let itemInBag = null;
+    let itemJSON;
     
     /**
      * If user is searching the item by name.
@@ -3838,14 +3835,22 @@ function doesUserHaveHoldableItem(bag, item) {
         let bagIndex;
         for (bagIndex = 0; bagIndex < bag.length; i++) {
             let lowerItem = bag[i].name.toLowerCase();
-            if(lowerItem === item && bag[i].holdable === 1 && (bag[i].category === "Item" || bag[i].category === "TM" || bag[i].category === "Ball")) {
-                itemInBag = bag[i];
+            if(lowerItem === item) {
+                itemJSON = parseJSON(generateItemJSONPath(item));
+                if (itemJSON != null && itemJSON.holdable === true) {
+                    itemInBag = bag[i];
+                    break;
+                }
             }
         }
     /* If user input the index of an item. */
     } else {
-        if (item <= bag.length && bag[item].holdable === 1 && (bag[item].category === "Item" || bag[item].category === "TM")) {
-            itemInBag = bag[item];
+        if (item <= bag.length) {
+            itemJSON = parseJSON(generateItemJSONPath(bag[item].name));
+            if (itemJSON != null && itemJSON.holdable === true) {
+                itemInBag = bag[item];
+                break;
+            }
         }
     }
 
@@ -3858,33 +3863,22 @@ function doesUserHaveHoldableItem(bag, item) {
  * @param {string} userId The Discord id of the user.
  * @param {string} itemName The name of the item being added.
  * @param {number} amount The quantity of the item being added.
- * @param {boolean} isHoldable If the item can be held by a Pokemon.
- * @param {string} cat The category of the item being added (key, medicine, etc).
- * @param {boolean} useInBattle If the item can be used during a battle.
  * 
  * @returns {boolean} True if the item was added to the user's bag.
  */
-async function addItemToBag(userId, itemName, amount, isHoldable, cat, useInBattle) {
+async function addItemToBag(userId, itemName, amount) {
     let wasItemAdded = false;
     let itemQuantity = await doQuery("SELECT * from item WHERE item.owner = ? AND item.name = ?", [userId, itemName]);
+    let itemJSON = parseJSON(generateItemJSONPath(itemName));
     if (itemQuantity != null) {
         /* If user has never owned the item before, the item object will need to be inserted into the table. */
         if (itemQuantity.length < 1) {
-            let hold = 0;
-            if (isHoldable) {
-                hold = 1;
-            }
-            let batt = 0;
-            if (useBagInBattle) {
-                batt = 1;
-            }
             let itemSet = {
                 owner: userId,
-                name: itemName,
+                name: itemJSON.name,
                 quantity: amount,
-                holdable: hold,
-                category: cat,
-                battle: batt
+                category: itemJSON.category,
+                subcategory: itemJSON.subcategory
             }
             if (await doQuery("INSERT INTO item SET ?", [itemSet]) != null) {
                 wasItemAdded = true;
@@ -4007,7 +4001,7 @@ async function giveItem(message, item) {
                     if (await doQuery("UPDATE pokemon SET pokemon.item = ? WHERE pokemon.pokemon_id = ?", [item.item_id, lead.pokemon_id]) != null) {
                         await sendMessage(message.channel, (message.author.username + " gave the " + item.name + " to " + lead.name + "."));
                         if (
-                            await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.cat, heldItem.batt) === true
+                            await addItemToBag(message.author.id, heldItem.name, 1) === true
                             &&
                             await removeItemFromBag(message.author.id, item.name, 1) === true
                         ) {
@@ -4471,6 +4465,7 @@ async function teachMove(message, pokemon, newMove, enableDuplicate, replacePP) 
  * @returns {boolean} True if no errors were encountered.
  */
 async function takeItem(message) {
+    let itemName = lead.item;
     let wereNoErrorsEncountered = true;
 
     let user = await getUser(message.author.id);
@@ -4486,23 +4481,11 @@ async function takeItem(message) {
     if (lead.item === null) {
         wereNoErrorsEncountered = await sendMessage(message.channel, (message.author.username + " your " + lead.name + " is not holding anything."));
     } else if (wereNoErrorsEncountered) {
-        let heldItem = await getItem(lead.item);
-        /**
-         * If Pokemon is holding an item that the user does not have in their bag,
-         * then create a new item object to insert into the user's bag.
-         */
-        if (heldItem === null) {
-            heldItem = {
-                name: lead.item,
-                holdable: 1,
-                category: "Item"
-            }
-        }
         lead.item = null;
         if (
-            await sendMessage(message.channel, (message.author.username + " took the " + heldItem.name + " from " + lead.name + " and put it in their bag.")) === false
+            await sendMessage(message.channel, (message.author.username + " took the " + itemName + " from " + lead.name + " and put it in their bag.")) === false
             ||
-            await addItemToBag(message.author.id, heldItem.name, 1, heldItem.holdable, heldItem.category) === false
+            await addItemToBag(message.author.id, itemName, 1) === false
             ||
             await doQuery("UPDATE pokemon SET pokemon.item = null WHERE pokemon.pokemon_id = ?", [lead.pokemon_id]) === null
         ) {
@@ -10250,7 +10233,7 @@ async function buyItems(message) {
                     return reject(err);
                 }
             });
-            await addItemToBag(user.user_id, items[input].name, 1, false, cat);
+            await addItemToBag(user.user_id, items[input].name, 1);
         } else if (cat === "tm") {
             cat = "TM";
             user.money -= (items[input].price * num);
@@ -10260,7 +10243,7 @@ async function buyItems(message) {
                     return reject(err);
                 }
             });
-            await addItemToBag(user.user_id, items[input].name, 1, false, cat);
+            await addItemToBag(user.user_id, items[input].name, 1);
         }
         message.channel.send(message.author.username + " bought one " + items[input].name + "!");
         return true;
@@ -10305,10 +10288,10 @@ async function buyItems(message) {
                                 return reject(err);
                             }
                         });
-                        await addItemToBag(user.user_id, items[itemIndex].name, num, true, cat);
+                        await addItemToBag(user.user_id, items[itemIndex].name, num);
                         
                         if (num >= 10) {
-                            await addItemToBag(user.user_id, "Premier Ball", 1, true, cat);
+                            await addItemToBag(user.user_id, "Premier Ball", 1);
                             message.channel.send(message.author.username + " received a Premier Ball as a bonus!");
                         }
                     } else {
@@ -10320,7 +10303,7 @@ async function buyItems(message) {
                                 return reject(err);
                             }
                         });
-                        await addItemToBag(user.user_id, items[itemIndex].name, num, true, cat);
+                        await addItemToBag(user.user_id, items[itemIndex].name, num);
                     }
                     cancel = true;
                     input = 1;
