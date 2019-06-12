@@ -57,7 +57,7 @@ var birb;
 */
 const enableSpam = true;        //default = false
 const spamXpMult = 2;           //default = 1
-const spamEncounterMult = 1;    //default = 1
+const spamEncounterMult = 5;    //default = 1
 const baseMoneyChance = 20;     //default = 20
 
 /**
@@ -448,7 +448,7 @@ async function encounterWildPokemon(message, encounter, user, lead) {
     let shuffle_icon = await getShuffleEmoji(encounter.no);
     await message.react(shuffle_icon.id);
 
-    await showMainBattleScreen(message, encounter, user, lead);
+    await battlePokemon(message, encounter, user, lead);
 
     removeTransaction(message.author.id);
 }
@@ -464,24 +464,31 @@ async function encounterWildPokemon(message, encounter, user, lead) {
  * 
  * @returns {any} To be determined.
  */
-async function showMainBattleScreen(message, encounter, user, lead) {
-    let reactions = ["🥊", "🎒", "👟"];
-    let description = message.author.username + " please react to this message to make a selection.\n🥊 Fight\n🎒 View Bag\n👟 Run Away";
+async function battlePokemon(message, encounter, user, lead) {
+    let pokeball = await client.emojis.find(emote => emote.name === "poke_ball");
+    let reactions = ["🥊", "🎒", pokeball, "👟"];
+    let description = message.author.username + " a wild **" + encounter.name + "** appeared! Please react to this message to make a selection.\n🥊 Fight\n🎒 View Bag\n" + pokeball + " Throw a Poké Ball\n👟 Run Away";
     let modelLink = generateModelLink(encounter.name, encounter.shiny, encounter.gender, encounter.form);
     let imageName = await getGifName(encounter.name);
 
     const FIGHT = 0;
     const BAG = 1;
     const RUN = 2;
+    const BALL = 3;
 
     let encountering = true;
+    let turns = 0;
     while (encountering) {
+        turns++;
+        reactions[2] = pokeball;
         let embed = await generateWildPokemonEmbed(encounter, message, description);
         let baseEncounterMsg = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }], true);
         
         for (let emote in reactions) {
             await baseEncounterMsg.react(reactions[emote]);
         }
+
+        reactions[2] = "poke_ball";
         
         const filter = (reaction, user) => {
             return reactions.includes(reaction.emoji.name) && user.id === message.author.id;
@@ -497,8 +504,10 @@ async function showMainBattleScreen(message, encounter, user, lead) {
                 selectedOption = FIGHT;
             } else if (reaction.emoji.name === reactions[1]) {
                 selectedOption = BAG;
-            } else if (reaction.emoji.name === reactions[2]) {
+            } else if (reaction.emoji.name === reactions[3]) {
                 selectedOption = RUN;
+            } else if (reaction.emoji.name === "poke_ball") {
+                selectedOption = BALL;
             }
         })
         .catch(() => {
@@ -509,7 +518,7 @@ async function showMainBattleScreen(message, encounter, user, lead) {
         
         if (selectedOption === FIGHT) {
             /**
-             * @todo add battling, might do something generic in the mean time.
+             * @todo add battling, might do something generic in the meantime.
              */
         } else if (selectedOption === BAG) {
             encountering = await useBagInBattle(message, encounter, user, lead);
@@ -519,6 +528,11 @@ async function showMainBattleScreen(message, encounter, user, lead) {
              */
             encountering = false;
             await sendMessage(message.channel, (message.author.username + " ran away from the wild **" + encounter.name + "**."));
+        } else if (selectedOption === BALL) {
+            let selectedBall = await selectPokeBall(message);
+            if (selectedBall != null) {
+                encountering = await throwPokeBall(message, encounter, user, selectedBall, turns);
+            }
         }
     }
 }
@@ -559,6 +573,156 @@ async function getShuffleEmoji(number) {
     return new Promise(function(resolve) {
         resolve(shuffle_icon);
     });
+}
+
+/**
+ * Shows a list of the user's Poke Balls (if they have any) to the user
+ * and the user selects a Poke Ball by reacting with the Poke Ball.
+ * 
+ * @param {Message} message The message sent from the user that triggered the Pokemon encounter.
+ * 
+ * @returns {string} The name of the Poke Ball that the user selected.
+ */
+async function selectPokeBall(message) {
+    let selectedBall = null;
+    let balls = await getBalls(message.author.id);
+    let embedData = await generatePokeBallEmbed(message, balls);
+    let embed = embedData[0];
+    let emotes = embedData[1];
+    let reactions = [];
+    let msg = await sendMessage(message.channel, {embed}, true);
+
+    for (emote in emotes) {
+        await msg.react(emotes[emote]);
+        if (emotes[emote].hasOwnProperty("name")) {
+            reactions[reactions.length] = emotes[emote].name;
+        } else {
+            reactions[reactions.length] = emotes[emote];
+        }
+    }
+
+    const filter = (reaction, user) => {
+        return reactions.includes(reaction.emoji.name) && user.id === message.author.id;
+    };
+
+    await msg.awaitReactions(filter, { max: 1, time: 300000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
+
+        if (reaction.emoji.name === "repeat_ball") {
+            selectedBall = "Repeat Ball";
+        } else if (reaction.emoji.name === "safari_ball") {
+            selectedBall = "Safari Ball";
+        } else if (reaction.emoji.name === "premier_ball") {
+            selectedBall = "Premier Ball";
+        } else if (reaction.emoji.name === "timer_ball") {
+            selectedBall = "Timer Ball";
+        } else if (reaction.emoji.name === "moon_ball") {
+            selectedBall = "Moon Ball";
+        } else if (reaction.emoji.name === "nest_ball") {
+            selectedBall = "Nest Ball";
+        } else if (reaction.emoji.name === "love_ball") {
+            selectedBall = "Love Ball";
+        } else if (reaction.emoji.name === "poke_ball") {
+            selectedBall = "Poké Ball";
+        } else if (reaction.emoji.name === "ultra_ball") {
+            selectedBall = "Ultra Ball";
+        } else if (reaction.emoji.name === "quick_ball") {
+            selectedBall = "Quick Ball";
+        } else if (reaction.emoji.name === "lure_ball") {
+            selectedBall = "Lure Ball";
+        } else if (reaction.emoji.name === "luxury_ball") {
+            selectedBall = "Luxury Ball";
+        } else if (reaction.emoji.name === "heavy_ball") {
+            selectedBall = "Heavy Ball";
+        } else if (reaction.emoji.name === "great_ball") {
+            selectedBall = "Great Ball";
+        } else if (reaction.emoji.name === "friend_ball") {
+            selectedBall = "Friend Ball";
+        } else if (reaction.emoji.name === "dive_ball") {
+            selectedBall = "Dive Ball";
+        } else if (reaction.emoji.name === "heal_ball") {
+            selectedBall = "Heal Ball";
+        } else if (reaction.emoji.name === "net_ball") {
+            selectedBall = "Net Ball";
+        } else if (reaction.emoji.name === "master_ball") {
+            selectedBall = "Master Ball";
+        } else if (reaction.emoji.name === "fast_ball") {
+            selectedBall = "Fast Ball";
+        } else if (reaction.emoji.name === "dusk_ball") {
+            selectedBall = "Dusk Ball";
+        } else if (reaction.emoji.name === "level_ball") {
+            selectedBall = "Level Ball";
+        }else if (reaction.emoji.name === "❌") {
+            selectedBall = null;
+        }
+    })
+    .catch(() => {
+        selectedBall = null;
+    });
+
+    msg.delete(0);
+
+    return selectedBall;
+}
+
+/**
+ * Creates a list of Poke Balls that shows each Poke Ball's icon, name,
+ * and quantity and converts it into a Rich Embed.
+ * 
+ * @param {Message} message The message sent from the user that triggered the Pokemon encounter.
+ * @param {Item[]} balls The Poke Balls owned by the user.
+ * 
+ * @returns {[RichEmbed, Emote[]]} The rich embed showing the list of Poke Balls and a list
+ * of emotes that contain all Poke Balls owned by the user.
+ */
+async function generatePokeBallEmbed(message, balls) {
+    let text = "";
+    let emotes = [];
+
+    if (balls.length > 0) {
+        function compare(a,b) {
+            if (a.name < b.name) {
+                return -1;
+            }
+            if (a.name > b.name) {
+                return 1;
+            }
+            return 0;
+        }
+        balls.sort(compare);
+
+        for (ball in balls) {
+            let emoteName = balls[ball].name;
+            emoteName = emoteName.toLowerCase();
+            emoteName = emoteName.replace(/ /gi, '_');
+            emoteName = emoteName.replace(/\é/gi, 'e');
+            let ballEmote = await client.emojis.find(emote => emote.name === emoteName);
+    
+            text += ballEmote + " **" + balls[ball].name + "** x" + balls[ball].quantity + "\n";
+            emotes[emotes.length] = ballEmote;
+        }
+    } else {
+        text = "You don't have any Poké Balls!"
+    }
+
+    emotes[emotes.length] = "❌";
+
+    let embed = {
+        "author": {
+            "name": "Poké Ball Selection",
+        },
+        "description": message.author.username + " please choose which Poké Ball to throw. Select the Poké Ball by reacting to its image, or ❌ to return to the battle menu.",
+        "fields": [
+            {
+                "name":  "\u200b",
+                "value": text
+            }
+        ]
+    };
+
+    return [embed, emotes];
+    
 }
 
 /**
@@ -2359,7 +2523,10 @@ async function createNewUser(userID, name, message, region) {
     starter.otid = message.author.id;
     starter.lead = 1;
     
-    let description = message.author.username + " please react to this message to make a selection.\n🥊 Fight\n🎒 View Bag\n👟 Run Away";
+    /**
+     * @todo fix this.
+     */
+    let description = message.author.username + " here is your starter.";
     let embed = generateWildPokemonEmbed(starter, message, description);
     let modelLink = generateModelLink(starter.name, starter.shiny, starter.gender, starter.form);
     let imageName = await getGifName(starter.name);
@@ -5732,7 +5899,7 @@ async function replaceMove(message, pokemon, newMove, moves) {
             name = pokemon.nickname;
         }
         let embed = {
-        "author": {
+            "author": {
                 "name": name,
                 "icon_url": spriteLink,
             },
@@ -7359,11 +7526,12 @@ async function generateWildPokemon(message, user, lead) {
  * @param {Message} message The Discord message sent from the user.
  * @param {Pokemon} wild The Pokemon that was generated to be caught.
  * @param {User} user The Pokebot user who is catching the Pokemon.
- * @param {Pokemon} lead The user's lead Pokemon.
+ * @param {string} ball The name of the Poke Ball being thrown.
+ * @param {number} turns The number of turns that have occurred during the battle.
  * 
  * @returns {boolean} True if the user caught the Pokemon.
  */
-async function throwPokeBall(message, wild, user, lead) {
+async function throwPokeBall(message, wild, user, ball, turns) {
     let pkmn = parseJSON(generatePokemonJSONPath(wild.name, wild.form));
     
     /* This will be put in a different function that occurs after catching a Pokemon.
@@ -7487,319 +7655,228 @@ async function throwPokeBall(message, wild, user, lead) {
     }
     */
     
-    var numTurns = 0;
-    var encounter = true;
-    while (encounter) {
-        var Balls = await getBalls(message.author.id);
-        if (Balls === null) {
-            return new Promise(function(resolve) {
-                resolve(false);
-            });
+    let catchChance = 30;
+    let catchRate = pkmn.catch_rate;
+
+    let wasPokemonCaught = false;
+   
+    if (ball === "Great Ball") {
+        catchChance = catchChance * 1.5;
+    } else if (ball === "Ultra Ball") {
+        catchChance = catchChance * 2;
+    } else if (ball === "Master Ball") {
+        catchChance = catchChance * 255;
+    } else if (ball === "Level Ball") {
+        if (leadLevel >= (wild.level * 4)) {
+            catchChance = catchChance * 8;
+        } else if (leadLevel >= (wild.level * 2)) {
+            catchChance = catchChance * 4;
+        } else if (leadLevel >= (wild.level * 1)) {
+            catchChance = catchChance * 2;
         }
-        var string = "```" + message.author.username + "'s Bag:\n";
-        if (Balls.length < 1) {
-            string += "You have no remaining balls!"
-        } else {
-            for (i = 0; i < Balls.length; i++) {
-                string += ((i + 1).toString() + ". " + Balls[i].name + " x" + Balls[i].quantity.toString() + "\n");
+    } else if (ball === "Lure Ball") {
+        if (user.field.includes("Rod")) {
+            catchChance = catchChance * 5;
+        }
+    } else if (ball === "Moon Ball") {
+        if (wild.name === "Nidoran♂" || wild.name === "Nidorino" || wild.name === "Nidoking" || wild.name === "Nidoran♀" || wild.name === "Nidorina" || wild.name === "Nidoqueen" || wild.name === "Cleffa" || wild.name === "Clefairy" || wild.name === "Clefable" || wild.name === "Igglybuff" || wild.name === "Jigglypuff" || wild.name === "Wigglytuff" || wild.name === "Skitty" || wild.name === "Delcatty" || wild.name === "Munna" || wild.name === "Musharna") {
+            catchChance = catchChance * 4;
+        }
+    } else if (ball === "Love Ball") {
+        if (leadName === wild.name) {
+            if (leadGender === "Male" && wild.gender === "Female") {
+                catchChance = catchChance * 8;
+            } else if (leadGender === "Female" && wild.gender === "Male") {
+                catchChance = catchChance * 8;
             }
         }
-
-        string += "```Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.";
-
-        await message.channel.send(string);
-        numTurns++;
-        var mes;
-        var cancel = false;
-        var input = null;
-        while(cancel == false) {
-            await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 180000, errors: ['time'] })
-            .then(collected => {
-                input = collected.first().content.toString().toLowerCase();
-                mes = collected.first();
-            })
-            .catch(collected => {
-                cancel = true;
-                input = null;
-            });
-
-            if (input == null) {
-                input = -1;
-            } else if (input === "run" || input === "fuck off") {
-                cancel = true;
-                input = -2;
-                i = 1800;
-            } else if (/^\d+$/.test(input)) {
-                var num = Number(input) - 1;
-                if (Balls.length < 1) {
-                    message.channel.send(message.author.username + " you are out of balls!");
-                    i = 0;
-                    input = -1;
-                } else if (num >= 0 && num < Balls.length) {
-                    input = num;
-                    cancel = true;
-                    i = 1800;
-                } else {
-                    message.channel.send(message.author.username + ", your number was not in range. Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.");
-                    i = 0;
-                    input = -1;
-                }
-            } else if (input != null) {
-                if (input === "poke" || input === "poke ball") {
-                    input = "poké ball";
-                }
-                if (!input.includes("ball")) {
-                    input += " ball";
-                }
-                if (Balls.length < 1) {
-                    message.channel.send(message.author.username + " you are out of balls!");
-                    i = 0;
-                    input = -1;
-                } else {
-                    if (input === "poke" || input === "poke ball") {
-                        input = "poké ball";
-                    }
-                    var doesUserHaveIt = Balls.map(function(t) { return t.name.toLowerCase(); }).indexOf(input);
-                    if (doesUserHaveIt >= 0) {
-                        cancel = true;
-                        input = doesUserHaveIt;
-                        i = 60;
-                    } else {
-                        message.channel.send(message.author.username + ", your response was not recognized. Type the name or number of the ball as shown in the list to throw it or \"Run\" to run away. Note that you do not need to include the word \"Ball\" when typing the name.");
-                        i = 0;
-                        input = -1;
-                    }
-                }
-            } else {
-                input = -1;
+    } else if (ball === "Heavy Ball") {
+        let weight = pkmn.weight_us;
+        weight = weight.substring(0, (weight.length - 5));
+        weight = parseFloat(weight);
+        if (weight >= 661.4) {
+            catchChance += 30;
+        } else if (weight >= 451.5) {
+            catchChance += 20;
+        } else if (weight <= 220.2) {
+            catchChance -= 20;
+        }
+    } else if (ball === "Fast Ball") {
+        if (pkmn.base_stats.speed >= 100) {
+            catchChance = catchChance * 4;
+        }
+    } else if (ball === "Repeat Ball") {
+        /**
+         * @todo check if this works.
+         */
+        if (user.pokedex.charAt(wild.no - 1) === '1') {
+            catchChance = catchChance * 3.5;
+        }
+    } else if (ball === "Timer Ball") {
+        let chance = (1 + (turns * (1229/4096)));
+        if (chance > 4) {
+            chance = 4;
+        }
+        catchChance = catchChance * chance;
+    } else if (ball === "Nest Ball") {
+        if (wild.level < 30) {
+            let chance = ((41 - wild.level) / 10);
+            catchChance = catchChance * chance;
+        }
+    } else if (ball === "Net Ball") {
+        if (pkmn.types[0] === "Water" || pkmn.types[0] === "Bug") {
+            catchChance = catchChance * 3.5;
+        } else if (pkmn.types.length > 1) {
+            if (pkmn.types[1] === "Water" || pkmn.types[1] === "Bug") {
+                catchChance = catchChance * 3.5;
+            }
+        }
+    } else if (ball === "Dive Ball") {
+        if (user.field.includes("Rod")) {
+            catchChance = catchChance * 3.5;
+        } else if (user.field === "Surfing" || user.field === "Diving") {
+            catchChance = catchChance * 3.5;
+        }
+    } else if (ball === "Quick Ball") {
+        if (turns === 1) {
+            catchChance = catchChance * 5;
+        }
+    } else if (ball === "Dusk Ball") {
+        /**
+         * @todo timezone
+         */
+        let locs;
+        let isDark = false;
+        let time = new Date();
+        time = time.getHours();
+        if ((time >= 0 && time < 6) || time >= 18) {
+            isDark = true;
+        } else if (user.region === "Kanto") {
+            locs = ["Cerulean Cave", "Diglett's Cave", "Mt. Moon", "Rock Tunnel", "Seafoam Islands", "Victory Road", "Altering Cave", "Icefall Cave", "Lost Cave"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
+            }
+        } else if (user.region === "Johto") {
+            locs = ["Cliff Cave", "Cliff Edge Gate", "Dark Cave", "Dragon's Den", "Ice Path", "Mt. Mortar", "Victory Road", "Mt. Silver", "Slowpoke Well", "Union Cave", "Whirl Islands"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
+            }
+        } else if (user.region === "Hoenn") {
+            locs = ["Artisan Cave", "Altering Cave", "Cave of Origin", "Desert Underpass", "Fabled Cave", "Fiery Path", "Victory Road", "Granite Cave", "Marine Cave", "Meteor Falls", "Nameless Cavern", "Rusturf Tunnel", "Scorched Slab", "Seafloor Cavern", "Shoal Cave", "Terra Cave"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
+            }
+        } else if (user.region === "Sinnoh") {
+            locs = ["Iron Island", "Maniac Tunnel", "Mt. Coronet", "Oreburgh Gate", "Oreburgh Mine", "Quiet Cave", "Victory Road", "Ravaged Path", "Stark Mountain", "Turnback Cave", "Wayward Cave"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
+            }
+        } else if (user.region === "Unova") {
+            locs = ["Cave of Being", "Challenger's Cave", "Chargestone Cave", "Clay Tunnel", "Giant Chasm", "Mistralton Cave", "Relic Passage", "Reversal Mountain", "Seaside Cave", "Twist Mountain", "Victory Road", "Wellspring Cave"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
+            }
+        } else if (user.region === "Kalos") {
+            locs = ["Connecting Cave", "Frost Cavern", "Glittering Cave", "Reflection Cave", "Sea Spirit's Den", "Victory Road", "Terminus Cave"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
+            }
+        } else if (user.region === "Alola") {
+            locs = ["Diglett's Tunnel", "Mount Lanakila", "Resolution Cave", "Seaward Cave", "Ten Carat Hill", "Verdant Cavern"];
+            if (locs.indexOf(user.location) >= 0) {
+                isDark = true;
             }
         }
         
-        var catchChance = 30;
-        var catchRate = pkmn.catch_rate;
-        
-        if (input === -2) {
-            await message.channel.send(message.author.username + " ran away from the wild " + wild.name + ".");
-            encounter = false;
-        } else if (input === -1) {
-            await message.channel.send(message.author.username + " the wild " + wild.name + " fled!");
-            encounter = false;
-        } else { //threw ball
-            ballUsed = Balls[input].name;
-            if (Balls[input].name === "Great Ball") {
-                catchChance = catchChance * 1.5;
-            } else if (Balls[input].name === "Ultra Ball") {
-                catchChance = catchChance * 2;
-            } else if (Balls[input].name === "Master Ball") {
-                catchChance = catchChance * 255;
-            } else if (Balls[input].name === "Level Ball") {
-                if (leadLevel >= (wild.level * 4)) {
-                    catchChance = catchChance * 8;
-                } else if (leadLevel >= (wild.level * 2)) {
-                    catchChance = catchChance * 4;
-                } else if (leadLevel >= (wild.level * 1)) {
-                    catchChance = catchChance * 2;
-                }
-            } else if (Balls[input].name === "Lure Ball") {
-                if (user.field.includes("Rod")) {
-                    catchChance = catchChance * 5;
-                }
-            } else if (Balls[input].name === "Moon Ball") {
-                if (wild.name === "Nidoran♂" || wild.name === "Nidorino" || wild.name === "Nidoking" || wild.name === "Nidoran♀" || wild.name === "Nidorina" || wild.name === "Nidoqueen" || wild.name === "Cleffa" || wild.name === "Clefairy" || wild.name === "Clefable" || wild.name === "Igglybuff" || wild.name === "Jigglypuff" || wild.name === "Wigglytuff" || wild.name === "Skitty" || wild.name === "Delcatty" || wild.name === "Munna" || wild.name === "Musharna") {
-                    catchChance = catchChance * 4;
-                }
-            } else if (Balls[input].name === "Love Ball") {
-                if (leadName === wild.name) {
-                    if (leadGender === "Male" && wild.gender === "Female") {
-                        catchChance = catchChance * 8;
-                    } else if (leadGender === "Female" && wild.gender === "Male") {
-                        catchChance = catchChance * 8;
-                    }
-                }
-            } else if (Balls[input].name === "Heavy Ball") {
-                var weight = pkmn.weight_us;
-                if ((name === "Pumpkaboo" || name === "Gourgeist") && form != "Small Size") {
-                    if (form === "Average Size") {
-                        weight = pkmn.variations[0].weight_us;
-                    } else if (form === "Average Size") {
-                        weight = pkmn.variations[1].weight_us;
-                    } else {
-                        weight = pkmn.variations[2].weight_us;
-                    }
-                }
-                weight = weight.substring(0, (weight.length - 5));
-                weight = parseFloat(weight);
-                if (weight >= 661.4) {
-                    catchChance += 30;
-                } else if (weight >= 451.5) {
-                    catchChance += 20;
-                } else if (weight <= 220.2) {
-                    catchChance -= 20;
-                }
-            } else if (Balls[input].name === "Fast Ball") {
-                if (pkmn.base_stats.speed >= 100) {
-                    catchChance = catchChance * 4;
-                }
-            } else if (Balls[input].name === "Repeat Ball") {
-                var haspokemon = user.pokemon.map(function(t) { return t.name; }).indexOf(wild.name);
-                if (haspokemon >= 0) {
-                    catchChance = catchChance * 3.5;
-                }
-            } else if (Balls[input].name === "Timer Ball") {
-                var chance = (1 + (numTurns * (1229/4096)));
-                if (chance > 4) {
-                    chance = 4;
-                }
-                catchChance = catchChance * chance;
-            } else if (Balls[input].name === "Nest Ball") {
-                if (wild.level < 30) {
-                    var chance = ((41 - wild.level) / 10);
-                    catchChance = catchChance * chance;
-                }
-            } else if (Balls[input].name === "Net Ball") {
-                if (pkmn.types[0] === "Water" || pkmn.types[0] === "Bug") {
-                    catchChance = catchChance * 3.5;
-                } else if (pkmn.types.length > 1) {
-                    if (pkmn.types[1] === "Water" || pkmn.types[1] === "Bug") {
-                        catchChance = catchChance * 3.5;
-                    }
-                }
-            } else if (Balls[input].name === "Dive Ball") {
-                if (user.field.includes("Rod")) {
-                    catchChance = catchChance * 3.5;
-                } else if (user.field === "Surfing") {
-                    catchChance = catchChance * 3.5;
-                }
-            } else if (Balls[input].name === "Quick Ball") {
-                if (numTurns === 1) {
-                    catchChance = catchChance * 5;
-                }
-            } else if (Balls[input].name === "Dusk Ball") {
-                var locs;
-                var isDark = false;
-                var time = new Date();
-                var time = time.getHours();
-                if ((time >= 0 && time < 6) || time >= 18) {
-                    isDark = true;
-                } else if (user.region === "Kanto") {
-                    locs = ["Cerulean Cave", "Diglett's Cave", "Mt. Moon", "Rock Tunnel", "Seafoam Islands", "Victory Road", "Altering Cave", "Icefall Cave", "Lost Cave"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                } else if (user.region === "Johto") {
-                    locs = ["Cliff Cave", "Cliff Edge Gate", "Dark Cave", "Dragon's Den", "Ice Path", "Mt. Mortar", "Victory Road", "Mt. Silver", "Slowpoke Well", "Union Cave", "Whirl Islands"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                } else if (user.region === "Hoenn") {
-                    locs = ["Artisan Cave", "Altering Cave", "Cave of Origin", "Desert Underpass", "Fabled Cave", "Fiery Path", "Victory Road", "Granite Cave", "Marine Cave", "Meteor Falls", "Nameless Cavern", "Rusturf Tunnel", "Scorched Slab", "Seafloor Cavern", "Shoal Cave", "Terra Cave"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                } else if (user.region === "Sinnoh") {
-                    locs = ["Iron Island", "Maniac Tunnel", "Mt. Coronet", "Oreburgh Gate", "Oreburgh Mine", "Quiet Cave", "Victory Road", "Ravaged Path", "Stark Mountain", "Turnback Cave", "Wayward Cave"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                } else if (user.region === "Unova") {
-                    locs = ["Cave of Being", "Challenger's Cave", "Chargestone Cave", "Clay Tunnel", "Giant Chasm", "Mistralton Cave", "Relic Passage", "Reversal Mountain", "Seaside Cave", "Twist Mountain", "Victory Road", "Wellspring Cave"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                } else if (user.region === "Kalos") {
-                    locs = ["Connecting Cave", "Frost Cavern", "Glittering Cave", "Reflection Cave", "Sea Spirit's Den", "Victory Road", "Terminus Cave"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                } else if (user.region === "Alola") {
-                    locs = ["Diglett's Tunnel", "Mount Lanakila", "Resolution Cave", "Seaward Cave", "Ten Carat Hill", "Verdant Cavern"];
-                    if (locs.indexOf(user.location) >= 0) {
-                        isDark = true;
-                    }
-                }
-                
-                if (isDark) {
-                    catchChance = catchChance * 3;
-                }
-            }
-            
-            var shakes = 0;
-            var luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
-            if (luck >= 70) {
-                shakes++;
-                await mes.react("▫");
-            }
-            luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
-            if (luck >= 70) {
-                shakes++;
-                if (shakes === 1) {
-                    await mes.react("▫");
-                } else {
-                    await mes.react("◻");
-                }
-            }
-            luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
-            if (luck >= 70) {
-                shakes++;
-                if (shakes === 1) {
-                    await mes.react("▫");
-                } else if (shakes === 2) {
-                    await mes.react("◻");
-                } else {
-                    await mes.react("⬜");
-                }
-            }
-            luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
-            if (luck >= 70) {
-                shakes++;
-                if (shakes === 1) {
-                    await mes.react("▫");
-                } else if (shakes === 2) {
-                    await mes.react("◻");
-                } else if (shakes === 3) {
-                    await mes.react("⬜");
-                } else {
-                    await mes.react("🌟");
-                }
-            }
-            if (shakes === 0) {
-                await message.channel.send("Oh no! The Pokémon broke free!");
-                await removeItemFromBag(message.author.id, Balls[input].name, 1);
-            } else if (shakes === 1) {
-                await message.channel.send("Aww! It appeared to be caught!");
-                await removeItemFromBag(message.author.id, Balls[input].name, 1);
-            } else if (shakes === 2) {
-                await message.channel.send("Aargh! Almost had it!");
-                await removeItemFromBag(message.author.id, Balls[input].name, 1);
-            } else if (shakes === 3) {
-                await message.channel.send("Gah! It was so close, too!");
-                await removeItemFromBag(message.author.id, Balls[input].name, 1);
-            } else if (shakes === 4) {
-                await message.channel.send("Gotcha! " + wild.name + " was caught!");
-                await removeItemFromBag(message.author.id, Balls[input].name, 1);
-                wild.ot = message.author.username;
-                wild.otid = message.author.id;
-                wild.date = convertToTimeZone(user).format();
-
-                if (ballUsed === "Friend Ball") {
-                    wild.friendship = 200;
-                } else {
-                    wild.frienship = pkmn.base_friendship;
-                }
-                
-                if (wild.level > user.level) {
-                    user.level = wild.level;
-                }
-
-                wild.caughtIn = Balls[input].name;
-                wild.nick = await nicknamePokemon(message, wild.name);
-                await addPokemon(message.author.id, wild);
-                await addToPokedex(user, wild.no);
-                encounter = false;
-            }
+        if (isDark) {
+            catchChance = catchChance * 3;
         }
     }
-    return true;
+    
+    let firstLetter = ball.charAt(0);
+    let article = "a";
+    if (firstLetter === 'A' || firstLetter === 'E' || firstLetter === 'I' || firstLetter === 'O' || firstLetter === 'U') {
+        article = "an";
+    }
+
+    let mes = await sendMessage(message.channel, (message.author.username + " threw " + article + " **" + ball + "**!"), true);
+
+    let shakes = 0;
+    let luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
+    if (luck >= 70) {
+        shakes++;
+        await mes.react("▫");
+    }
+    luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
+    if (luck >= 70) {
+        shakes++;
+        if (shakes === 1) {
+            await mes.react("▫");
+        } else {
+            await mes.react("◻");
+        }
+    }
+    luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
+    if (luck >= 70) {
+        shakes++;
+        if (shakes === 1) {
+            await mes.react("▫");
+        } else if (shakes === 2) {
+            await mes.react("◻");
+        } else {
+            await mes.react("⬜");
+        }
+    }
+    luck = ((Math.ceil(Math.random() * catchRate) + catchChance));
+    if (luck >= 70) {
+        shakes++;
+        if (shakes === 1) {
+            await mes.react("▫");
+        } else if (shakes === 2) {
+            await mes.react("◻");
+        } else if (shakes === 3) {
+            await mes.react("⬜");
+        } else {
+            await mes.react("🌟");
+        }
+    }
+    if (shakes === 0) {
+        await sendMessage(message.channel, ("Oh no! The Pokémon broke free!"));
+    } else if (shakes === 1) {
+        await sendMessage(message.channel, ("Aww! It appeared to be caught!"));
+    } else if (shakes === 2) {
+        await sendMessage(message.channel, ("Aargh! Almost had it!"));
+    } else if (shakes === 3) {
+        await sendMessage(message.channel, ("Gah! It was so close, too!"));
+    } else if (shakes === 4) {
+        await sendMessage(message.channel, ("Gotcha! " + wild.name + " was caught!"));
+        wild.ot = message.author.username;
+        wild.otid = message.author.id;
+        wild.date = convertToTimeZone(user).format();
+
+        if (ball === "Friend Ball") {
+            wild.friendship = 200;
+        } else {
+            wild.frienship = pkmn.base_friendship;
+        }
+        
+        if (wild.level > user.level) {
+            user.level = wild.level;
+        }
+
+        wild.caughtIn = ball;
+        wild.nick = await nicknamePokemon(message, wild.name);
+        await addPokemon(message.author.id, wild);
+        await addToPokedex(user, wild.no);
+
+        wasPokemonCaught = true;
+    }
+
+    await removeItemFromBag(message.author.id, ball, 1);
+
+    return new Promise(function(resolve) {
+        resolve(wasPokemonCaught);
+    });
 }
 
 /**
@@ -7886,6 +7963,11 @@ async function generateWildPokemonEmbed(pkmn, message, description) {
         movesString += pkmn.moves[3] + "\n";
     }
 
+    let genderString = pkmn.gender;
+    if (pkmn.gender === null) {
+        genderString = "None";
+    }
+
     let embed = {
         "author": {
             "name": name,
@@ -7913,7 +7995,7 @@ async function generateWildPokemonEmbed(pkmn, message, description) {
             },
             {
                 "name": "Gender",
-                "value": pkmn.gender,
+                "value": genderString,
                 "inline": true
             },
             {
