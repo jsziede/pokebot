@@ -8394,11 +8394,11 @@ async function printPossibleEncounters(message) {
 
     let locationData = parseJSON(generateLocationJSONPath(user.region, user.location));
     
-    var possiblePokemon = [[],[],[],[],[],[]];
+    let possiblePokemon = [[],[],[],[],[],[]];
 
-    var rarityIndex = 0;
-    var cur = convertToTimeZone(user);
-    var hour = moment(cur).hour();
+    let rarityIndex = 0;
+    let cur = convertToTimeZone(user);
+    let hour = moment(cur).hour();
     if (user.region === "Kanto" || user.region === "Johto" || user.region === "Sinnoh") {
         if (hour >= 10 && hour < 20) {
             rarityIndex = 1;
@@ -8413,63 +8413,106 @@ async function printPossibleEncounters(message) {
         }
     }
 
-    var i;
-    for (i = 0; i < locationData.pokemon.length; i++) {
+    let locationPokemonIndex;
+    for (locationPokemonIndex = 0; locationPokemonIndex < locationData.pokemon.length; locationPokemonIndex++) {
         /**
          * @todo determine a Pokemon's default form based on region and location and send it to the json function below.
          */
-        var pth = generatePokemonJSONPath(locationData.pokemon[i].name, null);
-        var dat;
-        try {
-            dat = fs.readFileSync(pth, "utf8");
-        } catch (err) {
-            console.log(err);
-            return null;
-        }
-
-        let pkm = JSON.parse(dat);
+        let pkm = parseJSON(generatePokemonJSONPath(locationData.pokemon[locationPokemonIndex].name, null));
         let dexNum = pkm.national_id.toString();
         dexNum = dexNum.padStart(3, '0');
 
+        /**
+         * If user has registered this Pokemon into their Pokedex.
+         */
         var hasIt = user.pokedex.charAt(pkm.national_id - 1);
         if (hasIt === '1') {
             hasIt = true;
         } else {
             hasIt = false;
         }
-        if (locationData.pokemon[i].hasOwnProperty("dexnav")) {
-            if (locationData.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Poké Radar", hasIt);
-            } else if (locationData.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Poké Radar", hasIt);
-            } else if (locationData.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " Poké Radar"), hasIt);
+        
+        /**
+         * If Pokemon can only be encountered via DexNav.
+         */
+        if (locationData.pokemon[locationPokemonIndex].hasOwnProperty("dexnav")) {
+            /**
+             * Pokemon found in tall grass.
+             */
+            if (locationData.pokemon[locationPokemonIndex].field === "Walking") {
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], "Poké Radar", hasIt);
+            /**
+             * Pokemon found by surfing.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field === "Surfing") {
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], "Poké Radar", hasIt);
+            /**
+             * Pokemon found by fishing.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field.includes("Rod")) {
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], (locationData.pokemon[locationPokemonIndex].field + " Poké Radar"), hasIt);
             }
-        } else if (locationData.pokemon[i].hasOwnProperty("swarm")) {
-            if (locationData.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Swarm", hasIt);
-            } else if (locationData.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Swarm", hasIt);
-            } else if (locationData.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " Swarm"), hasIt);
+        /**
+         * If Pokemon can only be encountered when swarming.
+         */
+        } else if (locationData.pokemon[locationPokemonIndex].hasOwnProperty("swarm")) {
+            /**
+             * Pokemon found in tall grass.
+             */
+            if (locationData.pokemon[locationPokemonIndex].field === "Walking") {
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], "Swarm", hasIt);
+            /**
+             * Pokemon found by surfing.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field === "Surfing") {
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], "Swarm", hasIt);
+            /**
+             * Pokemon found by fishing.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field.includes("Rod")) {
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], (locationData.pokemon[locationPokemonIndex].field + " Swarm"), hasIt);
             }
+        /**
+         * All other encounter methods.
+         */
         } else {
-            if (locationData.pokemon[i].field === "Walking") {
-                if (locationData.pokemon[i].hasOwnProperty("slot")) {
-                    possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], locationData.pokemon[i].slot, hasIt);
+            /**
+             * Pokemon found in tall grass.
+             */
+            if (locationData.pokemon[locationPokemonIndex].field === "Walking") {
+                /**
+                 * Dual Slot Pokemon from D/P/Pt.
+                 */
+                if (locationData.pokemon[locationPokemonIndex].hasOwnProperty("slot")) {
+                    possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], locationData.pokemon[locationPokemonIndex].slot, hasIt);
                 } else {
-                    possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+                    possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], null, hasIt);
                 }
-            } else if (locationData.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (locationData.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], locationData.pokemon[i].field, hasIt);
-            } else if (locationData.pokemon[i].field === "Rock Smash") {
-                possiblePokemon[3][possiblePokemon[3].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (locationData.pokemon[i].field === "Headbutt") {
-                possiblePokemon[4][possiblePokemon[4].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (locationData.pokemon[i].field === "Dive") {
-                possiblePokemon[5][possiblePokemon[5].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+            /**
+             * Pokemon found by surfing.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field === "Surfing") {
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], null, hasIt);
+            /**
+             * Pokemon found by fishing.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field.includes("Rod")) {
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], locationData.pokemon[locationPokemonIndex].field, hasIt);
+            /**
+             * Pokemon found from rock smash.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field === "Rock Smash") {
+                possiblePokemon[3][possiblePokemon[3].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], null, hasIt);
+            /**
+             * Pokemon found by headbutting trees.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field === "Headbutt") {
+                possiblePokemon[4][possiblePokemon[4].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], null, hasIt);
+            /**
+             * Pokemon found by diving underwater.
+             */
+            } else if (locationData.pokemon[locationPokemonIndex].field === "Dive") {
+                possiblePokemon[5][possiblePokemon[5].length] = new possibleEncounter(locationData.pokemon[locationPokemonIndex].name, dexNum, locationData.pokemon[locationPokemonIndex].min_level, locationData.pokemon[locationPokemonIndex].max_level, locationData.pokemon[locationPokemonIndex].rarity[rarityIndex], null, hasIt);
             }
         }
     }
@@ -8490,7 +8533,9 @@ async function printPossibleEncounters(message) {
     let poke_ball = client.emojis.find(poke_ball => poke_ball.name === "Poke_Ball");
     let possiblePokemonIndex;
 
-
+    /**
+     * Generate an embedded message for each possible field.
+     */
     for (possiblePokemonIndex = 0; possiblePokemonIndex < possiblePokemon.length; possiblePokemonIndex++) {
         let title = "";
         let color = "";
@@ -8538,17 +8583,33 @@ async function printPossibleEncounters(message) {
             let embedFields = [];
             let fieldIndex;
             let fieldString = "";
+            /**
+             * Prevent embed field character limit from breaking by splitting embed
+             * into multiple fields.
+             */
             for (fieldIndex = 0; fieldIndex < possiblePokemon[possiblePokemonIndex].length; fieldIndex++) {
                 shuffle_icon = await getShuffleEmoji(possiblePokemon[possiblePokemonIndex][fieldIndex].no);
                 fieldString += shuffle_icon;
+                /**
+                 * Add Poke Ball emote if the user owns the Pokemon.
+                 */
                 if (possiblePokemon[possiblePokemonIndex][fieldIndex].hasIt) {
                     fieldString += " " + poke_ball;
                 }
+                /**
+                 * If Pokemon can only be encountered at one level.
+                 */
                 if (possiblePokemon[possiblePokemonIndex][fieldIndex].min === possiblePokemon[possiblePokemonIndex][fieldIndex].max) {
                     fieldString += " **"  + possiblePokemon[possiblePokemonIndex][fieldIndex].name + "** Level " + possiblePokemon[possiblePokemonIndex][fieldIndex].min + " | Likelihood: " + possiblePokemon[possiblePokemonIndex][fieldIndex].rarity;
+                /**
+                 * If Pokemon can be encountered at multiple levels.
+                 */
                 } else {
                     fieldString += " **"  + possiblePokemon[possiblePokemonIndex][fieldIndex].name + "** Levels " + possiblePokemon[possiblePokemonIndex][fieldIndex].min + " - " + possiblePokemon[possiblePokemonIndex][fieldIndex].max + " | Likelihood: " + possiblePokemon[possiblePokemonIndex][fieldIndex].rarity;
                 }
+                /**
+                 * If Pokemon requires a special method to encounter it.
+                 */
                 if (possiblePokemon[possiblePokemonIndex][fieldIndex].method != null) {
                     fieldString += " **[**" + possiblePokemon[possiblePokemonIndex][fieldIndex].method + "**]**";
                 }
@@ -8610,6 +8671,9 @@ async function printPossibleEncounters(message) {
     
     let msg = await sendMessage(message.channel, {embed}, true);
     
+    /**
+     * Embeds are changed by using reactions.
+     */
     let reacting = true;
     while (reacting) {
         let emojiIndex;
