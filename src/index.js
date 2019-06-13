@@ -8438,23 +8438,27 @@ async function printPossibleEncounters(message) {
         }
         if (locationData.pokemon[i].hasOwnProperty("dexnav")) {
             if (locationData.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Poké Radar*", hasIt);
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Poké Radar", hasIt);
             } else if (locationData.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Poké Radar*", hasIt);
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Poké Radar", hasIt);
             } else if (locationData.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " *Poké Radar*"), hasIt);
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " Poké Radar"), hasIt);
             }
         } else if (locationData.pokemon[i].hasOwnProperty("swarm")) {
             if (locationData.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Swarm*", hasIt);
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Swarm", hasIt);
             } else if (locationData.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Swarm*", hasIt);
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "Swarm", hasIt);
             } else if (locationData.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " *Swarm*"), hasIt);
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " Swarm"), hasIt);
             }
         } else {
             if (locationData.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+                if (locationData.pokemon[i].hasOwnProperty("slot")) {
+                    possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], locationData.pokemon[i].slot, hasIt);
+                } else {
+                    possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+                }
             } else if (locationData.pokemon[i].field === "Surfing") {
                 possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
             } else if (locationData.pokemon[i].field.includes("Rod")) {
@@ -8545,7 +8549,7 @@ async function printPossibleEncounters(message) {
                     fieldString += " **"  + possiblePokemon[possiblePokemonIndex][fieldIndex].name + "** Levels " + possiblePokemon[possiblePokemonIndex][fieldIndex].min + " - " + possiblePokemon[possiblePokemonIndex][fieldIndex].max + " | Likelihood: " + possiblePokemon[possiblePokemonIndex][fieldIndex].rarity;
                 }
                 if (possiblePokemon[possiblePokemonIndex][fieldIndex].method != null) {
-                    fieldString += " *" + possiblePokemon[possiblePokemonIndex][fieldIndex].method + "*";
+                    fieldString += " **[**" + possiblePokemon[possiblePokemonIndex][fieldIndex].method + "**]**";
                 }
                 fieldString += "\n";
                 if (fieldString.length >= 900) {
