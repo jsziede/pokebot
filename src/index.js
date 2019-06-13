@@ -7947,8 +7947,8 @@ async function generateWildPokemonEmbed(pkmn, message, description) {
 
     let movesString = "";
     for (move in pkmn.moves) {
-        let moveTypeIcon = getMoveType(pkmn.moves[move]);
-        if (moveTypeIcon != null) {
+        if (pkmn.moves[move] != null) {
+            let moveTypeIcon = getMoveType(pkmn.moves[move]);
             moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
             movesString += moveTypeIcon;
             movesString += pkmn.moves[move] + "\n";
