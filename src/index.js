@@ -7946,35 +7946,13 @@ async function generateWildPokemonEmbed(pkmn, message, description) {
     let imageName = await getGifName(pkmn.name);
 
     let movesString = "";
-    let moveTypeIcon = getMoveType(pkmn.moves[0]);
-    if (moveTypeIcon != null) {
-        moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
-        movesString += moveTypeIcon;
-    }
-    movesString += pkmn.moves[0] + "\n";
-    if (pkmn.moves[1] != null) {
-        moveTypeIcon = getMoveType(pkmn.moves[1]);
+    for (move in pkmn.moves) {
+        let moveTypeIcon = getMoveType(pkmn.moves[move]);
         if (moveTypeIcon != null) {
             moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
             movesString += moveTypeIcon;
+            movesString += pkmn.moves[move] + "\n";
         }
-        movesString += pkmn.moves[1] + "\n";
-    }
-    if (pkmn.moves[2] != null) {
-        moveTypeIcon = getMoveType(pkmn.moves[2]);
-        if (moveTypeIcon != null) {
-            moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
-            movesString += moveTypeIcon;
-        }
-        movesString += pkmn.moves[2] + "\n";
-    }
-    if (pkmn.moves[3] != null) {
-        moveTypeIcon = getMoveType(pkmn.moves[3]);
-        if (moveTypeIcon != null) {
-            moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
-            movesString += moveTypeIcon;
-        }
-        movesString += pkmn.moves[3] + "\n";
     }
 
     let genderString = pkmn.gender;
