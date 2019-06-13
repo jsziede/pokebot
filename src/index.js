@@ -3664,8 +3664,7 @@ async function setField(message, field) {
  * that is being nicknamed.
  * 
  * @returns {string} The nickname of the Pokemon as input by
- * the user, or the Pokemon's regular name if the user opts
- * out of nicknaming the Pokemon.
+ * the user, or null if the user declines.
  */
 async function nicknamePokemon(message, pokemon) {
     let spriteLink = generateSpriteLink(pokemon.name, pokemon.gender, pokemon.form);
@@ -3692,7 +3691,7 @@ async function nicknamePokemon(message, pokemon) {
     };
 
     const YES_NICKNAME = true;
-    const NO_NICKNAME = false;
+    const NO_NICKNAME = null;
     let input = NO_NICKNAME;
 
     await nicknameMessage.awaitReactions(filter, { max: 1, time: 300000, errors: ['time'] })
