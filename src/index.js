@@ -8082,156 +8082,160 @@ async function getPokemonKnownMoves(pokemonId) {
  * @returns {Message} The Discord message showing the Pokemon details.
  */
 async function displayAnOwnedPkmn(pkmn, message, description = undefined) {
-    var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
-    if (modelLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+    let modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
+    let spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
+    let nextLevel = getXpToNextLevel(pkmn.name, pkmn.xp, pkmn.level_current);
 
-    var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
-    if (spriteLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
-
-    var nextLevel = getXpToNextLevel(pkmn.name, pkmn.xp, pkmn.level_current);
+    let year = moment(pkmn.date).format('Y');
+    let month = moment(pkmn.date).format('MMMM');
+    let today = moment(pkmn.date).format('Do');
     
-    var year = moment(pkmn.date).format('Y');
-    var month = moment(pkmn.date).format('MMMM');
-    var today = moment(pkmn.date).format('Do');
-    
-    var name = pkmn.name;
-    var nick = pkmn.nickname;
+    /**
+     * Show Pokemon's nickname instead of name if it has one.
+     */
+    let name = pkmn.name;
+    let nick = pkmn.nickname;
     if (nick === null) {
         nick = pkmn.name;
     }
 
+    /**
+     * Add a star to the end of the name if the Pokemon is shiny.
+     */
     if (pkmn.shiny === 1) {
         name += " ⭐";
     }
     
+    /**
+     * Add the Pokemon's form in braces to the name.
+     */
     if (pkmn.form != "None" && pkmn.form != null) {
-        name = name + " (" + pkmn.form + ")";
+        name = name + " [" + pkmn.form + "]";
     }
     
-    var item = "None";
-    if (pkmn.item != "None" && pkmn.item != null) {
-        item = await getItem(pkmn.item);
-        if (item === null) {
-            item = pkmn.item;
-        } else {
-            item = item.name;
-        }
+    /**
+     * If Pokemon doesn't have an item, then print "None".
+     */
+    let item = "None";
+    if (pkmn.item != null) {
+        item = pkmn.item;
     }
     
-    var imageName = await getGifName(pkmn.name);
+    let imageName = await getGifName(pkmn.name);
     
-    var trainerName = await client.fetchUser(pkmn.original_trainer).then(myUser => {
+    /**
+     * Gets the name of a Discord user based on the user's id. This is to show the username
+     * of the Pokemon's original Trainer.
+     */
+    let trainerName = await client.fetchUser(pkmn.original_trainer).then(myUser => {
         return myUser.username;
     });
     
-    var type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.type_1);
-    var typeString = type_icon + " " + pkmn.type_1;
+    /**
+     * Convert Pokemon's types into one string.
+     */
+    let type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.type_1);
+    let typeString = type_icon + " " + pkmn.type_1;
     if (pkmn.type_2 != "---" && pkmn.type_2 != null) {
         type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.type_2);
         typeString += ("\n" + type_icon + " " + pkmn.type_2);
     }
 
+    /**
+     * Converts Pokemon's moves into one string.
+     */
     let moves = await getPokemonKnownMoves(pkmn.pokemon_id);
-    if (moves === null) {
-        console.warn(chalk`{yellow [WARNING]} Pokemon ` + pkmn.pokemon_id + ` has null moves!`);
-    }
-    let i = 0;
     let movesString = "";
-    for (i; i < moves.length; i++) {
-        let moveTypeIcon = getMoveType(moves[i].name);
+    for (let move in moves) {
+        let moveTypeIcon = getMoveType(moves[move].name);
         if (moveTypeIcon != null) {
             moveTypeIcon = await client.emojis.find(type_icon => type_icon.name === moveTypeIcon);
             movesString += moveTypeIcon;
         }
-        movesString += moves[i].name;
+        movesString += moves[move].name;
         movesString += "\n";
     }
     
+    /**
+     * If no description was passed as an argument, then only show the Pokemon's characteristic.
+     */
     if (description === undefined) {
         description = getCharacteristic(pkmn);
     } else {
         description = (description + "\n\n" + getCharacteristic(pkmn));
     }
 
-    let pkmnMsg = await message.channel.send({
-        "embed": {
-            "author": {
-                "name": nick,
-                "icon_url": spriteLink,
+    let embed = {
+        "author": {
+            "name": nick,
+            "icon_url": spriteLink,
+        },
+        "title": name,
+        "description": description,
+        "color": getTypeColor(pkmn.type_1),
+        "thumbnail": {
+            "url": "attachment://" + imageName + ".gif"
+        },
+        "footer": {
+            "icon_url": "attachment://ball.png",
+            "text": pkmn.location + ", " + pkmn.region + " on " + month + " " + today + ", " + year + " at level " + pkmn.level_caught
+        },
+        "fields": [
+            
+            {
+                "name": "Original Trainer",
+                "value": trainerName,
+                "inline": false
             },
-            "title": name,
-            "description": description,
-            "color": getTypeColor(pkmn.type_1),
-            "thumbnail": {
-                "url": "attachment://" + imageName + ".gif"
+            {
+                "name": "Level " + pkmn.level_current.toString(),
+                "value": "Total XP: " + pkmn.xp + "\n" + "To next level: " + nextLevel,
+                "inline": true
             },
-            "footer": {
-                "icon_url": "attachment://ball.png",
-                "text": pkmn.location + ", " + pkmn.region + " on " + month + " " + today + ", " + year + " at level " + pkmn.level_caught
+            {
+                "name": "Type",
+                "value": typeString,
+                "inline": true
             },
-            "fields": [
-                
-                {
-                    "name": "Original Trainer",
-                    "value": trainerName,
-                    "inline": false
-                },
-                {
-                    "name": "Level " + pkmn.level_current.toString(),
-                    "value": "Total XP: " + pkmn.xp + "\n" + "To next level: " + nextLevel,
-                    "inline": true
-                },
-                {
-                    "name": "Type",
-                    "value": typeString,
-                    "inline": true
-                },
-                {
-                    "name": "Gender",
-                    "value": pkmn.gender,
-                    "inline": true
-                },
-                {
-                    "name": "Ability",
-                    "value": pkmn.ability,
-                    "inline": true
-                },
-                {
-                    "name": "Nature",
-                    "value": pkmn.nature,
-                    "inline": true
-                },
-                {
-                    "name": "Item",
-                    "value": item,
-                    "inline": true
-                },
-                {
-                    "name": "Stats",
-                    "value": "HP: " + pkmn.stat_hp + "\n" +
-                    "Attack: " + pkmn.stat_atk + "\n" +
-                    "Defense: " + pkmn.stat_def + "\n" +
-                    "Sp. Attack: " + pkmn.stat_spatk + "\n" +
-                    "Sp. Defense: " + pkmn.stat_spdef + "\n" +
-                    "Speed: " + pkmn.stat_spd,
-                    "inline": true
-                },
-                {
-                    "name": "Moves",
-                    "value": movesString,
-                    "inline": true
-                }
-            ]
-        }, files: [{ attachment: modelLink, name: (imageName + '.gif') }, { attachment: ("../gfx/balls/" + pkmn.ball + ".png"), name: 'ball.png' }]
-    });
+            {
+                "name": "Gender",
+                "value": pkmn.gender,
+                "inline": true
+            },
+            {
+                "name": "Ability",
+                "value": pkmn.ability,
+                "inline": true
+            },
+            {
+                "name": "Nature",
+                "value": pkmn.nature,
+                "inline": true
+            },
+            {
+                "name": "Item",
+                "value": item,
+                "inline": true
+            },
+            {
+                "name": "Stats",
+                "value": "HP: " + pkmn.stat_hp + "\n" +
+                "Attack: " + pkmn.stat_atk + "\n" +
+                "Defense: " + pkmn.stat_def + "\n" +
+                "Sp. Attack: " + pkmn.stat_spatk + "\n" +
+                "Sp. Defense: " + pkmn.stat_spdef + "\n" +
+                "Speed: " + pkmn.stat_spd,
+                "inline": true
+            },
+            {
+                "name": "Moves",
+                "value": movesString,
+                "inline": true
+            }
+        ]
+    }
+
+    let pkmnMsg = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }, { attachment: ("../gfx/balls/" + pkmn.ball + ".png"), name: 'ball.png' }]);
 
     return new Promise(function(resolve) {
         resolve(pkmnMsg);
@@ -8249,26 +8253,13 @@ async function displayAnOwnedPkmn(pkmn, message, description = undefined) {
  * @returns {boolean} True if no errors are encountered.
  */
 function displayHiddenStats(pkmn, message) {
-    var modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
-    if (modelLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+    let modelLink = generateModelLink(pkmn.name, pkmn.shiny, pkmn.gender, pkmn.form);
+    let spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
 
-    var spriteLink = generateSpriteLink(pkmn.name, pkmn.gender, pkmn.form);
-    if (spriteLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+    let EVs = [pkmn.ev_hp, pkmn.ev_atk, pkmn.ev_def, pkmn.ev_spatk, pkmn.ev_spdef, pkmn.ev_spd];
+    let IVs = [pkmn.iv_hp, pkmn.iv_atk, pkmn.iv_def, pkmn.iv_spatk, pkmn.iv_spdef, pkmn.iv_spd];
 
-    var EVs = [pkmn.ev_hp, pkmn.ev_atk, pkmn.ev_def, pkmn.ev_spatk, pkmn.ev_spdef, pkmn.ev_spd];
-    var IVs = [pkmn.iv_hp, pkmn.iv_atk, pkmn.iv_def, pkmn.iv_spatk, pkmn.iv_spdef, pkmn.iv_spd];
-
-    var name = pkmn.name;
-    var name = pkmn.name;
-    var nick = name;
+    let name, nick = pkmn.name;
     if (pkmn.nickname != null) {
         nick = pkmn.nickname;
     }
@@ -8277,13 +8268,14 @@ function displayHiddenStats(pkmn, message) {
         name += " ⭐";
     }
     
-
-
-    if (pkmn.form != "None" && pkmn.form != null) {
-        name = name + " (" + pkmn.form + ")";
+    if (pkmn.form != null) {
+        name = name + " [" + pkmn.form + "]";
     }
     
-    var hiddenPow = Math.floor((((IVs[0] % 2) + (2 * (IVs[1] % 2)) + (4 * (IVs[2] % 2)) + (8 * (IVs[5] % 2)) + (16 * (IVs[3] % 2)) + (16 * (IVs[4] % 5))) * 15) / 63);
+    /**
+     * Get hidden power type.
+     */
+    let hiddenPow = Math.floor((((IVs[0] % 2) + (2 * (IVs[1] % 2)) + (4 * (IVs[2] % 2)) + (8 * (IVs[5] % 2)) + (16 * (IVs[3] % 2)) + (16 * (IVs[4] % 5))) * 15) / 63);
     if (hiddenPow === 0) {
         hiddenPow = "Fighting";
     } else if (hiddenPow === 1) {
@@ -8318,49 +8310,48 @@ function displayHiddenStats(pkmn, message) {
         hiddenPow = "Dark";
     }
 
-    var type_icon = client.emojis.find(type_icon => type_icon.name === hiddenPow);
+    let type_icon = client.emojis.find(type_icon => type_icon.name === hiddenPow);
+    let embed = {
+        "author": {
+            "name": nick,
+            "icon_url": spriteLink,
+        },
+        "title": name,
+        "color": getTypeColor(pkmn.type_1),
+        "thumbnail": {
+            "url": "attachment://" + pkmn.name + ".gif"
+        },
+        "fields": [
+            
+            {
+                "name": "Friendship",
+                "value": Math.trunc(pkmn.friendship),
+                "inline": true
+            },
+            {
+                "name": "Personality Value",
+                "value": pkmn.personality,
+                "inline": true
+            },
+            {
+                "name": "Effort Values",
+                "value": EVs[0] + ", " + EVs[1] + ", " + EVs[2] + ", " + EVs[3] + ", " + EVs[4] + ", " + EVs[5],
+                "inline": true
+            },
+            {
+                "name": "Individual Values",
+                "value": IVs[0] + ", " + IVs[1] + ", " + IVs[2] + ", " + IVs[3] + ", " + IVs[4] + ", " + IVs[5],
+                "inline": true
+            },
+            {
+                "name": "Hidden Power Type",
+                "value": type_icon + " " + hiddenPow,
+                "inline": true
+            }
+        ]
+    }
     
-    message.channel.send({
-        "embed": {
-            "author": {
-                "name": nick,
-                "icon_url": spriteLink,
-            },
-            "title": name,
-            "color": getTypeColor(pkmn.type_1),
-            "thumbnail": {
-                "url": "attachment://" + pkmn.name + ".gif"
-            },
-            "fields": [
-                
-                {
-                    "name": "Friendship",
-                    "value": Math.trunc(pkmn.friendship),
-                    "inline": true
-                },
-                {
-                    "name": "Personality Value",
-                    "value": pkmn.personality,
-                    "inline": true
-                },
-                {
-                    "name": "Effort Values",
-                    "value": EVs[0] + ", " + EVs[1] + ", " + EVs[2] + ", " + EVs[3] + ", " + EVs[4] + ", " + EVs[5],
-                    "inline": true
-                },
-                {
-                    "name": "Individual Values",
-                    "value": IVs[0] + ", " + IVs[1] + ", " + IVs[2] + ", " + IVs[3] + ", " + IVs[4] + ", " + IVs[5],
-                    "inline": true
-                },
-                {
-                    "name": "Hidden Power Type",
-                    "value": type_icon + " " + hiddenPow,
-                    "inline": true
-                }
-            ]
-        }, files: [{ attachment: modelLink, name: (pkmn.name + '.gif') }]
-    });
+    sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (pkmn.name + '.gif') }]);
 }
 
 /**
@@ -8373,26 +8364,24 @@ function displayHiddenStats(pkmn, message) {
  * @returns {boolean} True if no errors are encountered.
  */
 async function printPossibleEncounters(message) {
-    var user = await getUser(message.author.id);
+    let user = await getUser(message.author.id);
     if (user === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
     }
     
-    var pokemon = await getPokemon(message.author.id);
+    let pokemon = await getPokemon(message.author.id);
     if (pokemon === null) {
         return new Promise(function(resolve) {
             resolve(false);
         });
     }
 
-    var userID = user.user_id;
+    let userID = user.user_id;
+    let loc = user.location;
 
-    var region = user.region;
-    var loc = user.location;
-
-    var pp = function(name, no, min, max, rarity, method, hasIt) {
+    let possibleEncounter = function(name, no, min, max, rarity, method, hasIt) {
         this.name = name;
         this.no = no;
         this.min = min;
@@ -8401,43 +8390,34 @@ async function printPossibleEncounters(message) {
         this.method = method;
         this.hasIt = hasIt;
     }
-    
-    path = generateLocationJSONPath(region, loc);
-    var location;
 
-    try {
-        data = fs.readFileSync(path, "utf8");
-        location = JSON.parse(data);
-    } catch (err) {
-        message.channel.send(message.author.username + " there are no wild Pokémon to be found at " + loc + ".");
-        return true;
-    }
+    let locationData = parseJSON(generateLocationJSONPath(user.region, user.location));
     
     var possiblePokemon = [[],[],[],[],[],[]];
 
     var rarityIndex = 0;
     var cur = convertToTimeZone(user);
     var hour = moment(cur).hour();
-    if (region === "Kanto" || region === "Johto" || region === "Sinnoh") {
+    if (user.region === "Kanto" || user.region === "Johto" || user.region === "Sinnoh") {
         if (hour >= 10 && hour < 20) {
             rarityIndex = 1;
         } else if (hour >= 20 || hour < 4) {
             rarityIndex = 2;
         }
-    } else if (region === "Unova") {
+    } else if (user.region === "Unova") {
         rarityIndex = moment().month() % 4;
-    } else if (region === "Alola") {
+    } else if (user.region === "Alola") {
         if (hour < 6 || hour >= 18) {
             rarityIndex = 1;
         }
     }
 
     var i;
-    for (i = 0; i < location.pokemon.length; i++) {
+    for (i = 0; i < locationData.pokemon.length; i++) {
         /**
          * @todo determine a Pokemon's default form based on region and location and send it to the json function below.
          */
-        var pth = generatePokemonJSONPath(location.pokemon[i].name, null);
+        var pth = generatePokemonJSONPath(locationData.pokemon[i].name, null);
         var dat;
         try {
             dat = fs.readFileSync(pth, "utf8");
@@ -8456,35 +8436,35 @@ async function printPossibleEncounters(message) {
         } else {
             hasIt = false;
         }
-        if (location.pokemon[i].hasOwnProperty("dexnav")) {
-            if (location.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], "(Poké Radar)", hasIt);
-            } else if (location.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], "(Poké Radar)", hasIt);
-            } else if (location.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], (location.pokemon[i].field + " (Poké Radar)"), hasIt);
+        if (locationData.pokemon[i].hasOwnProperty("dexnav")) {
+            if (locationData.pokemon[i].field === "Walking") {
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Poké Radar*", hasIt);
+            } else if (locationData.pokemon[i].field === "Surfing") {
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Poké Radar*", hasIt);
+            } else if (locationData.pokemon[i].field.includes("Rod")) {
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " *Poké Radar*"), hasIt);
             }
-        } else if (location.pokemon[i].hasOwnProperty("swarm")) {
-            if (location.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], "(Swarm)", hasIt);
-            } else if (location.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], "(Swarm)", hasIt);
-            } else if (location.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], (location.pokemon[i].field + " (Swarm)"), hasIt);
+        } else if (locationData.pokemon[i].hasOwnProperty("swarm")) {
+            if (locationData.pokemon[i].field === "Walking") {
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Swarm*", hasIt);
+            } else if (locationData.pokemon[i].field === "Surfing") {
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], "*Swarm*", hasIt);
+            } else if (locationData.pokemon[i].field.includes("Rod")) {
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], (locationData.pokemon[i].field + " *Swarm*"), hasIt);
             }
         } else {
-            if (location.pokemon[i].field === "Walking") {
-                possiblePokemon[0][possiblePokemon[0].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (location.pokemon[i].field === "Surfing") {
-                possiblePokemon[1][possiblePokemon[1].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (location.pokemon[i].field.includes("Rod")) {
-                possiblePokemon[2][possiblePokemon[2].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], location.pokemon[i].field, hasIt);
-            } else if (location.pokemon[i].field === "Rock Smash") {
-                possiblePokemon[3][possiblePokemon[3].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (location.pokemon[i].field === "Headbutt") {
-                possiblePokemon[4][possiblePokemon[4].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], null, hasIt);
-            } else if (location.pokemon[i].field === "Dive") {
-                possiblePokemon[5][possiblePokemon[5].length] = new pp(location.pokemon[i].name, dexNum, location.pokemon[i].min_level, location.pokemon[i].max_level, location.pokemon[i].rarity[rarityIndex], null, hasIt);
+            if (locationData.pokemon[i].field === "Walking") {
+                possiblePokemon[0][possiblePokemon[0].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+            } else if (locationData.pokemon[i].field === "Surfing") {
+                possiblePokemon[1][possiblePokemon[1].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+            } else if (locationData.pokemon[i].field.includes("Rod")) {
+                possiblePokemon[2][possiblePokemon[2].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], locationData.pokemon[i].field, hasIt);
+            } else if (locationData.pokemon[i].field === "Rock Smash") {
+                possiblePokemon[3][possiblePokemon[3].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+            } else if (locationData.pokemon[i].field === "Headbutt") {
+                possiblePokemon[4][possiblePokemon[4].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
+            } else if (locationData.pokemon[i].field === "Dive") {
+                possiblePokemon[5][possiblePokemon[5].length] = new possibleEncounter(locationData.pokemon[i].name, dexNum, locationData.pokemon[i].min_level, locationData.pokemon[i].max_level, locationData.pokemon[i].rarity[rarityIndex], null, hasIt);
             }
         }
     }
@@ -8499,380 +8479,137 @@ async function printPossibleEncounters(message) {
         return 0;
     }
 
-    var walkEmbed = null;
-    var surfEmbed = null;
-    var fishEmbed = null;
-    var headbuttEmbed = null;
-    var rockSmashEmbed = null;
-    var diveEmbed = null;
-    var emojis = [];
-    var shuffle_icon;
-    var poke_ball = client.emojis.find(poke_ball => poke_ball.name === "Poke_Ball");
-    var x;
+    let embeds = [null, null, null, null, null, null];
+    let emojis = [];
+    let shuffle_icon;
+    let poke_ball = client.emojis.find(poke_ball => poke_ball.name === "Poke_Ball");
+    let possiblePokemonIndex;
 
 
-    for (x = 0; x < possiblePokemon.length; x++) {
-        if (possiblePokemon[x].length > 0) {
-            possiblePokemon[x].sort(compare);
-            if (x === 0) {
-                var f = 0;
-                var walkFields = [];
-                emojis[emojis.length] = "TallGrass";
-                walkEmbed = {
-                    "author": {
-                        "name": loc + " in the " + region + " Region",
-                    },
-                    "title": "Tall Grass",
-                    "color": getTypeColor("Grass"),
-                    "footer": {
-                        "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
-                        "text": "indicates a Pokémon you already own."
-                    }
-                };
-                var w;
-                var walkString = "";
-                for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
-                    walkString += shuffle_icon;
-                    if (possiblePokemon[x][w].hasIt) {
-                        walkString += " " + poke_ball;
-                    }
-                    if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        walkString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    } else {
-                        walkString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    }
-                    if (possiblePokemon[x][w].method != null) {
-                        walkString += " *" + possiblePokemon[x][w].method + "*";
-                    }
-                    walkString += "\n";
-                    if (walkString.length >= 900) {
-                        walkFields[f] = {
-                            "name": 'Possible Pokémon',
-                            "value": walkString
-                        }
-                        walkString = "";
-                        f++;
-                    }
-                }
-                if (f === 0) {
-                    walkFields[f] = {
-                        "name": 'Possible Pokémon',
-                        "value": walkString
-                    }
-                } else if (walkString != "") {
-                    walkFields[f] = {
-                        "name": 'Possible Pokémon (cont.)',
-                        "value": walkString
-                    }
-                }
-                walkEmbed.fields = walkFields;
-            } else if (x === 1) {
-                var f = 0;
-                var surfFields = [];
-                emojis[emojis.length] = "Surfing";
-                surfEmbed = {
-                    "author": {
-                        "name": loc + " in the " + region + " Region",
-                    },
-                    "title": "Surfing",
-                    "color": getTypeColor("Water"),
-                    "footer": {
-                        "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
-                        "text": "indicates a Pokémon you already own."
-                    }
-                };
-                var w;
-                var surfString = "";
-                for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
-                    surfString += shuffle_icon;
-                    if (possiblePokemon[x][w].hasIt) {
-                        surfString += " " + poke_ball;
-                    }
-                    if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        surfString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    } else {
-                        surfString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    }
-                    if (possiblePokemon[x][w].method != null) {
-                        surfString += " *" + possiblePokemon[x][w].method + "*";
-                    }
-                    surfString += "\n";
-                    if (surfString.length >= 900) {
-                        surfFields[f] = {
-                            "name": 'Possible Pokémon',
-                            "value": surfString
-                        }
-                        surfString = "";
-                        f++;
-                    }
-                }
-                if (f === 0) {
-                    surfFields[f] = {
-                        "name": 'Possible Pokémon',
-                        "value": surfString
-                    }
-                } else if (surfString != "") {
-                    surfFields[f] = {
-                        "name": 'Possible Pokémon (cont.)',
-                        "value": surfString
-                    }
-                }
-                surfEmbed.fields = surfFields;
-            } else if (x === 2) {
-                var f = 0;
-                var fishFields = [];
-                emojis[emojis.length] = 'FishRod';
-                fishEmbed = {
-                    "author": {
-                        "name": loc + " in the " + region + " Region",
-                    },
-                    "title": "Fishing",
-                    "color": getTypeColor("Ice"),
-                    "footer": {
-                        "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
-                        "text": "indicates a Pokémon you already own."
-                    }
-                };
-                var w;
-                var fishString = "";
-                for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
-                    fishString += shuffle_icon;
-                    if (possiblePokemon[x][w].hasIt) {
-                        fishString += " " + poke_ball;
-                    }
-                    if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        fishString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    } else {
-                        fishString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    }
-                    if (possiblePokemon[x][w].method != null) {
-                        fishString += " *" + possiblePokemon[x][w].method + "*";
-                    }
-                    fishString += "\n";
-                    if (fishString.length >= 900) {
-                        fishFields[f] = {
-                            "name": 'Possible Pokémon',
-                            "value": fishString
-                        }
-                        fishString = "";
-                        f++;
-                    }
-                }
-                if (f === 0) {
-                    fishFields[f] = {
-                        "name": 'Possible Pokémon',
-                        "value": fishString
-                    }
-                } else if (fishString != "") {
-                    fishFields[f] = {
-                        "name": 'Possible Pokémon (cont.)',
-                        "value": fishString
-                    }
-                }
-                fishEmbed.fields = fishFields;
-            } else if (x === 3) {
-                var f = 0;
-                var rockSmashFields = [];
-                emojis[emojis.length] = 'RockSmash';
-                rockSmashEmbed = {
-                    "author": {
-                        "name": loc + " in the " + region + " Region",
-                    },
-                    "title": "Rock Smash",
-                    "color": getTypeColor("Fighting"),
-                    "footer": {
-                        "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
-                        "text": "indicates a Pokémon you already own."
-                    }
-                };
-                var w;
-                var rockSmashString = "";
-                for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
-                    rockSmashString += shuffle_icon;
-                    if (possiblePokemon[x][w].hasIt) {
-                        rockSmashString += " " + poke_ball;
-                    }
-                    if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        rockSmashString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    } else {
-                        rockSmashString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    }
-                    if (possiblePokemon[x][w].method != null) {
-                        rockSmashString += " *" + possiblePokemon[x][w].method + "*";
-                    }
-                    rockSmashString += "\n";
-                    if (rockSmashString.length >= 900) {
-                        rockSmashFields[f] = {
-                            "name": 'Possible Pokémon',
-                            "value": rockSmashString
-                        }
-                        rockSmashString = "";
-                        f++;
-                    }
-                }
-                if (f === 0) {
-                    rockSmashFields[f] = {
-                        "name": 'Possible Pokémon',
-                        "value": rockSmashString
-                    }
-                } else if (rockSmashString != "") {
-                    rockSmashFields[f] = {
-                        "name": 'Possible Pokémon (cont.)',
-                        "value": rockSmashString
-                    }
-                }
-                rockSmashEmbed.fields = rockSmashFields;
-            } else if (x === 4) {
-                var f = 0;
-                var headbuttFields = [];
-                emojis[emojis.length] = 'HeadbuttTree';
-                headbuttEmbed = {
-                    "author": {
-                        "name": loc + " in the " + region + " Region",
-                    },
-                    "title": "Headbutt",
-                    "color": getTypeColor("Bug"),
-                    "footer": {
-                        "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
-                        "text": "indicates a Pokémon you already own."
-                    }
-                };
-                var w;
-                var headbuttString = "";
-                for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
-                    headbuttString += shuffle_icon;
-                    if (possiblePokemon[x][w].hasIt) {
-                        headbuttString += " " + poke_ball;
-                    }
-                    if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        headbuttString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    } else {
-                        headbuttString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    }
-                    if (possiblePokemon[x][w].method != null) {
-                        headbuttString += " *" + possiblePokemon[x][w].method + "*";
-                    }
-                    headbuttString += "\n";
-                    if (headbuttString.length >= 900) {
-                        headbuttFields[f] = {
-                            "name": 'Possible Pokémon',
-                            "value": headbuttString
-                        }
-                        headbuttString = "";
-                        f++;
-                    }
-                }
-                if (f === 0) {
-                    headbuttFields[f] = {
-                        "name": 'Possible Pokémon',
-                        "value": headbuttString
-                    }
-                } else if (headbuttString != "") {
-                    headbuttFields[f] = {
-                        "name": 'Possible Pokémon (cont.)',
-                        "value": headbuttString
-                    }
-                }
-                headbuttEmbed.fields = headbuttFields;
-            } else if (x === 5) {
-                var f = 0;
-                var diveFields = [];
-                emojis[emojis.length] = 'Dive';
-                diveEmbed = {
-                    "author": {
-                        "name": loc + " in the " + region + " Region",
-                    },
-                    "title": "Diving",
-                    "color": getTypeColor("Ghost"),
-                    "footer": {
-                        "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
-                        "text": "indicates a Pokémon you already own."
-                    }
-                };
-                var w;
-                var diveString = "";
-                for (w = 0; w < possiblePokemon[x].length; w++) {
-                    shuffle_icon = await getShuffleEmoji(possiblePokemon[x][w].no);
-                    diveString += shuffle_icon;
-                    if (possiblePokemon[x][w].hasIt) {
-                        diveString += " " + poke_ball;
-                    }
-                    if (possiblePokemon[x][w].min === possiblePokemon[x][w].max) {
-                        diveString += " **"  + possiblePokemon[x][w].name + "** Level " + possiblePokemon[x][w].min + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    } else {
-                        diveString += " **"  + possiblePokemon[x][w].name + "** Levels " + possiblePokemon[x][w].min + " - " + possiblePokemon[x][w].max + " | Likelihood: " + possiblePokemon[x][w].rarity;
-                    }
-                    if (possiblePokemon[x][w].method != null) {
-                        diveString += " *" + possiblePokemon[x][w].method + "*";
-                    }
-                    diveString += "\n";
-                    if (diveString.length >= 900) {
-                        diveFields[f] = {
-                            "name": 'Possible Pokémon',
-                            "value": diveString
-                        }
-                        diveString = "";
-                        f++;
-                    }
-                }
-                if (f === 0) {
-                    diveFields[f] = {
-                        "name": 'Possible Pokémon',
-                        "value": diveString
-                    }
-                } else if (diveString != "") {
-                    diveFields[f] = {
-                        "name": 'Possible Pokémon (cont.)',
-                        "value": diveString
-                    }
-                }
-                diveEmbed.fields = diveFields;
+    for (possiblePokemonIndex = 0; possiblePokemonIndex < possiblePokemon.length; possiblePokemonIndex++) {
+        let title = "";
+        let color = "";
+        let emojiName = "";
+        if (possiblePokemon[possiblePokemonIndex].length > 0) {
+            if (possiblePokemonIndex === 0) {
+                title = "Tall Grass";
+                color = "Grass";
+                emojiName = "TallGrass";
+            } else if (possiblePokemonIndex === 1) {
+                title = "Surfing";
+                color = "Water";
+                emojiName = "Surfing";
+            } else if (possiblePokemonIndex === 2) {
+                title = "Fishing";
+                color = "Ice";
+                emojiName = "FishRod";
+            } else if (possiblePokemonIndex === 3) {
+                title = "Rock Smash";
+                color = "Fighting";
+                emojiName = "RockSmash";
+            } else if (possiblePokemonIndex === 4) {
+                title = "Headbutt";
+                color = "Bug";
+                emojiName = "HeadbuttTree";
+            } else if (possiblePokemonIndex === 5) {
+                title = "Diving";
+                color = "Ghost";
+                emojiName = "Dive";
             }
+            emojis[emojis.length] = emojiName;
+            possiblePokemon[possiblePokemonIndex].sort(compare);
+            embeds[possiblePokemonIndex] = {
+                "author": {
+                    "name": loc + " in the " + user.region + " Region",
+                },
+                "title": title,
+                "color": getTypeColor(color),
+                "footer": {
+                    "icon_url": "https://cdn.bulbagarden.net/upload/9/93/Bag_Pok%C3%A9_Ball_Sprite.png",
+                    "text": "indicates a Pokémon you already own."
+                }
+            };
+            let fieldCount = 0;
+            let embedFields = [];
+            let fieldIndex;
+            let fieldString = "";
+            for (fieldIndex = 0; fieldIndex < possiblePokemon[possiblePokemonIndex].length; fieldIndex++) {
+                shuffle_icon = await getShuffleEmoji(possiblePokemon[possiblePokemonIndex][fieldIndex].no);
+                fieldString += shuffle_icon;
+                if (possiblePokemon[possiblePokemonIndex][fieldIndex].hasIt) {
+                    fieldString += " " + poke_ball;
+                }
+                if (possiblePokemon[possiblePokemonIndex][fieldIndex].min === possiblePokemon[possiblePokemonIndex][fieldIndex].max) {
+                    fieldString += " **"  + possiblePokemon[possiblePokemonIndex][fieldIndex].name + "** Level " + possiblePokemon[possiblePokemonIndex][fieldIndex].min + " | Likelihood: " + possiblePokemon[possiblePokemonIndex][fieldIndex].rarity;
+                } else {
+                    fieldString += " **"  + possiblePokemon[possiblePokemonIndex][fieldIndex].name + "** Levels " + possiblePokemon[possiblePokemonIndex][fieldIndex].min + " - " + possiblePokemon[possiblePokemonIndex][fieldIndex].max + " | Likelihood: " + possiblePokemon[possiblePokemonIndex][fieldIndex].rarity;
+                }
+                if (possiblePokemon[possiblePokemonIndex][fieldIndex].method != null) {
+                    fieldString += " *" + possiblePokemon[possiblePokemonIndex][fieldIndex].method + "*";
+                }
+                fieldString += "\n";
+                if (fieldString.length >= 900) {
+                    embedFields[fieldCount] = {
+                        "name": 'Possible Pokémon',
+                        "value": fieldString
+                    }
+                    fieldString = "";
+                    fieldCount++;
+                }
+            }
+            if (fieldCount === 0) {
+                embedFields[fieldCount] = {
+                    "name": 'Possible Pokémon',
+                    "value": fieldString
+                }
+            } else if (fieldString != "") {
+                embedFields[fieldCount] = {
+                    "name": 'Possible Pokémon (cont.)',
+                    "value": fieldString
+                }
+            }
+            embeds[possiblePokemonIndex].fields = embedFields;
         }
     }
 
-    var embed;
-    if (user.field === "Walking" && walkEmbed != null) {
-        embed = walkEmbed;
-    } else if (user.field === "Surfing" && surfEmbed != null) {
-        embed = surfEmbed;
-    } else if (user.field.includes("Rod") && fishEmbed != null) {
-        embed = fishEmbed;
-    } else if (user.field === "Rock Smash" && rockSmashEmbed != null) {
-        embed = rockSmashEmbed;
-    } else if (user.field === "Headbutt" && headbuttEmbed != null) {
-        embed = headbuttEmbed;
-    } else if (user.field === "Dive" && diveEmbed != null) {
-        embed = diveEmbed;
+    /**
+     * Set default embed to the users current field,
+     * or whichever field is the first to contain wild Pokemon.
+     */
+    let embed;
+    if (user.field === "Walking" && embeds[0] != null) {
+        embed = embeds[0];
+    } else if (user.field === "Surfing" && embeds[1] != null) {
+        embed = embeds[1];
+    } else if (user.field.includes("Rod") && embeds[2] != null) {
+        embed = embeds[2];
+    } else if (user.field === "Rock Smash" && embeds[3] != null) {
+        embed = embeds[3];
+    } else if (user.field === "Headbutt" && embeds[4] != null) {
+        embed = embeds[4];
+    } else if (user.field === "Dive" && embeds[5] != null) {
+        embed = embeds[5];
     } else if (walkEmbed != null) {
-        embed = walkEmbed;
+        embed = embeds[0];
     } else if (surfEmbed != null) {
-        embed = surfEmbed;
+        embed = embeds[1];
     } else if (fishEmbed != null) {
-        embed = fishEmbed;
+        embed = embeds[2];
     } else if (rockSmashEmbed != null) {
-        embed = rockSmashEmbed;
+        embed = embeds[3];
     } else if (headbuttEmbed != null) {
-        embed = headbuttEmbed;
+        embed = embeds[4];
     } else if (diveEmbed != null) {
-        embed = diveEmbed;
-    } else {
-        embed = ":caa:";
+        embed = embeds[5];
     }
     
-    var msg = await message.channel.send({ embed });
+    let msg = await sendMessage(message.channel, {embed}, true);
     
-    var reacting = true;
-    var didReact = false;
+    let reacting = true;
     while (reacting) {
-        var r;
-        for (r = 0; r < emojis.length; r++) {
-            await msg.react(client.emojis.find(reactEmoji => reactEmoji.name === emojis[r]));
+        let emojiIndex;
+        for (emojiIndex = 0; emojiIndex < emojis.length; emojiIndex++) {
+            await msg.react(client.emojis.find(reactEmoji => reactEmoji.name === emojis[emojiIndex]));
         }
         
         const filter = (reaction, user) => {
@@ -8884,47 +8621,41 @@ async function printPossibleEncounters(message) {
                 const reaction = collected.first();
                 
                 if (reaction.emoji.name === "TallGrass") {
-                    embed = walkEmbed;
+                    embed = embeds[0];
                     msg.edit({ embed });
-                    didReact = true;
                     reaction.remove(userID);
                 } else if (reaction.emoji.name === 'Surfing') {
-                    embed = surfEmbed;
+                    embed = embeds[1];
                     msg.edit({ embed });
-                    didReact = true;
                     reaction.remove(userID);
                 } else if (reaction.emoji.name === 'FishRod') {
-                    embed = fishEmbed;
+                    embed = embeds[2];
                     msg.edit({ embed });
-                    didReact = true;
                     reaction.remove(userID);
                 } else if (reaction.emoji.name === 'RockSmash') {
-                    embed = rockSmashEmbed;
+                    embed = embeds[3];
                     msg.edit({ embed });
-                    didReact = true;
                     reaction.remove(userID);
                 } else if (reaction.emoji.name === 'HeadbuttTree') {
-                    embed = headbuttEmbed;
+                    embed = embeds[4];
                     msg.edit({ embed });
-                    didReact = true;
                     reaction.remove(userID);
                 } else if (reaction.emoji.name === 'Dive') {
-                    embed = diveEmbed;
+                    embed = embeds[5];
                     msg.edit({ embed });
-                    didReact = true;
                     reaction.remove(userID);
                 }
             })
             .catch(() => {
-                if (!didReact) {
-                    reacting = false;
-                } else {
-                    didReact = false;
-                }
+                reacting = false;
             });
     }
-    msg.clearReactions();
-    return true;
+
+    await msg.delete(0);
+    
+    return new Promise(function(resolve) {
+        resolve(msg);
+    });
 }
 
 /**
