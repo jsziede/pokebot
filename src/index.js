@@ -9225,14 +9225,27 @@ async function printAbilityInfo(channel, name, description) {
  * @returns {boolean} True if no errors are encountered.
  */
 async function printPokemon(message, otherUser = undefined, pokemon = undefined, description = undefined) {
-    var userID = message.author.id;
+    /**
+     * The id of the user whose Pokemon to show.
+     */
+    let userID = message.author.id;
+    /**
+     * If the list of Pokemon should be numbered.
+     */
     let enableNumbering = true;
     
+    /**
+     * In the case of trading Pokemon, show Pokemon from a user who is
+     * different than the user who sent the message that triggered this function.
+     */
     if (otherUser != undefined) {
         userID = otherUser;
         username = otherUser.username;
     }
 
+    /**
+     * If the user has Pokemon.
+     */
     if (pokemon === undefined) {
         pokemon = await getPokemon(userID);
 
@@ -9252,14 +9265,17 @@ async function printPokemon(message, otherUser = undefined, pokemon = undefined,
         enableNumbering = false;
     }
 
-    var i;
+    let pokemonIndex;
     
     let fields = [];
     let fieldCount = 0;
     let fieldString = "";
 
-    for (i = 0; i < pokemon.length; i++) {
-        if (i % 15 === 0 && i > 0) {
+    /**
+     * For each Pokemon owned by the user.
+     */
+    for (pokemonIndex = 0; pokemonIndex < pokemon.length; pokemonIndex++) {
+        if (pokemonIndex % 15 === 0 && pokemonIndex > 0) {
             fields[fieldCount] = {
                 "name": '\u200b',
                 "value": fieldString,
@@ -9270,25 +9286,25 @@ async function printPokemon(message, otherUser = undefined, pokemon = undefined,
         }
         
         if (enableNumbering) {
-            fieldString += "**" + (i + 1).toString() + ".** ";
+            fieldString += "**" + (pokemonIndex + 1).toString() + ".** ";
         }
         
-        let form = pokemon[i].form;
+        let form = pokemon[pokemonIndex].form;
         if (form === null) {
             form = "";
         } else {
             form = " [" + form + "]";
         }
 
-        let shuffle_icon = await getShuffleEmoji(pokemon[i].number);
+        let shuffle_icon = await getShuffleEmoji(pokemon[pokemonIndex].number);
 
-        if (pokemon[i].nickname === null) {
-            fieldString += shuffle_icon + " **" + pokemon[i].name + form + "** Level " + pokemon[i].level_current + ", *" + pokemon[i].ability + "*";
+        if (pokemon[pokemonIndex].nickname === null) {
+            fieldString += shuffle_icon + " **" + pokemon[pokemonIndex].name + form + "** Level " + pokemon[pokemonIndex].level_current + ", *" + pokemon[pokemonIndex].ability + "*";
         } else {
-            fieldString += shuffle_icon + " **" + pokemon[i].nickname + form + "** Level " + pokemon[i].level_current + ", *" + pokemon[i].ability + "*";
+            fieldString += shuffle_icon + " **" + pokemon[pokemonIndex].nickname + form + "** Level " + pokemon[pokemonIndex].level_current + ", *" + pokemon[pokemonIndex].ability + "*";
         }
 
-        if (pokemon[i].shiny) {
+        if (pokemon[pokemonIndex].shiny) {
             fieldString += " ⭐";
         }
         fieldString += "\n";
@@ -9312,24 +9328,42 @@ async function printPokemon(message, otherUser = undefined, pokemon = undefined,
         "fields": [fields[fieldCount]]
     };
 
-    var msg = await message.channel.send({embed});
+    let msg = await sendMessage(message.channel, {embed}, true);
+
+    /**
+     * If user has more than 15 Pokemon, split up their list of
+     * Pokemon into pages of 15 Pokemon each.
+     */
     if (pokemon.length > 15) {
-        var reacting = true;
-        var didReact = false;
+        let reacting = true;
         while (reacting) {
-            await msg.react('◀').then(() => msg.react('▶'));
+            let emotes = [];
+            if (fieldCount > 0) {
+                emotes[emotes.length] = '◀';
+            }
+            if (fieldCount < (fields.length - 1)) {
+                emotes[emotes.length] = '▶'
+            }
+
+            for (let emote in emotes) {
+                await msg.react(emotes[emote]);
+            }
 
             const filter = (reaction, user) => {
-                return ['◀', '▶'].includes(reaction.emoji.name) && user.id === userID;
+                return emotes.includes(reaction.emoji.name) && user.id === userID;
             };
 
             await msg.awaitReactions(filter, { max: 1, time: 20000, errors: ['time'] })
             .then(collected => {
                 const reaction = collected.first();
 
+                /**
+                 * Show previous page.
+                 */
                 if (reaction.emoji.name === '◀') {
                     reaction.remove(userID);
                     if (fieldCount === 0) {
+                        msg.clearReactions();
                         fieldCount = 0;
                     } else {
                         fieldCount--;
@@ -9341,11 +9375,14 @@ async function printPokemon(message, otherUser = undefined, pokemon = undefined,
                         "fields": [fields[fieldCount]]
                     };
                     msg.edit({embed});
-                    didReact = true;
+                /**
+                 * Show next page.
+                 */
                 } else if (reaction.emoji.name === '▶') {
                     reaction.remove(userID);
                     if (fieldCount >= (fields.length - 1)) {
                         fieldCount = fields.length - 1;
+                        msg.clearReactions();
                     } else {
                         fieldCount++;
                     }
@@ -9356,21 +9393,15 @@ async function printPokemon(message, otherUser = undefined, pokemon = undefined,
                         "fields": [fields[fieldCount]]
                     };
                     msg.edit({embed});
-                    didReact = true;
                 }
             
             })
-            .catch(collected => {
-                if (!didReact) {
-                    reacting = false;
-                    msg.clearReactions();
-                } else {
-                    didReact = false;
-                }
+            .catch(() => {
+                reacting = false;
             });
         }
 
-        msg.clearReactions();
+        msg.delete(30000);
     }
     return true;
 }
