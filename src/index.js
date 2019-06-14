@@ -1233,7 +1233,7 @@ async function runDexCommand(message, input) {
         }
     } else {
         input = input.join(' ');
-        commandStatus = await getDexInfo(message, input, "None");
+        commandStatus = await getDexInfo(message, input, null);
     }
     return new Promise(function(resolve) {
         resolve(commandStatus);
@@ -8742,69 +8742,100 @@ async function printPossibleEncounters(message) {
  * @returns {boolean} True if no errors are encountered.
  */
 async function getDexInfo(message, name, form) {
-    if(name.match(/^-{0,1}\d+$/)){
+    if (name.match(/^-{0,1}\d+$/)){
         name = parseInt(name, 10);
         name = getNameByNumber(name);
-        if (name == null) {
-            return null;
-        }
-    }
-    var path = "../data/pokedex.json";
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        console.log(err);
-        return null;
     }
     
-    var pkmn = JSON.parse(data);
-    var i;
-    for (i = 0; i < pkmn.pokemon.length; i++) {
-        if (name === pkmn.pokemon[i].toLowerCase()) {
-            name = pkmn.pokemon[i];
-            break;
-        }
-    }
+    let pkmn = parseJSON(generatePokemonJSONPath(name, null));
     
-    /**
-     * @todo get default form of the Pokemon.
-     */
-    path = generatePokemonJSONPath(name, null);
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        return null;
-    }
+    let imageName = await getGifName(pkmn.name);
+    let modelLink = generateModelLink(pkmn.name, false, "Male", form);
+    let spriteLink = generateSpriteLink(pkmn.name, "Male", form);
     
-    pkmn = JSON.parse(data);
+    let infoEmbed = await generateDexInfoEmbed(pkmn, imageName, spriteLink);
+    let attackEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "level");
+    let attackTMEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "tm");
+    let attackEggEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "egg");
+    let evoEmbed = await generateDexEvoEmbed(pkmn, imageName, spriteLink);
+
+    let embed = infoEmbed;
     
-    var imageName = await getGifName(pkmn.name);
+    let msg = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }], true);
     
-    var userID = message.author.id;
+    let reacting = true;
     
-    var modelLink = generateModelLink(pkmn.name, false, "Male", null);
-    if (modelLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
+    while (reacting) {
+        await msg.react('ℹ');
+        await msg.react('⚔');
+        await msg.react('💽');
+        await msg.react('🥚');
+        await msg.react('☣');
+        
+        const filter = (reaction, user) => {
+            return ['ℹ', '⚔', '💽', '🥚', '☣'].includes(reaction.emoji.name) && user.id === message.author.id;
+        };
+        
+        await msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+            .then(collected => {
+                const reaction = collected.first();
+
+                if (reaction.emoji.name === 'ℹ') {
+                    reaction.remove(message.author.id);
+                    embed = infoEmbed;
+                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                } else if (reaction.emoji.name === '⚔') {
+                    reaction.remove(message.author.id);
+                    embed = attackEmbed;
+                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                } else if (reaction.emoji.name === '💽') {
+                    reaction.remove(message.author.id);
+                    embed = attackTMEmbed;
+                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                } else if (reaction.emoji.name === '🥚') {
+                    reaction.remove(message.author.id);
+                    embed = attackEggEmbed;
+                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                } else if (reaction.emoji.name === '☣') {
+                    reaction.remove(message.author.id);
+                    embed = evoEmbed;
+                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                }
+
+            })
+            .catch(() => {
+                reacting = false;
+            });
+
     }
 
-    var spriteLink = generateSpriteLink(pkmn.name, "Male", "None");
-    if (spriteLink === null) {
-        return new Promise(function(resolve) {
-            resolve(null);
-        });
-    }
+    msg.delete(0);
 
-    var type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.types[0]);
-    var types = type_icon + " " + pkmn.types[0];
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
+}
+
+/**
+ * Generates a Discord rich embedded message showing basic information
+ * about a Pokemon species.
+ * 
+ * @param {Pokemon} pkmn The JSON data for the Pokemon species. 
+ * @param {string} imageName The name of the Pokemon species that is compatible with Discord attachment links.
+ * @param {string} spriteLink A web URL linking directly to an image of the Pokemon species's PC sprite.
+ * 
+ * @returns {RichEmbed} A Discord rich embedded message showing basic information
+ * about the Pokemon species.
+ */
+async function generateDexInfoEmbed(pkmn, imageName, spriteLink) {
+    let type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.types[0]);
+    let types = type_icon + " " + pkmn.types[0];
     if (pkmn.types.length > 1) {
         type_icon = await client.emojis.find(type_icon => type_icon.name === pkmn.types[1]);
         types += ("\n" + type_icon + " " + pkmn.types[1]);
     }
     
-    const infoEmbed = {
+    let infoEmbed = {
        "author": {
             "name": pkmn.name,
             "icon_url": spriteLink,
@@ -8838,282 +8869,141 @@ async function getDexInfo(message, name, form) {
             }
         ]
     };
-    
-    var movesByLevelString = pkmn.name + " does not learn any moves by leveling up.";
-    var movesByLevelStringCont = null;
-    var movesByLevel = getPokemonMoves(pkmn, form, "level");
-    if (movesByLevel.length > 0) {
-        if (movesByLevel[0].hasOwnProperty("variations")) {
-            movesByLevelString = "[" + movesByLevel[0].level + "] " + movesByLevel[0].move + " (" + movesByLevel[0].variations[0] + ")\n";
-        } else {
-            movesByLevelString = "[" + movesByLevel[0].level + "] " + movesByLevel[0].move + "\n";
-        }
-        var l;
-        for (l = 1; l < movesByLevel.length; l++) {
-            if (movesByLevelString.length > 1000) {
-                if (movesByLevel[l].hasOwnProperty("variations")) {
-                    if (movesByLevelStringCont == null) {
-                        movesByLevelStringCont = "[" + movesByLevel[l].level + "] " + movesByLevel[l].move + " (" + movesByLevel[l].variations[0] + ")\n";
-                    } else {
-                        movesByLevelStringCont += "[" + movesByLevel[l].level + "] " + movesByLevel[l].move + " (" + movesByLevel[l].variations[0] + ")\n";
-                    }
-                } else {
-                    if (movesByLevelStringCont == null) {
-                        movesByLevelStringCont = "[" + movesByLevel[l].level + "] " + movesByLevel[l].move + "\n";
-                    } else {
-                        movesByLevelStringCont += "[" + movesByLevel[l].level + "] " + movesByLevel[l].move + "\n";
-                    }
+
+    return new Promise(function(resolve) {
+        resolve(infoEmbed);
+    });
+}
+
+/**
+ * Generates a Discord rich embedded message showing the moves that a Pokemon
+ * can learn.
+ * 
+ * @param {Pokemon} pkmn The JSON data for the Pokemon species. 
+ * @param {string} imageName The name of the Pokemon species that is compatible with Discord attachment links.
+ * @param {string} spriteLink A web URL linking directly to an image of the Pokemon species's PC sprite.
+ * @param {string} moveClass The class of the move, which is either level, egg, or tm.
+ * 
+ * @returns {RichEmbed} A Discord rich embedded message showing moves that are learned by the Pokemon species, depending
+ * on the move class.
+ */
+async function generateDexMovesEmbed(pkmn, form, imageName, spriteLink, moveClass) {
+    let movesString = "";
+    let moves = getPokemonMoves(pkmn, form, moveClass);
+    let fields = [];
+    let name = "Moves by Level";
+    if (moveClass === "egg") {
+        name = "Egg Moves";
+    } else if (moveClass === "tm") {
+        name = "Technical Machines";
+    }
+    if (moves.length > 0) {
+        for (let move in moves) {
+            let type = getMoveType(moves[move].move);
+            let type_icon = await client.emojis.find(type_icon => type_icon.name === type);
+
+            if (movesString.length > 900) {
+                fields[fields.length] = {
+                    "name": name,
+                    "value": movesString,
+                    "inline": true
                 }
-            } else if (movesByLevel[l].hasOwnProperty("variations")) {
-                movesByLevelString += "[" + movesByLevel[l].level + "] " + movesByLevel[l].move + " (" + movesByLevel[l].variations[0] + ")\n";
+
+                name = '\u200b';
+
+                if (moveClass === "level") {
+                    movesString = type_icon + " **Level " + moves[move].level + "** " + moves[move].move + "\n";
+                } else if (moveClass === "egg") {
+                    movesString = type_icon + " " + moves[move].move + "\n";
+                } else if (moveClass === "tm") {
+                    movesString = type_icon + " **" + moves[move].tm + "** " + moves[move].move + "\n";
+                }
             } else {
-                movesByLevelString += "[" + movesByLevel[l].level + "] " + movesByLevel[l].move + "\n";
+                if (moveClass === "level") {
+                    movesString += type_icon + " **Level " + moves[move].level + "** " + moves[move].move + "\n";
+                } else if (moveClass === "egg") {
+                    movesString += type_icon + " " + moves[move].move + "\n";
+                } else if (moveClass === "tm") {
+                    movesString += type_icon + " **" + moves[move].tm + "** " + moves[move].move + "\n";
+                }
             }
+        }
+    } else {
+        if (moveClass === "level") {
+            movesString = pkmn.name + " does not learn any moves by leveling up.";
+        } else if (moveClass === "egg") {
+            movesString = pkmn.name + " does not learn any egg moves.";
+        } else if (moveClass === "tm") {
+            movesString = pkmn.name + " cannot use any Technical Machines.";
         }
     }
     
-    var attackEmbedFields = [
-            {
-                "name": "Level Up",
-                "value": movesByLevelString,
-                "inline": false
-            }
-        ];
-    
-    if (movesByLevelStringCont != null) {
-        attackEmbedFields[attackEmbedFields.length] = {
-            "name": "Level Up (cont.)",
-            "value": movesByLevelStringCont,
-            "inline": false
+    if (movesString != "") {
+        fields[fields.length] = {
+            "name": name,
+            "value": movesString,
+            "inline": true
         }
     }
     
-    const attackEmbed = {
+    let moveEmbed = {
        "author": {
             "name": pkmn.name,
             "icon_url": spriteLink,
         },
-        "title": "Moveset (Leveling Up)",
+        "title": "Moveset",
         "color": getTypeColor(pkmn.types[0]),
         "thumbnail": {
              "url": "attachment://" + imageName + ".gif"
         },
-        "fields": attackEmbedFields
+        "fields": fields
     };
-    
-    var movesByTMString = [pkmn.name + " does not learn any moves by TM."];
-    var movesByTM = getPokemonMoves(pkmn, form, "tm");
-    var k = 0;
-    if (movesByTM.length > 0) {
-        if (movesByTM[0].hasOwnProperty("variations")) {
-            movesByTMString[k] = "[" + movesByTM[0].tm + "] " + movesByTM[0].move + " (" + movesByTM[0].variations[0] + ")\n";
-        } else {
-            movesByTMString[k] = "[" + movesByTM[0].tm + "] " + movesByTM[0].move + "\n";
-        }
-        var l;
-        for (l = 1; l < movesByTM.length; l++) {
-            if (movesByTMString[k].length > 1000) {
-                k++;
-                movesByTMString[k] = null;
-                if (movesByTM[l].hasOwnProperty("variations")) {
-                    if (movesByTMString[k] == null) {
-                        movesByTMString[k] = "[" + movesByTM[l].tm + "] " + movesByTM[l].move + " (" + movesByTM[l].variations[0] + ")\n";
-                    } else {
-                        movesByTMString[k] += "[" + movesByTM[l].tm + "] " + movesByTM[l].move + " (" + movesByTM[l].variations[0] + ")\n";
-                    }
-                } else {
-                    if (movesByTMString[k] == null) {
-                        movesByTMString[k] = "[" + movesByTM[l].level + "] " + movesByTM[l].move + "\n";
-                    } else {
-                        movesByTMString[k] += "[" + movesByTM[l].level + "] " + movesByTM[l].move + "\n";
-                    }
-                }
-            } else if (movesByTM[l].hasOwnProperty("variations")) {
-                movesByTMString[k] += "[" + movesByTM[l].tm + "] " + movesByTM[l].move + " (" + movesByTM[l].variations[0] + ")\n";
-            } else {
-                movesByTMString[k] += "[" + movesByTM[l].tm + "] " + movesByTM[l].move + "\n";
-            }
-        }
-    }
-    
-    var attackTMEmbedFields = [];
-    var j;
-    for (j = 0; j < movesByTMString.length; j++) {
-        let tmName = "TM Moves";
-        if (j > 0) {
-            tmName = "TM Moves (cont.)";
-        }
-        attackTMEmbedFields[attackTMEmbedFields.length] = {
-            "name": tmName,
-            "value": movesByTMString[j],
-            "inline": false
-        }
-    }
-    
-    const attackTMEmbed = {
-       "author": {
-            "name": pkmn.name,
-            "icon_url": spriteLink,
-        },
-        "title": "Moveset (TM)",
-        "color": getTypeColor(pkmn.types[0]),
-        "thumbnail": {
-             "url": "attachment://" + imageName + ".gif"
-        },
-        "fields": attackTMEmbedFields
-    };
-    
-    var movesByEggString = [pkmn.name + " does not learn any moves by breeding."];
-    var movesByEgg = getPokemonMoves(pkmn, form, "egg_move");
-    var k = 0;
-    if (movesByEgg.length > 0) {
-        if (movesByEgg[0].hasOwnProperty("variations")) {
-            movesByEggString[k] = movesByEgg[0].move + " (" + movesByEgg[0].variations[0] + ")\n";
-        } else {
-            movesByEggString[k] = movesByEgg[0].move + "\n";
-        }
-        var l;
-        for (l = 1; l < movesByEgg.length; l++) {
-            if (movesByEggString[k].length > 1000) {
-                k++;
-                movesByEggString[k] = null;
-                if (movesByEgg[l].hasOwnProperty("variations")) {
-                    if (movesByEggString[k] == null) {
-                        movesByEggString[k] = movesByEgg[l].move + " (" + movesByEgg[l].variations[0] + ")\n";
-                    } else {
-                        movesByEggString[k] += movesByEgg[l].move + " (" + movesByEgg[l].variations[0] + ")\n";
-                    }
-                } else {
-                    if (movesByEggString[k] == null) {
-                        movesByEggString[k] = movesByEgg[l].move + "\n";
-                    } else {
-                        movesByEggString[k] += movesByEgg[l].move + "\n";
-                    }
-                }
-            } else if (movesByEgg[l].hasOwnProperty("variations")) {
-                movesByEggString[k] += movesByEgg[l].move + " (" + movesByEgg[l].variations[0] + ")\n";
-            } else {
-                movesByEggString[k] += movesByEgg[l].move + "\n";
-            }
-        }
-    }
-    
-    var attackEggEmbedFields = [];
-    var j;
-    for (j = 0; j < movesByEggString.length; j++) {
-        let eggName = "Egg Moves";
-        if (j > 0) {
-            eggName = "Egg Moves (cont.)";
-        }
-        attackEggEmbedFields[attackEggEmbedFields.length] = {
-            "name": eggName,
-            "value": movesByEggString[j],
-            "inline": false
-        }
-    }
-    
-    const attackEggEmbed = {
-       "author": {
-            "name": pkmn.name,
-            "icon_url": spriteLink,
-        },
-        "title": "Moveset (Breeding)",
-        "color": getTypeColor(pkmn.types[0]),
-        "thumbnail": {
-             "url": "attachment://" + imageName + ".gif"
-        },
-        "fields": attackEggEmbedFields
-    };
-    
-    var evolvesFrom = getEvolvesFrom(pkmn);
-    var evolvesTo = getEvolvesTo(pkmn, null);
-    var evoFromString;
-    var evoToString;
-    var dexNum;
-    var shuffle_icon;
-    if (evolvesFrom == null) {
+
+    return new Promise(function(resolve) {
+        resolve(moveEmbed);
+    });
+}
+
+/**
+ * Generates a Discord rich embedded message showing all evolutions
+ * from and to the Pokemon species.
+ * 
+ * @param {Pokemon} pkmn The JSON data for the Pokemon species. 
+ * @param {string} imageName The name of the Pokemon species that is compatible with Discord attachment links.
+ * @param {string} spriteLink A web URL linking directly to an image of the Pokemon species's PC sprite.
+ * 
+ * @returns {RichEmbed} A Discord rich embedded message showing all evolutions
+ * from and to the Pokemon species.
+ */
+async function generateDexEvoEmbed(pkmn, imageName, spriteLink) {
+    let evolvesFrom = getEvolvesFrom(pkmn);
+    let evolvesTo = getEvolvesTo(pkmn, null);
+    let evoFromString = "";
+    let evoToString = "";
+    let shuffle_icon;
+    let pkm;
+
+    if (evolvesFrom === null) {
         evoFromString = pkmn.name + " does not evolve from any Pokémon.";
     } else {
-        /**
-         * @todo get default form of Pokemon.
-         */
-        var pth = generatePokemonJSONPath(evolvesFrom[0].name, null);
-        var dat;
-        try {
-            dat = fs.readFileSync(pth, "utf8");
-        } catch (err) {
-            return null;
-        }
-
-        pkm = JSON.parse(dat);
-        shuffle_icon = await getShuffleEmoji(pkm.national_id);
-        evoFromString = shuffle_icon + " Evolves from " + evolvesFrom[0].name + " " + evolvesFrom[0].method;
-
-        /**
-         * @todo Is this necessary? A Pokemon can't evolve from multiple Pokemon.
-         */
-        if (evolvesFrom.length > 1) {
-            var f;
-            for (f = 1; f < evolvesFrom.length; f++) {
-                /**
-                 * @todo Get default form?
-                 */
-                var pth = generatePokemonJSONPath(evolvesFrom[f].name, null);
-                var dat;
-                try {
-                    dat = fs.readFileSync(pth, "utf8");
-                } catch (err) {
-                    return null;
-                }
-
-                pkm = JSON.parse(dat);
-                shuffle_icon = await getShuffleEmoji(pkm.national_id);
-                evoFromString += "\n" + shuffle_icon + " Evolves from " + evolvesFrom[f].name + " " + evolvesFrom[f].method;
-            }
+        for (let fromEvos in evolvesFrom) {
+            pkm = parseJSON(generatePokemonJSONPath(evolvesFrom[fromEvos].name, null));
+            shuffle_icon = await getShuffleEmoji(pkm.national_id);
+            evoFromString += "\n" + shuffle_icon + " Evolves from " + evolvesFrom[fromEvos].name + " " + evolvesFrom[fromEvos].method;
         }
     }
-    if (evolvesTo == null) {
+
+    if (evolvesTo === null) {
         evoToString = pkmn.name + " does not evolve into any Pokémon.";
     } else {
-        /**
-         * @todo Get default form.
-         */
-        var pth = generatePokemonJSONPath(evolvesTo[0].name, null);
-        var dat;
-        try {
-            dat = fs.readFileSync(pth, "utf8");
-        } catch (err) {
-            return null;
-        }
-
-        pkm = JSON.parse(dat);
-        shuffle_icon = await getShuffleEmoji(pkm.national_id);
-        evoToString = shuffle_icon + "Evolves into " + evolvesTo[0].name + " " + evolvesTo[0].method;
-        if (evolvesTo.length > 1) {
-            var f;
-            for (f = 1; f < evolvesTo.length; f++) {
-                /**
-                 * @todo Get default form.
-                 */
-                var pth = generatePokemonJSONPath(evolvesTo[f].name, null);
-                var dat;
-                try {
-                    dat = fs.readFileSync(pth, "utf8");
-                } catch (err) {
-                    return null;
-                }
-
-                pkm = JSON.parse(dat);
-                dexNum = pkm.national_id.toString();
-                dexNum = national_id.padStart(3, '0');
-
-                shuffle_icon = await getShuffleEmoji(pkm.national_id);
-                evoToString += "\n" + shuffle_icon + "Evolves into " + evolvesTo[f].name + " " + evolvesTo[f].method;
-            }
+        for (let toEvos in evolvesTo) {
+            pkm = parseJSON(generatePokemonJSONPath(evolvesTo[toEvos].name, null));
+            shuffle_icon = await getShuffleEmoji(pkm.national_id);
+            evoToString += "\n" + shuffle_icon + " Evolves from " + evolvesTo[toEvos].name + " " + evolvesTo[toEvos].method;
         }
     }
     
-    const evoEmbed = {
+    let evoEmbed = {
        "author": {
             "name": pkmn.name,
             "icon_url": spriteLink,
@@ -9136,142 +9026,10 @@ async function getDexInfo(message, name, form) {
             }
         ]
     };
-    
-    let user = await getUser(message.author.id);
-    if (user === null) {
-        return new Promise(function(resolve) {
-            resolve(false);
-        });
-    }
-    var rarityIndex;
-    var cur = convertToTimeZone(user);
-    var hour = moment(cur).hour();
 
-    let regions = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola"];
-    let locations = await findPokemon(name);
-    let findFields = [];
-    let fieldCount = -1;
-    for (k = 0; k < locations.length; k++) {
-        fieldCount++;
-        findFields[fieldCount] = {
-            "name": regions[k],
-            "value": "",
-            "inline": false
-        }
-        rarityIndex = 0;
-        if (regions[k] === "Kanto" || regions[k] === "Johto" || regions[k] === "Sinnoh") {
-            if (hour >= 10 && hour < 20) {
-                rarityIndex = 1;
-            } else if (hour >= 20 || hour < 4) {
-                rarityIndex = 2;
-            }
-        } else if (regions[k] === "Unova") {
-            rarityIndex = moment().month() % 4;
-        } else if (regions[k] === "Alola") {
-            if (hour < 6 || hour >= 18) {
-                rarityIndex = 1;
-            }
-        }
-        if (locations[k].length > 0) {
-            for (j = 0; j < locations[k].length; j++) {
-                if (findFields[fieldCount].value.length >= 900) {
-                    fieldCount++;
-                    findFields[fieldCount] = {
-                        "name": regions[k] + " (cont.)",
-                        "value": "",
-                        "inline": false
-                    }
-                }
-                findFields[fieldCount].value += locations[k][j].loc + ", Levels " + locations[k][j].min_level + " - " + locations[k][j].max_level + ", Likelihood " + locations[k][j].rarity[rarityIndex] + " (" + locations[k][j].field + ")";
-                if (locations[k][j].hasOwnProperty("swarm")) {
-                    findFields[fieldCount].value += " [Swarm]";
-                }
-                if (locations[k][j].hasOwnProperty("dexNav")) {
-                    findFields[fieldCount].value += " [Poké Radar]";
-                }
-                findFields[fieldCount].value += "\n";
-            }
-        } else {
-            findFields[fieldCount].value = "This Pokémon cannot be found in this region."
-        }
-    }
-
-    const findEmbed = {
-        "author": {
-             "name": pkmn.name,
-             "icon_url": spriteLink,
-         },
-         "title": "Where to Find",
-         "color": getTypeColor(pkmn.types[0]),
-         "thumbnail": {
-              "url": "attachment://" + imageName + ".gif"
-         },
-         "fields": findFields
-     };
-
-    var embed = infoEmbed;
-    
-    var msg = await message.channel.send({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-    
-    var reacting = true;
-    var didReact = false;
-    while (reacting) {
-        await msg.react('ℹ').then(() => msg.react('⚔'));
-        await msg.react('💽').then(() => msg.react('🥚'));
-        await msg.react('☣').then(() => msg.react('🔍'));
-        
-        const filter = (reaction, user) => {
-            return ['ℹ', '⚔', '💽', '🥚', '☣', '🔍'].includes(reaction.emoji.name) && user.id === userID;
-        };
-        
-        await msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-            .then(collected => {
-                const reaction = collected.first();
-
-                if (reaction.emoji.name === 'ℹ') {
-                    reaction.remove(userID);
-                    embed = infoEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                    didReact = true;
-                } else if (reaction.emoji.name === '⚔') {
-                    reaction.remove(userID);
-                    embed = attackEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                    didReact = true;
-                } else if (reaction.emoji.name === '💽') {
-                    reaction.remove(userID);
-                    embed = attackTMEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                    didReact = true;
-                } else if (reaction.emoji.name === '🥚') {
-                    reaction.remove(userID);
-                    embed = attackEggEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                    didReact = true;
-                } else if (reaction.emoji.name === '☣') {
-                    reaction.remove(userID);
-                    embed = evoEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                    didReact = true;
-                } else if (reaction.emoji.name === '🔍') {
-                    reaction.remove(userID);
-                    embed = findEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                    didReact = true;
-                }
-
-            })
-            .catch(collected => {
-                if (!didReact) {
-                    reacting = false;
-                    msg.clearReactions();
-                } else {
-                    didReact = false;
-                }
-            });
-    }
-
-    return true;
+    return new Promise(function(resolve) {
+        resolve(evoEmbed);
+    });
 }
 
 /**
