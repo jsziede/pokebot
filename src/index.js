@@ -3788,6 +3788,30 @@ function generateMoveJSONPath(name) {
 }
 
 /**
+ * Gets the relative file path of the image that shows
+ * a picture of a move.
+ * 
+ * @param {string} name The name of the move.
+ * 
+ * @returns {string} The relative file path of the move's image file.
+ */
+function generateMoveImagePath(name) {
+    name = name.toLowerCase();
+    
+    /* Moves with ambiguous names. */
+    if (name === "10000000 volt thunderbolt") {
+        name = "10 000 000 volt thunderbolt";
+    }
+
+    name = name.replace(/-/g,"_");
+    name = name.replace(/'/g,"_");
+    name = name.replace(/,/g,"_");
+    name = name.replace(/ /g,"_");
+
+    return "../gfx/moves/" + name + ".png";
+}
+
+/**
  * Gets the base Power Points of a move.
  * 
  * @param {string} moveName The name of the move.
@@ -8732,9 +8756,6 @@ async function printPossibleEncounters(message) {
  * This includes its Pokedex data, move learnsets, evolutions, and
  * where it can be encountered.
  * 
- * @bug Pokemon that are found in many different locations, such as Magikarp,
- * will break Discord's character limit for embedded messages.
- * 
  * @param {Message} message The Discord message sent from the user.
  * @param {string} name The name of the Pokemon species.
  * @param {string} form The form of the Pokemon species.
@@ -9042,89 +9063,79 @@ async function generateDexEvoEmbed(pkmn, imageName, spriteLink) {
  */
 async function printMoveInfo(message, moveName) {
     moveName = moveName.toLowerCase();
-    if (moveName === "10000000 volt thunderbolt" || moveName === "10,000,000 volt thunderbolt") {
-        moveName = "10 000 000 volt thunderbolt";
-    }
     
-    moveName = moveName.replace(/-/g,"_");
-    moveName = moveName.replace(/'/g,"_");
+    let move = parseJSON(generateMoveJSONPath(moveName));
+    let moveImageLink = generateMoveImagePath(moveName);
+
     moveName = moveName.replace(/ /g,"_");
+    moveName = moveName.replace(/,/g,"_");
+    moveName = moveName.replace(/'/g,"_");
     
-    var moveImageLink = "../gfx/moves/" + moveName + ".png";
-    
-    var path = "../data/move/" + moveName + ".json";
-    var data;
-    try {
-        data = fs.readFileSync(path, "utf8");
-    } catch (err) {
-        return false;
-    }
-    
-    var move = JSON.parse(data);
-    
-    var cat = "https://cdn.bulbagarden.net/upload/e/e4/PhysicalIC.gif";
+    let cat = "https://cdn.bulbagarden.net/upload/e/e4/PhysicalIC.gif";
     if (move.category === "special") {
         cat = "https://cdn.bulbagarden.net/upload/8/86/SpecialIC.gif";
     } else if (move.category === "status") {
         cat = "https://cdn.bulbagarden.net/upload/d/d3/StatusIC.gif";
     }
     
-    var acc = move.accuracy;
+    let acc = move.accuracy;
     if (acc === 0) {
         acc = "---"
     }
     
-    var pow = move.power;
+    let pow = move.power;
     if (pow === 0) {
         pow = "---"
     }
     
-    var pp = move.pp;
+    let pp = move.pp;
     if (pp === 0) {
         pp = "---"
     }
     
-    await message.channel.send({
-        "embed": {
-            "author": {
-                "name": move.name,
-                "icon_url": cat,
+    let embed = {
+        "author": {
+            "name": move.name,
+            "icon_url": cat,
+        },
+        "image": {
+            "url": ("attachment://" + moveName + ".png")
+        },
+        "color": getTypeColor(move.type),
+        "fields": [
+            {
+                "name": "Type",
+                "value": move.type,
+                "inline": false
             },
-            "image": {
-                "url": ("attachment://" + moveName + ".png")
+            {
+                "name": "PP",
+                "value": pp,
+                "inline": true
             },
-            "color": getTypeColor(move.type),
-            "fields": [
-                {
-                    "name": "Type",
-                    "value": move.type,
-                    "inline": false
-                },
-                {
-                    "name": "PP",
-                    "value": pp,
-                    "inline": true
-                },
-                {
-                    "name": "Power",
-                    "value": pow,
-                    "inline": true
-                },
-                {
-                    "name": "Accuracy",
-                    "value": acc,
-                    "inline": true
-                },
-                {
-                    "name": "Description",
-                    "value": move.pokedex_entries[ 'Ultra Sun' ].en,
-                    "inline": false
-                }
-            ]
-        }, files: [{ attachment: moveImageLink, name: (moveName + ".png") }]
-    });
+            {
+                "name": "Power",
+                "value": pow,
+                "inline": true
+            },
+            {
+                "name": "Accuracy",
+                "value": acc,
+                "inline": true
+            },
+            {
+                "name": "Description",
+                "value": move.pokedex_entries[ 'Ultra Sun' ].en,
+                "inline": false
+            }
+        ]
+    };
+
+    sendMessageWithAttachments(message.channel, embed, [{ attachment: moveImageLink, name: (moveName + ".png") }]);
     
-    return true;
+    return new Promise(function(resolve) {
+        resolve(true);
+    });
 }
 
 /**
