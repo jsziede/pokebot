@@ -2278,7 +2278,7 @@ function generateSpriteLink(name, gender, form) {
         } else if (form == "Trash Cloak") {
             url += "-trash";
         }
-    } else if (name === "Unfezant" || name === "Meowstic" || name === "Frillish" || name === "Jellicent" || name === "Pyroar") {
+    } else if (name === "Unfezant" || name === "Meowstic" || name === "Frillish" || name === "Jellicent" || name === "Pyroar" || name === "Indeedee") {
         if (gender === "Female") {
             url += "-female";
         }
@@ -5338,6 +5338,11 @@ async function evolve(message) {
                 evolvingPokemon.abilitySlot = 3;
                 final_ability = "Competitive";
             }
+        } else if (evolvingPokemon.name === "Indeedee" && evolvingPokemon.abilitySlot === 2) {
+            if (evolvingPokemon.gender === "Female") {
+                evolvingPokemon.abilitySlot = 3;
+                final_ability = "Competitive";
+            }
         } else {
             for (abilitiesIndex = 0; abilitiesIndex < newPokemon.abilities.length; abilitiesIndex++) {
                 if(newPokemon.abilities[abilitiesIndex].hasOwnProperty('hidden')) {
@@ -5765,23 +5770,29 @@ async function checkEvolveUponLevelUp(user, pokemon) {
  * current level, EVs, IVs, and nature. This function does
  * not make any changes to the databse.
  * 
- * @todo Raise level before calling function.
+ * @todo The Form of the pokemon should be factored into its stats.
  * 
  * @param {string} name The name of the Pokemon to update stats for.
  * @param {string} form The form that the Pokemon is in.
  * @param {number[]} EVs A list of the Pokemon's six effort values.
  * @param {number[]} IVs A list of the Pokemon's six individual values.
  * @param {number} level The current level of the Pokemon.
- * @param {string} nature The nature of the Pokemon. 
+ * @param {string} nature The nature of the Pokemon.
+ * @param {string} gender The gender of the Pokemon. 
  * 
  * @returns {number[]} The Pokemon's stats after applying
  * all the Pokemon's current stat modifiers.
  */
-function updateStats(name, form, EVs, IVs, level, nature) {
+function updateStats(name, form, EVs, IVs, level, nature, gender) {
     let pkmn = parseJSON(generatePokemonJSONPath(name, form));
     
-    let baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
-    
+    let baseStats = [0,0,0,0,0,0];
+    if (name === "Indeedee" && gender === "Female") {
+        baseStats = [pkmn.base_stats.hpF, pkmn.base_stats.atkF, pkmn.base_stats.defF, pkmn.base_stats.sp_atkF, pkmn.base_stats.sp_defF, pkmn.base_stats.speedF];
+    } else {
+        baseStats = [pkmn.base_stats.hp, pkmn.base_stats.atk, pkmn.base_stats.def, pkmn.base_stats.sp_atk, pkmn.base_stats.sp_def, pkmn.base_stats.speed];
+    }
+
     let stats = [0,0,0,0,0,0];
 
     /**
@@ -5815,9 +5826,25 @@ function checkForMoveAtLevel(pokemon) {
     let pkmn = parseJSON(generatePokemonJSONPath(pokemon.name, pokemon.form));
     let newMoves = [];
 
+    /**
+     * @todo this needs to be tested with the added gender check
+     * @todo this logic also needs to check form differences
+     */
     for (i = 0; i < pkmn.move_learnset.length; i++) {
         if (pkmn.move_learnset[i].hasOwnProperty("level") && pkmn.move_learnset[i].level === pokemon.level_current) {
-            newMoves[newMoves.length] = pkmn.move_learnset[i].move;
+            /**
+             * Meowstic and Indeedee have different movesets based on gender.
+             * Their JSON data has each move tagged with their gender using a 'vairations' property.
+             */
+            if (pokemon.name === "Meowstic" || pokemon.name === "Indeedee") {
+                if (pkmn.move_learnset[i].hasOwnProperty("variations")) {
+                    if (pkmn.move_learnset[i].variations[0].toUpperCase() === pokemon.gender.toUpperCase()) {
+                        newMoves[newMoves.length] = pkmn.move_learnset[i].move;
+                    }
+                }
+            } else {
+                newMoves[newMoves.length] = pkmn.move_learnset[i].move;
+            }
         }
     }
 
@@ -6372,9 +6399,43 @@ async function generatePokemonByName(message, name, level, region, location, hid
     let final_ability;
     let abilitySlot = 0;
 
+
+    /**
+     * Every Pokemon has one or two abilites to choose from that they can be
+     * generated with. Here we are determining which ability 
+     */
+    let random = Math.floor(Math.random() * 100);
+    if ((random % 2) === 1) {
+        abilitySlot = 1;
+    } else {
+        abilitySlot = 0;
+    }
+
+    /**
+     * Randomly determine the Pokemon's gender, or assign a specific gender
+     * if the Pokemon only has one possible gender.
+     */
+    let gender;
+    if (pkmn.gender_ratios === null) {
+        gender = null;
+    } else if (!pkmn.gender_ratios.hasOwnProperty('male')) {
+               gender = "Female";
+    } else if (!pkmn.gender_ratios.hasOwnProperty('female')) {
+               gender = "Male";
+    } else {
+        random = Math.floor(Math.random() * 100);
+        if (random <= pkmn.gender_ratios.male) {
+            gender = "Male";
+        } else {
+            gender = "Female";
+        }
+    }
+
     /**
      * Meowstic is the only Pokemon to have exclusive (hidden) abilites
      * based on its gender rather than form.
+     * 
+     * @todo change ability logic to better handle gender-based abilites rather than case-by-case
      */
     if (name === "Meowstic" && hidden) {
         if (gender === "Female") {
@@ -6383,6 +6444,32 @@ async function generatePokemonByName(message, name, level, region, location, hid
         } else {
             abilitySlot = 2;
             final_ability = "Prankster";
+        }
+    /**
+     * Similar to Meowstic, Indeedee also has gender-exclusive abilities.
+     * However, Indeedee's hidden ability is the same for both genders and
+     * rather its non hidden abilites are exclusive.
+     */
+    } else if (name === "Indeedee" && hidden) {
+        if (hidden) {
+            abilitySlot = 4;
+            final_ability = "Psychic Surge";
+        } else {
+            /**
+             * Only the first non-hidden ability of Indeedee is gender exclusive
+             */
+            if (abilitySlot === 0) {
+                if (gender === "Male") {
+                    final_ability = "Inner Focus";
+                } else {
+                    final_ability = "Own Tempo";
+                }
+            } else {
+                /**
+                 * The second non-hodden ability for both male and female Indeedee is Synchronize
+                 */
+                final_ability = "Synchronize";
+            }
         }
     } else {
         /**
@@ -6405,11 +6492,6 @@ async function generatePokemonByName(message, name, level, region, location, hid
                     abilities[abilities.length] = pkmn.abilities[abilityIndex].name;
                 }
             }   
-        }
-
-        let random = Math.floor(Math.random() * 100);
-        if ((random % 2) === 1) {
-            abilitySlot = 1;
         }
         
         if (hiddenAbilities.length === 0) {
@@ -6466,26 +6548,6 @@ async function generatePokemonByName(message, name, level, region, location, hid
     let xp = getTotalXpAtLevel(pkmn.leveling_rate, level, region);
     
     /**
-     * Randomly determine the Pokemon's gender, or assign a specific gender
-     * if the Pokemon only has one possible gender.
-     */
-    let gender;
-    if (pkmn.gender_ratios === null) {
-        gender = null;
-    } else if (!pkmn.gender_ratios.hasOwnProperty('male')) {
-               gender = "Female";
-    } else if (!pkmn.gender_ratios.hasOwnProperty('female')) {
-               gender = "Male";
-    } else {
-        let random = Math.floor(Math.random() * 100);
-        if (random <= pkmn.gender_ratios.male) {
-            gender = "Male";
-        } else {
-            gender = "Female";
-        }
-    }
-    
-    /**
      * Randomly assign a nature to the Pokemon.
      * Natures apply a small bonus to one stat and a small malus to another stat.
      */
@@ -6506,7 +6568,7 @@ async function generatePokemonByName(message, name, level, region, location, hid
     /**
      * Determine the Pokemon's stats based on its base stats, level, IVs, EVs, and nature.
      */
-    let stats = updateStats(name, form, EVs, IVs, level, nature);
+    let stats = updateStats(name, form, EVs, IVs, level, nature, gender);
     
     /**
      * Randomly determine if the Pokemon is shiny.
@@ -12108,6 +12170,7 @@ function hasGenderDifference(name) {
         'Hippowdon',
         'Houndoom',
         'Hypno',
+        'Indeedee',
         'Jellicent',
         'Kadabra',
         'Kricketot',
