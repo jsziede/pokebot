@@ -322,6 +322,8 @@ client.on("guildCreate", async guild => {
 
 /**
  *  Triggers every time any user sends a message.
+ * 
+ * @todo check if the guild has a prefix enabled. if so, then trim prefix from the message content.
 */
 client.on('message', async (message) => {
     /** Ignore messages from bot accounts. */
@@ -2019,7 +2021,7 @@ async function setBotChannel(message) {
             channel: message.channel.id
         }
         /* Insert guild into the database. */
-        if (await doQuery("INSERT INTO guilds SET ?", [guild] != null)) {
+        if (await doQuery("INSERT INTO guilds SET ?", [guild])) {
             wasTheChannelSet = await sendMessage(message.channel, `I will now be reading commands from this channel. Type \`!pb begin\` to start your adventure!`);
         } else {
             await sendMessage(message.channel, `Whoops, something went wrong! Please try again later.`);
