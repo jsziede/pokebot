@@ -2814,7 +2814,7 @@ async function selectRegion(message) {
     
     let cancel = false;
     let selectedRegion = null;
-    while(cancel == false) {
+    while (cancel == false) {
         await message.channel.awaitMessages(response => response.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] })
         .then(collected => {
             selectedRegion = collected.first().content.toString().toLowerCase();
@@ -3786,7 +3786,7 @@ function generateMoveJSONPath(name) {
     name = name.replace(/,/g,"_");
     name = name.replace(/ /g,"_");
 
-    return "../data/move/" + name + ".json";
+    return "../data/moves/" + name + ".json";
 }
 
 /**
@@ -9189,7 +9189,7 @@ async function printMoveInfo(message, moveName) {
             },
             {
                 "name": "Description",
-                "value": move.pokedex_entries[ 'Ultra Sun' ].en,
+                "value": move.description,
                 "inline": false
             }
         ]
