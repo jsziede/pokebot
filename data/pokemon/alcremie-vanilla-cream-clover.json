@@ -1,132 +1,115 @@
 {
-    "name": "Abomasnow",
-    "national_id": 460,
+    "name": "Alcremie",
+    "national_id": 869,
     "types": [
-        "Grass",
-        "Ice"
+        "Fairy"
     ],
     "abilities": [
         {
-            "name": "Snow Warning"
+            "name": "Sweet Veil"
         },
         {
-            "name": "Soundproof",
+            "name": "Arome Veil",
             "hidden": true
         }
     ],
-    "catch_rate": 60,
+    "catch_rate": 100,
     "gender_ratios": {
-        "male": 50,
-        "female": 50
+        "male": 0,
+        "female": 100
     },
     "egg_groups": [
-        "Monster",
-        "Grass"
+        "Fairy",
+        "Amorphous"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "7'03\"",
-    "height_eu": "2.2 m",
-    "weight_us": "298.7 lbs.",
-    "weight_eu": "135.5 kg",
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "1.1 lbs.",
+    "weight_eu": "0.5 kg",
     "base_exp_yield": 173,
-    "leveling_rate": "Slow",
-    "base_friendship": 70,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 1,
+        "atk": 0,
         "def": 0,
-        "sp_atk": 1,
-        "sp_def": 0,
+        "sp_atk": 0,
+        "sp_def": 2,
         "speed": 0
     },
     "base_stats": {
-        "hp": 90,
-        "atk": 92,
+        "hp": 65,
+        "atk": 60,
         "def": 75,
-        "sp_atk": 92,
-        "sp_def": 85,
-        "speed": 60
+        "sp_atk": 110,
+        "sp_def": 121,
+        "speed": 64
     },
-    "evolution_from": "Snover",
+    "evolution_from": "Milcery",
     "evolutions": [],
-    "species": "Frost Tree Pokémon",
-    "mega_evolves": true,
-    "pokedex_entry": "This Pokémon is known to bring blizzards. A shake of its massive body is enough to cause whiteout conditions.",
+    "species": "Cream Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "When Alcremie is content, the cream it secretes from its hands becomes sweeter and richer.",
     "move_learnset": [
         {
-            "move": "Ice Punch",
+            "move": "Decorate",
             "evo": true
         },
         {
-            "move": "Ice Punch",
+            "move": "Decorate",
             "level": 1
         },
         {
-            "move": "Aurora Veil",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Powder Snow",
+            "move": "Aromatic Mist",
             "level": 1
         },
         {
-            "move": "Leer",
+            "move": "Sweet Kiss",
             "level": 1
         },
         {
-            "move": "Leafage",
+            "move": "Sweet Scent",
             "level": 1
         },
         {
-            "move": "Mist",
-            "level": 1
-        },
-        {
-            "move": "Ice Shard",
+            "move": "Draining Kiss",
             "level": 15
         },
         {
-            "move": "Razor Leaf",
+            "move": "Aromatherapy",
             "level": 20
         },
         {
-            "move": "Icy Wind",
+            "move": "Attract",
             "level": 25
         },
         {
-            "move": "Swagger",
+            "move": "Acid Armor",
             "level": 30
         },
         {
-            "move": "Ingrain",
+            "move": "Dazzling Gleam",
             "level": 35
         },
         {
-            "move": "Wood Hammer",
-            "level": 43
+            "move": "Recover",
+            "level": 40
         },
         {
-            "move": "Blizzard",
-            "level": 49
+            "move": "Misty Terrain",
+            "level": 45
         },
         {
-            "move": "Sheer Cold",
-            "level": 56
-        },
-        {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
-            "tm": true
-        },
-        {
-            "move": "Ice Punch",
-            "tm": true
+            "move": "Entrainment",
+            "level": 50
         },
         {
             "move": "Hyper Beam",
@@ -157,10 +140,6 @@
             "tm": true
         },
         {
-            "move": "Rock Slide",
-            "tm": true
-        },
-        {
             "move": "Snore",
             "tm": true
         },
@@ -169,11 +148,11 @@
             "tm": true
         },
         {
-            "move": "Icy Wind",
+            "move": "Giga Drain",
             "tm": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Charm",
             "tm": true
         },
         {
@@ -181,35 +160,19 @@
             "tm": true
         },
         {
-            "move": "Rain Dance",
-            "tm": true
-        },
-        {
-            "move": "Hail",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Weather Ball",
+            "move": "Imprison",
             "tm": true
         },
         {
-            "move": "Rock Tomb",
-            "tm": true
-        },
-        {
-            "move": "Bullet Seed",
-            "tm": true
-        },
-        {
-            "move": "Icicle Spear",
+            "move": "Fake Tears",
             "tm": true
         },
         {
@@ -217,7 +180,15 @@
             "tm": true
         },
         {
-            "move": "Avalanche",
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
             "tm": true
         },
         {
@@ -225,27 +196,27 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Draining Kiss",
             "tm": true
         },
         {
-            "move": "Stomping Tantrum",
+            "move": "Misty Terrain",
             "tm": true
         },
         {
-            "move": "Swords Dance",
+            "move": "Mystical Fire",
             "tm": true
         },
         {
-            "move": "Ice Beam",
+            "move": "Psychic",
             "tm": true
         },
         {
-            "move": "Blizzard",
+            "move": "Metronome",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Tri Attack",
             "tm": true
         },
         {
@@ -253,7 +224,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Psyshock",
             "tm": true
         },
         {
@@ -265,19 +236,11 @@
             "tm": true
         },
         {
-            "move": "Iron Tail",
+            "move": "Encore",
             "tm": true
         },
         {
-            "move": "Shadow Ball",
-            "tm": true
-        },
-        {
-            "move": "Seed Bomb",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
+            "move": "Calm Mind",
             "tm": true
         },
         {
@@ -285,35 +248,23 @@
             "tm": true
         },
         {
-            "move": "Earth Power",
+            "move": "Stored Power",
             "tm": true
         },
         {
-            "move": "Leaf Storm",
+            "move": "Play Rough",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Dazzling Gleam",
             "tm": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Baby-Doll Eyes",
             "egg_move": true
         },
         {
-            "move": "Growth",
-            "egg_move": true
-        },
-        {
-            "move": "Double-Edge",
-            "egg_move": true
-        },
-        {
-            "move": "Stomp",
-            "egg_move": true
-        },
-        {
-            "move": "Skull Bash",
+            "move": "Last Resort",
             "egg_move": true
         }
     ]

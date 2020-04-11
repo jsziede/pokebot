@@ -1,13 +1,20 @@
 {
-    "name": "Aegislash",
-    "national_id": 681,
+    "name": "Appletun",
+    "national_id": 842,
     "types": [
-        "Steel",
-        "Ghost"
+        "Grass",
+        "Dragon"
     ],
     "abilities": [
         {
-            "name": "Stance Change"
+            "name": "Ripen"
+        },
+        {
+            "name": "Gluttony"
+        },
+        {
+            "name": "Thick Fat",
+            "hidden": true
         }
     ],
     "catch_rate": 45,
@@ -16,108 +23,113 @@
         "female": 50
     },
     "egg_groups": [
-        "Mineral"
+        "Grass",
+        "Dragon"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "5'07\"",
-    "height_eu": "1.7 m",
-    "weight_us": "116.8 lbs.",
-    "weight_eu": "53.0 kg",
-    "base_exp_yield": 234,
-    "leveling_rate": "Medium Fast",
-    "base_friendship": 70,
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "28.7 lbs.",
+    "weight_eu": "13.0 kg",
+    "base_exp_yield": 170,
+    "leveling_rate": "Erratic",
+    "base_friendship": 50,
     "ev_yield": {
-        "hp": 0,
+        "hp": 2,
         "atk": 0,
-        "def": 2,
+        "def": 0,
         "sp_atk": 0,
-        "sp_def": 1,
+        "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 60,
-        "atk": 50,
-        "def": 140,
-        "sp_atk": 50,
-        "sp_def": 140,
-        "speed": 60
+        "hp": 110,
+        "atk": 85,
+        "def": 80,
+        "sp_atk": 100,
+        "sp_def": 80,
+        "speed": 30
     },
-    "evolution_from": "Doublade",
+    "evolution_from": "Applin",
     "evolutions": [],
-    "species": "Royal Sword Pokémon",
+    "species": "Apple Nectar Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its potent spectral powers allow it to manipulate others. It once used its powers to force people and Pokémon to build a kingdom to its liking.",
+    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
     "move_learnset": [
         {
-            "move": "King’s Shield",
+            "move": "Headbutt",
             "evo": true
         },
         {
-            "move": "King’s Shield",
+            "move": "Headbutt",
             "level": 1
         },
         {
-            "move": "Head Smash",
+            "move": "Recycle",
             "level": 1
         },
         {
-            "move": "Aerial Ace",
+            "move": "Withdraw",
             "level": 1
         },
         {
-            "move": "Metal Sound",
+            "move": "Astonish",
             "level": 1
         },
         {
-            "move": "Slash",
+            "move": "Growth",
             "level": 1
         },
         {
-            "move": "Night Slash",
+            "move": "Sweet Scent",
             "level": 1
         },
         {
-            "move": "Retaliate",
-            "level": 1
+            "move": "Curse",
+            "level": 4
+        },
+        {
+            "move": "Stomp",
+            "level": 8
+        },
+        {
+            "move": "Leech Seed",
+            "level": 12
+        },
+        {
+            "move": "Protect",
+            "level": 16
+        },
+        {
+            "move": "Bullet Seed",
+            "level": 20
+        },
+        {
+            "move": "Recover",
+            "level": 24
+        },
+        {
+            "move": "Apple Acid",
+            "level": 28
+        },
+        {
+            "move": "Body Slam",
+            "level": 32
         },
         {
             "move": "Iron Defense",
-            "level": 1
+            "level": 36
         },
         {
-            "move": "Iron Head",
-            "level": 1
+            "move": "Dragon Pulse",
+            "level": 40
         },
         {
-            "move": "Power Trick",
-            "level": 1
-        },
-        {
-            "move": "Swords Dance",
-            "level": 1
-        },
-        {
-            "move": "Sacred Sword",
-            "level": 1
-        },
-        {
-            "move": "Tackle",
-            "level": 1
-        },
-        {
-            "move": "Fury Cutter",
-            "level": 1
-        },
-        {
-            "move": "Shadow Sneak",
-            "level": 1
-        },
-        {
-            "move": "Autotomize",
-            "level": 1
+            "move": "Energy Ball",
+            "level": 44
         },
         {
             "move": "Hyper Beam",
@@ -128,11 +140,11 @@
             "tm": true
         },
         {
-            "move": "Solar Blade",
+            "move": "Solar Beam",
             "tm": true
         },
         {
-            "move": "Screech",
+            "move": "Light Screen",
             "tm": true
         },
         {
@@ -140,11 +152,11 @@
             "tm": true
         },
         {
-            "move": "Rest",
+            "move": "Safeguard",
             "tm": true
         },
         {
-            "move": "Rock Slide",
+            "move": "Rest",
             "tm": true
         },
         {
@@ -156,11 +168,11 @@
             "tm": true
         },
         {
-            "move": "Attract",
+            "move": "Giga Drain",
             "tm": true
         },
         {
-            "move": "Rain Dance",
+            "move": "Attract",
             "tm": true
         },
         {
@@ -172,15 +184,11 @@
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Bullet Seed",
             "tm": true
         },
         {
-            "move": "Shadow Claw",
-            "tm": true
-        },
-        {
-            "move": "Psycho Cut",
+            "move": "Payback",
             "tm": true
         },
         {
@@ -188,23 +196,19 @@
             "tm": true
         },
         {
-            "move": "Retaliate",
+            "move": "Bulldoze",
             "tm": true
         },
         {
-            "move": "False Swipe",
+            "move": "Body Slam",
             "tm": true
         },
         {
-            "move": "Air Slash",
+            "move": "Earthquake",
             "tm": true
         },
         {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
+            "move": "Amnesia",
             "tm": true
         },
         {
@@ -212,7 +216,7 @@
             "tm": true
         },
         {
-            "move": "Reversal",
+            "move": "Outrage",
             "tm": true
         },
         {
@@ -224,7 +228,7 @@
             "tm": true
         },
         {
-            "move": "Shadow Ball",
+            "move": "Superpower",
             "tm": true
         },
         {
@@ -236,27 +240,47 @@
             "tm": true
         },
         {
-            "move": "Close Combat",
+            "move": "Seed Bomb",
             "tm": true
         },
         {
-            "move": "Flash Cannon",
+            "move": "Dragon Pulse",
             "tm": true
         },
         {
-            "move": "Iron Head",
+            "move": "Energy Ball",
             "tm": true
         },
         {
-            "move": "Destiny Bond",
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Sucker Punch",
             "egg_move": true
         },
         {
-            "move": "Wide Guard",
+            "move": "Rollout",
             "egg_move": true
         },
         {
-            "move": "Block",
+            "move": "Defense Curl",
+            "egg_move": true
+        },
+        {
+            "move": "Recycle",
             "egg_move": true
         }
     ]

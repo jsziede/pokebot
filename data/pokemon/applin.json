@@ -1,0 +1,100 @@
+{
+    "name": "Applin",
+    "national_id": 840,
+    "types": [
+        "Grass",
+        "Dragon"
+    ],
+    "abilities": [
+        {
+            "name": "Ripen"
+        },
+        {
+            "name": "Gluttony"
+        },
+        {
+            "name": "Bulletproof",
+            "hidden": true
+        }
+    ],
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Grass",
+        "Dragon"
+    ],
+    "hatch_time": [
+        5140,
+        5396
+    ],
+    "height_us": "0'08\"",
+    "height_eu": "0.2 m",
+    "weight_us": "1.1 lbs.",
+    "weight_eu": "0.5 kg",
+    "base_exp_yield": 52,
+    "leveling_rate": "Erratic",
+    "base_friendship": 50,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 1,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 40,
+        "atk": 40,
+        "def": 80,
+        "sp_atk": 40,
+        "sp_def": 40,
+        "speed": 20
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Flapple",
+            "item": "Tart Apple"
+        },
+        {
+            "to": "Appletun",
+            "item": "Sweet Apple"
+        }
+    ],
+    "species": "Apple Core Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "As soon as it’s born, it burrows into an apple. Not only does the apple serve as its food source, but the flavor of the fruit determines its evolution.",
+    "move_learnset": [
+        {
+            "move": "Withdraw",
+            "level": 1
+        },
+        {
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sucker Punch",
+            "egg_move": true
+        },
+        {
+            "move": "Rollout",
+            "egg_move": true
+        },
+        {
+            "move": "Defense Curl",
+            "egg_move": true
+        },
+        {
+            "move": "Recycle",
+            "egg_move": true
+        }
+    ]
+}
