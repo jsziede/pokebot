@@ -57,67 +57,55 @@
     "evolutions": [],
     "species": "Rogue Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Crawdaunt molts (sheds) its shell regularly. Immediately after molting, its shell is soft and tender. Until the shell hardens, this Pokémon hides in its streambed burrow to avoid attack from its foes.",
+    "pokedex_entry": "A brutish Pokémon that loves to battle. It will crash itself into any foe that approaches its nest.",
     "move_learnset": [
         {
-            "move": "Bubble",
-            "level": 1
-        },
-        {
-            "move": "Harden",
-            "level": 1
-        },
-        {
-            "move": "Leer",
-            "level": 1
+            "move": "Swift",
+            "evo": true
         },
         {
             "move": "Swift",
             "level": 1
         },
         {
-            "move": "Vice Grip",
+            "move": "Water Gun",
             "level": 1
         },
         {
             "move": "Harden",
-            "level": 5
-        },
-        {
-            "move": "Vice Grip",
-            "level": 7
+            "level": 1
         },
         {
             "move": "Leer",
-            "level": 10
+            "level": 1
+        },
+        {
+            "move": "Taunt",
+            "level": 1
         },
         {
             "move": "Bubble Beam",
-            "level": 14
+            "level": 12
         },
         {
-            "move": "Protect",
-            "level": 17
+            "move": "Knock Off",
+            "level": 16
         },
         {
             "move": "Double Hit",
             "level": 20
         },
         {
-            "move": "Knock Off",
-            "level": 23
+            "move": "Protect",
+            "level": 24
         },
         {
             "move": "Night Slash",
-            "level": 26
+            "level": 28
         },
         {
             "move": "Razor Shell",
-            "level": 32
-        },
-        {
-            "move": "Taunt",
-            "level": 36
+            "level": 34
         },
         {
             "move": "Swords Dance",
@@ -125,219 +113,223 @@
         },
         {
             "move": "Crunch",
-            "level": 43
+            "level": 46
         },
         {
             "move": "Crabhammer",
-            "level": 48
-        },
-        {
-            "move": "Guillotine",
-            "level": 54
-        },
-        {
-            "move": "Ancient Power",
-            "egg_move": true
-        },
-        {
-            "move": "Aqua Jet",
-            "egg_move": true
-        },
-        {
-            "move": "Body Slam",
-            "egg_move": true
-        },
-        {
-            "move": "Chip Away",
-            "egg_move": true
-        },
-        {
-            "move": "Double-Edge",
-            "egg_move": true
-        },
-        {
-            "move": "Dragon Dance",
-            "egg_move": true
+            "level": 52
         },
         {
             "move": "Endeavor",
-            "egg_move": true
+            "level": 58
         },
         {
-            "move": "Knock Off",
-            "egg_move": true
-        },
-        {
-            "move": "Metal Claw",
-            "egg_move": true
-        },
-        {
-            "move": "Mud Sport",
-            "egg_move": true
-        },
-        {
-            "move": "Superpower",
-            "egg_move": true
-        },
-        {
-            "move": "Switcheroo",
-            "egg_move": true
-        },
-        {
-            "move": "Trump Card",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
+            "move": "Guillotine",
+            "level": 64
         },
         {
             "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
-            "move": "Swords Dance",
-            "tm": "TM75"
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Icy Wind",
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Attract",
+            "tm": true
         },
         {
-            "move": "Surf",
-            "tm": "TM94"
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Razor Shell",
+            "tm": true
         },
         {
             "move": "Snarl",
-            "tm": "TM95"
+            "tm": true
         },
         {
-            "move": "Nature Power",
-            "tm": "TM96"
+            "move": "False Swipe",
+            "tm": true
         },
         {
-            "move": "Dark Pulse",
-            "tm": "TM97"
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
         },
         {
             "move": "Waterfall",
-            "tm": "TM98"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
         }
     ]
 }

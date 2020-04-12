@@ -67,23 +67,31 @@
     ],
     "species": "Tiny Bee Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It collects and delivers honey to its colony. At night, they cluster to form a beehive and sleep.",
+    "pokedex_entry": "It ceaselessly gathers nectar from sunrise to sundown, all for the sake of Vespiquen and the swarm.",
     "move_learnset": [
-        {
-            "move": "Gust",
-            "level": 1
-        },
         {
             "move": "Sweet Scent",
             "level": 1
         },
         {
+            "move": "Gust",
+            "level": 1
+        },
+        {
+            "move": "Struggle Bug",
+            "level": 1
+        },
+        {
             "move": "Bug Bite",
-            "level": 13
+            "level": 1
+        },
+        {
+            "move": "Snore",
+            "tm": true
         },
         {
             "move": "Bug Buzz",
-            "level": 29
+            "tm": true
         }
     ]
 }

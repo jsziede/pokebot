@@ -61,98 +61,222 @@
     ],
     "species": "Ruffian Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Corphish catches prey with its sharp claws. It has no likes or dislikes when it comes to food—it will eat anything. This Pokémon has no trouble living in filthy water.",
+    "pokedex_entry": "It was originally a Pokémon from afar that escaped to the wild. It can adapt to the dirtiest river.",
     "move_learnset": [
         {
-            "move": "Bubble",
+            "move": "Water Gun",
             "level": 1
         },
         {
             "move": "Harden",
-            "level": 5
-        },
-        {
-            "move": "Vice Grip",
-            "level": 7
+            "level": 1
         },
         {
             "move": "Leer",
-            "level": 10
+            "level": 4
+        },
+        {
+            "move": "Taunt",
+            "level": 8
         },
         {
             "move": "Bubble Beam",
-            "level": 14
+            "level": 12
         },
         {
-            "move": "Protect",
-            "level": 17
+            "move": "Knock Off",
+            "level": 16
         },
         {
             "move": "Double Hit",
             "level": 20
         },
         {
-            "move": "Knock Off",
-            "level": 23
+            "move": "Protect",
+            "level": 24
         },
         {
             "move": "Night Slash",
-            "level": 26
+            "level": 28
         },
         {
             "move": "Razor Shell",
-            "level": 31
-        },
-        {
-            "move": "Taunt",
-            "level": 34
+            "level": 32
         },
         {
             "move": "Swords Dance",
-            "level": 37
+            "level": 36
         },
         {
             "move": "Crunch",
-            "level": 39
+            "level": 40
         },
         {
             "move": "Crabhammer",
-            "level": 43
-        },
-        {
-            "move": "Guillotine",
-            "level": 48
-        },
-        {
-            "move": "Ancient Power",
-            "egg_move": true
-        },
-        {
-            "move": "Aqua Jet",
-            "egg_move": true
-        },
-        {
-            "move": "Body Slam",
-            "egg_move": true
-        },
-        {
-            "move": "Chip Away",
-            "egg_move": true
-        },
-        {
-            "move": "Double-Edge",
-            "egg_move": true
-        },
-        {
-            "move": "Dragon Dance",
-            "egg_move": true
+            "level": 44
         },
         {
             "move": "Endeavor",
-            "egg_move": true
+            "level": 48
         },
         {
-            "move": "Knock Off",
+            "move": "Guillotine",
+            "level": 52
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Razor Shell",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Ancient Power",
             "egg_move": true
         },
         {
@@ -160,11 +284,11 @@
             "egg_move": true
         },
         {
-            "move": "Mud Sport",
+            "move": "Double-Edge",
             "egg_move": true
         },
         {
-            "move": "Superpower",
+            "move": "Aqua Jet",
             "egg_move": true
         },
         {
@@ -172,136 +296,8 @@
             "egg_move": true
         },
         {
-            "move": "Trump Card",
+            "move": "Slash",
             "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

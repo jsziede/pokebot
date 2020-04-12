@@ -61,90 +61,178 @@
     ],
     "species": "Whiskers Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Barboach’s body is covered with a slimy film. If a foe grabs it, this Pokémon just slips out of the enemy’s grip. This Pokémon grows weak if the slimy coating dries up.",
+    "pokedex_entry": "It probes muddy riverbeds with its two long whiskers. A slimy film protects its body.",
     "move_learnset": [
         {
             "move": "Mud-Slap",
             "level": 1
         },
         {
-            "move": "Mud Sport",
-            "level": 6
-        },
-        {
-            "move": "Water Sport",
-            "level": 6
-        },
-        {
             "move": "Water Gun",
-            "level": 9
-        },
-        {
-            "move": "Mud Bomb",
-            "level": 13
-        },
-        {
-            "move": "Amnesia",
-            "level": 15
-        },
-        {
-            "move": "Water Pulse",
-            "level": 17
-        },
-        {
-            "move": "Magnitude",
-            "level": 20
+            "level": 1
         },
         {
             "move": "Rest",
-            "level": 25
+            "level": 6
         },
         {
             "move": "Snore",
-            "level": 25
+            "level": 6
+        },
+        {
+            "move": "Water Pulse",
+            "level": 12
+        },
+        {
+            "move": "Amnesia",
+            "level": 18
         },
         {
             "move": "Aqua Tail",
-            "level": 28
+            "level": 24
+        },
+        {
+            "move": "Muddy Water",
+            "level": 31
         },
         {
             "move": "Earthquake",
-            "level": 32
-        },
-        {
-            "move": "Muddy Water",
-            "level": 35
+            "level": 36
         },
         {
             "move": "Future Sight",
-            "level": 39
+            "level": 42
         },
         {
             "move": "Fissure",
-            "level": 44
+            "level": 48
         },
         {
-            "move": "Dragon Dance",
-            "egg_move": true
+            "move": "Rest",
+            "tm": true
         },
         {
-            "move": "Earth Power",
-            "egg_move": true
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Flail",
-            "egg_move": true
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Hydro Pump",
-            "egg_move": true
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
         },
         {
             "move": "Mud Shot",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
         },
         {
             "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Thrash",
             "egg_move": true
         },
         {
@@ -152,116 +240,12 @@
             "egg_move": true
         },
         {
+            "move": "Flail",
+            "egg_move": true
+        },
+        {
             "move": "Take Down",
             "egg_move": true
-        },
-        {
-            "move": "Thrash",
-            "egg_move": true
-        },
-        {
-            "move": "Whirlpool",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

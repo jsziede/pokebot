@@ -60,8 +60,12 @@
     ],
     "species": "Protostar Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The king who ruled Alola in times of antiquity called it the “cocoon of the stars” and built an altar to worship it.",
+    "pokedex_entry": "It sucks in dust from the air at an astounding rate, frantically building up energy within its core as preparation for evolution.",
     "move_learnset": [
+        {
+            "move": "Cosmic Power",
+            "evo": true
+        },
         {
             "move": "Cosmic Power",
             "level": 1
@@ -69,6 +73,10 @@
         {
             "move": "Teleport",
             "level": 1
+        },
+        {
+            "move": "Cosmic Power",
+            "tm": true
         }
     ]
 }

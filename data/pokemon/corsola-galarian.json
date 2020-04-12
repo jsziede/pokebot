@@ -1,138 +1,122 @@
 {
-    "name": "Bisharp",
-    "national_id": 625,
+    "name": "Corsola",
+    "national_id": 222,
     "types": [
-        "Dark",
-        "Steel"
+        "Ghost"
+    ],
+    "items": [
+        {
+            "name": "Luminous Moss",
+            "chance": 5
+        }
     ],
     "abilities": [
         {
-            "name": "Defiant"
+            "name": "Weak Armor"
         },
         {
-            "name": "Inner Focus"
-        },
-        {
-            "name": "Pressure",
+            "name": "Cursed Body",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 60,
     "gender_ratios": {
-        "male": 50,
-        "female": 50
+        "male": 25,
+        "female": 75
     },
     "egg_groups": [
-        "Human-Like"
+        "Water 1",
+        "Water 3"
     ],
     "hatch_time": [
         5355,
         5609
     ],
-    "height_us": "5'03\"",
-    "height_eu": "1.6 m",
-    "weight_us": "154.3 lbs.",
-    "weight_eu": "70.0 kg",
-    "base_exp_yield": 172,
-    "leveling_rate": "Medium Fast",
-    "base_friendship": 35,
+    "height_us": "2'00\"",
+    "height_eu": "0.6 m",
+    "weight_us": "1.1 lbs.",
+    "weight_eu": "0.5 kg",
+    "base_exp_yield": 133,
+    "leveling_rate": "Fast",
+    "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
-        "atk": 2,
-        "def": 0,
+        "atk": 0,
+        "def": 1,
         "sp_atk": 0,
-        "sp_def": 0,
+        "sp_def": 1,
         "speed": 0
     },
     "base_stats": {
-        "hp": 65,
-        "atk": 125,
+        "hp": 60,
+        "atk": 55,
         "def": 100,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 70
+        "sp_atk": 65,
+        "sp_def": 100,
+        "speed": 30
     },
-    "evolution_from": "Pawniard",
-    "evolutions": [],
-    "species": "Sword Blade  Pokémon",
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Cursola",
+            "level": 38
+        }
+    ],
+    "species": "Coral Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Bisharp pursues prey in the company of a large group of Pawniard. Then Bisharp finishes off the prey.",
+    "pokedex_entry": "Sudden climate change wiped out this ancient kind of Corsola. This Pokémon absorbs others' life-force through its branches.",
     "move_learnset": [
         {
-            "move": "Metal Burst",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Scratch",
+            "move": "Harden",
             "level": 1
         },
         {
-            "move": "Leer",
-            "level": 1
+            "move": "Astonish",
+            "level": 5
         },
         {
-            "move": "Fury Cutter",
-            "level": 1
+            "move": "Disable",
+            "level": 10
         },
         {
-            "move": "Metal Claw",
-            "level": 1
-        },
-        {
-            "move": "Torment",
+            "move": "Spite",
             "level": 15
         },
         {
-            "move": "Scary Face",
+            "move": "Ancient Power",
             "level": 20
         },
         {
-            "move": "Assurance",
+            "move": "Hex",
             "level": 25
         },
         {
-            "move": "Metal Sound",
+            "move": "Curse",
             "level": 30
         },
         {
-            "move": "Slash",
+            "move": "Strength Sap",
             "level": 35
         },
         {
-            "move": "Night Slash",
+            "move": "Power Gem",
             "level": 40
         },
         {
-            "move": "Iron Defense",
+            "move": "Night Shade",
             "level": 45
         },
         {
-            "move": "Laser Focus",
+            "move": "Grudge",
             "level": 50
         },
         {
-            "move": "Iron Head",
-            "level": 57
-        },
-        {
-            "move": "Swords Dance",
-            "level": 64
-        },
-        {
-            "move": "Guillotine",
-            "level": 71
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": true
-        },
-        {
-            "move": "Giga Impact",
-            "tm": true
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": true
+            "move": "Mirror Coat",
+            "level": 55
         },
         {
             "move": "Dig",
@@ -143,11 +127,27 @@
             "tm": true
         },
         {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
             "move": "Rest",
             "tm": true
         },
         {
-            "move": "Thief",
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -159,7 +159,11 @@
             "tm": true
         },
         {
-            "move": "Scary Face",
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
             "tm": true
         },
         {
@@ -175,7 +179,19 @@
             "tm": true
         },
         {
-            "move": "Beat Up",
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
             "tm": true
         },
         {
@@ -183,39 +199,19 @@
             "tm": true
         },
         {
-            "move": "Revenge",
-            "tm": true
-        },
-        {
-            "move": "Brick Break",
-            "tm": true
-        },
-        {
             "move": "Rock Tomb",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Icicle Spear",
             "tm": true
         },
         {
-            "move": "Assurance",
+            "move": "Rock Blast",
             "tm": true
         },
         {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": true
-        },
-        {
-            "move": "Psycho Cut",
-            "tm": true
-        },
-        {
-            "move": "Low Sweep",
+            "move": "Brine",
             "tm": true
         },
         {
@@ -223,27 +219,47 @@
             "tm": true
         },
         {
-            "move": "Retaliate",
+            "move": "Hex",
             "tm": true
         },
         {
-            "move": "Snarl",
+            "move": "Bulldoze",
             "tm": true
         },
         {
-            "move": "False Swipe",
+            "move": "Stomping Tantrum",
             "tm": true
         },
         {
-            "move": "Air Slash",
+            "move": "Body Slam",
             "tm": true
         },
         {
-            "move": "Swords Dance",
+            "move": "Hydro Pump",
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
             "tm": true
         },
         {
@@ -259,7 +275,7 @@
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Shadow Ball",
             "tm": true
         },
         {
@@ -267,23 +283,15 @@
             "tm": true
         },
         {
-            "move": "Poison Jab",
+            "move": "Calm Mind",
             "tm": true
         },
         {
-            "move": "Dark Pulse",
+            "move": "Power Gem",
             "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Iron Head",
+            "move": "Earth Power",
             "tm": true
         },
         {
@@ -295,11 +303,7 @@
             "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": true
-        },
-        {
-            "move": "Foul Play",
+            "move": "Scald",
             "tm": true
         },
         {
@@ -307,19 +311,31 @@
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Haze",
             "egg_move": true
         },
         {
-            "move": "Headbutt",
+            "move": "Confuse Ray",
             "egg_move": true
         },
         {
-            "move": "Mean Look",
+            "move": "Nature Power",
             "egg_move": true
         },
         {
-            "move": "Quick Guard",
+            "move": "Destiny Bond",
+            "egg_move": true
+        },
+        {
+            "move": "Water Pulse",
+            "egg_move": true
+        },
+        {
+            "move": "Head Smash",
             "egg_move": true
         }
     ]

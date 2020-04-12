@@ -73,12 +73,8 @@
     "pokedex_entry": "When it is healthy, its core sticks out. Always facing the same way, it swiftly moves front to back and left to right.",
     "move_learnset": [
         {
-            "move": "Harden",
-            "level": 1
-        },
-        {
-            "move": "Headbutt",
-            "level": 1
+            "move": "Power Gem",
+            "evo": true
         },
         {
             "move": "Power Gem",
@@ -94,38 +90,34 @@
         },
         {
             "move": "Harden",
-            "level": 4
+            "level": 1
         },
         {
-            "move": "Sand Attack",
-            "level": 7
-        },
-        {
-            "move": "Headbutt",
-            "level": 10
-        },
-        {
-            "move": "Rock Blast",
-            "level": 14
+            "move": "Stealth Rock",
+            "level": 1
         },
         {
             "move": "Mud-Slap",
-            "level": 17
+            "level": 12
+        },
+        {
+            "move": "Smack Down",
+            "level": 16
         },
         {
             "move": "Iron Defense",
             "level": 20
         },
         {
-            "move": "Smack Down",
-            "level": 23
+            "move": "Headbutt",
+            "level": 24
         },
         {
             "move": "Rock Slide",
             "level": 30
         },
         {
-            "move": "Stealth Rock",
+            "move": "Rock Blast",
             "level": 36
         },
         {
@@ -138,34 +130,114 @@
         },
         {
             "move": "Explosion",
-            "level": 55
+            "level": 54
         },
         {
-            "move": "Autotomize",
-            "egg_move": true
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Power Gem",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
         },
         {
             "move": "Curse",
             "egg_move": true
         },
         {
-            "move": "Gravity",
-            "egg_move": true
-        },
-        {
-            "move": "Heavy Slam",
-            "egg_move": true
-        },
-        {
-            "move": "Lock-On",
-            "egg_move": true
-        },
-        {
-            "move": "Magnitude",
-            "egg_move": true
-        },
-        {
-            "move": "Rock Tomb",
+            "move": "Autotomize",
             "egg_move": true
         },
         {
@@ -173,108 +245,12 @@
             "egg_move": true
         },
         {
-            "move": "Wide Guard",
+            "move": "Gravity",
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Wide Guard",
+            "egg_move": true
         }
     ]
 }

@@ -52,22 +52,14 @@
     "evolutions": [],
     "species": "Clay Doll Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Claydol is an enigma that appeared from a clay statue made by an ancient civilization dating back 20,000 years. This Pokémon shoots beams from both its hands.",
+    "pokedex_entry": "It appears to have been born from clay dolls made by ancient people. It uses telekinesis to float and move.",
     "move_learnset": [
         {
-            "move": "Confusion",
-            "level": 1
-        },
-        {
-            "move": "Harden",
-            "level": 1
+            "move": "Hyper Beam",
+            "evo": true
         },
         {
             "move": "Hyper Beam",
-            "level": 1
-        },
-        {
-            "move": "Rapid Spin",
             "level": 1
         },
         {
@@ -75,236 +67,288 @@
             "level": 1
         },
         {
-            "move": "Rapid Spin",
-            "level": 4
+            "move": "Harden",
+            "level": 1
         },
         {
             "move": "Mud-Slap",
-            "level": 7
+            "level": 1
         },
         {
-            "move": "Heal Block",
-            "level": 10
+            "move": "Rapid Spin",
+            "level": 1
+        },
+        {
+            "move": "Confusion",
+            "level": 1
         },
         {
             "move": "Rock Tomb",
-            "level": 13
-        },
-        {
-            "move": "Psybeam",
-            "level": 16
-        },
-        {
-            "move": "Ancient Power",
-            "level": 19
-        },
-        {
-            "move": "Cosmic Power",
-            "level": 22
+            "level": 9
         },
         {
             "move": "Power Trick",
-            "level": 25
+            "level": 12
         },
         {
-            "move": "Self-Destruct",
-            "level": 28
+            "move": "Psybeam",
+            "level": 15
         },
         {
-            "move": "Extrasensory",
-            "level": 31
-        },
-        {
-            "move": "Guard Split",
-            "level": 34
-        },
-        {
-            "move": "Power Split",
-            "level": 34
-        },
-        {
-            "move": "Earth Power",
-            "level": 40
-        },
-        {
-            "move": "Sandstorm",
-            "level": 46
+            "move": "Ancient Power",
+            "level": 18
         },
         {
             "move": "Imprison",
-            "level": 52
+            "level": 21
         },
         {
-            "move": "Explosion",
-            "level": 58
+            "move": "Cosmic Power",
+            "level": 24
         },
         {
-            "move": "Psyshock",
-            "tm": "TM3"
+            "move": "Extrasensory",
+            "level": 27
         },
         {
-            "move": "Calm Mind",
-            "tm": "TM4"
+            "move": "Earth Power",
+            "level": 30
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Self-Destruct",
+            "level": 33
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
+            "move": "Guard Split",
+            "level": 38
         },
         {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
+            "move": "Power Split",
+            "level": 38
         },
         {
             "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
+            "level": 43
         },
         {
             "move": "Explosion",
-            "tm": "TM64"
+            "level": 48
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
-            "move": "Rock Polish",
-            "tm": "TM69"
+            "move": "Solar Beam",
+            "tm": true
         },
         {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Dig",
+            "tm": true
         },
         {
-            "move": "Gyro Ball",
-            "tm": "TM74"
+            "move": "Light Screen",
+            "tm": true
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77"
+            "move": "Reflect",
+            "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Sandstorm",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Rain Dance",
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Power Swap",
+            "tm": true
+        },
+        {
+            "move": "Guard Swap",
+            "tm": true
         },
         {
             "move": "Trick Room",
-            "tm": "TM92"
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Psychic Terrain",
+            "tm": true
+        },
+        {
+            "move": "Eerie Impulse",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Skill Swap",
+            "tm": true
+        },
+        {
+            "move": "Cosmic Power",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Drill Run",
+            "tm": true
         },
         {
             "move": "Dazzling Gleam",
-            "tm": "TM99"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Body Press",
+            "tm": true
         }
     ]
 }

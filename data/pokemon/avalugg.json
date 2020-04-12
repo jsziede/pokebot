@@ -55,38 +55,14 @@
     "evolutions": [],
     "species": "Iceberg Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The way several Bergmite huddle on its back make it look like an aircraft carrier made of ice.",
+    "pokedex_entry": "As Avalugg moves about during the day, the cracks in its body deepen. The Pokémon’s body returns to a pristine state overnight.",
     "move_learnset": [
         {
-            "move": "Bite",
-            "level": 1
+            "move": "Body Slam",
+            "evo": true
         },
         {
             "move": "Body Slam",
-            "level": 1
-        },
-        {
-            "move": "Crunch",
-            "level": 1
-        },
-        {
-            "move": "Harden",
-            "level": 1
-        },
-        {
-            "move": "Iron Defense",
-            "level": 1
-        },
-        {
-            "move": "Powder Snow",
-            "level": 1
-        },
-        {
-            "move": "Skull Bash",
-            "level": 1
-        },
-        {
-            "move": "Tackle",
             "level": 1
         },
         {
@@ -94,63 +70,227 @@
             "level": 1
         },
         {
+            "move": "Rapid Spin",
+            "level": 1
+        },
+        {
+            "move": "Harden",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
             "move": "Powder Snow",
-            "level": 5
-        },
-        {
-            "move": "Icy Wind",
-            "level": 10
-        },
-        {
-            "move": "Take Down",
-            "level": 15
-        },
-        {
-            "move": "Sharpen",
-            "level": 20
+            "level": 1
         },
         {
             "move": "Curse",
-            "level": 22
+            "level": 9
         },
         {
-            "move": "Ice Fang",
-            "level": 26
+            "move": "Icy Wind",
+            "level": 12
         },
         {
-            "move": "Ice Ball",
-            "level": 30
-        },
-        {
-            "move": "Rapid Spin",
-            "level": 35
+            "move": "Protect",
+            "level": 15
         },
         {
             "move": "Avalanche",
-            "level": 42
+            "level": 18
         },
         {
-            "move": "Blizzard",
-            "level": 46
+            "move": "Bite",
+            "level": 21
+        },
+        {
+            "move": "Ice Fang",
+            "level": 24
+        },
+        {
+            "move": "Iron Defense",
+            "level": 27
         },
         {
             "move": "Recover",
-            "level": 51
-        },
-        {
-            "move": "Double-Edge",
-            "level": 56
-        },
-        {
-            "move": "Skull Bash",
-            "level": 60
+            "level": 30
         },
         {
             "move": "Crunch",
-            "level": 65
+            "level": 33
         },
         {
-            "move": "Barrier",
+            "move": "Take Down",
+            "level": 36
+        },
+        {
+            "move": "Blizzard",
+            "level": 41
+        },
+        {
+            "move": "Double-Edge",
+            "level": 46
+        },
+        {
+            "move": "Skull Bash",
+            "level": 51
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Icicle Spear",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Mist",
             "egg_move": true
         },
         {
@@ -158,140 +298,8 @@
             "egg_move": true
         },
         {
-            "move": "Mist",
+            "move": "Aurora Veil",
             "egg_move": true
-        },
-        {
-            "move": "Recover",
-            "egg_move": true
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Frost Breath",
-            "tm": "TM79"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

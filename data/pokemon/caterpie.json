@@ -57,19 +57,23 @@
     ],
     "species": "Worm Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Caterpie has a voracious appetite. It can devour leaves bigger than its body right before your eyes. From its antenna, this Pokémon releases a terrifically strong odor.",
+    "pokedex_entry": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
     "move_learnset": [
-        {
-            "move": "String Shot",
-            "level": 1
-        },
         {
             "move": "Tackle",
             "level": 1
         },
         {
+            "move": "String Shot",
+            "level": 1
+        },
+        {
             "move": "Bug Bite",
             "level": 9
+        },
+        {
+            "move": "Electroweb",
+            "tm": true
         }
     ]
 }

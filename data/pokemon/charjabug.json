@@ -63,183 +63,175 @@
     ],
     "species": "Battery Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It buries itself in fallen leaves and barely moves, munching away on humus. If you accidentally step on one, you’ll get a shock!",
+    "pokedex_entry": "Its digestive processes convert the leaves it eats into electricity. An electric sac in its belly stores the electricity for later use.",
     "move_learnset": [
         {
-            "move": "Bite",
-            "level": 1
+            "move": "Charge",
+            "evo": true
         },
         {
             "move": "Charge",
             "level": 1
         },
         {
+            "move": "Vise Grip",
+            "level": 1
+        },
+        {
             "move": "Mud-Slap",
             "level": 1
         },
         {
             "move": "String Shot",
             "level": 1
-        },
-        {
-            "move": "Vice Grip",
-            "level": 1
-        },
-        {
-            "move": "String Shot",
-            "level": 4
-        },
-        {
-            "move": "Mud-Slap",
-            "level": 7
-        },
-        {
-            "move": "Bite",
-            "level": 10
         },
         {
             "move": "Bug Bite",
-            "level": 13
+            "level": 1
+        },
+        {
+            "move": "Bite",
+            "level": 15
         },
         {
             "move": "Spark",
-            "level": 16
+            "level": 23
         },
         {
-            "move": "Acrobatics",
-            "level": 19
-        },
-        {
-            "move": "Crunch",
-            "level": 25
+            "move": "Sticky Web",
+            "level": 29
         },
         {
             "move": "X-Scissor",
-            "level": 31
+            "level": 36
         },
         {
-            "move": "Dig",
-            "level": 37
-        },
-        {
-            "move": "Discharge",
+            "move": "Crunch",
             "level": 43
         },
         {
+            "move": "Dig",
+            "level": 50
+        },
+        {
             "move": "Iron Defense",
-            "level": 49
+            "level": 57
+        },
+        {
+            "move": "Discharge",
+            "level": 64
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Volt Switch",
+            "tm": true
         },
         {
             "move": "Electroweb",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Eerie Impulse",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
         },
         {
             "move": "Endure",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
         },
         {
             "move": "Harden",
             "egg_move": true
         },
         {
-            "move": "Mud Shot",
+            "move": "Discharge",
             "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Volt Switch",
-            "tm": "TM72"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }
