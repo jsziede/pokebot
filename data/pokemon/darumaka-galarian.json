@@ -1,138 +1,155 @@
 {
-    "name": "Drifloon",
-    "national_id": 425,
+    "name": "Darumaka",
+    "national_id": 554,
     "types": [
-        "Ghost",
-        "Flying"
+        "Ice"
     ],
     "abilities": [
         {
-            "name": "Aftermath"
+            "name": "Hustle"
         },
         {
-            "name": "Unburden"
-        },
-        {
-            "name": "Flare Boost",
+            "name": "Inner Focus",
             "hidden": true
         }
     ],
-    "catch_rate": 125,
+    "catch_rate": 120,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Amorphous"
+        "Field"
     ],
     "hatch_time": [
-        7905,
-        8159
+        5140,
+        5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "2.6 lbs.",
-    "weight_eu": "1.2 kg",
-    "base_exp_yield": 70,
-    "leveling_rate": "Fluctuating",
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "88.2 lbs.",
+    "weight_eu": "40.0 kg",
+    "base_exp_yield": 63,
+    "leveling_rate": "Medium Slow",
     "base_friendship": 70,
     "ev_yield": {
-        "hp": 1,
-        "atk": 0,
+        "hp": 0,
+        "atk": 1,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 90,
-        "atk": 50,
-        "def": 34,
-        "sp_atk": 60,
-        "sp_def": 44,
-        "speed": 70
+        "hp": 70,
+        "atk": 90,
+        "def": 45,
+        "sp_atk": 15,
+        "sp_def": 45,
+        "speed": 50
     },
     "evolution_from": null,
     "evolutions": [
         {
-            "to": "Drifblim",
-            "level": 28
+            "to": "Darmanitan",
+            "variant": "Galarian",
+            "item": "Ice Stone"
         }
     ],
-    "species": "Balloon Pokémon",
+    "species": "Zen Charm Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The gathering of many souls gave rise to this Pokémon. During humid seasons, they seem to appear in abundance.",
+    "pokedex_entry": "It lived in snowy areas for so long that its fire sac cooled off and atrophied. It now has an organ that generates cold instead.",
     "move_learnset": [
         {
-            "move": "Minimize",
+            "move": "Powder Snow",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Gust",
+            "move": "Taunt",
             "level": 4
         },
         {
-            "move": "Focus Energy",
+            "move": "Bite",
             "level": 8
         },
         {
-            "move": "Payback",
+            "move": "Avalanche",
             "level": 12
         },
         {
-            "move": "Hex",
+            "move": "Work Up",
             "level": 16
         },
         {
-            "move": "Shadow Ball",
+            "move": "Ice Fang",
             "level": 20
         },
         {
-            "move": "Stockpile",
+            "move": "Headbutt",
             "level": 24
         },
         {
-            "move": "Swallow",
-            "level": 24
+            "move": "Ice Punch",
+            "level": 28
         },
         {
-            "move": "Spit Up",
-            "level": 24
-        },
-        {
-            "move": "Self-Destruct",
-            "level": 29
-        },
-        {
-            "move": "Destiny Bond",
+            "move": "Uproar",
             "level": 32
         },
         {
-            "move": "Baton Pass",
+            "move": "Belly Drum",
             "level": 36
         },
         {
-            "move": "Tailwind",
+            "move": "Blizzard",
             "level": 40
         },
         {
-            "move": "Explosion",
+            "move": "Thrash",
             "level": 44
         },
         {
-            "move": "Thunder Wave",
+            "move": "Superpower",
+            "level": 48
+        },
+        {
+            "move": "Mega Punch",
             "tm": true
         },
         {
-            "move": "Self-Destruct",
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Fire Spin",
+            "tm": true
+        },
+        {
+            "move": "Dig",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -148,15 +165,7 @@
             "tm": true
         },
         {
-            "move": "Icy Wind",
-            "tm": true
-        },
-        {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Rain Dance",
             "tm": true
         },
         {
@@ -172,15 +181,31 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Brick Break",
             "tm": true
         },
         {
-            "move": "Weather Ball",
+            "move": "Rock Tomb",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
             "tm": true
         },
         {
@@ -188,31 +213,15 @@
             "tm": true
         },
         {
-            "move": "Hex",
+            "move": "Flamethrower",
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Ice Beam",
             "tm": true
         },
         {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Body Slam",
-            "tm": true
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": true
-        },
-        {
-            "move": "Thunder",
-            "tm": true
-        },
-        {
-            "move": "Psychic",
+            "move": "Blizzard",
             "tm": true
         },
         {
@@ -220,7 +229,7 @@
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Fire Blast",
             "tm": true
         },
         {
@@ -236,23 +245,27 @@
             "tm": true
         },
         {
-            "move": "Baton Pass",
+            "move": "Encore",
             "tm": true
         },
         {
-            "move": "Shadow Ball",
+            "move": "Uproar",
             "tm": true
         },
         {
-            "move": "Trick",
+            "move": "Heat Wave",
             "tm": true
         },
         {
-            "move": "Skill Swap",
+            "move": "Taunt",
             "tm": true
         },
         {
-            "move": "Calm Mind",
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Overheat",
             "tm": true
         },
         {
@@ -260,31 +273,51 @@
             "tm": true
         },
         {
-            "move": "Ally Switch",
+            "move": "Flare Blitz",
             "tm": true
         },
         {
-            "move": "Memento",
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Focus Punch",
             "egg_move": true
         },
         {
-            "move": "Disable",
+            "move": "Hammer Arm",
             "egg_move": true
         },
         {
-            "move": "Haze",
+            "move": "Take Down",
             "egg_move": true
         },
         {
-            "move": "Hypnosis",
+            "move": "Flame Wheel",
             "egg_move": true
         },
         {
-            "move": "Clear Smog",
+            "move": "Yawn",
             "egg_move": true
         },
         {
-            "move": "Defog",
+            "move": "Freeze-Dry",
+            "egg_move": true
+        },
+        {
+            "move": "Incinerate",
+            "egg_move": true
+        },
+        {
+            "move": "Power-Up Punch",
             "egg_move": true
         }
     ]

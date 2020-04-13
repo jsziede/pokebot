@@ -55,18 +55,26 @@
     "evolutions": [],
     "species": "Dragon Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It attacks with retractable horns. It throws a punch that's the equivalent of the force of a hundred pro boxers.",
+    "pokedex_entry": "Its form of offense is forcefully stretching out its horns. The strikes land 100 times harder than any blow from a heavyweight boxer.",
     "move_learnset": [
         {
-            "move": "Absorb",
-            "level": 1
+            "move": "Aqua Tail",
+            "evo": true
         },
         {
             "move": "Aqua Tail",
             "level": 1
         },
         {
-            "move": "Bubble",
+            "move": "Acid Spray",
+            "level": 1
+        },
+        {
+            "move": "Poison Tail",
+            "level": 1
+        },
+        {
+            "move": "Tearful Look",
             "level": 1
         },
         {
@@ -74,11 +82,7 @@
             "level": 1
         },
         {
-            "move": "Outrage",
-            "level": 1
-        },
-        {
-            "move": "Protect",
+            "move": "Absorb",
             "level": 1
         },
         {
@@ -86,208 +90,240 @@
             "level": 1
         },
         {
-            "move": "Absorb",
-            "level": 5
-        },
-        {
-            "move": "Protect",
-            "level": 9
-        },
-        {
-            "move": "Bide",
-            "level": 13
+            "move": "Water Gun",
+            "level": 1
         },
         {
             "move": "Dragon Breath",
-            "level": 18
+            "level": 1
         },
         {
-            "move": "Rain Dance",
-            "level": 25
+            "move": "Protect",
+            "level": 15
         },
         {
             "move": "Flail",
-            "level": 28
+            "level": 20
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Water Pulse",
+            "level": 25
         },
         {
-            "move": "Muddy Water",
-            "level": 38
+            "move": "Rain Dance",
+            "level": 30
         },
         {
             "move": "Dragon Pulse",
-            "level": 47
+            "level": 35
+        },
+        {
+            "move": "Curse",
+            "level": 43
+        },
+        {
+            "move": "Body Slam",
+            "level": 49
+        },
+        {
+            "move": "Muddy Water",
+            "level": 58
         },
         {
             "move": "Power Whip",
-            "level": 50
+            "level": 67
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
         },
         {
             "move": "Outrage",
-            "level": 55
+            "tm": true
         },
         {
-            "move": "Acid Armor",
-            "egg_move": true
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Power Whip",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
         },
         {
             "move": "Counter",
             "egg_move": true
         },
         {
-            "move": "Curse",
+            "move": "Life Dew",
             "egg_move": true
-        },
-        {
-            "move": "Endure",
-            "egg_move": true
-        },
-        {
-            "move": "Iron Tail",
-            "egg_move": true
-        },
-        {
-            "move": "Poison Tail",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Dragon Tail",
-            "tm": "TM82"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

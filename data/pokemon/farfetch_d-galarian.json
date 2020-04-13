@@ -2,8 +2,7 @@
     "name": "Farfetch'd",
     "national_id": 83,
     "types": [
-        "Normal",
-        "Flying"
+        "Fighting"
     ],
     "items": [
         {
@@ -13,13 +12,10 @@
     ],
     "abilities": [
         {
-            "name": "Keen Eye"
+            "name": "Steadfast"
         },
         {
-            "name": "Inner Focus"
-        },
-        {
-            "name": "Defiant",
+            "name": "Scrappy",
             "hidden": true
         }
     ],
@@ -38,8 +34,8 @@
     ],
     "height_us": "2'07\"",
     "height_eu": "0.8 m",
-    "weight_us": "33.1 lbs.",
-    "weight_eu": "15.0 kg",
+    "weight_us": "92.6 lbs.",
+    "weight_eu": "42.0 kg",
     "base_exp_yield": 132,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
@@ -53,17 +49,23 @@
     },
     "base_stats": {
         "hp": 52,
-        "atk": 90,
+        "atk": 95,
         "def": 55,
         "sp_atk": 58,
         "sp_def": 62,
-        "speed": 60
+        "speed": 55
     },
     "evolution_from": null,
-    "evolutions": [],
+    "evolutions": [
+        {
+            "to": "Sirfetch'd",
+            "variant": "Galarian",
+            "battle_crits": 3
+        }
+    ],
     "species": "Wild Duck Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "They use a plant stalk as a weapon, but not all of them use it in the same way. Several distinct styles of stalk fighting have been observed.",
+    "pokedex_entry": "The Farfetch'd of the Galar region are brave warriors, and they wield thick, tough leeks in battle.",
     "move_learnset": [
         {
             "move": "Peck",
@@ -82,15 +84,15 @@
             "level": 10
         },
         {
-            "move": "Cut",
+            "move": "Rock Smash",
             "level": 15
         },
         {
-            "move": "Aerial Ace",
+            "move": "Brutal Swing",
             "level": 20
         },
         {
-            "move": "Air Cutter",
+            "move": "Detect",
             "level": 25
         },
         {
@@ -98,11 +100,11 @@
             "level": 30
         },
         {
-            "move": "False Swipe",
+            "move": "Defog",
             "level": 35
         },
         {
-            "move": "Slash",
+            "move": "Brick Break",
             "level": 40
         },
         {
@@ -110,7 +112,7 @@
             "level": 45
         },
         {
-            "move": "Air Slash",
+            "move": "Slam",
             "level": 50
         },
         {
@@ -118,7 +120,7 @@
             "level": 55
         },
         {
-            "move": "Agility",
+            "move": "Final Gambit",
             "level": 60
         },
         {
@@ -126,19 +128,11 @@
             "level": 65
         },
         {
-            "move": "Fly",
-            "tm": true
-        },
-        {
             "move": "Solar Blade",
             "tm": true
         },
         {
             "move": "Rest",
-            "tm": true
-        },
-        {
-            "move": "Thief",
             "tm": true
         },
         {
@@ -166,10 +160,6 @@
             "tm": true
         },
         {
-            "move": "Swift",
-            "tm": true
-        },
-        {
             "move": "Helping Hand",
             "tm": true
         },
@@ -178,7 +168,11 @@
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
             "tm": true
         },
         {
@@ -186,19 +180,7 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
-            "tm": true
-        },
-        {
             "move": "Retaliate",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Air Slash",
             "tm": true
         },
         {
@@ -211,10 +193,6 @@
         },
         {
             "move": "Body Slam",
-            "tm": true
-        },
-        {
-            "move": "Agility",
             "tm": true
         },
         {
@@ -234,19 +212,7 @@
             "tm": true
         },
         {
-            "move": "Baton Pass",
-            "tm": true
-        },
-        {
-            "move": "Iron Tail",
-            "tm": true
-        },
-        {
-            "move": "Uproar",
-            "tm": true
-        },
-        {
-            "move": "Heat Wave",
+            "move": "Superpower",
             "tm": true
         },
         {
@@ -274,7 +240,7 @@
             "tm": true
         },
         {
-            "move": "Gust",
+            "move": "Counter",
             "egg_move": true
         },
         {
@@ -286,7 +252,7 @@
             "egg_move": true
         },
         {
-            "move": "Feather Dance",
+            "move": "Quick Guard",
             "egg_move": true
         },
         {
@@ -302,19 +268,11 @@
             "egg_move": true
         },
         {
-            "move": "Roost",
-            "egg_move": true
-        },
-        {
             "move": "Simple Beam",
             "egg_move": true
         },
         {
-            "move": "First Impression",
-            "egg_move": true
-        },
-        {
-            "move": "Final Gambit",
+            "move": "Double-Edge",
             "egg_move": true
         },
         {

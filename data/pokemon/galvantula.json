@@ -56,94 +56,214 @@
     "evolutions": [],
     "species": "EleSpider Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "When attacked, they create an electric barrier by spitting out many electrically charged threads.",
+    "pokedex_entry": "It lays traps of electrified threads near the nests of bird Pokémon, aiming to snare chicks that are not yet good at flying.",
     "move_learnset": [
         {
-            "move": "Absorb",
-            "level": 1
-        },
-        {
-            "move": "Spider Web",
-            "level": 1
+            "move": "Sticky Web",
+            "evo": true
         },
         {
             "move": "Sticky Web",
             "level": 1
         },
         {
-            "move": "String Shot",
+            "move": "Absorb",
             "level": 1
-        },
-        {
-            "move": "Thunder Wave",
-            "level": 1
-        },
-        {
-            "move": "Thunder Wave",
-            "level": 4
-        },
-        {
-            "move": "Screech",
-            "level": 7
         },
         {
             "move": "Fury Cutter",
-            "level": 12
+            "level": 1
         },
         {
             "move": "Electroweb",
-            "level": 15
+            "level": 1
         },
         {
             "move": "Bug Bite",
-            "level": 18
+            "level": 1
         },
         {
-            "move": "Gastro Acid",
-            "level": 23
+            "move": "String Shot",
+            "level": 12
         },
         {
-            "move": "Slash",
-            "level": 26
+            "move": "Thunder Wave",
+            "level": 16
         },
         {
             "move": "Electro Ball",
-            "level": 29
-        },
-        {
-            "move": "Signal Beam",
-            "level": 34
+            "level": 20
         },
         {
             "move": "Agility",
-            "level": 40
+            "level": 24
         },
         {
             "move": "Sucker Punch",
-            "level": 46
+            "level": 28
+        },
+        {
+            "move": "Slash",
+            "level": 32
         },
         {
             "move": "Discharge",
-            "level": 54
+            "level": 39
+        },
+        {
+            "move": "Screech",
+            "level": 44
+        },
+        {
+            "move": "Gastro Acid",
+            "level": 50
         },
         {
             "move": "Bug Buzz",
-            "level": 60
+            "level": 56
         },
         {
-            "move": "Camouflage",
-            "egg_move": true
+            "move": "Pin Missile",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Speed Swap",
+            "tm": true
         },
         {
             "move": "Cross Poison",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Disable",
-            "egg_move": true
+            "move": "Round",
+            "tm": true
         },
         {
-            "move": "Feint Attack",
+            "move": "Volt Switch",
+            "tm": true
+        },
+        {
+            "move": "Electroweb",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Poison Sting",
             "egg_move": true
         },
         {
@@ -151,140 +271,16 @@
             "egg_move": true
         },
         {
-            "move": "Pin Missile",
+            "move": "Struggle Bug",
             "egg_move": true
-        },
-        {
-            "move": "Poison Sting",
-            "egg_move": true
-        },
-        {
-            "move": "Pursuit",
-            "egg_move": true
-        },
-        {
-            "move": "Rock Climb",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
         },
         {
             "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Volt Switch",
-            "tm": "TM72"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "egg_move": true
         },
         {
             "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

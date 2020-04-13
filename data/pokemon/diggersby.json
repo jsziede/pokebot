@@ -56,18 +56,10 @@
     "evolutions": [],
     "species": "Digging Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "As powerful as an excavator, its ears can reduce dense bedrock to rubble. When it's finished digging, it lounges lazily.",
+    "pokedex_entry": "The fur on its belly retains heat exceptionally well. People used to make heavy winter clothing from fur shed by this Pokémon.",
     "move_learnset": [
         {
-            "move": "Agility",
-            "level": 1
-        },
-        {
-            "move": "Bulldoze",
-            "level": 1
-        },
-        {
-            "move": "Hammer Arm",
+            "move": "Mud-Slap",
             "level": 1
         },
         {
@@ -75,72 +67,268 @@
             "level": 1
         },
         {
-            "move": "Rototiller",
-            "level": 1
-        },
-        {
-            "move": "Swords Dance",
-            "level": 1
-        },
-        {
             "move": "Tackle",
             "level": 1
         },
         {
+            "move": "Laser Focus",
+            "level": 1
+        },
+        {
             "move": "Quick Attack",
-            "level": 7
-        },
-        {
-            "move": "Double Slap",
-            "level": 13
-        },
-        {
-            "move": "Mud-Slap",
-            "level": 13
-        },
-        {
-            "move": "Take Down",
-            "level": 15
+            "level": 9
         },
         {
             "move": "Mud Shot",
-            "level": 18
-        },
-        {
-            "move": "Double Kick",
-            "level": 21
-        },
-        {
-            "move": "Odor Sleuth",
-            "level": 27
+            "level": 12
         },
         {
             "move": "Flail",
-            "level": 32
+            "level": 15
+        },
+        {
+            "move": "Double Kick",
+            "level": 18
+        },
+        {
+            "move": "Bulldoze",
+            "level": 23
         },
         {
             "move": "Dig",
-            "level": 37
+            "level": 28
         },
         {
             "move": "Bounce",
+            "level": 33
+        },
+        {
+            "move": "Take Down",
+            "level": 38
+        },
+        {
+            "move": "Swords Dance",
             "level": 43
         },
         {
-            "move": "Super Fang",
+            "move": "Earthquake",
             "level": 48
         },
         {
-            "move": "Facade",
-            "level": 54
-        },
-        {
-            "move": "Earthquake",
-            "level": 57
+            "move": "Super Fang",
+            "level": 53
         },
         {
             "move": "Hammer Arm",
-            "level": 60
+            "level": 58
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Gunk Shot",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
         },
         {
             "move": "Defense Curl",
@@ -149,162 +337,6 @@
         {
             "move": "Rollout",
             "egg_move": true
-        },
-        {
-            "move": "Spikes",
-            "egg_move": true
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Bulk Up",
-            "tm": "TM8"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

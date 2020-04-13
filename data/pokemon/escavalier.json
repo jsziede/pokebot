@@ -56,18 +56,30 @@
     "evolutions": [],
     "species": "Cavalry Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "These Pokémon evolve by wearing the shell covering of a Shelmet. The steel armor protects their whole body.",
+    "pokedex_entry": "It charges its enemies, lances at the ready. An image of one of its duels is captured in a famous painting of Escavalier clashing with Sirfetch’d.",
     "move_learnset": [
-        {
-            "move": "Double-Edge",
-            "level": 1
-        },
         {
             "move": "Fell Stinger",
             "level": 1
         },
         {
-            "move": "Leer",
+            "move": "Endure",
+            "level": 1
+        },
+        {
+            "move": "Flail",
+            "level": 1
+        },
+        {
+            "move": "Scary Face",
+            "level": 1
+        },
+        {
+            "move": "Take Down",
+            "level": 1
+        },
+        {
+            "move": "Double-Edge",
             "level": 1
         },
         {
@@ -75,27 +87,23 @@
             "level": 1
         },
         {
-            "move": "Quick Guard",
-            "level": 1
-        },
-        {
-            "move": "Twineedle",
-            "level": 1
-        },
-        {
             "move": "Leer",
-            "level": 4
+            "level": 1
+        },
+        {
+            "move": "Fury Cutter",
+            "level": 1
         },
         {
             "move": "Quick Guard",
-            "level": 8
+            "level": 1
         },
         {
-            "move": "Twineedle",
-            "level": 13
+            "move": "False Swipe",
+            "level": 12
         },
         {
-            "move": "Fury Attack",
+            "move": "Acid Spray",
             "level": 16
         },
         {
@@ -103,188 +111,192 @@
             "level": 20
         },
         {
-            "move": "False Swipe",
-            "level": 25
-        },
-        {
-            "move": "Bug Buzz",
-            "level": 28
-        },
-        {
-            "move": "Slash",
-            "level": 32
-        },
-        {
-            "move": "Iron Head",
-            "level": 37
+            "move": "Reversal",
+            "level": 24
         },
         {
             "move": "Iron Defense",
+            "level": 28
+        },
+        {
+            "move": "X-Scissor",
+            "level": 32
+        },
+        {
+            "move": "Swords Dance",
+            "level": 36
+        },
+        {
+            "move": "Iron Head",
             "level": 40
         },
         {
-            "move": "X-Scissor",
+            "move": "Bug Buzz",
             "level": 44
         },
         {
-            "move": "Reversal",
-            "level": 49
+            "move": "Giga Impact",
+            "level": 48
         },
         {
-            "move": "Swords Dance",
+            "move": "Metal Burst",
             "level": 52
         },
         {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
             "move": "Giga Impact",
-            "level": 56
-        },
-        {
-            "move": "Fell Stinger",
-            "level": 60
-        },
-        {
-            "move": "Bug Bite",
-            "egg_move": true
-        },
-        {
-            "move": "Counter",
-            "egg_move": true
-        },
-        {
-            "move": "Drill Run",
-            "egg_move": true
-        },
-        {
-            "move": "Feint Attack",
-            "egg_move": true
-        },
-        {
-            "move": "Horn Attack",
-            "egg_move": true
-        },
-        {
-            "move": "Knock Off",
-            "egg_move": true
-        },
-        {
-            "move": "Megahorn",
-            "egg_move": true
-        },
-        {
-            "move": "Pursuit",
-            "egg_move": true
+            "tm": true
         },
         {
             "move": "Screech",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
+            "tm": true
         },
         {
             "move": "Rest",
-            "tm": "TM44"
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
         },
         {
             "move": "Attract",
-            "tm": "TM45"
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
         },
         {
             "move": "Round",
-            "tm": "TM48"
+            "tm": true
         },
         {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
+            "move": "Razor Shell",
+            "tm": true
         },
         {
             "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
+            "tm": true
         },
         {
             "move": "Smart Strike",
-            "tm": "TM67"
+            "tm": true
         },
         {
-            "move": "Giga Impact",
-            "tm": "TM68"
+            "move": "Brutal Swing",
+            "tm": true
         },
         {
             "move": "Swords Dance",
-            "tm": "TM75"
+            "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Agility",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Megahorn",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Drill Run",
+            "tm": true
+        },
+        {
+            "move": "Double-Edge",
+            "egg_move": true
+        },
+        {
+            "move": "Guard Split",
+            "egg_move": true
+        },
+        {
+            "move": "Mind Reader",
+            "egg_move": true
+        },
+        {
+            "move": "Feint",
+            "egg_move": true
         }
     ]
 }

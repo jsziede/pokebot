@@ -60,26 +60,14 @@
     "evolutions": [],
     "species": "Thorn Pod Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "They attach themselves to cave ceilings, firing steel spikes at targets passing beneath them.",
+    "pokedex_entry": "Its spikes are harder than steel. This Pokémon crawls across rock walls by stabbing the spikes on its feelers into the stone.",
     "move_learnset": [
         {
-            "move": "Curse",
-            "level": 1
-        },
-        {
-            "move": "Harden",
-            "level": 1
+            "move": "Power Whip",
+            "evo": true
         },
         {
             "move": "Power Whip",
-            "level": 1
-        },
-        {
-            "move": "Rock Climb",
-            "level": 1
-        },
-        {
-            "move": "Rollout",
             "level": 1
         },
         {
@@ -87,63 +75,215 @@
             "level": 1
         },
         {
-            "move": "Rollout",
-            "level": 6
-        },
-        {
-            "move": "Curse",
-            "level": 9
+            "move": "Harden",
+            "level": 1
         },
         {
             "move": "Metal Claw",
-            "level": 14
+            "level": 1
         },
         {
             "move": "Pin Missile",
-            "level": 18
-        },
-        {
-            "move": "Gyro Ball",
-            "level": 21
-        },
-        {
-            "move": "Iron Defense",
-            "level": 26
-        },
-        {
-            "move": "Mirror Shot",
-            "level": 30
+            "level": 1
         },
         {
             "move": "Ingrain",
-            "level": 35
-        },
-        {
-            "move": "Self-Destruct",
-            "level": 38
-        },
-        {
-            "move": "Iron Head",
-            "level": 46
-        },
-        {
-            "move": "Payback",
-            "level": 53
+            "level": 15
         },
         {
             "move": "Flash Cannon",
-            "level": 61
+            "level": 20
+        },
+        {
+            "move": "Iron Head",
+            "level": 25
+        },
+        {
+            "move": "Self-Destruct",
+            "level": 30
+        },
+        {
+            "move": "Iron Defense",
+            "level": 35
+        },
+        {
+            "move": "Curse",
+            "level": 43
+        },
+        {
+            "move": "Gyro Ball",
+            "level": 49
         },
         {
             "move": "Explosion",
-            "level": 67
+            "level": 56
         },
         {
-            "move": "Acid Spray",
-            "egg_move": true
+            "move": "Pin Missile",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
         },
         {
             "move": "Bullet Seed",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Power Whip",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Leech Seed",
             "egg_move": true
         },
         {
@@ -151,164 +291,16 @@
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Rock Climb",
-            "egg_move": true
-        },
-        {
-            "move": "Seed Bomb",
-            "egg_move": true
-        },
-        {
-            "move": "Spikes",
-            "egg_move": true
-        },
-        {
-            "move": "Stealth Rock",
-            "egg_move": true
-        },
-        {
-            "move": "Worry Seed",
+            "move": "Acid Spray",
             "egg_move": true
         },
         {
             "move": "Toxic",
-            "tm": "TM6"
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Knock Off",
+            "egg_move": true
         }
     ]
 }

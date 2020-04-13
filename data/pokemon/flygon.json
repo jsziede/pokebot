@@ -49,10 +49,14 @@
     "evolutions": [],
     "species": "Mystic Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Flygon whips up a sandstorm by flapping its wings. The wings create a series of notes that sound like singing. Because the “singing” is the only thing that can be heard in a sandstorm, this Pokémon is said to be the desert spirit.",
+    "pokedex_entry": "It is nicknamed the Desert Spirit because the flapping of its wings sounds like a woman singing.",
     "move_learnset": [
         {
-            "move": "Bide",
+            "move": "Dragon Claw",
+            "evo": true
+        },
+        {
+            "move": "Dragon Claw",
             "level": 1
         },
         {
@@ -60,15 +64,35 @@
             "level": 1
         },
         {
-            "move": "Dragon Claw",
-            "level": 1
-        },
-        {
             "move": "Dragon Dance",
             "level": 1
         },
         {
-            "move": "Feint Attack",
+            "move": "Feint",
+            "level": 1
+        },
+        {
+            "move": "Laser Focus",
+            "level": 1
+        },
+        {
+            "move": "Bulldoze",
+            "level": 1
+        },
+        {
+            "move": "Dig",
+            "level": 1
+        },
+        {
+            "move": "Crunch",
+            "level": 1
+        },
+        {
+            "move": "Superpower",
+            "level": 1
+        },
+        {
+            "move": "Fissure",
             "level": 1
         },
         {
@@ -76,83 +100,271 @@
             "level": 1
         },
         {
-            "move": "Sonic Boom",
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Supersonic",
+            "level": 1
+        },
+        {
+            "move": "Bite",
             "level": 1
         },
         {
             "move": "Mud-Slap",
-            "level": 5
-        },
-        {
-            "move": "Bulldoze",
-            "level": 8
-        },
-        {
-            "move": "Sand Tomb",
             "level": 12
         },
         {
-            "move": "Rock Slide",
-            "level": 15
-        },
-        {
-            "move": "Supersonic",
-            "level": 19
-        },
-        {
-            "move": "Screech",
-            "level": 22
-        },
-        {
-            "move": "Earth Power",
-            "level": 26
+            "move": "Sand Tomb",
+            "level": 16
         },
         {
             "move": "Dragon Tail",
-            "level": 29
+            "level": 20
         },
         {
-            "move": "Earthquake",
-            "level": 33
+            "move": "Screech",
+            "level": 24
+        },
+        {
+            "move": "Bug Buzz",
+            "level": 28
         },
         {
             "move": "Sandstorm",
-            "level": 36
-        },
-        {
-            "move": "Uproar",
-            "level": 40
-        },
-        {
-            "move": "Hyper Beam",
-            "level": 43
-        },
-        {
-            "move": "Dragon Rush",
-            "level": 47
-        },
-        {
-            "move": "Bug Bite",
-            "egg_move": true
+            "level": 32
         },
         {
             "move": "Earth Power",
-            "egg_move": true
+            "level": 38
         },
         {
-            "move": "Endure",
-            "egg_move": true
+            "move": "Earthquake",
+            "level": 44
         },
         {
-            "move": "Flail",
-            "egg_move": true
+            "move": "Uproar",
+            "level": 52
+        },
+        {
+            "move": "Dragon Rush",
+            "level": 60
+        },
+        {
+            "move": "Boomburst",
+            "level": 68
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Fly",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Fire Spin",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
         },
         {
             "move": "Focus Energy",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Fury Cutter",
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Dragon Claw",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Quick Attack",
             "egg_move": true
         },
         {
@@ -160,152 +372,24 @@
             "egg_move": true
         },
         {
-            "move": "Mud Shot",
+            "move": "Flail",
             "egg_move": true
         },
         {
-            "move": "Quick Attack",
+            "move": "Fury Cutter",
             "egg_move": true
         },
         {
-            "move": "Signal Beam",
+            "move": "Bug Bite",
             "egg_move": true
         },
         {
-            "move": "Dragon Claw",
-            "tm": "TM2"
+            "move": "Feint",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Steel Wing",
-            "tm": "TM51"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Fly",
-            "tm": "TM76"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Dragon Tail",
-            "tm": "TM82"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "First Impression",
+            "egg_move": true
         }
     ]
 }

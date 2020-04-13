@@ -64,191 +64,247 @@
     ],
     "species": "Automaton Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Ancient science fashioned this Pokémon from clay. It's been active for thousands of years.",
+    "pokedex_entry": "This Pokémon was created from clay. It received orders from its master many thousands of years ago, and it still follows those orders to this day.",
     "move_learnset": [
+        {
+            "move": "Mud-Slap",
+            "level": 1
+        },
         {
             "move": "Astonish",
             "level": 1
         },
         {
             "move": "Defense Curl",
-            "level": 1
+            "level": 4
         },
         {
             "move": "Pound",
-            "level": 1
-        },
-        {
-            "move": "Mud-Slap",
-            "level": 5
-        },
-        {
-            "move": "Rollout",
-            "level": 9
+            "level": 8
         },
         {
             "move": "Shadow Punch",
-            "level": 13
-        },
-        {
-            "move": "Iron Defense",
-            "level": 17
-        },
-        {
-            "move": "Stomping Tantrum",
-            "level": 21
-        },
-        {
-            "move": "Mega Punch",
-            "level": 25
-        },
-        {
-            "move": "Magnitude",
-            "level": 30
-        },
-        {
-            "move": "Dynamic Punch",
-            "level": 35
-        },
-        {
-            "move": "Night Shade",
-            "level": 40
+            "level": 12
         },
         {
             "move": "Curse",
-            "level": 45
+            "level": 16
         },
         {
-            "move": "Earthquake",
-            "level": 50
+            "move": "Night Shade",
+            "level": 20
         },
         {
-            "move": "Hammer Arm",
-            "level": 55
+            "move": "Stomping Tantrum",
+            "level": 24
         },
         {
-            "move": "Focus Punch",
-            "level": 61
+            "move": "Iron Defense",
+            "level": 28
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
+            "move": "Mega Punch",
+            "level": 32
         },
         {
             "move": "Shadow Ball",
-            "tm": "TM30"
+            "level": 36
         },
         {
-            "move": "Brick Break",
-            "tm": "TM31"
+            "move": "Heavy Slam",
+            "level": 40
         },
         {
-            "move": "Double Team",
-            "tm": "TM32"
+            "move": "Phantom Force",
+            "level": 44
         },
         {
-            "move": "Rock Tomb",
-            "tm": "TM39"
+            "move": "Hammer Arm",
+            "level": 48
         },
         {
-            "move": "Facade",
-            "tm": "TM42"
+            "move": "Earthquake",
+            "level": 52
+        },
+        {
+            "move": "Dynamic Punch",
+            "level": 56
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
         },
         {
             "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Thief",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Phantom Force",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
         }
     ]
 }

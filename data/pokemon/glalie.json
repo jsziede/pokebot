@@ -56,22 +56,18 @@
     "evolutions": [],
     "species": "Face Pokémon",
     "mega_evolves": true,
-    "pokedex_entry": "Glalie has the ability to freely control ice. For example, it can instantly freeze its prey solid. After immobilizing its prey in ice, this Pokémon enjoys eating it in leisurely fashion.",
+    "pokedex_entry": "It can instantly freeze moisture in the atmosphere. It uses this power to freeze its foes.",
     "move_learnset": [
         {
-            "move": "Double Team",
-            "level": 1
+            "move": "Freeze-Dry",
+            "evo": true
         },
         {
             "move": "Freeze-Dry",
             "level": 1
         },
         {
-            "move": "Ice Shard",
-            "level": 1
-        },
-        {
-            "move": "Leer",
+            "move": "Sheer Cold",
             "level": 1
         },
         {
@@ -79,64 +75,204 @@
             "level": 1
         },
         {
-            "move": "Sheer Cold",
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Leer",
             "level": 1
         },
         {
             "move": "Double Team",
-            "level": 5
+            "level": 1
         },
         {
             "move": "Ice Shard",
-            "level": 10
-        },
-        {
-            "move": "Icy Wind",
-            "level": 14
-        },
-        {
-            "move": "Bite",
-            "level": 19
-        },
-        {
-            "move": "Ice Fang",
-            "level": 23
-        },
-        {
-            "move": "Headbutt",
-            "level": 28
+            "level": 15
         },
         {
             "move": "Protect",
-            "level": 32
+            "level": 20
+        },
+        {
+            "move": "Icy Wind",
+            "level": 25
         },
         {
             "move": "Frost Breath",
-            "level": 37
+            "level": 30
         },
         {
-            "move": "Crunch",
-            "level": 41
+            "move": "Bite",
+            "level": 35
         },
         {
-            "move": "Blizzard",
-            "level": 48
+            "move": "Ice Fang",
+            "level": 40
         },
         {
             "move": "Hail",
+            "level": 47
+        },
+        {
+            "move": "Headbutt",
             "level": 54
         },
         {
-            "move": "Sheer Cold",
+            "move": "Crunch",
             "level": 61
         },
         {
-            "move": "Avalanche",
-            "egg_move": true
+            "move": "Blizzard",
+            "level": 68
         },
         {
-            "move": "Bide",
-            "egg_move": true
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Icicle Spear",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
         },
         {
             "move": "Block",
@@ -147,11 +283,7 @@
             "egg_move": true
         },
         {
-            "move": "Fake Tears",
-            "egg_move": true
-        },
-        {
-            "move": "Hex",
+            "move": "Switcheroo",
             "egg_move": true
         },
         {
@@ -159,144 +291,8 @@
             "egg_move": true
         },
         {
-            "move": "Spikes",
+            "move": "Icicle Crash",
             "egg_move": true
-        },
-        {
-            "move": "Switcheroo",
-            "egg_move": true
-        },
-        {
-            "move": "Weather Ball",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Frost Breath",
-            "tm": "TM79"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

@@ -53,26 +53,38 @@
     "evolutions": [],
     "species": "Snow Land Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Legends in snowy regions say that a woman who was lost on an icy mountain was reborn as Froslass.",
+    "pokedex_entry": "It spits out cold air of nearly −60 degrees Fahrenheit to freeze its quarry. It brings frozen prey back to its lair and neatly lines them up.",
     "move_learnset": [
+        {
+            "move": "Hex",
+            "evo": true
+        },
+        {
+            "move": "Hex",
+            "level": 1
+        },
         {
             "move": "Destiny Bond",
             "level": 1
         },
         {
-            "move": "Double Team",
+            "move": "Protect",
             "level": 1
         },
         {
-            "move": "Ice Shard",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Leer",
+            "move": "Ice Fang",
             "level": 1
         },
         {
-            "move": "Ominous Wind",
+            "move": "Headbutt",
+            "level": 1
+        },
+        {
+            "move": "Crunch",
             "level": 1
         },
         {
@@ -80,64 +92,228 @@
             "level": 1
         },
         {
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Leer",
+            "level": 1
+        },
+        {
             "move": "Double Team",
-            "level": 5
+            "level": 1
         },
         {
             "move": "Ice Shard",
-            "level": 10
-        },
-        {
-            "move": "Icy Wind",
-            "level": 14
-        },
-        {
-            "move": "Astonish",
-            "level": 19
+            "level": 15
         },
         {
             "move": "Draining Kiss",
-            "level": 23
+            "level": 20
         },
         {
-            "move": "Will-O-Wisp",
-            "level": 28
+            "move": "Icy Wind",
+            "level": 25
+        },
+        {
+            "move": "Frost Breath",
+            "level": 30
         },
         {
             "move": "Confuse Ray",
-            "level": 32
-        },
-        {
-            "move": "Wake-Up Slap",
-            "level": 37
-        },
-        {
-            "move": "Captivate",
-            "level": 41
-        },
-        {
-            "move": "Shadow Ball",
-            "level": 42
-        },
-        {
-            "move": "Blizzard",
-            "level": 48
+            "level": 35
         },
         {
             "move": "Hail",
+            "level": 40
+        },
+        {
+            "move": "Will-O-Wisp",
+            "level": 47
+        },
+        {
+            "move": "Aurora Veil",
             "level": 54
         },
         {
-            "move": "Destiny Bond",
+            "move": "Shadow Ball",
             "level": 61
         },
         {
-            "move": "Avalanche",
-            "egg_move": true
+            "move": "Blizzard",
+            "level": 68
         },
         {
-            "move": "Bide",
-            "egg_move": true
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Icicle Spear",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
         },
         {
             "move": "Block",
@@ -148,11 +324,7 @@
             "egg_move": true
         },
         {
-            "move": "Fake Tears",
-            "egg_move": true
-        },
-        {
-            "move": "Hex",
+            "move": "Switcheroo",
             "egg_move": true
         },
         {
@@ -160,164 +332,8 @@
             "egg_move": true
         },
         {
-            "move": "Spikes",
+            "move": "Icicle Crash",
             "egg_move": true
-        },
-        {
-            "move": "Switcheroo",
-            "egg_move": true
-        },
-        {
-            "move": "Weather Ball",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Aurora Veil",
-            "tm": "TM70"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Frost Breath",
-            "tm": "TM79"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

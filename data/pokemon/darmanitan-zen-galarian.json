@@ -1,146 +1,124 @@
 {
-    "name": "Gardevoir",
-    "national_id": 282,
+    "name": "Darmanitan",
+    "national_id": 555,
     "types": [
-        "Psychic",
-        "Fairy"
+        "Ice",
+        "Fire"
     ],
     "abilities": [
         {
-            "name": "Synchronize"
+            "name": "Gorilla Tactics"
         },
         {
-            "name": "Trace"
-        },
-        {
-            "name": "Telepathy",
+            "name": "Zen Mode",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 60,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Amorphous"
+        "Field"
     ],
     "hatch_time": [
-        5355,
-        5609
+        5140,
+        5396
     ],
-    "height_us": "5'03\"",
-    "height_eu": "1.6 m",
-    "weight_us": "106.7 lbs.",
-    "weight_eu": "48.4 kg",
-    "base_exp_yield": 233,
-    "leveling_rate": "Slow",
-    "base_friendship": 35,
+    "height_us": "5'07\"",
+    "height_eu": "1.7 m",
+    "weight_us": "264.6 lbs.",
+    "weight_eu": "120.0 kg",
+    "base_exp_yield": 168,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 3,
+        "sp_atk": 2,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 68,
-        "atk": 65,
-        "def": 65,
-        "sp_atk": 125,
-        "sp_def": 115,
-        "speed": 80
+        "hp": 105,
+        "atk": 160,
+        "def": 55,
+        "sp_atk": 30,
+        "sp_def": 55,
+        "speed": 135
     },
-    "evolution_from": "Kirlia",
+    "evolution_from": "Darumaka",
+    "evolution_from_regional": "Galarian",
     "evolutions": [],
-    "species": "Embrace Pokémon",
+    "species": "Zen Charm Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "To protect its Trainer, it will expend all its psychic power to create a small black hole.",
+    "pokedex_entry": "Darmanitan takes this form when enraged. It won't stop spewing flames until its rage has settled, even if its body starts to melt.",
     "move_learnset": [
         {
-            "move": "Dazzling Gleam",
+            "move": "Icicle Crash",
             "evo": true
         },
         {
-            "move": "Dazzling Gleam",
+            "move": "Icicle Crash",
             "level": 1
         },
         {
-            "move": "Moonblast",
+            "move": "Powder Snow",
             "level": 1
         },
         {
-            "move": "Misty Terrain",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Healing Wish",
+            "move": "Taunt",
             "level": 1
         },
         {
-            "move": "Charm",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Growl",
-            "level": 1
-        },
-        {
-            "move": "Disarming Voice",
-            "level": 1
-        },
-        {
-            "move": "Double Team",
-            "level": 1
-        },
-        {
-            "move": "Confusion",
-            "level": 1
-        },
-        {
-            "move": "Hypnosis",
-            "level": 9
-        },
-        {
-            "move": "Draining Kiss",
+            "move": "Avalanche",
             "level": 12
         },
         {
-            "move": "Teleport",
-            "level": 15
+            "move": "Work Up",
+            "level": 16
         },
         {
-            "move": "Psybeam",
-            "level": 18
+            "move": "Ice Fang",
+            "level": 20
         },
         {
-            "move": "Life Dew",
-            "level": 23
+            "move": "Headbutt",
+            "level": 24
         },
         {
-            "move": "Wish",
+            "move": "Ice Punch",
             "level": 28
         },
         {
-            "move": "Calm Mind",
-            "level": 35
+            "move": "Uproar",
+            "level": 32
         },
         {
-            "move": "Psychic",
-            "level": 42
+            "move": "Belly Drum",
+            "level": 38
         },
         {
-            "move": "Heal Pulse",
-            "level": 49
+            "move": "Blizzard",
+            "level": 44
         },
         {
-            "move": "Dream Eater",
+            "move": "Thrash",
+            "level": 50
+        },
+        {
+            "move": "Superpower",
             "level": 56
-        },
-        {
-            "move": "Future Sight",
-            "level": 63
         },
         {
             "move": "Mega Punch",
@@ -159,10 +137,6 @@
             "tm": true
         },
         {
-            "move": "Thunder Punch",
-            "tm": true
-        },
-        {
             "move": "Hyper Beam",
             "tm": true
         },
@@ -171,27 +145,23 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
+            "move": "Solar Beam",
             "tm": true
         },
         {
-            "move": "Thunder Wave",
+            "move": "Fire Spin",
             "tm": true
         },
         {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
+            "move": "Dig",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -207,19 +177,7 @@
             "tm": true
         },
         {
-            "move": "Icy Wind",
-            "tm": true
-        },
-        {
-            "move": "Charm",
-            "tm": true
-        },
-        {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Rain Dance",
             "tm": true
         },
         {
@@ -235,15 +193,19 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Brick Break",
             "tm": true
         },
         {
-            "move": "Helping Hand",
+            "move": "Rock Tomb",
             "tm": true
         },
         {
-            "move": "Imprison",
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Payback",
             "tm": true
         },
         {
@@ -251,23 +213,15 @@
             "tm": true
         },
         {
-            "move": "Power Swap",
+            "move": "Avalanche",
             "tm": true
         },
         {
-            "move": "Guard Swap",
+            "move": "Ice Fang",
             "tm": true
         },
         {
-            "move": "Trick Room",
-            "tm": true
-        },
-        {
-            "move": "Wonder Room",
-            "tm": true
-        },
-        {
-            "move": "Magic Room",
+            "move": "Fire Fang",
             "tm": true
         },
         {
@@ -275,19 +229,7 @@
             "tm": true
         },
         {
-            "move": "Draining Kiss",
-            "tm": true
-        },
-        {
-            "move": "Misty Terrain",
-            "tm": true
-        },
-        {
-            "move": "Psychic Terrain",
-            "tm": true
-        },
-        {
-            "move": "Mystical Fire",
+            "move": "Bulldoze",
             "tm": true
         },
         {
@@ -295,7 +237,19 @@
             "tm": true
         },
         {
-            "move": "Thunderbolt",
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
             "tm": true
         },
         {
@@ -303,11 +257,19 @@
             "tm": true
         },
         {
+            "move": "Focus Energy",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
             "move": "Substitute",
             "tm": true
         },
         {
-            "move": "Psyshock",
+            "move": "Reversal",
             "tm": true
         },
         {
@@ -323,11 +285,11 @@
             "tm": true
         },
         {
-            "move": "Shadow Ball",
+            "move": "Uproar",
             "tm": true
         },
         {
-            "move": "Future Sight",
+            "move": "Heat Wave",
             "tm": true
         },
         {
@@ -335,19 +297,27 @@
             "tm": true
         },
         {
-            "move": "Trick",
+            "move": "Superpower",
             "tm": true
         },
         {
-            "move": "Skill Swap",
+            "move": "Overheat",
             "tm": true
         },
         {
-            "move": "Hyper Voice",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Calm Mind",
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Flare Blitz",
             "tm": true
         },
         {
@@ -355,11 +325,15 @@
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Zen Headbutt",
             "tm": true
         },
         {
-            "move": "Zen Headbutt",
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
             "tm": true
         },
         {
@@ -367,47 +341,43 @@
             "tm": true
         },
         {
-            "move": "Stored Power",
+            "move": "Work Up",
             "tm": true
         },
         {
-            "move": "Ally Switch",
+            "move": "Body Press",
             "tm": true
         },
         {
-            "move": "Dazzling Gleam",
-            "tm": true
-        },
-        {
-            "move": "Disable",
+            "move": "Focus Punch",
             "egg_move": true
         },
         {
-            "move": "Mean Look",
+            "move": "Hammer Arm",
             "egg_move": true
         },
         {
-            "move": "Memento",
+            "move": "Take Down",
             "egg_move": true
         },
         {
-            "move": "Destiny Bond",
+            "move": "Flame Wheel",
             "egg_move": true
         },
         {
-            "move": "Grudge",
+            "move": "Yawn",
             "egg_move": true
         },
         {
-            "move": "Shadow Sneak",
+            "move": "Freeze-Dry",
             "egg_move": true
         },
         {
-            "move": "Confuse Ray",
+            "move": "Incinerate",
             "egg_move": true
         },
         {
-            "move": "Knock Off",
+            "move": "Power-Up Punch",
             "egg_move": true
         }
     ]

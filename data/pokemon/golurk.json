@@ -59,8 +59,20 @@
     "evolutions": [],
     "species": "Automaton Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It flies across the sky at Mach speeds. Removing the seal on its chest makes its internal energy go out of control.",
+    "pokedex_entry": "There’s a theory that inside Golurk is a perpetual motion machine that produces limitless energy, but this belief hasn’t been proven.",
     "move_learnset": [
+        {
+            "move": "High Horsepower",
+            "level": 1
+        },
+        {
+            "move": "Focus Punch",
+            "level": 1
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 1
+        },
         {
             "move": "Astonish",
             "level": 1
@@ -70,228 +82,292 @@
             "level": 1
         },
         {
-            "move": "Heavy Slam",
-            "level": 1
-        },
-        {
-            "move": "High Horsepower",
-            "level": 1
-        },
-        {
-            "move": "Mud-Slap",
-            "level": 1
-        },
-        {
             "move": "Pound",
             "level": 1
         },
         {
-            "move": "Mud-Slap",
-            "level": 5
-        },
-        {
-            "move": "Rollout",
-            "level": 9
-        },
-        {
             "move": "Shadow Punch",
-            "level": 13
-        },
-        {
-            "move": "Iron Defense",
-            "level": 17
-        },
-        {
-            "move": "Stomping Tantrum",
-            "level": 21
-        },
-        {
-            "move": "Mega Punch",
-            "level": 25
-        },
-        {
-            "move": "Magnitude",
-            "level": 30
-        },
-        {
-            "move": "Dynamic Punch",
-            "level": 35
-        },
-        {
-            "move": "Night Shade",
-            "level": 40
+            "level": 12
         },
         {
             "move": "Curse",
-            "level": 47
+            "level": 16
         },
         {
-            "move": "Earthquake",
-            "level": 54
+            "move": "Night Shade",
+            "level": 20
         },
         {
-            "move": "Hammer Arm",
-            "level": 61
+            "move": "Stomping Tantrum",
+            "level": 24
         },
         {
-            "move": "Focus Punch",
-            "level": 69
+            "move": "Iron Defense",
+            "level": 28
         },
         {
-            "move": "Phantom Force",
-            "level": 76
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
+            "move": "Mega Punch",
+            "level": 32
         },
         {
             "move": "Shadow Ball",
-            "tm": "TM30"
+            "level": 36
         },
         {
-            "move": "Brick Break",
-            "tm": "TM31"
+            "move": "Heavy Slam",
+            "level": 40
         },
         {
-            "move": "Double Team",
-            "tm": "TM32"
+            "move": "Phantom Force",
+            "level": 46
         },
         {
-            "move": "Rock Tomb",
-            "tm": "TM39"
+            "move": "Hammer Arm",
+            "level": 52
         },
         {
-            "move": "Facade",
-            "tm": "TM42"
+            "move": "Earthquake",
+            "level": 58
         },
         {
-            "move": "Rest",
-            "tm": "TM44"
+            "move": "Dynamic Punch",
+            "level": 64
         },
         {
-            "move": "Thief",
-            "tm": "TM46"
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Low Sweep",
-            "tm": "TM47"
+            "move": "Mega Kick",
+            "tm": true
         },
         {
-            "move": "Round",
-            "tm": "TM48"
+            "move": "Fire Punch",
+            "tm": true
         },
         {
-            "move": "Focus Blast",
-            "tm": "TM52"
+            "move": "Ice Punch",
+            "tm": true
         },
         {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
+            "move": "Thunder Punch",
+            "tm": true
         },
         {
             "move": "Fly",
-            "tm": "TM76"
+            "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Thief",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Phantom Force",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
         },
         {
             "move": "Flash Cannon",
-            "tm": "TM91"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Heat Crash",
+            "tm": true
+        },
+        {
+            "move": "Darkest Lariat",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
         }
     ]
 }
