@@ -61,8 +61,16 @@
     "evolutions": [],
     "species": "Cactus Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Arid regions are their habitat. They move rhythmically, making a sound similar to maracas.",
+    "pokedex_entry": "Once each year, this Pokémon scatters its seeds. They’re jam-packed with nutrients, making them a precious food source out in the desert.",
     "move_learnset": [
+        {
+            "move": "Spiky Shield",
+            "level": 1
+        },
+        {
+            "move": "Peck",
+            "level": 1
+        },
         {
             "move": "Absorb",
             "level": 1
@@ -72,208 +80,204 @@
             "level": 1
         },
         {
-            "move": "Cotton Guard",
+            "move": "Ingrain",
             "level": 1
-        },
-        {
-            "move": "Peck",
-            "level": 1
-        },
-        {
-            "move": "Spiky Shield",
-            "level": 1
-        },
-        {
-            "move": "Sweet Scent",
-            "level": 3
         },
         {
             "move": "Growth",
-            "level": 6
-        },
-        {
-            "move": "Pin Missile",
-            "level": 10
+            "level": 4
         },
         {
             "move": "Mega Drain",
-            "level": 13
-        },
-        {
-            "move": "Synthesis",
-            "level": 15
-        },
-        {
-            "move": "Cotton Spore",
-            "level": 18
-        },
-        {
-            "move": "Needle Arm",
-            "level": 22
-        },
-        {
-            "move": "Giga Drain",
-            "level": 26
-        },
-        {
-            "move": "Acupressure",
-            "level": 29
-        },
-        {
-            "move": "Ingrain",
-            "level": 33
-        },
-        {
-            "move": "Petal Dance",
-            "level": 38
-        },
-        {
-            "move": "Sucker Punch",
-            "level": 42
-        },
-        {
-            "move": "Sunny Day",
-            "level": 45
-        },
-        {
-            "move": "Petal Blizzard",
-            "level": 48
-        },
-        {
-            "move": "Solar Beam",
-            "level": 50
-        },
-        {
-            "move": "Cotton Guard",
-            "level": 55
-        },
-        {
-            "move": "After You",
-            "level": 57
-        },
-        {
-            "move": "Bounce",
-            "egg_move": true
-        },
-        {
-            "move": "Bullet Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Grass Whistle",
-            "egg_move": true
-        },
-        {
-            "move": "Grassy Terrain",
-            "egg_move": true
+            "level": 8
         },
         {
             "move": "Leech Seed",
-            "egg_move": true
+            "level": 12
         },
         {
-            "move": "Seed Bomb",
-            "egg_move": true
+            "move": "Sucker Punch",
+            "level": 16
+        },
+        {
+            "move": "Pin Missile",
+            "level": 20
+        },
+        {
+            "move": "Giga Drain",
+            "level": 24
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 28
+        },
+        {
+            "move": "Synthesis",
+            "level": 32
+        },
+        {
+            "move": "Petal Blizzard",
+            "level": 36
+        },
+        {
+            "move": "Cotton Spore",
+            "level": 40
+        },
+        {
+            "move": "Sunny Day",
+            "level": 44
+        },
+        {
+            "move": "Solar Beam",
+            "level": 48
+        },
+        {
+            "move": "Acupressure",
+            "level": 52
+        },
+        {
+            "move": "Petal Dance",
+            "level": 56
+        },
+        {
+            "move": "Cotton Guard",
+            "level": 60
+        },
+        {
+            "move": "Pin Missile",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Bullet Seed",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Grassy Terrain",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
         },
         {
             "move": "Spikes",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Wood Hammer",
-            "egg_move": true
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Leaf Storm",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
         },
         {
             "move": "Worry Seed",
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Wood Hammer",
+            "egg_move": true
         }
     ]
 }

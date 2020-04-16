@@ -13,6 +13,13 @@
     "abilities": [
         {
             "name": "Levitate"
+        },
+        {
+            "name": "Neutralizing Gas"
+        },
+        {
+            "name": "Stench",
+            "hidden": true
         }
     ],
     "catch_rate": 190,
@@ -24,8 +31,8 @@
         "Amorphous"
     ],
     "hatch_time": [
-        5355,
-        5609
+        5140,
+        5396
     ],
     "height_us": "2'00\"",
     "height_eu": "0.6 m",
@@ -55,11 +62,17 @@
         {
             "to": "Weezing",
             "level": 35
+        },
+        {
+            "to": "Weezing",
+            "variant": "Galarian",
+            "level": 35,
+            "region": "Galar"
         }
     ],
     "species": "Poison Gas Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Koffing embodies toxic substances. It mixes the toxins with raw garbage to set off a chemical reaction that results in a terribly powerful Poison Gas. The higher the temperature, the more gas is concocted by this Pokémon.",
+    "pokedex_entry": "It adores polluted air. Some claim that Koffing used to be more plentiful in the Galar region than they are now.",
     "move_learnset": [
         {
             "move": "Poison Gas",
@@ -75,62 +88,178 @@
         },
         {
             "move": "Smokescreen",
-            "level": 7
-        },
-        {
-            "move": "Assurance",
-            "level": 12
+            "level": 8
         },
         {
             "move": "Clear Smog",
-            "level": 15
+            "level": 12
+        },
+        {
+            "move": "Assurance",
+            "level": 16
         },
         {
             "move": "Sludge",
-            "level": 18
-        },
-        {
-            "move": "Self-Destruct",
-            "level": 23
+            "level": 20
         },
         {
             "move": "Haze",
-            "level": 26
+            "level": 24
         },
         {
-            "move": "Gyro Ball",
-            "level": 29
+            "move": "Self-Destruct",
+            "level": 28
         },
         {
             "move": "Sludge Bomb",
-            "level": 34
+            "level": 32
         },
         {
-            "move": "Explosion",
-            "level": 37
-        },
-        {
-            "move": "Destiny Bond",
-            "level": 40
+            "move": "Toxic",
+            "level": 36
         },
         {
             "move": "Belch",
-            "level": 42
+            "level": 40
+        },
+        {
+            "move": "Explosion",
+            "level": 44
         },
         {
             "move": "Memento",
-            "level": 45
-        },
-        {
-            "move": "Curse",
-            "egg_move": true
+            "level": 48
         },
         {
             "move": "Destiny Bond",
-            "egg_move": true
+            "level": 52
         },
         {
-            "move": "Grudge",
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Toxic Spikes",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Venom Drench",
+            "tm": true
+        },
+        {
+            "move": "Psybeam",
             "egg_move": true
         },
         {
@@ -138,23 +267,15 @@
             "egg_move": true
         },
         {
-            "move": "Psybeam",
-            "egg_move": true
-        },
-        {
-            "move": "Psywave",
-            "egg_move": true
-        },
-        {
-            "move": "Screech",
-            "egg_move": true
-        },
-        {
-            "move": "Spit Up",
+            "move": "Grudge",
             "egg_move": true
         },
         {
             "move": "Spite",
+            "egg_move": true
+        },
+        {
+            "move": "Curse",
             "egg_move": true
         },
         {
@@ -166,140 +287,8 @@
             "egg_move": true
         },
         {
-            "move": "Toxic Spikes",
+            "move": "Spit Up",
             "egg_move": true
-        },
-        {
-            "move": "Venom Drench",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

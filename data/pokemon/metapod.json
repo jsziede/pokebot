@@ -53,11 +53,23 @@
     ],
     "species": "Cocoon Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The shell covering this Pokémon’s body is as hard as an iron slab. Metapod does not move very much. It stays still because it is preparing its soft innards for evolution inside the hard shell.",
+    "pokedex_entry": "Even though it is encased in a sturdy shell, the body inside is tender. It can’t withstand a harsh attack.",
     "move_learnset": [
         {
             "move": "Harden",
+            "evo": true
+        },
+        {
+            "move": "Harden",
             "level": 1
+        },
+        {
+            "move": "Electroweb",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
         }
     ]
 }

@@ -54,259 +54,263 @@
     "evolutions": [],
     "species": "Punching Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. This Pokémon has an indomitable spirit and will never give up in the face of adversity.",
+    "pokedex_entry": "Its punches slice the air. However, it seems to need a short break after fighting for three minutes.",
     "move_learnset": [
         {
-            "move": "Agility",
+            "move": "Drain Punch",
+            "evo": true
+        },
+        {
+            "move": "Drain Punch",
             "level": 1
-        },
-        {
-            "move": "Close Combat",
-            "level": 1
-        },
-        {
-            "move": "Comet Punch",
-            "level": 1
-        },
-        {
-            "move": "Counter",
-            "level": 1
-        },
-        {
-            "move": "Focus Punch",
-            "level": 1
-        },
-        {
-            "move": "Mach Punch",
-            "level": 1
-        },
-        {
-            "move": "Pursuit",
-            "level": 1
-        },
-        {
-            "move": "Revenge",
-            "level": 1
-        },
-        {
-            "move": "Agility",
-            "level": 6
-        },
-        {
-            "move": "Pursuit",
-            "level": 11
-        },
-        {
-            "move": "Bullet Punch",
-            "level": 16
-        },
-        {
-            "move": "Mach Punch",
-            "level": 16
         },
         {
             "move": "Feint",
-            "level": 21
+            "level": 1
         },
         {
             "move": "Vacuum Wave",
-            "level": 26
-        },
-        {
-            "move": "Quick Guard",
-            "level": 31
-        },
-        {
-            "move": "Fire Punch",
-            "level": 36
-        },
-        {
-            "move": "Ice Punch",
-            "level": 36
-        },
-        {
-            "move": "Thunder Punch",
-            "level": 36
-        },
-        {
-            "move": "Sky Uppercut",
-            "level": 41
-        },
-        {
-            "move": "Mega Punch",
-            "level": 46
-        },
-        {
-            "move": "Detect",
-            "level": 50
-        },
-        {
-            "move": "Focus Punch",
-            "level": 56
-        },
-        {
-            "move": "Counter",
-            "level": 61
-        },
-        {
-            "move": "Close Combat",
-            "level": 66
+            "level": 1
         },
         {
             "move": "Bullet Punch",
-            "egg_move": true
+            "level": 1
         },
         {
-            "move": "Counter",
-            "egg_move": true
-        },
-        {
-            "move": "Endure",
-            "egg_move": true
-        },
-        {
-            "move": "Feint",
-            "egg_move": true
+            "move": "Tackle",
+            "level": 1
         },
         {
             "move": "Helping Hand",
-            "egg_move": true
+            "level": 1
         },
         {
-            "move": "High Jump Kick",
-            "egg_move": true
+            "move": "Fake Out",
+            "level": 1
+        },
+        {
+            "move": "Focus Energy",
+            "level": 1
         },
         {
             "move": "Mach Punch",
-            "egg_move": true
+            "level": 4
         },
         {
-            "move": "Mind Reader",
-            "egg_move": true
+            "move": "Power-Up Punch",
+            "level": 8
         },
         {
-            "move": "Pursuit",
-            "egg_move": true
+            "move": "Detect",
+            "level": 12
         },
         {
-            "move": "Rapid Spin",
-            "egg_move": true
+            "move": "Revenge",
+            "level": 16
         },
         {
-            "move": "Vacuum Wave",
-            "egg_move": true
+            "move": "Quick Guard",
+            "level": 21
         },
         {
-            "move": "Work Up",
-            "tm": "TM1"
+            "move": "Thunder Punch",
+            "level": 24
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Ice Punch",
+            "level": 24
         },
         {
-            "move": "Bulk Up",
-            "tm": "TM8"
+            "move": "Fire Punch",
+            "level": 24
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
+            "move": "Agility",
+            "level": 28
         },
         {
-            "move": "Sunny Day",
-            "tm": "TM11"
+            "move": "Mega Punch",
+            "level": 32
         },
         {
-            "move": "Protect",
-            "tm": "TM17"
+            "move": "Close Combat",
+            "level": 36
         },
         {
-            "move": "Rain Dance",
-            "tm": "TM18"
+            "move": "Counter",
+            "level": 40
         },
         {
-            "move": "Frustration",
-            "tm": "TM21"
+            "move": "Focus Punch",
+            "level": 44
         },
         {
-            "move": "Earthquake",
-            "tm": "TM26"
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Return",
-            "tm": "TM27"
+            "move": "Mega Kick",
+            "tm": true
         },
         {
-            "move": "Brick Break",
-            "tm": "TM31"
+            "move": "Fire Punch",
+            "tm": true
         },
         {
-            "move": "Double Team",
-            "tm": "TM32"
+            "move": "Ice Punch",
+            "tm": true
         },
         {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
+            "move": "Thunder Punch",
+            "tm": true
         },
         {
             "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Thief",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Focus Energy",
+            "tm": true
+        },
+        {
+            "move": "Metronome",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Aura Sphere",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
         }
     ]
 }

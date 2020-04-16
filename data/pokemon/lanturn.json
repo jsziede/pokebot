@@ -62,34 +62,22 @@
     "evolutions": [],
     "species": "Light Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Lanturn is known to emit light. If you peer down into the dark sea from a ship at night, you can sometimes see this Pokémon's light rising from the depths where it swims. It gives the sea an appearance of a starlit night.",
+    "pokedex_entry": "This Pokémon flashes a bright light that blinds its prey. This creates an opening for it to deliver an electrical attack.",
     "move_learnset": [
         {
-            "move": "Bubble",
-            "level": 1
+            "move": "Stockpile",
+            "evo": true
         },
         {
-            "move": "Eerie Impulse",
-            "level": 1
-        },
-        {
-            "move": "Electro Ball",
-            "level": 1
+            "move": "Swallow",
+            "evo": true
         },
         {
             "move": "Spit Up",
-            "level": 1
-        },
-        {
-            "move": "Spotlight",
-            "level": 1
+            "evo": true
         },
         {
             "move": "Stockpile",
-            "level": 1
-        },
-        {
-            "move": "Supersonic",
             "level": 1
         },
         {
@@ -97,79 +85,207 @@
             "level": 1
         },
         {
-            "move": "Thunder Wave",
+            "move": "Spit Up",
+            "level": 1
+        },
+        {
+            "move": "Eerie Impulse",
+            "level": 1
+        },
+        {
+            "move": "Water Gun",
+            "level": 1
+        },
+        {
+            "move": "Supersonic",
+            "level": 1
+        },
+        {
+            "move": "Electro Ball",
             "level": 1
         },
         {
             "move": "Thunder Wave",
-            "level": 6
+            "level": 1
         },
         {
-            "move": "Electro Ball",
-            "level": 9
-        },
-        {
-            "move": "Water Gun",
+            "move": "Bubble Beam",
             "level": 12
         },
         {
             "move": "Confuse Ray",
-            "level": 17
-        },
-        {
-            "move": "Bubble Beam",
-            "level": 20
+            "level": 16
         },
         {
             "move": "Spark",
-            "level": 23
-        },
-        {
-            "move": "Signal Beam",
-            "level": 29
-        },
-        {
-            "move": "Flail",
-            "level": 33
-        },
-        {
-            "move": "Discharge",
-            "level": 37
-        },
-        {
-            "move": "Take Down",
-            "level": 43
-        },
-        {
-            "move": "Aqua Ring",
-            "level": 47
-        },
-        {
-            "move": "Hydro Pump",
-            "level": 51
-        },
-        {
-            "move": "Ion Deluge",
-            "level": 54
+            "level": 20
         },
         {
             "move": "Charge",
-            "level": 58
+            "level": 24
         },
         {
-            "move": "Agility",
-            "egg_move": true
+            "move": "Discharge",
+            "level": 30
         },
         {
-            "move": "Amnesia",
-            "egg_move": true
-        },
-        {
-            "move": "Brine",
-            "egg_move": true
+            "move": "Aqua Ring",
+            "level": 36
         },
         {
             "move": "Flail",
+            "level": 42
+        },
+        {
+            "move": "Take Down",
+            "level": 48
+        },
+        {
+            "move": "Hydro Pump",
+            "level": 54
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Volt Switch",
+            "tm": true
+        },
+        {
+            "move": "Eerie Impulse",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Psybeam",
             "egg_move": true
         },
         {
@@ -177,148 +293,12 @@
             "egg_move": true
         },
         {
-            "move": "Psybeam",
-            "egg_move": true
-        },
-        {
-            "move": "Screech",
-            "egg_move": true
-        },
-        {
-            "move": "Shock Wave",
+            "move": "Water Pulse",
             "egg_move": true
         },
         {
             "move": "Soak",
             "egg_move": true
-        },
-        {
-            "move": "Water Pulse",
-            "egg_move": true
-        },
-        {
-            "move": "Whirlpool",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Volt Switch",
-            "tm": "TM72"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

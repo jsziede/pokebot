@@ -52,8 +52,48 @@
     "evolutions": [],
     "species": "Lightning Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.",
+    "pokedex_entry": "It accumulates negative ions in the atmosphere to blast out 10,000-volt lightning bolts.",
     "move_learnset": [
+        {
+            "move": "Thunder Shock",
+            "evo": true
+        },
+        {
+            "move": "Thunder Shock",
+            "level": 1
+        },
+        {
+            "move": "Covet",
+            "level": 1
+        },
+        {
+            "move": "Swift",
+            "level": 1
+        },
+        {
+            "move": "Bite",
+            "level": 1
+        },
+        {
+            "move": "Copycat",
+            "level": 1
+        },
+        {
+            "move": "Baton Pass",
+            "level": 1
+        },
+        {
+            "move": "Take Down",
+            "level": 1
+        },
+        {
+            "move": "Charm",
+            "level": 1
+        },
+        {
+            "move": "Double-Edge",
+            "level": 1
+        },
         {
             "move": "Helping Hand",
             "level": 1
@@ -63,11 +103,11 @@
             "level": 1
         },
         {
-            "move": "Tail Whip",
+            "move": "Growl",
             "level": 1
         },
         {
-            "move": "Thunder Shock",
+            "move": "Tail Whip",
             "level": 1
         },
         {
@@ -75,55 +115,203 @@
             "level": 5
         },
         {
-            "move": "Baby-Doll Eyes",
-            "level": 9
-        },
-        {
             "move": "Quick Attack",
-            "level": 13
+            "level": 10
         },
         {
-            "move": "Double Kick",
-            "level": 17
-        },
-        {
-            "move": "Thunder Fang",
-            "level": 20
-        },
-        {
-            "move": "Pin Missile",
-            "level": 25
-        },
-        {
-            "move": "Agility",
-            "level": 29
+            "move": "Baby-Doll Eyes",
+            "level": 15
         },
         {
             "move": "Thunder Wave",
-            "level": 33
+            "level": 20
+        },
+        {
+            "move": "Double Kick",
+            "level": 25
+        },
+        {
+            "move": "Thunder Fang",
+            "level": 30
+        },
+        {
+            "move": "Pin Missile",
+            "level": 35
         },
         {
             "move": "Discharge",
-            "level": 37
+            "level": 40
         },
         {
-            "move": "Last Resort",
-            "level": 41
-        },
-        {
-            "move": "Thunder",
+            "move": "Agility",
             "level": 45
         },
         {
-            "move": "Captivate",
-            "egg_move": true
+            "move": "Thunder",
+            "level": 50
+        },
+        {
+            "move": "Last Resort",
+            "level": 55
+        },
+        {
+            "move": "Pay Day",
+            "tm": true
+        },
+        {
+            "move": "Pin Missile",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
         },
         {
             "move": "Charm",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Covet",
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Thunder Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Volt Switch",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Focus Energy",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "Flail",
             "egg_move": true
         },
         {
@@ -131,39 +319,7 @@
             "egg_move": true
         },
         {
-            "move": "Detect",
-            "egg_move": true
-        },
-        {
-            "move": "Endure",
-            "egg_move": true
-        },
-        {
-            "move": "Fake Tears",
-            "egg_move": true
-        },
-        {
-            "move": "Flail",
-            "egg_move": true
-        },
-        {
-            "move": "Natural Gift",
-            "egg_move": true
-        },
-        {
-            "move": "Stored Power",
-            "egg_move": true
-        },
-        {
-            "move": "Synchronoise",
-            "egg_move": true
-        },
-        {
             "move": "Tickle",
-            "egg_move": true
-        },
-        {
-            "move": "Wish",
             "egg_move": true
         },
         {
@@ -171,120 +327,21 @@
             "egg_move": true
         },
         {
-            "move": "Work Up",
-            "tm": "TM1"
+            "move": "Detect",
+            "egg_move": true
         },
         {
-            "move": "Roar",
-            "tm": "TM5"
+            "move": "Double Kick",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Mud-Slap",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Volt Switch",
-            "tm": "TM72"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Wish",
+            "egg_move": true
         }
+    ]
     ]
 }

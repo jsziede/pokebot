@@ -45,14 +45,18 @@
     "evolutions": [],
     "species": "Hex Nut Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Revered long ago for its capacity to create iron from nothing, for some reason it has come back to life after 3,000 years.",
+    "pokedex_entry": "Centrifugal force is behind the punches of Melmetal’s heavy hex-nut arms. Melmetal is said to deliver the strongest punches of all Pokémon.",
     "move_learnset": [
+        {
+            "move": "Thunder Punch",
+            "evo": true
+        },
         {
             "move": "Thunder Punch",
             "level": 1
         },
         {
-            "move": "Headbutt",
+            "move": "Thunder Shock",
             "level": 1
         },
         {
@@ -64,120 +68,188 @@
             "level": 1
         },
         {
-            "move": "Thunder Wave",
+            "move": "Headbutt",
             "level": 1
         },
         {
-            "move": "Tail Whip",
-            "level": 9
-        },
-        {
             "move": "Thunder Wave",
-            "level": 18
-        },
-        {
-            "move": "Thunder Shock",
-            "level": 27
+            "level": 24
         },
         {
             "move": "Acid Armor",
-            "level": 36
+            "level": 32
         },
         {
             "move": "Flash Cannon",
-            "level": 45
+            "level": 40
         },
         {
             "move": "Mega Punch",
-            "level": 54
+            "level": 48
         },
         {
             "move": "Protect",
-            "level": 63
+            "level": 56
         },
         {
-            "move": "Double Iron Bash",
+            "move": "Discharge",
+            "level": 64
+        },
+        {
+            "move": "Dynamic Punch",
             "level": 72
         },
         {
             "move": "Superpower",
-            "level": 81
+            "level": 80
+        },
+        {
+            "move": "Double Iron Bash",
+            "level": 88
         },
         {
             "move": "Hyper Beam",
-            "level": 90
+            "level": 96
         },
         {
-            "move": "Headbutt",
-            "tm": "TM01"
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Rest",
-            "tm": "TM05"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM07"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM08"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM12"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM13"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM16"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM27"
+            "move": "Mega Kick",
+            "tm": true
         },
         {
             "move": "Ice Punch",
-            "tm": "TM35"
+            "tm": true
         },
         {
-            "move": "Thunderbolt",
-            "tm": "TM36"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM38"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM41"
-        },
-        {
-            "move": "Self-Destruct",
-            "tm": "TM42"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM45"
+            "move": "Thunder Punch",
+            "tm": true
         },
         {
             "move": "Hyper Beam",
-            "tm": "TM48"
+            "tm": true
         },
         {
-            "move": "Superpower",
-            "tm": "TM49"
+            "move": "Giga Impact",
+            "tm": true
         },
         {
-            "move": "Flash Cannon",
-            "tm": "TM54"
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Electric Terrain",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
         },
         {
             "move": "Ice Beam",
-            "tm": "TM55"
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Darkest Lariat",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
         }
     ]
 }

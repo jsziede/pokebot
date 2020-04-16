@@ -46,18 +46,14 @@
     "evolutions": [],
     "species": "Colt Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "When it is resolute, its body fills with power and it becomes swifter. Its jumps are then too fast to follow.",
+    "pokedex_entry": "The power that lay hidden in its body now covers its horn, turning it into a sword that can slice through anything.",
     "move_learnset": [
         {
+            "move": "Secret Sword",
+            "level": 1
+        },
+        {
             "move": "Aqua Jet",
-            "level": 1
-        },
-        {
-            "move": "Bubble Beam",
-            "level": 1
-        },
-        {
-            "move": "Double Kick",
             "level": 1
         },
         {
@@ -65,184 +61,228 @@
             "level": 1
         },
         {
-            "move": "Double Kick",
-            "level": 7
+            "move": "Helping Hand",
+            "level": 1
+        },
+        {
+            "move": "Work Up",
+            "level": 1
         },
         {
             "move": "Bubble Beam",
-            "level": 13
-        },
-        {
-            "move": "Take Down",
-            "level": 19
-        },
-        {
-            "move": "Helping Hand",
-            "level": 25
-        },
-        {
-            "move": "Retaliate",
-            "level": 31
-        },
-        {
-            "move": "Aqua Tail",
-            "level": 37
-        },
-        {
-            "move": "Sacred Sword",
-            "level": 43
-        },
-        {
-            "move": "Swords Dance",
-            "level": 49
+            "level": 7
         },
         {
             "move": "Quick Guard",
-            "level": 55
+            "level": 14
         },
         {
-            "move": "Work Up",
-            "level": 61
+            "move": "Double Kick",
+            "level": 21
         },
         {
-            "move": "Hydro Pump",
-            "level": 67
+            "move": "Retaliate",
+            "level": 28
         },
         {
-            "move": "Close Combat",
-            "level": 73
+            "move": "Aqua Tail",
+            "level": 35
         },
         {
-            "move": "Work Up",
-            "tm": "TM1"
+            "move": "Take Down",
+            "level": 42
         },
         {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Sacred Sword",
+            "level": 49
         },
         {
             "move": "Swords Dance",
-            "tm": "TM75"
+            "level": 56
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77"
+            "move": "Hydro Pump",
+            "level": 63
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "move": "Close Combat",
+            "level": 70
         },
         {
-            "move": "Poison Jab",
-            "tm": "TM84"
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Giga Impact",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Reflect",
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Smart Strike",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
         },
         {
             "move": "Surf",
-            "tm": "TM94"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Megahorn",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Aura Sphere",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
         }
     ]
 }

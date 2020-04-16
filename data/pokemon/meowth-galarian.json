@@ -1,151 +1,134 @@
 {
-    "name": "Hitmonlee",
-    "national_id": 106,
+    "name": "Meowth",
+    "national_id": 52,
     "types": [
-        "Fighting"
+        "Steel"
     ],
+    "items": [],
     "abilities": [
         {
-            "name": "Limber"
+            "name": "Pickup"
         },
         {
-            "name": "Reckless"
+            "name": "Tough Claws"
         },
         {
-            "name": "Unburden",
+            "name": "Unnerve",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 255,
     "gender_ratios": {
-        "male": 100
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Human-Like"
+        "Field"
     ],
     "hatch_time": [
-        6630,
-        6884
+        5355,
+        5609
     ],
-    "height_us": "4'11\"",
-    "height_eu": "1.5 m",
-    "weight_us": "109.8 lbs.",
-    "weight_eu": "49.8 kg",
-    "base_exp_yield": 159,
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "16.5 lbs.",
+    "weight_eu": "7.5 kg",
+    "base_exp_yield": 58,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
-        "atk": 2,
+        "atk": 0,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 0
+        "speed": 1
     },
     "base_stats": {
         "hp": 50,
-        "atk": 120,
-        "def": 53,
-        "sp_atk": 35,
-        "sp_def": 110,
-        "speed": 87
+        "atk": 65,
+        "def": 55,
+        "sp_atk": 40,
+        "sp_def": 40,
+        "speed": 40
     },
-    "evolution_from": "Tyrogue",
-    "evolutions": [],
-    "species": "Kicking Pokémon",
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Perrserker",
+            "level": 28
+        }
+    ],
+    "species": "Scratch Cat Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The legs freely contract and stretch. The stretchy legs allow it to hit a distant foe with a rising kick.",
+    "pokedex_entry": "Living with a savage, seafaring people has toughened this Pokémon's body so much that parts of it have turned to iron.",
     "move_learnset": [
-        {
-            "move": "Brick Break",
-            "evo": true
-        },
-        {
-            "move": "Brick Break",
-            "level": 1
-        },
-        {
-            "move": "Feint",
-            "level": 1
-        },
-        {
-            "move": "Low Sweep",
-            "level": 1
-        },
-        {
-            "move": "Tackle",
-            "level": 1
-        },
-        {
-            "move": "Helping Hand",
-            "level": 1
-        },
         {
             "move": "Fake Out",
             "level": 1
         },
         {
-            "move": "Focus Energy",
+            "move": "Growl",
             "level": 1
         },
         {
-            "move": "Double Kick",
+            "move": "Hone Claws",
             "level": 4
         },
         {
-            "move": "Low Kick",
+            "move": "Scratch",
             "level": 8
         },
         {
-            "move": "Endure",
+            "move": "Pay Day",
             "level": 12
         },
         {
-            "move": "Revenge",
+            "move": "Metal Claw",
             "level": 16
         },
         {
-            "move": "Wide Guard",
-            "level": 21
+            "move": "Taunt",
+            "level": 20
         },
         {
-            "move": "Blaze Kick",
+            "move": "Swagger",
             "level": 24
         },
         {
-            "move": "Mind Reader",
-            "level": 28
+            "move": "Fury Swipes",
+            "level": 29
         },
         {
-            "move": "Mega Kick",
+            "move": "Screech",
             "level": 32
         },
         {
-            "move": "Close Combat",
+            "move": "Slash",
             "level": 36
         },
         {
-            "move": "Reversal",
+            "move": "Metal Sound",
             "level": 40
         },
         {
-            "move": "High Jump Kick",
+            "move": "Thrash",
             "level": 44
         },
         {
-            "move": "Mega Punch",
+            "move": "Pay Day",
             "tm": true
         },
         {
-            "move": "Mega Kick",
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
             "tm": true
         },
         {
             "move": "Rest",
-            "tm": true
-        },
-        {
-            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -177,35 +160,19 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "U-turn",
             "tm": true
         },
         {
-            "move": "Helping Hand",
+            "move": "Payback",
             "tm": true
         },
         {
-            "move": "Revenge",
+            "move": "Assurance",
             "tm": true
         },
         {
-            "move": "Brick Break",
-            "tm": true
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": true
-        },
-        {
-            "move": "Bounce",
-            "tm": true
-        },
-        {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Low Sweep",
+            "move": "Shadow Claw",
             "tm": true
         },
         {
@@ -217,11 +184,7 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": true
-        },
-        {
-            "move": "Stomping Tantrum",
+            "move": "Swords Dance",
             "tm": true
         },
         {
@@ -229,27 +192,19 @@
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Thunderbolt",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Thunder",
             "tm": true
         },
         {
-            "move": "Focus Energy",
-            "tm": true
-        },
-        {
-            "move": "Metronome",
+            "move": "Amnesia",
             "tm": true
         },
         {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Reversal",
             "tm": true
         },
         {
@@ -261,39 +216,59 @@
             "tm": true
         },
         {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
             "move": "Uproar",
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Taunt",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
-            "move": "Bulk Up",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Close Combat",
+            "move": "Gyro Ball",
             "tm": true
         },
         {
-            "move": "Aura Sphere",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
-            "move": "Poison Jab",
+            "move": "Seed Bomb",
             "tm": true
         },
         {
-            "move": "Focus Blast",
+            "move": "Nasty Plot",
             "tm": true
         },
         {
-            "move": "Stone Edge",
+            "move": "Gunk Shot",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
             "tm": true
         },
         {
@@ -301,8 +276,36 @@
             "tm": true
         },
         {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
             "move": "Throat Chop",
             "tm": true
+        },
+        {
+            "move": "Spite",
+            "egg_move": true
+        },
+        {
+            "move": "Double-Edge",
+            "egg_move": true
+        },
+        {
+            "move": "Curse",
+            "egg_move": true
+        },
+        {
+            "move": "Flail",
+            "egg_move": true
+        },
+        {
+            "move": "Night Slash",
+            "egg_move": true
+        },
+        {
+            "move": "Covet",
+            "egg_move": true
         }
     ]
 }

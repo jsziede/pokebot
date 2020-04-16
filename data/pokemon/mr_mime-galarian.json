@@ -1,13 +1,20 @@
 {
-    "name": "Hydreigon",
-    "national_id": 635,
+    "name": "Mr. Mime",
+    "national_id": 122,
     "types": [
-        "Dark",
-        "Dragon"
+        "Ice",
+        "Psychic"
     ],
     "abilities": [
         {
-            "name": "Levitate"
+            "name": "Vital Spirit"
+        },
+        {
+            "name": "Screen Cleaner"
+        },
+        {
+            "name": "Ice Body",
+            "hidden": true
         }
     ],
     "catch_rate": 45,
@@ -16,123 +23,161 @@
         "female": 50
     },
     "egg_groups": [
-        "Dragon"
+        "Human-Like"
     ],
     "hatch_time": [
-        10455,
-        10709
+        6630,
+        6884
     ],
-    "height_us": "5'11\"",
-    "height_eu": "1.8 m",
-    "weight_us": "352.7 lbs.",
-    "weight_eu": "160.0 kg",
-    "base_exp_yield": 270,
-    "leveling_rate": "Slow",
-    "base_friendship": 35,
+    "height_us": "4'07\"",
+    "height_eu": "1.4 m",
+    "weight_us": "125.2 lbs.",
+    "weight_eu": "56.8 kg",
+    "base_exp_yield": 161,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 3,
+        "sp_atk": 0,
         "sp_def": 0,
-        "speed": 0
+        "speed": 2
     },
     "base_stats": {
-        "hp": 92,
-        "atk": 105,
-        "def": 90,
-        "sp_atk": 125,
+        "hp": 50,
+        "atk": 65,
+        "def": 65,
+        "sp_atk": 90,
         "sp_def": 90,
-        "speed": 98
+        "speed": 100
     },
-    "evolution_from": "Zweilous",
-    "evolutions": [],
-    "species": "Brutal Pokémon",
+    "evolution_from": "Mime Jr.",
+    "evolution_region": "Galar",
+    "evolutions": [
+        {
+            "to": "Mr. Rime",
+            "level": 42
+        }
+    ],
+    "species": "Dancing Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The three heads take turns sinking their teeth into the opponent. Their attacks won’t slow until their target goes down.",
+    "pokedex_entry": "It can radiate chilliness from the bottoms of its feet. It'll spend the whole day tap-dancing on a frozen floor.",
     "move_learnset": [
         {
-            "move": "Tackle",
+            "move": "Copycat",
             "level": 1
         },
         {
-            "move": "Double Hit",
+            "move": "Encore",
             "level": 1
         },
         {
-            "move": "Tri Attack",
+            "move": "Role Play",
             "level": 1
         },
         {
-            "move": "Focus Energy",
+            "move": "Protect",
             "level": 1
         },
         {
-            "move": "Dragon Breath",
+            "move": "Recycle",
             "level": 1
         },
         {
-            "move": "Bite",
+            "move": "Mimic",
             "level": 1
         },
         {
-            "move": "Roar",
+            "move": "Light Screen",
+            "level": 1
+        },
+        {
+            "move": "Reflect",
+            "level": 1
+        },
+        {
+            "move": "Safeguard",
+            "level": 1
+        },
+        {
+            "move": "Dazzling Gleam",
+            "level": 1
+        },
+        {
+            "move": "Misty Terrain",
+            "level": 1
+        },
+        {
+            "move": "Pound",
+            "level": 1
+        },
+        {
+            "move": "Rapid Spin",
+            "level": 1
+        },
+        {
+            "move": "Baton Pass",
+            "level": 1
+        },
+        {
+            "move": "Ice Shard",
+            "level": 1
+        },
+        {
+            "move": "Confusion",
             "level": 12
         },
         {
-            "move": "Assurance",
+            "move": "Ally Switch",
             "level": 16
         },
         {
-            "move": "Headbutt",
+            "move": "Icy Wind",
             "level": 20
         },
         {
-            "move": "Work Up",
+            "move": "Double Kick",
             "level": 24
         },
         {
-            "move": "Slam",
+            "move": "Psybeam",
             "level": 28
         },
         {
-            "move": "Crunch",
+            "move": "Hypnosis",
             "level": 32
         },
         {
-            "move": "Scary Face",
+            "move": "Mirror Coat",
             "level": 36
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Sucker Punch",
             "level": 40
         },
         {
-            "move": "Body Slam",
+            "move": "Freeze-Dry",
             "level": 44
         },
         {
-            "move": "Hyper Voice",
+            "move": "Psychic",
             "level": 48
         },
         {
-            "move": "Dragon Rush",
-            "level": 54
+            "move": "Teeter Dance",
+            "level": 52
         },
         {
-            "move": "Nasty Plot",
-            "level": 60
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Outrage",
-            "level": 68
+            "move": "Mega Kick",
+            "tm": true
         },
         {
-            "move": "Hyper Beam",
-            "level": 76
-        },
-        {
-            "move": "Fly",
+            "move": "Ice Punch",
             "tm": true
         },
         {
@@ -144,7 +189,7 @@
             "tm": true
         },
         {
-            "move": "Fire Spin",
+            "move": "Solar Beam",
             "tm": true
         },
         {
@@ -156,15 +201,19 @@
             "tm": true
         },
         {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
             "move": "Reflect",
             "tm": true
         },
         {
-            "move": "Rest",
+            "move": "Safeguard",
             "tm": true
         },
         {
-            "move": "Rock Slide",
+            "move": "Rest",
             "tm": true
         },
         {
@@ -180,11 +229,11 @@
             "tm": true
         },
         {
-            "move": "Scary Face",
+            "move": "Icy Wind",
             "tm": true
         },
         {
-            "move": "Steel Wing",
+            "move": "Charm",
             "tm": true
         },
         {
@@ -200,7 +249,7 @@
             "tm": true
         },
         {
-            "move": "Beat Up",
+            "move": "Hail",
             "tm": true
         },
         {
@@ -212,11 +261,11 @@
             "tm": true
         },
         {
-            "move": "Rock Tomb",
+            "move": "Brick Break",
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Icicle Spear",
             "tm": true
         },
         {
@@ -224,19 +273,35 @@
             "tm": true
         },
         {
-            "move": "Assurance",
+            "move": "Fling",
             "tm": true
         },
         {
-            "move": "Thunder Fang",
+            "move": "Power Swap",
             "tm": true
         },
         {
-            "move": "Ice Fang",
+            "move": "Guard Swap",
             "tm": true
         },
         {
-            "move": "Fire Fang",
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Trick Room",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
             "tm": true
         },
         {
@@ -244,23 +309,15 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Misty Terrain",
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Psychic Terrain",
             "tm": true
         },
         {
-            "move": "Snarl",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Breaking Swipe",
+            "move": "Stomping Tantrum",
             "tm": true
         },
         {
@@ -268,31 +325,27 @@
             "tm": true
         },
         {
-            "move": "Flamethrower",
+            "move": "Ice Beam",
             "tm": true
         },
         {
-            "move": "Hydro Pump",
+            "move": "Blizzard",
             "tm": true
         },
         {
-            "move": "Surf",
+            "move": "Thunderbolt",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Thunder",
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Psychic",
             "tm": true
         },
         {
-            "move": "Fire Blast",
-            "tm": true
-        },
-        {
-            "move": "Tri Attack",
+            "move": "Metronome",
             "tm": true
         },
         {
@@ -300,7 +353,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Psyshock",
             "tm": true
         },
         {
@@ -312,11 +365,19 @@
             "tm": true
         },
         {
-            "move": "Iron Tail",
+            "move": "Baton Pass",
             "tm": true
         },
         {
-            "move": "Crunch",
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
             "tm": true
         },
         {
@@ -324,31 +385,23 @@
             "tm": true
         },
         {
-            "move": "Heat Wave",
-            "tm": true
-        },
-        {
             "move": "Taunt",
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Trick",
             "tm": true
         },
         {
-            "move": "Hyper Voice",
+            "move": "Skill Swap",
             "tm": true
         },
         {
-            "move": "Dragon Dance",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Dark Pulse",
-            "tm": true
-        },
-        {
-            "move": "Dragon Pulse",
+            "move": "Calm Mind",
             "tm": true
         },
         {
@@ -356,7 +409,7 @@
             "tm": true
         },
         {
-            "move": "Earth Power",
+            "move": "Energy Ball",
             "tm": true
         },
         {
@@ -368,35 +421,39 @@
             "tm": true
         },
         {
-            "move": "Flash Cannon",
+            "move": "Grass Knot",
             "tm": true
         },
         {
-            "move": "Stone Edge",
+            "move": "Foul Play",
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Stored Power",
             "tm": true
         },
         {
-            "move": "Throat Chop",
+            "move": "Ally Switch",
             "tm": true
         },
         {
-            "move": "Double Hit",
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Fake Out",
             "egg_move": true
         },
         {
-            "move": "Astonish",
+            "move": "Confuse Ray",
             "egg_move": true
         },
         {
-            "move": "Head Smash",
+            "move": "Power Split",
             "egg_move": true
         },
         {
-            "move": "Belch",
+            "move": "Tickle",
             "egg_move": true
         }
     ]

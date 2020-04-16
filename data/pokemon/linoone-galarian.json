@@ -1,75 +1,100 @@
 {
-    "name": "Hitmonlee",
-    "national_id": 106,
+    "name": "Linoone",
+    "national_id": 264,
     "types": [
-        "Fighting"
+        "Dark",
+        "Normal"
+    ],
+    "items": [
+        {
+            "name": "Max Revive",
+            "chance": 5
+        },
+        {
+            "name": "Potion",
+            "chance": 50
+        }
     ],
     "abilities": [
         {
-            "name": "Limber"
+            "name": "Pickup"
         },
         {
-            "name": "Reckless"
+            "name": "Gluttony"
         },
         {
-            "name": "Unburden",
+            "name": "Quick Feet",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 90,
     "gender_ratios": {
-        "male": 100
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Human-Like"
+        "Field"
     ],
     "hatch_time": [
-        6630,
-        6884
+        4080,
+        4334
     ],
-    "height_us": "4'11\"",
-    "height_eu": "1.5 m",
-    "weight_us": "109.8 lbs.",
-    "weight_eu": "49.8 kg",
-    "base_exp_yield": 159,
+    "height_us": "1'08\"",
+    "height_eu": "0.5 m",
+    "weight_us": "71.6 lbs.",
+    "weight_eu": "32.5 kg",
+    "base_exp_yield": 147,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
         "hp": 0,
-        "atk": 2,
+        "atk": 0,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 0
+        "speed": 2
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 120,
-        "def": 53,
-        "sp_atk": 35,
-        "sp_def": 110,
-        "speed": 87
+        "hp": 78,
+        "atk": 70,
+        "def": 61,
+        "sp_atk": 50,
+        "sp_def": 61,
+        "speed": 100
     },
-    "evolution_from": "Tyrogue",
-    "evolutions": [],
-    "species": "Kicking Pokémon",
+    "evolution_from": "Zigzagoon",
+    "evolution_from_regional": "Galarian",
+    "evolutions": [
+        {
+            "to": "Obstagoon",
+            "level": 35,
+            "conditions": [
+                "Nighttime"
+            ]
+        }
+    ],
+    "species": "Rushing Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The legs freely contract and stretch. The stretchy legs allow it to hit a distant foe with a rising kick.",
+    "pokedex_entry": "It uses its long tongue to taunt opponents. Once the opposition is enraged, this Pokémon hurls itself at the opponent, tackling them forcefully.",
     "move_learnset": [
         {
-            "move": "Brick Break",
+            "move": "Night Slash",
             "evo": true
         },
         {
-            "move": "Brick Break",
+            "move": "Night Slash",
             "level": 1
         },
         {
-            "move": "Feint",
+            "move": "Switcheroo",
             "level": 1
         },
         {
-            "move": "Low Sweep",
+            "move": "Pin Missile",
+            "level": 1
+        },
+        {
+            "move": "Baby-Doll Eyes",
             "level": 1
         },
         {
@@ -77,75 +102,83 @@
             "level": 1
         },
         {
-            "move": "Helping Hand",
+            "move": "Leer",
             "level": 1
         },
         {
-            "move": "Fake Out",
+            "move": "Sand Attack",
             "level": 1
         },
         {
-            "move": "Focus Energy",
+            "move": "Lick",
             "level": 1
         },
         {
-            "move": "Double Kick",
-            "level": 4
+            "move": "Snarl",
+            "level": 9
         },
         {
-            "move": "Low Kick",
-            "level": 8
-        },
-        {
-            "move": "Endure",
+            "move": "Headbutt",
             "level": 12
         },
         {
-            "move": "Revenge",
-            "level": 16
+            "move": "Hone Claws",
+            "level": 15
         },
         {
-            "move": "Wide Guard",
-            "level": 21
+            "move": "Fury Swipes",
+            "level": 18
         },
         {
-            "move": "Blaze Kick",
-            "level": 24
+            "move": "Rest",
+            "level": 23
         },
         {
-            "move": "Mind Reader",
+            "move": "Take Down",
             "level": 28
         },
         {
-            "move": "Mega Kick",
-            "level": 32
+            "move": "Scary Face",
+            "level": 33
         },
         {
-            "move": "Close Combat",
-            "level": 36
+            "move": "Counter",
+            "level": 38
         },
         {
-            "move": "Reversal",
-            "level": 40
+            "move": "Taunt",
+            "level": 43
         },
         {
-            "move": "High Jump Kick",
-            "level": 44
+            "move": "Double-Edge",
+            "level": 48
         },
         {
-            "move": "Mega Punch",
+            "move": "Pin Missile",
             "tm": true
         },
         {
-            "move": "Mega Kick",
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
             "tm": true
         },
         {
             "move": "Rest",
-            "tm": true
-        },
-        {
-            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -161,6 +194,14 @@
             "tm": true
         },
         {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
             "move": "Attract",
             "tm": true
         },
@@ -170,6 +211,10 @@
         },
         {
             "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -185,19 +230,19 @@
             "tm": true
         },
         {
-            "move": "Revenge",
+            "move": "Fake Tears",
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Mud Shot",
             "tm": true
         },
         {
-            "move": "Rock Tomb",
+            "move": "Payback",
             "tm": true
         },
         {
-            "move": "Bounce",
+            "move": "Assurance",
             "tm": true
         },
         {
@@ -205,7 +250,7 @@
             "tm": true
         },
         {
-            "move": "Low Sweep",
+            "move": "Shadow Claw",
             "tm": true
         },
         {
@@ -217,7 +262,7 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Snarl",
             "tm": true
         },
         {
@@ -229,27 +274,27 @@
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Surf",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Ice Beam",
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Blizzard",
             "tm": true
         },
         {
-            "move": "Metronome",
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
             "tm": true
         },
         {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Reversal",
             "tm": true
         },
         {
@@ -261,39 +306,35 @@
             "tm": true
         },
         {
-            "move": "Uproar",
+            "move": "Iron Tail",
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Shadow Ball",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Taunt",
             "tm": true
         },
         {
-            "move": "Bulk Up",
+            "move": "Trick",
             "tm": true
         },
         {
-            "move": "Close Combat",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
-            "move": "Aura Sphere",
+            "move": "Seed Bomb",
             "tm": true
         },
         {
-            "move": "Poison Jab",
+            "move": "Gunk Shot",
             "tm": true
         },
         {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Stone Edge",
+            "move": "Grass Knot",
             "tm": true
         },
         {
@@ -302,6 +343,10 @@
         },
         {
             "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
             "tm": true
         }
     ]

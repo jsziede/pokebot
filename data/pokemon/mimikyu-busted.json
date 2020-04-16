@@ -55,18 +55,10 @@
     "evolutions": [],
     "species": "Disguise Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Although it’s a quiet, lonely Pokémon, if you try to look at what’s under its rag, it will become agitated and resist violently.",
+    "pokedex_entry": "There will be no forgiveness for any who reveal that it was pretending to be Pikachu. It will bring the culprit down, even at the cost of its own life.",
     "move_learnset": [
         {
-            "move": "Astonish",
-            "level": 1
-        },
-        {
-            "move": "Copycat",
-            "level": 1
-        },
-        {
-            "move": "Scratch",
+            "move": "Wood Hammer",
             "level": 1
         },
         {
@@ -74,55 +66,231 @@
             "level": 1
         },
         {
-            "move": "Wood Hammer",
+            "move": "Astonish",
             "level": 1
         },
         {
-            "move": "Double Team",
-            "level": 5
+            "move": "Scratch",
+            "level": 1
         },
         {
-            "move": "Baby-Doll Eyes",
-            "level": 10
+            "move": "Copycat",
+            "level": 1
         },
         {
             "move": "Shadow Sneak",
-            "level": 14
+            "level": 6
+        },
+        {
+            "move": "Double Team",
+            "level": 12
+        },
+        {
+            "move": "Baby-Doll Eyes",
+            "level": 18
         },
         {
             "move": "Mimic",
-            "level": 19
-        },
-        {
-            "move": "Feint Attack",
-            "level": 23
-        },
-        {
-            "move": "Charm",
-            "level": 28
-        },
-        {
-            "move": "Slash",
-            "level": 32
-        },
-        {
-            "move": "Shadow Claw",
-            "level": 37
+            "level": 24
         },
         {
             "move": "Hone Claws",
-            "level": 41
+            "level": 30
+        },
+        {
+            "move": "Slash",
+            "level": 36
+        },
+        {
+            "move": "Shadow Claw",
+            "level": 42
+        },
+        {
+            "move": "Charm",
+            "level": 48
         },
         {
             "move": "Play Rough",
-            "level": 46
+            "level": 54
         },
         {
             "move": "Pain Split",
-            "level": 50
+            "level": 60
         },
         {
-            "move": "Curse",
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Trick Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Phantom Force",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Grudge",
             "egg_move": true
         },
         {
@@ -130,176 +298,8 @@
             "egg_move": true
         },
         {
-            "move": "Grudge",
+            "move": "Curse",
             "egg_move": true
-        },
-        {
-            "move": "Nightmare",
-            "egg_move": true
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Bulk Up",
-            "tm": "TM8"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Trick Room",
-            "tm": "TM92"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

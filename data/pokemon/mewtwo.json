@@ -49,14 +49,10 @@
     "evolutions": [],
     "species": "Genetic Pokémon",
     "mega_evolves": true,
-    "pokedex_entry": "Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.",
+    "pokedex_entry": "The research efforts of a certain scientist ultimately resulted in this Pokémon. Its powers are dedicated to battling.",
     "move_learnset": [
         {
-            "move": "Confusion",
-            "level": 1
-        },
-        {
-            "move": "Disable",
+            "move": "Life Dew",
             "level": 1
         },
         {
@@ -64,300 +60,396 @@
             "level": 1
         },
         {
-            "move": "Psywave",
+            "move": "Disable",
             "level": 1
         },
         {
-            "move": "Safeguard",
+            "move": "Confusion",
             "level": 1
         },
         {
             "move": "Swift",
+            "level": 1
+        },
+        {
+            "move": "Ancient Power",
             "level": 8
         },
         {
-            "move": "Future Sight",
-            "level": 15
-        },
-        {
-            "move": "Psych Up",
-            "level": 22
-        },
-        {
-            "move": "Miracle Eye",
-            "level": 29
-        },
-        {
             "move": "Psycho Cut",
-            "level": 36
-        },
-        {
-            "move": "Guard Swap",
-            "level": 43
-        },
-        {
-            "move": "Power Swap",
-            "level": 43
-        },
-        {
-            "move": "Recover",
-            "level": 50
-        },
-        {
-            "move": "Psychic",
-            "level": 57
-        },
-        {
-            "move": "Barrier",
-            "level": 64
-        },
-        {
-            "move": "Aura Sphere",
-            "level": 70
-        },
-        {
-            "move": "Amnesia",
-            "level": 79
-        },
-        {
-            "move": "Mist",
-            "level": 86
-        },
-        {
-            "move": "Me First",
-            "level": 93
-        },
-        {
-            "move": "Psystrike",
-            "level": 100
-        },
-        {
-            "move": "Psyshock",
-            "tm": "TM3"
-        },
-        {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Bulk Up",
-            "tm": "TM8"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
+            "level": 16
         },
         {
             "move": "Safeguard",
-            "tm": "TM20"
+            "level": 24
         },
         {
-            "move": "Frustration",
-            "tm": "TM21"
+            "move": "Amnesia",
+            "level": 32
         },
         {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
+            "move": "Aura Sphere",
+            "level": 40
         },
         {
             "move": "Psychic",
-            "tm": "TM29"
+            "level": 48
         },
         {
-            "move": "Shadow Ball",
-            "tm": "TM30"
+            "move": "Power Swap",
+            "level": 56
         },
         {
-            "move": "Brick Break",
-            "tm": "TM31"
+            "move": "Guard Swap",
+            "level": 56
         },
         {
-            "move": "Double Team",
-            "tm": "TM32"
+            "move": "Mist",
+            "level": 64
         },
         {
-            "move": "Reflect",
-            "tm": "TM33"
+            "move": "Psystrike",
+            "level": 72
         },
         {
-            "move": "Flamethrower",
-            "tm": "TM35"
+            "move": "Recover",
+            "level": 80
         },
         {
-            "move": "Sandstorm",
-            "tm": "TM37"
+            "move": "Future Sight",
+            "level": 88
         },
         {
-            "move": "Fire Blast",
-            "tm": "TM38"
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Rock Tomb",
-            "tm": "TM39"
+            "move": "Mega Kick",
+            "tm": true
         },
         {
-            "move": "Aerial Ace",
-            "tm": "TM40"
+            "move": "Pay Day",
+            "tm": true
         },
         {
-            "move": "Torment",
-            "tm": "TM41"
+            "move": "Fire Punch",
+            "tm": true
         },
         {
-            "move": "Facade",
-            "tm": "TM42"
+            "move": "Ice Punch",
+            "tm": true
         },
         {
-            "move": "Rest",
-            "tm": "TM44"
+            "move": "Thunder Punch",
+            "tm": true
         },
         {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Solar Beam",
+            "tm": true
         },
         {
             "move": "Thunder Wave",
-            "tm": "TM73"
+            "tm": true
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77"
+            "move": "Light Screen",
+            "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Poison Jab",
-            "tm": "TM84"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Icy Wind",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Sandstorm",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Rain Dance",
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Power Swap",
+            "tm": true
+        },
+        {
+            "move": "Guard Swap",
+            "tm": true
+        },
+        {
+            "move": "Speed Swap",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Psycho Cut",
+            "tm": true
         },
         {
             "move": "Trick Room",
-            "tm": "TM92"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Psychic Terrain",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Metronome",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Tri Attack",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Skill Swap",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Aura Sphere",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
+            "tm": true
         }
     ]
 }

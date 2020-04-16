@@ -54,219 +54,291 @@
     "evolutions": [],
     "species": "Atrocious Pokémon",
     "mega_evolves": true,
-    "pokedex_entry": "Once Gyarados goes on a rampage, its ferociously violent blood doesn't calm until it has burned everything down. There are records of this Pokémon's rampages lasting a whole month.",
+    "pokedex_entry": "Once it begins to rampage, a Gyarados will burn everything down, even in a harsh storm.",
     "move_learnset": [
+        {
+            "move": "Bite",
+            "evo": true
+        },
         {
             "move": "Bite",
             "level": 1
         },
         {
-            "move": "Thrash",
+            "move": "Flail",
+            "level": 1
+        },
+        {
+            "move": "Splash",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
             "level": 1
         },
         {
             "move": "Leer",
-            "level": 21
+            "level": 1
         },
         {
             "move": "Twister",
-            "level": 24
+            "level": 1
+        },
+        {
+            "move": "Whirlpool",
+            "level": 4
         },
         {
             "move": "Ice Fang",
-            "level": 27
+            "level": 8
         },
         {
-            "move": "Aqua Tail",
-            "level": 30
+            "move": "Brine",
+            "level": 12
         },
         {
             "move": "Scary Face",
-            "level": 33
-        },
-        {
-            "move": "Dragon Rage",
-            "level": 36
-        },
-        {
-            "move": "Crunch",
-            "level": 39
-        },
-        {
-            "move": "Hydro Pump",
-            "level": 42
-        },
-        {
-            "move": "Dragon Dance",
-            "level": 45
-        },
-        {
-            "move": "Hurricane",
-            "level": 48
-        },
-        {
-            "move": "Rain Dance",
-            "level": 51
-        },
-        {
-            "move": "Hyper Beam",
-            "level": 54
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Dragon Tail",
-            "tm": "TM82"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
+            "level": 16
         },
         {
             "move": "Waterfall",
-            "tm": "TM98"
+            "level": 21
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Crunch",
+            "level": 24
+        },
+        {
+            "move": "Rain Dance",
+            "level": 28
+        },
+        {
+            "move": "Aqua Tail",
+            "level": 32
+        },
+        {
+            "move": "Dragon Dance",
+            "level": 36
+        },
+        {
+            "move": "Hydro Pump",
+            "level": 40
+        },
+        {
+            "move": "Hurricane",
+            "level": 44
+        },
+        {
+            "move": "Thrash",
+            "level": 48
+        },
+        {
+            "move": "Hyper Beam",
+            "level": 52
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Power Whip",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
+            "tm": true
         }
     ]
 }

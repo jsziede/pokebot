@@ -68,7 +68,7 @@
     ],
     "species": "Water Weed Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Lotad is said to have dwelled on land before. However, this Pokémon is thought to have returned to water because the leaf on its head grew large and heavy. It now lives by floating atop the water.",
+    "pokedex_entry": "Its leaf grew too large for it to live on land. That is how it began to live floating in the water.",
     "move_learnset": [
         {
             "move": "Astonish",
@@ -76,66 +76,170 @@
         },
         {
             "move": "Growl",
-            "level": 3
+            "level": 1
         },
         {
             "move": "Absorb",
+            "level": 3
+        },
+        {
+            "move": "Water Gun",
             "level": 6
         },
         {
-            "move": "Bubble",
+            "move": "Mist",
             "level": 9
         },
         {
-            "move": "Natural Gift",
+            "move": "Mega Drain",
             "level": 12
         },
         {
-            "move": "Mist",
-            "level": 15
-        },
-        {
-            "move": "Mega Drain",
-            "level": 18
+            "move": "Flail",
+            "level": 16
         },
         {
             "move": "Bubble Beam",
-            "level": 21
+            "level": 20
         },
         {
             "move": "Nature Power",
             "level": 24
         },
         {
-            "move": "Rain Dance",
-            "level": 27
-        },
-        {
             "move": "Giga Drain",
-            "level": 30
+            "level": 28
         },
         {
-            "move": "Zen Headbutt",
+            "move": "Rain Dance",
             "level": 33
         },
         {
+            "move": "Zen Headbutt",
+            "level": 38
+        },
+        {
             "move": "Energy Ball",
-            "level": 36
+            "level": 43
         },
         {
-            "move": "Counter",
-            "egg_move": true
+            "move": "Solar Beam",
+            "tm": true
         },
         {
-            "move": "Flail",
-            "egg_move": true
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
         },
         {
             "move": "Giga Drain",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Bullet Seed",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Synthesis",
             "egg_move": true
         },
         {
@@ -147,11 +251,7 @@
             "egg_move": true
         },
         {
-            "move": "Synthesis",
-            "egg_move": true
-        },
-        {
-            "move": "Teeter Dance",
+            "move": "Leech Seed",
             "egg_move": true
         },
         {
@@ -159,120 +259,12 @@
             "egg_move": true
         },
         {
-            "move": "Water Gun",
+            "move": "Counter",
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Teeter Dance",
+            "egg_move": true
         }
     ]
 }

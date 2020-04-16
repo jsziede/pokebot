@@ -56,10 +56,18 @@
     "evolutions": [],
     "species": "Meteorite Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Lunatone becomes active around the time of the full moon. Instead of walking, it moves by floating in midair. The Pokémon’s intimidating red eyes cause all those who see it to become transfixed with fear.",
+    "pokedex_entry": "It was discovered at the site of a meteor strike 40 years ago. Its stare can lull its foes to sleep.",
     "move_learnset": [
         {
-            "move": "Confusion",
+            "move": "Moonblast",
+            "level": 1
+        },
+        {
+            "move": "Moonlight",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
             "level": 1
         },
         {
@@ -67,23 +75,11 @@
             "level": 1
         },
         {
-            "move": "Moonblast",
-            "level": 1
-        },
-        {
-            "move": "Power Gem",
-            "level": 1
-        },
-        {
-            "move": "Psyshock",
+            "move": "Confusion",
             "level": 1
         },
         {
             "move": "Rock Throw",
-            "level": 1
-        },
-        {
-            "move": "Tackle",
             "level": 1
         },
         {
@@ -92,19 +88,15 @@
         },
         {
             "move": "Rock Polish",
-            "level": 9
-        },
-        {
-            "move": "Psywave",
-            "level": 13
-        },
-        {
-            "move": "Embargo",
-            "level": 17
+            "level": 10
         },
         {
             "move": "Rock Slide",
-            "level": 21
+            "level": 15
+        },
+        {
+            "move": "Psyshock",
+            "level": 20
         },
         {
             "move": "Cosmic Power",
@@ -112,195 +104,243 @@
         },
         {
             "move": "Psychic",
-            "level": 29
-        },
-        {
-            "move": "Heal Block",
-            "level": 33
+            "level": 30
         },
         {
             "move": "Stone Edge",
-            "level": 37
+            "level": 35
         },
         {
             "move": "Future Sight",
-            "level": 41
-        },
-        {
-            "move": "Explosion",
-            "level": 45
+            "level": 40
         },
         {
             "move": "Magic Room",
-            "level": 49
-        },
-        {
-            "move": "Psyshock",
-            "tm": "TM3"
-        },
-        {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
+            "level": 45
         },
         {
             "move": "Explosion",
-            "tm": "TM64"
+            "level": 50
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
-            "move": "Rock Polish",
-            "tm": "TM69"
+            "move": "Light Screen",
+            "tm": true
         },
         {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Reflect",
+            "tm": true
         },
         {
-            "move": "Gyro Ball",
-            "tm": "TM74"
+            "move": "Safeguard",
+            "tm": true
         },
         {
-            "move": "Psych Up",
-            "tm": "TM77"
+            "move": "Self-Destruct",
+            "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Icy Wind",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Sandstorm",
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Power Swap",
+            "tm": true
         },
         {
             "move": "Trick Room",
-            "tm": "TM92"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Psychic Terrain",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Skill Swap",
+            "tm": true
+        },
+        {
+            "move": "Cosmic Power",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Power Gem",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
         }
     ]
 }

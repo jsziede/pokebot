@@ -62,10 +62,14 @@
     "evolutions": [],
     "species": "Scaly Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "When it howls after finishing off its prey, the metallic sounds of its celebrating comrades can be heard from all around.",
+    "pokedex_entry": "Certain ruins have paintings of ancient warriors wearing armor made of Kommo-o scales.",
     "move_learnset": [
         {
-            "move": "Autotomize",
+            "move": "Clanging Scales",
+            "evo": true
+        },
+        {
+            "move": "Clanging Scales",
             "level": 1
         },
         {
@@ -73,23 +77,7 @@
             "level": 1
         },
         {
-            "move": "Bide",
-            "level": 1
-        },
-        {
-            "move": "Clanging Scales",
-            "level": 1
-        },
-        {
-            "move": "Leer",
-            "level": 1
-        },
-        {
-            "move": "Protect",
-            "level": 1
-        },
-        {
-            "move": "Sky Uppercut",
+            "move": "Autotomize",
             "level": 1
         },
         {
@@ -98,59 +86,299 @@
         },
         {
             "move": "Leer",
-            "level": 5
-        },
-        {
-            "move": "Bide",
-            "level": 9
+            "level": 1
         },
         {
             "move": "Protect",
-            "level": 13
+            "level": 1
         },
         {
             "move": "Dragon Tail",
-            "level": 17
+            "level": 1
         },
         {
             "move": "Scary Face",
-            "level": 21
+            "level": 12
         },
         {
             "move": "Headbutt",
-            "level": 25
+            "level": 16
         },
         {
             "move": "Work Up",
-            "level": 29
+            "level": 20
         },
         {
             "move": "Screech",
-            "level": 33
+            "level": 24
         },
         {
             "move": "Iron Defense",
-            "level": 38
+            "level": 28
         },
         {
             "move": "Dragon Claw",
-            "level": 43
+            "level": 32
         },
         {
             "move": "Noble Roar",
-            "level": 51
+            "level": 38
         },
         {
             "move": "Dragon Dance",
-            "level": 59
+            "level": 44
         },
         {
             "move": "Outrage",
-            "level": 67
+            "level": 52
         },
         {
             "move": "Close Combat",
-            "level": 75
+            "level": 60
+        },
+        {
+            "move": "Clangorous Soul",
+            "level": 68
+        },
+        {
+            "move": "Boomburst",
+            "level": 76
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Dragon Claw",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Aura Sphere",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
         },
         {
             "move": "Counter",
@@ -161,180 +389,8 @@
             "egg_move": true
         },
         {
-            "move": "Reversal",
+            "move": "Focus Punch",
             "egg_move": true
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Dragon Claw",
-            "tm": "TM2"
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Bulk Up",
-            "tm": "TM8"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Dragon Tail",
-            "tm": "TM82"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

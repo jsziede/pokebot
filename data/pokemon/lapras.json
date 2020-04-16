@@ -63,14 +63,10 @@
     "evolutions": [],
     "species": "Transport Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.",
+    "pokedex_entry": "Crossing icy seas is no issue for this cold-resistant Pokémon. Its smooth skin is a little cool to the touch.",
     "move_learnset": [
         {
             "move": "Growl",
-            "level": 1
-        },
-        {
-            "move": "Sing",
             "level": 1
         },
         {
@@ -78,59 +74,239 @@
             "level": 1
         },
         {
+            "move": "Sing",
+            "level": 5
+        },
+        {
             "move": "Mist",
-            "level": 4
-        },
-        {
-            "move": "Confuse Ray",
-            "level": 7
-        },
-        {
-            "move": "Ice Shard",
             "level": 10
         },
         {
+            "move": "Life Dew",
+            "level": 15
+        },
+        {
+            "move": "Ice Shard",
+            "level": 20
+        },
+        {
+            "move": "Confuse Ray",
+            "level": 25
+        },
+        {
             "move": "Water Pulse",
-            "level": 14
-        },
-        {
-            "move": "Body Slam",
-            "level": 18
-        },
-        {
-            "move": "Rain Dance",
-            "level": 22
-        },
-        {
-            "move": "Perish Song",
-            "level": 27
-        },
-        {
-            "move": "Ice Beam",
-            "level": 32
+            "level": 30
         },
         {
             "move": "Brine",
-            "level": 37
+            "level": 35
         },
         {
-            "move": "Safeguard",
-            "level": 43
+            "move": "Body Slam",
+            "level": 40
         },
         {
-            "move": "Hydro Pump",
-            "level": 47
+            "move": "Ice Beam",
+            "level": 45
         },
         {
-            "move": "Sheer Cold",
+            "move": "Rain Dance",
             "level": 50
         },
         {
-            "move": "Ancient Power",
-            "egg_move": true
+            "move": "Hydro Pump",
+            "level": 55
+        },
+        {
+            "move": "Perish Song",
+            "level": 60
+        },
+        {
+            "move": "Sheer Cold",
+            "level": 65
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
         },
         {
             "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Smart Strike",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Megahorn",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Drill Run",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Tickle",
             "egg_move": true
         },
         {
@@ -138,11 +314,11 @@
             "egg_move": true
         },
         {
-            "move": "Dragon Dance",
+            "move": "Horn Drill",
             "egg_move": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Ancient Power",
             "egg_move": true
         },
         {
@@ -150,164 +326,12 @@
             "egg_move": true
         },
         {
-            "move": "Foresight",
-            "egg_move": true
-        },
-        {
             "move": "Freeze-Dry",
             "egg_move": true
         },
         {
-            "move": "Future Sight",
+            "move": "Sparkling Aria",
             "egg_move": true
-        },
-        {
-            "move": "Horn Drill",
-            "egg_move": true
-        },
-        {
-            "move": "Refresh",
-            "egg_move": true
-        },
-        {
-            "move": "Sleep Talk",
-            "egg_move": true
-        },
-        {
-            "move": "Tickle",
-            "egg_move": true
-        },
-        {
-            "move": "Whirlpool",
-            "egg_move": true
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Smart Strike",
-            "tm": "TM67"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Frost Breath",
-            "tm": "TM79"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

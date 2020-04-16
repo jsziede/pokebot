@@ -56,22 +56,26 @@
     "evolutions": [],
     "species": "Tender Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Milotic live at the bottom of large lakes. When this Pokémon’s body glows a vivid pink, it releases a pulsing wave of energy that brings soothing calm to troubled hearts.",
+    "pokedex_entry": "It’s said that a glimpse of a Milotic and its beauty will calm any hostile emotions you’re feeling.",
     "move_learnset": [
         {
-            "move": "Refresh",
-            "level": 1
-        },
-        {
-            "move": "Water Gun",
-            "level": 1
+            "move": "Water Pulse",
+            "evo": true
         },
         {
             "move": "Water Pulse",
             "level": 1
         },
         {
-            "move": "Water Sport",
+            "move": "Flail",
+            "level": 1
+        },
+        {
+            "move": "Splash",
+            "level": 1
+        },
+        {
+            "move": "Tackle",
             "level": 1
         },
         {
@@ -79,28 +83,28 @@
             "level": 1
         },
         {
-            "move": "Water Sport",
-            "level": 4
-        },
-        {
-            "move": "Refresh",
-            "level": 7
+            "move": "Water Gun",
+            "level": 1
         },
         {
             "move": "Disarming Voice",
-            "level": 11
+            "level": 4
         },
         {
             "move": "Twister",
-            "level": 14
+            "level": 8
         },
         {
             "move": "Aqua Ring",
-            "level": 17
+            "level": 12
         },
         {
-            "move": "Captivate",
-            "level": 21
+            "move": "Attract",
+            "level": 16
+        },
+        {
+            "move": "Life Dew",
+            "level": 20
         },
         {
             "move": "Dragon Tail",
@@ -108,42 +112,194 @@
         },
         {
             "move": "Recover",
-            "level": 27
+            "level": 28
         },
         {
             "move": "Aqua Tail",
-            "level": 31
-        },
-        {
-            "move": "Attract",
-            "level": 34
+            "level": 32
         },
         {
             "move": "Safeguard",
-            "level": 37
+            "level": 36
         },
         {
-            "move": "Coil",
-            "level": 41
-        },
-        {
-            "move": "Hydro Pump",
-            "level": 44
+            "move": "Surf",
+            "level": 40
         },
         {
             "move": "Rain Dance",
-            "level": 47
+            "level": 44
+        },
+        {
+            "move": "Coil",
+            "level": 48
+        },
+        {
+            "move": "Hydro Pump",
+            "level": 52
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
         },
         {
             "move": "Brine",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Captivate",
-            "egg_move": true
+            "move": "Avalanche",
+            "tm": true
         },
         {
-            "move": "Confuse Ray",
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Mirror Coat",
             "egg_move": true
         },
         {
@@ -151,23 +307,11 @@
             "egg_move": true
         },
         {
-            "move": "Dragon Pulse",
-            "egg_move": true
-        },
-        {
-            "move": "Haze",
-            "egg_move": true
-        },
-        {
             "move": "Hypnosis",
             "egg_move": true
         },
         {
-            "move": "Iron Tail",
-            "egg_move": true
-        },
-        {
-            "move": "Mirror Coat",
+            "move": "Confuse Ray",
             "egg_move": true
         },
         {
@@ -175,128 +319,12 @@
             "egg_move": true
         },
         {
-            "move": "Mud Sport",
+            "move": "Haze",
             "egg_move": true
         },
         {
             "move": "Tickle",
             "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Dragon Tail",
-            "tm": "TM82"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

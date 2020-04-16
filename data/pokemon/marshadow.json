@@ -46,14 +46,10 @@
     "evolutions": [],
     "species": "Gloomdweller Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It slips into the shadows of others and mimics their powers and movements. As it improves, it becomes stronger than those it’s imitating.",
+    "pokedex_entry": "This Pokémon can conceal itself in any shadow, so it went undiscovered for a long time.",
     "move_learnset": [
         {
-            "move": "Assurance",
-            "level": 1
-        },
-        {
-            "move": "Counter",
+            "move": "Thunder Punch",
             "level": 1
         },
         {
@@ -69,11 +65,7 @@
             "level": 1
         },
         {
-            "move": "Laser Focus",
-            "level": 1
-        },
-        {
-            "move": "Pursuit",
+            "move": "Copycat",
             "level": 1
         },
         {
@@ -81,200 +73,268 @@
             "level": 1
         },
         {
-            "move": "Thunder Punch",
+            "move": "Feint",
             "level": 1
         },
         {
-            "move": "Force Palm",
-            "level": 5
-        },
-        {
-            "move": "Feint",
-            "level": 11
-        },
-        {
-            "move": "Rolling Kick",
-            "level": 15
-        },
-        {
-            "move": "Copycat",
-            "level": 20
-        },
-        {
-            "move": "Shadow Punch",
-            "level": 26
+            "move": "Counter",
+            "level": 1
         },
         {
             "move": "Role Play",
-            "level": 30
+            "level": 9
         },
         {
-            "move": "Jump Kick",
-            "level": 35
+            "move": "Shadow Punch",
+            "level": 18
         },
         {
-            "move": "Psych Up",
-            "level": 41
+            "move": "Force Palm",
+            "level": 27
         },
         {
-            "move": "Spectral Thief",
-            "level": 45
-        },
-        {
-            "move": "Close Combat",
-            "level": 50
+            "move": "Assurance",
+            "level": 36
         },
         {
             "move": "Sucker Punch",
-            "level": 56
+            "level": 45
         },
         {
-            "move": "Endeavor",
-            "level": 60
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Bulk Up",
-            "tm": "TM8"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Drain Punch",
+            "level": 54
         },
         {
             "move": "Psych Up",
-            "tm": "TM77"
+            "level": 63
+        },
+        {
+            "move": "Spectral Thief",
+            "level": 72
+        },
+        {
+            "move": "Laser Focus",
+            "level": 81
+        },
+        {
+            "move": "Endeavor",
+            "level": 90
+        },
+        {
+            "move": "Close Combat",
+            "level": 99
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Poison Jab",
-            "tm": "TM84"
+            "move": "Thief",
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Phantom Force",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Blaze Kick",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Close Combat",
+            "tm": true
+        },
+        {
+            "move": "Aura Sphere",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
         }
     ]
 }

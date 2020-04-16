@@ -52,10 +52,10 @@
     "evolutions": [],
     "species": "Heavyweight Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It blasts internally stored sand from ports on its body to create a towering twister for attack.",
+    "pokedex_entry": "When roused to violence by its rage, it spews out the quantities of sand it has swallowed and whips up a sandstorm.",
     "move_learnset": [
         {
-            "move": "Bite",
+            "move": "Ice Fang",
             "level": 1
         },
         {
@@ -63,11 +63,7 @@
             "level": 1
         },
         {
-            "move": "Ice Fang",
-            "level": 1
-        },
-        {
-            "move": "Sand Attack",
+            "move": "Thunder Fang",
             "level": 1
         },
         {
@@ -75,40 +71,48 @@
             "level": 1
         },
         {
-            "move": "Thunder Fang",
-            "level": 1
-        },
-        {
-            "move": "Yawn",
+            "move": "Sand Attack",
             "level": 1
         },
         {
             "move": "Bite",
-            "level": 7
+            "level": 1
         },
         {
             "move": "Yawn",
-            "level": 13
-        },
-        {
-            "move": "Dig",
-            "level": 19
-        },
-        {
-            "move": "Take Down",
-            "level": 19
+            "level": 1
         },
         {
             "move": "Sand Tomb",
-            "level": 25
+            "level": 12
+        },
+        {
+            "move": "Dig",
+            "level": 16
         },
         {
             "move": "Crunch",
-            "level": 31
+            "level": 20
+        },
+        {
+            "move": "Sandstorm",
+            "level": 24
+        },
+        {
+            "move": "Take Down",
+            "level": 28
+        },
+        {
+            "move": "Roar",
+            "level": 32
+        },
+        {
+            "move": "Rest",
+            "level": 38
         },
         {
             "move": "Earthquake",
-            "level": 40
+            "level": 44
         },
         {
             "move": "Double-Edge",
@@ -116,35 +120,167 @@
         },
         {
             "move": "Fissure",
-            "level": 60
-        },
-        {
-            "move": "Body Slam",
-            "egg_move": true
-        },
-        {
-            "move": "Curse",
-            "egg_move": true
-        },
-        {
-            "move": "Revenge",
-            "egg_move": true
-        },
-        {
-            "move": "Sand Tomb",
-            "egg_move": true
+            "level": 56
         },
         {
             "move": "Slack Off",
-            "egg_move": true
+            "level": 62
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Thunder Fang",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
         },
         {
             "move": "Sleep Talk",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Spit Up",
-            "egg_move": true
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
         },
         {
             "move": "Stockpile",
@@ -155,104 +291,16 @@
             "egg_move": true
         },
         {
-            "move": "Whirlwind",
+            "move": "Spit Up",
             "egg_move": true
         },
         {
-            "move": "Roar",
-            "tm": "TM5"
+            "move": "Curse",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Whirlwind",
+            "egg_move": true
         }
     ]
 }

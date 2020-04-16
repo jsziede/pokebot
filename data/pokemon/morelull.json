@@ -71,7 +71,7 @@
     ],
     "species": "Illuminating Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It scatters its shining spores around itself. Even though they’re dangerous, nighttime tours of forests where Morelull live are popular.",
+    "pokedex_entry": "Morelull live in forests that stay dark even during the day. They scatter flickering spores that put enemies to sleep.",
     "move_learnset": [
         {
             "move": "Absorb",
@@ -79,38 +79,38 @@
         },
         {
             "move": "Astonish",
-            "level": 4
-        },
-        {
-            "move": "Flash",
-            "level": 8
-        },
-        {
-            "move": "Moonlight",
-            "level": 11
-        },
-        {
-            "move": "Mega Drain",
-            "level": 15
-        },
-        {
-            "move": "Sleep Powder",
-            "level": 18
-        },
-        {
-            "move": "Ingrain",
-            "level": 22
+            "level": 1
         },
         {
             "move": "Confuse Ray",
+            "level": 4
+        },
+        {
+            "move": "Ingrain",
+            "level": 8
+        },
+        {
+            "move": "Mega Drain",
+            "level": 12
+        },
+        {
+            "move": "Sleep Powder",
+            "level": 16
+        },
+        {
+            "move": "Moonlight",
+            "level": 20
+        },
+        {
+            "move": "Strength Sap",
             "level": 25
         },
         {
             "move": "Giga Drain",
-            "level": 29
+            "level": 28
         },
         {
-            "move": "Strength Sap",
+            "move": "Dazzling Gleam",
             "level": 32
         },
         {
@@ -119,27 +119,111 @@
         },
         {
             "move": "Moonblast",
-            "level": 39
+            "level": 40
         },
         {
             "move": "Dream Eater",
-            "level": 43
+            "level": 44
         },
         {
-            "move": "Spotlight",
-            "level": 46
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
         },
         {
             "move": "Amnesia",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Growth",
-            "egg_move": true
+            "move": "Substitute",
+            "tm": true
         },
         {
-            "move": "Leech Seed",
-            "egg_move": true
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Pollen Puff",
+            "tm": true
         },
         {
             "move": "Poison Powder",
@@ -150,100 +234,12 @@
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Growth",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Leech Seed",
+            "egg_move": true
         }
     ]
 }
