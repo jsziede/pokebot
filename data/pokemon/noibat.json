@@ -61,14 +61,10 @@
     ],
     "species": "Sound Wave Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Even a robust wrestler will become dizzy and unable to stand when exposed to its 200,000-hertz ultrasonic waves.",
+    "pokedex_entry": "No wavelength of sound is beyond Noibat’s ability to produce. The ultrasonic waves it generates can overcome much larger Pokémon.",
     "move_learnset": [
         {
-            "move": "Screech",
-            "level": 1
-        },
-        {
-            "move": "Supersonic",
+            "move": "Absorb",
             "level": 1
         },
         {
@@ -76,212 +72,208 @@
             "level": 1
         },
         {
-            "move": "Absorb",
-            "level": 5
-        },
-        {
             "move": "Gust",
-            "level": 11
+            "level": 4
         },
         {
-            "move": "Bite",
-            "level": 13
+            "move": "Supersonic",
+            "level": 8
+        },
+        {
+            "move": "Double Team",
+            "level": 12
         },
         {
             "move": "Wing Attack",
             "level": 16
         },
         {
-            "move": "Agility",
-            "level": 18
+            "move": "Bite",
+            "level": 20
         },
         {
             "move": "Air Cutter",
-            "level": 23
-        },
-        {
-            "move": "Roost",
-            "level": 27
-        },
-        {
-            "move": "Razor Wind",
-            "level": 31
-        },
-        {
-            "move": "Tailwind",
-            "level": 35
+            "level": 24
         },
         {
             "move": "Whirlwind",
-            "level": 40
+            "level": 28
         },
         {
             "move": "Super Fang",
-            "level": 43
+            "level": 32
         },
         {
             "move": "Air Slash",
-            "level": 48
+            "level": 36
         },
         {
-            "move": "Hurricane",
-            "level": 58
-        },
-        {
-            "move": "Outrage",
-            "egg_move": true
-        },
-        {
-            "move": "Snatch",
-            "egg_move": true
-        },
-        {
-            "move": "Switcheroo",
-            "egg_move": true
-        },
-        {
-            "move": "Tailwind",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
+            "move": "Screech",
+            "level": 40
         },
         {
             "move": "Roost",
-            "tm": "TM19"
+            "level": 44
         },
         {
-            "move": "Frustration",
-            "tm": "TM21"
+            "move": "Tailwind",
+            "level": 49
         },
         {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Steel Wing",
-            "tm": "TM51"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
+            "move": "Hurricane",
+            "level": 52
         },
         {
             "move": "Fly",
-            "tm": "TM76"
+            "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "move": "Solar Beam",
+            "tm": true
         },
         {
-            "move": "Dream Eater",
-            "tm": "TM85"
+            "move": "Screech",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Rest",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
         },
         {
             "move": "U-turn",
-            "tm": "TM89"
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Wild Charge",
-            "tm": "TM93"
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
         },
         {
             "move": "Dark Pulse",
-            "tm": "TM97"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
+            "tm": true
+        },
+        {
+            "move": "Defog",
+            "egg_move": true
+        },
+        {
+            "move": "Dragon Rush",
+            "egg_move": true
         }
     ]
 }

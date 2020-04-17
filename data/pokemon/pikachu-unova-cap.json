@@ -1,44 +1,42 @@
 {
-    "name": "Persian",
-    "national_id": 53,
+    "name": "Pikachu",
+    "national_id": 25,
     "types": [
-        "Normal"
+        "Electric"
     ],
     "items": [
         {
-            "name": "Quick Claw",
+            "name": "Light Ball",
             "chance": 5
         }
     ],
     "abilities": [
         {
-            "name": "Limber"
+            "name": "Static"
         },
         {
-            "name": "Technician"
-        },
-        {
-            "name": "Unnerve",
+            "name": "Lightning Rod",
             "hidden": true
         }
     ],
-    "catch_rate": 90,
+    "catch_rate": 190,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Field"
+        "Field",
+        "Fairy"
     ],
     "hatch_time": [
         5355,
         5609
     ],
-    "height_us": "3'03\"",
-    "height_eu": "1.0 m",
-    "weight_us": "70.5 lbs.",
-    "weight_eu": "32.0 kg",
-    "base_exp_yield": 154,
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "13.2 lbs.",
+    "weight_eu": "6.0 kg",
+    "base_exp_yield": 105,
     "leveling_rate": "Medium Fast",
     "base_friendship": 70,
     "ev_yield": {
@@ -50,33 +48,45 @@
         "speed": 2
     },
     "base_stats": {
-        "hp": 65,
-        "atk": 70,
-        "def": 60,
-        "sp_atk": 65,
-        "sp_def": 65,
-        "speed": 115
+        "hp": 35,
+        "atk": 55,
+        "def": 30,
+        "sp_atk": 50,
+        "sp_def": 40,
+        "speed": 90
     },
-    "evolution_from": "Meowth",
+    "evolution_from": null,
     "evolutions": [],
-    "species": "Classy Cat Pokémon",
+    "species": "Mouse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its elegant and refined behavior clashes with that of the barbaric Perrserker. The relationship between the two is one of mutual disdain.",
+    "pokedex_entry": "This Pikachu is wearing its Trainer's cap. The cap is proof that the two traveled throughout the Unova region together.",
     "move_learnset": [
         {
-            "move": "Power Gem",
-            "evo": true
-        },
-        {
-            "move": "Power Gem",
+            "move": "Play Nice",
             "level": 1
         },
         {
-            "move": "Switcheroo",
+            "move": "Sweet Kiss",
             "level": 1
         },
         {
-            "move": "Fake Out",
+            "move": "Nuzzle",
+            "level": 1
+        },
+        {
+            "move": "Nasty Plot",
+            "level": 1
+        },
+        {
+            "move": "Charm",
+            "level": 1
+        },
+        {
+            "move": "Thunder Shock",
+            "level": 1
+        },
+        {
+            "move": "Tail Whip",
             "level": 1
         },
         {
@@ -84,59 +94,71 @@
             "level": 1
         },
         {
-            "move": "Feint",
+            "move": "Quick Attack",
             "level": 1
         },
         {
-            "move": "Scratch",
-            "level": 1
+            "move": "Thunder Wave",
+            "level": 4
         },
         {
-            "move": "Pay Day",
+            "move": "Double Team",
+            "level": 8
+        },
+        {
+            "move": "Electro Ball",
             "level": 12
         },
         {
-            "move": "Bite",
+            "move": "Feint",
             "level": 16
         },
         {
-            "move": "Taunt",
+            "move": "Spark",
             "level": 20
         },
         {
-            "move": "Assurance",
+            "move": "Agility",
             "level": 24
         },
         {
-            "move": "Fury Swipes",
-            "level": 31
+            "move": "Slam",
+            "level": 28
         },
         {
-            "move": "Screech",
+            "move": "Discharge",
+            "level": 32
+        },
+        {
+            "move": "Thunderbolt",
             "level": 36
         },
         {
-            "move": "Slash",
-            "level": 42
+            "move": "Light Screen",
+            "level": 40
         },
         {
-            "move": "Nasty Plot",
-            "level": 48
+            "move": "Thunder",
+            "level": 44
         },
         {
-            "move": "Play Rough",
-            "level": 54
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
         },
         {
             "move": "Pay Day",
             "tm": true
         },
         {
-            "move": "Hyper Beam",
+            "move": "Thunder Punch",
             "tm": true
         },
         {
-            "move": "Giga Impact",
+            "move": "Thunder Wave",
             "tm": true
         },
         {
@@ -144,7 +166,11 @@
             "tm": true
         },
         {
-            "move": "Screech",
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
             "tm": true
         },
         {
@@ -164,10 +190,6 @@
             "tm": true
         },
         {
-            "move": "Icy Wind",
-            "tm": true
-        },
-        {
             "move": "Charm",
             "tm": true
         },
@@ -180,10 +202,6 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
@@ -192,19 +210,15 @@
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Brick Break",
             "tm": true
         },
         {
-            "move": "Assurance",
-            "tm": true
-        },
-        {
-            "move": "Shadow Claw",
+            "move": "Fling",
             "tm": true
         },
         {
@@ -212,11 +226,27 @@
             "tm": true
         },
         {
-            "move": "Retaliate",
+            "move": "Volt Switch",
+            "tm": true
+        },
+        {
+            "move": "Electroweb",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
+        },
+        {
+            "move": "Electric Terrain",
             "tm": true
         },
         {
             "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Surf",
             "tm": true
         },
         {
@@ -228,11 +258,15 @@
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Agility",
             "tm": true
         },
         {
             "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
             "tm": true
         },
         {
@@ -244,11 +278,11 @@
             "tm": true
         },
         {
-            "move": "Iron Tail",
+            "move": "Encore",
             "tm": true
         },
         {
-            "move": "Shadow Ball",
+            "move": "Iron Tail",
             "tm": true
         },
         {
@@ -256,72 +290,24 @@
             "tm": true
         },
         {
-            "move": "Taunt",
-            "tm": true
-        },
-        {
-            "move": "Hyper Voice",
-            "tm": true
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": true
-        },
-        {
-            "move": "Seed Bomb",
-            "tm": true
-        },
-        {
-            "move": "Power Gem",
-            "tm": true
-        },
-        {
             "move": "Nasty Plot",
             "tm": true
         },
         {
-            "move": "Gunk Shot",
+            "move": "Grass Knot",
             "tm": true
         },
         {
-            "move": "Foul Play",
+            "move": "Electro Ball",
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Wild Charge",
             "tm": true
         },
         {
             "move": "Play Rough",
             "tm": true
-        },
-        {
-            "move": "Throat Chop",
-            "tm": true
-        },
-        {
-            "move": "Spite",
-            "egg_move": true
-        },
-        {
-            "move": "Hypnosis",
-            "egg_move": true
-        },
-        {
-            "move": "Last Resort",
-            "egg_move": true
-        },
-        {
-            "move": "Flail",
-            "egg_move": true
-        },
-        {
-            "move": "Tail Whip",
-            "egg_move": true
-        },
-        {
-            "move": "Covet",
-            "egg_move": true
         }
     ]
 }

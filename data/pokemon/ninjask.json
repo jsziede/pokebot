@@ -53,18 +53,26 @@
     "evolutions": [],
     "species": "Ninja Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "If Ninjask is not trained properly, it will refuse to obey the Trainer and cry loudly continuously. Because of this quality, this Pokémon is said to be one that puts the Trainer’s abilities to the test.",
+    "pokedex_entry": "This Pokémon is so quick, it is said to be able to avoid any attack. It loves to feed on tree sap.",
     "move_learnset": [
         {
-            "move": "Absorb",
-            "level": 1
+            "move": "Double Team",
+            "evo": true
         },
         {
-            "move": "Bug Bite",
-            "level": 1
+            "move": "Screech",
+            "evo": true
+        },
+        {
+            "move": "Fury Cutter",
+            "evo": true
         },
         {
             "move": "Double Team",
+            "level": 1
+        },
+        {
+            "move": "Screech",
             "level": 1
         },
         {
@@ -72,7 +80,23 @@
             "level": 1
         },
         {
-            "move": "Harden",
+            "move": "Baton Pass",
+            "level": 1
+        },
+        {
+            "move": "Aerial Ace",
+            "level": 1
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 1
+        },
+        {
+            "move": "Metal Claw",
+            "level": 1
+        },
+        {
+            "move": "Dig",
             "level": 1
         },
         {
@@ -84,64 +108,164 @@
             "level": 1
         },
         {
-            "move": "Screech",
+            "move": "Harden",
             "level": 1
         },
         {
-            "move": "Absorb",
-            "level": 5
-        },
-        {
-            "move": "Sand Attack",
-            "level": 9
-        },
-        {
-            "move": "Fury Swipes",
-            "level": 13
+            "move": "False Swipe",
+            "level": 1
         },
         {
             "move": "Agility",
-            "level": 17
+            "level": 15
         },
         {
-            "move": "Slash",
+            "move": "Absorb",
             "level": 23
         },
         {
-            "move": "Mind Reader",
+            "move": "Bug Bite",
             "level": 29
         },
         {
-            "move": "Baton Pass",
-            "level": 35
+            "move": "Fury Swipes",
+            "level": 36
+        },
+        {
+            "move": "Mind Reader",
+            "level": 43
+        },
+        {
+            "move": "Slash",
+            "level": 50
         },
         {
             "move": "Swords Dance",
-            "level": 41
+            "level": 57
         },
         {
             "move": "X-Scissor",
-            "level": 47
+            "level": 64
         },
         {
-            "move": "Bug Bite",
-            "egg_move": true
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
-            "move": "Bug Buzz",
-            "egg_move": true
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
         },
         {
             "move": "Endure",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Feint Attack",
-            "egg_move": true
+            "move": "Sleep Talk",
+            "tm": true
         },
         {
-            "move": "Final Gambit",
-            "egg_move": true
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
         },
         {
             "move": "Gust",
@@ -152,120 +276,16 @@
             "egg_move": true
         },
         {
-            "move": "Silver Wind",
+            "move": "Bug Bite",
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Final Gambit",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Flail",
+            "egg_move": true
         }
     ]
 }

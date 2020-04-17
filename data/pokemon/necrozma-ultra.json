@@ -23,7 +23,7 @@
     "height_eu": "7.5 m",
     "weight_us": "507.1 lbs.",
     "weight_eu": "230.0 kg",
-    "base_exp_yield": 120,
+    "base_exp_yield": 270,
     "leveling_rate": "Slow",
     "base_friendship": 0,
     "ev_yield": {
@@ -46,24 +46,8 @@
     "evolutions": [],
     "species": "Prism Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It looks somehow pained as it rages around in search of light, which serves as its energy. It’s apparently from another world.",
+    "pokedex_entry": "This is its form when it has absorbed overwhelming light energy. It fires laser beams from all over its body.",
     "move_learnset": [
-        {
-            "move": "Charge Beam",
-            "level": 1
-        },
-        {
-            "move": "Confusion",
-            "level": 1
-        },
-        {
-            "move": "Metal Claw",
-            "level": 1
-        },
-        {
-            "move": "Mirror Shot",
-            "level": 1
-        },
         {
             "move": "Moonlight",
             "level": 1
@@ -73,228 +57,280 @@
             "level": 1
         },
         {
-            "move": "Slash",
-            "level": 7
-        },
-        {
-            "move": "Stored Power",
-            "level": 13
-        },
-        {
-            "move": "Rock Blast",
-            "level": 19
-        },
-        {
-            "move": "Night Slash",
-            "level": 23
+            "move": "Charge Beam",
+            "level": 1
         },
         {
             "move": "Gravity",
-            "level": 31
+            "level": 1
         },
         {
-            "move": "Psycho Cut",
-            "level": 37
+            "move": "Metal Claw",
+            "level": 1
         },
         {
-            "move": "Power Gem",
-            "level": 43
-        },
-        {
-            "move": "Autotomize",
-            "level": 47
-        },
-        {
-            "move": "Photon Geyser",
-            "level": 50
+            "move": "Confusion",
+            "level": 1
         },
         {
             "move": "Stealth Rock",
-            "level": 53
+            "level": 8
+        },
+        {
+            "move": "Slash",
+            "level": 16
+        },
+        {
+            "move": "Night Slash",
+            "level": 24
+        },
+        {
+            "move": "Psycho Cut",
+            "level": 32
+        },
+        {
+            "move": "Stored Power",
+            "level": 40
+        },
+        {
+            "move": "Rock Blast",
+            "level": 48
         },
         {
             "move": "Iron Defense",
-            "level": 59
+            "level": 56
         },
         {
-            "move": "Wring Out",
-            "level": 67
+            "move": "Power Gem",
+            "level": 64
+        },
+        {
+            "move": "Photon Geyser",
+            "level": 72
+        },
+        {
+            "move": "Autotomize",
+            "level": 60
         },
         {
             "move": "Prismatic Laser",
-            "level": 73
-        },
-        {
-            "move": "Psyshock",
-            "tm": "TM3"
-        },
-        {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
+            "level": 66
         },
         {
             "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Smart Strike",
-            "tm": "TM67"
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Solar Beam",
+            "tm": true
         },
         {
             "move": "Thunder Wave",
-            "tm": "TM73"
+            "tm": true
         },
         {
-            "move": "Gyro Ball",
-            "tm": "TM74"
+            "move": "Light Screen",
+            "tm": true
         },
         {
-            "move": "Swords Dance",
-            "tm": "TM75"
+            "move": "Reflect",
+            "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "move": "Thief",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Scary Face",
+            "tm": true
         },
         {
-            "move": "Flash Cannon",
-            "tm": "TM91"
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Psycho Cut",
+            "tm": true
         },
         {
             "move": "Trick Room",
-            "tm": "TM92"
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Smart Strike",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Cosmic Power",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
         },
         {
             "move": "Dark Pulse",
-            "tm": "TM97"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Power Gem",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Psychic Fangs",
+            "tm": true
         }
     ]
 }

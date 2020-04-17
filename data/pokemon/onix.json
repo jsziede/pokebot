@@ -62,10 +62,10 @@
     ],
     "species": "Rock Snake Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother.",
+    "pokedex_entry": "It rapidly bores through the ground at 50 mph by squirming and twisting its massive, rugged body.",
     "move_learnset": [
         {
-            "move": "Bind",
+            "move": "Tackle",
             "level": 1
         },
         {
@@ -73,84 +73,232 @@
             "level": 1
         },
         {
-            "move": "Mud Sport",
+            "move": "Bind",
             "level": 1
-        },
-        {
-            "move": "Tackle",
-            "level": 1
-        },
-        {
-            "move": "Curse",
-            "level": 4
         },
         {
             "move": "Rock Throw",
-            "level": 7
-        },
-        {
-            "move": "Rock Tomb",
-            "level": 10
-        },
-        {
-            "move": "Rage",
-            "level": 13
-        },
-        {
-            "move": "Stealth Rock",
-            "level": 16
-        },
-        {
-            "move": "Rock Polish",
-            "level": 19
-        },
-        {
-            "move": "Gyro Ball",
-            "level": 20
+            "level": 1
         },
         {
             "move": "Smack Down",
-            "level": 22
+            "level": 4
+        },
+        {
+            "move": "Rock Polish",
+            "level": 8
         },
         {
             "move": "Dragon Breath",
-            "level": 25
+            "level": 12
         },
         {
-            "move": "Slam",
-            "level": 28
-        },
-        {
-            "move": "Screech",
-            "level": 31
+            "move": "Curse",
+            "level": 16
         },
         {
             "move": "Rock Slide",
-            "level": 34
+            "level": 20
+        },
+        {
+            "move": "Screech",
+            "level": 24
         },
         {
             "move": "Sand Tomb",
-            "level": 37
+            "level": 28
         },
         {
-            "move": "Iron Tail",
+            "move": "Stealth Rock",
+            "level": 32
+        },
+        {
+            "move": "Slam",
+            "level": 36
+        },
+        {
+            "move": "Sandstorm",
             "level": 40
         },
         {
             "move": "Dig",
-            "level": 43
+            "level": 44
+        },
+        {
+            "move": "Iron Tail",
+            "level": 48
         },
         {
             "move": "Stone Edge",
-            "level": 46
+            "level": 52
         },
         {
             "move": "Double-Edge",
-            "level": 49
+            "level": 56
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
         },
         {
             "move": "Sandstorm",
-            "level": 52
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Drill Run",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Flail",
+            "egg_move": true
         },
         {
             "move": "Block",
@@ -161,19 +309,7 @@
             "egg_move": true
         },
         {
-            "move": "Flail",
-            "egg_move": true
-        },
-        {
-            "move": "Heavy Slam",
-            "egg_move": true
-        },
-        {
-            "move": "Rock Blast",
-            "egg_move": true
-        },
-        {
-            "move": "Rock Climb",
+            "move": "Wide Guard",
             "egg_move": true
         },
         {
@@ -181,152 +317,12 @@
             "egg_move": true
         },
         {
-            "move": "Rototiller",
-            "egg_move": true
-        },
-        {
-            "move": "Stealth Rock",
-            "egg_move": true
-        },
-        {
-            "move": "Wide Guard",
-            "egg_move": true
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": "TM59"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
             "move": "Dragon Tail",
-            "tm": "TM82"
+            "egg_move": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Head Smash",
+            "egg_move": true
         }
     ]
 }

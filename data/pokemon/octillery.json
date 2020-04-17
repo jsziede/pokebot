@@ -56,14 +56,14 @@
     "evolutions": [],
     "species": "Jet Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Octillery grabs onto its foe using its tentacles. This Pokémon tries to immobilize it before delivering the finishing blow. If the foe turns out to be too strong, Octillery spews ink to escape.",
+    "pokedex_entry": "It traps enemies with its suction-cupped tentacles, then smashes them with its rock-hard head.",
     "move_learnset": [
         {
-            "move": "Aurora Beam",
-            "level": 1
+            "move": "Octazooka",
+            "evo": true
         },
         {
-            "move": "Constrict",
+            "move": "Octazooka",
             "level": 1
         },
         {
@@ -71,15 +71,11 @@
             "level": 1
         },
         {
-            "move": "Octazooka",
-            "level": 1
-        },
-        {
-            "move": "Psybeam",
-            "level": 1
-        },
-        {
             "move": "Rock Blast",
+            "level": 1
+        },
+        {
+            "move": "Helping Hand",
             "level": 1
         },
         {
@@ -87,91 +83,235 @@
             "level": 1
         },
         {
-            "move": "Constrict",
-            "level": 6
+            "move": "Wrap",
+            "level": 1
         },
         {
-            "move": "Psybeam",
-            "level": 10
-        },
-        {
-            "move": "Aurora Beam",
-            "level": 14
-        },
-        {
-            "move": "Bubble Beam",
-            "level": 18
+            "move": "Water Pulse",
+            "level": 1
         },
         {
             "move": "Focus Energy",
-            "level": 22
+            "level": 1
         },
         {
-            "move": "Wring Out",
-            "level": 28
-        },
-        {
-            "move": "Signal Beam",
-            "level": 34
-        },
-        {
-            "move": "Ice Beam",
-            "level": 40
-        },
-        {
-            "move": "Bullet Seed",
-            "level": 46
-        },
-        {
-            "move": "Hydro Pump",
-            "level": 52
-        },
-        {
-            "move": "Hyper Beam",
-            "level": 58
-        },
-        {
-            "move": "Soak",
-            "level": 64
-        },
-        {
-            "move": "Acid Spray",
-            "egg_move": true
+            "move": "Psybeam",
+            "level": 12
         },
         {
             "move": "Aurora Beam",
-            "egg_move": true
+            "level": 16
         },
         {
-            "move": "Entrainment",
-            "egg_move": true
+            "move": "Bubble Beam",
+            "level": 20
         },
         {
-            "move": "Flail",
-            "egg_move": true
+            "move": "Lock-On",
+            "level": 24
         },
         {
-            "move": "Haze",
-            "egg_move": true
+            "move": "Bullet Seed",
+            "level": 30
         },
         {
-            "move": "Mud Shot",
-            "egg_move": true
+            "move": "Ice Beam",
+            "level": 36
         },
         {
-            "move": "Octazooka",
-            "egg_move": true
+            "move": "Hydro Pump",
+            "level": 42
         },
         {
-            "move": "Rock Blast",
-            "egg_move": true
+            "move": "Soak",
+            "level": 48
+        },
+        {
+            "move": "Hyper Beam",
+            "level": 54
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
         },
         {
             "move": "Screech",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
         },
         {
             "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Bullet Seed",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Focus Energy",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Gunk Shot",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Octazooka",
             "egg_move": true
         },
         {
@@ -179,11 +319,11 @@
             "egg_move": true
         },
         {
-            "move": "Swift",
+            "move": "Haze",
             "egg_move": true
         },
         {
-            "move": "Water Pulse",
+            "move": "Flail",
             "egg_move": true
         },
         {
@@ -191,144 +331,8 @@
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Acid Spray",
+            "egg_move": true
         }
     ]
 }
