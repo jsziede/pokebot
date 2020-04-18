@@ -1,19 +1,19 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Duraludon",
+    "national_id": 884,
     "types": [
-        "Grass",
+        "Steel",
         "Dragon"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Light Metal"
         },
         {
-            "name": "Gluttony"
+            "name": "Heavy Metal"
         },
         {
-            "name": "Thick Fat",
+            "name": "Stalwart",
             "hidden": true
         }
     ],
@@ -23,114 +23,93 @@
         "female": 50
     },
     "egg_groups": [
-        "Grass",
+        "Mineral",
         "Dragon"
     ],
     "hatch_time": [
-        5140,
-        5396
+        7710,
+        7966
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "5'11\"",
+    "height_eu": "1.8 m",
+    "weight_us": "88.2 lbs.",
+    "weight_eu": "40.0 kg",
+    "base_exp_yield": 187,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 0,
+        "sp_atk": 2,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 70,
+        "atk": 95,
+        "def": 115,
+        "sp_atk": 120,
+        "sp_def": 50,
+        "speed": 85
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": null,
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Alloy Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "The special metal that composes its body is very light, so this Pokémon has considerable agility. It lives in caves because it dislikes the rain.",
     "move_learnset": [
         {
-            "move": "Headbutt",
-            "evo": true
-        },
-        {
-            "move": "Headbutt",
+            "move": "Metal Claw",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Leer",
             "level": 1
         },
         {
-            "move": "Withdraw",
-            "level": 1
+            "move": "Rock Smash",
+            "level": 6
         },
         {
-            "move": "Astonish",
-            "level": 1
-        },
-        {
-            "move": "Growth",
-            "level": 1
-        },
-        {
-            "move": "Sweet Scent",
-            "level": 1
-        },
-        {
-            "move": "Curse",
-            "level": 4
-        },
-        {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
+            "move": "Hone Claws",
             "level": 12
         },
         {
-            "move": "Protect",
-            "level": 16
+            "move": "Metal Sound",
+            "level": 18
         },
         {
-            "move": "Bullet Seed",
-            "level": 20
-        },
-        {
-            "move": "Recover",
+            "move": "Breaking Swipe",
             "level": 24
         },
         {
-            "move": "Apple Acid",
-            "level": 28
-        },
-        {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Dragon Tail",
+            "level": 30
         },
         {
             "move": "Iron Defense",
             "level": 36
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Laser Focus",
+            "level": 42
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Dragon Claw",
+            "level": 48
+        },
+        {
+            "move": "Flash Cannon",
+            "level": 54
+        },
+        {
+            "move": "Metal Burst",
+            "level": 60
+        },
+        {
+            "move": "Hyper Beam",
+            "level": 66
         },
         {
             "move": "Hyper Beam",
@@ -145,6 +124,14 @@
             "tm": true
         },
         {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
             "move": "Light Screen",
             "tm": true
         },
@@ -153,11 +140,11 @@
             "tm": true
         },
         {
-            "move": "Safeguard",
+            "move": "Rest",
             "tm": true
         },
         {
-            "move": "Rest",
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -169,7 +156,7 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Scary Face",
             "tm": true
         },
         {
@@ -177,19 +164,15 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Brick Break",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Rock Tomb",
             "tm": true
         },
         {
@@ -197,7 +180,19 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Snarl",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
             "tm": true
         },
         {
@@ -205,11 +200,11 @@
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Thunderbolt",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Thunder",
             "tm": true
         },
         {
@@ -229,11 +224,11 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Iron Defense",
+            "move": "Dragon Claw",
             "tm": true
         },
         {
@@ -241,7 +236,7 @@
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
@@ -249,11 +244,19 @@
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Flash Cannon",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
             "tm": true
         },
         {
@@ -261,7 +264,7 @@
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Foul Play",
             "tm": true
         },
         {
@@ -269,19 +272,15 @@
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Slash",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Night Slash",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
-            "egg_move": true
-        },
-        {
-            "move": "Recycle",
+            "move": "Mirror Coat",
             "egg_move": true
         }
     ]

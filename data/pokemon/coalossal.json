@@ -1,19 +1,19 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Coalossal",
+    "national_id": 839,
     "types": [
-        "Grass",
-        "Dragon"
+        "Rock",
+        "Fire"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Steam Engine"
         },
         {
-            "name": "Gluttony"
+            "name": "Flame Body"
         },
         {
-            "name": "Thick Fat",
+            "name": "Flash Fire",
             "hidden": true
         }
     ],
@@ -23,114 +23,108 @@
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Mineral"
     ],
     "hatch_time": [
-        5140,
-        5396
+        3855,
+        4111
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "9'02\"",
+    "height_eu": "2.8 m",
+    "weight_us": "684.5 lbs.",
+    "weight_eu": "310.5 kg",
+    "base_exp_yield": 255,
+    "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
-        "def": 0,
+        "def": 3,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
         "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
+        "atk": 80,
+        "def": 120,
+        "sp_atk": 80,
+        "sp_def": 90,
         "speed": 30
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Carkoal",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Coal Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "While it’s engaged in battle, its mountain of coal will burn bright red, sending off sparks that scorch the surrounding area.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Tar Shot",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Tar Shot",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Flame Charge",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Smokescreen",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Rapid Spin",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
+            "move": "Smack Down",
             "level": 1
         },
         {
-            "move": "Curse",
-            "level": 4
+            "move": "Rock Polish",
+            "level": 15
         },
         {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
+            "move": "Ancient Power",
             "level": 20
         },
         {
-            "move": "Recover",
-            "level": 24
+            "move": "Incinerate",
+            "level": 27
         },
         {
-            "move": "Apple Acid",
-            "level": 28
+            "move": "Stealth Rock",
+            "level": 37
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Heat Crash",
+            "level": 45
         },
         {
-            "move": "Iron Defense",
-            "level": 36
+            "move": "Rock Blast",
+            "level": 54
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Burn Up",
+            "level": 63
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
         },
         {
             "move": "Hyper Beam",
@@ -145,7 +139,11 @@
             "tm": true
         },
         {
-            "move": "Light Screen",
+            "move": "Fire Spin",
+            "tm": true
+        },
+        {
+            "move": "Dig",
             "tm": true
         },
         {
@@ -153,11 +151,15 @@
             "tm": true
         },
         {
-            "move": "Safeguard",
+            "move": "Self-Destruct",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -169,15 +171,15 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
             "tm": true
         },
         {
@@ -185,11 +187,15 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Rock Tomb",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
             "tm": true
         },
         {
@@ -205,11 +211,15 @@
             "tm": true
         },
         {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
             "move": "Earthquake",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Fire Blast",
             "tm": true
         },
         {
@@ -217,7 +227,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Spikes",
             "tm": true
         },
         {
@@ -229,7 +239,11 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Overheat",
             "tm": true
         },
         {
@@ -241,23 +255,35 @@
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Flare Blitz",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Earth Power",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Iron Head",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
             "tm": true
         },
         {
             "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Heat Crash",
             "tm": true
         },
         {
@@ -269,19 +295,15 @@
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Explosion",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Mud-Slap",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
-            "egg_move": true
-        },
-        {
-            "move": "Recycle",
+            "move": "Block",
             "egg_move": true
         }
     ]

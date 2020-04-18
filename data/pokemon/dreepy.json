@@ -1,0 +1,164 @@
+{
+    "name": "Dreepy",
+    "national_id": "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+    "types": [
+        "Dragon",
+        "Ghost"
+    ],
+    "abilities": [
+        {
+            "name": "Clear Body"
+        },
+        {
+            "name": "Infiltrator"
+        },
+        {
+            "name": "Cursed Body",
+            "hidden": true
+        }
+    ],
+    "catch_rate": 45,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Amorphous",
+        "Dragon"
+    ],
+    "hatch_time": [
+        10280,
+        10536
+    ],
+    "height_us": "1'08\"",
+    "height_eu": "0.5 m",
+    "weight_us": "4.4 lbs.",
+    "weight_eu": "2.0 kg",
+    "base_exp_yield": 54,
+    "leveling_rate": "Slow",
+    "base_friendship": 50,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 0,
+        "speed": 1
+    },
+    "base_stats": {
+        "hp": 28,
+        "atk": 60,
+        "def": 30,
+        "sp_atk": 40,
+        "sp_def": 30,
+        "speed": 82
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Drakloak",
+            "level": 50
+        }
+    ],
+    "species": "Lingering Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "If this weak Pokémon is by itself, a mere child could defeat it. But if Dreepy has friends to help it train, it can evolve and become much stronger.",
+    "move_learnset": [
+        {
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Infestation",
+            "level": 1
+        },
+        {
+            "move": "Quick Attack",
+            "level": 1
+        },
+        {
+            "move": "Bite",
+            "level": 1
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Curse",
+            "egg_move": true
+        },
+        {
+            "move": "Grudge",
+            "egg_move": true
+        },
+        {
+            "move": "Confuse Ray",
+            "egg_move": true
+        },
+        {
+            "move": "Double Team",
+            "egg_move": true
+        },
+        {
+            "move": "Disable",
+            "egg_move": true
+        },
+        {
+            "move": "Dragon Tail",
+            "egg_move": true
+        },
+        {
+            "move": "Sucker Punch",
+            "egg_move": true
+        }
+    ]
+}

@@ -1,108 +1,128 @@
 {
-    "name": "Grookey",
-    "national_id": 810,
+    "name": "Morgrem",
+    "national_id": 860,
     "types": [
-        "Grass"
+        "Dark",
+        "Fairy"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Prankster"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Frisk"
+        },
+        {
+            "name": "Pickpocket",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 120,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 100,
+        "female": 0
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Fairy",
+        "HumanLike"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "11.0 lbs.",
-    "weight_eu": "5.0 kg",
-    "base_exp_yield": 62,
-    "leveling_rate": "Medium Slow",
+    "height_us": "2'07\"",
+    "height_eu": "0.8 m",
+    "weight_us": "27.6 lbs.",
+    "weight_eu": "12.5 kg",
+    "base_exp_yield": 130,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 0,
-        "sp_def": 1,
+        "sp_atk": 2,
+        "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 50,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 65
+        "hp": 65,
+        "atk": 60,
+        "def": 45,
+        "sp_atk": 75,
+        "sp_def": 55,
+        "speed": 70
     },
-    "evolution_from": null,
+    "evolution_from": "Impidimp",
     "evolutions": [
         {
-            "to": "Thwackey",
-            "level": 16
+            "to": "Grimmsnarl",
+            "level": 42
         }
     ],
-    "species": "Chimp Pokémon",
+    "species": "Devious Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It attacks with rapid beats of its stick. As it strikes with amazing speed, it gets more and more pumped.",
+    "pokedex_entry": "With sly cunning, it tries to lure people into the woods. Some believe it to have the power to make crops grow.",
     "move_learnset": [
         {
-            "move": "Scratch",
+            "move": "False Surrender",
+            "evo": true
+        },
+        {
+            "move": "False Surrender",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Fake Out",
             "level": 1
         },
         {
-            "move": "Branch Poke",
-            "level": 6
+            "move": "Confide",
+            "level": 1
         },
         {
-            "move": "Taunt",
-            "level": 8
+            "move": "Bite",
+            "level": 1
         },
         {
-            "move": "Razor Leaf",
+            "move": "Flatter",
+            "level": 1
+        },
+        {
+            "move": "Fake Tears",
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 17
+            "move": "Assurance",
+            "level": 16
         },
         {
-            "move": "Knock Off",
+            "move": "Swagger",
             "level": 20
         },
         {
-            "move": "Slam",
+            "move": "Sucker Punch",
             "level": 24
         },
         {
-            "move": "Uproar",
+            "move": "Torment",
             "level": 28
         },
         {
-            "move": "Wood Hammer",
-            "level": 32
+            "move": "Dark Pulse",
+            "level": 35
         },
         {
-            "move": "Endeavor",
-            "level": 36
+            "move": "Nasty Plot",
+            "level": 40
+        },
+        {
+            "move": "Play Rough",
+            "level": 46
+        },
+        {
+            "move": "Foul Play",
+            "level": 52
         },
         {
             "move": "Mega Punch",
@@ -113,23 +133,23 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
+            "move": "Thunder Wave",
             "tm": true
         },
         {
-            "move": "Solar Beam",
+            "move": "Light Screen",
             "tm": true
         },
         {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Reflect",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -141,15 +161,7 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Sunny Day",
             "tm": true
         },
         {
@@ -157,11 +169,11 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Revenge",
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Fake Tears",
             "tm": true
         },
         {
@@ -169,11 +181,11 @@
             "tm": true
         },
         {
-            "move": "Fling",
+            "move": "Drain Punch",
             "tm": true
         },
         {
-            "move": "Drain Punch",
+            "move": "Shadow Claw",
             "tm": true
         },
         {
@@ -181,15 +193,11 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Retaliate",
             "tm": true
         },
         {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
+            "move": "Draining Kiss",
             "tm": true
         },
         {
@@ -197,7 +205,11 @@
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Metronome",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
             "tm": true
         },
         {
@@ -221,44 +233,32 @@
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Trick",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Nasty Plot",
             "tm": true
         },
         {
-            "move": "Growth",
-            "egg_move": true
+            "move": "Foul Play",
+            "tm": true
         },
         {
-            "move": "Hammer Arm",
-            "egg_move": true
+            "move": "Play Rough",
+            "tm": true
         },
         {
-            "move": "Fake Out",
-            "egg_move": true
+            "move": "Dazzling Gleam",
+            "tm": true
         },
         {
-            "move": "Strength",
-            "egg_move": true
-        },
-        {
-            "move": "Nature Power",
-            "egg_move": true
-        },
-        {
-            "move": "Worry Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Leech Seed",
-            "egg_move": true
+            "move": "Throat Chop",
+            "tm": true
         }
     ]
 }

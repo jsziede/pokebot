@@ -1,111 +1,110 @@
 {
-    "name": "Scorbunny",
-    "national_id": 813,
+    "name": "Dottler",
+    "national_id": 825,
     "types": [
-        "Fire"
+        "Bug",
+        "Psychic"
     ],
     "abilities": [
         {
-            "name": "Blaze"
+            "name": "Swarm"
         },
         {
-            "name": "Libero",
+            "name": "Compound Eyes"
+        },
+        {
+            "name": "Telepathy",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 120,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Human-Like"
+        "Bug"
     ],
     "hatch_time": [
-        5140,
-        5396
+        3855,
+        4111
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "9.9 lbs.",
-    "weight_eu": "4.5 kg",
-    "base_exp_yield": 62,
-    "leveling_rate": "Medium Slow",
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "43.0 lbs.",
+    "weight_eu": "19.5 kg",
+    "base_exp_yield": 117,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
-        "sp_def": 0,
-        "speed": 1
+        "sp_def": 2,
+        "speed": 0
     },
     "base_stats": {
         "hp": 50,
-        "atk": 71,
-        "def": 40,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 69
+        "atk": 35,
+        "def": 80,
+        "sp_atk": 50,
+        "sp_def": 90,
+        "speed": 30
     },
-    "evolution_from": null,
+    "evolution_from": "Blipbug",
     "evolutions": [
         {
-            "to": "Raboot",
-            "level": 16
+            "to": "Orbeetle",
+            "level": 30
         }
     ],
-    "species": "Rabbit Pokémon",
+    "species": "Radome Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It has special pads on the backs of its feet, and one on its nose. Once it’s raring to fight, these pads radiate tremendous heat.",
+    "pokedex_entry": "As it grows inside its shell, it uses its psychic abilities to monitor the outside world and prepare for evolution.",
     "move_learnset": [
         {
-            "move": "Tackle",
+            "move": "Reflect",
+            "evo": true
+        },
+        {
+            "move": "Light Screen",
+            "evo": true
+        },
+        {
+            "move": "Confusion",
+            "evo": true
+        },
+        {
+            "move": "Reflect",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Light Screen",
             "level": 1
         },
         {
-            "move": "Ember",
-            "level": 6
+            "move": "Confusion",
+            "level": 1
         },
         {
-            "move": "Quick Attack",
-            "level": 8
+            "move": "Struggle Bug",
+            "level": 1
         },
         {
-            "move": "Double Kick",
-            "level": 12
+            "move": "Solar Beam",
+            "tm": true
         },
         {
-            "move": "Flame Charge",
-            "level": 17
+            "move": "Light Screen",
+            "tm": true
         },
         {
-            "move": "Agility",
-            "level": 20
+            "move": "Reflect",
+            "tm": true
         },
         {
-            "move": "Headbutt",
-            "level": 24
-        },
-        {
-            "move": "Counter",
-            "level": 28
-        },
-        {
-            "move": "Bounce",
-            "level": 32
-        },
-        {
-            "move": "Double-Edge",
-            "level": 36
-        },
-        {
-            "move": "Mega Kick",
+            "move": "Safeguard",
             "tm": true
         },
         {
@@ -125,39 +124,39 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Bounce",
+            "move": "Imprison",
             "tm": true
         },
         {
-            "move": "Mud Shot",
+            "move": "Payback",
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Power Swap",
             "tm": true
         },
         {
-            "move": "Assurance",
+            "move": "Guard Swap",
             "tm": true
         },
         {
-            "move": "Fire Fang",
+            "move": "Trick Room",
             "tm": true
         },
         {
-            "move": "Low Sweep",
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
             "tm": true
         },
         {
@@ -165,27 +164,15 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Psychic Terrain",
             "tm": true
         },
         {
-            "move": "Flamethrower",
+            "move": "Psychic",
             "tm": true
         },
         {
-            "move": "Low Kick",
-            "tm": true
-        },
-        {
-            "move": "Agility",
-            "tm": true
-        },
-        {
-            "move": "Focus Energy",
-            "tm": true
-        },
-        {
-            "move": "Fire Blast",
+            "move": "Leech Life",
             "tm": true
         },
         {
@@ -193,7 +180,7 @@
             "tm": true
         },
         {
-            "move": "Reversal",
+            "move": "Psyshock",
             "tm": true
         },
         {
@@ -205,31 +192,43 @@
             "tm": true
         },
         {
-            "move": "Baton Pass",
+            "move": "Shadow Ball",
             "tm": true
         },
         {
-            "move": "Heat Wave",
+            "move": "Future Sight",
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Trick",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Skill Swap",
             "tm": true
         },
         {
-            "move": "Overheat",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Gunk Shot",
+            "move": "Calm Mind",
             "tm": true
         },
         {
-            "move": "Electro Ball",
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
             "tm": true
         },
         {
@@ -237,23 +236,23 @@
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Body Press",
             "tm": true
         },
         {
-            "move": "High Jump Kick",
+            "move": "Infestation",
             "egg_move": true
         },
         {
-            "move": "Sand Attack",
+            "move": "Supersonic",
             "egg_move": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Sticky Web",
             "egg_move": true
         },
         {
-            "move": "Super Fang",
+            "move": "Recover",
             "egg_move": true
         }
     ]

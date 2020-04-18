@@ -1,82 +1,81 @@
 {
-    "name": "Rillaboom",
-    "national_id": 812,
+    "name": "Perrserker",
+    "national_id": 863,
     "types": [
-        "Grass"
+        "Steel"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Battle Armor"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Tough Claws"
+        },
+        {
+            "name": "Steely Spirit",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 90,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Field"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "6'11\"",
-    "height_eu": "2.1 m",
-    "weight_us": "198.4 lbs.",
-    "weight_eu": "90.0 kg",
-    "base_exp_yield": 265,
-    "leveling_rate": "Medium Slow",
+    "height_us": "2'07\"",
+    "height_eu": "0.8 m",
+    "weight_us": "61.7 lbs.",
+    "weight_eu": "28.0 kg",
+    "base_exp_yield": 154,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 3,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 85
+        "hp": 70,
+        "atk": 110,
+        "def": 100,
+        "sp_atk": 50,
+        "sp_def": 60,
+        "speed": 50
     },
-    "evolution_from": "Thwackey",
+    "evolution_from": "Meowth",
+    "evolution_from_regional": "Galarian",
     "evolutions": [],
-    "species": "Drummer Pokémon",
+    "species": "Viking Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+    "pokedex_entry": "What appears to be an iron helmet is actually hardened hair. This Pokémon lives for the thrill of battle.",
     "move_learnset": [
         {
-            "move": "Drum Beating",
+            "move": "Iron Head",
             "evo": true
         },
         {
-            "move": "Drum Beating",
+            "move": "Iron Head",
             "level": 1
         },
         {
-            "move": "Double Hit",
+            "move": "Metal Burst",
             "level": 1
         },
         {
-            "move": "Grassy Terrain",
+            "move": "Iron Defense",
             "level": 1
         },
         {
-            "move": "Noble Roar",
-            "level": 1
-        },
-        {
-            "move": "Scratch",
+            "move": "Fake Out",
             "level": 1
         },
         {
@@ -84,51 +83,51 @@
             "level": 1
         },
         {
-            "move": "Branch Poke",
+            "move": "Hone Claws",
             "level": 1
         },
         {
-            "move": "Taunt",
+            "move": "Scratch",
             "level": 1
         },
         {
-            "move": "Razor Leaf",
+            "move": "Pay Day",
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 19
+            "move": "Metal Claw",
+            "level": 16
         },
         {
-            "move": "Knock Off",
+            "move": "Taunt",
+            "level": 20
+        },
+        {
+            "move": "Swagger",
             "level": 24
         },
         {
-            "move": "Slam",
-            "level": 30
+            "move": "Fury Swipes",
+            "level": 31
         },
         {
-            "move": "Uproar",
-            "level": 38
+            "move": "Screech",
+            "level": 36
         },
         {
-            "move": "Wood Hammer",
-            "level": 46
+            "move": "Slash",
+            "level": 42
         },
         {
-            "move": "Endeavor",
+            "move": "Metal Sound",
+            "level": 48
+        },
+        {
+            "move": "Thrash",
             "level": 54
         },
         {
-            "move": "Boomburst",
-            "level": 62
-        },
-        {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
+            "move": "Pay Day",
             "tm": true
         },
         {
@@ -140,15 +139,7 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Solar Blade",
+            "move": "Dig",
             "tm": true
         },
         {
@@ -160,6 +151,10 @@
             "tm": true
         },
         {
+            "move": "Thief",
+            "tm": true
+        },
+        {
             "move": "Snore",
             "tm": true
         },
@@ -168,15 +163,11 @@
             "tm": true
         },
         {
-            "move": "Scary Face",
-            "tm": true
-        },
-        {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
             "tm": true
         },
         {
@@ -188,23 +179,11 @@
             "tm": true
         },
         {
-            "move": "Swift",
-            "tm": true
-        },
-        {
-            "move": "Brick Break",
-            "tm": true
-        },
-        {
-            "move": "Bullet Seed",
-            "tm": true
-        },
-        {
-            "move": "Mud Shot",
-            "tm": true
-        },
-        {
             "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Payback",
             "tm": true
         },
         {
@@ -216,7 +195,7 @@
             "tm": true
         },
         {
-            "move": "Drain Punch",
+            "move": "Shadow Claw",
             "tm": true
         },
         {
@@ -224,31 +203,7 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
-            "tm": true
-        },
-        {
-            "move": "Bulldoze",
-            "tm": true
-        },
-        {
-            "move": "Snarl",
-            "tm": true
-        },
-        {
-            "move": "Grassy Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Stomping Tantrum",
+            "move": "Retaliate",
             "tm": true
         },
         {
@@ -260,15 +215,15 @@
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Thunderbolt",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Thunder",
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Amnesia",
             "tm": true
         },
         {
@@ -284,6 +239,22 @@
             "tm": true
         },
         {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
             "move": "Uproar",
             "tm": true
         },
@@ -292,35 +263,47 @@
             "tm": true
         },
         {
-            "move": "Superpower",
-            "tm": true
-        },
-        {
             "move": "Hyper Voice",
             "tm": true
         },
         {
-            "move": "Bulk Up",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Focus Blast",
+            "move": "Gyro Ball",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Close Combat",
             "tm": true
         },
         {
-            "move": "Earth Power",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
-            "move": "Leaf Storm",
+            "move": "Seed Bomb",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Gunk Shot",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
             "tm": true
         },
         {
@@ -328,43 +311,35 @@
             "tm": true
         },
         {
-            "move": "Darkest Lariat",
+            "move": "Play Rough",
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Throat Chop",
             "tm": true
         },
         {
-            "move": "Body Press",
-            "tm": true
-        },
-        {
-            "move": "Growth",
+            "move": "Spite",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Double-Edge",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Curse",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Flail",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Night Slash",
             "egg_move": true
         },
         {
-            "move": "Worry Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Leech Seed",
+            "move": "Covet",
             "egg_move": true
         }
     ]

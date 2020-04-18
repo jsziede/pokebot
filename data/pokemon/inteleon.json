@@ -1,15 +1,15 @@
 {
-    "name": "Rillaboom",
-    "national_id": 812,
+    "name": "Inteleon",
+    "national_id": 818,
     "types": [
-        "Grass"
+        "Water"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Torrent"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Sniper",
             "hidden": true
         }
     ],
@@ -19,64 +19,56 @@
         "female": 12.5
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Water1",
+        "Field"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "6'11\"",
-    "height_eu": "2.1 m",
-    "weight_us": "198.4 lbs.",
-    "weight_eu": "90.0 kg",
+    "height_us": "6'03\"",
+    "height_eu": "1.9 m",
+    "weight_us": "99.6 lbs.",
+    "weight_eu": "45.2 kg",
     "base_exp_yield": 265,
     "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 3,
+        "atk": 0,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 0
+        "speed": 3
     },
     "base_stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 85
+        "hp": 70,
+        "atk": 85,
+        "def": 65,
+        "sp_atk": 125,
+        "sp_def": 65,
+        "speed": 120
     },
-    "evolution_from": "Thwackey",
+    "evolution_from": null,
     "evolutions": [],
-    "species": "Drummer Pokémon",
+    "species": "Secret Agent Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+    "pokedex_entry": "Its nictitating membranes let it pick out foes’ weak points so it can precisely blast them with water that shoots from its fingertips at Mach 3.",
     "move_learnset": [
         {
-            "move": "Drum Beating",
+            "move": "Snipe Shot",
             "evo": true
         },
         {
-            "move": "Drum Beating",
+            "move": "Snipe Shot",
             "level": 1
         },
         {
-            "move": "Double Hit",
+            "move": "Acrobatics",
             "level": 1
         },
         {
-            "move": "Grassy Terrain",
-            "level": 1
-        },
-        {
-            "move": "Noble Roar",
-            "level": 1
-        },
-        {
-            "move": "Scratch",
+            "move": "Pound",
             "level": 1
         },
         {
@@ -84,52 +76,44 @@
             "level": 1
         },
         {
-            "move": "Branch Poke",
+            "move": "Water Gun",
             "level": 1
         },
         {
-            "move": "Taunt",
+            "move": "Bind",
             "level": 1
         },
         {
-            "move": "Razor Leaf",
+            "move": "Water Pulse",
             "level": 12
         },
         {
-            "move": "Screech",
+            "move": "Tearful Look",
             "level": 19
         },
         {
-            "move": "Knock Off",
+            "move": "Sucker Punch",
             "level": 24
         },
         {
-            "move": "Slam",
+            "move": "U-turn",
             "level": 30
         },
         {
-            "move": "Uproar",
+            "move": "Liquidation",
             "level": 38
         },
         {
-            "move": "Wood Hammer",
+            "move": "Soak",
             "level": 46
         },
         {
-            "move": "Endeavor",
+            "move": "Rain Dance",
             "level": 54
         },
         {
-            "move": "Boomburst",
+            "move": "Hydro Pump",
             "level": 62
-        },
-        {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
-            "tm": true
         },
         {
             "move": "Hyper Beam",
@@ -140,19 +124,15 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
+            "move": "Light Screen",
             "tm": true
         },
         {
-            "move": "Solar Beam",
+            "move": "Reflect",
             "tm": true
         },
         {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Safeguard",
             "tm": true
         },
         {
@@ -168,11 +148,7 @@
             "tm": true
         },
         {
-            "move": "Scary Face",
-            "tm": true
-        },
-        {
-            "move": "Giga Drain",
+            "move": "Icy Wind",
             "tm": true
         },
         {
@@ -180,7 +156,11 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -192,11 +172,19 @@
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Dive",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Icicle Spear",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
             "tm": true
         },
         {
@@ -208,15 +196,7 @@
             "tm": true
         },
         {
-            "move": "Assurance",
-            "tm": true
-        },
-        {
             "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Drain Punch",
             "tm": true
         },
         {
@@ -228,27 +208,11 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Air Slash",
             "tm": true
         },
         {
-            "move": "Snarl",
-            "tm": true
-        },
-        {
-            "move": "Grassy Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Stomping Tantrum",
+            "move": "Breaking Swipe",
             "tm": true
         },
         {
@@ -256,19 +220,35 @@
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Hydro Pump",
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Surf",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Agility",
             "tm": true
         },
         {
             "move": "Focus Energy",
+            "tm": true
+        },
+        {
+            "move": "Metronome",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
             "tm": true
         },
         {
@@ -284,43 +264,23 @@
             "tm": true
         },
         {
-            "move": "Uproar",
+            "move": "Baton Pass",
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Shadow Ball",
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Muddy Water",
             "tm": true
         },
         {
-            "move": "Hyper Voice",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
-            "move": "Bulk Up",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Energy Ball",
-            "tm": true
-        },
-        {
-            "move": "Earth Power",
-            "tm": true
-        },
-        {
-            "move": "Leaf Storm",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
+            "move": "Scald",
             "tm": true
         },
         {
@@ -328,43 +288,35 @@
             "tm": true
         },
         {
-            "move": "Darkest Lariat",
+            "move": "Liquidation",
             "tm": true
         },
         {
-            "move": "High Horsepower",
-            "tm": true
-        },
-        {
-            "move": "Body Press",
-            "tm": true
-        },
-        {
-            "move": "Growth",
+            "move": "Aqua Jet",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Double Team",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Aqua Ring",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Mist",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Haze",
             "egg_move": true
         },
         {
-            "move": "Worry Seed",
+            "move": "Ice Shard",
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Fell Stinger",
             "egg_move": true
         }
     ]

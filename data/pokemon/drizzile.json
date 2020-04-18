@@ -1,15 +1,15 @@
 {
-    "name": "Grookey",
-    "national_id": 810,
+    "name": "Drizzile",
+    "national_id": 817,
     "types": [
-        "Grass"
+        "Water"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Torrent"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Sniper",
             "hidden": true
         }
     ],
@@ -19,49 +19,49 @@
         "female": 12.5
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Water1",
+        "Field"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "11.0 lbs.",
-    "weight_eu": "5.0 kg",
-    "base_exp_yield": 62,
+    "height_us": "2'04\"",
+    "height_eu": "0.7 m",
+    "weight_us": "25.4 lbs.",
+    "weight_eu": "11.5 kg",
+    "base_exp_yield": 147,
     "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 0,
-        "sp_def": 1,
+        "sp_atk": 2,
+        "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 50,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 65
+        "hp": 65,
+        "atk": 60,
+        "def": 55,
+        "sp_atk": 95,
+        "sp_def": 55,
+        "speed": 90
     },
-    "evolution_from": null,
+    "evolution_from": "Sobble",
     "evolutions": [
         {
-            "to": "Thwackey",
-            "level": 16
+            "to": "Inteleon",
+            "level": 35
         }
     ],
-    "species": "Chimp Pokémon",
+    "species": "Water Lizard Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It attacks with rapid beats of its stick. As it strikes with amazing speed, it gets more and more pumped.",
+    "pokedex_entry": "Highly intelligent but also very lazy, it keeps enemies out of its territory by laying traps everywhere.",
     "move_learnset": [
         {
-            "move": "Scratch",
+            "move": "Pound",
             "level": 1
         },
         {
@@ -69,63 +69,51 @@
             "level": 1
         },
         {
-            "move": "Branch Poke",
-            "level": 6
+            "move": "Water Gun",
+            "level": 1
         },
         {
-            "move": "Taunt",
-            "level": 8
+            "move": "Bind",
+            "level": 1
         },
         {
-            "move": "Razor Leaf",
+            "move": "Water Pulse",
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 17
+            "move": "Tearful Look",
+            "level": 19
         },
         {
-            "move": "Knock Off",
-            "level": 20
-        },
-        {
-            "move": "Slam",
+            "move": "Sucker Punch",
             "level": 24
         },
         {
-            "move": "Uproar",
-            "level": 28
+            "move": "U-turn",
+            "level": 30
         },
         {
-            "move": "Wood Hammer",
-            "level": 32
-        },
-        {
-            "move": "Endeavor",
+            "move": "Liquidation",
             "level": 36
         },
         {
-            "move": "Mega Punch",
+            "move": "Soak",
+            "level": 42
+        },
+        {
+            "move": "Rain Dance",
+            "level": 48
+        },
+        {
+            "move": "Light Screen",
             "tm": true
         },
         {
-            "move": "Mega Kick",
+            "move": "Reflect",
             "tm": true
         },
         {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Safeguard",
             "tm": true
         },
         {
@@ -141,15 +129,15 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -161,11 +149,23 @@
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Dive",
             "tm": true
         },
         {
-            "move": "Assurance",
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
             "tm": true
         },
         {
@@ -173,31 +173,11 @@
             "tm": true
         },
         {
-            "move": "Drain Punch",
-            "tm": true
-        },
-        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Acrobatics",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
-            "tm": true
-        },
-        {
-            "move": "Focus Energy",
+            "move": "Surf",
             "tm": true
         },
         {
@@ -213,19 +193,11 @@
             "tm": true
         },
         {
-            "move": "Uproar",
+            "move": "Baton Pass",
             "tm": true
         },
         {
-            "move": "Taunt",
-            "tm": true
-        },
-        {
-            "move": "Energy Ball",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
+            "move": "Muddy Water",
             "tm": true
         },
         {
@@ -233,31 +205,35 @@
             "tm": true
         },
         {
-            "move": "Growth",
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Aqua Jet",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Double Team",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Aqua Ring",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Mist",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Haze",
             "egg_move": true
         },
         {
-            "move": "Worry Seed",
+            "move": "Ice Shard",
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Fell Stinger",
             "egg_move": true
         }
     ]

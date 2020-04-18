@@ -1,136 +1,118 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Centiskorch",
+    "national_id": 851,
     "types": [
-        "Grass",
-        "Dragon"
+        "Fire",
+        "Bug"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Flash Fire"
         },
         {
-            "name": "Gluttony"
+            "name": "White Smoke"
         },
         {
-            "name": "Thick Fat",
+            "name": "Flame Body",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 75,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Bug"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "9'10\"",
+    "height_eu": "3.0 m",
+    "weight_us": "264.6 lbs.",
+    "weight_eu": "120.0 kg",
+    "base_exp_yield": 184,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
-        "atk": 0,
+        "hp": 0,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 100,
+        "atk": 115,
+        "def": 65,
+        "sp_atk": 90,
+        "sp_def": 90,
+        "speed": 65
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Sizzlipede",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Radiator Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "While its burning body is already dangerous on its own, this excessively hostile Pokémon also has large and very sharp fangs.",
     "move_learnset": [
         {
-            "move": "Headbutt",
-            "evo": true
-        },
-        {
-            "move": "Headbutt",
+            "move": "Inferno",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Ember",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Smokescreen",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Wrap",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
-            "level": 1
+            "move": "Flame Wheel",
+            "level": 15
         },
         {
-            "move": "Curse",
-            "level": 4
-        },
-        {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
+            "move": "Bug Bite",
             "level": 20
         },
         {
-            "move": "Recover",
-            "level": 24
+            "move": "Coil",
+            "level": 25
         },
         {
-            "move": "Apple Acid",
-            "level": 28
-        },
-        {
-            "move": "Body Slam",
+            "move": "Slam",
             "level": 32
         },
         {
-            "move": "Iron Defense",
-            "level": 36
+            "move": "Fire Spin",
+            "level": 39
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Crunch",
+            "level": 46
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Fire Lash",
+            "level": 53
+        },
+        {
+            "move": "Lunge",
+            "level": 60
+        },
+        {
+            "move": "Burn Up",
+            "level": 67
         },
         {
             "move": "Hyper Beam",
@@ -145,15 +127,7 @@
             "tm": true
         },
         {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
+            "move": "Fire Spin",
             "tm": true
         },
         {
@@ -169,10 +143,6 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
             "tm": true
         },
@@ -181,15 +151,23 @@
             "tm": true
         },
         {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Thunder Fang",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Fire Fang",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
             "tm": true
         },
         {
@@ -197,27 +175,27 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Mystical Fire",
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Brutal Swing",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Flamethrower",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
             "tm": true
         },
         {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Outrage",
             "tm": true
         },
         {
@@ -229,47 +207,47 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Crunch",
             "tm": true
         },
         {
-            "move": "Iron Defense",
+            "move": "Heat Wave",
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Overheat",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Flare Blitz",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "X-Scissor",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Bug Buzz",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Power Whip",
             "tm": true
         },
         {
-            "move": "Heavy Slam",
+            "move": "Scald",
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Heat Crash",
             "tm": true
         },
         {
-            "move": "Body Press",
-            "tm": true
+            "move": "Knock Off",
+            "egg_move": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Struggle Bug",
             "egg_move": true
         },
         {
@@ -279,10 +257,7 @@
         {
             "move": "Defense Curl",
             "egg_move": true
-        },
-        {
-            "move": "Recycle",
-            "egg_move": true
         }
+    ]
     ]
 }

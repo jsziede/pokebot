@@ -1,135 +1,123 @@
 {
-    "name": "Rillaboom",
-    "national_id": 812,
+    "name": "Drednaw",
+    "national_id": 834,
     "types": [
-        "Grass"
+        "Water",
+        "Rock"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Strong Jaw"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Shell Armor"
+        },
+        {
+            "name": "Swift Swim",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 75,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Monster",
+        "Water1"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "6'11\"",
-    "height_eu": "2.1 m",
-    "weight_us": "198.4 lbs.",
-    "weight_eu": "90.0 kg",
-    "base_exp_yield": 265,
-    "leveling_rate": "Medium Slow",
+    "height_us": "3'03\"",
+    "height_eu": "1.0 m",
+    "weight_us": "254.6 lbs.",
+    "weight_eu": "115.5 kg",
+    "base_exp_yield": 170,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 3,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 100,
-        "atk": 125,
+        "hp": 90,
+        "atk": 115,
         "def": 90,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 85
+        "sp_atk": 48,
+        "sp_def": 68,
+        "speed": 74
     },
-    "evolution_from": "Thwackey",
+    "evolution_from": "Chewtle",
     "evolutions": [],
-    "species": "Drummer Pokémon",
+    "species": "Bite Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+    "pokedex_entry": "This Pokémon rapidly extends its retractable neck to sink its sharp fangs into distant enemies and take them down.",
     "move_learnset": [
         {
-            "move": "Drum Beating",
+            "move": "Rock Tomb",
             "evo": true
         },
         {
-            "move": "Drum Beating",
+            "move": "Rock Tomb",
             "level": 1
         },
         {
-            "move": "Double Hit",
+            "move": "Razor Shell",
             "level": 1
         },
         {
-            "move": "Grassy Terrain",
+            "move": "Crunch",
             "level": 1
         },
         {
-            "move": "Noble Roar",
+            "move": "Rock Polish",
             "level": 1
         },
         {
-            "move": "Scratch",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Water Gun",
             "level": 1
         },
         {
-            "move": "Branch Poke",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Taunt",
+            "move": "Protect",
             "level": 1
         },
         {
-            "move": "Razor Leaf",
-            "level": 12
+            "move": "Headbutt",
+            "level": 21
         },
         {
-            "move": "Screech",
-            "level": 19
-        },
-        {
-            "move": "Knock Off",
-            "level": 24
-        },
-        {
-            "move": "Slam",
+            "move": "Counter",
             "level": 30
         },
         {
-            "move": "Uproar",
-            "level": 38
+            "move": "Jaw Lock",
+            "level": 39
         },
         {
-            "move": "Wood Hammer",
-            "level": 46
+            "move": "Liquidation",
+            "level": 48
         },
         {
-            "move": "Endeavor",
-            "level": 54
+            "move": "Body Slam",
+            "level": 57
         },
         {
-            "move": "Boomburst",
-            "level": 62
-        },
-        {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
-            "tm": true
+            "move": "Head Smash",
+            "level": 66
         },
         {
             "move": "Hyper Beam",
@@ -140,23 +128,15 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Dig",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -172,15 +152,19 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -188,15 +172,19 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Revenge",
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Dive",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
             "tm": true
         },
         {
@@ -204,7 +192,11 @@
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Payback",
             "tm": true
         },
         {
@@ -212,11 +204,7 @@
             "tm": true
         },
         {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Drain Punch",
+            "move": "Ice Fang",
             "tm": true
         },
         {
@@ -224,19 +212,11 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
-            "tm": true
-        },
-        {
             "move": "Bulldoze",
             "tm": true
         },
         {
-            "move": "Snarl",
-            "tm": true
-        },
-        {
-            "move": "Grassy Terrain",
+            "move": "Razor Shell",
             "tm": true
         },
         {
@@ -244,7 +224,7 @@
             "tm": true
         },
         {
-            "move": "Brutal Swing",
+            "move": "Smart Strike",
             "tm": true
         },
         {
@@ -260,7 +240,19 @@
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
             "tm": true
         },
         {
@@ -268,7 +260,7 @@
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Waterfall",
             "tm": true
         },
         {
@@ -284,11 +276,15 @@
             "tm": true
         },
         {
-            "move": "Uproar",
+            "move": "Megahorn",
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
             "tm": true
         },
         {
@@ -296,19 +292,15 @@
             "tm": true
         },
         {
-            "move": "Hyper Voice",
+            "move": "Muddy Water",
             "tm": true
         },
         {
-            "move": "Bulk Up",
+            "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Energy Ball",
+            "move": "Poison Jab",
             "tm": true
         },
         {
@@ -316,19 +308,15 @@
             "tm": true
         },
         {
-            "move": "Leaf Storm",
+            "move": "Stone Edge",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Stealth Rock",
             "tm": true
         },
         {
-            "move": "Work Up",
-            "tm": true
-        },
-        {
-            "move": "Darkest Lariat",
+            "move": "Scald",
             "tm": true
         },
         {
@@ -336,35 +324,27 @@
             "tm": true
         },
         {
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
             "move": "Body Press",
             "tm": true
         },
         {
-            "move": "Growth",
+            "move": "Skull Bash",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Gastro Acid",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
-            "egg_move": true
-        },
-        {
-            "move": "Strength",
-            "egg_move": true
-        },
-        {
-            "move": "Nature Power",
-            "egg_move": true
-        },
-        {
-            "move": "Worry Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Leech Seed",
+            "move": "Dragon Tail",
             "egg_move": true
         }
     ]

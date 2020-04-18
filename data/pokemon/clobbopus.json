@@ -1,111 +1,115 @@
 {
-    "name": "Scorbunny",
-    "national_id": 813,
+    "name": "Clobbopus",
+    "national_id": 852,
     "types": [
-        "Fire"
+        "Fighting"
     ],
     "abilities": [
         {
-            "name": "Blaze"
+            "name": "Limber"
         },
         {
-            "name": "Libero",
+            "name": "Technician",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 180,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Human-Like"
+        "Water1",
+        "HumanLike"
     ],
     "hatch_time": [
-        5140,
-        5396
+        6425,
+        6681
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "9.9 lbs.",
-    "weight_eu": "4.5 kg",
+    "height_us": "2'00\"",
+    "height_eu": "0.6 m",
+    "weight_us": "8.8 lbs.",
+    "weight_eu": "4.0 kg",
     "base_exp_yield": 62,
     "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 0,
+        "atk": 1,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 1
+        "speed": 0
     },
     "base_stats": {
         "hp": 50,
-        "atk": 71,
-        "def": 40,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 69
+        "atk": 68,
+        "def": 60,
+        "sp_atk": 50,
+        "sp_def": 50,
+        "speed": 32
     },
     "evolution_from": null,
     "evolutions": [
         {
-            "to": "Raboot",
-            "level": 16
+            "to": "Grapploct",
+            "move_learned": "Taunt"
         }
     ],
-    "species": "Rabbit Pokémon",
+    "species": "Tantrum Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It has special pads on the backs of its feet, and one on its nose. Once it’s raring to fight, these pads radiate tremendous heat.",
+    "pokedex_entry": "Its tentacles tear off easily, but it isn’t alarmed when that happens—it knows they’ll grow back. It’s about as smart as a three-year-old.",
     "move_learnset": [
         {
-            "move": "Tackle",
+            "move": "Rock Smash",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Leer",
             "level": 1
         },
         {
-            "move": "Ember",
-            "level": 6
+            "move": "Feint",
+            "level": 5
         },
         {
-            "move": "Quick Attack",
-            "level": 8
+            "move": "Bind",
+            "level": 10
         },
         {
-            "move": "Double Kick",
-            "level": 12
+            "move": "Detect",
+            "level": 15
         },
         {
-            "move": "Flame Charge",
-            "level": 17
-        },
-        {
-            "move": "Agility",
+            "move": "Brick Break",
             "level": 20
         },
         {
-            "move": "Headbutt",
-            "level": 24
+            "move": "Bulk Up",
+            "level": 25
         },
         {
-            "move": "Counter",
-            "level": 28
+            "move": "Submission",
+            "level": 30
         },
         {
-            "move": "Bounce",
-            "level": 32
+            "move": "Taunt",
+            "level": 35
         },
         {
-            "move": "Double-Edge",
-            "level": 36
+            "move": "Reversal",
+            "level": 40
         },
         {
-            "move": "Mega Kick",
+            "move": "Superpower",
+            "level": 45
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
             "tm": true
         },
         {
@@ -125,19 +129,19 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Revenge",
             "tm": true
         },
         {
-            "move": "Bounce",
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Dive",
             "tm": true
         },
         {
@@ -145,19 +149,11 @@
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Brine",
             "tm": true
         },
         {
-            "move": "Assurance",
-            "tm": true
-        },
-        {
-            "move": "Fire Fang",
-            "tm": true
-        },
-        {
-            "move": "Low Sweep",
+            "move": "Payback",
             "tm": true
         },
         {
@@ -165,27 +161,15 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Retaliate",
             "tm": true
         },
         {
-            "move": "Flamethrower",
+            "move": "Body Slam",
             "tm": true
         },
         {
-            "move": "Low Kick",
-            "tm": true
-        },
-        {
-            "move": "Agility",
-            "tm": true
-        },
-        {
-            "move": "Focus Energy",
-            "tm": true
-        },
-        {
-            "move": "Fire Blast",
+            "move": "Waterfall",
             "tm": true
         },
         {
@@ -205,35 +189,27 @@
             "tm": true
         },
         {
-            "move": "Baton Pass",
-            "tm": true
-        },
-        {
-            "move": "Heat Wave",
-            "tm": true
-        },
-        {
             "move": "Taunt",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Superpower",
             "tm": true
         },
         {
-            "move": "Overheat",
+            "move": "Muddy Water",
             "tm": true
         },
         {
-            "move": "Gunk Shot",
+            "move": "Bulk Up",
             "tm": true
         },
         {
-            "move": "Electro Ball",
+            "move": "Close Combat",
             "tm": true
         },
         {
-            "move": "Ally Switch",
+            "move": "Focus Blast",
             "tm": true
         },
         {
@@ -241,11 +217,15 @@
             "tm": true
         },
         {
-            "move": "High Jump Kick",
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Pain Split",
             "egg_move": true
         },
         {
-            "move": "Sand Attack",
+            "move": "Soak",
             "egg_move": true
         },
         {
@@ -253,7 +233,15 @@
             "egg_move": true
         },
         {
-            "move": "Super Fang",
+            "move": "Circle Throw",
+            "egg_move": true
+        },
+        {
+            "move": "Seismic Toss",
+            "egg_move": true
+        },
+        {
+            "move": "Power-Up Punch",
             "egg_move": true
         }
     ]

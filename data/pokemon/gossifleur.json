@@ -1,37 +1,39 @@
 {
-    "name": "Grookey",
-    "national_id": 810,
+    "name": "Gossifleur",
+    "national_id": 829,
     "types": [
         "Grass"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Cotton Down"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Regenerator"
+        },
+        {
+            "name": "Effect Spore",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 190,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
         "Grass"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "11.0 lbs.",
-    "weight_eu": "5.0 kg",
-    "base_exp_yield": 62,
-    "leveling_rate": "Medium Slow",
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "4.9 lbs.",
+    "weight_eu": "2.2 kg",
+    "base_exp_yield": 50,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
@@ -42,38 +44,38 @@
         "speed": 0
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 50,
+        "hp": 40,
+        "atk": 40,
+        "def": 60,
         "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 65
+        "sp_def": 60,
+        "speed": 10
     },
     "evolution_from": null,
     "evolutions": [
         {
-            "to": "Thwackey",
-            "level": 16
+            "to": "Eldegoss",
+            "level": 20
         }
     ],
-    "species": "Chimp Pokémon",
+    "species": "Flowering Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It attacks with rapid beats of its stick. As it strikes with amazing speed, it gets more and more pumped.",
+    "pokedex_entry": "It whirls around in the wind while singing a joyous song. This delightful display has charmed many into raising this Pokémon.",
     "move_learnset": [
         {
-            "move": "Scratch",
+            "move": "Leafage",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Sing",
             "level": 1
         },
         {
-            "move": "Branch Poke",
-            "level": 6
+            "move": "Rapid Spin",
+            "level": 4
         },
         {
-            "move": "Taunt",
+            "move": "Sweet Scent",
             "level": 8
         },
         {
@@ -81,36 +83,28 @@
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 17
+            "move": "Round",
+            "level": 16
         },
         {
-            "move": "Knock Off",
-            "level": 20
+            "move": "Leaf Tornado",
+            "level": 21
         },
         {
-            "move": "Slam",
+            "move": "Synthesis",
             "level": 24
         },
         {
-            "move": "Uproar",
+            "move": "Hyper Voice",
             "level": 28
         },
         {
-            "move": "Wood Hammer",
+            "move": "Aromatherapy",
             "level": 32
         },
         {
-            "move": "Endeavor",
+            "move": "Leaf Storm",
             "level": 36
-        },
-        {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
-            "tm": true
         },
         {
             "move": "Magical Leaf",
@@ -121,11 +115,7 @@
             "tm": true
         },
         {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Light Screen",
             "tm": true
         },
         {
@@ -145,6 +135,10 @@
             "tm": true
         },
         {
+            "move": "Charm",
+            "tm": true
+        },
+        {
             "move": "Attract",
             "tm": true
         },
@@ -157,23 +151,11 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "U-turn",
-            "tm": true
-        },
-        {
-            "move": "Assurance",
-            "tm": true
-        },
-        {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Drain Punch",
+            "move": "Bullet Seed",
             "tm": true
         },
         {
@@ -181,23 +163,7 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
-            "tm": true
-        },
-        {
-            "move": "Focus Energy",
+            "move": "Grassy Terrain",
             "tm": true
         },
         {
@@ -213,11 +179,7 @@
             "tm": true
         },
         {
-            "move": "Uproar",
-            "tm": true
-        },
-        {
-            "move": "Taunt",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
@@ -225,11 +187,15 @@
             "tm": true
         },
         {
+            "move": "Leaf Storm",
+            "tm": true
+        },
+        {
             "move": "Grass Knot",
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Pollen Puff",
             "tm": true
         },
         {
@@ -237,19 +203,7 @@
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
-            "egg_move": true
-        },
-        {
-            "move": "Fake Out",
-            "egg_move": true
-        },
-        {
-            "move": "Strength",
-            "egg_move": true
-        },
-        {
-            "move": "Nature Power",
+            "move": "Leech Seed",
             "egg_move": true
         },
         {
@@ -257,7 +211,15 @@
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Poison Powder",
+            "egg_move": true
+        },
+        {
+            "move": "Stun Spore",
+            "egg_move": true
+        },
+        {
+            "move": "Sleep Powder",
             "egg_move": true
         }
     ]

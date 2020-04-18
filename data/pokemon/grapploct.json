@@ -1,19 +1,15 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Grapploct",
+    "national_id": 853,
     "types": [
-        "Grass",
-        "Dragon"
+        "Fighting"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Limber"
         },
         {
-            "name": "Gluttony"
-        },
-        {
-            "name": "Thick Fat",
+            "name": "Technician",
             "hidden": true
         }
     ],
@@ -23,114 +19,109 @@
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Water1",
+        "HumanLike"
     ],
     "hatch_time": [
-        5140,
-        5396
+        6425,
+        6681
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "5'03\"",
+    "height_eu": "1.6 m",
+    "weight_us": "86.0 lbs.",
+    "weight_eu": "39.0 kg",
+    "base_exp_yield": 168,
+    "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
-        "atk": 0,
+        "hp": 0,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
+        "hp": 80,
+        "atk": 118,
+        "def": 90,
+        "sp_atk": 70,
         "sp_def": 80,
-        "speed": 30
+        "speed": 42
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Clobbopus",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Jujitsu Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "Searching for an opponent to test its skills against, it emerges onto land. Once the battle is over, it returns to the sea.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Octolock",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Octolock",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Octazooka",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Rock Smash",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Leer",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Feint",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
+            "move": "Bind",
             "level": 1
         },
         {
-            "move": "Curse",
-            "level": 4
+            "move": "Detect",
+            "level": 15
         },
         {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
+            "move": "Brick Break",
             "level": 20
         },
         {
-            "move": "Recover",
-            "level": 24
+            "move": "Bulk Up",
+            "level": 25
         },
         {
-            "move": "Apple Acid",
-            "level": 28
+            "move": "Submission",
+            "level": 30
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Taunt",
+            "level": 35
         },
         {
-            "move": "Iron Defense",
-            "level": 36
-        },
-        {
-            "move": "Dragon Pulse",
+            "move": "Reversal",
             "level": 40
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Superpower",
+            "level": 45
+        },
+        {
+            "move": "Topsy-Turvy",
+            "level": 50
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
         },
         {
             "move": "Hyper Beam",
@@ -141,19 +132,7 @@
             "tm": true
         },
         {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
+            "move": "Dig",
             "tm": true
         },
         {
@@ -169,7 +148,7 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Scary Face",
             "tm": true
         },
         {
@@ -177,7 +156,7 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -185,7 +164,23 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Brine",
             "tm": true
         },
         {
@@ -193,11 +188,23 @@
             "tm": true
         },
         {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
             "tm": true
         },
         {
@@ -205,11 +212,15 @@
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Hydro Pump",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
             "tm": true
         },
         {
@@ -217,7 +228,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Reversal",
             "tm": true
         },
         {
@@ -229,59 +240,59 @@
             "tm": true
         },
         {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
             "move": "Superpower",
             "tm": true
         },
         {
-            "move": "Iron Defense",
+            "move": "Muddy Water",
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Bulk Up",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Close Combat",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Focus Blast",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Work Up",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Liquidation",
             "tm": true
         },
         {
-            "move": "Heavy Slam",
-            "tm": true
+            "move": "Pain Split",
+            "egg_move": true
         },
         {
-            "move": "High Horsepower",
-            "tm": true
-        },
-        {
-            "move": "Body Press",
-            "tm": true
+            "move": "Soak",
+            "egg_move": true
         },
         {
             "move": "Sucker Punch",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Circle Throw",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
+            "move": "Seismic Toss",
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Power-Up Punch",
             "egg_move": true
         }
     ]

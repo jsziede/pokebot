@@ -1,37 +1,41 @@
 {
-    "name": "Rillaboom",
-    "national_id": 812,
+    "name": "Grimmsnarl",
+    "national_id": 861,
     "types": [
-        "Grass"
+        "Dark",
+        "Fairy"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Prankster"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Frisk"
+        },
+        {
+            "name": "Pickpocket",
             "hidden": true
         }
     ],
     "catch_rate": 45,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 100,
+        "female": 0
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Fairy",
+        "HumanLike"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "6'11\"",
-    "height_eu": "2.1 m",
-    "weight_us": "198.4 lbs.",
-    "weight_eu": "90.0 kg",
-    "base_exp_yield": 265,
-    "leveling_rate": "Medium Slow",
+    "height_us": "4'11\"",
+    "height_eu": "1.5 m",
+    "weight_us": "134.5 lbs.",
+    "weight_eu": "61.0 kg",
+    "base_exp_yield": 255,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
@@ -42,86 +46,94 @@
         "speed": 0
     },
     "base_stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 85
+        "hp": 95,
+        "atk": 120,
+        "def": 65,
+        "sp_atk": 95,
+        "sp_def": 75,
+        "speed": 60
     },
-    "evolution_from": "Thwackey",
+    "evolution_from": "Morgrem",
     "evolutions": [],
-    "species": "Drummer Pokémon",
+    "species": "Bulk Up Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+    "pokedex_entry": "Its hairs work like muscle fibers. When its hairs unfurl, they latch on to opponents, ensnaring them as tentacles would.",
     "move_learnset": [
         {
-            "move": "Drum Beating",
+            "move": "Spirit Break",
             "evo": true
         },
         {
-            "move": "Drum Beating",
+            "move": "Spirit Break",
             "level": 1
         },
         {
-            "move": "Double Hit",
+            "move": "False Surrender",
             "level": 1
         },
         {
-            "move": "Grassy Terrain",
+            "move": "Bulk Up",
             "level": 1
         },
         {
-            "move": "Noble Roar",
+            "move": "Power-Up Punch",
             "level": 1
         },
         {
-            "move": "Scratch",
+            "move": "Fake Out",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Confide",
             "level": 1
         },
         {
-            "move": "Branch Poke",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Taunt",
+            "move": "Flatter",
             "level": 1
         },
         {
-            "move": "Razor Leaf",
+            "move": "Fake Tears",
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 19
+            "move": "Assurance",
+            "level": 16
         },
         {
-            "move": "Knock Off",
+            "move": "Swagger",
+            "level": 20
+        },
+        {
+            "move": "Sucker Punch",
             "level": 24
         },
         {
-            "move": "Slam",
-            "level": 30
+            "move": "Torment",
+            "level": 28
         },
         {
-            "move": "Uproar",
-            "level": 38
+            "move": "Dark Pulse",
+            "level": 35
         },
         {
-            "move": "Wood Hammer",
-            "level": 46
+            "move": "Nasty Plot",
+            "level": 40
         },
         {
-            "move": "Endeavor",
-            "level": 54
+            "move": "Play Rough",
+            "level": 48
         },
         {
-            "move": "Boomburst",
-            "level": 62
+            "move": "Foul Play",
+            "level": 56
+        },
+        {
+            "move": "Hammer Arm",
+            "level": 64
         },
         {
             "move": "Mega Punch",
@@ -129,6 +141,18 @@
         },
         {
             "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
             "tm": true
         },
         {
@@ -140,23 +164,23 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
+            "move": "Thunder Wave",
             "tm": true
         },
         {
-            "move": "Solar Beam",
+            "move": "Light Screen",
             "tm": true
         },
         {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Reflect",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -172,15 +196,7 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Sunny Day",
             "tm": true
         },
         {
@@ -188,7 +204,7 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Revenge",
             "tm": true
         },
         {
@@ -196,15 +212,7 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
-            "tm": true
-        },
-        {
-            "move": "Mud Shot",
-            "tm": true
-        },
-        {
-            "move": "U-turn",
+            "move": "Fake Tears",
             "tm": true
         },
         {
@@ -212,7 +220,7 @@
             "tm": true
         },
         {
-            "move": "Fling",
+            "move": "Power Swap",
             "tm": true
         },
         {
@@ -220,39 +228,31 @@
             "tm": true
         },
         {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Retaliate",
             "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": true
-        },
-        {
-            "move": "Snarl",
-            "tm": true
-        },
-        {
-            "move": "Grassy Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
+            "move": "Draining Kiss",
             "tm": true
         },
         {
             "move": "Stomping Tantrum",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
             "tm": true
         },
         {
@@ -264,11 +264,15 @@
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Focus Energy",
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Metronome",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
             "tm": true
         },
         {
@@ -284,6 +288,10 @@
             "tm": true
         },
         {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
             "move": "Uproar",
             "tm": true
         },
@@ -292,11 +300,11 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Trick",
             "tm": true
         },
         {
-            "move": "Hyper Voice",
+            "move": "Superpower",
             "tm": true
         },
         {
@@ -304,27 +312,31 @@
             "tm": true
         },
         {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
             "move": "Focus Blast",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Nasty Plot",
             "tm": true
         },
         {
-            "move": "Earth Power",
+            "move": "Power Whip",
             "tm": true
         },
         {
-            "move": "Leaf Storm",
+            "move": "Foul Play",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Play Rough",
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Dazzling Gleam",
             "tm": true
         },
         {
@@ -332,40 +344,12 @@
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Throat Chop",
             "tm": true
         },
         {
             "move": "Body Press",
             "tm": true
-        },
-        {
-            "move": "Growth",
-            "egg_move": true
-        },
-        {
-            "move": "Hammer Arm",
-            "egg_move": true
-        },
-        {
-            "move": "Fake Out",
-            "egg_move": true
-        },
-        {
-            "move": "Strength",
-            "egg_move": true
-        },
-        {
-            "move": "Nature Power",
-            "egg_move": true
-        },
-        {
-            "move": "Worry Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Leech Seed",
-            "egg_move": true
         }
     ]
 }

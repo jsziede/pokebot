@@ -1,41 +1,36 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Greedent",
+    "national_id": 820,
     "types": [
-        "Grass",
-        "Dragon"
+        "Normal"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Cheek Pouch"
         },
         {
-            "name": "Gluttony"
-        },
-        {
-            "name": "Thick Fat",
+            "name": "Gluttony",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 90,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Field"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "2'00\"",
+    "height_eu": "0.6 m",
+    "weight_us": "13.2 lbs.",
+    "weight_eu": "6.0 kg",
+    "base_exp_yield": 161,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 2,
@@ -46,91 +41,78 @@
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 120,
+        "atk": 95,
+        "def": 95,
+        "sp_atk": 55,
+        "sp_def": 75,
+        "speed": 20
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Skwovet",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Greedy Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "Common throughout the Galar region, this Pokémon has strong teeth and can chew through the toughest of berry shells.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Covet",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Covet",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Tail Whip",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Stuff Cheeks",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
-            "level": 1
+            "move": "Stockpile",
+            "level": 15
         },
         {
-            "move": "Curse",
-            "level": 4
+            "move": "Swallow",
+            "level": 15
         },
         {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
-            "level": 20
-        },
-        {
-            "move": "Recover",
-            "level": 24
-        },
-        {
-            "move": "Apple Acid",
-            "level": 28
+            "move": "Spit Up",
+            "level": 15
         },
         {
             "move": "Body Slam",
-            "level": 32
+            "level": 20
         },
         {
-            "move": "Iron Defense",
-            "level": 36
+            "move": "Rest",
+            "level": 27
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Counter",
+            "level": 34
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Bullet Seed",
+            "level": 41
+        },
+        {
+            "move": "Super Fang",
+            "level": 48
+        },
+        {
+            "move": "Belch",
+            "level": 55
         },
         {
             "move": "Hyper Beam",
@@ -141,23 +123,15 @@
             "tm": true
         },
         {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
+            "move": "Dig",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -169,15 +143,7 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Sunny Day",
             "tm": true
         },
         {
@@ -189,7 +155,31 @@
             "tm": true
         },
         {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
             "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Thunder Fang",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
             "tm": true
         },
         {
@@ -197,7 +187,19 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Tail Slap",
+            "tm": true
+        },
+        {
+            "move": "Brutal Swing",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
             "tm": true
         },
         {
@@ -217,10 +219,6 @@
             "tm": true
         },
         {
-            "move": "Outrage",
-            "tm": true
-        },
-        {
             "move": "Endure",
             "tm": true
         },
@@ -229,11 +227,23 @@
             "tm": true
         },
         {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
             "move": "Superpower",
             "tm": true
         },
         {
-            "move": "Iron Defense",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
@@ -245,32 +255,16 @@
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Wild Charge",
             "tm": true
         },
         {
-            "move": "Energy Ball",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
-            "tm": true
-        },
-        {
-            "move": "Heavy Slam",
-            "tm": true
-        },
-        {
-            "move": "High Horsepower",
+            "move": "Psychic Fangs",
             "tm": true
         },
         {
             "move": "Body Press",
             "tm": true
-        },
-        {
-            "move": "Sucker Punch",
-            "egg_move": true
         },
         {
             "move": "Rollout",
@@ -281,7 +275,11 @@
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Last Resort",
+            "egg_move": true
+        },
+        {
+            "move": "Belly Drum",
             "egg_move": true
         }
     ]

@@ -1,0 +1,86 @@
+{
+    "name": "Blipbug",
+    "national_id": 824,
+    "types": [
+        "Bug"
+    ],
+    "abilities": [
+        {
+            "name": "Swarm"
+        },
+        {
+            "name": "Compound Eyes"
+        },
+        {
+            "name": "Telepathy",
+            "hidden": true
+        }
+    ],
+    "catch_rate": 255,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Bug"
+    ],
+    "hatch_time": [
+        3855,
+        4111
+    ],
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "17.6 lbs.",
+    "weight_eu": "8.0 kg",
+    "base_exp_yield": 36,
+    "leveling_rate": "Medium Fast",
+    "base_friendship": 50,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 0,
+        "sp_def": 1,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 25,
+        "atk": 20,
+        "def": 20,
+        "sp_atk": 25,
+        "sp_def": 45,
+        "speed": 45
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "to": "Dottler",
+            "level": 10
+        }
+    ],
+    "species": "Larva Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "Often found in gardens, this Pokémon has hairs on its body that it uses to assess its surroundings.",
+    "move_learnset": [
+        {
+            "move": "Struggle Bug",
+            "level": 1
+        },
+        {
+            "move": "Infestation",
+            "egg_move": true
+        },
+        {
+            "move": "Supersonic",
+            "egg_move": true
+        },
+        {
+            "move": "Sticky Web",
+            "egg_move": true
+        },
+        {
+            "move": "Recover",
+            "egg_move": true
+        }
+    ]
+}

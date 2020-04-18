@@ -1,19 +1,19 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Orbeetle",
+    "national_id": 826,
     "types": [
-        "Grass",
-        "Dragon"
+        "Bug",
+        "Psychic"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Swarm"
         },
         {
-            "name": "Gluttony"
+            "name": "Frisk"
         },
         {
-            "name": "Thick Fat",
+            "name": "Telepathy",
             "hidden": true
         }
     ],
@@ -23,114 +23,104 @@
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Bug"
     ],
     "hatch_time": [
-        5140,
-        5396
+        3855,
+        4111
     ],
     "height_us": "1'04\"",
     "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "weight_us": "89.9 lbs.",
+    "weight_eu": "40.8 kg",
+    "base_exp_yield": 253,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
-        "sp_def": 0,
+        "sp_def": 3,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 60,
+        "atk": 45,
+        "def": 110,
+        "sp_atk": 80,
+        "sp_def": 120,
+        "speed": 90
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Dottler",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Seven Spot Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "It emits psychic energy to observe and study what’s around it—and what’s around it can include things over six miles away.",
     "move_learnset": [
         {
-            "move": "Headbutt",
-            "evo": true
-        },
-        {
-            "move": "Headbutt",
+            "move": "Reflect",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Light Screen",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Confusion",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Struggle Bug",
             "level": 1
         },
         {
-            "move": "Growth",
-            "level": 1
-        },
-        {
-            "move": "Sweet Scent",
-            "level": 1
-        },
-        {
-            "move": "Curse",
+            "move": "Confuse Ray",
             "level": 4
         },
         {
-            "move": "Stomp",
+            "move": "Magic Coat",
             "level": 8
         },
         {
-            "move": "Leech Seed",
+            "move": "Agility",
             "level": 12
         },
         {
-            "move": "Protect",
+            "move": "Psybeam",
             "level": 16
         },
         {
-            "move": "Bullet Seed",
+            "move": "Hypnosis",
             "level": 20
         },
         {
-            "move": "Recover",
+            "move": "Ally Switch",
             "level": 24
         },
         {
-            "move": "Apple Acid",
+            "move": "Bug Buzz",
             "level": 28
         },
         {
-            "move": "Body Slam",
+            "move": "Mirror Coat",
             "level": 32
         },
         {
-            "move": "Iron Defense",
+            "move": "Psychic",
             "level": 36
         },
         {
-            "move": "Dragon Pulse",
+            "move": "After You",
             "level": 40
         },
         {
-            "move": "Energy Ball",
+            "move": "Calm Mind",
             "level": 44
+        },
+        {
+            "move": "Psychic Terrain",
+            "level": 48
         },
         {
             "move": "Hyper Beam",
@@ -177,15 +167,19 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
             "tm": true
         },
         {
@@ -193,23 +187,47 @@
             "tm": true
         },
         {
+            "move": "Power Swap",
+            "tm": true
+        },
+        {
+            "move": "Guard Swap",
+            "tm": true
+        },
+        {
+            "move": "Psycho Cut",
+            "tm": true
+        },
+        {
+            "move": "Trick Room",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Psychic Terrain",
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Psychic",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Agility",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Leech Life",
             "tm": true
         },
         {
@@ -217,7 +235,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Psyshock",
             "tm": true
         },
         {
@@ -229,7 +247,23 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Skill Swap",
             "tm": true
         },
         {
@@ -237,15 +271,11 @@
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Calm Mind",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
-            "tm": true
-        },
-        {
-            "move": "Dragon Pulse",
+            "move": "Bug Buzz",
             "tm": true
         },
         {
@@ -253,15 +283,15 @@
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Zen Headbutt",
             "tm": true
         },
         {
-            "move": "Heavy Slam",
+            "move": "Stored Power",
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Ally Switch",
             "tm": true
         },
         {
@@ -269,19 +299,19 @@
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Infestation",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Supersonic",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
+            "move": "Sticky Web",
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Recover",
             "egg_move": true
         }
     ]

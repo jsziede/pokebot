@@ -1,37 +1,41 @@
 {
-    "name": "Cinderace",
-    "national_id": 815,
+    "name": "Drakloak",
+    "national_id": 886,
     "types": [
-        "Fire"
+        "Dragon",
+        "Ghost"
     ],
     "abilities": [
         {
-            "name": "Blaze"
+            "name": "Clear Body"
         },
         {
-            "name": "Libero",
+            "name": "Infiltrator"
+        },
+        {
+            "name": "Cursed Body",
             "hidden": true
         }
     ],
     "catch_rate": 45,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Human-Like"
+        "Amorphous",
+        "Dragon"
     ],
     "hatch_time": [
-        5140,
-        5396
+        10280,
+        10536
     ],
     "height_us": "4'07\"",
     "height_eu": "1.4 m",
-    "weight_us": "72.8 lbs.",
-    "weight_eu": "33.0 kg",
-    "base_exp_yield": 265,
-    "leveling_rate": "Medium Slow",
+    "weight_us": "24.3 lbs.",
+    "weight_eu": "11.0 kg",
+    "base_exp_yield": 144,
+    "leveling_rate": "Slow",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
@@ -39,44 +43,41 @@
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 3
+        "speed": 2
     },
     "base_stats": {
-        "hp": 80,
-        "atk": 116,
-        "def": 75,
-        "sp_atk": 65,
-        "sp_def": 75,
-        "speed": 119
+        "hp": 68,
+        "atk": 80,
+        "def": 50,
+        "sp_atk": 60,
+        "sp_def": 50,
+        "speed": 102
     },
-    "evolution_from": "Raboot",
-    "evolutions": [],
-    "species": "Striker Pokémon",
+    "evolution_from": "Dreepy",
+    "evolutions": [
+        {
+            "to": "Dragapult",
+            "level": 60
+        }
+    ],
+    "species": "Caretaker Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It’s skilled at both offense and defense, and it gets pumped up when cheered on. But if it starts showboating, it could put itself in a tough spot.",
+    "pokedex_entry": "Without a Dreepy to place on its head and care for, it gets so uneasy it’ll try to substitute any Pokémon it finds for the missing Dreepy.",
     "move_learnset": [
         {
-            "move": "Pyro Ball",
+            "move": "Dragon Pulse",
             "evo": true
         },
         {
-            "move": "Pyro Ball",
+            "move": "Dragon Pulse",
             "level": 1
         },
         {
-            "move": "Feint",
+            "move": "Astonish",
             "level": 1
         },
         {
-            "move": "Tackle",
-            "level": 1
-        },
-        {
-            "move": "Growl",
-            "level": 1
-        },
-        {
-            "move": "Ember",
+            "move": "Infestation",
             "level": 1
         },
         {
@@ -84,59 +85,67 @@
             "level": 1
         },
         {
-            "move": "Double Kick",
+            "move": "Bite",
+            "level": 1
+        },
+        {
+            "move": "Lock-On",
+            "level": 6
+        },
+        {
+            "move": "Assurance",
             "level": 12
         },
         {
-            "move": "Flame Charge",
-            "level": 19
+            "move": "Hex",
+            "level": 18
         },
         {
             "move": "Agility",
             "level": 24
         },
         {
-            "move": "Headbutt",
+            "move": "Double Hit",
             "level": 30
         },
         {
-            "move": "Counter",
-            "level": 38
+            "move": "U-turn",
+            "level": 36
         },
         {
-            "move": "Bounce",
-            "level": 46
+            "move": "Dragon Dance",
+            "level": 42
         },
         {
-            "move": "Double-Edge",
+            "move": "Phantom Force",
+            "level": 48
+        },
+        {
+            "move": "Take Down",
             "level": 54
         },
         {
-            "move": "Court Change",
-            "level": 62
+            "move": "Dragon Rush",
+            "level": 61
         },
         {
-            "move": "Mega Kick",
-            "tm": true
+            "move": "Double-Edge",
+            "level": 66
         },
         {
-            "move": "Fire Punch",
-            "tm": true
+            "move": "Last Resort",
+            "level": 72
         },
         {
-            "move": "Hyper Beam",
-            "tm": true
-        },
-        {
-            "move": "Giga Impact",
-            "tm": true
-        },
-        {
-            "move": "Fire Spin",
+            "move": "Thunder Wave",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -148,11 +157,19 @@
             "tm": true
         },
         {
+            "move": "Steel Wing",
+            "tm": true
+        },
+        {
             "move": "Attract",
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
             "tm": true
         },
         {
@@ -168,15 +185,11 @@
             "tm": true
         },
         {
-            "move": "Revenge",
+            "move": "Dive",
             "tm": true
         },
         {
-            "move": "Bounce",
-            "tm": true
-        },
-        {
-            "move": "Mud Shot",
+            "move": "Brine",
             "tm": true
         },
         {
@@ -188,15 +201,11 @@
             "tm": true
         },
         {
-            "move": "Fire Fang",
-            "tm": true
-        },
-        {
-            "move": "Low Sweep",
-            "tm": true
-        },
-        {
             "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
             "tm": true
         },
         {
@@ -204,7 +213,11 @@
             "tm": true
         },
         {
-            "move": "Snarl",
+            "move": "Phantom Force",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
             "tm": true
         },
         {
@@ -212,15 +225,23 @@
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
             "tm": true
         },
         {
             "move": "Agility",
-            "tm": true
-        },
-        {
-            "move": "Focus Energy",
             "tm": true
         },
         {
@@ -232,7 +253,7 @@
             "tm": true
         },
         {
-            "move": "Reversal",
+            "move": "Outrage",
             "tm": true
         },
         {
@@ -252,47 +273,11 @@
             "tm": true
         },
         {
-            "move": "Heat Wave",
+            "move": "Dragon Dance",
             "tm": true
         },
         {
-            "move": "Taunt",
-            "tm": true
-        },
-        {
-            "move": "Blaze Kick",
-            "tm": true
-        },
-        {
-            "move": "Overheat",
-            "tm": true
-        },
-        {
-            "move": "Bulk Up",
-            "tm": true
-        },
-        {
-            "move": "Flare Blitz",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Zen Headbutt",
-            "tm": true
-        },
-        {
-            "move": "Gunk Shot",
-            "tm": true
-        },
-        {
-            "move": "Iron Head",
-            "tm": true
-        },
-        {
-            "move": "Electro Ball",
+            "move": "Dragon Pulse",
             "tm": true
         },
         {
@@ -300,23 +285,39 @@
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Scald",
             "tm": true
         },
         {
-            "move": "High Jump Kick",
+            "move": "Psychic Fangs",
+            "tm": true
+        },
+        {
+            "move": "Curse",
             "egg_move": true
         },
         {
-            "move": "Sand Attack",
+            "move": "Grudge",
+            "egg_move": true
+        },
+        {
+            "move": "Confuse Ray",
+            "egg_move": true
+        },
+        {
+            "move": "Double Team",
+            "egg_move": true
+        },
+        {
+            "move": "Disable",
+            "egg_move": true
+        },
+        {
+            "move": "Dragon Tail",
             "egg_move": true
         },
         {
             "move": "Sucker Punch",
-            "egg_move": true
-        },
-        {
-            "move": "Super Fang",
             "egg_move": true
         }
     ]

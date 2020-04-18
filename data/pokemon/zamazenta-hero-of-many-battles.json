@@ -1,28 +1,31 @@
 {
-    "name": "Zeraora",
-    "national_id": 807,
+    "name": "Zamazenta",
+    "national_id": 889,
     "types": [
-        "Electric"
+        "Fighting"
     ],
     "abilities": [
         {
-            "name": "Volt Absorb"
+            "name": "Dauntless Shield"
         }
     ],
-    "catch_rate": 0,
-    "gender_ratios": null,
+    "catch_rate": 10,
+    "gender_ratios": {
+        "male": 0,
+        "female": 0
+    },
     "egg_groups": [
         "Undiscovered"
     ],
     "hatch_time": [
-        1800,
-        1800
+        30840,
+        31096
     ],
-    "height_us": "4'11\"",
-    "height_eu": "1.5 m",
-    "weight_us": "98.1 lbs.",
-    "weight_eu": "44.5 kg",
-    "base_exp_yield": 0,
+    "height_us": "9'06\"",
+    "height_eu": "2.9 m",
+    "weight_us": "463.0 lbs.",
+    "weight_eu": "210.0 kg",
+    "base_exp_yield": 335,
     "leveling_rate": "Slow",
     "base_friendship": 0,
     "ev_yield": {
@@ -34,29 +37,33 @@
         "speed": 3
     },
     "base_stats": {
-        "hp": 88,
-        "atk": 112,
-        "def": 75,
-        "sp_atk": 102,
-        "sp_def": 80,
-        "speed": 143
+        "hp": 92,
+        "atk": 130,
+        "def": 115,
+        "sp_atk": 80,
+        "sp_def": 115,
+        "speed": 138
     },
     "evolution_from": null,
     "evolutions": [],
-    "species": "Thunderclap Pokémon",
+    "species": "Warrior Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Electricity sparks from the pads on its limbs. Wherever Zeraora runs, lightning flashes and thunder echoes.",
+    "pokedex_entry": "This Pokémon slept for aeons while in the form of a statue. It was asleep for so long, people forgot that it ever existed.",
     "move_learnset": [
         {
-            "move": "Power-Up Punch",
+            "move": "Metal Burst",
             "level": 1
         },
         {
-            "move": "Fake Out",
+            "move": "Wide Guard",
             "level": 1
         },
         {
-            "move": "Scratch",
+            "move": "Metal Claw",
+            "level": 1
+        },
+        {
+            "move": "Howl",
             "level": 1
         },
         {
@@ -64,80 +71,40 @@
             "level": 1
         },
         {
-            "move": "Snarl",
+            "move": "Bite",
             "level": 1
-        },
-        {
-            "move": "Spark",
-            "level": 1
-        },
-        {
-            "move": "Fury Swipes",
-            "level": 8
-        },
-        {
-            "move": "Quick Guard",
-            "level": 16
         },
         {
             "move": "Slash",
-            "level": 24
+            "level": 11
         },
         {
-            "move": "Volt Switch",
-            "level": 32
+            "move": "Iron Defense",
+            "level": 22
         },
         {
-            "move": "Charge",
-            "level": 40
+            "move": "Iron Head",
+            "level": 33
         },
         {
-            "move": "Thunder Punch",
-            "level": 48
+            "move": "Laser Focus",
+            "level": 44
         },
         {
-            "move": "Hone Claws",
-            "level": 56
+            "move": "Crunch",
+            "level": 55
         },
         {
-            "move": "Discharge",
-            "level": 64
-        },
-        {
-            "move": "Wild Charge",
-            "level": 72
-        },
-        {
-            "move": "Agility",
-            "level": 80
-        },
-        {
-            "move": "Plasma Fists",
-            "level": 88
+            "move": "Moonblast",
+            "level": 66
         },
         {
             "move": "Close Combat",
-            "level": 96
+            "level": 77
         },
         {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
-            "tm": true
-        },
-        {
-            "move": "Pay Day",
-            "tm": true
-        },
-        {
-            "move": "Fire Punch",
-            "tm": true
-        },
-        {
-            "move": "Thunder Punch",
-            "tm": true
+            "move": "Giga Impact",
+            "level": 88
         },
         {
             "move": "Hyper Beam",
@@ -148,7 +115,23 @@
             "tm": true
         },
         {
-            "move": "Thunder Wave",
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
             "tm": true
         },
         {
@@ -184,27 +167,31 @@
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Imprison",
             "tm": true
         },
         {
-            "move": "Bounce",
+            "move": "Payback",
             "tm": true
         },
         {
-            "move": "Assurance",
+            "move": "Power Swap",
             "tm": true
         },
         {
-            "move": "Fling",
+            "move": "Guard Swap",
             "tm": true
         },
         {
-            "move": "Drain Punch",
+            "move": "Thunder Fang",
             "tm": true
         },
         {
-            "move": "Low Sweep",
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
             "tm": true
         },
         {
@@ -212,15 +199,11 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Retaliate",
             "tm": true
         },
         {
-            "move": "Volt Switch",
-            "tm": true
-        },
-        {
-            "move": "Electroweb",
+            "move": "Tail Slap",
             "tm": true
         },
         {
@@ -228,31 +211,11 @@
             "tm": true
         },
         {
-            "move": "Electric Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
-            "tm": true
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": true
-        },
-        {
-            "move": "Thunder",
-            "tm": true
-        },
-        {
             "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Focus Energy",
             "tm": true
         },
         {
@@ -261,10 +224,6 @@
         },
         {
             "move": "Reversal",
-            "tm": true
-        },
-        {
-            "move": "Outrage",
             "tm": true
         },
         {
@@ -280,23 +239,15 @@
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Crunch",
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
-            "tm": true
-        },
-        {
-            "move": "Bulk Up",
-            "tm": true
-        },
-        {
-            "move": "Calm Mind",
+            "move": "Iron Defense",
             "tm": true
         },
         {
@@ -304,19 +255,15 @@
             "tm": true
         },
         {
-            "move": "Aura Sphere",
-            "tm": true
-        },
-        {
             "move": "Focus Blast",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Flash Cannon",
             "tm": true
         },
         {
-            "move": "Electro Ball",
+            "move": "Iron Head",
             "tm": true
         },
         {
@@ -332,7 +279,11 @@
             "tm": true
         },
         {
-            "move": "Throat Chop",
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Psychic Fangs",
             "tm": true
         }
     ]

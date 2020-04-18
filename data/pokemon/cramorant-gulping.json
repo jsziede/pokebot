@@ -1,135 +1,127 @@
 {
-    "name": "Grookey",
-    "national_id": 810,
+    "name": "Cramorant",
+    "national_id": 845,
     "types": [
-        "Grass"
+        "Flying",
+        "Water"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
-        },
-        {
-            "name": "Grassy Surge",
-            "hidden": true
+            "name": "Gulp Missile"
         }
     ],
     "catch_rate": 45,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Water1",
+        "Flying"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "11.0 lbs.",
-    "weight_eu": "5.0 kg",
-    "base_exp_yield": 62,
-    "leveling_rate": "Medium Slow",
+    "height_us": "2'07\"",
+    "height_eu": "0.8 m",
+    "weight_us": "39.7 lbs.",
+    "weight_eu": "18.0 kg",
+    "base_exp_yield": 166,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
-        "sp_def": 1,
+        "sp_def": 2,
         "speed": 0
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 50,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 65
+        "hp": 70,
+        "atk": 85,
+        "def": 55,
+        "sp_atk": 85,
+        "sp_def": 95,
+        "speed": 85
     },
     "evolution_from": null,
-    "evolutions": [
-        {
-            "to": "Thwackey",
-            "level": 16
-        }
-    ],
-    "species": "Chimp Pokémon",
+    "evolutions": [],
+    "species": "Gulp Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It attacks with rapid beats of its stick. As it strikes with amazing speed, it gets more and more pumped.",
+    "pokedex_entry": "Cramorant's gluttony led it to try to swallow an Arrokuda whole, which in turn led to Cramorant getting an Arrokuda stuck in its throat.",
     "move_learnset": [
         {
-            "move": "Scratch",
+            "move": "Belch",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Peck",
             "level": 1
         },
         {
-            "move": "Branch Poke",
-            "level": 6
+            "move": "Stockpile",
+            "level": 1
         },
         {
-            "move": "Taunt",
-            "level": 8
+            "move": "Swallow",
+            "level": 1
         },
         {
-            "move": "Razor Leaf",
-            "level": 12
+            "move": "Spit Up",
+            "level": 1
         },
         {
-            "move": "Screech",
-            "level": 17
+            "move": "Water Gun",
+            "level": 7
         },
         {
-            "move": "Knock Off",
-            "level": 20
+            "move": "Fury Attack",
+            "level": 14
         },
         {
-            "move": "Slam",
-            "level": 24
+            "move": "Pluck",
+            "level": 21
         },
         {
-            "move": "Uproar",
+            "move": "Dive",
             "level": 28
         },
         {
-            "move": "Wood Hammer",
-            "level": 32
+            "move": "Drill Peck",
+            "level": 35
         },
         {
-            "move": "Endeavor",
-            "level": 36
+            "move": "Amnesia",
+            "level": 42
         },
         {
-            "move": "Mega Punch",
+            "move": "Thrash",
+            "level": 49
+        },
+        {
+            "move": "Hydro Pump",
+            "level": 56
+        },
+        {
+            "move": "Fly",
             "tm": true
         },
         {
-            "move": "Mega Kick",
+            "move": "Hyper Beam",
             "tm": true
         },
         {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Giga Impact",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -141,7 +133,11 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
             "tm": true
         },
         {
@@ -149,7 +145,11 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -157,11 +157,11 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Dive",
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Weather Ball",
             "tm": true
         },
         {
@@ -169,39 +169,43 @@
             "tm": true
         },
         {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Drain Punch",
-            "tm": true
-        },
-        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Air Slash",
             "tm": true
         },
         {
-            "move": "False Swipe",
+            "move": "Hydro Pump",
             "tm": true
         },
         {
-            "move": "Swords Dance",
+            "move": "Surf",
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Ice Beam",
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
             "tm": true
         },
         {
             "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
             "tm": true
         },
         {
@@ -217,47 +221,47 @@
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Superpower",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Brave Bird",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Scald",
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Hurricane",
             "tm": true
         },
         {
-            "move": "Growth",
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Defog",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Aerial Ace",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Feather Dance",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Aqua Ring",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
-            "egg_move": true
-        },
-        {
-            "move": "Worry Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Leech Seed",
+            "move": "Roost",
             "egg_move": true
         }
     ]

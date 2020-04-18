@@ -1,134 +1,146 @@
 {
-    "name": "Rillaboom",
-    "national_id": 812,
+    "name": "Dragapult",
+    "national_id": 887,
     "types": [
-        "Grass"
+        "Dragon",
+        "Ghost"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Clear Body"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Infiltrator"
+        },
+        {
+            "name": "Cursed Body",
             "hidden": true
         }
     ],
     "catch_rate": 45,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Amorphous",
+        "Dragon"
     ],
     "hatch_time": [
-        5140,
-        5396
+        10280,
+        10536
     ],
-    "height_us": "6'11\"",
-    "height_eu": "2.1 m",
-    "weight_us": "198.4 lbs.",
-    "weight_eu": "90.0 kg",
-    "base_exp_yield": 265,
-    "leveling_rate": "Medium Slow",
+    "height_us": "9'10\"",
+    "height_eu": "3.0 m",
+    "weight_us": "110.2 lbs.",
+    "weight_eu": "50.0 kg",
+    "base_exp_yield": 300,
+    "leveling_rate": "Slow",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 3,
+        "atk": 0,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
-        "speed": 0
+        "speed": 3
     },
     "base_stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 85
+        "hp": 88,
+        "atk": 120,
+        "def": 75,
+        "sp_atk": 100,
+        "sp_def": 75,
+        "speed": 142
     },
-    "evolution_from": "Thwackey",
+    "evolution_from": "Drakloak",
     "evolutions": [],
-    "species": "Drummer Pokémon",
+    "species": "Stealth Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+    "pokedex_entry": "Apparently the Dreepy inside Dragapult’s horns eagerly look forward to being launched out at Mach speeds.",
     "move_learnset": [
         {
-            "move": "Drum Beating",
+            "move": "Dragon Darts",
             "evo": true
         },
         {
-            "move": "Drum Beating",
+            "move": "Dragon Darts",
             "level": 1
         },
         {
-            "move": "Double Hit",
+            "move": "Dragon Breath",
             "level": 1
         },
         {
-            "move": "Grassy Terrain",
+            "move": "Sucker Punch",
             "level": 1
         },
         {
-            "move": "Noble Roar",
+            "move": "Astonish",
             "level": 1
         },
         {
-            "move": "Scratch",
+            "move": "Infestation",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Quick Attack",
             "level": 1
         },
         {
-            "move": "Branch Poke",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Taunt",
-            "level": 1
+            "move": "Lock-On",
+            "level": 6
         },
         {
-            "move": "Razor Leaf",
+            "move": "Assurance",
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 19
+            "move": "Hex",
+            "level": 18
         },
         {
-            "move": "Knock Off",
+            "move": "Agility",
             "level": 24
         },
         {
-            "move": "Slam",
+            "move": "Double Hit",
             "level": 30
         },
         {
-            "move": "Uproar",
-            "level": 38
+            "move": "U-turn",
+            "level": 36
         },
         {
-            "move": "Wood Hammer",
-            "level": 46
+            "move": "Dragon Dance",
+            "level": 42
         },
         {
-            "move": "Endeavor",
+            "move": "Phantom Force",
+            "level": 48
+        },
+        {
+            "move": "Take Down",
             "level": 54
         },
         {
-            "move": "Boomburst",
-            "level": 62
+            "move": "Dragon Rush",
+            "level": 63
         },
         {
-            "move": "Mega Punch",
-            "tm": true
+            "move": "Double-Edge",
+            "level": 70
         },
         {
-            "move": "Mega Kick",
+            "move": "Last Resort",
+            "level": 78
+        },
+        {
+            "move": "Fly",
             "tm": true
         },
         {
@@ -140,23 +152,27 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
             "move": "Solar Beam",
             "tm": true
         },
         {
-            "move": "Solar Blade",
+            "move": "Thunder Wave",
             "tm": true
         },
         {
-            "move": "Screech",
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -168,11 +184,7 @@
             "tm": true
         },
         {
-            "move": "Scary Face",
-            "tm": true
-        },
-        {
-            "move": "Giga Drain",
+            "move": "Steel Wing",
             "tm": true
         },
         {
@@ -180,7 +192,11 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
             "tm": true
         },
         {
@@ -192,15 +208,15 @@
             "tm": true
         },
         {
-            "move": "Brick Break",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Dive",
             "tm": true
         },
         {
-            "move": "Mud Shot",
+            "move": "Brine",
             "tm": true
         },
         {
@@ -212,15 +228,11 @@
             "tm": true
         },
         {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Drain Punch",
-            "tm": true
-        },
-        {
             "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
             "tm": true
         },
         {
@@ -228,31 +240,11 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Phantom Force",
             "tm": true
         },
         {
-            "move": "Snarl",
-            "tm": true
-        },
-        {
-            "move": "Grassy Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Stomping Tantrum",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
+            "move": "Breaking Swipe",
             "tm": true
         },
         {
@@ -260,19 +252,43 @@
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Flamethrower",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Hydro Pump",
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Tri Attack",
             "tm": true
         },
         {
             "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
             "tm": true
         },
         {
@@ -284,87 +300,63 @@
             "tm": true
         },
         {
-            "move": "Uproar",
+            "move": "Baton Pass",
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Shadow Ball",
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Dragon Claw",
             "tm": true
         },
         {
-            "move": "Hyper Voice",
+            "move": "Dragon Dance",
             "tm": true
         },
         {
-            "move": "Bulk Up",
+            "move": "Dragon Pulse",
             "tm": true
         },
         {
-            "move": "Focus Blast",
+            "move": "Ally Switch",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Scald",
             "tm": true
         },
         {
-            "move": "Earth Power",
+            "move": "Psychic Fangs",
             "tm": true
         },
         {
-            "move": "Leaf Storm",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
-            "tm": true
-        },
-        {
-            "move": "Work Up",
-            "tm": true
-        },
-        {
-            "move": "Darkest Lariat",
-            "tm": true
-        },
-        {
-            "move": "High Horsepower",
-            "tm": true
-        },
-        {
-            "move": "Body Press",
-            "tm": true
-        },
-        {
-            "move": "Growth",
+            "move": "Curse",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Grudge",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Confuse Ray",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Double Team",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Disable",
             "egg_move": true
         },
         {
-            "move": "Worry Seed",
+            "move": "Dragon Tail",
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Sucker Punch",
             "egg_move": true
         }
     ]

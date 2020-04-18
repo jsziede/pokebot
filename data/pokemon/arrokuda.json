@@ -1,37 +1,36 @@
 {
-    "name": "Scorbunny",
-    "national_id": 813,
+    "name": "Arrokuda",
+    "national_id": 846,
     "types": [
-        "Fire"
+        "Water"
     ],
     "abilities": [
         {
-            "name": "Blaze"
+            "name": "Swift Swim"
         },
         {
-            "name": "Libero",
+            "name": "Propeller Tail",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 255,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Human-Like"
+        "Water2"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "9.9 lbs.",
-    "weight_eu": "4.5 kg",
-    "base_exp_yield": 62,
-    "leveling_rate": "Medium Slow",
+    "height_us": "1'08\"",
+    "height_eu": "0.5 m",
+    "weight_us": "2.2 lbs.",
+    "weight_eu": "1.0 kg",
+    "base_exp_yield": 56,
+    "leveling_rate": "Slow",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
@@ -42,71 +41,63 @@
         "speed": 1
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 71,
+        "hp": 41,
+        "atk": 63,
         "def": 40,
         "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 69
+        "sp_def": 30,
+        "speed": 66
     },
     "evolution_from": null,
     "evolutions": [
         {
-            "to": "Raboot",
-            "level": 16
+            "to": "Barraskewda",
+            "level": 26
         }
     ],
-    "species": "Rabbit Pokémon",
+    "species": "Rush Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It has special pads on the backs of its feet, and one on its nose. Once it’s raring to fight, these pads radiate tremendous heat.",
+    "pokedex_entry": "After it’s eaten its fill, its movements become extremely sluggish. That’s when Cramorant swallows it up.",
     "move_learnset": [
         {
-            "move": "Tackle",
+            "move": "Peck",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Aqua Jet",
             "level": 1
         },
         {
-            "move": "Ember",
+            "move": "Fury Attack",
             "level": 6
         },
         {
-            "move": "Quick Attack",
-            "level": 8
-        },
-        {
-            "move": "Double Kick",
+            "move": "Bite",
             "level": 12
         },
         {
-            "move": "Flame Charge",
-            "level": 17
-        },
-        {
             "move": "Agility",
-            "level": 20
+            "level": 18
         },
         {
-            "move": "Headbutt",
+            "move": "Dive",
             "level": 24
         },
         {
-            "move": "Counter",
-            "level": 28
+            "move": "Laser Focus",
+            "level": 30
         },
         {
-            "move": "Bounce",
-            "level": 32
-        },
-        {
-            "move": "Double-Edge",
+            "move": "Crunch",
             "level": 36
         },
         {
-            "move": "Mega Kick",
-            "tm": true
+            "move": "Liquidation",
+            "level": 42
+        },
+        {
+            "move": "Double-Edge",
+            "level": 48
         },
         {
             "move": "Rest",
@@ -125,7 +116,11 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
             "tm": true
         },
         {
@@ -137,15 +132,15 @@
             "tm": true
         },
         {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
             "move": "Bounce",
-            "tm": true
-        },
-        {
-            "move": "Mud Shot",
-            "tm": true
-        },
-        {
-            "move": "U-turn",
             "tm": true
         },
         {
@@ -153,27 +148,11 @@
             "tm": true
         },
         {
-            "move": "Fire Fang",
-            "tm": true
-        },
-        {
-            "move": "Low Sweep",
+            "move": "Ice Fang",
             "tm": true
         },
         {
             "move": "Round",
-            "tm": true
-        },
-        {
-            "move": "Acrobatics",
-            "tm": true
-        },
-        {
-            "move": "Flamethrower",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
             "tm": true
         },
         {
@@ -185,15 +164,11 @@
             "tm": true
         },
         {
-            "move": "Fire Blast",
+            "move": "Waterfall",
             "tm": true
         },
         {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Reversal",
             "tm": true
         },
         {
@@ -205,55 +180,51 @@
             "tm": true
         },
         {
-            "move": "Baton Pass",
+            "move": "Crunch",
             "tm": true
         },
         {
-            "move": "Heat Wave",
+            "move": "Close Combat",
             "tm": true
         },
         {
-            "move": "Taunt",
+            "move": "Poison Jab",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Scald",
             "tm": true
         },
         {
-            "move": "Overheat",
+            "move": "Drill Run",
             "tm": true
         },
         {
-            "move": "Gunk Shot",
+            "move": "Throat Chop",
             "tm": true
         },
         {
-            "move": "Electro Ball",
+            "move": "Psychic Fangs",
             "tm": true
         },
         {
-            "move": "Ally Switch",
+            "move": "Liquidation",
             "tm": true
         },
         {
-            "move": "Work Up",
-            "tm": true
-        },
-        {
-            "move": "High Jump Kick",
+            "move": "Thrash",
             "egg_move": true
         },
         {
-            "move": "Sand Attack",
+            "move": "Acupressure",
             "egg_move": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Slash",
             "egg_move": true
         },
         {
-            "move": "Super Fang",
+            "move": "Night Slash",
             "egg_move": true
         }
     ]

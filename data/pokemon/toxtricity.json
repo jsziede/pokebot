@@ -1,123 +1,166 @@
 {
-    "name": "Zeraora",
-    "national_id": 807,
+    "name": "Toxtricity",
+    "national_id": 849,
     "types": [
-        "Electric"
+        "Electric",
+        "Poison"
     ],
     "abilities": [
         {
-            "name": "Volt Absorb"
+            "name": "Punk Rock"
+        },
+        {
+            "name": "Plus"
+        },
+        {
+            "name": "Technician",
+            "hidden": true
         }
     ],
-    "catch_rate": 0,
-    "gender_ratios": null,
+    "catch_rate": 45,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
     "egg_groups": [
-        "Undiscovered"
+        "HumanLike"
     ],
     "hatch_time": [
-        1800,
-        1800
+        6425,
+        6681
     ],
-    "height_us": "4'11\"",
-    "height_eu": "1.5 m",
-    "weight_us": "98.1 lbs.",
-    "weight_eu": "44.5 kg",
-    "base_exp_yield": 0,
-    "leveling_rate": "Slow",
-    "base_friendship": 0,
+    "height_us": "5'03\"",
+    "height_eu": "1.6 m",
+    "weight_us": "88.2 lbs.",
+    "weight_eu": "40.0 kg",
+    "base_exp_yield": 176,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 0,
+        "sp_atk": 2,
         "sp_def": 0,
-        "speed": 3
+        "speed": 0
     },
     "base_stats": {
-        "hp": 88,
-        "atk": 112,
-        "def": 75,
-        "sp_atk": 102,
-        "sp_def": 80,
-        "speed": 143
+        "hp": 75,
+        "atk": 98,
+        "def": 70,
+        "sp_atk": 114,
+        "sp_def": 70,
+        "speed": 75
     },
-    "evolution_from": null,
+    "evolution_from": "Toxel",
     "evolutions": [],
-    "species": "Thunderclap Pokémon",
+    "species": "Punk Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Electricity sparks from the pads on its limbs. Wherever Zeraora runs, lightning flashes and thunder echoes.",
+    "pokedex_entry": "This short-tempered and aggressive Pokémon chugs stagnant water to absorb any toxins it might contain.",
     "move_learnset": [
         {
-            "move": "Power-Up Punch",
-            "level": 1
-        },
-        {
-            "move": "Fake Out",
-            "level": 1
-        },
-        {
-            "move": "Scratch",
-            "level": 1
-        },
-        {
-            "move": "Quick Attack",
-            "level": 1
-        },
-        {
-            "move": "Snarl",
-            "level": 1
+            "move": "Spark",
+            "evo": true
         },
         {
             "move": "Spark",
             "level": 1
         },
         {
-            "move": "Fury Swipes",
-            "level": 8
+            "move": "Eerie Impulse",
+            "level": 1
         },
         {
-            "move": "Quick Guard",
-            "level": 16
+            "move": "Belch",
+            "level": 1
         },
         {
-            "move": "Slash",
-            "level": 24
+            "move": "Tearful Look",
+            "level": 1
         },
         {
-            "move": "Volt Switch",
-            "level": 32
+            "move": "Nuzzle",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 1
+        },
+        {
+            "move": "Flail",
+            "level": 1
+        },
+        {
+            "move": "Acid",
+            "level": 1
+        },
+        {
+            "move": "Thunder Shock",
+            "level": 1
+        },
+        {
+            "move": "Acid Spray",
+            "level": 1
+        },
+        {
+            "move": "Leer",
+            "level": 1
+        },
+        {
+            "move": "Noble Roar",
+            "level": 1
         },
         {
             "move": "Charge",
-            "level": 40
+            "level": 4
         },
         {
-            "move": "Thunder Punch",
-            "level": 48
+            "move": "Shock Wave",
+            "level": 8
         },
         {
-            "move": "Hone Claws",
-            "level": 56
+            "move": "Scary Face",
+            "level": 12
+        },
+        {
+            "move": "Taunt",
+            "level": 16
+        },
+        {
+            "move": "Venoshock",
+            "level": 20
+        },
+        {
+            "move": "Screech",
+            "level": 24
+        },
+        {
+            "move": "Swagger",
+            "level": 28
+        },
+        {
+            "move": "Toxic",
+            "level": 32
         },
         {
             "move": "Discharge",
-            "level": 64
+            "level": 36
         },
         {
-            "move": "Wild Charge",
-            "level": 72
+            "move": "Poison Jab",
+            "level": 40
         },
         {
-            "move": "Agility",
-            "level": 80
+            "move": "Overdrive",
+            "level": 44
         },
         {
-            "move": "Plasma Fists",
-            "level": 88
+            "move": "Boomburst",
+            "level": 48
         },
         {
-            "move": "Close Combat",
-            "level": 96
+            "move": "Shift Gear",
+            "level": 52
         },
         {
             "move": "Mega Punch",
@@ -125,10 +168,6 @@
         },
         {
             "move": "Mega Kick",
-            "tm": true
-        },
-        {
-            "move": "Pay Day",
             "tm": true
         },
         {
@@ -152,6 +191,10 @@
             "tm": true
         },
         {
+            "move": "Screech",
+            "tm": true
+        },
+        {
             "move": "Rest",
             "tm": true
         },
@@ -168,6 +211,10 @@
             "tm": true
         },
         {
+            "move": "Attract",
+            "tm": true
+        },
+        {
             "move": "Facade",
             "tm": true
         },
@@ -176,23 +223,7 @@
             "tm": true
         },
         {
-            "move": "Helping Hand",
-            "tm": true
-        },
-        {
-            "move": "Revenge",
-            "tm": true
-        },
-        {
-            "move": "Brick Break",
-            "tm": true
-        },
-        {
-            "move": "Bounce",
-            "tm": true
-        },
-        {
-            "move": "Assurance",
+            "move": "Payback",
             "tm": true
         },
         {
@@ -204,7 +235,7 @@
             "tm": true
         },
         {
-            "move": "Low Sweep",
+            "move": "Venoshock",
             "tm": true
         },
         {
@@ -212,7 +243,7 @@
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Hex",
             "tm": true
         },
         {
@@ -220,27 +251,11 @@
             "tm": true
         },
         {
-            "move": "Electroweb",
-            "tm": true
-        },
-        {
             "move": "Snarl",
             "tm": true
         },
         {
-            "move": "Electric Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
-            "move": "Brutal Swing",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
+            "move": "Eerie Impulse",
             "tm": true
         },
         {
@@ -252,19 +267,11 @@
             "tm": true
         },
         {
-            "move": "Agility",
-            "tm": true
-        },
-        {
             "move": "Substitute",
             "tm": true
         },
         {
-            "move": "Reversal",
-            "tm": true
-        },
-        {
-            "move": "Outrage",
+            "move": "Sludge Bomb",
             "tm": true
         },
         {
@@ -276,7 +283,11 @@
             "tm": true
         },
         {
-            "move": "Iron Tail",
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
             "tm": true
         },
         {
@@ -284,35 +295,19 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Poison Jab",
             "tm": true
         },
         {
-            "move": "Bulk Up",
+            "move": "Gunk Shot",
             "tm": true
         },
         {
-            "move": "Calm Mind",
-            "tm": true
-        },
-        {
-            "move": "Close Combat",
-            "tm": true
-        },
-        {
-            "move": "Aura Sphere",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
+            "move": "Sludge Wave",
             "tm": true
         },
         {
@@ -320,7 +315,7 @@
             "tm": true
         },
         {
-            "move": "Work Up",
+            "move": "Stored Power",
             "tm": true
         },
         {
@@ -328,12 +323,20 @@
             "tm": true
         },
         {
-            "move": "Play Rough",
+            "move": "Throat Chop",
             "tm": true
         },
         {
-            "move": "Throat Chop",
-            "tm": true
+            "move": "Endeavor",
+            "egg_move": true
+        },
+        {
+            "move": "Metal Sound",
+            "egg_move": true
+        },
+        {
+            "move": "Power-Up Punch",
+            "egg_move": true
         }
     ]
 }

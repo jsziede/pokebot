@@ -1,19 +1,19 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Corviknight",
+    "national_id": 823,
     "types": [
-        "Grass",
-        "Dragon"
+        "Flying",
+        "Steel"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Pressure"
         },
         {
-            "name": "Gluttony"
+            "name": "Unnerve"
         },
         {
-            "name": "Thick Fat",
+            "name": "Mirror Armor",
             "hidden": true
         }
     ],
@@ -23,114 +23,104 @@
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Flying"
     ],
     "hatch_time": [
-        5140,
-        5396
+        3855,
+        4111
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "7'03\"",
+    "height_eu": "2.2 m",
+    "weight_us": "165.3 lbs.",
+    "weight_eu": "75.0 kg",
+    "base_exp_yield": 248,
+    "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
-        "def": 0,
+        "def": 3,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 98,
+        "atk": 87,
+        "def": 105,
+        "sp_atk": 53,
+        "sp_def": 85,
+        "speed": 67
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Corvisquire",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Raven Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "With their great intellect and flying skills, these Pokémon very successfully act as the Galar region’s airborne taxi service.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Steel Wing",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Steel Wing",
             "level": 1
-        },
-        {
-            "move": "Recycle",
-            "level": 1
-        },
-        {
-            "move": "Withdraw",
-            "level": 1
-        },
-        {
-            "move": "Astonish",
-            "level": 1
-        },
-        {
-            "move": "Growth",
-            "level": 1
-        },
-        {
-            "move": "Sweet Scent",
-            "level": 1
-        },
-        {
-            "move": "Curse",
-            "level": 4
-        },
-        {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
-            "level": 20
-        },
-        {
-            "move": "Recover",
-            "level": 24
-        },
-        {
-            "move": "Apple Acid",
-            "level": 28
-        },
-        {
-            "move": "Body Slam",
-            "level": 32
         },
         {
             "move": "Iron Defense",
-            "level": 36
+            "level": 1
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Metal Sound",
+            "level": 1
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Peck",
+            "level": 1
+        },
+        {
+            "move": "Leer",
+            "level": 1
+        },
+        {
+            "move": "Power Trip",
+            "level": 1
+        },
+        {
+            "move": "Hone Claws",
+            "level": 1
+        },
+        {
+            "move": "Fury Attack",
+            "level": 12
+        },
+        {
+            "move": "Pluck",
+            "level": 16
+        },
+        {
+            "move": "Taunt",
+            "level": 22
+        },
+        {
+            "move": "Scary Face",
+            "level": 28
+        },
+        {
+            "move": "Drill Peck",
+            "level": 34
+        },
+        {
+            "move": "Swagger",
+            "level": 42
+        },
+        {
+            "move": "Brave Bird",
+            "level": 50
+        },
+        {
+            "move": "Fly",
+            "tm": true
         },
         {
             "move": "Hyper Beam",
@@ -141,7 +131,7 @@
             "tm": true
         },
         {
-            "move": "Solar Beam",
+            "move": "Screech",
             "tm": true
         },
         {
@@ -153,11 +143,11 @@
             "tm": true
         },
         {
-            "move": "Safeguard",
+            "move": "Rest",
             "tm": true
         },
         {
-            "move": "Rest",
+            "move": "Thief",
             "tm": true
         },
         {
@@ -169,7 +159,11 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
             "tm": true
         },
         {
@@ -177,15 +171,23 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": true
-        },
-        {
             "move": "Facade",
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
             "tm": true
         },
         {
@@ -193,11 +195,19 @@
             "tm": true
         },
         {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
             "tm": true
         },
         {
@@ -205,11 +215,11 @@
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Agility",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Focus Energy",
             "tm": true
         },
         {
@@ -217,7 +227,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Reversal",
             "tm": true
         },
         {
@@ -229,7 +239,7 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Taunt",
             "tm": true
         },
         {
@@ -237,23 +247,23 @@
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Bulk Up",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Brave Bird",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Nasty Plot",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Flash Cannon",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Iron Head",
             "tm": true
         },
         {
@@ -261,7 +271,11 @@
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
             "tm": true
         },
         {
@@ -269,19 +283,31 @@
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Sky Attack",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Sand Attack",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
+            "move": "Tailwind",
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Defog",
+            "egg_move": true
+        },
+        {
+            "move": "Rock Smash",
+            "egg_move": true
+        },
+        {
+            "move": "Spite",
+            "egg_move": true
+        },
+        {
+            "move": "Roost",
             "egg_move": true
         }
     ]

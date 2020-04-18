@@ -1,36 +1,38 @@
 {
-    "name": "Grookey",
-    "national_id": 810,
+    "name": "Rookidee",
+    "national_id": 821,
     "types": [
-        "Grass"
+        "Flying"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Keen Eye"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Unnerve"
+        },
+        {
+            "name": "Big Pecks",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 255,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Grass"
+        "Flying"
     ],
     "hatch_time": [
-        5140,
-        5396
+        3855,
+        4111
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "11.0 lbs.",
-    "weight_eu": "5.0 kg",
-    "base_exp_yield": 62,
+    "height_us": "0'08\"",
+    "height_eu": "0.2 m",
+    "weight_us": "4.0  lbs.",
+    "weight_eu": "1.8 kg",
+    "base_exp_yield": 49,
     "leveling_rate": "Medium Slow",
     "base_friendship": 50,
     "ev_yield": {
@@ -38,98 +40,82 @@
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
-        "sp_def": 1,
-        "speed": 0
+        "sp_def": 0,
+        "speed": 1
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 65,
-        "def": 50,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 65
+        "hp": 38,
+        "atk": 47,
+        "def": 35,
+        "sp_atk": 33,
+        "sp_def": 35,
+        "speed": 57
     },
     "evolution_from": null,
     "evolutions": [
         {
-            "to": "Thwackey",
-            "level": 16
+            "to": "Corvisquire",
+            "level": 18
         }
     ],
-    "species": "Chimp Pokémon",
+    "species": "Tiny Bird Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It attacks with rapid beats of its stick. As it strikes with amazing speed, it gets more and more pumped.",
+    "pokedex_entry": "Jumping nimbly about, this small-bodied Pokémon takes advantage of even the slightest opportunity to disorient larger opponents.",
     "move_learnset": [
         {
-            "move": "Scratch",
+            "move": "Peck",
             "level": 1
         },
         {
-            "move": "Growl",
+            "move": "Leer",
             "level": 1
         },
         {
-            "move": "Branch Poke",
-            "level": 6
+            "move": "Power Trip",
+            "level": 4
         },
         {
-            "move": "Taunt",
+            "move": "Hone Claws",
             "level": 8
         },
         {
-            "move": "Razor Leaf",
+            "move": "Fury Attack",
             "level": 12
         },
         {
-            "move": "Screech",
-            "level": 17
+            "move": "Pluck",
+            "level": 16
         },
         {
-            "move": "Knock Off",
+            "move": "Taunt",
             "level": 20
         },
         {
-            "move": "Slam",
+            "move": "Scary Face",
             "level": 24
         },
         {
-            "move": "Uproar",
+            "move": "Drill Peck",
             "level": 28
         },
         {
-            "move": "Wood Hammer",
+            "move": "Swagger",
             "level": 32
         },
         {
-            "move": "Endeavor",
+            "move": "Brave Bird",
             "level": 36
         },
         {
-            "move": "Mega Punch",
-            "tm": true
-        },
-        {
-            "move": "Mega Kick",
-            "tm": true
-        },
-        {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Solar Blade",
-            "tm": true
-        },
-        {
-            "move": "Screech",
+            "move": "Fly",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -141,15 +127,11 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
+            "move": "Scary Face",
             "tm": true
         },
         {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Sunny Day",
             "tm": true
         },
         {
@@ -161,7 +143,19 @@
             "tm": true
         },
         {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
             "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Payback",
             "tm": true
         },
         {
@@ -169,31 +163,19 @@
             "tm": true
         },
         {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Drain Punch",
-            "tm": true
-        },
-        {
             "move": "Round",
             "tm": true
         },
         {
-            "move": "Acrobatics",
+            "move": "Retaliate",
             "tm": true
         },
         {
-            "move": "False Swipe",
+            "move": "Air Slash",
             "tm": true
         },
         {
-            "move": "Swords Dance",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
+            "move": "Agility",
             "tm": true
         },
         {
@@ -205,6 +187,10 @@
             "tm": true
         },
         {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
             "move": "Endure",
             "tm": true
         },
@@ -213,19 +199,15 @@
             "tm": true
         },
         {
-            "move": "Uproar",
-            "tm": true
-        },
-        {
             "move": "Taunt",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Brave Bird",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Nasty Plot",
             "tm": true
         },
         {
@@ -233,31 +215,31 @@
             "tm": true
         },
         {
-            "move": "Growth",
+            "move": "Sky Attack",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Sand Attack",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Tailwind",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Defog",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Rock Smash",
             "egg_move": true
         },
         {
-            "move": "Worry Seed",
+            "move": "Spite",
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Roost",
             "egg_move": true
         }
     ]

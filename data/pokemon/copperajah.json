@@ -1,82 +1,70 @@
 {
-    "name": "Rillaboom",
-    "national_id": 812,
+    "name": "Copperajah",
+    "national_id": 879,
     "types": [
-        "Grass"
+        "Steel"
     ],
     "abilities": [
         {
-            "name": "Overgrow"
+            "name": "Sheer Force"
         },
         {
-            "name": "Grassy Surge",
+            "name": "Heavy Metal",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 90,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
         "Field",
-        "Grass"
+        "Mineral"
     ],
     "hatch_time": [
-        5140,
-        5396
+        6425,
+        6681
     ],
-    "height_us": "6'11\"",
-    "height_eu": "2.1 m",
-    "weight_us": "198.4 lbs.",
-    "weight_eu": "90.0 kg",
-    "base_exp_yield": 265,
-    "leveling_rate": "Medium Slow",
+    "height_us": "9'10\"",
+    "height_eu": "3.0 m",
+    "weight_us": "1433.0 lbs.",
+    "weight_eu": "650.0 kg",
+    "base_exp_yield": 175,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
-        "atk": 3,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 100,
-        "atk": 125,
-        "def": 90,
-        "sp_atk": 60,
-        "sp_def": 70,
-        "speed": 85
+        "hp": 122,
+        "atk": 130,
+        "def": 69,
+        "sp_atk": 80,
+        "sp_def": 69,
+        "speed": 30
     },
-    "evolution_from": "Thwackey",
+    "evolution_from": "Cufant",
     "evolutions": [],
-    "species": "Drummer Pokémon",
+    "species": "Copperderm Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "The one with the best drumming techniques becomes the boss of the troop. It has a gentle disposition and values harmony among its group.",
+    "pokedex_entry": "These Pokémon live in herds. Their trunks have incredible grip strength, strong enough to crush giant rocks into powder.",
     "move_learnset": [
         {
-            "move": "Drum Beating",
+            "move": "Heavy Slam",
             "evo": true
         },
         {
-            "move": "Drum Beating",
+            "move": "Heavy Slam",
             "level": 1
         },
         {
-            "move": "Double Hit",
-            "level": 1
-        },
-        {
-            "move": "Grassy Terrain",
-            "level": 1
-        },
-        {
-            "move": "Noble Roar",
-            "level": 1
-        },
-        {
-            "move": "Scratch",
+            "move": "Tackle",
             "level": 1
         },
         {
@@ -84,48 +72,48 @@
             "level": 1
         },
         {
-            "move": "Branch Poke",
+            "move": "Rollout",
             "level": 1
         },
         {
-            "move": "Taunt",
+            "move": "Rock Smash",
             "level": 1
         },
         {
-            "move": "Razor Leaf",
-            "level": 12
+            "move": "Bulldoze",
+            "level": 15
         },
         {
-            "move": "Screech",
-            "level": 19
+            "move": "Stomp",
+            "level": 20
         },
         {
-            "move": "Knock Off",
-            "level": 24
+            "move": "Iron Defense",
+            "level": 25
         },
         {
-            "move": "Slam",
+            "move": "Dig",
             "level": 30
         },
         {
-            "move": "Uproar",
-            "level": 38
+            "move": "Strength",
+            "level": 37
         },
         {
-            "move": "Wood Hammer",
-            "level": 46
+            "move": "Iron Head",
+            "level": 44
         },
         {
-            "move": "Endeavor",
-            "level": 54
+            "move": "Play Rough",
+            "level": 51
         },
         {
-            "move": "Boomburst",
-            "level": 62
+            "move": "High Horsepower",
+            "level": 58
         },
         {
-            "move": "Mega Punch",
-            "tm": true
+            "move": "Superpower",
+            "level": 65
         },
         {
             "move": "Mega Kick",
@@ -140,15 +128,7 @@
             "tm": true
         },
         {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Solar Blade",
+            "move": "Dig",
             "tm": true
         },
         {
@@ -157,6 +137,10 @@
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -172,15 +156,7 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Sunny Day",
             "tm": true
         },
         {
@@ -188,7 +164,7 @@
             "tm": true
         },
         {
-            "move": "Swift",
+            "move": "Revenge",
             "tm": true
         },
         {
@@ -196,7 +172,7 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Rock Tomb",
             "tm": true
         },
         {
@@ -204,11 +180,11 @@
             "tm": true
         },
         {
-            "move": "U-turn",
+            "move": "Rock Blast",
             "tm": true
         },
         {
-            "move": "Assurance",
+            "move": "Payback",
             "tm": true
         },
         {
@@ -216,15 +192,7 @@
             "tm": true
         },
         {
-            "move": "Drain Punch",
-            "tm": true
-        },
-        {
             "move": "Round",
-            "tm": true
-        },
-        {
-            "move": "Acrobatics",
             "tm": true
         },
         {
@@ -236,14 +204,6 @@
             "tm": true
         },
         {
-            "move": "Grassy Terrain",
-            "tm": true
-        },
-        {
-            "move": "False Swipe",
-            "tm": true
-        },
-        {
             "move": "Brutal Swing",
             "tm": true
         },
@@ -252,15 +212,7 @@
             "tm": true
         },
         {
-            "move": "Swords Dance",
-            "tm": true
-        },
-        {
             "move": "Body Slam",
-            "tm": true
-        },
-        {
-            "move": "Low Kick",
             "tm": true
         },
         {
@@ -268,11 +220,11 @@
             "tm": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Substitute",
             "tm": true
         },
         {
-            "move": "Substitute",
+            "move": "Outrage",
             "tm": true
         },
         {
@@ -284,10 +236,6 @@
             "tm": true
         },
         {
-            "move": "Uproar",
-            "tm": true
-        },
-        {
             "move": "Taunt",
             "tm": true
         },
@@ -296,19 +244,7 @@
             "tm": true
         },
         {
-            "move": "Hyper Voice",
-            "tm": true
-        },
-        {
-            "move": "Bulk Up",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Energy Ball",
+            "move": "Iron Defense",
             "tm": true
         },
         {
@@ -316,11 +252,31 @@
             "tm": true
         },
         {
-            "move": "Leaf Storm",
+            "move": "Zen Headbutt",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Power Whip",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
             "tm": true
         },
         {
@@ -328,7 +284,11 @@
             "tm": true
         },
         {
-            "move": "Darkest Lariat",
+            "move": "Heat Crash",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
             "tm": true
         },
         {
@@ -340,31 +300,35 @@
             "tm": true
         },
         {
-            "move": "Growth",
+            "move": "Double-Edge",
             "egg_move": true
         },
         {
-            "move": "Hammer Arm",
+            "move": "Belch",
             "egg_move": true
         },
         {
-            "move": "Fake Out",
+            "move": "Curse",
             "egg_move": true
         },
         {
-            "move": "Strength",
+            "move": "Slam",
             "egg_move": true
         },
         {
-            "move": "Nature Power",
+            "move": "Fissure",
             "egg_move": true
         },
         {
-            "move": "Worry Seed",
+            "move": "Swagger",
             "egg_move": true
         },
         {
-            "move": "Leech Seed",
+            "move": "Whirlwind",
+            "egg_move": true
+        },
+        {
+            "move": "Defense Curl",
             "egg_move": true
         }
     ]

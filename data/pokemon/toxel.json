@@ -1,0 +1,178 @@
+{
+    "name": "Toxel",
+    "national_id": 848,
+    "types": [
+        "Electric",
+        "Poison"
+    ],
+    "abilities": [
+        {
+            "name": "Rattled"
+        },
+        {
+            "name": "Static"
+        },
+        {
+            "name": "Klutz",
+            "hidden": true
+        }
+    ],
+    "catch_rate": 75,
+    "gender_ratios": {
+        "male": 50,
+        "female": 50
+    },
+    "egg_groups": [
+        "Undiscovered"
+    ],
+    "hatch_time": [
+        6425,
+        6681
+    ],
+    "height_us": "1'04\"",
+    "height_eu": "0.4 m",
+    "weight_us": "24.3 lbs.",
+    "weight_eu": "11.0 kg",
+    "base_exp_yield": 48,
+    "leveling_rate": "Medium Slow",
+    "base_friendship": 50,
+    "ev_yield": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "sp_atk": 1,
+        "sp_def": 0,
+        "speed": 0
+    },
+    "base_stats": {
+        "hp": 40,
+        "atk": 38,
+        "def": 35,
+        "sp_atk": 54,
+        "sp_def": 35,
+        "speed": 40
+    },
+    "evolution_from": null,
+    "evolutions": [
+        {
+            "name": "Toxtricity",
+            "form": "Amped",
+            "level": 30,
+            "nature": [
+                "Hardy",
+                "Brave",
+                "Adamant",
+                "Naughty",
+                "Docile",
+                "Impish",
+                "Lax",
+                "Hasty",
+                "Jolly",
+                "Naive",
+                "Rash",
+                "Sassy",
+                "Quirky"
+            ]
+        },
+        {
+            "name": "Toxtricity",
+            "form": "Low Key",
+            "level": 30,
+            "nature": [
+                "Lonely",
+                "Bold",
+                "Relaxed",
+                "Timid",
+                "Serious",
+                "Modest",
+                "Mild",
+                "Quiet",
+                "Bashful",
+                "Calm",
+                "Gentle",
+                "Careful"
+            ]
+        }
+    ],
+    "species": "Baby Pokémon",
+    "mega_evolves": false,
+    "pokedex_entry": "It manipulates the chemical makeup of its poison to produce electricity. The voltage is weak, but it can cause a tingling paralysis.",
+    "move_learnset": [
+        {
+            "move": "Belch",
+            "level": 1
+        },
+        {
+            "move": "Tearful Look",
+            "level": 1
+        },
+        {
+            "move": "Nuzzle",
+            "level": 1
+        },
+        {
+            "move": "Growl",
+            "level": 1
+        },
+        {
+            "move": "Flail",
+            "level": 1
+        },
+        {
+            "move": "Acid",
+            "level": 1
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Endeavor",
+            "egg_move": true
+        },
+        {
+            "move": "Metal Sound",
+            "egg_move": true
+        },
+        {
+            "move": "Power-Up Punch",
+            "egg_move": true
+        }
+    ]
+}

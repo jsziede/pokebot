@@ -1,6 +1,6 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Flapple",
+    "national_id": 841,
     "types": [
         "Grass",
         "Dragon"
@@ -13,7 +13,7 @@
             "name": "Gluttony"
         },
         {
-            "name": "Thick Fat",
+            "name": "Hustle",
             "hidden": true
         }
     ],
@@ -30,42 +30,42 @@
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
+    "height_us": "1'00\"",
+    "height_eu": "0.3 m",
+    "weight_us": "2.2 lbs.",
+    "weight_eu": "1.0 kg",
     "base_exp_yield": 170,
     "leveling_rate": "Erratic",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
-        "atk": 0,
+        "hp": 0,
+        "atk": 2,
         "def": 0,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
+        "hp": 70,
+        "atk": 110,
         "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "sp_atk": 95,
+        "sp_def": 60,
+        "speed": 70
     },
     "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from_item": "Tart Apple",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Apple Wing Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "It flies on wings of apple skin and spits a powerful acid. It can also change its shape into that of an apple.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Wing Attack",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Wing Attack",
             "level": 1
         },
         {
@@ -85,15 +85,15 @@
             "level": 1
         },
         {
-            "move": "Sweet Scent",
+            "move": "Twister",
             "level": 1
         },
         {
-            "move": "Curse",
+            "move": "Acid Spray",
             "level": 4
         },
         {
-            "move": "Stomp",
+            "move": "Acrobatics",
             "level": 8
         },
         {
@@ -105,19 +105,19 @@
             "level": 16
         },
         {
-            "move": "Bullet Seed",
+            "move": "Dragon Breath",
             "level": 20
         },
         {
-            "move": "Recover",
+            "move": "Dragon Dance",
             "level": 24
         },
         {
-            "move": "Apple Acid",
+            "move": "Dragon Pulse",
             "level": 28
         },
         {
-            "move": "Body Slam",
+            "move": "Grav Apple",
             "level": 32
         },
         {
@@ -125,12 +125,16 @@
             "level": 36
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Fly",
             "level": 40
         },
         {
-            "move": "Energy Ball",
+            "move": "Dragon Rush",
             "level": 44
+        },
+        {
+            "move": "Fly",
+            "tm": true
         },
         {
             "move": "Hyper Beam",
@@ -145,18 +149,6 @@
             "tm": true
         },
         {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
-            "tm": true
-        },
-        {
             "move": "Rest",
             "tm": true
         },
@@ -166,6 +158,10 @@
         },
         {
             "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
             "tm": true
         },
         {
@@ -189,7 +185,7 @@
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "U-turn",
             "tm": true
         },
         {
@@ -197,19 +193,15 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Acrobatics",
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Air Slash",
             "tm": true
         },
         {
-            "move": "Earthquake",
-            "tm": true
-        },
-        {
-            "move": "Amnesia",
+            "move": "Focus Energy",
             "tm": true
         },
         {
@@ -229,15 +221,11 @@
             "tm": true
         },
         {
-            "move": "Superpower",
-            "tm": true
-        },
-        {
             "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Dragon Dance",
             "tm": true
         },
         {
@@ -258,14 +246,6 @@
         },
         {
             "move": "Heavy Slam",
-            "tm": true
-        },
-        {
-            "move": "High Horsepower",
-            "tm": true
-        },
-        {
-            "move": "Body Press",
             "tm": true
         },
         {

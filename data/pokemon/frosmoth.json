@@ -1,136 +1,135 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Frosmoth",
+    "national_id": 873,
     "types": [
-        "Grass",
-        "Dragon"
+        "Ice",
+        "Bug"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Shield Dust"
         },
         {
-            "name": "Gluttony"
-        },
-        {
-            "name": "Thick Fat",
+            "name": "Ice Scales",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 75,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Bug"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "4'03\"",
+    "height_eu": "1.3 m",
+    "weight_us": "92.6 lbs.",
+    "weight_eu": "42.0 kg",
+    "base_exp_yield": 168,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 0,
+        "sp_atk": 2,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 70,
+        "atk": 65,
+        "def": 60,
+        "sp_atk": 125,
+        "sp_def": 90,
+        "speed": 65
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Snom",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Frost Moth Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "It shows no mercy to any who desecrate fields and mountains. It will fly around on its icy wings, causing a blizzard to chase offenders away.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Icy Wind",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Icy Wind",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Powder Snow",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Struggle Bug",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Helping Hand",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Attract",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
-            "level": 1
-        },
-        {
-            "move": "Curse",
+            "move": "Stun Spore",
             "level": 4
         },
         {
-            "move": "Stomp",
+            "move": "Infestation",
             "level": 8
         },
         {
-            "move": "Leech Seed",
+            "move": "Mist",
             "level": 12
         },
         {
-            "move": "Protect",
+            "move": "Defog",
             "level": 16
         },
         {
-            "move": "Bullet Seed",
-            "level": 20
+            "move": "Feather Dance",
+            "level": 21
         },
         {
-            "move": "Recover",
+            "move": "Aurora Beam",
             "level": 24
         },
         {
-            "move": "Apple Acid",
+            "move": "Hail",
             "level": 28
         },
         {
-            "move": "Body Slam",
+            "move": "Bug Buzz",
             "level": 32
         },
         {
-            "move": "Iron Defense",
+            "move": "Aurora Veil",
             "level": 36
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Blizzard",
             "level": 40
         },
         {
-            "move": "Energy Ball",
+            "move": "Tailwind",
             "level": 44
+        },
+        {
+            "move": "Wide Guard",
+            "level": 48
+        },
+        {
+            "move": "Quiver Dance",
+            "level": 52
         },
         {
             "move": "Hyper Beam",
@@ -138,10 +137,6 @@
         },
         {
             "move": "Giga Impact",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
             "tm": true
         },
         {
@@ -169,6 +164,10 @@
             "tm": true
         },
         {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
             "move": "Giga Drain",
             "tm": true
         },
@@ -177,7 +176,7 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Hail",
             "tm": true
         },
         {
@@ -185,11 +184,27 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Icicle Spear",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
             "tm": true
         },
         {
@@ -197,27 +212,27 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Acrobatics",
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Air Slash",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Ice Beam",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
             "tm": true
         },
         {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Outrage",
             "tm": true
         },
         {
@@ -229,59 +244,35 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Calm Mind",
             "tm": true
         },
         {
-            "move": "Iron Defense",
+            "move": "Bug Buzz",
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Hurricane",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Play Rough",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Dazzling Gleam",
             "tm": true
         },
         {
-            "move": "Energy Ball",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
-            "tm": true
-        },
-        {
-            "move": "Heavy Slam",
-            "tm": true
-        },
-        {
-            "move": "High Horsepower",
-            "tm": true
-        },
-        {
-            "move": "Body Press",
-            "tm": true
-        },
-        {
-            "move": "Sucker Punch",
+            "move": "Fairy Wind",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Mirror Coat",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
-            "egg_move": true
-        },
-        {
-            "move": "Recycle",
+            "move": "Bug Bite",
             "egg_move": true
         }
     ]

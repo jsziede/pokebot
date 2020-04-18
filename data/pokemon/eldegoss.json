@@ -1,87 +1,80 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Eldegoss",
+    "national_id": 830,
     "types": [
-        "Grass",
-        "Dragon"
+        "Grass"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Cotton Down"
         },
         {
-            "name": "Gluttony"
+            "name": "Regenerator"
         },
         {
-            "name": "Thick Fat",
+            "name": "Effect Spore",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 75,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Grass"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "1'08\"",
+    "height_eu": "0.5 m",
+    "weight_us": "5.5 lbs.",
+    "weight_eu": "2.5 kg",
+    "base_exp_yield": 161,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
-        "sp_def": 0,
+        "sp_def": 2,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 60,
+        "atk": 50,
+        "def": 90,
+        "sp_atk": 80,
+        "sp_def": 120,
+        "speed": 60
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Gossifleur",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Cotton Bloom Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "The cotton on the head of this Pokémon can be spun into a glossy, gorgeous yarn—a Galar regional specialty.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Cotton Spore",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Cotton Spore",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Leafage",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Sing",
             "level": 1
         },
         {
-            "move": "Astonish",
-            "level": 1
-        },
-        {
-            "move": "Growth",
+            "move": "Rapid Spin",
             "level": 1
         },
         {
@@ -89,48 +82,36 @@
             "level": 1
         },
         {
-            "move": "Curse",
-            "level": 4
-        },
-        {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
+            "move": "Razor Leaf",
             "level": 12
         },
         {
-            "move": "Protect",
+            "move": "Round",
             "level": 16
         },
         {
-            "move": "Bullet Seed",
-            "level": 20
+            "move": "Leaf Tornado",
+            "level": 23
         },
         {
-            "move": "Recover",
-            "level": 24
-        },
-        {
-            "move": "Apple Acid",
+            "move": "Synthesis",
             "level": 28
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Hyper Voice",
+            "level": 34
         },
         {
-            "move": "Iron Defense",
-            "level": 36
-        },
-        {
-            "move": "Dragon Pulse",
+            "move": "Aromatherapy",
             "level": 40
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Leaf Storm",
+            "level": 46
+        },
+        {
+            "move": "Cotton Guard",
+            "level": 52
         },
         {
             "move": "Hyper Beam",
@@ -141,19 +122,15 @@
             "tm": true
         },
         {
+            "move": "Magical Leaf",
+            "tm": true
+        },
+        {
             "move": "Solar Beam",
             "tm": true
         },
         {
             "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
             "tm": true
         },
         {
@@ -173,6 +150,10 @@
             "tm": true
         },
         {
+            "move": "Charm",
+            "tm": true
+        },
+        {
             "move": "Attract",
             "tm": true
         },
@@ -185,11 +166,15 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Bullet Seed",
             "tm": true
         },
         {
@@ -197,27 +182,11 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": true
-        },
-        {
-            "move": "Body Slam",
-            "tm": true
-        },
-        {
-            "move": "Earthquake",
-            "tm": true
-        },
-        {
-            "move": "Amnesia",
+            "move": "Grassy Terrain",
             "tm": true
         },
         {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Outrage",
             "tm": true
         },
         {
@@ -229,15 +198,7 @@
             "tm": true
         },
         {
-            "move": "Superpower",
-            "tm": true
-        },
-        {
-            "move": "Iron Defense",
-            "tm": true
-        },
-        {
-            "move": "Gyro Ball",
+            "move": "Hyper Voice",
             "tm": true
         },
         {
@@ -245,11 +206,11 @@
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Energy Ball",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Leaf Storm",
             "tm": true
         },
         {
@@ -257,31 +218,31 @@
             "tm": true
         },
         {
-            "move": "Heavy Slam",
+            "move": "Pollen Puff",
             "tm": true
         },
         {
-            "move": "High Horsepower",
-            "tm": true
-        },
-        {
-            "move": "Body Press",
-            "tm": true
-        },
-        {
-            "move": "Sucker Punch",
+            "move": "Growth",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Leech Seed",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
+            "move": "Worry Seed",
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Poison Powder",
+            "egg_move": true
+        },
+        {
+            "move": "Stun Spore",
+            "egg_move": true
+        },
+        {
+            "move": "Sleep Powder",
             "egg_move": true
         }
     ]

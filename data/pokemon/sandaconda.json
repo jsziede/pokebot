@@ -1,136 +1,114 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Sandaconda",
+    "national_id": 844,
     "types": [
-        "Grass",
-        "Dragon"
+        "Ground"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Sand Spit"
         },
         {
-            "name": "Gluttony"
+            "name": "Shed Skin"
         },
         {
-            "name": "Thick Fat",
+            "name": "Sand Veil",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 120,
     "gender_ratios": {
         "male": 50,
         "female": 50
     },
     "egg_groups": [
-        "Grass",
+        "Field",
         "Dragon"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "12'06\"",
+    "height_eu": "3.8 m",
+    "weight_us": "144.4 lbs.",
+    "weight_eu": "65.5 kg",
+    "base_exp_yield": 179,
+    "leveling_rate": "Medium Fast",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
-        "def": 0,
+        "def": 2,
         "sp_atk": 0,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 72,
+        "atk": 107,
+        "def": 125,
+        "sp_atk": 65,
+        "sp_def": 70,
+        "speed": 71
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Silicobra",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Sand Snake Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "Its unique style of coiling allows it to blast sand out of its sand sac more efficiently.",
     "move_learnset": [
         {
+            "move": "Skull Bash",
+            "level": 1
+        },
+        {
+            "move": "Wrap",
+            "level": 1
+        },
+        {
+            "move": "Sand Attack",
+            "level": 1
+        },
+        {
+            "move": "Minimize",
+            "level": 1
+        },
+        {
+            "move": "Brutal Swing",
+            "level": 1
+        },
+        {
+            "move": "Bulldoze",
+            "level": 15
+        },
+        {
             "move": "Headbutt",
-            "evo": true
-        },
-        {
-            "move": "Headbutt",
-            "level": 1
-        },
-        {
-            "move": "Recycle",
-            "level": 1
-        },
-        {
-            "move": "Withdraw",
-            "level": 1
-        },
-        {
-            "move": "Astonish",
-            "level": 1
-        },
-        {
-            "move": "Growth",
-            "level": 1
-        },
-        {
-            "move": "Sweet Scent",
-            "level": 1
-        },
-        {
-            "move": "Curse",
-            "level": 4
-        },
-        {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
             "level": 20
         },
         {
-            "move": "Recover",
-            "level": 24
+            "move": "Glare",
+            "level": 25
         },
         {
-            "move": "Apple Acid",
-            "level": 28
+            "move": "Dig",
+            "level": 30
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Sandstorm",
+            "level": 35
         },
         {
-            "move": "Iron Defense",
-            "level": 36
+            "move": "Slam",
+            "level": 42
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Coil",
+            "level": 49
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Sand Tomb",
+            "level": 51
         },
         {
             "move": "Hyper Beam",
@@ -141,23 +119,19 @@
             "tm": true
         },
         {
-            "move": "Solar Beam",
+            "move": "Dig",
             "tm": true
         },
         {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
+            "move": "Screech",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
             "tm": true
         },
         {
@@ -169,15 +143,11 @@
             "tm": true
         },
         {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
             "move": "Attract",
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Sandstorm",
             "tm": true
         },
         {
@@ -185,11 +155,23 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Rock Tomb",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
             "tm": true
         },
         {
@@ -201,15 +183,11 @@
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Brutal Swing",
             "tm": true
         },
         {
             "move": "Earthquake",
-            "tm": true
-        },
-        {
-            "move": "Amnesia",
             "tm": true
         },
         {
@@ -229,35 +207,35 @@
             "tm": true
         },
         {
-            "move": "Superpower",
-            "tm": true
-        },
-        {
             "move": "Iron Defense",
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Earth Power",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Zen Headbutt",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Iron Head",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Stone Edge",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Stealth Rock",
             "tm": true
         },
         {
-            "move": "Heavy Slam",
+            "move": "Drill Run",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
             "tm": true
         },
         {
@@ -269,19 +247,23 @@
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Dragon Rush",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Mud-Slap",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
+            "move": "Last Resort",
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Belch",
+            "egg_move": true
+        },
+        {
+            "move": "Poison Tail",
             "egg_move": true
         }
     ]

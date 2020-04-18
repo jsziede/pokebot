@@ -1,136 +1,122 @@
 {
-    "name": "Appletun",
-    "national_id": 842,
+    "name": "Hatterene",
+    "national_id": 858,
     "types": [
-        "Grass",
-        "Dragon"
+        "Psychic",
+        "Fairy"
     ],
     "abilities": [
         {
-            "name": "Ripen"
+            "name": "Healer"
         },
         {
-            "name": "Gluttony"
+            "name": "Anticipation"
         },
         {
-            "name": "Thick Fat",
+            "name": "Magic Bounce",
             "hidden": true
         }
     ],
     "catch_rate": 45,
     "gender_ratios": {
-        "male": 50,
-        "female": 50
+        "male": 0,
+        "female": 100
     },
     "egg_groups": [
-        "Grass",
-        "Dragon"
+        "Fairy"
     ],
     "hatch_time": [
         5140,
         5396
     ],
-    "height_us": "1'04\"",
-    "height_eu": "0.4 m",
-    "weight_us": "28.7 lbs.",
-    "weight_eu": "13.0 kg",
-    "base_exp_yield": 170,
-    "leveling_rate": "Erratic",
+    "height_us": "6'11\"",
+    "height_eu": "2.1 m",
+    "weight_us": "11.2 lbs.",
+    "weight_eu": "5.1 kg",
+    "base_exp_yield": 255,
+    "leveling_rate": "Slow",
     "base_friendship": 50,
     "ev_yield": {
-        "hp": 2,
+        "hp": 0,
         "atk": 0,
         "def": 0,
-        "sp_atk": 0,
+        "sp_atk": 3,
         "sp_def": 0,
         "speed": 0
     },
     "base_stats": {
-        "hp": 110,
-        "atk": 85,
-        "def": 80,
-        "sp_atk": 100,
-        "sp_def": 80,
-        "speed": 30
+        "hp": 57,
+        "atk": 90,
+        "def": 95,
+        "sp_atk": 136,
+        "sp_def": 103,
+        "speed": 29
     },
-    "evolution_from": "Applin",
-    "evolution_from_item": "Sweet Apple",
+    "evolution_from": "Hattrem",
     "evolutions": [],
-    "species": "Apple Nectar Pokémon",
+    "species": "Silent Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its body is covered in sweet nectar, and the skin on its back is especially yummy. Children used to have it as a snack.",
+    "pokedex_entry": "If you’re too loud around it, you risk being torn apart by the claws on its tentacle. This Pokémon is also known as the Forest Witch.",
     "move_learnset": [
         {
-            "move": "Headbutt",
+            "move": "Psycho Cut",
             "evo": true
         },
         {
-            "move": "Headbutt",
+            "move": "Psycho Cut",
             "level": 1
         },
         {
-            "move": "Recycle",
+            "move": "Brutal Swing",
             "level": 1
         },
         {
-            "move": "Withdraw",
+            "move": "Confusion",
             "level": 1
         },
         {
-            "move": "Astonish",
+            "move": "Play Nice",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Life Dew",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
+            "move": "Disarming Voice",
             "level": 1
         },
         {
-            "move": "Curse",
-            "level": 4
+            "move": "Aromatherapy",
+            "level": 15
         },
         {
-            "move": "Stomp",
-            "level": 8
-        },
-        {
-            "move": "Leech Seed",
-            "level": 12
-        },
-        {
-            "move": "Protect",
-            "level": 16
-        },
-        {
-            "move": "Bullet Seed",
+            "move": "Psybeam",
             "level": 20
         },
         {
-            "move": "Recover",
-            "level": 24
+            "move": "Heal Pulse",
+            "level": 25
         },
         {
-            "move": "Apple Acid",
-            "level": 28
+            "move": "Dazzling Gleam",
+            "level": 30
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Calm Mind",
+            "level": 37
         },
         {
-            "move": "Iron Defense",
-            "level": 36
+            "move": "Psychic",
+            "level": 46
         },
         {
-            "move": "Dragon Pulse",
-            "level": 40
+            "move": "Healing Wish",
+            "level": 55
         },
         {
-            "move": "Energy Ball",
-            "level": 44
+            "move": "Magic Powder",
+            "level": 64
         },
         {
             "move": "Hyper Beam",
@@ -141,15 +127,15 @@
             "tm": true
         },
         {
-            "move": "Solar Beam",
+            "move": "Magical Leaf",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
             "tm": true
         },
         {
             "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Reflect",
             "tm": true
         },
         {
@@ -173,11 +159,11 @@
             "tm": true
         },
         {
-            "move": "Attract",
+            "move": "Charm",
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Attract",
             "tm": true
         },
         {
@@ -185,11 +171,39 @@
             "tm": true
         },
         {
-            "move": "Bullet Seed",
+            "move": "Helping Hand",
             "tm": true
         },
         {
-            "move": "Payback",
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Power Swap",
+            "tm": true
+        },
+        {
+            "move": "Guard Swap",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Psycho Cut",
+            "tm": true
+        },
+        {
+            "move": "Trick Room",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
             "tm": true
         },
         {
@@ -197,19 +211,23 @@
             "tm": true
         },
         {
-            "move": "Bulldoze",
+            "move": "Draining Kiss",
             "tm": true
         },
         {
-            "move": "Body Slam",
+            "move": "Mystical Fire",
             "tm": true
         },
         {
-            "move": "Earthquake",
+            "move": "Brutal Swing",
             "tm": true
         },
         {
-            "move": "Amnesia",
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
             "tm": true
         },
         {
@@ -217,7 +235,7 @@
             "tm": true
         },
         {
-            "move": "Outrage",
+            "move": "Psyshock",
             "tm": true
         },
         {
@@ -229,59 +247,59 @@
             "tm": true
         },
         {
-            "move": "Superpower",
+            "move": "Baton Pass",
             "tm": true
         },
         {
-            "move": "Iron Defense",
+            "move": "Shadow Ball",
             "tm": true
         },
         {
-            "move": "Gyro Ball",
+            "move": "Future Sight",
             "tm": true
         },
         {
-            "move": "Seed Bomb",
+            "move": "Skill Swap",
             "tm": true
         },
         {
-            "move": "Dragon Pulse",
+            "move": "Calm Mind",
             "tm": true
         },
         {
-            "move": "Energy Ball",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
-            "move": "Grass Knot",
+            "move": "Power Whip",
             "tm": true
         },
         {
-            "move": "Heavy Slam",
+            "move": "Stored Power",
             "tm": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Play Rough",
             "tm": true
         },
         {
-            "move": "Body Press",
+            "move": "Dazzling Gleam",
             "tm": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Aromatic Mist",
             "egg_move": true
         },
         {
-            "move": "Rollout",
+            "move": "Nuzzle",
             "egg_move": true
         },
         {
-            "move": "Defense Curl",
+            "move": "After You",
             "egg_move": true
         },
         {
-            "move": "Recycle",
+            "move": "Quash",
             "egg_move": true
         }
     ]

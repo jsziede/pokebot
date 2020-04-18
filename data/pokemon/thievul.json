@@ -1,115 +1,140 @@
 {
-    "name": "Scorbunny",
-    "national_id": 813,
+    "name": "Thievul",
+    "national_id": 828,
     "types": [
-        "Fire"
+        "Dark"
     ],
     "abilities": [
         {
-            "name": "Blaze"
+            "name": "Run Away"
         },
         {
-            "name": "Libero",
+            "name": "Unburden"
+        },
+        {
+            "name": "Stakeout",
             "hidden": true
         }
     ],
-    "catch_rate": 45,
+    "catch_rate": 127,
     "gender_ratios": {
-        "male": 87.5,
-        "female": 12.5
+        "male": 50,
+        "female": 50
     },
     "egg_groups": [
-        "Field",
-        "Human-Like"
+        "Field"
     ],
     "hatch_time": [
-        5140,
-        5396
+        3855,
+        4111
     ],
-    "height_us": "1'00\"",
-    "height_eu": "0.3 m",
-    "weight_us": "9.9 lbs.",
-    "weight_eu": "4.5 kg",
-    "base_exp_yield": 62,
-    "leveling_rate": "Medium Slow",
+    "height_us": "3'11\"",
+    "height_eu": "1.2 m",
+    "weight_us": "43.9 lbs.",
+    "weight_eu": "19.9 kg",
+    "base_exp_yield": 159,
+    "leveling_rate": "Fast",
     "base_friendship": 50,
     "ev_yield": {
         "hp": 0,
         "atk": 0,
         "def": 0,
         "sp_atk": 0,
-        "sp_def": 0,
-        "speed": 1
+        "sp_def": 2,
+        "speed": 0
     },
     "base_stats": {
-        "hp": 50,
-        "atk": 71,
-        "def": 40,
-        "sp_atk": 40,
-        "sp_def": 40,
-        "speed": 69
+        "hp": 70,
+        "atk": 58,
+        "def": 58,
+        "sp_atk": 87,
+        "sp_def": 92,
+        "speed": 90
     },
-    "evolution_from": null,
-    "evolutions": [
-        {
-            "to": "Raboot",
-            "level": 16
-        }
-    ],
-    "species": "Rabbit Pokémon",
+    "evolution_from": "Nickit",
+    "evolutions": [],
+    "species": "Fox Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It has special pads on the backs of its feet, and one on its nose. Once it’s raring to fight, these pads radiate tremendous heat.",
+    "pokedex_entry": "With a lithe body and sharp claws, it goes around stealing food and eggs. Boltund is its natural enemy.",
     "move_learnset": [
         {
-            "move": "Tackle",
-            "level": 1
+            "move": "Thief",
+            "evo": true
         },
         {
-            "move": "Growl",
+            "move": "Thief",
             "level": 1
-        },
-        {
-            "move": "Ember",
-            "level": 6
         },
         {
             "move": "Quick Attack",
-            "level": 8
+            "level": 1
         },
         {
-            "move": "Double Kick",
+            "move": "Tail Whip",
+            "level": 1
+        },
+        {
+            "move": "Beat Up",
+            "level": 1
+        },
+        {
+            "move": "Hone Claws",
+            "level": 1
+        },
+        {
+            "move": "Snarl",
             "level": 12
         },
         {
-            "move": "Flame Charge",
-            "level": 17
+            "move": "Assurance",
+            "level": 16
         },
         {
-            "move": "Agility",
-            "level": 20
+            "move": "Nasty Plot",
+            "level": 22
         },
         {
-            "move": "Headbutt",
-            "level": 24
-        },
-        {
-            "move": "Counter",
+            "move": "Sucker Punch",
             "level": 28
         },
         {
-            "move": "Bounce",
-            "level": 32
+            "move": "Night Slash",
+            "level": 34
         },
         {
-            "move": "Double-Edge",
-            "level": 36
+            "move": "Tail Slap",
+            "level": 40
         },
         {
-            "move": "Mega Kick",
+            "move": "Foul Play",
+            "level": 46
+        },
+        {
+            "move": "Parting Shot",
+            "level": 52
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
             "tm": true
         },
         {
             "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
             "tm": true
         },
         {
@@ -125,7 +150,7 @@
             "tm": true
         },
         {
-            "move": "Sunny Day",
+            "move": "Beat Up",
             "tm": true
         },
         {
@@ -137,7 +162,7 @@
             "tm": true
         },
         {
-            "move": "Bounce",
+            "move": "Fake Tears",
             "tm": true
         },
         {
@@ -153,11 +178,19 @@
             "tm": true
         },
         {
-            "move": "Fire Fang",
+            "move": "Shadow Claw",
             "tm": true
         },
         {
-            "move": "Low Sweep",
+            "move": "Thunder Fang",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
             "tm": true
         },
         {
@@ -169,11 +202,15 @@
             "tm": true
         },
         {
-            "move": "Flamethrower",
+            "move": "Tail Slap",
             "tm": true
         },
         {
-            "move": "Low Kick",
+            "move": "Snarl",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
             "tm": true
         },
         {
@@ -181,19 +218,7 @@
             "tm": true
         },
         {
-            "move": "Focus Energy",
-            "tm": true
-        },
-        {
-            "move": "Fire Blast",
-            "tm": true
-        },
-        {
             "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Reversal",
             "tm": true
         },
         {
@@ -209,7 +234,11 @@
             "tm": true
         },
         {
-            "move": "Heat Wave",
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
             "tm": true
         },
         {
@@ -217,43 +246,39 @@
             "tm": true
         },
         {
-            "move": "Blaze Kick",
+            "move": "Dark Pulse",
             "tm": true
         },
         {
-            "move": "Overheat",
+            "move": "Nasty Plot",
             "tm": true
         },
         {
-            "move": "Gunk Shot",
+            "move": "Grass Knot",
             "tm": true
         },
         {
-            "move": "Electro Ball",
+            "move": "Foul Play",
             "tm": true
         },
         {
-            "move": "Ally Switch",
+            "move": "Play Rough",
             "tm": true
         },
         {
-            "move": "Work Up",
-            "tm": true
-        },
-        {
-            "move": "High Jump Kick",
+            "move": "Quick Guard",
             "egg_move": true
         },
         {
-            "move": "Sand Attack",
+            "move": "Knock Off",
             "egg_move": true
         },
         {
-            "move": "Sucker Punch",
+            "move": "Howl",
             "egg_move": true
         },
         {
-            "move": "Super Fang",
+            "move": "Torment",
             "egg_move": true
         }
     ]
