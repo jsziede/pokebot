@@ -63,18 +63,26 @@
     "evolutions": [],
     "species": "Windveiled Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Like the wind, it can slip through any gap, no matter how small. It leaves balls of white fluff behind.",
+    "pokedex_entry": "As long as this Pokémon bathes in sunlight, its cotton keeps growing. If too much cotton fluff builds up, Whimsicott tears it off and scatters it.",
     "move_learnset": [
         {
-            "move": "Cotton Spore",
+            "move": "Gust",
             "level": 1
         },
         {
-            "move": "Growth",
+            "move": "Tailwind",
             "level": 1
         },
         {
-            "move": "Leech Seed",
+            "move": "Moonblast",
+            "level": 1
+        },
+        {
+            "move": "Memento",
+            "level": 1
+        },
+        {
+            "move": "Hurricane",
             "level": 1
         },
         {
@@ -82,39 +90,219 @@
             "level": 1
         },
         {
-            "move": "Gust",
-            "level": 10
+            "move": "Razor Leaf",
+            "level": 1
         },
         {
-            "move": "Tailwind",
-            "level": 28
+            "move": "Growth",
+            "level": 1
         },
         {
-            "move": "Hurricane",
-            "level": 46
+            "move": "Poison Powder",
+            "level": 1
         },
         {
-            "move": "Moonblast",
-            "level": 50
+            "move": "Giga Drain",
+            "level": 1
+        },
+        {
+            "move": "Charm",
+            "level": 1
+        },
+        {
+            "move": "Leech Seed",
+            "level": 1
+        },
+        {
+            "move": "Cotton Spore",
+            "level": 1
+        },
+        {
+            "move": "Energy Ball",
+            "level": 1
+        },
+        {
+            "move": "Sunny Day",
+            "level": 1
+        },
+        {
+            "move": "Endeavor",
+            "level": 1
+        },
+        {
+            "move": "Cotton Guard",
+            "level": 1
+        },
+        {
+            "move": "Solar Beam",
+            "level": 1
+        },
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Helping Hand",
+            "level": 1
+        },
+        {
+            "move": "Fairy Wind",
+            "level": 1
+        },
+        {
+            "move": "Stun Spore",
+            "level": 1
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
         },
         {
             "move": "Beat Up",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Captivate",
-            "egg_move": true
+            "move": "Facade",
+            "tm": true
         },
         {
-            "move": "Encore",
-            "egg_move": true
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
         },
         {
             "move": "Fake Tears",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Grass Whistle",
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Trick Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Grassy Terrain",
+            "tm": true
+        },
+        {
+            "move": "Misty Terrain",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Tickle",
             "egg_move": true
         },
         {
@@ -122,19 +310,7 @@
             "egg_move": true
         },
         {
-            "move": "Misty Terrain",
-            "egg_move": true
-        },
-        {
-            "move": "Natural Gift",
-            "egg_move": true
-        },
-        {
             "move": "Switcheroo",
-            "egg_move": true
-        },
-        {
-            "move": "Tickle",
             "egg_move": true
         },
         {
@@ -142,132 +318,8 @@
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Trick Room",
-            "tm": "TM92"
-        },
-        {
             "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

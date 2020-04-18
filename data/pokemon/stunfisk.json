@@ -63,22 +63,10 @@
     "evolutions": [],
     "species": "Trap Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It conceals itself in the mud of the seashore. Then it waits. When prey touch it, it delivers a jolt of electricity.",
+    "pokedex_entry": "For some reason, this Pokémon smiles slightly when it emits a strong electric current from the yellow markings on its body.",
     "move_learnset": [
         {
-            "move": "Fissure",
-            "level": 1
-        },
-        {
-            "move": "Flail",
-            "level": 1
-        },
-        {
             "move": "Mud-Slap",
-            "level": 1
-        },
-        {
-            "move": "Mud Sport",
             "level": 1
         },
         {
@@ -90,31 +78,31 @@
             "level": 1
         },
         {
-            "move": "Bide",
-            "level": 5
-        },
-        {
             "move": "Thunder Shock",
-            "level": 9
-        },
-        {
-            "move": "Mud Shot",
-            "level": 13
-        },
-        {
-            "move": "Camouflage",
-            "level": 17
-        },
-        {
-            "move": "Mud Bomb",
-            "level": 21
-        },
-        {
-            "move": "Discharge",
-            "level": 25
+            "level": 1
         },
         {
             "move": "Endure",
+            "level": 5
+        },
+        {
+            "move": "Mud Shot",
+            "level": 10
+        },
+        {
+            "move": "Revenge",
+            "level": 15
+        },
+        {
+            "move": "Charge",
+            "level": 20
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 25
+        },
+        {
+            "move": "Electric Terrain",
             "level": 30
         },
         {
@@ -126,20 +114,168 @@
             "level": 40
         },
         {
-            "move": "Thunderbolt",
+            "move": "Discharge",
             "level": 45
         },
         {
-            "move": "Revenge",
+            "move": "Flail",
             "level": 50
         },
         {
-            "move": "Flail",
+            "move": "Fissure",
             "level": 55
         },
         {
-            "move": "Fissure",
-            "level": 61
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Electroweb",
+            "tm": true
+        },
+        {
+            "move": "Electric Terrain",
+            "tm": true
+        },
+        {
+            "move": "Eerie Impulse",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Yawn",
+            "egg_move": true
         },
         {
             "move": "Astonish",
@@ -150,15 +286,11 @@
             "egg_move": true
         },
         {
-            "move": "Earth Power",
+            "move": "Spite",
             "egg_move": true
         },
         {
-            "move": "Eerie Impulse",
-            "egg_move": true
-        },
-        {
-            "move": "Me First",
+            "move": "Spark",
             "egg_move": true
         },
         {
@@ -168,146 +300,6 @@
         {
             "move": "Reflect Type",
             "egg_move": true
-        },
-        {
-            "move": "Shock Wave",
-            "egg_move": true
-        },
-        {
-            "move": "Sleep Talk",
-            "egg_move": true
-        },
-        {
-            "move": "Spark",
-            "egg_move": true
-        },
-        {
-            "move": "Spite",
-            "egg_move": true
-        },
-        {
-            "move": "Yawn",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

@@ -58,18 +58,26 @@
     "evolutions": [],
     "species": "Beehive Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its abdomen is a honeycomb for grubs. It raises its grubs on honey collected by Combee.",
+    "pokedex_entry": "Vespiquen that give off more pheromones have larger swarms of Combee attendants.",
     "move_learnset": [
         {
-            "move": "Confuse Ray",
+            "move": "Slash",
+            "evo": true
+        },
+        {
+            "move": "Slash",
             "level": 1
         },
         {
-            "move": "Destiny Bond",
+            "move": "Struggle Bug",
             "level": 1
         },
         {
-            "move": "Fell Stinger",
+            "move": "Bug Bite",
+            "level": 1
+        },
+        {
+            "move": "Sweet Scent",
             "level": 1
         },
         {
@@ -81,180 +89,192 @@
             "level": 1
         },
         {
-            "move": "Slash",
-            "level": 1
-        },
-        {
-            "move": "Sweet Scent",
+            "move": "Confuse Ray",
             "level": 1
         },
         {
             "move": "Fury Cutter",
-            "level": 5
+            "level": 4
         },
         {
-            "move": "Pursuit",
-            "level": 9
-        },
-        {
-            "move": "Fury Swipes",
-            "level": 13
-        },
-        {
-            "move": "Defend Order",
-            "level": 17
-        },
-        {
-            "move": "Power Gem",
-            "level": 25
-        },
-        {
-            "move": "Heal Order",
-            "level": 29
-        },
-        {
-            "move": "Toxic",
-            "level": 33
-        },
-        {
-            "move": "Air Slash",
-            "level": 37
-        },
-        {
-            "move": "Captivate",
-            "level": 41
-        },
-        {
-            "move": "Attack Order",
-            "level": 45
-        },
-        {
-            "move": "Swagger",
-            "level": 49
-        },
-        {
-            "move": "Destiny Bond",
-            "level": 53
+            "move": "Aromatic Mist",
+            "level": 8
         },
         {
             "move": "Fell Stinger",
-            "level": 57
+            "level": 12
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Quash",
-            "tm": "TM60"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
+            "move": "Fury Swipes",
+            "level": 16
         },
         {
             "move": "Swagger",
-            "tm": "TM87"
+            "level": 20
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Aromatherapy",
+            "level": 24
+        },
+        {
+            "move": "Air Slash",
+            "level": 28
+        },
+        {
+            "move": "Power Gem",
+            "level": 32
+        },
+        {
+            "move": "Toxic",
+            "level": 36
+        },
+        {
+            "move": "Attack Order",
+            "level": 40
+        },
+        {
+            "move": "Defend Order",
+            "level": 40
+        },
+        {
+            "move": "Destiny Bond",
+            "level": 44
+        },
+        {
+            "move": "Pin Missile",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
         },
         {
             "move": "U-turn",
-            "tm": "TM89"
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Cross Poison",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Toxic Spikes",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Power Gem",
+            "tm": true
         }
     ]
 }

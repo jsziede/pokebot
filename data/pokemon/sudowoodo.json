@@ -55,8 +55,32 @@
     "evolutions": [],
     "species": "Imitation Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Sudowoodo camouflages itself as a tree to avoid being attacked by enemies. However, because its hands remain green throughout the year, the Pokémon is easily identified as a fake during the winter.",
+    "pokedex_entry": "It disguises itself as a tree to avoid attack. It hates water, so it will disappear if it starts raining.",
     "move_learnset": [
+        {
+            "move": "Slam",
+            "evo": true
+        },
+        {
+            "move": "Slam",
+            "level": 1
+        },
+        {
+            "move": "Stone Edge",
+            "level": 1
+        },
+        {
+            "move": "Hammer Arm",
+            "level": 1
+        },
+        {
+            "move": "Wood Hammer",
+            "level": 1
+        },
+        {
+            "move": "Fake Tears",
+            "level": 1
+        },
         {
             "move": "Copycat",
             "level": 1
@@ -66,91 +90,215 @@
             "level": 1
         },
         {
-            "move": "Low Kick",
-            "level": 1
-        },
-        {
             "move": "Rock Throw",
             "level": 1
         },
         {
-            "move": "Slam",
-            "level": 1
-        },
-        {
-            "move": "Wood Hammer",
-            "level": 1
-        },
-        {
-            "move": "Flail",
-            "level": 5
-        },
-        {
-            "move": "Low Kick",
-            "level": 8
-        },
-        {
-            "move": "Rock Throw",
+            "move": "Block",
             "level": 12
         },
         {
             "move": "Mimic",
-            "level": 15
-        },
-        {
-            "move": "Feint Attack",
-            "level": 19
-        },
-        {
-            "move": "Tearful Look",
-            "level": 22
+            "level": 16
         },
         {
             "move": "Rock Tomb",
-            "level": 26
+            "level": 20
         },
         {
-            "move": "Block",
-            "level": 29
-        },
-        {
-            "move": "Rock Slide",
-            "level": 33
-        },
-        {
-            "move": "Counter",
-            "level": 36
+            "move": "Tearful Look",
+            "level": 24
         },
         {
             "move": "Sucker Punch",
+            "level": 28
+        },
+        {
+            "move": "Rock Slide",
+            "level": 32
+        },
+        {
+            "move": "Low Kick",
+            "level": 36
+        },
+        {
+            "move": "Counter",
             "level": 40
         },
         {
             "move": "Double-Edge",
-            "level": 43
-        },
-        {
-            "move": "Stone Edge",
-            "level": 47
-        },
-        {
-            "move": "Hammer Arm",
-            "level": 50
+            "level": 44
         },
         {
             "move": "Head Smash",
-            "level": 54
+            "level": 48
         },
         {
-            "move": "Curse",
-            "egg_move": true
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Defense Curl",
-            "egg_move": true
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
         },
         {
             "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Headbutt",
             "egg_move": true
         },
         {
@@ -158,7 +306,11 @@
             "egg_move": true
         },
         {
-            "move": "Headbutt",
+            "move": "Defense Curl",
+            "egg_move": true
+        },
+        {
+            "move": "Curse",
             "egg_move": true
         },
         {
@@ -166,144 +318,8 @@
             "egg_move": true
         },
         {
-            "move": "Sand Tomb",
-            "egg_move": true
-        },
-        {
-            "move": "Self-Destruct",
-            "egg_move": true
-        },
-        {
-            "move": "Stealth Rock",
-            "egg_move": true
-        },
-        {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
             "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

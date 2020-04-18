@@ -61,90 +61,234 @@
     "evolutions": [],
     "species": "Coal Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Torkoal generates energy by burning coal. It grows weaker as the fire dies down. When it is preparing for battle, this Pokémon burns more coal.",
+    "pokedex_entry": "You find abandoned coal mines full of them. They dig tirelessly in search of coal.",
     "move_learnset": [
+        {
+            "move": "Smog",
+            "level": 1
+        },
         {
             "move": "Ember",
             "level": 1
         },
         {
-            "move": "Smog",
+            "move": "Withdraw",
             "level": 4
         },
         {
-            "move": "Withdraw",
-            "level": 7
-        },
-        {
             "move": "Rapid Spin",
-            "level": 10
-        },
-        {
-            "move": "Fire Spin",
-            "level": 13
+            "level": 8
         },
         {
             "move": "Smokescreen",
-            "level": 15
-        },
-        {
-            "move": "Flame Wheel",
-            "level": 18
-        },
-        {
-            "move": "Curse",
-            "level": 22
-        },
-        {
-            "move": "Lava Plume",
-            "level": 25
-        },
-        {
-            "move": "Body Slam",
-            "level": 27
-        },
-        {
-            "move": "Protect",
-            "level": 30
-        },
-        {
-            "move": "Flamethrower",
-            "level": 34
-        },
-        {
-            "move": "Iron Defense",
-            "level": 38
-        },
-        {
-            "move": "Amnesia",
-            "level": 40
-        },
-        {
-            "move": "Flail",
-            "level": 42
-        },
-        {
-            "move": "Heat Wave",
-            "level": 45
-        },
-        {
-            "move": "Shell Smash",
-            "level": 47
-        },
-        {
-            "move": "Inferno",
-            "level": 50
+            "level": 12
         },
         {
             "move": "Clear Smog",
-            "egg_move": true
+            "level": 16
         },
         {
-            "move": "Endure",
-            "egg_move": true
+            "move": "Flame Wheel",
+            "level": 20
+        },
+        {
+            "move": "Protect",
+            "level": 24
+        },
+        {
+            "move": "Lava Plume",
+            "level": 28
+        },
+        {
+            "move": "Body Slam",
+            "level": 32
+        },
+        {
+            "move": "Iron Defense",
+            "level": 36
+        },
+        {
+            "move": "Flamethrower",
+            "level": 40
+        },
+        {
+            "move": "Curse",
+            "level": 44
+        },
+        {
+            "move": "Heat Wave",
+            "level": 48
+        },
+        {
+            "move": "Amnesia",
+            "level": 52
+        },
+        {
+            "move": "Inferno",
+            "level": 56
+        },
+        {
+            "move": "Shell Smash",
+            "level": 60
         },
         {
             "move": "Eruption",
+            "level": 64
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Fire Spin",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Overheat",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Heat Crash",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Yawn",
             "egg_move": true
         },
         {
@@ -152,152 +296,16 @@
             "egg_move": true
         },
         {
-            "move": "Flame Burst",
-            "egg_move": true
-        },
-        {
             "move": "Skull Bash",
             "egg_move": true
         },
         {
-            "move": "Sleep Talk",
+            "move": "Flail",
             "egg_move": true
         },
         {
-            "move": "Superpower",
+            "move": "Ancient Power",
             "egg_move": true
-        },
-        {
-            "move": "Yawn",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Flame Charge",
-            "tm": "TM43"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Overheat",
-            "tm": "TM50"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

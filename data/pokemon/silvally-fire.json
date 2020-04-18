@@ -45,18 +45,34 @@
     "evolutions": [],
     "species": "Synthetic Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "This is its form once it has awakened and evolved. Freed from its heavy mask, its speed is greatly increased.",
+    "pokedex_entry": "A solid bond of trust between this Pokémon and its Trainer awakened the strength hidden within Silvally. It can change its type at will.",
     "move_learnset": [
+        {
+            "move": "Multi-Attack",
+            "evo": true
+        },
+        {
+            "move": "Multi-Attack",
+            "level": 1
+        },
+        {
+            "move": "Explosion",
+            "level": 1
+        },
+        {
+            "move": "Thunder Fang",
+            "level": 1
+        },
+        {
+            "move": "Ice Fang",
+            "level": 1
+        },
         {
             "move": "Fire Fang",
             "level": 1
         },
         {
-            "move": "Heal Block",
-            "level": 1
-        },
-        {
-            "move": "Ice Fang",
+            "move": "Poison Fang",
             "level": 1
         },
         {
@@ -68,35 +84,27 @@
             "level": 1
         },
         {
-            "move": "Multi-Attack",
-            "level": 1
-        },
-        {
-            "move": "Poison Fang",
-            "level": 1
-        },
-        {
             "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Thunder Fang",
+            "move": "Bite",
             "level": 1
         },
         {
-            "move": "Rage",
-            "level": 5
+            "move": "Aerial Ace",
+            "level": 1
         },
         {
-            "move": "Pursuit",
-            "level": 10
+            "move": "Scary Face",
+            "level": 1
         },
         {
-            "move": "Bite",
+            "move": "Double Hit",
             "level": 15
         },
         {
-            "move": "Aerial Ace",
+            "move": "Metal Sound",
             "level": 20
         },
         {
@@ -104,212 +112,232 @@
             "level": 25
         },
         {
-            "move": "Scary Face",
+            "move": "Air Slash",
             "level": 30
         },
         {
-            "move": "X-Scissor",
+            "move": "Tri Attack",
             "level": 35
         },
         {
-            "move": "Take Down",
+            "move": "X-Scissor",
             "level": 40
         },
         {
-            "move": "Metal Sound",
+            "move": "Crunch",
             "level": 45
         },
         {
-            "move": "Crunch",
+            "move": "Take Down",
             "level": 50
         },
         {
-            "move": "Double Hit",
+            "move": "Double-Edge",
             "level": 55
         },
         {
-            "move": "Air Slash",
+            "move": "Parting Shot",
             "level": 60
         },
         {
-            "move": "Punishment",
-            "level": 65
-        },
-        {
-            "move": "Razor Wind",
-            "level": 70
-        },
-        {
-            "move": "Tri Attack",
-            "level": 75
-        },
-        {
-            "move": "Double-Edge",
-            "level": 80
-        },
-        {
-            "move": "Parting Shot",
-            "level": 85
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Dragon Claw",
-            "tm": "TM2"
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
             "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Flame Charge",
-            "tm": "TM43"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Steel Wing",
-            "tm": "TM51"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
             "move": "Thunder Wave",
-            "tm": "TM73"
+            "tm": true
         },
         {
-            "move": "Swords Dance",
-            "tm": "TM75"
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
         },
         {
             "move": "U-turn",
-            "tm": "TM89"
+            "tm": true
         },
         {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Payback",
+            "tm": true
         },
         {
-            "move": "Flash Cannon",
-            "tm": "TM91"
+            "move": "Shadow Claw",
+            "tm": true
         },
         {
-            "move": "Surf",
-            "tm": "TM94"
+            "move": "Thunder Fang",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
         },
         {
             "move": "Snarl",
-            "tm": "TM95"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Tri Attack",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Dragon Claw",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Psychic Fangs",
+            "tm": true
         }
     ]
 }

@@ -60,18 +60,10 @@
     "evolutions": [],
     "species": "Judo Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "When it encounters a foe bigger than itself, it wants to throw it. It changes belts as it gets stronger.",
+    "pokedex_entry": "They train in groups of five. Any member that can’t keep up will discard its belt and leave the group.",
     "move_learnset": [
         {
-            "move": "Bide",
-            "level": 1
-        },
-        {
             "move": "Bind",
-            "level": 1
-        },
-        {
-            "move": "Focus Energy",
             "level": 1
         },
         {
@@ -79,180 +71,224 @@
             "level": 1
         },
         {
-            "move": "Mat Block",
-            "level": 1
-        },
-        {
-            "move": "Seismic Toss",
+            "move": "Focus Energy",
             "level": 5
         },
         {
-            "move": "Vital Throw",
-            "level": 9
+            "move": "Circle Throw",
+            "level": 10
+        },
+        {
+            "move": "Wide Guard",
+            "level": 15
         },
         {
             "move": "Revenge",
-            "level": 13
-        },
-        {
-            "move": "Storm Throw",
-            "level": 17
-        },
-        {
-            "move": "Body Slam",
-            "level": 21
+            "level": 20
         },
         {
             "move": "Bulk Up",
             "level": 25
         },
         {
-            "move": "Circle Throw",
-            "level": 29
+            "move": "Storm Throw",
+            "level": 30
+        },
+        {
+            "move": "Vital Throw",
+            "level": 35
+        },
+        {
+            "move": "Seismic Toss",
+            "level": 40
         },
         {
             "move": "Endure",
-            "level": 33
-        },
-        {
-            "move": "Wide Guard",
-            "level": 37
-        },
-        {
-            "move": "Superpower",
-            "level": 41
-        },
-        {
-            "move": "Reversal",
             "level": 45
         },
         {
-            "move": "Work Up",
-            "tm": "TM1"
+            "move": "Reversal",
+            "level": 50
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Superpower",
+            "level": 55
         },
         {
-            "move": "Bulk Up",
-            "tm": "TM8"
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
+            "move": "Mega Kick",
+            "tm": true
         },
         {
-            "move": "Sunny Day",
-            "tm": "TM11"
+            "move": "Fire Punch",
+            "tm": true
         },
         {
-            "move": "Taunt",
-            "tm": "TM12"
+            "move": "Ice Punch",
+            "tm": true
         },
         {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
+            "move": "Thunder Punch",
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
-            "move": "Stone Edge",
-            "tm": "TM71"
+            "move": "Dig",
+            "tm": true
         },
         {
-            "move": "Bulldoze",
-            "tm": "TM78"
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "Poison Jab",
-            "tm": "TM84"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Grass Knot",
-            "tm": "TM86"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Scary Face",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Revenge",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Focus Energy",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Bulk Up",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
         }
     ]
 }

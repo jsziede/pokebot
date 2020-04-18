@@ -68,7 +68,7 @@
     ],
     "species": "Seagull Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Wingull rides updrafts rising from the sea by extending its long and narrow wings to glide. This Pokémon’s long beak is useful for catching prey.",
+    "pokedex_entry": "It soars on updrafts without flapping its wings. It makes a nest on sheer cliffs at the sea’s edge.",
     "move_learnset": [
         {
             "move": "Growl",
@@ -79,63 +79,147 @@
             "level": 1
         },
         {
-            "move": "Supersonic",
+            "move": "Quick Attack",
             "level": 5
         },
         {
+            "move": "Supersonic",
+            "level": 10
+        },
+        {
             "move": "Wing Attack",
-            "level": 8
-        },
-        {
-            "move": "Mist",
-            "level": 12
-        },
-        {
-            "move": "Water Pulse",
             "level": 15
         },
         {
-            "move": "Quick Attack",
-            "level": 19
-        },
-        {
-            "move": "Air Cutter",
-            "level": 22
-        },
-        {
-            "move": "Pursuit",
-            "level": 26
-        },
-        {
-            "move": "Aerial Ace",
-            "level": 29
-        },
-        {
-            "move": "Roost",
-            "level": 33
+            "move": "Water Pulse",
+            "level": 20
         },
         {
             "move": "Agility",
-            "level": 36
+            "level": 26
         },
         {
             "move": "Air Slash",
+            "level": 30
+        },
+        {
+            "move": "Mist",
+            "level": 35
+        },
+        {
+            "move": "Roost",
             "level": 40
         },
         {
             "move": "Hurricane",
-            "level": 43
+            "level": 45
         },
         {
-            "move": "Agility",
-            "egg_move": true
+            "move": "Fly",
+            "tm": true
         },
         {
-            "move": "Aqua Ring",
-            "egg_move": true
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
         },
         {
             "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Hurricane",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Twister",
             "egg_move": true
         },
         {
@@ -143,15 +227,11 @@
             "egg_move": true
         },
         {
+            "move": "Aqua Ring",
+            "egg_move": true
+        },
+        {
             "move": "Knock Off",
-            "egg_move": true
-        },
-        {
-            "move": "Mist",
-            "egg_move": true
-        },
-        {
-            "move": "Roost",
             "egg_move": true
         },
         {
@@ -159,120 +239,16 @@
             "egg_move": true
         },
         {
-            "move": "Twister",
-            "egg_move": true
-        },
-        {
-            "move": "Water Sport",
-            "egg_move": true
-        },
-        {
             "move": "Wide Guard",
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
+            "move": "Air Cutter",
+            "egg_move": true
         },
         {
             "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Steel Wing",
-            "tm": "TM51"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Fly",
-            "tm": "TM76"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

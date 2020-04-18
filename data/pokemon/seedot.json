@@ -67,78 +67,186 @@
     ],
     "species": "Acorn Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Seedot looks exactly like an acorn when it is dangling from a tree branch. It startles other Pokémon by suddenly moving. This Pokémon polishes its body once a day using leaves.",
+    "pokedex_entry": "It attaches itself to a tree branch using the top of its head. Strong winds can sometimes make it fall.",
     "move_learnset": [
         {
-            "move": "Bide",
+            "move": "Tackle",
             "level": 1
         },
         {
             "move": "Harden",
+            "level": 1
+        },
+        {
+            "move": "Absorb",
             "level": 3
+        },
+        {
+            "move": "Astonish",
+            "level": 6
         },
         {
             "move": "Growth",
             "level": 9
         },
         {
-            "move": "Nature Power",
+            "move": "Rollout",
+            "level": 12
+        },
+        {
+            "move": "Mega Drain",
             "level": 15
         },
         {
-            "move": "Synthesis",
+            "move": "Payback",
+            "level": 18
+        },
+        {
+            "move": "Nature Power",
             "level": 21
         },
         {
             "move": "Sunny Day",
+            "level": 24
+        },
+        {
+            "move": "Synthesis",
             "level": 27
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 30
         },
         {
             "move": "Explosion",
             "level": 33
         },
         {
-            "move": "Amnesia",
-            "egg_move": true
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
         },
         {
             "move": "Beat Up",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
         },
         {
             "move": "Bullet Seed",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Defog",
-            "egg_move": true
+            "move": "Payback",
+            "tm": true
         },
         {
-            "move": "Foul Play",
-            "egg_move": true
+            "move": "Power Swap",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
         },
         {
             "move": "Grassy Terrain",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
         },
         {
             "move": "Leech Seed",
             "egg_move": true
         },
         {
-            "move": "Nasty Plot",
-            "egg_move": true
-        },
-        {
-            "move": "Power Swap",
-            "egg_move": true
-        },
-        {
             "move": "Quick Attack",
-            "egg_move": true
-        },
-        {
-            "move": "Razor Wind",
             "egg_move": true
         },
         {
@@ -150,96 +258,12 @@
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Defog",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Night Slash",
+            "egg_move": true
         }
     ]
 }

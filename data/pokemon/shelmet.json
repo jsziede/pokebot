@@ -61,10 +61,14 @@
     ],
     "species": "Snail Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It evolves when bathed in an electric-like energy along with Karrablast. The reason is still unknown.",
+    "pokedex_entry": "It has a strange physiology that responds to electricity. When together with Karrablast, Shelmet evolves for some reason.",
     "move_learnset": [
         {
             "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Protect",
             "level": 1
         },
         {
@@ -72,39 +76,39 @@
             "level": 4
         },
         {
-            "move": "Bide",
+            "move": "Curse",
             "level": 8
         },
         {
-            "move": "Curse",
-            "level": 13
+            "move": "Mega Drain",
+            "level": 12
         },
         {
             "move": "Struggle Bug",
             "level": 16
         },
         {
-            "move": "Mega Drain",
+            "move": "Yawn",
             "level": 20
         },
         {
-            "move": "Yawn",
-            "level": 25
-        },
-        {
-            "move": "Protect",
-            "level": 28
-        },
-        {
             "move": "Acid Armor",
-            "level": 32
+            "level": 24
         },
         {
             "move": "Giga Drain",
-            "level": 37
+            "level": 28
+        },
+        {
+            "move": "Guard Swap",
+            "level": 32
         },
         {
             "move": "Body Slam",
+            "level": 36
+        },
+        {
+            "move": "Recover",
             "level": 40
         },
         {
@@ -112,35 +116,103 @@
             "level": 44
         },
         {
-            "move": "Recover",
-            "level": 49
+            "move": "Final Gambit",
+            "level": 48
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
         },
         {
             "move": "Guard Swap",
-            "level": 50
+            "tm": true
         },
         {
-            "move": "Final Gambit",
-            "level": 56
+            "move": "Venoshock",
+            "tm": true
         },
         {
-            "move": "Baton Pass",
-            "egg_move": true
+            "move": "Round",
+            "tm": true
         },
         {
-            "move": "Double-Edge",
-            "egg_move": true
+            "move": "Body Slam",
+            "tm": true
         },
         {
-            "move": "Encore",
-            "egg_move": true
+            "move": "Leech Life",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
         },
         {
             "move": "Endure",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Feint",
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Toxic Spikes",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Double-Edge",
             "egg_move": true
         },
         {
@@ -152,100 +224,8 @@
             "egg_move": true
         },
         {
-            "move": "Mud-Slap",
+            "move": "Feint",
             "egg_move": true
-        },
-        {
-            "move": "Pursuit",
-            "egg_move": true
-        },
-        {
-            "move": "Spikes",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic Spikes",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

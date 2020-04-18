@@ -68,118 +68,214 @@
     ],
     "species": "Thorn Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "On extremely rare occasions, a Roselia is said to appear with its flowers in unusual colors. The thorns on this Pokémon’s head contain a vicious poison.",
+    "pokedex_entry": "It uses the different poisons in each hand separately when it attacks. The stronger its aroma, the healthier it is.",
     "move_learnset": [
+        {
+            "move": "Poison Sting",
+            "evo": true
+        },
+        {
+            "move": "Poison Sting",
+            "level": 1
+        },
         {
             "move": "Absorb",
             "level": 1
         },
         {
             "move": "Growth",
-            "level": 4
-        },
-        {
-            "move": "Poison Sting",
-            "level": 7
+            "level": 1
         },
         {
             "move": "Stun Spore",
-            "level": 10
+            "level": 1
+        },
+        {
+            "move": "Worry Seed",
+            "level": 1
         },
         {
             "move": "Mega Drain",
-            "level": 13
+            "level": 5
         },
         {
             "move": "Leech Seed",
-            "level": 16
+            "level": 10
         },
         {
             "move": "Magical Leaf",
-            "level": 19
-        },
-        {
-            "move": "Grass Whistle",
-            "level": 22
-        },
-        {
-            "move": "Giga Drain",
-            "level": 25
+            "level": 15
         },
         {
             "move": "Toxic Spikes",
-            "level": 28
+            "level": 20
         },
         {
             "move": "Sweet Scent",
-            "level": 31
+            "level": 25
         },
         {
-            "move": "Ingrain",
-            "level": 34
+            "move": "Giga Drain",
+            "level": 30
         },
         {
-            "move": "Petal Blizzard",
-            "level": 37
+            "move": "Synthesis",
+            "level": 35
         },
         {
             "move": "Toxic",
             "level": 40
         },
         {
+            "move": "Petal Blizzard",
+            "level": 45
+        },
+        {
             "move": "Aromatherapy",
-            "level": 43
-        },
-        {
-            "move": "Synthesis",
-            "level": 46
-        },
-        {
-            "move": "Petal Dance",
             "level": 50
         },
         {
-            "move": "Bullet Seed",
-            "egg_move": true
+            "move": "Ingrain",
+            "level": 55
         },
         {
-            "move": "Cotton Spore",
-            "egg_move": true
-        },
-        {
-            "move": "Giga Drain",
-            "egg_move": true
-        },
-        {
-            "move": "Grass Whistle",
-            "egg_move": true
-        },
-        {
-            "move": "Leaf Storm",
-            "egg_move": true
-        },
-        {
-            "move": "Mind Reader",
-            "egg_move": true
-        },
-        {
-            "move": "Natural Gift",
-            "egg_move": true
+            "move": "Petal Dance",
+            "level": 60
         },
         {
             "move": "Pin Missile",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Power Whip",
-            "egg_move": true
+            "move": "Magical Leaf",
+            "tm": true
         },
         {
-            "move": "Razor Leaf",
-            "egg_move": true
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Bullet Seed",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Toxic Spikes",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
         },
         {
             "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Leaf Storm",
+            "tm": true
+        },
+        {
+            "move": "Power Whip",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Cotton Spore",
             "egg_move": true
         },
         {
@@ -187,7 +283,15 @@
             "egg_move": true
         },
         {
-            "move": "Spikes",
+            "move": "Razor Leaf",
+            "egg_move": true
+        },
+        {
+            "move": "Extrasensory",
+            "egg_move": true
+        },
+        {
+            "move": "Life Dew",
             "egg_move": true
         },
         {
@@ -195,112 +299,24 @@
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Cotton Spore",
+            "egg_move": true
         },
         {
-            "move": "Venoshock",
-            "tm": "TM9"
+            "move": "Sleep Powder",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
+            "move": "Razor Leaf",
+            "egg_move": true
         },
         {
-            "move": "Sunny Day",
-            "tm": "TM11"
+            "move": "Extrasensory",
+            "egg_move": true
         },
         {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Life Dew",
+            "egg_move": true
         }
     ]
 }

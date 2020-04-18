@@ -59,8 +59,16 @@
     "evolutions": [],
     "species": "Flower Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Vileplume has the world's largest petals. They are used to attract prey that are then doused with toxic spores. Once the prey are immobilized, this Pokémon catches and devours them.",
+    "pokedex_entry": "The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up.",
     "move_learnset": [
+        {
+            "move": "Petal Blizzard",
+            "evo": true
+        },
+        {
+            "move": "Petal Blizzard",
+            "level": 1
+        },
         {
             "move": "Aromatherapy",
             "level": 1
@@ -78,23 +86,171 @@
             "level": 1
         },
         {
-            "move": "Petal Blizzard",
-            "level": 49
+            "move": "Sleep Powder",
+            "level": 1
+        },
+        {
+            "move": "Giga Drain",
+            "level": 1
+        },
+        {
+            "move": "Toxic",
+            "level": 1
+        },
+        {
+            "move": "Moonblast",
+            "level": 1
+        },
+        {
+            "move": "Grassy Terrain",
+            "level": 1
+        },
+        {
+            "move": "Moonlight",
+            "level": 1
         },
         {
             "move": "Petal Dance",
-            "level": 59
+            "level": 1
+        },
+        {
+            "move": "Absorb",
+            "level": 1
+        },
+        {
+            "move": "Growth",
+            "level": 1
+        },
+        {
+            "move": "Acid",
+            "level": 1
+        },
+        {
+            "move": "Sweet Scent",
+            "level": 1
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
         },
         {
             "move": "Solar Beam",
-            "level": 69
+            "tm": true
         },
         {
-            "move": "After You",
-            "egg_move": true
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
         },
         {
             "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Bullet Seed",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Grassy Terrain",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Pollen Puff",
+            "tm": true
+        },
+        {
+            "move": "Razor Leaf",
             "egg_move": true
         },
         {
@@ -102,31 +258,11 @@
             "egg_move": true
         },
         {
-            "move": "Ingrain",
-            "egg_move": true
-        },
-        {
-            "move": "Nature Power",
-            "egg_move": true
-        },
-        {
-            "move": "Razor Leaf",
-            "egg_move": true
-        },
-        {
-            "move": "Secret Power",
-            "egg_move": true
-        },
-        {
-            "move": "Strength Sap",
-            "egg_move": true
-        },
-        {
             "move": "Synthesis",
             "egg_move": true
         },
         {
-            "move": "Teeter Dance",
+            "move": "Ingrain",
             "egg_move": true
         },
         {
@@ -134,116 +270,24 @@
             "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
+            "move": "Teeter Dance",
+            "egg_move": true
         },
         {
             "move": "Nature Power",
-            "tm": "TM96"
+            "egg_move": true
         },
         {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
+            "move": "After You",
+            "egg_move": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Strength Sap",
+            "egg_move": true
+        },
+        {
+            "move": "Leech Seed",
+            "egg_move": true
         }
     ]
 }

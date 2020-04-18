@@ -48,74 +48,182 @@
     "evolutions": [],
     "species": "Small Fry Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "They’re weak, so they move in schools. However, they can also often be seen all alone, having strayed from the school.",
+    "pokedex_entry": "When it senses danger, its eyes tear up. The sparkle of its tears signals other Wishiwashi to gather.",
     "move_learnset": [
-        {
-            "move": "Growl",
-            "level": 1
-        },
         {
             "move": "Water Gun",
             "level": 1
         },
         {
+            "move": "Growl",
+            "level": 1
+        },
+        {
             "move": "Helping Hand",
-            "level": 6
-        },
-        {
-            "move": "Feint Attack",
-            "level": 9
-        },
-        {
-            "move": "Brine",
-            "level": 14
-        },
-        {
-            "move": "Aqua Ring",
-            "level": 17
-        },
-        {
-            "move": "Tearful Look",
-            "level": 22
-        },
-        {
-            "move": "Take Down",
-            "level": 25
-        },
-        {
-            "move": "Dive",
-            "level": 30
+            "level": 4
         },
         {
             "move": "Beat Up",
-            "level": 33
+            "level": 8
         },
         {
-            "move": "Aqua Tail",
-            "level": 38
+            "move": "Brine",
+            "level": 12
         },
         {
-            "move": "Double-Edge",
-            "level": 41
+            "move": "Tearful Look",
+            "level": 16
+        },
+        {
+            "move": "Dive",
+            "level": 20
         },
         {
             "move": "Soak",
-            "level": 46
+            "level": 24
+        },
+        {
+            "move": "Uproar",
+            "level": 28
+        },
+        {
+            "move": "Aqua Tail",
+            "level": 32
+        },
+        {
+            "move": "Aqua Ring",
+            "level": 36
         },
         {
             "move": "Endeavor",
-            "level": 49
+            "level": 40
         },
         {
             "move": "Hydro Pump",
-            "level": 54
+            "level": 44
         },
         {
-            "move": "Mist",
-            "egg_move": true
+            "move": "Double-Edge",
+            "level": 48
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
         },
         {
             "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Mist",
             "egg_move": true
         },
         {
@@ -123,104 +231,8 @@
             "egg_move": true
         },
         {
-            "move": "Water Sport",
+            "move": "Take Down",
             "egg_move": true
-        },
-        {
-            "move": "Whirlpool",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

@@ -62,10 +62,10 @@
     ],
     "species": "Spikes Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Rhyhorn's brain is very small. It is so dense, while on a run it forgets why it started running in the first place. It apparently remembers sometimes if it demolishes something.",
+    "pokedex_entry": "It can remember only one thing at a time. Once it starts rushing, it forgets why it started.",
     "move_learnset": [
         {
-            "move": "Horn Attack",
+            "move": "Tackle",
             "level": 1
         },
         {
@@ -73,67 +73,251 @@
             "level": 1
         },
         {
-            "move": "Fury Attack",
+            "move": "Smack Down",
             "level": 5
         },
         {
-            "move": "Scary Face",
-            "level": 9
+            "move": "Bulldoze",
+            "level": 10
         },
         {
-            "move": "Smack Down",
-            "level": 13
+            "move": "Horn Attack",
+            "level": 15
+        },
+        {
+            "move": "Scary Face",
+            "level": 20
         },
         {
             "move": "Stomp",
-            "level": 17
-        },
-        {
-            "move": "Bulldoze",
-            "level": 21
-        },
-        {
-            "move": "Chip Away",
             "level": 25
         },
         {
             "move": "Rock Blast",
-            "level": 29
+            "level": 30
         },
         {
             "move": "Drill Run",
-            "level": 33
+            "level": 35
         },
         {
             "move": "Take Down",
-            "level": 37
-        },
-        {
-            "move": "Stone Edge",
-            "level": 41
+            "level": 40
         },
         {
             "move": "Earthquake",
             "level": 45
         },
         {
+            "move": "Stone Edge",
+            "level": 50
+        },
+        {
             "move": "Megahorn",
-            "level": 49
+            "level": 55
         },
         {
             "move": "Horn Drill",
-            "level": 53
+            "level": 60
         },
         {
-            "move": "Counter",
-            "egg_move": true
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Thunder Fang",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Fire Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Smart Strike",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Megahorn",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
         },
         {
             "move": "Crunch",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Crush Claw",
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Superpower",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Drill Run",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Counter",
             "egg_move": true
         },
         {
@@ -145,23 +329,7 @@
             "egg_move": true
         },
         {
-            "move": "Fire Fang",
-            "egg_move": true
-        },
-        {
-            "move": "Guard Split",
-            "egg_move": true
-        },
-        {
-            "move": "Ice Fang",
-            "egg_move": true
-        },
-        {
-            "move": "Iron Tail",
-            "egg_move": true
-        },
-        {
-            "move": "Magnitude",
+            "move": "Skull Bash",
             "egg_move": true
         },
         {
@@ -169,168 +337,12 @@
             "egg_move": true
         },
         {
-            "move": "Reversal",
+            "move": "Guard Split",
             "egg_move": true
-        },
-        {
-            "move": "Rock Climb",
-            "egg_move": true
-        },
-        {
-            "move": "Rototiller",
-            "egg_move": true
-        },
-        {
-            "move": "Skull Bash",
-            "egg_move": true
-        },
-        {
-            "move": "Thunder Fang",
-            "egg_move": true
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Smart Strike",
-            "tm": "TM67"
         },
         {
             "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

@@ -62,102 +62,202 @@
     "evolutions": [],
     "species": "Mold Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Shuckle quietly hides itself under rocks, keeping its body concealed inside its hard shell while eating berries it has stored away. The berries mix with its body fluids to become a juice.",
+    "pokedex_entry": "The berries stored in its vaselike shell eventually become a thick, pulpy juice.",
     "move_learnset": [
-        {
-            "move": "Bide",
-            "level": 1
-        },
-        {
-            "move": "Constrict",
-            "level": 1
-        },
-        {
-            "move": "Rollout",
-            "level": 1
-        },
-        {
-            "move": "Sticky Web",
-            "level": 1
-        },
         {
             "move": "Withdraw",
             "level": 1
         },
         {
-            "move": "Encore",
+            "move": "Wrap",
+            "level": 1
+        },
+        {
+            "move": "Rollout",
             "level": 5
         },
         {
-            "move": "Wrap",
-            "level": 9
-        },
-        {
             "move": "Struggle Bug",
-            "level": 12
-        },
-        {
-            "move": "Safeguard",
-            "level": 16
-        },
-        {
-            "move": "Rest",
-            "level": 20
+            "level": 10
         },
         {
             "move": "Rock Throw",
-            "level": 23
+            "level": 15
         },
         {
-            "move": "Gastro Acid",
-            "level": 27
+            "move": "Safeguard",
+            "level": 20
         },
         {
-            "move": "Power Trick",
-            "level": 31
-        },
-        {
-            "move": "Shell Smash",
-            "level": 34
-        },
-        {
-            "move": "Rock Slide",
-            "level": 38
+            "move": "Rest",
+            "level": 25
         },
         {
             "move": "Bug Bite",
-            "level": 42
-        },
-        {
-            "move": "Guard Split",
-            "level": 45
+            "level": 30
         },
         {
             "move": "Power Split",
+            "level": 35
+        },
+        {
+            "move": "Guard Split",
+            "level": 35
+        },
+        {
+            "move": "Rock Slide",
+            "level": 40
+        },
+        {
+            "move": "Gastro Acid",
             "level": 45
         },
         {
-            "move": "Stone Edge",
-            "level": 49
-        },
-        {
             "move": "Sticky Web",
-            "level": 53
+            "level": 50
         },
         {
-            "move": "Acid",
-            "egg_move": true
+            "move": "Power Trick",
+            "level": 55
         },
         {
-            "move": "Acupressure",
-            "egg_move": true
+            "move": "Stone Edge",
+            "level": 60
         },
         {
-            "move": "Final Gambit",
-            "egg_move": true
+            "move": "Shell Smash",
+            "level": 65
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
         },
         {
             "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Sand Tomb",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Rock Blast",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Stone Edge",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Sweet Scent",
             "egg_move": true
         },
         {
@@ -165,136 +265,32 @@
             "egg_move": true
         },
         {
-            "move": "Mud-Slap",
+            "move": "Acupressure",
             "egg_move": true
         },
         {
-            "move": "Rock Blast",
+            "move": "Acid",
             "egg_move": true
         },
         {
-            "move": "Sand Tomb",
+            "move": "Final Gambit",
             "egg_move": true
         },
         {
-            "move": "Sweet Scent",
+            "move": "Defense Curl",
+            "egg_move": true
+        },
+        {
+            "move": "Infestation",
             "egg_move": true
         },
         {
             "move": "Toxic",
-            "tm": "TM6"
+            "egg_move": true
         },
         {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Smack Down",
-            "tm": "TM23"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Rock Polish",
-            "tm": "TM69"
-        },
-        {
-            "move": "Stone Edge",
-            "tm": "TM71"
-        },
-        {
-            "move": "Gyro Ball",
-            "tm": "TM74"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Covet",
+            "egg_move": true
         }
     ]
 }

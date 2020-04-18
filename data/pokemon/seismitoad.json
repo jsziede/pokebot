@@ -56,14 +56,22 @@
     "evolutions": [],
     "species": "Vibration Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "They shoot paralyzing liquid from their head bumps. They use vibration to hurt their opponents.",
+    "pokedex_entry": "This Pokémon is popular among the elderly, who say the vibrations of its lumps are great for massages.",
     "move_learnset": [
         {
-            "move": "Acid",
+            "move": "Drain Punch",
+            "evo": true
+        },
+        {
+            "move": "Drain Punch",
             "level": 1
         },
         {
-            "move": "Bubble",
+            "move": "Gastro Acid",
+            "level": 1
+        },
+        {
+            "move": "Echoed Voice",
             "level": 1
         },
         {
@@ -71,71 +79,255 @@
             "level": 1
         },
         {
-            "move": "Round",
+            "move": "Acid",
             "level": 1
         },
         {
             "move": "Supersonic",
             "level": 1
-        },
-        {
-            "move": "Supersonic",
-            "level": 5
-        },
-        {
-            "move": "Round",
-            "level": 9
-        },
-        {
-            "move": "Bubble Beam",
-            "level": 12
         },
         {
             "move": "Mud Shot",
+            "level": 12
+        },
+        {
+            "move": "Round",
             "level": 16
         },
         {
-            "move": "Aqua Ring",
+            "move": "Bubble Beam",
             "level": 20
         },
         {
-            "move": "Uproar",
-            "level": 23
-        },
-        {
-            "move": "Muddy Water",
-            "level": 28
-        },
-        {
-            "move": "Rain Dance",
-            "level": 33
-        },
-        {
             "move": "Flail",
+            "level": 24
+        },
+        {
+            "move": "Uproar",
+            "level": 30
+        },
+        {
+            "move": "Aqua Ring",
             "level": 39
         },
         {
-            "move": "Drain Punch",
-            "level": 44
+            "move": "Hyper Voice",
+            "level": 46
         },
         {
-            "move": "Echoed Voice",
-            "level": 49
+            "move": "Muddy Water",
+            "level": 54
+        },
+        {
+            "move": "Rain Dance",
+            "level": 62
         },
         {
             "move": "Hydro Pump",
-            "level": 53
+            "level": 70
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Stomping Tantrum",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
         },
         {
             "move": "Hyper Voice",
-            "level": 59
+            "tm": true
         },
         {
-            "move": "After You",
-            "egg_move": true
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
         },
         {
             "move": "Earth Power",
+            "tm": true
+        },
+        {
+            "move": "Power Whip",
+            "tm": true
+        },
+        {
+            "move": "Stealth Rock",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Venom Drench",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Water Pulse",
             "egg_move": true
         },
         {
@@ -143,172 +335,12 @@
             "egg_move": true
         },
         {
-            "move": "Mud Bomb",
-            "egg_move": true
-        },
-        {
-            "move": "Mud Sport",
-            "egg_move": true
-        },
-        {
-            "move": "Refresh",
-            "egg_move": true
-        },
-        {
-            "move": "Sleep Talk",
-            "egg_move": true
-        },
-        {
-            "move": "Snore",
-            "egg_move": true
-        },
-        {
-            "move": "Venom Drench",
-            "egg_move": true
-        },
-        {
-            "move": "Water Pulse",
-            "egg_move": true
-        },
-        {
             "move": "Toxic",
-            "tm": "TM6"
+            "egg_move": true
         },
         {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Mud-Slap",
+            "egg_move": true
         }
     ]
 }

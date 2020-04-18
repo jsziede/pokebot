@@ -63,8 +63,20 @@
     "evolutions": [],
     "species": "Bee Fly Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Rain makes pollen damp, so Ribombee hates rain. When it sees ominous clouds, it finds a hollow in a tree, where it waits stock-still.",
+    "pokedex_entry": "Ribombee absolutely hate getting wet or rained on. In the cloudy Galar region, they are very seldom seen.",
     "move_learnset": [
+        {
+            "move": "Pollen Puff",
+            "evo": true
+        },
+        {
+            "move": "Pollen Puff",
+            "level": 1
+        },
+        {
+            "move": "Covet",
+            "level": 1
+        },
         {
             "move": "Absorb",
             "level": 1
@@ -74,79 +86,207 @@
             "level": 1
         },
         {
-            "move": "Pollen Puff",
-            "level": 1
-        },
-        {
-            "move": "Struggle Bug",
-            "level": 1
-        },
-        {
             "move": "Stun Spore",
             "level": 1
-        },
-        {
-            "move": "Fairy Wind",
-            "level": 4
-        },
-        {
-            "move": "Stun Spore",
-            "level": 7
-        },
-        {
-            "move": "Struggle Bug",
-            "level": 10
-        },
-        {
-            "move": "Silver Wind",
-            "level": 13
-        },
-        {
-            "move": "Draining Kiss",
-            "level": 16
         },
         {
             "move": "Sweet Scent",
-            "level": 21
+            "level": 1
         },
         {
-            "move": "Bug Buzz",
-            "level": 28
+            "move": "Draining Kiss",
+            "level": 18
         },
         {
-            "move": "Dazzling Gleam",
-            "level": 35
+            "move": "Struggle Bug",
+            "level": 24
         },
         {
             "move": "Aromatherapy",
-            "level": 42
+            "level": 32
+        },
+        {
+            "move": "Switcheroo",
+            "level": 40
+        },
+        {
+            "move": "Dazzling Gleam",
+            "level": 48
+        },
+        {
+            "move": "Bug Buzz",
+            "level": 56
         },
         {
             "move": "Quiver Dance",
-            "level": 49
+            "level": 64
         },
         {
-            "move": "Baton Pass",
-            "egg_move": true
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
-            "move": "Bestow",
-            "egg_move": true
+            "move": "Giga Impact",
+            "tm": true
         },
         {
-            "move": "Moonblast",
-            "egg_move": true
+            "move": "Magical Leaf",
+            "tm": true
         },
         {
-            "move": "Powder",
-            "egg_move": true
+            "move": "Solar Beam",
+            "tm": true
         },
         {
-            "move": "Skill Swap",
-            "egg_move": true
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "U-turn",
+            "tm": true
         },
         {
             "move": "Speed Swap",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Skill Swap",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Pollen Puff",
+            "tm": true
+        },
+        {
+            "move": "Moonblast",
             "egg_move": true
         },
         {
@@ -154,136 +294,8 @@
             "egg_move": true
         },
         {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "U-turn",
-            "tm": "TM89"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Aromatic Mist",
+            "egg_move": true
         }
     ]
 }

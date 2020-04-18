@@ -49,14 +49,14 @@
     "evolutions": [],
     "species": "Stag Beetle Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It has an organ that generates electricity in its abdomen. It concentrates energy in its strong jaws and fires off powerful jolts of electricity.",
+    "pokedex_entry": "If it carries a Charjabug to use as a spare battery, a flying Vikavolt can rapidly fire high-powered beams of electricity.",
     "move_learnset": [
         {
-            "move": "Air Slash",
-            "level": 1
+            "move": "Thunderbolt",
+            "evo": true
         },
         {
-            "move": "Bite",
+            "move": "Thunderbolt",
             "level": 1
         },
         {
@@ -64,208 +64,224 @@
             "level": 1
         },
         {
-            "move": "Mud-Slap",
+            "move": "X-Scissor",
             "level": 1
         },
         {
-            "move": "String Shot",
+            "move": "Crunch",
             "level": 1
-        },
-        {
-            "move": "Thunderbolt",
-            "level": 1
-        },
-        {
-            "move": "Vice Grip",
-            "level": 1
-        },
-        {
-            "move": "String Shot",
-            "level": 4
-        },
-        {
-            "move": "Mud-Slap",
-            "level": 7
-        },
-        {
-            "move": "Bite",
-            "level": 10
-        },
-        {
-            "move": "Bug Bite",
-            "level": 13
-        },
-        {
-            "move": "Spark",
-            "level": 16
-        },
-        {
-            "move": "Acrobatics",
-            "level": 19
-        },
-        {
-            "move": "Guillotine",
-            "level": 25
-        },
-        {
-            "move": "Bug Buzz",
-            "level": 31
         },
         {
             "move": "Dig",
-            "level": 37
+            "level": 1
         },
         {
-            "move": "Zap Cannon",
-            "level": 41
+            "move": "Iron Defense",
+            "level": 1
+        },
+        {
+            "move": "Discharge",
+            "level": 1
+        },
+        {
+            "move": "Vise Grip",
+            "level": 1
+        },
+        {
+            "move": "Mud-Slap",
+            "level": 1
+        },
+        {
+            "move": "String Shot",
+            "level": 1
+        },
+        {
+            "move": "Bug Bite",
+            "level": 1
+        },
+        {
+            "move": "Bite",
+            "level": 15
+        },
+        {
+            "move": "Spark",
+            "level": 23
+        },
+        {
+            "move": "Sticky Web",
+            "level": 29
+        },
+        {
+            "move": "Bug Buzz",
+            "level": 36
+        },
+        {
+            "move": "Guillotine",
+            "level": 43
+        },
+        {
+            "move": "Fly",
+            "level": 50
         },
         {
             "move": "Agility",
-            "level": 49
+            "level": 57
+        },
+        {
+            "move": "Zap Cannon",
+            "level": 64
+        },
+        {
+            "move": "Fly",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Screech",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Volt Switch",
+            "tm": true
         },
         {
             "move": "Electroweb",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Eerie Impulse",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
         },
         {
             "move": "Endure",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Bug Buzz",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
         },
         {
             "move": "Harden",
             "egg_move": true
         },
         {
-            "move": "Mud Shot",
+            "move": "Discharge",
             "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57"
-        },
-        {
-            "move": "Sky Drop",
-            "tm": "TM58"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Volt Switch",
-            "tm": "TM72"
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

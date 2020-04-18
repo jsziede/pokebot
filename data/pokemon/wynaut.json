@@ -57,8 +57,28 @@
     ],
     "species": "Bright Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Wynaut gather on moonlit nights to play by squeezing up against each other. By being squeezed, this Pokémon gains endurance and is trained to dole out powerful counterattacks.",
+    "pokedex_entry": "It tends to move in a pack with others. They cluster in a tight group to sleep in a cave.",
     "move_learnset": [
+        {
+            "move": "Counter",
+            "level": 1
+        },
+        {
+            "move": "Mirror Coat",
+            "level": 1
+        },
+        {
+            "move": "Safeguard",
+            "level": 1
+        },
+        {
+            "move": "Destiny Bond",
+            "level": 1
+        },
+        {
+            "move": "Splash",
+            "level": 1
+        },
         {
             "move": "Charm",
             "level": 1
@@ -68,28 +88,24 @@
             "level": 1
         },
         {
-            "move": "Splash",
+            "move": "Amnesia",
             "level": 1
         },
         {
-            "move": "Counter",
-            "level": 15
-        },
-        {
-            "move": "Destiny Bond",
-            "level": 15
-        },
-        {
-            "move": "Mirror Coat",
-            "level": 15
-        },
-        {
             "move": "Safeguard",
-            "level": 15
+            "tm": true
         },
         {
-            "move": "Safeguard",
-            "tm": "TM20"
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
         }
     ]
 }

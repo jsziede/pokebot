@@ -47,111 +47,318 @@
         "speed": 110
     },
     "evolution_from": "Pikachu",
+    "evolution_region": "Alola",
     "evolutions": [],
     "species": "Mouse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "This Pokémon exudes a weak electrical charge from all over its body that makes it take on a slight glow in darkness. Raichu plants its tail in the ground to discharge electricity.",
+    "pokedex_entry": "It's believed that the weather, climate, and food of the Alola region all play a part in causing Pikachu to evolve into this form of Raichu.",
     "move_learnset": [
         {
             "move": "Psychic",
-            "level": 1,
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "evo": true
         },
         {
-            "move": "Quick Attack",
-            "level": 1,
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Psychic",
+            "level": 1
         },
         {
-            "move": "Speed Swap",
-            "level": 1,
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Play Nice",
+            "level": 1
         },
         {
-            "move": "Tail Whip",
-            "level": 1,
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Sweet Kiss",
+            "level": 1
         },
         {
-            "move": "Thunder Shock",
-            "level": 1,
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Nuzzle",
+            "level": 1
+        },
+        {
+            "move": "Nasty Plot",
+            "level": 1
+        },
+        {
+            "move": "Charm",
+            "level": 1
+        },
+        {
+            "move": "Thunder Wave",
+            "level": 1
+        },
+        {
+            "move": "Double Team",
+            "level": 1
+        },
+        {
+            "move": "Electro Ball",
+            "level": 1
+        },
+        {
+            "move": "Feint",
+            "level": 1
+        },
+        {
+            "move": "Spark",
+            "level": 1
+        },
+        {
+            "move": "Agility",
+            "level": 1
+        },
+        {
+            "move": "Slam",
+            "level": 1
+        },
+        {
+            "move": "Discharge",
+            "level": 1
         },
         {
             "move": "Thunderbolt",
-            "level": 1,
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "level": 1
         },
         {
-            "move": "Bestow",
-            "egg_move": true
+            "move": "Light Screen",
+            "level": 1
         },
         {
-            "move": "Bide",
-            "egg_move": true
+            "move": "Thunder",
+            "level": 1
         },
         {
-            "move": "Charge",
-            "egg_move": true
+            "move": "Thunder Shock",
+            "level": 1
         },
         {
-            "move": "Disarming Voice",
-            "egg_move": true
+            "move": "Tail Whip",
+            "level": 1
         },
         {
-            "move": "Double Slap",
-            "egg_move": true
+            "move": "Growl",
+            "level": 1
         },
         {
-            "move": "Electric Terrain",
-            "egg_move": true
+            "move": "Quick Attack",
+            "level": 1
         },
         {
-            "move": "Encore",
-            "egg_move": true
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Endure",
-            "egg_move": true
+            "move": "Mega Kick",
+            "tm": true
         },
         {
-            "move": "Fake Out",
-            "egg_move": true
-        },
-        {
-            "move": "Flail",
-            "egg_move": true
-        },
-        {
-            "move": "Lucky Chant",
-            "egg_move": true
-        },
-        {
-            "move": "Present",
-            "egg_move": true
-        },
-        {
-            "move": "Reversal",
-            "egg_move": true
+            "move": "Pay Day",
+            "tm": true
         },
         {
             "move": "Thunder Punch",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Tickle",
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Speed Swap",
+            "tm": true
+        },
+        {
+            "move": "Magic Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Volt Switch",
+            "tm": true
+        },
+        {
+            "move": "Electroweb",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
+        },
+        {
+            "move": "Electric Terrain",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Thunder",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Reversal",
+            "tm": true
+        },
+        {
+            "move": "Psyshock",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Future Sight",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Focus Blast",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Electro Ball",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "Present",
             "egg_move": true
         },
         {
@@ -159,249 +366,24 @@
             "egg_move": true
         },
         {
-            "move": "Psyshock",
-            "tm": "TM3",
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Charge",
+            "egg_move": true
         },
         {
-            "move": "Calm Mind",
-            "tm": "TM4",
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Fake Out",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6",
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Tickle",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10",
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Flail",
+            "egg_move": true
         },
         {
-            "move": "Hyper Beam",
-            "tm": "TM15",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Thunder",
-            "tm": "TM25",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Return",
-            "tm": "TM27",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Round",
-            "tm": "TM48",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Focus Blast",
-            "tm": "TM52",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Charge Beam",
-            "tm": "TM57",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Volt Switch",
-            "tm": "TM72",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Thunder Wave",
-            "tm": "TM73",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93",
-            "variations": [
-                "Alolan Raichu"
-            ]
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100",
-            "variations": [
-                "Alolan Raichu"
-            ]
+            "move": "Disarming Voice",
+            "egg_move": true
         }
     ]
 }

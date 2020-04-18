@@ -70,126 +70,254 @@
     ],
     "species": "Sharp Claw Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Sneasel scales trees by punching its hooked claws into bark. It seeks out unguarded nests and steals Eggs for food while its parents are away.",
+    "pokedex_entry": "It has a cunning yet savage disposition. It waits for parents to leave their nests, and then it sneaks in to steal their eggs.",
     "move_learnset": [
-        {
-            "move": "Leer",
-            "level": 1
-        },
         {
             "move": "Scratch",
             "level": 1
         },
         {
-            "move": "Taunt",
+            "move": "Leer",
             "level": 1
         },
         {
+            "move": "Taunt",
+            "level": 6
+        },
+        {
             "move": "Quick Attack",
-            "level": 8
-        },
-        {
-            "move": "Feint Attack",
-            "level": 10
-        },
-        {
-            "move": "Icy Wind",
-            "level": 14
-        },
-        {
-            "move": "Fury Swipes",
-            "level": 16
-        },
-        {
-            "move": "Agility",
-            "level": 20
+            "level": 12
         },
         {
             "move": "Metal Claw",
-            "level": 22
+            "level": 18
+        },
+        {
+            "move": "Icy Wind",
+            "level": 24
+        },
+        {
+            "move": "Fury Swipes",
+            "level": 30
         },
         {
             "move": "Hone Claws",
-            "level": 25
+            "level": 36
         },
         {
             "move": "Beat Up",
-            "level": 28
+            "level": 42
+        },
+        {
+            "move": "Agility",
+            "level": 48
         },
         {
             "move": "Screech",
-            "level": 32
+            "level": 54
         },
         {
             "move": "Slash",
-            "level": 35
+            "level": 60
         },
         {
-            "move": "Snatch",
-            "level": 40
+            "move": "Mega Punch",
+            "tm": true
         },
         {
-            "move": "Punishment",
-            "level": 44
-        },
-        {
-            "move": "Ice Shard",
-            "level": 47
-        },
-        {
-            "move": "Assist",
-            "egg_move": true
-        },
-        {
-            "move": "Avalanche",
-            "egg_move": true
-        },
-        {
-            "move": "Bite",
-            "egg_move": true
-        },
-        {
-            "move": "Counter",
-            "egg_move": true
-        },
-        {
-            "move": "Crush Claw",
-            "egg_move": true
-        },
-        {
-            "move": "Double Hit",
-            "egg_move": true
-        },
-        {
-            "move": "Fake Out",
-            "egg_move": true
-        },
-        {
-            "move": "Feint",
-            "egg_move": true
-        },
-        {
-            "move": "Foresight",
-            "egg_move": true
+            "move": "Mega Kick",
+            "tm": true
         },
         {
             "move": "Ice Punch",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Ice Shard",
-            "egg_move": true
+            "move": "Dig",
+            "tm": true
         },
         {
-            "move": "Icicle Crash",
-            "egg_move": true
+            "move": "Screech",
+            "tm": true
         },
         {
-            "move": "Punishment",
-            "egg_move": true
+            "move": "Reflect",
+            "tm": true
         },
         {
-            "move": "Pursuit",
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Psycho Cut",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Snarl",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Counter",
             "egg_move": true
         },
         {
@@ -197,172 +325,28 @@
             "egg_move": true
         },
         {
-            "move": "Throat Chop",
+            "move": "Bite",
             "egg_move": true
         },
         {
-            "move": "Calm Mind",
-            "tm": "TM4"
+            "move": "Fake Out",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Double Hit",
+            "egg_move": true
         },
         {
-            "move": "Hail",
-            "tm": "TM7"
+            "move": "Ice Shard",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
+            "move": "Feint",
+            "egg_move": true
         },
         {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "X-Scissor",
-            "tm": "TM81"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Snarl",
-            "tm": "TM95"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Icicle Crash",
+            "egg_move": true
         }
     ]
 }

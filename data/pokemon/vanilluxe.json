@@ -61,10 +61,14 @@
     "evolutions": [],
     "species": "Snowstorm Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Swallowing large amounts of water, they make snow clouds inside their bodies and, when angry, cause violent blizzards.",
+    "pokedex_entry": "People believe this Pokémon formed when two Vanillish stuck together. Its body temperature is roughly 21 degrees Fahrenheit.",
     "move_learnset": [
         {
-            "move": "Astonish",
+            "move": "Weather Ball",
+            "level": 1
+        },
+        {
+            "move": "Icicle Crash",
             "level": 1
         },
         {
@@ -72,95 +76,179 @@
             "level": 1
         },
         {
-            "move": "Harden",
-            "level": 1
-        },
-        {
-            "move": "Icicle Spear",
-            "level": 1
-        },
-        {
-            "move": "Sheer Cold",
-            "level": 1
-        },
-        {
-            "move": "Uproar",
-            "level": 1
-        },
-        {
-            "move": "Weather Ball",
-            "level": 1
-        },
-        {
-            "move": "Harden",
-            "level": 4
-        },
-        {
             "move": "Astonish",
-            "level": 7
+            "level": 1
         },
         {
-            "move": "Uproar",
-            "level": 10
-        },
-        {
-            "move": "Icy Wind",
-            "level": 13
-        },
-        {
-            "move": "Mist",
-            "level": 16
-        },
-        {
-            "move": "Avalanche",
-            "level": 19
+            "move": "Harden",
+            "level": 1
         },
         {
             "move": "Taunt",
-            "level": 22
+            "level": 1
         },
         {
-            "move": "Mirror Shot",
-            "level": 26
+            "move": "Mist",
+            "level": 1
         },
         {
-            "move": "Acid Armor",
-            "level": 31
+            "move": "Icy Wind",
+            "level": 12
         },
         {
-            "move": "Ice Beam",
-            "level": 36
+            "move": "Avalanche",
+            "level": 16
         },
         {
             "move": "Hail",
-            "level": 42
+            "level": 20
+        },
+        {
+            "move": "Icicle Spear",
+            "level": 24
+        },
+        {
+            "move": "Uproar",
+            "level": 28
+        },
+        {
+            "move": "Acid Armor",
+            "level": 32
         },
         {
             "move": "Mirror Coat",
-            "level": 50
+            "level": 38
+        },
+        {
+            "move": "Ice Beam",
+            "level": 44
         },
         {
             "move": "Blizzard",
-            "level": 59
+            "level": 52
         },
         {
             "move": "Sheer Cold",
-            "level": 67
+            "level": 60
         },
         {
-            "move": "Autotomize",
-            "egg_move": true
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
-            "move": "Ice Shard",
-            "egg_move": true
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Self-Destruct",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
         },
         {
             "move": "Imprison",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Icicle Spear",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
         },
         {
             "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Flash Cannon",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Autotomize",
             "egg_move": true
         },
         {
@@ -168,116 +256,20 @@
             "egg_move": true
         },
         {
-            "move": "Natural Gift",
+            "move": "Ice Shard",
             "egg_move": true
-        },
-        {
-            "move": "Powder Snow",
-            "egg_move": true
-        },
-        {
-            "move": "Water Pulse",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
         },
         {
             "move": "Explosion",
-            "tm": "TM64"
+            "egg_move": true
         },
         {
-            "move": "Giga Impact",
-            "tm": "TM68"
+            "move": "Aurora Veil",
+            "egg_move": true
         },
         {
-            "move": "Frost Breath",
-            "tm": "TM79"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Flash Cannon",
-            "tm": "TM91"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Icicle Crash",
+            "egg_move": true
         }
     ]
 }

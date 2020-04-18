@@ -50,26 +50,30 @@
     ],
     "species": "Synthetic Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "A Pokémon weapon developed for a specific mission, it went berserk during an experiment, so it was cryogenically frozen.",
+    "pokedex_entry": "It was modeled after a mighty Pokémon of myth. The mask placed upon it limits its power in order to keep it under control.",
     "move_learnset": [
         {
             "move": "Tackle",
             "level": 1
         },
         {
-            "move": "Rage",
-            "level": 5
-        },
-        {
-            "move": "Pursuit",
-            "level": 10
-        },
-        {
             "move": "Imprison",
-            "level": 15
+            "level": 1
         },
         {
             "move": "Aerial Ace",
+            "level": 5
+        },
+        {
+            "move": "Scary Face",
+            "level": 10
+        },
+        {
+            "move": "Double Hit",
+            "level": 15
+        },
+        {
+            "move": "Metal Sound",
             "level": 20
         },
         {
@@ -77,172 +81,152 @@
             "level": 25
         },
         {
-            "move": "Scary Face",
+            "move": "Air Slash",
             "level": 30
         },
         {
-            "move": "X-Scissor",
+            "move": "Tri Attack",
             "level": 35
         },
         {
-            "move": "Take Down",
+            "move": "X-Scissor",
             "level": 40
         },
         {
-            "move": "Metal Sound",
+            "move": "Iron Head",
             "level": 45
         },
         {
-            "move": "Iron Head",
+            "move": "Take Down",
             "level": 50
         },
         {
-            "move": "Double Hit",
+            "move": "Double-Edge",
             "level": 55
         },
         {
-            "move": "Air Slash",
-            "level": 60
-        },
-        {
-            "move": "Punishment",
-            "level": 65
-        },
-        {
-            "move": "Razor Wind",
-            "level": 70
-        },
-        {
-            "move": "Tri Attack",
-            "level": 75
-        },
-        {
-            "move": "Double-Edge",
-            "level": 80
-        },
-        {
-            "move": "Heal Block",
-            "level": 85
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Dragon Claw",
-            "tm": "TM2"
-        },
-        {
-            "move": "Roar",
-            "tm": "TM5"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sandstorm",
-            "tm": "TM37"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Flame Charge",
-            "tm": "TM43"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
             "move": "Giga Impact",
-            "tm": "TM68"
+            "tm": true
         },
         {
             "move": "Thunder Wave",
-            "tm": "TM73"
+            "tm": true
         },
         {
-            "move": "Swords Dance",
-            "tm": "TM75"
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Rock Slide",
-            "tm": "TM80"
+            "tm": true
         },
         {
-            "move": "X-Scissor",
-            "tm": "TM81"
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Swagger",
-            "tm": "TM87"
+            "move": "Protect",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "tm": "TM88"
+            "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Sandstorm",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
         },
         {
             "move": "U-turn",
-            "tm": "TM89"
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Air Slash",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Tri Attack",
+            "tm": true
         },
         {
             "move": "Substitute",
-            "tm": "TM90"
+            "tm": true
         },
         {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Defense",
+            "tm": true
+        },
+        {
+            "move": "Dragon Claw",
+            "tm": true
+        },
+        {
+            "move": "X-Scissor",
+            "tm": true
+        },
+        {
+            "move": "Iron Head",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
         }
     ]
 }

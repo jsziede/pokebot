@@ -55,18 +55,14 @@
     "evolutions": [],
     "species": "Fire Horse Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Rapidash usually can be seen casually cantering in the fields and plains. However, when this Pokémon turns serious, its fiery manes flare and blaze as it gallops its way up to 150 mph.",
+    "pokedex_entry": "The fastest runner becomes the leader, and it decides the herd’s pace and direction of travel.",
     "move_learnset": [
         {
-            "move": "Ember",
-            "level": 1
+            "move": "Smart Strike",
+            "evo": true
         },
         {
-            "move": "Fury Attack",
-            "level": 1
-        },
-        {
-            "move": "Growl",
+            "move": "Smart Strike",
             "level": 1
         },
         {
@@ -78,75 +74,227 @@
             "level": 1
         },
         {
+            "move": "Tackle",
+            "level": 1
+        },
+        {
             "move": "Quick Attack",
             "level": 1
         },
         {
-            "move": "Tail Whip",
+            "move": "Growl",
             "level": 1
         },
         {
             "move": "Tail Whip",
-            "level": 4
+            "level": 1
         },
         {
             "move": "Ember",
-            "level": 9
-        },
-        {
-            "move": "Flame Wheel",
-            "level": 13
-        },
-        {
-            "move": "Stomp",
-            "level": 17
+            "level": 1
         },
         {
             "move": "Flame Charge",
-            "level": 21
-        },
-        {
-            "move": "Fire Spin",
-            "level": 25
-        },
-        {
-            "move": "Take Down",
-            "level": 29
-        },
-        {
-            "move": "Inferno",
-            "level": 33
+            "level": 15
         },
         {
             "move": "Agility",
-            "level": 37
+            "level": 20
         },
         {
-            "move": "Fire Blast",
-            "level": 41
+            "move": "Flame Wheel",
+            "level": 25
         },
         {
-            "move": "Bounce",
-            "level": 45
+            "move": "Stomp",
+            "level": 30
         },
         {
-            "move": "Flare Blitz",
+            "move": "Fire Spin",
+            "level": 35
+        },
+        {
+            "move": "Take Down",
+            "level": 43
+        },
+        {
+            "move": "Inferno",
             "level": 49
         },
         {
-            "move": "Ally Switch",
-            "egg_move": true
+            "move": "Fire Blast",
+            "level": 56
         },
         {
-            "move": "Captivate",
-            "egg_move": true
+            "move": "Flare Blitz",
+            "level": 63
+        },
+        {
+            "move": "Pay Day",
+            "tm": true
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Solar Blade",
+            "tm": true
+        },
+        {
+            "move": "Fire Spin",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
         },
         {
             "move": "Charm",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Double-Edge",
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Mystical Fire",
+            "tm": true
+        },
+        {
+            "move": "Smart Strike",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Agility",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Megahorn",
+            "tm": true
+        },
+        {
+            "move": "Baton Pass",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Overheat",
+            "tm": true
+        },
+        {
+            "move": "Flare Blitz",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Wild Charge",
+            "tm": true
+        },
+        {
+            "move": "Drill Run",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "High Horsepower",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Thrash",
             "egg_move": true
         },
         {
@@ -154,11 +302,11 @@
             "egg_move": true
         },
         {
-            "move": "Flame Wheel",
+            "move": "Hypnosis",
             "egg_move": true
         },
         {
-            "move": "High Horsepower",
+            "move": "Double-Edge",
             "egg_move": true
         },
         {
@@ -166,128 +314,8 @@
             "egg_move": true
         },
         {
-            "move": "Hypnosis",
-            "egg_move": true
-        },
-        {
-            "move": "Low Kick",
-            "egg_move": true
-        },
-        {
             "move": "Morning Sun",
             "egg_move": true
-        },
-        {
-            "move": "Thrash",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Flame Charge",
-            "tm": "TM43"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Overheat",
-            "tm": "TM50"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Smart Strike",
-            "tm": "TM67"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Wild Charge",
-            "tm": "TM93"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

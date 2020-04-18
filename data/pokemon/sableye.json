@@ -62,7 +62,7 @@
     "evolutions": [],
     "species": "Darkness Pokémon",
     "mega_evolves": true,
-    "pokedex_entry": "Sableye digs the ground with sharpened claws to find rocks that it eats. Substances in the eaten rocks crystallize and rise up to the Pokémon’s body surface.",
+    "pokedex_entry": "It feeds on gemstone crystals. In darkness, its eyes sparkle with the glitter of jewels.",
     "move_learnset": [
         {
             "move": "Leer",
@@ -73,83 +73,275 @@
             "level": 1
         },
         {
-            "move": "Foresight",
-            "level": 4
+            "move": "Astonish",
+            "level": 3
         },
         {
-            "move": "Night Shade",
+            "move": "Confuse Ray",
             "level": 6
         },
         {
-            "move": "Astonish",
+            "move": "Shadow Sneak",
             "level": 9
         },
         {
-            "move": "Fury Swipes",
-            "level": 11
+            "move": "Fake Out",
+            "level": 12
+        },
+        {
+            "move": "Disable",
+            "level": 15
         },
         {
             "move": "Detect",
-            "level": 14
+            "level": 18
         },
         {
-            "move": "Shadow Sneak",
-            "level": 16
-        },
-        {
-            "move": "Feint Attack",
-            "level": 19
-        },
-        {
-            "move": "Fake Out",
+            "move": "Night Shade",
             "level": 21
         },
         {
-            "move": "Punishment",
+            "move": "Fury Swipes",
             "level": 24
         },
         {
             "move": "Knock Off",
-            "level": 26
-        },
-        {
-            "move": "Shadow Claw",
-            "level": 29
-        },
-        {
-            "move": "Confuse Ray",
-            "level": 31
-        },
-        {
-            "move": "Zen Headbutt",
-            "level": 34
-        },
-        {
-            "move": "Power Gem",
-            "level": 36
-        },
-        {
-            "move": "Shadow Ball",
-            "level": 39
-        },
-        {
-            "move": "Foul Play",
-            "level": 41
+            "level": 27
         },
         {
             "move": "Quash",
-            "level": 44
+            "level": 30
+        },
+        {
+            "move": "Shadow Claw",
+            "level": 33
         },
         {
             "move": "Mean Look",
-            "level": 46
+            "level": 36
         },
         {
-            "move": "Captivate",
-            "egg_move": true
+            "move": "Power Gem",
+            "level": 39
         },
         {
-            "move": "Feint",
+            "move": "Zen Headbutt",
+            "level": 42
+        },
+        {
+            "move": "Shadow Ball",
+            "level": 45
+        },
+        {
+            "move": "Foul Play",
+            "level": 48
+        },
+        {
+            "move": "Mega Punch",
+            "tm": true
+        },
+        {
+            "move": "Mega Kick",
+            "tm": true
+        },
+        {
+            "move": "Fire Punch",
+            "tm": true
+        },
+        {
+            "move": "Ice Punch",
+            "tm": true
+        },
+        {
+            "move": "Thunder Punch",
+            "tm": true
+        },
+        {
+            "move": "Dig",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Brick Break",
+            "tm": true
+        },
+        {
+            "move": "Imprison",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Drain Punch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Low Sweep",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Retaliate",
+            "tm": true
+        },
+        {
+            "move": "Snarl",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Low Kick",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Metronome",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Trick",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Gyro Ball",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "Power Gem",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Ally Switch",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Recover",
             "egg_move": true
         },
         {
@@ -157,27 +349,7 @@
             "egg_move": true
         },
         {
-            "move": "Imprison",
-            "egg_move": true
-        },
-        {
-            "move": "Mean Look",
-            "egg_move": true
-        },
-        {
-            "move": "Metal Burst",
-            "egg_move": true
-        },
-        {
-            "move": "Moonlight",
-            "egg_move": true
-        },
-        {
-            "move": "Nasty Plot",
-            "egg_move": true
-        },
-        {
-            "move": "Recover",
+            "move": "Feint",
             "egg_move": true
         },
         {
@@ -185,160 +357,12 @@
             "egg_move": true
         },
         {
-            "move": "Trick",
+            "move": "Metal Burst",
             "egg_move": true
         },
         {
-            "move": "Calm Mind",
-            "tm": "TM4"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Brick Break",
-            "tm": "TM31"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Aerial Ace",
-            "tm": "TM40"
-        },
-        {
             "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Low Sweep",
-            "tm": "TM47"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Quash",
-            "tm": "TM60"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Embargo",
-            "tm": "TM63"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Dream Eater",
-            "tm": "TM85"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Snarl",
-            "tm": "TM95"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

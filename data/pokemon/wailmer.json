@@ -61,7 +61,7 @@
     ],
     "species": "Ball Whale Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Wailmer can store water inside its body to transform itself into a ball for bouncing around on the ground. By filling itself up with more water, this Pokémon can elevate the height of its bounces.",
+    "pokedex_entry": "When it sucks in a large volume of seawater, it becomes like a big, bouncy ball. It eats a ton of food daily.",
     "move_learnset": [
         {
             "move": "Splash",
@@ -69,102 +69,202 @@
         },
         {
             "move": "Growl",
-            "level": 4
-        },
-        {
-            "move": "Water Gun",
-            "level": 7
-        },
-        {
-            "move": "Rollout",
-            "level": 10
-        },
-        {
-            "move": "Whirlpool",
-            "level": 13
+            "level": 3
         },
         {
             "move": "Astonish",
-            "level": 16
+            "level": 6
         },
         {
-            "move": "Water Pulse",
-            "level": 19
+            "move": "Water Gun",
+            "level": 12
         },
         {
             "move": "Mist",
-            "level": 22
+            "level": 15
         },
         {
-            "move": "Brine",
-            "level": 25
-        },
-        {
-            "move": "Rest",
-            "level": 29
-        },
-        {
-            "move": "Water Spout",
-            "level": 33
-        },
-        {
-            "move": "Amnesia",
-            "level": 37
-        },
-        {
-            "move": "Dive",
-            "level": 41
-        },
-        {
-            "move": "Bounce",
-            "level": 45
-        },
-        {
-            "move": "Hydro Pump",
-            "level": 49
+            "move": "Water Pulse",
+            "level": 18
         },
         {
             "move": "Heavy Slam",
-            "level": 53
+            "level": 21
         },
         {
-            "move": "Aqua Ring",
-            "egg_move": true
+            "move": "Brine",
+            "level": 24
+        },
+        {
+            "move": "Whirlpool",
+            "level": 27
+        },
+        {
+            "move": "Dive",
+            "level": 30
+        },
+        {
+            "move": "Bounce",
+            "level": 33
         },
         {
             "move": "Body Slam",
-            "egg_move": true
+            "level": 36
         },
         {
-            "move": "Clear Smog",
-            "egg_move": true
+            "move": "Rest",
+            "level": 39
         },
         {
-            "move": "Curse",
-            "egg_move": true
+            "move": "Amnesia",
+            "level": 42
         },
         {
-            "move": "Defense Curl",
-            "egg_move": true
+            "move": "Hydro Pump",
+            "level": 45
         },
         {
-            "move": "Double-Edge",
-            "egg_move": true
+            "move": "Water Spout",
+            "level": 48
         },
         {
-            "move": "Fissure",
-            "egg_move": true
+            "move": "Self-Destruct",
+            "tm": true
         },
         {
-            "move": "Sleep Talk",
-            "egg_move": true
+            "move": "Rest",
+            "tm": true
         },
         {
             "move": "Snore",
-            "egg_move": true
+            "tm": true
         },
         {
-            "move": "Soak",
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Rock Tomb",
+            "tm": true
+        },
+        {
+            "move": "Bounce",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Bulldoze",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Earthquake",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Zen Headbutt",
+            "tm": true
+        },
+        {
+            "move": "Heavy Slam",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Body Press",
+            "tm": true
+        },
+        {
+            "move": "Double-Edge",
             "egg_move": true
         },
         {
@@ -172,116 +272,32 @@
             "egg_move": true
         },
         {
+            "move": "Curse",
+            "egg_move": true
+        },
+        {
+            "move": "Fissure",
+            "egg_move": true
+        },
+        {
             "move": "Tickle",
             "egg_move": true
         },
         {
-            "move": "Zen Headbutt",
+            "move": "Defense Curl",
             "egg_move": true
         },
         {
-            "move": "Roar",
-            "tm": "TM5"
+            "move": "Rollout",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Aqua Ring",
+            "egg_move": true
         },
         {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Earthquake",
-            "tm": "TM26"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": "TM39"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Bulldoze",
-            "tm": "TM78"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Soak",
+            "egg_move": true
         }
     ]
 }

@@ -69,14 +69,18 @@
     ],
     "species": "Soft Tissue Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Its four horns are a high-performance radar system. It uses them to sense sounds and smells, rather than using ears or a nose.",
+    "pokedex_entry": "The lump on its back contains its tiny brain. It thinks only of food and escaping its enemies.",
     "move_learnset": [
         {
-            "move": "Absorb",
+            "move": "Acid Spray",
+            "evo": true
+        },
+        {
+            "move": "Acid Spray",
             "level": 1
         },
         {
-            "move": "Bubble",
+            "move": "Absorb",
             "level": 1
         },
         {
@@ -84,156 +88,144 @@
             "level": 1
         },
         {
-            "move": "Absorb",
-            "level": 5
-        },
-        {
-            "move": "Protect",
-            "level": 9
-        },
-        {
-            "move": "Bide",
-            "level": 13
+            "move": "Water Gun",
+            "level": 1
         },
         {
             "move": "Dragon Breath",
-            "level": 18
+            "level": 1
         },
         {
-            "move": "Rain Dance",
-            "level": 25
+            "move": "Protect",
+            "level": 15
         },
         {
             "move": "Flail",
-            "level": 28
+            "level": 20
         },
         {
-            "move": "Body Slam",
-            "level": 32
+            "move": "Water Pulse",
+            "level": 25
         },
         {
-            "move": "Muddy Water",
-            "level": 38
+            "move": "Rain Dance",
+            "level": 30
         },
         {
             "move": "Dragon Pulse",
-            "level": 47
+            "level": 35
         },
         {
-            "move": "Acid Armor",
-            "egg_move": true
+            "move": "Curse",
+            "level": 43
+        },
+        {
+            "move": "Body Slam",
+            "level": 49
+        },
+        {
+            "move": "Muddy Water",
+            "level": 56
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Rock Slide",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Mud Shot",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Thunderbolt",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Outrage",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Muddy Water",
+            "tm": true
+        },
+        {
+            "move": "Dragon Pulse",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
         },
         {
             "move": "Counter",
             "egg_move": true
         },
         {
-            "move": "Curse",
+            "move": "Life Dew",
             "egg_move": true
-        },
-        {
-            "move": "Endure",
-            "egg_move": true
-        },
-        {
-            "move": "Iron Tail",
-            "egg_move": true
-        },
-        {
-            "move": "Poison Tail",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Thunderbolt",
-            "tm": "TM24"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Rock Slide",
-            "tm": "TM80"
-        },
-        {
-            "move": "Infestation",
-            "tm": "TM83"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

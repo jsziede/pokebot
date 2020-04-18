@@ -56,14 +56,14 @@
     "evolutions": [],
     "species": "Skunk Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It sprays a stinky fluid from its tail. The fluid smells worse the longer it is allowed to fester.",
+    "pokedex_entry": "It digs holes in the ground to make its nest. The stench of the fluid it lets fly from the tip of its tail is extremely potent.",
     "move_learnset": [
         {
             "move": "Flamethrower",
-            "level": 1
+            "evo": true
         },
         {
-            "move": "Focus Energy",
+            "move": "Flamethrower",
             "level": 1
         },
         {
@@ -75,115 +75,231 @@
             "level": 1
         },
         {
-            "move": "Screech",
+            "move": "Feint",
             "level": 1
         },
         {
-            "move": "Poison Gas",
-            "level": 3
-        },
-        {
-            "move": "Screech",
-            "level": 7
-        },
-        {
-            "move": "Fury Swipes",
-            "level": 9
-        },
-        {
             "move": "Smokescreen",
-            "level": 13
-        },
-        {
-            "move": "Feint",
-            "level": 15
+            "level": 1
         },
         {
             "move": "Acid Spray",
-            "level": 19
+            "level": 9
+        },
+        {
+            "move": "Fury Swipes",
+            "level": 12
+        },
+        {
+            "move": "Focus Energy",
+            "level": 15
         },
         {
             "move": "Bite",
+            "level": 18
+        },
+        {
+            "move": "Venoshock",
             "level": 21
         },
         {
-            "move": "Slash",
-            "level": 25
+            "move": "Screech",
+            "level": 24
         },
         {
             "move": "Toxic",
             "level": 27
         },
         {
-            "move": "Night Slash",
-            "level": 31
+            "move": "Sucker Punch",
+            "level": 30
         },
         {
             "move": "Memento",
             "level": 33
         },
         {
-            "move": "Venom Drench",
-            "level": 37
-        },
-        {
-            "move": "Sucker Punch",
-            "level": 39
+            "move": "Night Slash",
+            "level": 38
         },
         {
             "move": "Belch",
             "level": 43
         },
         {
+            "move": "Venom Drench",
+            "level": 48
+        },
+        {
             "move": "Explosion",
-            "level": 45
+            "level": 53
         },
         {
-            "move": "Astonish",
-            "egg_move": true
+            "move": "Hyper Beam",
+            "tm": true
         },
         {
-            "move": "Crunch",
-            "egg_move": true
+            "move": "Giga Impact",
+            "tm": true
         },
         {
-            "move": "Double-Edge",
-            "egg_move": true
+            "move": "Fire Spin",
+            "tm": true
         },
         {
-            "move": "Flame Burst",
-            "egg_move": true
+            "move": "Dig",
+            "tm": true
         },
         {
-            "move": "Foul Play",
-            "egg_move": true
+            "move": "Screech",
+            "tm": true
         },
         {
-            "move": "Haze",
-            "egg_move": true
+            "move": "Rest",
+            "tm": true
         },
         {
-            "move": "Iron Tail",
-            "egg_move": true
+            "move": "Thief",
+            "tm": true
         },
         {
-            "move": "Leer",
-            "egg_move": true
+            "move": "Snore",
+            "tm": true
         },
         {
-            "move": "Play Rough",
-            "egg_move": true
-        },
-        {
-            "move": "Punishment",
-            "egg_move": true
-        },
-        {
-            "move": "Pursuit",
-            "egg_move": true
+            "move": "Protect",
+            "tm": true
         },
         {
             "move": "Scary Face",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Assurance",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Tail Slap",
+            "tm": true
+        },
+        {
+            "move": "Snarl",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Focus Energy",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
+            "move": "Dark Pulse",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "Venom Drench",
+            "tm": true
+        },
+        {
+            "move": "Throat Chop",
+            "tm": true
+        },
+        {
+            "move": "Leer",
             "egg_move": true
         },
         {
@@ -191,136 +307,20 @@
             "egg_move": true
         },
         {
-            "move": "Roar",
-            "tm": "TM5"
+            "move": "Double-Edge",
+            "egg_move": true
         },
         {
-            "move": "Toxic",
-            "tm": "TM6"
+            "move": "Astonish",
+            "egg_move": true
         },
         {
-            "move": "Venoshock",
-            "tm": "TM9"
+            "move": "Haze",
+            "egg_move": true
         },
         {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Hyper Beam",
-            "tm": "TM15"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Explosion",
-            "tm": "TM64"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Snarl",
-            "tm": "TM95"
-        },
-        {
-            "move": "Dark Pulse",
-            "tm": "TM97"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Slash",
+            "egg_move": true
         }
     ]
 }

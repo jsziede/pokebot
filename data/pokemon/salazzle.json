@@ -59,18 +59,18 @@
     "evolutions": [],
     "species": "Toxic Lizard Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Salazzle lives deep in caves and forces the Salandit it has attracted with its pheromones to serve it.",
+    "pokedex_entry": "The winner of competitions between Salazzle is decided by which one has the most male Salandit with it.",
     "move_learnset": [
         {
-            "move": "Captivate",
+            "move": "Fire Lash",
+            "evo": true
+        },
+        {
+            "move": "Fire Lash",
             "level": 1
         },
         {
-            "move": "Disable",
-            "level": 1
-        },
-        {
-            "move": "Ember",
+            "move": "Knock Off",
             "level": 1
         },
         {
@@ -78,7 +78,23 @@
             "level": 1
         },
         {
-            "move": "Poison Gas",
+            "move": "Torment",
+            "level": 1
+        },
+        {
+            "move": "Swagger",
+            "level": 1
+        },
+        {
+            "move": "Disable",
+            "level": 1
+        },
+        {
+            "move": "Scratch",
+            "level": 1
+        },
+        {
+            "move": "Endeavor",
             "level": 1
         },
         {
@@ -86,55 +102,39 @@
             "level": 1
         },
         {
-            "move": "Swagger",
+            "move": "Poison Gas",
             "level": 1
         },
         {
-            "move": "Sweet Scent",
-            "level": 1
-        },
-        {
-            "move": "Torment",
+            "move": "Smog",
             "level": 1
         },
         {
             "move": "Ember",
-            "level": 5
+            "level": 1
+        },
+        {
+            "move": "Poison Fang",
+            "level": 15
         },
         {
             "move": "Sweet Scent",
-            "level": 8
-        },
-        {
-            "move": "Dragon Rage",
-            "level": 13
-        },
-        {
-            "move": "Smog",
-            "level": 16
-        },
-        {
-            "move": "Double Slap",
-            "level": 21
-        },
-        {
-            "move": "Flame Burst",
-            "level": 24
-        },
-        {
-            "move": "Toxic",
-            "level": 29
+            "level": 20
         },
         {
             "move": "Nasty Plot",
-            "level": 32
+            "level": 25
+        },
+        {
+            "move": "Incinerate",
+            "level": 30
         },
         {
             "move": "Venoshock",
-            "level": 39
+            "level": 37
         },
         {
-            "move": "Flamethrower",
+            "move": "Dragon Pulse",
             "level": 44
         },
         {
@@ -142,19 +142,183 @@
             "level": 51
         },
         {
+            "move": "Flamethrower",
+            "level": 58
+        },
+        {
+            "move": "Toxic",
+            "level": 65
+        },
+        {
+            "move": "Thunder Wave",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Thief",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Beat Up",
+            "tm": true
+        },
+        {
+            "move": "Will-O-Wisp",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Payback",
+            "tm": true
+        },
+        {
+            "move": "Fling",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Cross Poison",
+            "tm": true
+        },
+        {
+            "move": "Venoshock",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Breaking Swipe",
+            "tm": true
+        },
+        {
+            "move": "Flamethrower",
+            "tm": true
+        },
+        {
+            "move": "Fire Blast",
+            "tm": true
+        },
+        {
+            "move": "Leech Life",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Sludge Bomb",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Heat Wave",
+            "tm": true
+        },
+        {
+            "move": "Taunt",
+            "tm": true
+        },
+        {
+            "move": "Overheat",
+            "tm": true
+        },
+        {
+            "move": "Dragon Claw",
+            "tm": true
+        },
+        {
+            "move": "Dragon Dance",
+            "tm": true
+        },
+        {
+            "move": "Flare Blitz",
+            "tm": true
+        },
+        {
+            "move": "Poison Jab",
+            "tm": true
+        },
+        {
             "move": "Dragon Pulse",
-            "level": 56
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Gunk Shot",
+            "tm": true
+        },
+        {
+            "move": "Sludge Wave",
+            "tm": true
+        },
+        {
+            "move": "Foul Play",
+            "tm": true
+        },
+        {
+            "move": "Venom Drench",
+            "tm": true
         },
         {
             "move": "Belch",
-            "egg_move": true
-        },
-        {
-            "move": "Fake Out",
-            "egg_move": true
-        },
-        {
-            "move": "Knock Off",
             "egg_move": true
         },
         {
@@ -162,140 +326,12 @@
             "egg_move": true
         },
         {
-            "move": "Snatch",
+            "move": "Fake Out",
             "egg_move": true
         },
         {
-            "move": "Dragon Claw",
-            "tm": "TM2"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Venoshock",
-            "tm": "TM9"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Taunt",
-            "tm": "TM12"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Leech Life",
-            "tm": "TM28"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Sludge Wave",
-            "tm": "TM34"
-        },
-        {
-            "move": "Flamethrower",
-            "tm": "TM35"
-        },
-        {
-            "move": "Sludge Bomb",
-            "tm": "TM36"
-        },
-        {
-            "move": "Fire Blast",
-            "tm": "TM38"
-        },
-        {
-            "move": "Torment",
-            "tm": "TM41"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Flame Charge",
-            "tm": "TM43"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Thief",
-            "tm": "TM46"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Overheat",
-            "tm": "TM50"
-        },
-        {
-            "move": "Fling",
-            "tm": "TM56"
-        },
-        {
-            "move": "Will-O-Wisp",
-            "tm": "TM61"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Payback",
-            "tm": "TM66"
-        },
-        {
-            "move": "Dragon Tail",
-            "tm": "TM82"
-        },
-        {
-            "move": "Poison Jab",
-            "tm": "TM84"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "move": "Mud-Slap",
+            "egg_move": true
         }
     ]
 }

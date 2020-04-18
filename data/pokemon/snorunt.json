@@ -74,67 +74,163 @@
     ],
     "species": "Snow Hat Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Snorunt survives by eating only snow and ice. Old folklore claims that a house visited by this Pokémon is sure to prosper for many generations to come.",
+    "pokedex_entry": "It can only survive in cold areas. It bounces happily around, even in environments as cold as −150 degrees Fahrenheit.",
     "move_learnset": [
-        {
-            "move": "Leer",
-            "level": 1
-        },
         {
             "move": "Powder Snow",
             "level": 1
         },
         {
-            "move": "Double Team",
+            "move": "Astonish",
+            "level": 1
+        },
+        {
+            "move": "Leer",
             "level": 5
         },
         {
-            "move": "Ice Shard",
+            "move": "Double Team",
             "level": 10
         },
         {
-            "move": "Icy Wind",
-            "level": 14
-        },
-        {
-            "move": "Bite",
-            "level": 19
-        },
-        {
-            "move": "Ice Fang",
-            "level": 23
-        },
-        {
-            "move": "Headbutt",
-            "level": 28
+            "move": "Ice Shard",
+            "level": 15
         },
         {
             "move": "Protect",
-            "level": 32
+            "level": 20
+        },
+        {
+            "move": "Icy Wind",
+            "level": 25
         },
         {
             "move": "Frost Breath",
-            "level": 37
+            "level": 30
         },
         {
-            "move": "Crunch",
-            "level": 41
+            "move": "Bite",
+            "level": 35
         },
         {
-            "move": "Blizzard",
-            "level": 46
+            "move": "Ice Fang",
+            "level": 40
         },
         {
             "move": "Hail",
+            "level": 45
+        },
+        {
+            "move": "Headbutt",
             "level": 50
         },
         {
-            "move": "Avalanche",
-            "egg_move": true
+            "move": "Crunch",
+            "level": 55
         },
         {
-            "move": "Bide",
-            "egg_move": true
+            "move": "Blizzard",
+            "level": 60
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Fake Tears",
+            "tm": true
+        },
+        {
+            "move": "Avalanche",
+            "tm": true
+        },
+        {
+            "move": "Ice Fang",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Hex",
+            "tm": true
+        },
+        {
+            "move": "Body Slam",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Spikes",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Crunch",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
         },
         {
             "move": "Block",
@@ -145,11 +241,7 @@
             "egg_move": true
         },
         {
-            "move": "Fake Tears",
-            "egg_move": true
-        },
-        {
-            "move": "Hex",
+            "move": "Switcheroo",
             "egg_move": true
         },
         {
@@ -157,104 +249,8 @@
             "egg_move": true
         },
         {
-            "move": "Spikes",
+            "move": "Icicle Crash",
             "egg_move": true
-        },
-        {
-            "move": "Switcheroo",
-            "egg_move": true
-        },
-        {
-            "move": "Weather Ball",
-            "egg_move": true
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Frost Breath",
-            "tm": "TM79"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }

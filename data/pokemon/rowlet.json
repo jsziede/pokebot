@@ -58,82 +58,174 @@
     ],
     "species": "Grass Quill Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "It sends its feathers, which are as sharp as blades, flying in attack. Its legs are strong, so its kicks are also formidable.",
+    "pokedex_entry": "During the day, it builds up energy via photosynthesis. At night, it flies silently through the sky, on the prowl for prey.",
     "move_learnset": [
-        {
-            "move": "Leafage",
-            "level": 1
-        },
         {
             "move": "Tackle",
             "level": 1
         },
         {
             "move": "Growl",
-            "level": 4
+            "level": 1
         },
         {
-            "move": "Peck",
-            "level": 8
+            "move": "Leafage",
+            "level": 3
         },
         {
             "move": "Astonish",
-            "level": 11
+            "level": 6
+        },
+        {
+            "move": "Peck",
+            "level": 9
+        },
+        {
+            "move": "Shadow Sneak",
+            "level": 12
         },
         {
             "move": "Razor Leaf",
-            "level": 14
+            "level": 15
         },
         {
-            "move": "Ominous Wind",
-            "level": 16
-        },
-        {
-            "move": "Foresight",
+            "move": "Synthesis",
             "level": 18
         },
         {
             "move": "Pluck",
-            "level": 22
-        },
-        {
-            "move": "Synthesis",
-            "level": 25
-        },
-        {
-            "move": "Fury Attack",
-            "level": 29
-        },
-        {
-            "move": "Sucker Punch",
-            "level": 32
-        },
-        {
-            "move": "Leaf Blade",
-            "level": 36
-        },
-        {
-            "move": "Feather Dance",
-            "level": 39
-        },
-        {
-            "move": "Brave Bird",
-            "level": 43
+            "level": 21
         },
         {
             "move": "Nasty Plot",
-            "level": 46
+            "level": 24
+        },
+        {
+            "move": "Sucker Punch",
+            "level": 27
+        },
+        {
+            "move": "Leaf Blade",
+            "level": 30
+        },
+        {
+            "move": "Feather Dance",
+            "level": 33
+        },
+        {
+            "move": "Brave Bird",
+            "level": 36
+        },
+        {
+            "move": "Solar Beam",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Safeguard",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Giga Drain",
+            "tm": true
+        },
+        {
+            "move": "Steel Wing",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Sunny Day",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Swift",
+            "tm": true
+        },
+        {
+            "move": "Shadow Claw",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "False Swipe",
+            "tm": true
+        },
+        {
+            "move": "Swords Dance",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
         },
         {
             "move": "Baton Pass",
-            "egg_move": true
+            "tm": true
+        },
+        {
+            "move": "Leaf Blade",
+            "tm": true
+        },
+        {
+            "move": "Seed Bomb",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Brave Bird",
+            "tm": true
+        },
+        {
+            "move": "Nasty Plot",
+            "tm": true
+        },
+        {
+            "move": "Grass Knot",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
         },
         {
             "move": "Confuse Ray",
-            "egg_move": true
-        },
-        {
-            "move": "Curse",
             "egg_move": true
         },
         {
@@ -141,124 +233,12 @@
             "egg_move": true
         },
         {
-            "move": "Haze",
+            "move": "Knock Off",
             "egg_move": true
-        },
-        {
-            "move": "Ominous Wind",
-            "egg_move": true
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Sunny Day",
-            "tm": "TM11"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Roost",
-            "tm": "TM19"
-        },
-        {
-            "move": "Safeguard",
-            "tm": "TM20"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Solar Beam",
-            "tm": "TM22"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
         },
         {
             "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Steel Wing",
-            "tm": "TM51"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "False Swipe",
-            "tm": "TM54"
-        },
-        {
-            "move": "Shadow Claw",
-            "tm": "TM65"
-        },
-        {
-            "move": "Swords Dance",
-            "tm": "TM75"
-        },
-        {
-            "move": "Grass Knot",
-            "tm": "TM86"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Nature Power",
-            "tm": "TM96"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
+            "egg_move": true
         }
     ]
 }

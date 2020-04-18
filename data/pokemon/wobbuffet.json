@@ -52,14 +52,42 @@
     "evolutions": [],
     "species": "Patient Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "Wobbuffet does nothing but endure attacks—it won't attack on its own. However, it won't endure an attack on its tail. When that happens, the Pokémon will try to take the foe with it using Destiny Bond.",
+    "pokedex_entry": "To keep its pitch-black tail hidden, it lives quietly in the darkness. It is never first to attack.",
     "move_learnset": [
         {
             "move": "Counter",
-            "level": 1
+            "evo": true
+        },
+        {
+            "move": "Mirror Coat",
+            "evo": true
+        },
+        {
+            "move": "Safeguard",
+            "evo": true
         },
         {
             "move": "Destiny Bond",
+            "evo": true
+        },
+        {
+            "move": "Splash",
+            "level": 1
+        },
+        {
+            "move": "Charm",
+            "level": 1
+        },
+        {
+            "move": "Encore",
+            "level": 1
+        },
+        {
+            "move": "Amnesia",
+            "level": 1
+        },
+        {
+            "move": "Counter",
             "level": 1
         },
         {
@@ -71,8 +99,24 @@
             "level": 1
         },
         {
+            "move": "Destiny Bond",
+            "level": 1
+        },
+        {
             "move": "Safeguard",
-            "tm": "TM20"
+            "tm": true
+        },
+        {
+            "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
         }
     ]
 }

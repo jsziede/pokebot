@@ -54,14 +54,14 @@
     "evolutions": [],
     "species": "Soloist Pokémon",
     "mega_evolves": false,
-    "pokedex_entry": "To Primarina, every battle is a stage. It takes down its prey with beautiful singing and dancing.",
+    "pokedex_entry": "For Primarina, every battle’s a stage. Its singing and the dancing of its balloons will mesmerize the audience.",
     "move_learnset": [
         {
-            "move": "Disarming Voice",
-            "level": 1
+            "move": "Sparkling Aria",
+            "evo": true
         },
         {
-            "move": "Growl",
+            "move": "Sparkling Aria",
             "level": 1
         },
         {
@@ -69,7 +69,7 @@
             "level": 1
         },
         {
-            "move": "Sparkling Aria",
+            "move": "Growl",
             "level": 1
         },
         {
@@ -77,75 +77,235 @@
             "level": 1
         },
         {
-            "move": "Growl",
-            "level": 4
+            "move": "Disarming Voice",
+            "level": 1
         },
         {
-            "move": "Disarming Voice",
+            "move": "Aqua Jet",
             "level": 9
         },
         {
             "move": "Baby-Doll Eyes",
-            "level": 11
-        },
-        {
-            "move": "Aqua Jet",
-            "level": 14
+            "level": 12
         },
         {
             "move": "Icy Wind",
-            "level": 16
-        },
-        {
-            "move": "Encore",
-            "level": 19
-        },
-        {
-            "move": "Bubble Beam",
-            "level": 24
+            "level": 15
         },
         {
             "move": "Sing",
-            "level": 28
+            "level": 20
         },
         {
-            "move": "Double Slap",
-            "level": 33
+            "move": "Bubble Beam",
+            "level": 25
         },
         {
-            "move": "Hyper Voice",
-            "level": 38
-        },
-        {
-            "move": "Moonblast",
-            "level": 44
-        },
-        {
-            "move": "Captivate",
-            "level": 49
-        },
-        {
-            "move": "Hydro Pump",
-            "level": 55
+            "move": "Encore",
+            "level": 30
         },
         {
             "move": "Misty Terrain",
-            "level": 60
+            "level": 37
         },
         {
-            "move": "Amnesia",
-            "egg_move": true
+            "move": "Hyper Voice",
+            "level": 44
         },
         {
-            "move": "Aqua Ring",
-            "egg_move": true
+            "move": "Moonblast",
+            "level": 51
         },
         {
-            "move": "Aromatic Mist",
-            "egg_move": true
+            "move": "Hydro Pump",
+            "level": 58
+        },
+        {
+            "move": "Hyper Beam",
+            "tm": true
+        },
+        {
+            "move": "Giga Impact",
+            "tm": true
+        },
+        {
+            "move": "Light Screen",
+            "tm": true
+        },
+        {
+            "move": "Reflect",
+            "tm": true
+        },
+        {
+            "move": "Rest",
+            "tm": true
+        },
+        {
+            "move": "Snore",
+            "tm": true
+        },
+        {
+            "move": "Protect",
+            "tm": true
+        },
+        {
+            "move": "Icy Wind",
+            "tm": true
         },
         {
             "move": "Charm",
+            "tm": true
+        },
+        {
+            "move": "Attract",
+            "tm": true
+        },
+        {
+            "move": "Rain Dance",
+            "tm": true
+        },
+        {
+            "move": "Hail",
+            "tm": true
+        },
+        {
+            "move": "Whirlpool",
+            "tm": true
+        },
+        {
+            "move": "Facade",
+            "tm": true
+        },
+        {
+            "move": "Helping Hand",
+            "tm": true
+        },
+        {
+            "move": "Dive",
+            "tm": true
+        },
+        {
+            "move": "Weather Ball",
+            "tm": true
+        },
+        {
+            "move": "Brine",
+            "tm": true
+        },
+        {
+            "move": "Wonder Room",
+            "tm": true
+        },
+        {
+            "move": "Round",
+            "tm": true
+        },
+        {
+            "move": "Acrobatics",
+            "tm": true
+        },
+        {
+            "move": "Draining Kiss",
+            "tm": true
+        },
+        {
+            "move": "Misty Terrain",
+            "tm": true
+        },
+        {
+            "move": "Hydro Pump",
+            "tm": true
+        },
+        {
+            "move": "Surf",
+            "tm": true
+        },
+        {
+            "move": "Ice Beam",
+            "tm": true
+        },
+        {
+            "move": "Blizzard",
+            "tm": true
+        },
+        {
+            "move": "Psychic",
+            "tm": true
+        },
+        {
+            "move": "Waterfall",
+            "tm": true
+        },
+        {
+            "move": "Amnesia",
+            "tm": true
+        },
+        {
+            "move": "Substitute",
+            "tm": true
+        },
+        {
+            "move": "Endure",
+            "tm": true
+        },
+        {
+            "move": "Sleep Talk",
+            "tm": true
+        },
+        {
+            "move": "Encore",
+            "tm": true
+        },
+        {
+            "move": "Iron Tail",
+            "tm": true
+        },
+        {
+            "move": "Shadow Ball",
+            "tm": true
+        },
+        {
+            "move": "Uproar",
+            "tm": true
+        },
+        {
+            "move": "Hyper Voice",
+            "tm": true
+        },
+        {
+            "move": "Calm Mind",
+            "tm": true
+        },
+        {
+            "move": "Energy Ball",
+            "tm": true
+        },
+        {
+            "move": "Stored Power",
+            "tm": true
+        },
+        {
+            "move": "Scald",
+            "tm": true
+        },
+        {
+            "move": "Work Up",
+            "tm": true
+        },
+        {
+            "move": "Play Rough",
+            "tm": true
+        },
+        {
+            "move": "Dazzling Gleam",
+            "tm": true
+        },
+        {
+            "move": "Liquidation",
+            "tm": true
+        },
+        {
+            "move": "Aqua Ring",
             "egg_move": true
         },
         {
@@ -153,136 +313,8 @@
             "egg_move": true
         },
         {
-            "move": "Wonder Room",
+            "move": "Life Dew",
             "egg_move": true
-        },
-        {
-            "move": "Work Up",
-            "tm": "TM1"
-        },
-        {
-            "move": "Toxic",
-            "tm": "TM6"
-        },
-        {
-            "move": "Hail",
-            "tm": "TM7"
-        },
-        {
-            "move": "Hidden Power",
-            "tm": "TM10"
-        },
-        {
-            "move": "Ice Beam",
-            "tm": "TM13"
-        },
-        {
-            "move": "Blizzard",
-            "tm": "TM14"
-        },
-        {
-            "move": "Light Screen",
-            "tm": "TM16"
-        },
-        {
-            "move": "Protect",
-            "tm": "TM17"
-        },
-        {
-            "move": "Rain Dance",
-            "tm": "TM18"
-        },
-        {
-            "move": "Frustration",
-            "tm": "TM21"
-        },
-        {
-            "move": "Return",
-            "tm": "TM27"
-        },
-        {
-            "move": "Psychic",
-            "tm": "TM29"
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": "TM30"
-        },
-        {
-            "move": "Double Team",
-            "tm": "TM32"
-        },
-        {
-            "move": "Reflect",
-            "tm": "TM33"
-        },
-        {
-            "move": "Facade",
-            "tm": "TM42"
-        },
-        {
-            "move": "Rest",
-            "tm": "TM44"
-        },
-        {
-            "move": "Attract",
-            "tm": "TM45"
-        },
-        {
-            "move": "Round",
-            "tm": "TM48"
-        },
-        {
-            "move": "Echoed Voice",
-            "tm": "TM49"
-        },
-        {
-            "move": "Energy Ball",
-            "tm": "TM53"
-        },
-        {
-            "move": "Scald",
-            "tm": "TM55"
-        },
-        {
-            "move": "Acrobatics",
-            "tm": "TM62"
-        },
-        {
-            "move": "Giga Impact",
-            "tm": "TM68"
-        },
-        {
-            "move": "Psych Up",
-            "tm": "TM77"
-        },
-        {
-            "move": "Swagger",
-            "tm": "TM87"
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": "TM88"
-        },
-        {
-            "move": "Substitute",
-            "tm": "TM90"
-        },
-        {
-            "move": "Surf",
-            "tm": "TM94"
-        },
-        {
-            "move": "Waterfall",
-            "tm": "TM98"
-        },
-        {
-            "move": "Dazzling Gleam",
-            "tm": "TM99"
-        },
-        {
-            "move": "Confide",
-            "tm": "TM100"
         }
     ]
 }
