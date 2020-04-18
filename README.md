@@ -105,6 +105,6 @@ The JSON data for Pokémon from Generations 1 through 7 were initally based on t
 
 All Pokémon models found inside the `gfx/models` and `gfx/models/shiny` directories for Pokémon that appear in the Sword and Shield games were retrived from [PkParaíso.com](https://www.pkparaiso.com/espada_escudo/sprites_pokemon.php).
 
-### Legacy Models
+#### Legacy Models
 
 All Pokémon models found inside the `gfx/models` and `gfx/models/shiny` directories for Pokémon that do not appear in the Sword and Shield games were retrived from [Pokémon Showdown](https://pokemonshowdown.com/).
