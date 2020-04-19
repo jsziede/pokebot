@@ -354,7 +354,6 @@ client.on('message', async (message) => {
                 
                 /** Perform the command action if message contains a command. */
                 if (await doCommand(message, input, command)) {
-                    message.delete(0);
                     return;
                 }
             }
