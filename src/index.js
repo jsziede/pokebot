@@ -8841,9 +8841,9 @@ async function getDexInfo(message, name, form) {
         let spriteLink = generateSpriteLink(pkmn.name, "Male", form);
         
         let infoEmbed = await generateDexInfoEmbed(pkmn, imageName, spriteLink);
-        let attackEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "level");
-        let attackTMEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "tm");
-        let attackEggEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "egg");
+        let attackEmbed = await generateDexMovesEmbed(pkmn, imageName, spriteLink, "level");
+        let attackTMEmbed = await generateDexMovesEmbed(pkmn, imageName, spriteLink, "tm");
+        let attackEggEmbed = await generateDexMovesEmbed(pkmn, imageName, spriteLink, "egg_move");
         let evoEmbed = await generateDexEvoEmbed(pkmn, imageName, spriteLink);
 
         let embed = infoEmbed;
@@ -8976,17 +8976,21 @@ async function generateDexInfoEmbed(pkmn, imageName, spriteLink) {
  * 
  * @returns {RichEmbed} A Discord rich embedded message showing moves that are learned by the Pokemon species, depending
  * on the move class.
+ * 
+ * @todo Sort TMs and Egg Moves by name.
  */
-async function generateDexMovesEmbed(pkmn, form, imageName, spriteLink, moveClass) {
+async function generateDexMovesEmbed(pkmn, imageName, spriteLink, moveClass) {
     let movesString = "";
-    let moves = getPokemonMoves(pkmn, form, moveClass);
+    let moves = getPokemonMoves(pkmn, moveClass);
     let fields = [];
     let name = "Moves by Level";
-    if (moveClass === "egg") {
+
+    if (moveClass === "egg_move") {
         name = "Egg Moves";
     } else if (moveClass === "tm") {
         name = "Technical Machines";
     }
+
     if (moves.length > 0) {
         for (let move in moves) {
             let type = getMoveType(moves[move].move);
@@ -9002,26 +9006,26 @@ async function generateDexMovesEmbed(pkmn, form, imageName, spriteLink, moveClas
                 name = '\u200b';
 
                 if (moveClass === "level") {
-                    movesString = type_icon + " **Level " + moves[move].level + "** " + moves[move].move + "\n";
-                } else if (moveClass === "egg") {
-                    movesString = type_icon + " " + moves[move].move + "\n";
+                    movesString = type_icon + " **" + moves[move].move + "** _Level " + moves[move].level + "_\n";
+                } else if (moveClass === "egg_move") {
+                    movesString = type_icon + " **" + moves[move].move + "**\n";
                 } else if (moveClass === "tm") {
-                    movesString = type_icon + " **" + moves[move].tm + "** " + moves[move].move + "\n";
+                    movesString = type_icon + " **" + moves[move].move + "**\n";
                 }
             } else {
                 if (moveClass === "level") {
-                    movesString += type_icon + " **Level " + moves[move].level + "** " + moves[move].move + "\n";
-                } else if (moveClass === "egg") {
-                    movesString += type_icon + " " + moves[move].move + "\n";
+                    movesString += type_icon + " **" + moves[move].move + "** _Level " + moves[move].level + "_\n";
+                } else if (moveClass === "egg_move") {
+                    movesString += type_icon + " **" + moves[move].move + "**\n";
                 } else if (moveClass === "tm") {
-                    movesString += type_icon + " **" + moves[move].tm + "** " + moves[move].move + "\n";
+                    movesString += type_icon + " **" + moves[move].move + "**\n";
                 }
             }
         }
     } else {
         if (moveClass === "level") {
             movesString = pkmn.name + " does not learn any moves by leveling up.";
-        } else if (moveClass === "egg") {
+        } else if (moveClass === "egg_move") {
             movesString = pkmn.name + " does not learn any egg moves.";
         } else if (moveClass === "tm") {
             movesString = pkmn.name + " cannot use any Technical Machines.";
@@ -9089,7 +9093,7 @@ async function generateDexEvoEmbed(pkmn, imageName, spriteLink) {
         for (let toEvos in evolvesTo) {
             pkm = parseJSON(generatePokemonJSONPath(evolvesTo[toEvos].name, null));
             shuffle_icon = await getShuffleEmoji(pkm.national_id);
-            evoToString += "\n" + shuffle_icon + " Evolves from " + evolvesTo[toEvos].name + " " + evolvesTo[toEvos].method;
+            evoToString += "\n" + shuffle_icon + " Evolves into " + evolvesTo[toEvos].name + " " + evolvesTo[toEvos].method;
         }
     }
     
@@ -10793,20 +10797,18 @@ function checkForNewMoveUponEvo(to, form) {
 }
 
 /**
- * Gets a list of all moves that a Pokemon can learn, based on certain methods.
+ * Gets a list of all moves that a Pokemon can learn, based on the class of the moves.
  * 
  * @param {JSON} pkmn The Pokemon species to get the moves for.
- * @param {string} form The form of the species to get the moves for.
- * @param {string} method The method of how the move is learned. Should only be
- * `"level"`, `"egg"`, and `"tm"`.
+ * @param {string} moveClass The class of the move. Should only be `"level"`, `"egg_move"`, or `"tm"`.
  * 
- * @returns {string[]} All moves learned by the Pokemon for the method.
+ * @returns {string[]} All moves learned by the Pokemon for the class.
  */
-function getPokemonMoves(pkmn, form, method) {
+function getPokemonMoves(pkmn, moveClass) {
     var i;
     var moves = [];
     for (i = 0; i < pkmn.move_learnset.length; i++) {
-        if (pkmn.move_learnset[i].hasOwnProperty(method)) {
+        if (pkmn.move_learnset[i].hasOwnProperty(moveClass)) {
             moves[moves.length] = pkmn.move_learnset[i];
         }
     }
