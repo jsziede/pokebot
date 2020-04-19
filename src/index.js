@@ -8834,67 +8834,73 @@ async function getDexInfo(message, name, form) {
     
     let pkmn = parseJSON(generatePokemonJSONPath(name, null));
     
-    let imageName = await getGifName(pkmn.name);
-    let modelLink = generateModelLink(pkmn.name, false, "Male", form);
-    let spriteLink = generateSpriteLink(pkmn.name, "Male", form);
-    
-    let infoEmbed = await generateDexInfoEmbed(pkmn, imageName, spriteLink);
-    let attackEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "level");
-    let attackTMEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "tm");
-    let attackEggEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "egg");
-    let evoEmbed = await generateDexEvoEmbed(pkmn, imageName, spriteLink);
+    let msg;
 
-    let embed = infoEmbed;
-    
-    let msg = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }], true);
-    
-    let reacting = true;
-    
-    while (reacting) {
-        await msg.react('ℹ');
-        await msg.react('⚔');
-        await msg.react('💽');
-        await msg.react('🥚');
-        await msg.react('☣');
+    if (pkmn != null) {
+        let imageName = await getGifName(pkmn.name);
+        let modelLink = generateModelLink(pkmn.name, false, "Male", form);
+        let spriteLink = generateSpriteLink(pkmn.name, "Male", form);
         
-        const filter = (reaction, user) => {
-            return ['ℹ', '⚔', '💽', '🥚', '☣'].includes(reaction.emoji.name) && user.id === message.author.id;
-        };
+        let infoEmbed = await generateDexInfoEmbed(pkmn, imageName, spriteLink);
+        let attackEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "level");
+        let attackTMEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "tm");
+        let attackEggEmbed = await generateDexMovesEmbed(pkmn, form, imageName, spriteLink, "egg");
+        let evoEmbed = await generateDexEvoEmbed(pkmn, imageName, spriteLink);
+
+        let embed = infoEmbed;
         
-        await msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-            .then(collected => {
-                const reaction = collected.first();
+        msg = await sendMessageWithAttachments(message.channel, embed, [{ attachment: modelLink, name: (imageName + '.gif') }], true);
+        
+        let reacting = true;
+        
+        while (reacting) {
+            await msg.react('ℹ');
+            await msg.react('⚔');
+            await msg.react('💽');
+            await msg.react('🥚');
+            await msg.react('☣');
+            
+            const filter = (reaction, user) => {
+                return ['ℹ', '⚔', '💽', '🥚', '☣'].includes(reaction.emoji.name) && user.id === message.author.id;
+            };
+            
+            await msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                .then(collected => {
+                    const reaction = collected.first();
 
-                if (reaction.emoji.name === 'ℹ') {
-                    reaction.remove(message.author.id);
-                    embed = infoEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                } else if (reaction.emoji.name === '⚔') {
-                    reaction.remove(message.author.id);
-                    embed = attackEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                } else if (reaction.emoji.name === '💽') {
-                    reaction.remove(message.author.id);
-                    embed = attackTMEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                } else if (reaction.emoji.name === '🥚') {
-                    reaction.remove(message.author.id);
-                    embed = attackEggEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                } else if (reaction.emoji.name === '☣') {
-                    reaction.remove(message.author.id);
-                    embed = evoEmbed;
-                    msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
-                }
+                    if (reaction.emoji.name === 'ℹ') {
+                        reaction.remove(message.author.id);
+                        embed = infoEmbed;
+                        msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                    } else if (reaction.emoji.name === '⚔') {
+                        reaction.remove(message.author.id);
+                        embed = attackEmbed;
+                        msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                    } else if (reaction.emoji.name === '💽') {
+                        reaction.remove(message.author.id);
+                        embed = attackTMEmbed;
+                        msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                    } else if (reaction.emoji.name === '🥚') {
+                        reaction.remove(message.author.id);
+                        embed = attackEggEmbed;
+                        msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                    } else if (reaction.emoji.name === '☣') {
+                        reaction.remove(message.author.id);
+                        embed = evoEmbed;
+                        msg.edit({ embed, files: [{ attachment: modelLink, name: (imageName + '.gif') }] });
+                    }
 
-            })
-            .catch(() => {
-                reacting = false;
-            });
+                })
+                .catch(() => {
+                    reacting = false;
+                });
 
+        }
+
+        msg.delete(0);
+    } else {
+        msg = await sendMessage(message.channel, "There doesn't appear to be a Pokémon with that name!", false);
     }
-
-    msg.delete(0);
 
     return new Promise(function(resolve) {
         resolve(true);
