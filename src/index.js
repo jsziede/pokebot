@@ -9249,7 +9249,7 @@ function getAbilityInfo(abilityName) {
         let path = "../data/ability/" + abilityName.replace(/ /g,"_") + ".json";
         let ability = parseJSON(path);
         if (ability != null) {
-            abilityData = [ability.names.en, ability.descriptions.en]
+            abilityData = [ability.name, ability.description]
         }
     }
     
