@@ -1,4 +1,7 @@
 var myconfig = {
+    /**
+     * Database credentials
+     */
     "database": {
         host: "localhost",
         user: "root",
@@ -6,6 +9,16 @@ var myconfig = {
         database: '~~~database_name~~~',
         charset: 'utf8mb4'
     },
-    token: '~~~token_here~~~'
+
+    /**
+     * Discord bot token
+     */
+    "token": '~~~token_here~~~',
+
+    /**
+     * true = Pokebot will attach local images from this repository on your computer when possible for messages
+     * false = Pokebot will always use image URLs from the online repository for messages
+     */
+    "useLocalImages": true
 };
 module.exports = myconfig;
