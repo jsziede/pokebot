@@ -9,6 +9,10 @@
                 30,
                 40,
                 30
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,9 @@
                 40,
                 50,
                 50
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -31,6 +38,9 @@
                 10,
                 0,
                 10
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -42,6 +52,9 @@
                 30,
                 30,
                 30
+            ],
+            "types": [
+                "Electric"
             ]
         },
         {
@@ -54,7 +67,10 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Sentret",
@@ -66,7 +82,10 @@
                 40,
                 40
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Growlithe",
@@ -78,7 +97,10 @@
                 8,
                 8
             ],
-            "slot": "FireRed"
+            "slot": "FireRed",
+            "types": [
+                "Fire"
+            ]
         }
     ]
 }

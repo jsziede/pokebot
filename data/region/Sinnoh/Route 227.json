@@ -9,6 +9,10 @@
                 20,
                 20,
                 10
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,10 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Poison",
+                "Flying"
             ]
         },
         {
@@ -31,6 +39,10 @@
                 15,
                 15,
                 15
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -42,6 +54,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Poison"
             ]
         },
         {
@@ -53,6 +68,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Ground",
+                "Rock"
             ]
         },
         {
@@ -64,6 +83,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Ground",
+                "Rock"
             ]
         },
         {
@@ -75,6 +98,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Steel",
+                "Flying"
             ]
         },
         {
@@ -86,6 +113,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Fire",
+                "Ground"
             ]
         },
         {
@@ -97,6 +128,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Fire",
+                "Ground"
             ]
         },
         {
@@ -108,6 +143,9 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Ghost"
             ]
         },
         {
@@ -119,6 +157,9 @@
                 30,
                 30,
                 30
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -130,6 +171,9 @@
                 70,
                 70,
                 70
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -141,6 +185,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -152,6 +199,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -163,6 +214,9 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -174,6 +228,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -185,6 +243,10 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -197,7 +259,10 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Gligar",
@@ -209,7 +274,11 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Ground",
+                "Flying"
+            ]
         },
         {
             "name": "Magby",
@@ -221,7 +290,10 @@
                 8,
                 8
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Fire"
+            ]
         },
         {
             "name": "Torkoal",
@@ -233,7 +305,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Fire"
+            ]
         }
     ]
 }

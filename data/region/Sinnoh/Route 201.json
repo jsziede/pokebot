@@ -9,6 +9,10 @@
                 50,
                 50,
                 50
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,9 @@
                 50,
                 50,
                 50
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -31,6 +38,9 @@
                 10,
                 0,
                 10
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -43,7 +53,11 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Normal",
+                "Flying"
+            ]
         },
         {
             "name": "Nidoran♀",
@@ -55,7 +69,10 @@
                 10,
                 10
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Poison"
+            ]
         },
         {
             "name": "Nidoran♂",
@@ -67,7 +84,10 @@
                 10,
                 10
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Poison"
+            ]
         },
         {
             "name": "Growlithe",
@@ -79,7 +99,10 @@
                 8,
                 8
             ],
-            "slot": "FireRed"
+            "slot": "FireRed",
+            "types": [
+                "Fire"
+            ]
         }
     ]
 }

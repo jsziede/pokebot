@@ -9,6 +9,10 @@
                 5,
                 25,
                 5
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -31,6 +39,10 @@
                 20,
                 30,
                 20
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -42,6 +54,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -53,6 +69,10 @@
                 20,
                 30,
                 20
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -64,6 +84,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -75,6 +99,9 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -86,6 +113,10 @@
                 20,
                 0,
                 0
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -97,6 +128,10 @@
                 0,
                 0,
                 20
+            ],
+            "types": [
+                "Bug",
+                "Poison"
             ]
         },
         {
@@ -108,6 +143,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -119,6 +158,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Bug",
+                "Poison"
             ]
         },
         {
@@ -130,6 +173,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -141,6 +187,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -152,6 +201,10 @@
                 45,
                 45,
                 45
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -163,6 +216,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -174,6 +230,10 @@
                 70,
                 70,
                 70
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -185,6 +245,10 @@
                 30,
                 30,
                 30
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -196,6 +260,10 @@
                 95,
                 95,
                 95
+            ],
+            "types": [
+                "Bug",
+                "Water"
             ]
         },
         {
@@ -207,6 +275,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -218,6 +290,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -229,6 +304,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -240,6 +318,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -251,6 +332,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -262,6 +346,10 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -274,7 +362,11 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Normal",
+                "Flying"
+            ]
         },
         {
             "name": "Pinsir",
@@ -286,7 +378,10 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Bug"
+            ]
         },
         {
             "name": "Venonat",
@@ -298,7 +393,11 @@
                 2,
                 2
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Bug",
+                "Poison"
+            ]
         },
         {
             "name": "Venomoth",
@@ -310,7 +409,11 @@
                 20,
                 20
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Bug",
+                "Poison"
+            ]
         },
         {
             "name": "Pineco",
@@ -322,7 +425,10 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Bug"
+            ]
         },
         {
             "name": "Nuzleaf",
@@ -334,7 +440,11 @@
                 8,
                 8
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Grass",
+                "Dark"
+            ]
         },
         {
             "name": "Lombre",
@@ -346,7 +456,11 @@
                 8,
                 8
             ],
-            "slot": "Sapphire"
+            "slot": "Sapphire",
+            "types": [
+                "Water",
+                "Grass"
+            ]
         }
     ]
 }

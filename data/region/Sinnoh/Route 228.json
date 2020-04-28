@@ -9,6 +9,9 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Ground"
             ]
         },
         {
@@ -20,6 +23,9 @@
                 30,
                 30,
                 30
+            ],
+            "types": [
+                "Ground"
             ]
         },
         {
@@ -31,6 +37,10 @@
                 20,
                 20,
                 10
+            ],
+            "types": [
+                "Ground",
+                "Rock"
             ]
         },
         {
@@ -42,6 +52,9 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Grass"
             ]
         },
         {
@@ -53,6 +66,10 @@
                 20,
                 20,
                 40
+            ],
+            "types": [
+                "Grass",
+                "Dark"
             ]
         },
         {
@@ -64,6 +81,9 @@
                 20,
                 20,
                 10
+            ],
+            "types": [
+                "Ground"
             ]
         },
         {
@@ -75,6 +95,9 @@
                 30,
                 30,
                 30
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -86,6 +109,9 @@
                 70,
                 70,
                 70
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -97,6 +123,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -108,6 +137,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -119,6 +152,9 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -130,6 +166,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -141,6 +181,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -152,6 +196,10 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -164,7 +212,11 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Steel",
+                "Psychic"
+            ]
         },
         {
             "name": "Sandslash",
@@ -176,7 +228,10 @@
                 8,
                 8
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Ground"
+            ]
         },
         {
             "name": "Trapinch",
@@ -188,7 +243,10 @@
                 2,
                 2
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Ground"
+            ]
         },
         {
             "name": "Vibrava",
@@ -200,7 +258,11 @@
                 20,
                 20
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Ground",
+                "Dragon"
+            ]
         }
     ]
 }

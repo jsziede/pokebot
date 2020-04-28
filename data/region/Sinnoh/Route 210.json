@@ -9,6 +9,10 @@
                 30,
                 30,
                 20
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -20,6 +24,9 @@
                 30,
                 50,
                 30
+            ],
+            "types": [
+                "Fire"
             ]
         },
         {
@@ -31,6 +38,9 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -42,6 +52,10 @@
                 15,
                 5,
                 5
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -53,6 +67,10 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -64,6 +82,10 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -75,6 +97,10 @@
                 15,
                 15,
                 15
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -86,6 +112,10 @@
                 20,
                 10,
                 20
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -97,6 +127,9 @@
                 25,
                 5,
                 25
+            ],
+            "types": [
+                "Rock"
             ]
         },
         {
@@ -108,6 +141,10 @@
                 25,
                 5,
                 25
+            ],
+            "types": [
+                "Psychic",
+                "Fairy"
             ]
         },
         {
@@ -119,6 +156,9 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -130,6 +170,9 @@
                 20,
                 20,
                 15
+            ],
+            "types": [
+                "Fighting"
             ]
         },
         {
@@ -141,6 +184,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Fighting"
             ]
         },
         {
@@ -152,6 +198,10 @@
                 30,
                 30,
                 20
+            ],
+            "types": [
+                "Fighting",
+                "Psychic"
             ]
         },
         {
@@ -163,6 +213,10 @@
                 30,
                 30,
                 20
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -174,6 +228,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Normal",
+                "Water"
             ]
         },
         {
@@ -185,6 +243,9 @@
                 90,
                 90,
                 90
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -196,6 +257,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -207,6 +271,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -218,6 +285,9 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -229,6 +299,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -240,6 +314,10 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -251,6 +329,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         },
         {
@@ -263,7 +345,10 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Bug"
+            ]
         },
         {
             "name": "Seedot",
@@ -275,7 +360,10 @@
                 4,
                 4
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Grass"
+            ]
         },
         {
             "name": "Nuzleaf",
@@ -287,7 +375,11 @@
                 4,
                 4
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Grass",
+                "Dark"
+            ]
         },
         {
             "name": "Zangoose",
@@ -299,7 +391,10 @@
                 8,
                 8
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Seviper",
@@ -311,7 +406,10 @@
                 8,
                 8
             ],
-            "slot": "Sapphire"
+            "slot": "Sapphire",
+            "types": [
+                "Poison"
+            ]
         },
         {
             "name": "Tauros",
@@ -323,7 +421,10 @@
                 20,
                 20
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Miltank",
@@ -335,7 +436,10 @@
                 20,
                 20
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Kecleon",
@@ -347,7 +451,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Bagon",
@@ -359,7 +466,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Dragon"
+            ]
         }
     ]
 }

@@ -9,6 +9,10 @@
                 50,
                 50,
                 50
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,9 @@
                 50,
                 50,
                 60
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -31,6 +38,9 @@
                 90,
                 90,
                 90
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -42,6 +52,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -53,6 +66,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -64,6 +80,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -75,6 +94,9 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -86,6 +108,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -97,6 +122,10 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -109,7 +138,11 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Bug",
+                "Water"
+            ]
         },
         {
             "name": "Wobbuffet",
@@ -121,7 +154,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Psychic"
+            ]
         },
         {
             "name": "Lunatone",
@@ -133,7 +169,11 @@
                 8,
                 8
             ],
-            "slot": "Sapphire"
+            "slot": "Sapphire",
+            "types": [
+                "Rock",
+                "Psychic"
+            ]
         },
         {
             "name": "Solrock",
@@ -145,7 +185,11 @@
                 8,
                 8
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Rock",
+                "Psychic"
+            ]
         },
         {
             "name": "Staravia",
@@ -157,7 +201,11 @@
                 4,
                 4
             ],
-            "slot": "FireRed"
+            "slot": "FireRed",
+            "types": [
+                "Normal",
+                "Flying"
+            ]
         },
         {
             "name": "Bibarel",
@@ -169,7 +217,11 @@
                 4,
                 4
             ],
-            "slot": "FireRed"
+            "slot": "FireRed",
+            "types": [
+                "Normal",
+                "Water"
+            ]
         },
         {
             "name": "Staravia",
@@ -181,7 +233,11 @@
                 4,
                 4
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Normal",
+                "Flying"
+            ]
         },
         {
             "name": "Bibarel",
@@ -193,7 +249,11 @@
                 4,
                 4
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Normal",
+                "Water"
+            ]
         }
     ]
 }

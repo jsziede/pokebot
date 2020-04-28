@@ -9,6 +9,10 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Poison",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,9 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Fighting"
             ]
         },
         {
@@ -31,6 +38,10 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -42,6 +53,9 @@
                 35,
                 45,
                 35
+            ],
+            "types": [
+                "Fire"
             ]
         },
         {
@@ -53,6 +67,10 @@
                 20,
                 20,
                 10
+            ],
+            "types": [
+                "Ground",
+                "Flying"
             ]
         },
         {
@@ -64,6 +82,9 @@
                 10,
                 0,
                 0
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -75,6 +96,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -86,6 +110,10 @@
                 25,
                 25,
                 25
+            ],
+            "types": [
+                "Poison",
+                "Dark"
             ]
         },
         {
@@ -97,6 +125,10 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Steel",
+                "Psychic"
             ]
         },
         {
@@ -109,7 +141,11 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Rock",
+                "Ground"
+            ]
         },
         {
             "name": "Nosepass",
@@ -121,7 +157,10 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Rock"
+            ]
         },
         {
             "name": "Baltoy",
@@ -133,7 +172,11 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Ground",
+                "Psychic"
+            ]
         },
         {
             "name": "Gligar",
@@ -145,7 +188,11 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Ground",
+                "Flying"
+            ]
         }
     ]
 }

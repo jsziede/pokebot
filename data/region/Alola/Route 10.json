@@ -10,10 +10,14 @@
                 30
             ],
             "sos": [
-                 {
+                {
                     "name": "Raticate",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Dark",
+                "Normal"
             ]
         },
         {
@@ -26,10 +30,14 @@
                 30
             ],
             "sos": [
-                 {
+                {
                     "name": "Fearow",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -42,10 +50,14 @@
                 0
             ],
             "sos": [
-                 {
+                {
                     "name": "Ledian",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -62,6 +74,10 @@
                     "name": "Ariados",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Bug",
+                "Poison"
             ]
         },
         {
@@ -74,10 +90,14 @@
                 10
             ],
             "sos": [
-                 {
+                {
                     "name": "Skarmory",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Steel",
+                "Flying"
             ]
         },
         {
@@ -98,6 +118,9 @@
                     "name": "Pangoro",
                     "chance": 50
                 }
+            ],
+            "types": [
+                "Fighting"
             ]
         },
         {
@@ -110,10 +133,13 @@
                 0
             ],
             "sos": [
-                 {
+                {
                     "name": "Gumshoos",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -126,10 +152,13 @@
                 30
             ],
             "sos": [
-                 {
+                {
                     "name": "Pineco",
                     "chance": 100
                 }
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -147,7 +176,10 @@
                     "chance": 100
                 }
             ],
-            "pile": true
+            "pile": true,
+            "types": [
+                "Fighting"
+            ]
         }
     ]
 }

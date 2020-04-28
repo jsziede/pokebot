@@ -9,6 +9,9 @@
                 30,
                 30,
                 20
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -20,6 +23,9 @@
                 15,
                 15,
                 15
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -31,6 +37,10 @@
                 0,
                 0,
                 20
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -42,6 +52,10 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Dark",
+                "Ice"
             ]
         },
         {
@@ -53,6 +67,9 @@
                 0,
                 0,
                 20
+            ],
+            "types": [
+                "Ice"
             ]
         },
         {
@@ -64,6 +81,10 @@
                 35,
                 35,
                 25
+            ],
+            "types": [
+                "Normal",
+                "Water"
             ]
         },
         {
@@ -75,6 +96,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Psychic"
             ]
         },
         {
@@ -86,6 +110,10 @@
                 45,
                 45,
                 25
+            ],
+            "types": [
+                "Grass",
+                "Ice"
             ]
         },
         {
@@ -97,6 +125,9 @@
                 90,
                 90,
                 90
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -108,6 +139,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -119,6 +153,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -130,6 +167,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -141,6 +181,9 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -152,6 +195,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -163,6 +209,10 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -175,7 +225,11 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Ice",
+                "Psychic"
+            ]
         },
         {
             "name": "Wobbuffet",
@@ -187,7 +241,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Psychic"
+            ]
         },
         {
             "name": "Teddiursa",
@@ -199,7 +256,10 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Ursaring",
@@ -211,7 +271,10 @@
                 5,
                 5
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Lunatone",
@@ -223,7 +286,11 @@
                 8,
                 8
             ],
-            "slot": "Sapphire"
+            "slot": "Sapphire",
+            "types": [
+                "Rock",
+                "Psychic"
+            ]
         },
         {
             "name": "Solrock",
@@ -235,7 +302,11 @@
                 8,
                 8
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Rock",
+                "Psychic"
+            ]
         }
     ]
 }

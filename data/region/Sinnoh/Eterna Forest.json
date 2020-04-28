@@ -9,6 +9,10 @@
                 4,
                 4,
                 4
+            ],
+            "types": [
+                "Ghost",
+                "Poison"
             ]
         },
         {
@@ -20,6 +24,10 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -31,6 +39,10 @@
                 0,
                 0,
                 20
+            ],
+            "types": [
+                "Dark",
+                "Flying"
             ]
         },
         {
@@ -42,6 +54,9 @@
                 0,
                 0,
                 20
+            ],
+            "types": [
+                "Ghost"
             ]
         },
         {
@@ -53,6 +68,9 @@
                 30,
                 30,
                 20
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -64,6 +82,9 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -75,6 +96,10 @@
                 2,
                 2,
                 2
+            ],
+            "types": [
+                "Bug",
+                "Flying"
             ]
         },
         {
@@ -86,6 +111,9 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -97,6 +125,10 @@
                 2,
                 2,
                 2
+            ],
+            "types": [
+                "Bug",
+                "Poison"
             ]
         },
         {
@@ -108,6 +140,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -119,6 +154,9 @@
                 10,
                 0,
                 10
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -130,6 +168,10 @@
                 30,
                 40,
                 30
+            ],
+            "types": [
+                "Grass",
+                "Poison"
             ]
         },
         {
@@ -141,6 +183,9 @@
                 24,
                 24,
                 24
+            ],
+            "types": [
+                "Normal"
             ]
         },
         {
@@ -153,7 +198,10 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Normal"
+            ]
         },
         {
             "name": "Pineco",
@@ -165,7 +213,10 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Bug"
+            ]
         },
         {
             "name": "Seedot",
@@ -177,7 +228,10 @@
                 8,
                 8
             ],
-            "slot": "Ruby"
+            "slot": "Ruby",
+            "types": [
+                "Grass"
+            ]
         },
         {
             "name": "Caterpie",
@@ -189,7 +243,10 @@
                 4,
                 4
             ],
-            "slot": "FireRed"
+            "slot": "FireRed",
+            "types": [
+                "Bug"
+            ]
         },
         {
             "name": "Metapod",
@@ -201,7 +258,10 @@
                 8,
                 8
             ],
-            "slot": "FireRed"
+            "slot": "FireRed",
+            "types": [
+                "Bug"
+            ]
         },
         {
             "name": "Weedle",
@@ -213,7 +273,11 @@
                 4,
                 4
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Bug",
+                "Poison"
+            ]
         },
         {
             "name": "Kakuna",
@@ -225,7 +289,11 @@
                 8,
                 8
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Bug",
+                "Poison"
+            ]
         },
         {
             "name": "Nincada",
@@ -237,7 +305,11 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Bug",
+                "Ground"
+            ]
         }
     ]
 }

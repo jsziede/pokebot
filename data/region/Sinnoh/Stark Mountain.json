@@ -9,6 +9,10 @@
                 20,
                 20,
                 10
+            ],
+            "types": [
+                "Normal",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Poison",
+                "Flying"
             ]
         },
         {
@@ -31,6 +39,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Fighting"
             ]
         },
         {
@@ -42,6 +53,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -53,6 +68,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -64,6 +83,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -75,6 +98,9 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Poison"
             ]
         },
         {
@@ -86,6 +112,9 @@
                 15,
                 15,
                 15
+            ],
+            "types": [
+                "Poison"
             ]
         },
         {
@@ -97,6 +126,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Ground",
+                "Rock"
             ]
         },
         {
@@ -108,6 +141,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Ground",
+                "Rock"
             ]
         },
         {
@@ -119,6 +156,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Steel",
+                "Flying"
             ]
         },
         {
@@ -130,6 +171,9 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Fire"
             ]
         },
         {
@@ -141,6 +185,10 @@
                 40,
                 40,
                 40
+            ],
+            "types": [
+                "Fire",
+                "Rock"
             ]
         },
         {
@@ -152,6 +200,10 @@
                 5,
                 5,
                 5
+            ],
+            "types": [
+                "Fire",
+                "Ground"
             ]
         },
         {
@@ -163,6 +215,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Fire",
+                "Ground"
             ]
         },
         {
@@ -174,6 +230,9 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Ghost"
             ]
         },
         {
@@ -186,7 +245,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Fire"
+            ]
         },
         {
             "name": "Gligar",
@@ -198,7 +260,11 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Ground",
+                "Flying"
+            ]
         },
         {
             "name": "Magby",
@@ -210,7 +276,10 @@
                 8,
                 8
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Fire"
+            ]
         }
     ]
 }

@@ -1,7 +1,7 @@
 {
     "pokemon": [
         {
-           "name": "Magikarp",
+            "name": "Magikarp",
             "field": "Super Rod",
             "min_level": 10,
             "max_level": 22,
@@ -18,6 +18,9 @@
                     "name": "Gyarados",
                     "chance": 50
                 }
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -38,6 +41,10 @@
                     "name": "Whiscash",
                     "chance": 50
                 }
+            ],
+            "types": [
+                "Water",
+                "Ground"
             ]
         }
     ]

@@ -9,6 +9,10 @@
                 0,
                 0,
                 10
+            ],
+            "types": [
+                "Poison",
+                "Flying"
             ]
         },
         {
@@ -20,6 +24,10 @@
                 20,
                 20,
                 20
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -31,6 +39,10 @@
                 35,
                 35,
                 25
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         },
         {
@@ -42,6 +54,9 @@
                 35,
                 35,
                 25
+            ],
+            "types": [
+                "Fire"
             ]
         },
         {
@@ -53,6 +68,10 @@
                 30,
                 20,
                 30
+            ],
+            "types": [
+                "Ground",
+                "Rock"
             ]
         },
         {
@@ -64,6 +83,9 @@
                 15,
                 15,
                 15
+            ],
+            "types": [
+                "Rock"
             ]
         },
         {
@@ -75,6 +97,10 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Normal",
+                "Psychic"
             ]
         },
         {
@@ -86,6 +112,10 @@
                 15,
                 25,
                 15
+            ],
+            "types": [
+                "Dark",
+                "Fire"
             ]
         },
         {
@@ -97,6 +127,9 @@
                 5,
                 5,
                 25
+            ],
+            "types": [
+                "Bug"
             ]
         },
         {
@@ -108,6 +141,10 @@
                 15,
                 15,
                 15
+            ],
+            "types": [
+                "Poison",
+                "Dark"
             ]
         },
         {
@@ -119,6 +156,9 @@
                 90,
                 90,
                 90
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -130,6 +170,9 @@
                 10,
                 10,
                 10
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -141,6 +184,9 @@
                 100,
                 100,
                 100
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -152,6 +198,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -163,6 +212,9 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -174,6 +226,9 @@
                 35,
                 35,
                 35
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
@@ -185,6 +240,10 @@
                 65,
                 65,
                 65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         },
         {
@@ -197,7 +256,10 @@
                 40,
                 40
             ],
-            "swarm": true
+            "swarm": true,
+            "types": [
+                "Psychic"
+            ]
         },
         {
             "name": "Vulpix",
@@ -209,7 +271,10 @@
                 8,
                 8
             ],
-            "slot": "LeafGreen"
+            "slot": "LeafGreen",
+            "types": [
+                "Fire"
+            ]
         },
         {
             "name": "Gligar",
@@ -221,7 +286,11 @@
                 8,
                 8
             ],
-            "slot": "Emerald"
+            "slot": "Emerald",
+            "types": [
+                "Ground",
+                "Flying"
+            ]
         },
         {
             "name": "Houndoom",
@@ -233,7 +302,11 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Dark",
+                "Fire"
+            ]
         },
         {
             "name": "Poochyena",
@@ -245,7 +318,10 @@
                 12,
                 12
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Dark"
+            ]
         },
         {
             "name": "Mightyena",
@@ -257,7 +333,10 @@
                 22,
                 22
             ],
-            "radar": true
+            "radar": true,
+            "types": [
+                "Dark"
+            ]
         }
     ]
 }
