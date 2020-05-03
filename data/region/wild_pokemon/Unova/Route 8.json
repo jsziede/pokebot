@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Palpitoad",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 57,
             "rarity": [
@@ -18,7 +17,6 @@
         },
         {
             "name": "Croagunk",
-            "field": "Walking",
             "min_level": 55,
             "max_level": 56,
             "rarity": [
@@ -34,7 +32,6 @@
         },
         {
             "name": "Karrablast",
-            "field": "Walking",
             "min_level": 57,
             "max_level": 57,
             "rarity": [
@@ -49,7 +46,6 @@
         },
         {
             "name": "Shelmet",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 54,
             "rarity": [
@@ -64,7 +60,6 @@
         },
         {
             "name": "Stunfisk",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 56,
             "rarity": [
@@ -79,104 +74,7 @@
             ]
         },
         {
-            "name": "Stunfisk",
-            "field": "Surfing",
-            "min_level": 15,
-            "max_level": 60,
-            "rarity": [
-                100,
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Ground",
-                "Electric"
-            ]
-        },
-        {
-            "name": "Palpitoad",
-            "field": "Surfing",
-            "min_level": 45,
-            "max_level": 60,
-            "rarity": [
-                30,
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Seismitoad",
-            "field": "Surfing",
-            "min_level": 15,
-            "max_level": 60,
-            "rarity": [
-                5,
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Barboach",
-            "field": "Super Rod",
-            "min_level": 35,
-            "max_level": 60,
-            "rarity": [
-                70,
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Whiscash",
-            "field": "Super Rod",
-            "min_level": 35,
-            "max_level": 70,
-            "rarity": [
-                10,
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Stunfisk",
-            "field": "Super Rod",
-            "min_level": 35,
-            "max_level": 60,
-            "rarity": [
-                30,
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Ground",
-                "Electric"
-            ]
-        },
-        {
             "name": "Croagunk",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 55,
             "rarity": [
@@ -193,7 +91,6 @@
         },
         {
             "name": "Quagsire",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -206,6 +103,100 @@
             "types": [
                 "Water",
                 "Ground"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Stunfisk",
+            "min_level": 15,
+            "max_level": 60,
+            "rarity": [
+                100,
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Ground",
+                "Electric"
+            ]
+        },
+        {
+            "name": "Palpitoad",
+            "min_level": 45,
+            "max_level": 60,
+            "rarity": [
+                30,
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Seismitoad",
+            "min_level": 15,
+            "max_level": 60,
+            "rarity": [
+                5,
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Barboach",
+            "min_level": 35,
+            "max_level": 60,
+            "rarity": [
+                70,
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Whiscash",
+            "min_level": 35,
+            "max_level": 70,
+            "rarity": [
+                10,
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Stunfisk",
+            "min_level": 35,
+            "max_level": 60,
+            "rarity": [
+                30,
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Ground",
+                "Electric"
             ]
         }
     ]

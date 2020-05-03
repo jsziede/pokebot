@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -11,10 +10,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -26,7 +26,6 @@
         },
         {
             "name": "Corphish",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -35,10 +34,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -50,7 +50,6 @@
         },
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -63,7 +62,6 @@
         },
         {
             "name": "Crawdaunt",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [

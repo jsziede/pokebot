@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Patrat",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Purrloin",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -29,10 +27,11 @@
             "types": [
                 "Dark"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Basculin",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -44,10 +43,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Poliwag",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 70,
             "rarity": [
@@ -62,7 +62,6 @@
         },
         {
             "name": "Basculin",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 60,
             "rarity": [
@@ -77,7 +76,6 @@
         },
         {
             "name": "Poliwhirl",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 70,
             "rarity": [
@@ -92,7 +90,6 @@
         },
         {
             "name": "Politoed",
-            "field": "Super Rod",
             "min_level": 50,
             "max_level": 70,
             "rarity": [

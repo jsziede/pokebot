@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 26,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Buizel",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Floatzel",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 22,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Shellos",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 26,
             "rarity": [
@@ -59,7 +55,6 @@
         },
         {
             "name": "Chatot",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 25,
             "rarity": [
@@ -73,183 +68,7 @@
             ]
         },
         {
-            "name": "Tentacool",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 30,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Tentacruel",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Wingull",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 30,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Pelipper",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Shellos",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 30,
-            "rarity": [
-                4,
-                4,
-                4
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gastrodon",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                1,
-                1,
-                1
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 3,
-            "max_level": 10,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                65,
-                65,
-                65
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Remoraid",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 30,
-            "max_level": 55,
-            "rarity": [
-                65,
-                65,
-                65
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Octillery",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 55,
-            "rarity": [
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Sharpedo",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 55,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Dark"
-            ]
-        },
-        {
             "name": "Absol",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -264,7 +83,6 @@
         },
         {
             "name": "Swellow",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -276,6 +94,177 @@
             "types": [
                 "Normal",
                 "Flying"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Tentacool",
+            "min_level": 20,
+            "max_level": 30,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Tentacruel",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Wingull",
+            "min_level": 20,
+            "max_level": 30,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Pelipper",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Shellos",
+            "min_level": 20,
+            "max_level": 30,
+            "rarity": [
+                4,
+                4,
+                4
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Gastrodon",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                1,
+                1,
+                1
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 3,
+            "max_level": 10,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                65,
+                65,
+                65
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Remoraid",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Gyarados",
+            "min_level": 30,
+            "max_level": 55,
+            "rarity": [
+                65,
+                65,
+                65
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Octillery",
+            "min_level": 20,
+            "max_level": 55,
+            "rarity": [
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Sharpedo",
+            "min_level": 40,
+            "max_level": 55,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Dark"
             ]
         }
     ]

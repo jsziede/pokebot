@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 35,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 35,
             "rarity": [
@@ -25,10 +23,11 @@
                 "Water",
                 "Poison"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Tentacool",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 10,
             "rarity": [
@@ -41,7 +40,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 10,
             "rarity": [
@@ -50,10 +48,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Tentacool",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 30,
             "rarity": [
@@ -66,7 +65,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 30,
             "rarity": [
@@ -75,10 +73,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Tentacool",
-            "field": "Super Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -91,7 +90,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Super Rod",
             "min_level": 20,
             "max_level": 35,
             "rarity": [

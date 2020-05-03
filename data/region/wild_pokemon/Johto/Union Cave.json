@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 20,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Raticate",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 22,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Sandshrew",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 8,
             "rarity": [
@@ -44,7 +41,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 22,
             "rarity": [
@@ -59,7 +55,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 22,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 21,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Onix",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 23,
             "rarity": [
@@ -101,10 +94,11 @@
                 "Rock",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Wooper",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -119,7 +113,6 @@
         },
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -134,7 +127,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -149,7 +141,6 @@
         },
         {
             "name": "Quagsire",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -161,10 +152,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -178,7 +170,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -192,7 +183,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -203,10 +193,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -220,7 +211,6 @@
         },
         {
             "name": "Staryu",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -234,7 +224,6 @@
         },
         {
             "name": "Corsola",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -249,7 +238,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -260,10 +248,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Goldeen",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -277,7 +266,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -291,7 +279,6 @@
         },
         {
             "name": "Kingler",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -305,7 +292,6 @@
         },
         {
             "name": "Staryu",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -319,7 +305,6 @@
         },
         {
             "name": "Corsola",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -334,7 +319,6 @@
         },
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -348,7 +332,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -358,63 +341,6 @@
             ],
             "types": [
                 "Water"
-            ]
-        },
-        {
-            "name": "Makuhita",
-            "field": "Hoenn Sound",
-            "min_level": 5,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Fighting"
-            ]
-        },
-        {
-            "name": "Absol",
-            "field": "Hoenn Sound",
-            "min_level": 6,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Dark"
-            ]
-        },
-        {
-            "name": "Chingling",
-            "field": "Sinnoh Sound",
-            "min_level": 5,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Psychic"
-            ]
-        },
-        {
-            "name": "Bronzor",
-            "field": "Sinnoh Sound",
-            "min_level": 6,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Steel",
-                "Psychic"
             ]
         }
     ]

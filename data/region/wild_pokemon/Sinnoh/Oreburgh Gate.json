@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 10,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 10,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 9,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -58,10 +54,11 @@
                 "Poison",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Zubat",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -76,7 +73,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -91,7 +87,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -105,7 +100,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -116,10 +110,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 3,
             "max_level": 15,
             "rarity": [
@@ -130,10 +125,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -147,7 +143,6 @@
         },
         {
             "name": "Barboach",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -159,10 +154,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [
@@ -177,7 +173,6 @@
         },
         {
             "name": "Whiscash",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [

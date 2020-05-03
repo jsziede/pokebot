@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -28,7 +26,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -38,10 +35,11 @@
                 "Water",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Tentacool",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -54,7 +52,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -63,10 +60,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -78,7 +76,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -90,7 +87,6 @@
         },
         {
             "name": "Luvdisc",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -99,10 +95,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Corsola",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -115,7 +112,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -127,7 +123,6 @@
         },
         {
             "name": "Luvdisc",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [

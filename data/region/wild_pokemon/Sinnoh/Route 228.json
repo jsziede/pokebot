@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Diglett",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 49,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Dugtrio",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 54,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Rhydon",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 53,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Cacnea",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 50,
             "rarity": [
@@ -59,7 +55,6 @@
         },
         {
             "name": "Cacturne",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 53,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Hippowdon",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 54,
             "rarity": [
@@ -87,124 +81,7 @@
             ]
         },
         {
-            "name": "Poliwag",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 45,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwhirl",
-            "field": "Surfing",
-            "min_level": 35,
-            "max_level": 45,
-            "rarity": [
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 3,
-            "max_level": 15,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Barboach",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                65,
-                65,
-                65
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Whiscash",
-            "field": "Good Rod",
-            "min_level": 25,
-            "max_level": 35,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Whiscash",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 55,
-            "rarity": [
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 30,
-            "max_level": 55,
-            "rarity": [
-                65,
-                65,
-                65
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
             "name": "Beldum",
-            "field": "Walking",
             "min_level": 51,
             "max_level": 53,
             "rarity": [
@@ -220,7 +97,6 @@
         },
         {
             "name": "Sandslash",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 50,
             "rarity": [
@@ -235,7 +111,6 @@
         },
         {
             "name": "Trapinch",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -250,7 +125,6 @@
         },
         {
             "name": "Vibrava",
-            "field": "Walking",
             "min_level": 52,
             "max_level": 54,
             "rarity": [
@@ -262,6 +136,122 @@
             "types": [
                 "Ground",
                 "Dragon"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Poliwag",
+            "min_level": 20,
+            "max_level": 45,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Poliwhirl",
+            "min_level": 35,
+            "max_level": 45,
+            "rarity": [
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 3,
+            "max_level": 15,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Barboach",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                65,
+                65,
+                65
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Whiscash",
+            "min_level": 25,
+            "max_level": 35,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Whiscash",
+            "min_level": 20,
+            "max_level": 55,
+            "rarity": [
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Gyarados",
+            "min_level": 30,
+            "max_level": 55,
+            "rarity": [
+                65,
+                65,
+                65
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         }
     ]

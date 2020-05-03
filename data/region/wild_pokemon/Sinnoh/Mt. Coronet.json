@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Clefairy",
-            "field": "Walking",
             "min_level": 17,
             "max_level": 42,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 12,
             "max_level": 19,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 41,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Machop",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 20,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Machoke",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 41,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 12,
             "max_level": 19,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 40,
             "rarity": [
@@ -104,7 +97,6 @@
         },
         {
             "name": "Noctowl",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 39,
             "rarity": [
@@ -119,7 +111,6 @@
         },
         {
             "name": "Cleffa",
-            "field": "Walking",
             "min_level": 12,
             "max_level": 14,
             "rarity": [
@@ -133,7 +124,6 @@
         },
         {
             "name": "Nosepass",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 38,
             "rarity": [
@@ -147,7 +137,6 @@
         },
         {
             "name": "Meditite",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 35,
             "rarity": [
@@ -162,7 +151,6 @@
         },
         {
             "name": "Medicham",
-            "field": "Walking",
             "min_level": 37,
             "max_level": 41,
             "rarity": [
@@ -177,7 +165,6 @@
         },
         {
             "name": "Absol",
-            "field": "Walking",
             "min_level": 38,
             "max_level": 40,
             "rarity": [
@@ -191,7 +178,6 @@
         },
         {
             "name": "Chimecho",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 42,
             "rarity": [
@@ -205,7 +191,6 @@
         },
         {
             "name": "Chingling",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 40,
             "rarity": [
@@ -219,7 +204,6 @@
         },
         {
             "name": "Bronzor",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 36,
             "rarity": [
@@ -234,7 +218,6 @@
         },
         {
             "name": "Bronzong",
-            "field": "Walking",
             "min_level": 37,
             "max_level": 42,
             "rarity": [
@@ -249,7 +232,6 @@
         },
         {
             "name": "Snover",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -264,7 +246,6 @@
         },
         {
             "name": "Abomasnow",
-            "field": "Walking",
             "min_level": 38,
             "max_level": 39,
             "rarity": [
@@ -278,181 +259,7 @@
             ]
         },
         {
-            "name": "Zubat",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                90,
-                90,
-                90
-            ],
-            "types": [
-                "Poison",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Golbat",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Poison",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 3,
-            "max_level": 15,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Feebas",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 20,
-            "rarity": [
-                50,
-                50,
-                50
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                55,
-                55,
-                55
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Barboach",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                45,
-                45,
-                45
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Feebas",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 20,
-            "rarity": [
-                50,
-                50,
-                50
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 55,
-            "rarity": [
-                55,
-                55,
-                55
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Dratini",
-            "field": "Super Rod",
-            "min_level": 15,
-            "max_level": 25,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Dragon"
-            ]
-        },
-        {
-            "name": "Dragonair",
-            "field": "Super Rod",
-            "min_level": 15,
-            "max_level": 55,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Dragon"
-            ]
-        },
-        {
-            "name": "Whiscash",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 55,
-            "rarity": [
-                45,
-                45,
-                45
-            ],
-            "types": [
-                "Water",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Feebas",
-            "field": "Super Rod",
-            "min_level": 10,
-            "max_level": 20,
-            "rarity": [
-                50,
-                50,
-                50
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Loudred",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 40,
             "rarity": [
@@ -467,7 +274,6 @@
         },
         {
             "name": "Lunatone",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 41,
             "rarity": [
@@ -483,7 +289,6 @@
         },
         {
             "name": "Solrock",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 41,
             "rarity": [
@@ -495,6 +300,175 @@
             "types": [
                 "Rock",
                 "Psychic"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Zubat",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                90,
+                90,
+                90
+            ],
+            "types": [
+                "Poison",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Golbat",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Poison",
+                "Flying"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 3,
+            "max_level": 15,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Feebas",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                50,
+                50,
+                50
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                55,
+                55,
+                55
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Barboach",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                45,
+                45,
+                45
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Feebas",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                50,
+                50,
+                50
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Gyarados",
+            "min_level": 20,
+            "max_level": 55,
+            "rarity": [
+                55,
+                55,
+                55
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Dratini",
+            "min_level": 15,
+            "max_level": 25,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "types": [
+                "Dragon"
+            ]
+        },
+        {
+            "name": "Dragonair",
+            "min_level": 15,
+            "max_level": 55,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Dragon"
+            ]
+        },
+        {
+            "name": "Whiscash",
+            "min_level": 20,
+            "max_level": 55,
+            "rarity": [
+                45,
+                45,
+                45
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Feebas",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                50,
+                50,
+                50
+            ],
+            "types": [
+                "Water"
             ]
         }
     ]

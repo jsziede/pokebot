@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Fearow",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 50,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Meowth",
-            "field": "Walking",
             "min_level": 43,
             "max_level": 43,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Persian",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 52,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 46,
             "max_level": 46,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Onix",
-            "field": "Walking",
             "min_level": 54,
             "max_level": 54,
             "rarity": [
@@ -75,7 +70,6 @@
         },
         {
             "name": "Cubone",
-            "field": "Walking",
             "min_level": 46,
             "max_level": 46,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Marowak",
-            "field": "Walking",
             "min_level": 52,
             "max_level": 52,
             "rarity": [
@@ -103,7 +96,6 @@
         },
         {
             "name": "Skarmory",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -118,7 +110,6 @@
         },
         {
             "name": "Phanpy",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -132,7 +123,6 @@
         },
         {
             "name": "Larvitar",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 20,
             "rarity": [
@@ -144,10 +134,11 @@
                 "Rock",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
         {
             "name": "Geodude",
-            "field": "Rock Smash",
             "min_level": 25,
             "max_level": 40,
             "rarity": [
@@ -162,7 +153,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Rock Smash",
             "min_level": 30,
             "max_level": 50,
             "rarity": [

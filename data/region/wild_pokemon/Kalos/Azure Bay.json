@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Slowpoke",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Exeggcute",
-            "field": "Walking",
             "min_level": 26,
             "max_level": 26,
             "rarity": [
@@ -28,7 +26,6 @@
         },
         {
             "name": "Chatot",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -41,7 +38,6 @@
         },
         {
             "name": "Inkay",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -54,7 +50,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -64,36 +59,11 @@
                 "Water",
                 "Flying"
             ]
-        },
-        {
-            "name": "Dwebble",
-            "field": "Rock Smash",
-            "min_level": 23,
-            "max_level": 25,
-            "rarity": [
-                66
-            ],
-            "types": [
-                "Bug",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Binacle",
-            "field": "Rock Smash",
-            "min_level": 23,
-            "max_level": 25,
-            "rarity": [
-                34
-            ],
-            "types": [
-                "Rock",
-                "Water"
-            ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -106,7 +76,6 @@
         },
         {
             "name": "Lapras",
-            "field": "Surfing",
             "min_level": 27,
             "max_level": 27,
             "rarity": [
@@ -119,7 +88,6 @@
         },
         {
             "name": "Mantyke",
-            "field": "Surfing",
             "min_level": 27,
             "max_level": 27,
             "rarity": [
@@ -129,10 +97,37 @@
                 "Water",
                 "Flying"
             ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Dwebble",
+            "min_level": 23,
+            "max_level": 25,
+            "rarity": [
+                66
+            ],
+            "types": [
+                "Bug",
+                "Rock"
+            ]
         },
         {
+            "name": "Binacle",
+            "min_level": 23,
+            "max_level": 25,
+            "rarity": [
+                34
+            ],
+            "types": [
+                "Rock",
+                "Water"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
             "name": "Luvdisc",
-            "field": "Old Rod",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -141,10 +136,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Chinchou",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -157,7 +153,6 @@
         },
         {
             "name": "Remoraid",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -166,10 +161,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Lanturn",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -182,7 +178,6 @@
         },
         {
             "name": "Octillery",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -194,7 +189,6 @@
         },
         {
             "name": "Alomomola",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [

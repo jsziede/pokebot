@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Caterpie",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Metapod",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Weedle",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Kakuna",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -75,7 +70,6 @@
         },
         {
             "name": "Oddish",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -90,7 +84,6 @@
         },
         {
             "name": "Paras",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 6,
             "rarity": [
@@ -102,10 +95,11 @@
                 "Bug",
                 "Grass"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 20,
             "rarity": [
@@ -119,7 +113,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -130,94 +123,11 @@
             "types": [
                 "Water"
             ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                95,
-                95,
-                95
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                93,
-                93,
-                93
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                7,
-                7,
-                7
-            ],
-            "types": [
-                "Water"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Caterpie",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 5,
             "rarity": [
@@ -231,7 +141,6 @@
         },
         {
             "name": "Metapod",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 5,
             "rarity": [
@@ -245,7 +154,6 @@
         },
         {
             "name": "Weedle",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 5,
             "rarity": [
@@ -260,7 +168,6 @@
         },
         {
             "name": "Kakuna",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 5,
             "rarity": [
@@ -275,7 +182,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 8,
             "rarity": [
@@ -290,7 +196,6 @@
         },
         {
             "name": "Butterfree",
-            "field": "Headbutt",
             "min_level": 6,
             "max_level": 8,
             "rarity": [
@@ -305,7 +210,6 @@
         },
         {
             "name": "Beedrill",
-            "field": "Headbutt",
             "min_level": 6,
             "max_level": 8,
             "rarity": [
@@ -320,7 +224,6 @@
         },
         {
             "name": "Noctowl",
-            "field": "Headbutt",
             "min_level": 6,
             "max_level": 8,
             "rarity": [
@@ -335,7 +238,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 6,
             "max_level": 8,
             "rarity": [
@@ -346,63 +248,89 @@
             "types": [
                 "Bug"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
-            "name": "Numel",
-            "field": "Hoenn Sound",
-            "min_level": 6,
-            "max_level": 6,
+            "name": "Poliwag",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                5,
+                5,
+                5
             ],
             "types": [
-                "Fire",
-                "Ground"
+                "Water"
             ]
         },
         {
-            "name": "Spoink",
-            "field": "Hoenn Sound",
-            "min_level": 5,
-            "max_level": 6,
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                95,
+                95,
+                95
             ],
             "types": [
-                "Psychic"
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
-            "name": "Budew",
-            "field": "Sinnoh Sound",
-            "min_level": 5,
-            "max_level": 6,
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
-                20,
-                20,
-                20
+                60,
+                60,
+                60
             ],
             "types": [
-                "Grass",
-                "Poison"
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                93,
+                93,
+                93
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
-            "name": "Carnivine",
-            "field": "Sinnoh Sound",
-            "min_level": 6,
-            "max_level": 6,
+            "name": "Magikarp",
+            "min_level": 40,
+            "max_level": 40,
             "rarity": [
-                20,
-                20,
-                20
+                7,
+                7,
+                7
             ],
             "types": [
-                "Grass"
+                "Water"
             ]
         }
     ]

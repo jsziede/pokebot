@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Haunter",
-            "field": "Walking",
             "min_level": 38,
             "max_level": 40,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Jynx",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 40,
             "rarity": [
@@ -28,7 +26,6 @@
         },
         {
             "name": "Piloswine",
-            "field": "Walking",
             "min_level": 38,
             "max_level": 39,
             "rarity": [
@@ -41,7 +38,6 @@
         },
         {
             "name": "Beartic",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 40,
             "rarity": [
@@ -53,7 +49,6 @@
         },
         {
             "name": "Cryogonal",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -65,7 +60,6 @@
         },
         {
             "name": "Bergmite",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 40,
             "rarity": [
@@ -77,7 +71,6 @@
         },
         {
             "name": "Smoochum",
-            "field": "Walking",
             "min_level": 21,
             "max_level": 21,
             "rarity": [
@@ -90,7 +83,6 @@
         },
         {
             "name": "Vanillite",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -102,7 +94,6 @@
         },
         {
             "name": "Cubchoo",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -111,10 +102,11 @@
             "types": [
                 "Ice"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Poliwhirl",
-            "field": "Surfing",
             "min_level": 38,
             "max_level": 40,
             "rarity": [
@@ -126,7 +118,6 @@
         },
         {
             "name": "Floatzel",
-            "field": "Surfing",
             "min_level": 38,
             "max_level": 40,
             "rarity": [
@@ -135,10 +126,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Poliwag",
-            "field": "Old Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -147,10 +139,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Poliwhirl",
-            "field": "Good Rod",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -162,7 +155,6 @@
         },
         {
             "name": "Basculin",
-            "field": "Good Rod",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -171,10 +163,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Poliwhirl",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -186,7 +179,6 @@
         },
         {
             "name": "Basculin",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [

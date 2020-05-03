@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 17,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 17,
             "rarity": [
@@ -33,7 +31,6 @@
         },
         {
             "name": "Grimer",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 17,
             "rarity": [
@@ -45,10 +42,11 @@
             "types": [
                 "Poison"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Grimer",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 20,
             "rarity": [
@@ -63,7 +61,6 @@
         },
         {
             "name": "Muk",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 20,
             "rarity": [
@@ -75,10 +72,11 @@
             "types": [
                 "Poison"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Grimer",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 70,
             "rarity": [
@@ -93,7 +91,6 @@
         },
         {
             "name": "Muk",
-            "field": "Super Rod",
             "min_level": 50,
             "max_level": 70,
             "rarity": [

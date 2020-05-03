@@ -1,21 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Geodude",
-            "field": "Rock Smash",
-            "min_level": 13,
-            "max_level": 16,
-            "rarity": [
-                100
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
+    "walking": [
         {
             "name": "Sandshrew",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 23,
             "rarity": [
@@ -27,7 +13,6 @@
         },
         {
             "name": "Trapinch",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 22,
             "rarity": [
@@ -39,7 +24,6 @@
         },
         {
             "name": "Cacnea",
-            "field": "Walking",
             "min_level": 21,
             "max_level": 23,
             "rarity": [
@@ -51,7 +35,6 @@
         },
         {
             "name": "Baltoy",
-            "field": "Walking",
             "min_level": 21,
             "max_level": 23,
             "rarity": [
@@ -64,7 +47,6 @@
         },
         {
             "name": "Gible",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 23,
             "rarity": [
@@ -78,7 +60,6 @@
         },
         {
             "name": "Sandile",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 23,
             "rarity": [
@@ -92,7 +73,6 @@
         },
         {
             "name": "Dwebble",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 23,
             "rarity": [
@@ -103,10 +83,11 @@
                 "Bug",
                 "Rock"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Marill",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -119,7 +100,6 @@
         },
         {
             "name": "Azumarill",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -132,7 +112,6 @@
         },
         {
             "name": "Surskit",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -145,7 +124,6 @@
         },
         {
             "name": "Masquerain",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -155,10 +133,25 @@
                 "Bug",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Geodude",
+            "min_level": 13,
+            "max_level": 16,
+            "rarity": [
+                100
+            ],
+            "types": [
+                "Rock",
+                "Ground"
+            ]
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -170,7 +163,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -179,10 +171,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -194,7 +187,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -206,7 +198,6 @@
         },
         {
             "name": "Barboach",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -216,10 +207,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Barboach",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -29,152 +27,11 @@
                 "Water",
                 "Poison"
             ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                85,
-                85,
-                85
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                50,
-                50,
-                50
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Staryu",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                0,
-                0,
-                10
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Corsola",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                10,
-                10,
-                0
-            ],
-            "types": [
-                "Water",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Kingler",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Staryu",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                0,
-                0,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Corsola",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                30,
-                30,
-                0
-            ],
-            "types": [
-                "Water",
-                "Rock"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 2,
             "max_level": 20,
             "rarity": [
@@ -189,7 +46,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 5,
             "rarity": [
@@ -204,7 +60,6 @@
         },
         {
             "name": "Ledyba",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 5,
             "rarity": [
@@ -219,7 +74,6 @@
         },
         {
             "name": "Spinarak",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 5,
             "rarity": [
@@ -234,7 +88,6 @@
         },
         {
             "name": "Taillow",
-            "field": "Headbutt",
             "min_level": 18,
             "max_level": 25,
             "rarity": [
@@ -245,6 +98,144 @@
             "types": [
                 "Normal",
                 "Flying"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Krabby",
+            "min_level": 10,
+            "max_level": 10,
+            "rarity": [
+                15,
+                15,
+                15
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
+            "rarity": [
+                85,
+                85,
+                85
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Krabby",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                50,
+                50,
+                50
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Staryu",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                0,
+                0,
+                10
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Corsola",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                10,
+                10,
+                0
+            ],
+            "types": [
+                "Water",
+                "Rock"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Krabby",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Kingler",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Staryu",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                0,
+                0,
+                30
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Corsola",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                30,
+                30,
+                0
+            ],
+            "types": [
+                "Water",
+                "Rock"
             ]
         }
     ]

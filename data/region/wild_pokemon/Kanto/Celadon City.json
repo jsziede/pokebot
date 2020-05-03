@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 40,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 40,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Koffing",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 40,
             "rarity": [
@@ -42,10 +39,11 @@
             "types": [
                 "Poison"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -56,10 +54,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -70,10 +69,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Magikarp",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -87,7 +87,6 @@
         },
         {
             "name": "Grimer",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

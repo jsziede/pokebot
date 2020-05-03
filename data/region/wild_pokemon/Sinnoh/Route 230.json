@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Oddish",
-            "field": "Walking",
             "min_level": 18,
             "max_level": 47,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Gloom",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 50,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Walking",
             "min_level": 52,
             "max_level": 52,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Bellsprout",
-            "field": "Walking",
             "min_level": 18,
             "max_level": 47,
             "rarity": [
@@ -61,7 +57,6 @@
         },
         {
             "name": "Weepinbell",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 50,
             "rarity": [
@@ -76,7 +71,6 @@
         },
         {
             "name": "Beautifly",
-            "field": "Walking",
             "min_level": 51,
             "max_level": 51,
             "rarity": [
@@ -91,7 +85,6 @@
         },
         {
             "name": "Dustox",
-            "field": "Walking",
             "min_level": 51,
             "max_level": 51,
             "rarity": [
@@ -106,7 +99,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 48,
             "rarity": [
@@ -121,7 +113,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 50,
             "rarity": [
@@ -136,7 +127,6 @@
         },
         {
             "name": "Roselia",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 49,
             "rarity": [
@@ -151,7 +141,6 @@
         },
         {
             "name": "Floatzel",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 52,
             "rarity": [
@@ -165,7 +154,6 @@
         },
         {
             "name": "Gastrodon",
-            "field": "Walking",
             "min_level": 51,
             "max_level": 51,
             "rarity": [
@@ -179,8 +167,23 @@
             ]
         },
         {
+            "name": "Togepi",
+            "min_level": 18,
+            "max_level": 50,
+            "rarity": [
+                22,
+                22,
+                22
+            ],
+            "radar": true,
+            "types": [
+                "Fairy"
+            ]
+        }
+    ],
+    "surfing": [
+        {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 55,
             "rarity": [
@@ -195,7 +198,6 @@
         },
         {
             "name": "Seel",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 45,
             "rarity": [
@@ -209,7 +211,6 @@
         },
         {
             "name": "Dewgong",
-            "field": "Surfing",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -224,7 +225,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 55,
             "rarity": [
@@ -239,7 +239,6 @@
         },
         {
             "name": "Spheal",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 45,
             "rarity": [
@@ -254,7 +253,6 @@
         },
         {
             "name": "Sealeo",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 55,
             "rarity": [
@@ -266,10 +264,11 @@
                 "Ice",
                 "Water"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 3,
             "max_level": 10,
             "rarity": [
@@ -282,8 +281,24 @@
             ]
         },
         {
+            "name": "Corsola",
+            "min_level": 48,
+            "max_level": 50,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Water",
+                "Rock"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -297,7 +312,6 @@
         },
         {
             "name": "Remoraid",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -310,8 +324,24 @@
             ]
         },
         {
+            "name": "Corsola",
+            "min_level": 48,
+            "max_level": 50,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Water",
+                "Rock"
+            ]
+        }
+    ],
+    "superRod": [
+        {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [
@@ -326,7 +356,6 @@
         },
         {
             "name": "Octillery",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [
@@ -340,7 +369,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [
@@ -354,7 +382,6 @@
         },
         {
             "name": "Wailord",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 55,
             "rarity": [
@@ -368,7 +395,6 @@
         },
         {
             "name": "Corsola",
-            "field": "Old Rod",
             "min_level": 48,
             "max_level": 50,
             "rarity": [
@@ -380,53 +406,6 @@
             "types": [
                 "Water",
                 "Rock"
-            ]
-        },
-        {
-            "name": "Corsola",
-            "field": "Good Rod",
-            "min_level": 48,
-            "max_level": 50,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Water",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Corsola",
-            "field": "Super Rod",
-            "min_level": 48,
-            "max_level": 50,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Water",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Togepi",
-            "field": "Walking",
-            "min_level": 18,
-            "max_level": 50,
-            "rarity": [
-                22,
-                22,
-                22
-            ],
-            "radar": true,
-            "types": [
-                "Fairy"
             ]
         }
     ]

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Vulpix",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 57,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 38,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Marill",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 38,
             "rarity": [
@@ -48,7 +45,6 @@
         },
         {
             "name": "Noctowl",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 60,
             "rarity": [
@@ -64,7 +60,6 @@
         },
         {
             "name": "Murkrow",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 58,
             "rarity": [
@@ -80,7 +75,6 @@
         },
         {
             "name": "Misdreavus",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 58,
             "rarity": [
@@ -95,7 +89,6 @@
         },
         {
             "name": "Stantler",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 58,
             "rarity": [
@@ -110,7 +103,6 @@
         },
         {
             "name": "Swablu",
-            "field": "Walking",
             "min_level": 33,
             "max_level": 33,
             "rarity": [
@@ -126,7 +118,6 @@
         },
         {
             "name": "Altaria",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 40,
             "rarity": [
@@ -142,7 +133,6 @@
         },
         {
             "name": "Chimecho",
-            "field": "Walking",
             "min_level": 47,
             "max_level": 59,
             "rarity": [
@@ -157,7 +147,6 @@
         },
         {
             "name": "Bronzor",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 32,
             "rarity": [
@@ -173,7 +162,6 @@
         },
         {
             "name": "Bronzong",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 60,
             "rarity": [
@@ -189,7 +177,6 @@
         },
         {
             "name": "Cottonee",
-            "field": "Walking",
             "min_level": 33,
             "max_level": 58,
             "rarity": [
@@ -205,7 +192,6 @@
         },
         {
             "name": "Petilil",
-            "field": "Walking",
             "min_level": 33,
             "max_level": 58,
             "rarity": [
@@ -220,7 +206,6 @@
         },
         {
             "name": "Ninetales",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 50,
             "rarity": [
@@ -235,7 +220,6 @@
         },
         {
             "name": "Azumarill",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 36,
             "rarity": [
@@ -251,7 +235,6 @@
         },
         {
             "name": "Mismagius",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 50,
             "rarity": [
@@ -266,7 +249,6 @@
         },
         {
             "name": "Honchkrow",
-            "field": "Walking",
             "min_level": 50,
             "max_level": 50,
             "rarity": [
@@ -282,7 +264,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 33,
             "max_level": 50,
             "rarity": [
@@ -297,7 +278,6 @@
         },
         {
             "name": "Whimsicott",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 50,
             "rarity": [
@@ -313,7 +293,6 @@
         },
         {
             "name": "Lilligant",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 50,
             "rarity": [
@@ -328,7 +307,6 @@
         },
         {
             "name": "Emolga",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 48,
             "rarity": [
@@ -344,7 +322,24 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Surfing",
+            "min_level": 40,
+            "max_level": 55,
+            "rarity": [
+                40,
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Water",
+                "Psychic"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Slowpoke",
             "min_level": 25,
             "max_level": 60,
             "rarity": [
@@ -360,7 +355,6 @@
         },
         {
             "name": "Slowbro",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -376,7 +370,6 @@
         },
         {
             "name": "Slowking",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -392,7 +385,6 @@
         },
         {
             "name": "Marill",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 40,
             "rarity": [
@@ -408,7 +400,6 @@
         },
         {
             "name": "Azumarill",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 40,
             "rarity": [
@@ -424,7 +415,6 @@
         },
         {
             "name": "Basculin",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 60,
             "rarity": [
@@ -436,10 +426,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Goldeen",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -454,7 +445,6 @@
         },
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 45,
             "max_level": 70,
             "rarity": [
@@ -469,7 +459,6 @@
         },
         {
             "name": "Basculin",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 60,
             "rarity": [
@@ -480,23 +469,6 @@
             ],
             "types": [
                 "Water"
-            ]
-        },
-        {
-            "name": "Slowpoke",
-            "field": "Walking",
-            "min_level": 40,
-            "max_level": 55,
-            "rarity": [
-                40,
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Water",
-                "Psychic"
             ]
         }
     ]

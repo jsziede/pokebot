@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 45,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 55,
             "rarity": [
@@ -27,10 +25,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 3,
             "max_level": 15,
             "rarity": [
@@ -41,10 +40,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -58,7 +58,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 35,
             "rarity": [
@@ -69,10 +68,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Magikarp",
-            "field": "Super Rod",
             "min_level": 1,
             "max_level": 100,
             "rarity": [
@@ -86,7 +86,6 @@
         },
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 20,
             "max_level": 50,
             "rarity": [
@@ -100,7 +99,6 @@
         },
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [

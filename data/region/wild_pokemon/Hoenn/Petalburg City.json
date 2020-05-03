@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Marill",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Azumarill",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -28,7 +26,6 @@
         },
         {
             "name": "Surskit",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -41,7 +38,6 @@
         },
         {
             "name": "Masquerain",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -51,10 +47,11 @@
                 "Bug",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -66,7 +63,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -75,10 +71,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -90,7 +87,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -102,7 +98,6 @@
         },
         {
             "name": "Corphish",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -111,10 +106,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Corphish",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

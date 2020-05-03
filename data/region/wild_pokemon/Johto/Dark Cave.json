@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 23,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 23,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Dunsparce",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 4,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 23,
             "rarity": [
@@ -61,7 +57,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -76,7 +71,6 @@
         },
         {
             "name": "Wobbuffet",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -89,120 +83,7 @@
             ]
         },
         {
-            "name": "Magikarp",
-            "field": "Surfing",
-            "min_level": 2,
-            "max_level": 20,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                85,
-                85,
-                85
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seaking",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Dunsparce",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 4,
             "rarity": [
@@ -214,10 +95,26 @@
             "types": [
                 "Normal"
             ]
-        },
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Magikarp",
+            "min_level": 2,
+            "max_level": 20,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "rockSmash": [
         {
             "name": "Geodude",
-            "field": "Rock Smash",
             "min_level": 8,
             "max_level": 14,
             "rarity": [
@@ -232,7 +129,6 @@
         },
         {
             "name": "Dunsparce",
-            "field": "Rock Smash",
             "min_level": 4,
             "max_level": 8,
             "rarity": [
@@ -243,62 +139,102 @@
             "types": [
                 "Normal"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
-            "name": "Makuhita",
-            "field": "Hoenn Sound",
-            "min_level": 2,
-            "max_level": 25,
+            "name": "Goldeen",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                15,
+                15,
+                15
             ],
             "types": [
-                "Fighting"
+                "Water"
             ]
         },
         {
-            "name": "Absol",
-            "field": "Hoenn Sound",
-            "min_level": 2,
-            "max_level": 23,
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                85,
+                85,
+                85
             ],
             "types": [
-                "Dark"
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Goldeen",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
-            "name": "Chingling",
-            "field": "Sinnoh Sound",
-            "min_level": 2,
-            "max_level": 25,
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
-                20,
-                20,
-                20
+                40,
+                40,
+                40
             ],
             "types": [
-                "Psychic"
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Goldeen",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
-            "name": "Bronzor",
-            "field": "Sinnoh Sound",
-            "min_level": 2,
-            "max_level": 23,
+            "name": "Seaking",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 40,
+            "max_level": 40,
             "rarity": [
                 20,
                 20,
                 20
             ],
             "types": [
-                "Steel",
-                "Psychic"
+                "Water"
             ]
         }
     ]

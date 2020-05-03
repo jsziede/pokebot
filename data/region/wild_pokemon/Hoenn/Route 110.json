@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Electrike",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 13,
             "rarity": [
@@ -14,7 +13,6 @@
         },
         {
             "name": "Zigzagoon",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -26,7 +24,6 @@
         },
         {
             "name": "Gulpin",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -38,7 +35,6 @@
         },
         {
             "name": "Oddish",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -51,7 +47,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -64,7 +59,6 @@
         },
         {
             "name": "Minun",
-            "field": "Walking",
             "min_level": 11,
             "max_level": 13,
             "rarity": [
@@ -76,7 +70,6 @@
         },
         {
             "name": "Plusle",
-            "field": "Walking",
             "min_level": 11,
             "max_level": 13,
             "rarity": [
@@ -88,7 +81,6 @@
         },
         {
             "name": "Voltorb",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -100,7 +92,6 @@
         },
         {
             "name": "Magnemite",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 6,
             "rarity": [
@@ -113,7 +104,6 @@
         },
         {
             "name": "Shellos",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -126,7 +116,6 @@
         },
         {
             "name": "Trubbish",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -139,7 +128,6 @@
         },
         {
             "name": "Chatot",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 13,
             "rarity": [
@@ -150,10 +138,11 @@
                 "Normal",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -166,7 +155,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -179,7 +167,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -189,10 +176,11 @@
                 "Water",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Tentacool",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -205,7 +193,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -214,10 +201,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Tentacool",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -230,7 +218,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -242,7 +229,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -251,10 +237,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Wailmer",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

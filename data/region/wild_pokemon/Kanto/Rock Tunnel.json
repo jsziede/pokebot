@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 17,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 16,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Mankey",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 17,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Machop",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 17,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Onix",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 17,
             "rarity": [
@@ -72,10 +67,11 @@
                 "Rock",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
         {
             "name": "Geodude",
-            "field": "Rock Smash",
             "min_level": 5,
             "max_level": 30,
             "rarity": [
@@ -90,7 +86,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Rock Smash",
             "min_level": 25,
             "max_level": 40,
             "rarity": [

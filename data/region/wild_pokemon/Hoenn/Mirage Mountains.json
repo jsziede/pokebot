@@ -1,34 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Graveler",
-            "field": "Rock Smash",
-            "min_level": 35,
-            "max_level": 38,
-            "rarity": [
-                85
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Crustle",
-            "field": "Rock Smash",
-            "min_level": 37,
-            "max_level": 37,
-            "rarity": [
-                15
-            ],
-            "types": [
-                "Bug",
-                "Rock"
-            ]
-        },
+    "walking": [
         {
             "name": "Forretress",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -41,7 +14,6 @@
         },
         {
             "name": "Donphan",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -53,7 +25,6 @@
         },
         {
             "name": "Stantler",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -65,7 +36,6 @@
         },
         {
             "name": "Kricketune",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -77,7 +47,6 @@
         },
         {
             "name": "Rufflet",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -90,7 +59,6 @@
         },
         {
             "name": "Tangela",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -102,7 +70,6 @@
         },
         {
             "name": "Happiny",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -114,7 +81,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -126,7 +92,6 @@
         },
         {
             "name": "Vullaby",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -139,7 +104,6 @@
         },
         {
             "name": "Magby",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -151,7 +115,6 @@
         },
         {
             "name": "Darmanitan",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -163,7 +126,6 @@
         },
         {
             "name": "Vulpix",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -175,7 +137,6 @@
         },
         {
             "name": "Porygon",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -187,7 +148,6 @@
         },
         {
             "name": "Xatu",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -200,7 +160,6 @@
         },
         {
             "name": "Munna",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -212,7 +171,6 @@
         },
         {
             "name": "Elekid",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -224,7 +182,6 @@
         },
         {
             "name": "Zebstrika",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -236,7 +193,6 @@
         },
         {
             "name": "Girafarig",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -245,6 +201,32 @@
             "types": [
                 "Normal",
                 "Psychic"
+            ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Graveler",
+            "min_level": 35,
+            "max_level": 38,
+            "rarity": [
+                85
+            ],
+            "types": [
+                "Rock",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Crustle",
+            "min_level": 37,
+            "max_level": 37,
+            "rarity": [
+                15
+            ],
+            "types": [
+                "Bug",
+                "Rock"
             ]
         }
     ]

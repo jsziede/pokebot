@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Yanma",
-            "field": "Walking",
             "min_level": 56,
             "max_level": 64,
             "rarity": [
@@ -18,7 +17,6 @@
         },
         {
             "name": "Yanmega",
-            "field": "Walking",
             "min_level": 58,
             "max_level": 58,
             "rarity": [
@@ -34,7 +32,6 @@
         },
         {
             "name": "Patrat",
-            "field": "Walking",
             "min_level": 8,
             "max_level": 10,
             "rarity": [
@@ -49,7 +46,6 @@
         },
         {
             "name": "Watchog",
-            "field": "Walking",
             "min_level": 55,
             "max_level": 63,
             "rarity": [
@@ -64,7 +60,6 @@
         },
         {
             "name": "Lillipup",
-            "field": "Walking",
             "min_level": 9,
             "max_level": 11,
             "rarity": [
@@ -79,7 +74,6 @@
         },
         {
             "name": "Herdier",
-            "field": "Walking",
             "min_level": 57,
             "max_level": 65,
             "rarity": [
@@ -94,7 +88,6 @@
         },
         {
             "name": "Stoutland",
-            "field": "Walking",
             "min_level": 58,
             "max_level": 59,
             "rarity": [
@@ -109,7 +102,6 @@
         },
         {
             "name": "Purrloin",
-            "field": "Walking",
             "min_level": 9,
             "max_level": 65,
             "rarity": [
@@ -124,7 +116,6 @@
         },
         {
             "name": "Pidove",
-            "field": "Walking",
             "min_level": 8,
             "max_level": 13,
             "rarity": [
@@ -140,7 +131,6 @@
         },
         {
             "name": "Tranquill",
-            "field": "Walking",
             "min_level": 55,
             "max_level": 65,
             "rarity": [
@@ -156,7 +146,6 @@
         },
         {
             "name": "Unfezant",
-            "field": "Walking",
             "min_level": 58,
             "max_level": 58,
             "rarity": [
@@ -172,7 +161,6 @@
         },
         {
             "name": "Blitzle",
-            "field": "Walking",
             "min_level": 8,
             "max_level": 13,
             "rarity": [
@@ -187,7 +175,6 @@
         },
         {
             "name": "Zebstrika",
-            "field": "Walking",
             "min_level": 56,
             "max_level": 66,
             "rarity": [
@@ -202,7 +189,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 8,
             "max_level": 58,
             "rarity": [
@@ -216,99 +202,7 @@
             ]
         },
         {
-            "name": "Corphish",
-            "field": "Surfing",
-            "min_level": 45,
-            "max_level": 60,
-            "rarity": [
-                30,
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Crawdaunt",
-            "field": "Surfing",
-            "min_level": 50,
-            "max_level": 60,
-            "rarity": [
-                10,
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water",
-                "Dark"
-            ]
-        },
-        {
-            "name": "Basculin",
-            "field": "Surfing",
-            "min_level": 5,
-            "max_level": 60,
-            "rarity": [
-                100,
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Super Rod",
-            "min_level": 35,
-            "max_level": 70,
-            "rarity": [
-                70,
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Basculin",
-            "field": "Super Rod",
-            "min_level": 35,
-            "max_level": 60,
-            "rarity": [
-                30,
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seaking",
-            "field": "Super Rod",
-            "min_level": 45,
-            "max_level": 70,
-            "rarity": [
-                10,
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Volbeat",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 55,
             "rarity": [
@@ -324,7 +218,6 @@
         },
         {
             "name": "Illumise",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 55,
             "rarity": [
@@ -336,6 +229,95 @@
             "swarm": true,
             "types": [
                 "Bug"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Corphish",
+            "min_level": 45,
+            "max_level": 60,
+            "rarity": [
+                30,
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Crawdaunt",
+            "min_level": 50,
+            "max_level": 60,
+            "rarity": [
+                10,
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water",
+                "Dark"
+            ]
+        },
+        {
+            "name": "Basculin",
+            "min_level": 5,
+            "max_level": 60,
+            "rarity": [
+                100,
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Goldeen",
+            "min_level": 35,
+            "max_level": 70,
+            "rarity": [
+                70,
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Basculin",
+            "min_level": 35,
+            "max_level": 60,
+            "rarity": [
+                30,
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Seaking",
+            "min_level": 45,
+            "max_level": 70,
+            "rarity": [
+                10,
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water"
             ]
         }
     ]

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Linoone",
-            "field": "Walking",
             "min_level": 21,
             "max_level": 24,
             "rarity": [
@@ -14,7 +13,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 24,
             "rarity": [
@@ -27,7 +25,6 @@
         },
         {
             "name": "Electrike",
-            "field": "Walking",
             "min_level": 21,
             "max_level": 24,
             "rarity": [
@@ -39,7 +36,6 @@
         },
         {
             "name": "Kecleon",
-            "field": "Walking",
             "min_level": 24,
             "max_level": 24,
             "rarity": [
@@ -51,7 +47,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 24,
             "rarity": [
@@ -64,7 +59,6 @@
         },
         {
             "name": "Raticate",
-            "field": "Walking",
             "min_level": 24,
             "max_level": 24,
             "rarity": [
@@ -77,7 +71,6 @@
         },
         {
             "name": "Aipom",
-            "field": "Walking",
             "min_level": 24,
             "max_level": 24,
             "rarity": [
@@ -90,7 +83,6 @@
         },
         {
             "name": "Luxio",
-            "field": "Walking",
             "min_level": 24,
             "max_level": 24,
             "rarity": [
@@ -100,10 +92,11 @@
             "types": [
                 "Electric"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -116,7 +109,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -129,7 +121,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -139,10 +130,11 @@
                 "Water",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Tentacool",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -155,7 +147,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -164,10 +155,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Tentacool",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -180,7 +172,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -192,7 +183,6 @@
         },
         {
             "name": "Carvanha",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -202,10 +192,11 @@
                 "Water",
                 "Dark"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Carvanha",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 35,
             "rarity": [
@@ -218,7 +209,6 @@
         },
         {
             "name": "Sharpedo",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Magikarp",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 20,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Gyarados",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -28,82 +26,11 @@
                 "Water",
                 "Flying"
             ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                97,
-                97,
-                97
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                3,
-                3,
-                3
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                90,
-                90,
-                90
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Venonat",
-            "field": "Headbutt",
             "min_level": 17,
             "max_level": 19,
             "rarity": [
@@ -118,7 +45,6 @@
         },
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 14,
             "max_level": 19,
             "rarity": [
@@ -133,7 +59,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 14,
             "max_level": 19,
             "rarity": [
@@ -148,7 +73,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 14,
             "max_level": 16,
             "rarity": [
@@ -158,6 +82,79 @@
             ],
             "types": [
                 "Bug"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                97,
+                97,
+                97
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Gyarados",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                3,
+                3,
+                3
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                90,
+                90,
+                90
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Gyarados",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         }
     ]

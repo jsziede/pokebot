@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Nidoran♀",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 30,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Nidorina",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 33,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Nidoran♂",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 30,
             "rarity": [
@@ -44,7 +41,6 @@
         },
         {
             "name": "Nidorino",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 33,
             "rarity": [
@@ -58,7 +54,6 @@
         },
         {
             "name": "Paras",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 23,
             "rarity": [
@@ -73,7 +68,6 @@
         },
         {
             "name": "Parasect",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -88,7 +82,6 @@
         },
         {
             "name": "Doduo",
-            "field": "Walking",
             "min_level": 26,
             "max_level": 26,
             "rarity": [
@@ -103,7 +96,6 @@
         },
         {
             "name": "Venonat",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 23,
             "rarity": [
@@ -118,7 +110,6 @@
         },
         {
             "name": "Venomoth",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 32,
             "rarity": [
@@ -133,7 +124,6 @@
         },
         {
             "name": "Exeggcute",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 27,
             "rarity": [
@@ -148,7 +138,6 @@
         },
         {
             "name": "Kangaskhan",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 28,
             "rarity": [
@@ -162,7 +151,6 @@
         },
         {
             "name": "Rhyhorn",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 26,
             "rarity": [
@@ -177,7 +165,6 @@
         },
         {
             "name": "Chansey",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 26,
             "rarity": [
@@ -191,7 +178,6 @@
         },
         {
             "name": "Tauros",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -205,7 +191,6 @@
         },
         {
             "name": "Scyther",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 28,
             "rarity": [
@@ -220,7 +205,6 @@
         },
         {
             "name": "Pinsir",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 28,
             "rarity": [
@@ -231,10 +215,11 @@
             "types": [
                 "Bug"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -248,7 +233,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -260,10 +244,11 @@
                 "Water",
                 "Psychic"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -274,10 +259,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Poliwag",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -291,7 +277,6 @@
         },
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -305,7 +290,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -316,10 +300,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Psyduck",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -333,7 +318,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -348,7 +332,6 @@
         },
         {
             "name": "Goldeen",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -362,7 +345,6 @@
         },
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -376,7 +358,6 @@
         },
         {
             "name": "Dratini",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -390,7 +371,6 @@
         },
         {
             "name": "Dragonair",
-            "field": "Super Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [

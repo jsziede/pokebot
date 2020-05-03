@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Patrat",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Lillipup",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Watchog",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 67,
             "rarity": [
@@ -47,7 +44,6 @@
         },
         {
             "name": "Herdier",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 67,
             "rarity": [
@@ -62,7 +58,6 @@
         },
         {
             "name": "Scraggy",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 35,
             "rarity": [
@@ -78,7 +73,6 @@
         },
         {
             "name": "Scrafty",
-            "field": "Walking",
             "min_level": 66,
             "max_level": 67,
             "rarity": [
@@ -94,7 +88,6 @@
         },
         {
             "name": "Jigglypuff",
-            "field": "Walking",
             "min_level": 57,
             "max_level": 65,
             "rarity": [
@@ -110,7 +103,6 @@
         },
         {
             "name": "Wigglytuff",
-            "field": "Walking",
             "min_level": 59,
             "max_level": 59,
             "rarity": [
@@ -126,7 +118,6 @@
         },
         {
             "name": "Dunsparce",
-            "field": "Walking",
             "min_level": 57,
             "max_level": 57,
             "rarity": [
@@ -141,7 +132,6 @@
         },
         {
             "name": "Stoutland",
-            "field": "Walking",
             "min_level": 57,
             "max_level": 57,
             "rarity": [
@@ -156,7 +146,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 59,
             "rarity": [
@@ -170,8 +159,25 @@
             ]
         },
         {
+            "name": "Farfetch'd",
+            "min_level": 15,
+            "max_level": 55,
+            "rarity": [
+                40,
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Normal",
+                "Flying"
+            ]
+        }
+    ],
+    "surfing": [
+        {
             "name": "Basculin",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 60,
             "rarity": [
@@ -183,10 +189,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Feebas",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -201,7 +208,6 @@
         },
         {
             "name": "Basculin",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -216,7 +222,6 @@
         },
         {
             "name": "Milotic",
-            "field": "Super Rod",
             "min_level": 45,
             "max_level": 70,
             "rarity": [
@@ -227,23 +232,6 @@
             ],
             "types": [
                 "Water"
-            ]
-        },
-        {
-            "name": "Farfetch'd",
-            "field": "Walking",
-            "min_level": 15,
-            "max_level": 55,
-            "rarity": [
-                40,
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Normal",
-                "Flying"
             ]
         }
     ]

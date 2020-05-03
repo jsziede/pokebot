@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Oddish",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 26,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Bellsprout",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 26,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Pidgey",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 27,
             "rarity": [
@@ -47,7 +44,6 @@
         },
         {
             "name": "Venonat",
-            "field": "Walking",
             "min_level": 24,
             "max_level": 26,
             "rarity": [
@@ -62,7 +58,6 @@
         },
         {
             "name": "Gloom",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -77,7 +72,6 @@
         },
         {
             "name": "Weepinbell",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -89,10 +83,11 @@
                 "Grass",
                 "Poison"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 40,
             "rarity": [
@@ -104,10 +99,11 @@
                 "Water",
                 "Poison"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -118,10 +114,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Horsea",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -135,7 +132,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -149,7 +145,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -160,10 +155,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Horsea",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -177,7 +173,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -191,7 +186,6 @@
         },
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -206,7 +200,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Super Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -220,7 +213,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Super Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [

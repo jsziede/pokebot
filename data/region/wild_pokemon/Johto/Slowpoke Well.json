@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 23,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 23,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 23,
             "rarity": [
@@ -44,10 +41,11 @@
                 "Poison",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Slowpoke",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 25,
             "rarity": [
@@ -62,7 +60,6 @@
         },
         {
             "name": "Slowbro",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 30,
             "rarity": [
@@ -74,10 +71,11 @@
                 "Water",
                 "Psychic"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -91,7 +89,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -102,10 +99,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -119,7 +117,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -130,10 +127,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Goldeen",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -147,7 +145,6 @@
         },
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -161,7 +158,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -171,63 +167,6 @@
             ],
             "types": [
                 "Water"
-            ]
-        },
-        {
-            "name": "Makuhita",
-            "field": "Hoenn Sound",
-            "min_level": 7,
-            "max_level": 19,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Fighting"
-            ]
-        },
-        {
-            "name": "Absol",
-            "field": "Hoenn Sound",
-            "min_level": 5,
-            "max_level": 23,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Dark"
-            ]
-        },
-        {
-            "name": "Chingling",
-            "field": "Sinnoh Sound",
-            "min_level": 7,
-            "max_level": 19,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Psychic"
-            ]
-        },
-        {
-            "name": "Bronzor",
-            "field": "Sinnoh Sound",
-            "min_level": 5,
-            "max_level": 23,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Steel",
-                "Psychic"
             ]
         }
     ]

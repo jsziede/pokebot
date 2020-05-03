@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Pikachu",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -14,7 +13,6 @@
         },
         {
             "name": "Gloom",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -27,7 +25,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Walking",
             "min_level": 27,
             "max_level": 29,
             "rarity": [
@@ -39,7 +36,6 @@
         },
         {
             "name": "Doduo",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -52,7 +48,6 @@
         },
         {
             "name": "Girafarig",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -65,7 +60,6 @@
         },
         {
             "name": "Xatu",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -78,7 +72,6 @@
         },
         {
             "name": "Wobbuffet",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -90,7 +83,6 @@
         },
         {
             "name": "Rhyhorn",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -103,7 +95,6 @@
         },
         {
             "name": "Heracross",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -116,7 +107,6 @@
         },
         {
             "name": "Donphan",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -128,7 +118,6 @@
         },
         {
             "name": "Pinsir",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -140,7 +129,6 @@
         },
         {
             "name": "Kakuna",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -154,7 +142,6 @@
         },
         {
             "name": "Pidgeotto",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -168,7 +155,6 @@
         },
         {
             "name": "Buneary",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -178,10 +164,11 @@
             "types": [
                 "Normal"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -190,10 +177,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -205,7 +193,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -214,10 +201,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -229,7 +217,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -238,10 +225,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Seaking",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

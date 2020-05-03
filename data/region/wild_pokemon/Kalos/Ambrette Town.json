@@ -1,34 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Dwebble",
-            "field": "Rock Smash",
-            "min_level": 13,
-            "max_level": 20,
-            "rarity": [
-                66
-            ],
-            "types": [
-                "Bug",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Binacle",
-            "field": "Rock Smash",
-            "min_level": 13,
-            "max_level": 20,
-            "rarity": [
-                34
-            ],
-            "types": [
-                "Rock",
-                "Water"
-            ]
-        },
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -41,7 +14,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -50,10 +22,37 @@
             "types": [
                 "Water"
             ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Dwebble",
+            "min_level": 13,
+            "max_level": 20,
+            "rarity": [
+                66
+            ],
+            "types": [
+                "Bug",
+                "Rock"
+            ]
         },
         {
+            "name": "Binacle",
+            "min_level": 13,
+            "max_level": 20,
+            "rarity": [
+                34
+            ],
+            "types": [
+                "Rock",
+                "Water"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
             "name": "Luvdisc",
-            "field": "Old Rod",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -62,10 +61,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Horsea",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -77,7 +77,6 @@
         },
         {
             "name": "Skrelp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -90,7 +89,6 @@
         },
         {
             "name": "Clauncher",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -99,10 +97,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Seadra",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -114,7 +113,6 @@
         },
         {
             "name": "Relicanth",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -127,7 +125,6 @@
         },
         {
             "name": "Dragalge",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -140,7 +137,6 @@
         },
         {
             "name": "Clawitzer",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [

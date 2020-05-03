@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Spearow",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 32,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Fearow",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 36,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Meowth",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 31,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Persian",
-            "field": "Walking",
             "min_level": 37,
             "max_level": 40,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 34,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 31,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Ponyta",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 34,
             "rarity": [
@@ -103,7 +96,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 34,
             "rarity": [
@@ -118,7 +110,6 @@
         },
         {
             "name": "Rapidash",
-            "field": "Walking",
             "min_level": 37,
             "max_level": 40,
             "rarity": [
@@ -129,10 +120,11 @@
             "types": [
                 "Fire"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 40,
             "rarity": [
@@ -147,7 +139,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 40,
             "rarity": [
@@ -159,166 +150,11 @@
                 "Water",
                 "Poison"
             ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 5,
-            "max_level": 5,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Good Rod",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                80,
-                80,
-                80
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Horsea",
-            "field": "Good Rod",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                80,
-                80,
-                80
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Psyduck",
-            "field": "Super Rod",
-            "min_level": 25,
-            "max_level": 35,
-            "rarity": [
-                1,
-                1,
-                1
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Slowpoke",
-            "field": "Super Rod",
-            "min_level": 25,
-            "max_level": 35,
-            "rarity": [
-                1,
-                1,
-                1
-            ],
-            "types": [
-                "Water",
-                "Psychic"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Super Rod",
-            "min_level": 15,
-            "max_level": 25,
-            "rarity": [
-                80,
-                80,
-                80
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Kingler",
-            "field": "Super Rod",
-            "min_level": 25,
-            "max_level": 35,
-            "rarity": [
-                4,
-                4,
-                4
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Horsea",
-            "field": "Super Rod",
-            "min_level": 15,
-            "max_level": 25,
-            "rarity": [
-                80,
-                80,
-                80
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seadra",
-            "field": "Super Rod",
-            "min_level": 25,
-            "max_level": 35,
-            "rarity": [
-                4,
-                4,
-                4
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 15,
-            "max_level": 25,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
+        }
+    ],
+    "rockSmash": [
         {
             "name": "Geodude",
-            "field": "Rock Smash",
             "min_level": 5,
             "max_level": 30,
             "rarity": [
@@ -333,7 +169,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Rock Smash",
             "min_level": 25,
             "max_level": 40,
             "rarity": [
@@ -344,6 +179,157 @@
             "types": [
                 "Rock",
                 "Ground"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 5,
+            "max_level": 5,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Krabby",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                80,
+                80,
+                80
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Horsea",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                80,
+                80,
+                80
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                20,
+                20,
+                20
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Psyduck",
+            "min_level": 25,
+            "max_level": 35,
+            "rarity": [
+                1,
+                1,
+                1
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Slowpoke",
+            "min_level": 25,
+            "max_level": 35,
+            "rarity": [
+                1,
+                1,
+                1
+            ],
+            "types": [
+                "Water",
+                "Psychic"
+            ]
+        },
+        {
+            "name": "Krabby",
+            "min_level": 15,
+            "max_level": 25,
+            "rarity": [
+                80,
+                80,
+                80
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Kingler",
+            "min_level": 25,
+            "max_level": 35,
+            "rarity": [
+                4,
+                4,
+                4
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Horsea",
+            "min_level": 15,
+            "max_level": 25,
+            "rarity": [
+                80,
+                80,
+                80
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Seadra",
+            "min_level": 25,
+            "max_level": 35,
+            "rarity": [
+                4,
+                4,
+                4
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Gyarados",
+            "min_level": 15,
+            "max_level": 25,
+            "rarity": [
+                15,
+                15,
+                15
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         }
     ]

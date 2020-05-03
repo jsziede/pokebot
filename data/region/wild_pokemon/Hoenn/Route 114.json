@@ -1,21 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Geodude",
-            "field": "Rock Smash",
-            "min_level": 5,
-            "max_level": 20,
-            "rarity": [
-                100
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
+    "walking": [
         {
             "name": "Lombre",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 19,
             "rarity": [
@@ -28,7 +14,6 @@
         },
         {
             "name": "Nuzleaf",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 19,
             "rarity": [
@@ -41,7 +26,6 @@
         },
         {
             "name": "Surskit",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 19,
             "rarity": [
@@ -54,7 +38,6 @@
         },
         {
             "name": "Swablu",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 19,
             "rarity": [
@@ -67,7 +50,6 @@
         },
         {
             "name": "Zangoose",
-            "field": "Walking",
             "min_level": 17,
             "max_level": 19,
             "rarity": [
@@ -79,7 +61,6 @@
         },
         {
             "name": "Seviper",
-            "field": "Walking",
             "min_level": 17,
             "max_level": 19,
             "rarity": [
@@ -91,7 +72,6 @@
         },
         {
             "name": "Lotad",
-            "field": "Walking",
             "min_level": 9,
             "max_level": 9,
             "rarity": [
@@ -104,7 +84,6 @@
         },
         {
             "name": "Seedot",
-            "field": "Walking",
             "min_level": 9,
             "max_level": 9,
             "rarity": [
@@ -116,7 +95,6 @@
         },
         {
             "name": "Misdreavus",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 19,
             "rarity": [
@@ -129,7 +107,6 @@
         },
         {
             "name": "Skorupi",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 19,
             "rarity": [
@@ -143,7 +120,6 @@
         },
         {
             "name": "Tympole",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 19,
             "rarity": [
@@ -153,10 +129,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Marill",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -169,7 +146,6 @@
         },
         {
             "name": "Azumarill",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -182,7 +158,6 @@
         },
         {
             "name": "Surskit",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -195,7 +170,6 @@
         },
         {
             "name": "Masquerain",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -205,10 +179,25 @@
                 "Bug",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Geodude",
+            "min_level": 5,
+            "max_level": 20,
+            "rarity": [
+                100
+            ],
+            "types": [
+                "Rock",
+                "Ground"
+            ]
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -220,7 +209,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -229,10 +217,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -244,7 +233,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -256,7 +244,6 @@
         },
         {
             "name": "Barboach",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -266,10 +253,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Barboach",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

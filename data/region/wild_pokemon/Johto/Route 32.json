@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 6,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Ekans",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 4,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 4,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Bellsprout",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 6,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Mareep",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 6,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Hoppip",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 6,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Wooper",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 6,
             "rarity": [
@@ -101,10 +94,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -119,7 +113,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 36,
             "rarity": [
@@ -134,7 +127,6 @@
         },
         {
             "name": "Quagsire",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -146,127 +138,11 @@
                 "Water",
                 "Ground"
             ]
-        },
-        {
-            "name": "Tentacool",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                85,
-                85,
-                85
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Tentacool",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                55,
-                55,
-                55
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Qwilfish",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Tentacool",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Qwilfish",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 7,
             "rarity": [
@@ -281,7 +157,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 7,
             "rarity": [
@@ -296,7 +171,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 5,
             "rarity": [
@@ -307,54 +181,99 @@
             "types": [
                 "Bug"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
-            "name": "Linoone",
-            "field": "Hoenn Sound",
-            "min_level": 3,
-            "max_level": 3,
+            "name": "Tentacool",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                15,
+                15,
+                15
             ],
             "types": [
-                "Normal"
+                "Water",
+                "Poison"
             ]
         },
         {
-            "name": "Whismur",
-            "field": "Hoenn Sound",
-            "min_level": 3,
-            "max_level": 4,
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                85,
+                85,
+                85
             ],
             "types": [
-                "Normal"
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Tentacool",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                55,
+                55,
+                55
+            ],
+            "types": [
+                "Water",
+                "Poison"
             ]
         },
         {
-            "name": "Bidoof",
-            "field": "Sinnoh Sound",
-            "min_level": 3,
-            "max_level": 3,
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
-                20,
-                20,
-                20
+                40,
+                40,
+                40
             ],
             "types": [
-                "Normal"
+                "Water"
             ]
         },
         {
-            "name": "Buizel",
-            "field": "Sinnoh Sound",
-            "min_level": 3,
-            "max_level": 4,
+            "name": "Qwilfish",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Tentacool",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 40,
+            "max_level": 40,
             "rarity": [
                 20,
                 20,
@@ -362,6 +281,20 @@
             ],
             "types": [
                 "Water"
+            ]
+        },
+        {
+            "name": "Qwilfish",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water",
+                "Poison"
             ]
         }
     ]

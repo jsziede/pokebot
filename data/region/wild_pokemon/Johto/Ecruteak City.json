@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Poliwag",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Poliwhirl",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -27,94 +25,11 @@
             "types": [
                 "Water"
             ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                95,
-                95,
-                95
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                93,
-                93,
-                93
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                7,
-                7,
-                7
-            ],
-            "types": [
-                "Water"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 12,
             "max_level": 17,
             "rarity": [
@@ -129,7 +44,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 12,
             "max_level": 17,
             "rarity": [
@@ -144,7 +58,6 @@
         },
         {
             "name": "Ledyba",
-            "field": "Headbutt",
             "min_level": 15,
             "max_level": 17,
             "rarity": [
@@ -159,7 +72,6 @@
         },
         {
             "name": "Spinarak",
-            "field": "Headbutt",
             "min_level": 15,
             "max_level": 17,
             "rarity": [
@@ -174,7 +86,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 12,
             "max_level": 14,
             "rarity": [
@@ -184,6 +95,90 @@
             ],
             "types": [
                 "Bug"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 10,
+            "max_level": 10,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
+            "rarity": [
+                95,
+                95,
+                95
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                93,
+                93,
+                93
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                7,
+                7,
+                7
+            ],
+            "types": [
+                "Water"
             ]
         }
     ]

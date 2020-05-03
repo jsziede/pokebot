@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Unown",
-            "field": "Walking",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Natu",
-            "field": "Walking",
             "min_level": 18,
             "max_level": 24,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Smeargle",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 22,
             "rarity": [
@@ -42,10 +39,11 @@
             "types": [
                 "Normal"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Wooper",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -60,7 +58,6 @@
         },
         {
             "name": "Quagsire",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -72,10 +69,27 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Geodude",
+            "min_level": 3,
+            "max_level": 14,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Rock",
+                "Ground"
+            ]
+        }
+    ],
+    "oldRod": [
         {
             "name": "Poliwag",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -89,7 +103,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -100,10 +113,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Poliwag",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -117,7 +131,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -128,10 +141,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Poliwag",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -145,80 +159,8 @@
         },
         {
             "name": "Magikarp",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Geodude",
-            "field": "Rock Smash",
-            "min_level": 3,
-            "max_level": 14,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Linoone",
-            "field": "Hoenn Sound",
-            "min_level": 18,
-            "max_level": 18,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Normal"
-            ]
-        },
-        {
-            "name": "Whismur",
-            "field": "Hoenn Sound",
-            "min_level": 20,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Normal"
-            ]
-        },
-        {
-            "name": "Bidoof",
-            "field": "Sinnoh Sound",
-            "min_level": 18,
-            "max_level": 18,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Normal"
-            ]
-        },
-        {
-            "name": "Buizel",
-            "field": "Sinnoh Sound",
-            "min_level": 20,
-            "max_level": 22,
             "rarity": [
                 20,
                 20,

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 47,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Raticate",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 52,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Spearow",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 22,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Fearow",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 53,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Walking",
             "min_level": 51,
             "max_level": 53,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Machoke",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 53,
             "rarity": [
@@ -88,7 +82,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 49,
             "rarity": [
@@ -103,7 +96,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 47,
             "max_level": 49,
             "rarity": [
@@ -118,7 +110,6 @@
         },
         {
             "name": "Banette",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 53,
             "rarity": [
@@ -131,243 +122,7 @@
             ]
         },
         {
-            "name": "Tentacruel",
-            "field": "Surfing",
-            "min_level": 35,
-            "max_level": 55,
-            "rarity": [
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Seel",
-            "field": "Surfing",
-            "min_level": 35,
-            "max_level": 45,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Dewgong",
-            "field": "Surfing",
-            "min_level": 40,
-            "max_level": 55,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Ice"
-            ]
-        },
-        {
-            "name": "Wingull",
-            "field": "Surfing",
-            "min_level": 35,
-            "max_level": 55,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Pelipper",
-            "field": "Surfing",
-            "min_level": 35,
-            "max_level": 55,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Spheal",
-            "field": "Surfing",
-            "min_level": 35,
-            "max_level": 45,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Ice",
-                "Water"
-            ]
-        },
-        {
-            "name": "Sealeo",
-            "field": "Surfing",
-            "min_level": 40,
-            "max_level": 55,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Ice",
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 3,
-            "max_level": 10,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Horsea",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                65,
-                65,
-                65
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seadra",
-            "field": "Super Rod",
-            "min_level": 30,
-            "max_level": 55,
-            "rarity": [
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 30,
-            "max_level": 50,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Relicanth",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 50,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Old Rod",
-            "min_level": 48,
-            "max_level": 52,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Good Rod",
-            "min_level": 48,
-            "max_level": 52,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Krabby",
-            "field": "Super Rod",
-            "min_level": 48,
-            "max_level": 52,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Mankey",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 47,
             "rarity": [
@@ -382,7 +137,6 @@
         },
         {
             "name": "Primeape",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 52,
             "rarity": [
@@ -393,6 +147,233 @@
             "radar": true,
             "types": [
                 "Fighting"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Tentacruel",
+            "min_level": 35,
+            "max_level": 55,
+            "rarity": [
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Seel",
+            "min_level": 35,
+            "max_level": 45,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Dewgong",
+            "min_level": 40,
+            "max_level": 55,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Ice"
+            ]
+        },
+        {
+            "name": "Wingull",
+            "min_level": 35,
+            "max_level": 55,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Pelipper",
+            "min_level": 35,
+            "max_level": 55,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Spheal",
+            "min_level": 35,
+            "max_level": 45,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Ice",
+                "Water"
+            ]
+        },
+        {
+            "name": "Sealeo",
+            "min_level": 40,
+            "max_level": 55,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Ice",
+                "Water"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 3,
+            "max_level": 10,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Krabby",
+            "min_level": 48,
+            "max_level": 52,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Horsea",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                65,
+                65,
+                65
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Krabby",
+            "min_level": 48,
+            "max_level": 52,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Seadra",
+            "min_level": 30,
+            "max_level": 55,
+            "rarity": [
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Gyarados",
+            "min_level": 30,
+            "max_level": 50,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Relicanth",
+            "min_level": 20,
+            "max_level": 50,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Rock"
+            ]
+        },
+        {
+            "name": "Krabby",
+            "min_level": 48,
+            "max_level": 52,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Water"
             ]
         }
     ]

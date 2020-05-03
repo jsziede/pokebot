@@ -1,20 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Machop",
-            "field": "Rock Smash",
-            "min_level": 15,
-            "max_level": 15,
-            "rarity": [
-                5
-            ],
-            "types": [
-                "Fighting"
-            ]
-        },
+    "walking": [
         {
             "name": "Grimer",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 16,
             "rarity": [
@@ -26,7 +13,6 @@
         },
         {
             "name": "Koffing",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 16,
             "rarity": [
@@ -38,7 +24,6 @@
         },
         {
             "name": "Slugma",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -50,7 +35,6 @@
         },
         {
             "name": "Numel",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 16,
             "rarity": [
@@ -63,7 +47,6 @@
         },
         {
             "name": "Torkoal",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -75,7 +58,6 @@
         },
         {
             "name": "Diglett",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -88,7 +70,6 @@
         },
         {
             "name": "Tyrogue",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -101,7 +82,6 @@
         },
         {
             "name": "Roggenrola",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -110,6 +90,19 @@
             "dexnav": true,
             "types": [
                 "Rock"
+            ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Machop",
+            "min_level": 15,
+            "max_level": 15,
+            "rarity": [
+                5
+            ],
+            "types": [
+                "Fighting"
             ]
         }
     ]

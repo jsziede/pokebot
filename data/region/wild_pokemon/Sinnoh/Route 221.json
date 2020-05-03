@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Sudowoodo",
-            "field": "Walking",
             "min_level": 29,
             "max_level": 31,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Girafarig",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 29,
             "max_level": 29,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Roselia",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -61,7 +57,6 @@
         },
         {
             "name": "Floatzel",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 31,
             "rarity": [
@@ -75,7 +70,6 @@
         },
         {
             "name": "Shellos",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 28,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Gastrodon",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 30,
             "rarity": [
@@ -104,7 +97,6 @@
         },
         {
             "name": "Stunky",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 28,
             "rarity": [
@@ -119,7 +111,6 @@
         },
         {
             "name": "Skuntank",
-            "field": "Walking",
             "min_level": 29,
             "max_level": 30,
             "rarity": [
@@ -133,167 +124,7 @@
             ]
         },
         {
-            "name": "Tentacool",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 30,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Tentacruel",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                9,
-                9,
-                9
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Wingull",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 30,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Pelipper",
-            "field": "Surfing",
-            "min_level": 20,
-            "max_level": 40,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 3,
-            "max_level": 15,
-            "rarity": [
-                100,
-                100,
-                100
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                55,
-                55,
-                55
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Finneon",
-            "field": "Good Rod",
-            "min_level": 10,
-            "max_level": 25,
-            "rarity": [
-                45,
-                45,
-                45
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Lumineon",
-            "field": "Good Rod",
-            "min_level": 25,
-            "max_level": 35,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 30,
-            "max_level": 55,
-            "rarity": [
-                55,
-                55,
-                55
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Clamperl",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 30,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Lumineon",
-            "field": "Super Rod",
-            "min_level": 20,
-            "max_level": 55,
-            "rarity": [
-                45,
-                45,
-                45
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Farfetch'd",
-            "field": "Walking",
             "min_level": 28,
             "max_level": 29,
             "rarity": [
@@ -309,7 +140,6 @@
         },
         {
             "name": "Nidorina",
-            "field": "Walking",
             "min_level": 29,
             "max_level": 31,
             "rarity": [
@@ -324,7 +154,6 @@
         },
         {
             "name": "Nidorino",
-            "field": "Walking",
             "min_level": 29,
             "max_level": 31,
             "rarity": [
@@ -335,6 +164,162 @@
             "radar": true,
             "types": [
                 "Poison"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Tentacool",
+            "min_level": 20,
+            "max_level": 30,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Tentacruel",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                9,
+                9,
+                9
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Wingull",
+            "min_level": 20,
+            "max_level": 30,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Pelipper",
+            "min_level": 20,
+            "max_level": 40,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 3,
+            "max_level": 15,
+            "rarity": [
+                100,
+                100,
+                100
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                55,
+                55,
+                55
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Finneon",
+            "min_level": 10,
+            "max_level": 25,
+            "rarity": [
+                45,
+                45,
+                45
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Lumineon",
+            "min_level": 25,
+            "max_level": 35,
+            "rarity": [
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Gyarados",
+            "min_level": 30,
+            "max_level": 55,
+            "rarity": [
+                55,
+                55,
+                55
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Clamperl",
+            "min_level": 20,
+            "max_level": 30,
+            "rarity": [
+                15,
+                15,
+                15
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Lumineon",
+            "min_level": 20,
+            "max_level": 55,
+            "rarity": [
+                45,
+                45,
+                45
+            ],
+            "types": [
+                "Water"
             ]
         }
     ]

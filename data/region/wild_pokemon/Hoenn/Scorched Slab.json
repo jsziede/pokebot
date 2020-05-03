@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 26,
             "max_level": 29,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 14,
             "rarity": [
@@ -25,10 +23,11 @@
                 "Poison",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Zubat",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -41,7 +40,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -51,10 +49,11 @@
                 "Poison",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -66,7 +65,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -75,10 +73,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -90,7 +89,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -102,7 +100,6 @@
         },
         {
             "name": "Barboach",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -112,10 +109,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Barboach",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

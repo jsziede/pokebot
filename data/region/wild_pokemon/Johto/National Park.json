@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Caterpie",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 12,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Metapod",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Weedle",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 12,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Kakuna",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Pidgey",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 14,
             "rarity": [
@@ -75,7 +70,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 14,
             "rarity": [
@@ -90,7 +84,6 @@
         },
         {
             "name": "Sunkern",
-            "field": "Walking",
             "min_level": 12,
             "max_level": 12,
             "rarity": [
@@ -101,10 +94,11 @@
             "types": [
                 "Grass"
             ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -119,7 +113,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -134,7 +127,6 @@
         },
         {
             "name": "Ledyba",
-            "field": "Headbutt",
             "min_level": 13,
             "max_level": 15,
             "rarity": [
@@ -149,7 +141,6 @@
         },
         {
             "name": "Spinarak",
-            "field": "Headbutt",
             "min_level": 13,
             "max_level": 15,
             "rarity": [
@@ -164,7 +155,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 10,
             "max_level": 12,
             "rarity": [
@@ -178,7 +168,6 @@
         },
         {
             "name": "Cherubi",
-            "field": "Headbutt",
             "min_level": 18,
             "max_level": 25,
             "rarity": [
@@ -188,48 +177,6 @@
             ],
             "types": [
                 "Grass"
-            ]
-        },
-        {
-            "name": "Plusle",
-            "field": "Hoenn Sound",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Minun",
-            "field": "Hoenn Sound",
-            "min_level": 12,
-            "max_level": 12,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Shinx",
-            "field": "Sinnoh Sound",
-            "min_level": 10,
-            "max_level": 12,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Electric"
             ]
         }
     ]

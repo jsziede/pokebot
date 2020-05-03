@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -47,7 +44,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -62,7 +58,6 @@
         },
         {
             "name": "Shellos",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -76,7 +71,6 @@
         },
         {
             "name": "Gastrodon",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -88,10 +82,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 3,
             "max_level": 15,
             "rarity": [
@@ -102,10 +97,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -119,7 +115,6 @@
         },
         {
             "name": "Remoraid",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -130,10 +125,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [
@@ -148,7 +144,6 @@
         },
         {
             "name": "Octillery",
-            "field": "Super Rod",
             "min_level": 20,
             "max_level": 55,
             "rarity": [

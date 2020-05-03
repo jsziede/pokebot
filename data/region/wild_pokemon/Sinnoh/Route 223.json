@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "surfing": [
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 50,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 50,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Mantyke",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 50,
             "rarity": [
@@ -44,10 +41,11 @@
                 "Water",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 3,
             "max_level": 10,
             "rarity": [
@@ -58,10 +56,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -75,7 +74,6 @@
         },
         {
             "name": "Remoraid",
-            "field": "Good Rod",
             "min_level": 10,
             "max_level": 25,
             "rarity": [
@@ -89,7 +87,6 @@
         },
         {
             "name": "Octillery",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -100,10 +97,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 55,
             "rarity": [
@@ -118,7 +116,6 @@
         },
         {
             "name": "Octillery",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -132,7 +129,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [
@@ -146,7 +142,6 @@
         },
         {
             "name": "Wailord",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 55,
             "rarity": [

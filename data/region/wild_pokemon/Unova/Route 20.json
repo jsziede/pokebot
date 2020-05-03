@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Sunkern",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 11,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Patrat",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 10,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Purrloin",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 11,
             "rarity": [
@@ -47,7 +44,6 @@
         },
         {
             "name": "Pidove",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 10,
             "rarity": [
@@ -63,7 +59,6 @@
         },
         {
             "name": "Sewaddle",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 11,
             "rarity": [
@@ -79,7 +74,6 @@
         },
         {
             "name": "Venipede",
-            "field": "Walking",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -95,7 +89,6 @@
         },
         {
             "name": "Dunsparce",
-            "field": "Walking",
             "min_level": 3,
             "max_level": 3,
             "rarity": [
@@ -110,7 +103,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -124,131 +116,7 @@
             ]
         },
         {
-            "name": "Azurill",
-            "field": "Surfing",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                30,
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Normal",
-                "Fairy"
-            ]
-        },
-        {
-            "name": "Marill",
-            "field": "Surfing",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                30,
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water",
-                "Fairy"
-            ]
-        },
-        {
-            "name": "Azumarill",
-            "field": "Surfing",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                5,
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Fairy"
-            ]
-        },
-        {
-            "name": "Basculin",
-            "field": "Surfing",
-            "min_level": 5,
-            "max_level": 15,
-            "rarity": [
-                70,
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 70,
-            "rarity": [
-                60,
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Basculin",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 60,
-            "rarity": [
-                40,
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwhirl",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 70,
-            "rarity": [
-                65,
-                65,
-                65,
-                65
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Politoed",
-            "field": "Super Rod",
-            "min_level": 50,
-            "max_level": 70,
-            "rarity": [
-                5,
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Mr. Mime",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -265,7 +133,6 @@
         },
         {
             "name": "Sudowoodo",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -277,6 +144,125 @@
             "swarm": true,
             "types": [
                 "Rock"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Azurill",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                30,
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Normal",
+                "Fairy"
+            ]
+        },
+        {
+            "name": "Marill",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                30,
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water",
+                "Fairy"
+            ]
+        },
+        {
+            "name": "Azumarill",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                5,
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Fairy"
+            ]
+        },
+        {
+            "name": "Basculin",
+            "min_level": 5,
+            "max_level": 15,
+            "rarity": [
+                70,
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 40,
+            "max_level": 70,
+            "rarity": [
+                60,
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Basculin",
+            "min_level": 40,
+            "max_level": 60,
+            "rarity": [
+                40,
+                40,
+                40,
+                40
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Poliwhirl",
+            "min_level": 40,
+            "max_level": 70,
+            "rarity": [
+                65,
+                65,
+                65,
+                65
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Politoed",
+            "min_level": 50,
+            "max_level": 70,
+            "rarity": [
+                5,
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water"
             ]
         }
     ]

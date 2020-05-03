@@ -1,21 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Graveler",
-            "field": "Rock Smash",
-            "min_level": 33,
-            "max_level": 38,
-            "rarity": [
-                100
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
+    "walking": [
         {
             "name": "Forretress",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -28,7 +14,6 @@
         },
         {
             "name": "Happiny",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -40,7 +25,6 @@
         },
         {
             "name": "Sunkern",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -52,7 +36,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -64,7 +47,6 @@
         },
         {
             "name": "Kricketune",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -76,7 +58,6 @@
         },
         {
             "name": "Larvesta",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -89,7 +70,6 @@
         },
         {
             "name": "Tangela",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -101,7 +81,6 @@
         },
         {
             "name": "Sunkern",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -113,7 +92,6 @@
         },
         {
             "name": "Purugly",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -125,7 +103,6 @@
         },
         {
             "name": "Petilil",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -137,7 +114,6 @@
         },
         {
             "name": "Cherrim",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -149,7 +125,6 @@
         },
         {
             "name": "Vulpix",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -161,7 +136,6 @@
         },
         {
             "name": "Glameow",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -173,7 +147,6 @@
         },
         {
             "name": "Minccino",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -181,6 +154,20 @@
             ],
             "types": [
                 "Normal"
+            ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Graveler",
+            "min_level": 33,
+            "max_level": 38,
+            "rarity": [
+                100
+            ],
+            "types": [
+                "Rock",
+                "Ground"
             ]
         }
     ]

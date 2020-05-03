@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Spoink",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 15,
             "rarity": [
@@ -14,7 +13,6 @@
         },
         {
             "name": "Zangoose",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 14,
             "rarity": [
@@ -26,7 +24,6 @@
         },
         {
             "name": "Seviper",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 14,
             "rarity": [
@@ -38,7 +35,6 @@
         },
         {
             "name": "Absol",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 15,
             "rarity": [
@@ -50,7 +46,6 @@
         },
         {
             "name": "Bagon",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 15,
             "rarity": [
@@ -62,7 +57,6 @@
         },
         {
             "name": "Drifloon",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 15,
             "rarity": [
@@ -75,7 +69,6 @@
         },
         {
             "name": "Mienfoo",
-            "field": "Walking",
             "min_level": 13,
             "max_level": 15,
             "rarity": [
@@ -87,7 +80,6 @@
         },
         {
             "name": "Inkay",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 15,
             "rarity": [
@@ -100,7 +92,6 @@
         },
         {
             "name": "Taillow",
-            "field": "Walking",
             "min_level": 7,
             "max_level": 7,
             "rarity": [
@@ -113,7 +104,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Walking",
             "min_level": 7,
             "max_level": 7,
             "rarity": [
@@ -123,36 +113,11 @@
                 "Water",
                 "Flying"
             ]
-        },
-        {
-            "name": "Dwebble",
-            "field": "Rock Smash",
-            "min_level": 13,
-            "max_level": 20,
-            "rarity": [
-                66
-            ],
-            "types": [
-                "Bug",
-                "Rock"
-            ]
-        },
-        {
-            "name": "Binacle",
-            "field": "Rock Smash",
-            "min_level": 13,
-            "max_level": 20,
-            "rarity": [
-                34
-            ],
-            "types": [
-                "Rock",
-                "Water"
-            ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -165,7 +130,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 27,
             "rarity": [
@@ -174,10 +138,37 @@
             "types": [
                 "Water"
             ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Dwebble",
+            "min_level": 13,
+            "max_level": 20,
+            "rarity": [
+                66
+            ],
+            "types": [
+                "Bug",
+                "Rock"
+            ]
         },
         {
+            "name": "Binacle",
+            "min_level": 13,
+            "max_level": 20,
+            "rarity": [
+                34
+            ],
+            "types": [
+                "Rock",
+                "Water"
+            ]
+        }
+    ],
+    "oldRod": [
+        {
             "name": "Luvdisc",
-            "field": "Old Rod",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -186,10 +177,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Shellder",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -201,7 +193,6 @@
         },
         {
             "name": "Staryu",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -213,7 +204,6 @@
         },
         {
             "name": "Skrelp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -226,7 +216,6 @@
         },
         {
             "name": "Clauncher",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -235,10 +224,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Cloyster",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -251,7 +241,6 @@
         },
         {
             "name": "Starmie",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -264,7 +253,6 @@
         },
         {
             "name": "Qwilfish",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -277,7 +265,6 @@
         },
         {
             "name": "Dragalge",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -290,7 +277,6 @@
         },
         {
             "name": "Clawitzer",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [

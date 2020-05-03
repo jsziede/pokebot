@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 34,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Spheal",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 31,
             "rarity": [
@@ -28,7 +26,6 @@
         },
         {
             "name": "Sealeo",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 34,
             "rarity": [
@@ -41,7 +38,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 17,
             "max_level": 17,
             "rarity": [
@@ -54,7 +50,6 @@
         },
         {
             "name": "Snorunt",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 34,
             "rarity": [
@@ -65,21 +60,7 @@
             ]
         },
         {
-            "name": "Graveler",
-            "field": "Rock Smash",
-            "min_level": 31,
-            "max_level": 34,
-            "rarity": [
-                100
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
-        {
             "name": "Dewgong",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 34,
             "rarity": [
@@ -93,7 +74,6 @@
         },
         {
             "name": "Delibird",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 34,
             "rarity": [
@@ -107,7 +87,6 @@
         },
         {
             "name": "Cubchoo",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 34,
             "rarity": [
@@ -117,10 +96,11 @@
             "types": [
                 "Ice"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Golbat",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -133,7 +113,6 @@
         },
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -146,7 +125,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -156,10 +134,25 @@
                 "Water",
                 "Poison"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Graveler",
+            "min_level": 31,
+            "max_level": 34,
+            "rarity": [
+                100
+            ],
+            "types": [
+                "Rock",
+                "Ground"
+            ]
+        }
+    ],
+    "oldRod": [
         {
             "name": "Tentacool",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -172,7 +165,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 15,
             "rarity": [
@@ -181,10 +173,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Tentacool",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -197,7 +190,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -209,7 +201,6 @@
         },
         {
             "name": "Wailmer",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -218,10 +209,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Wailmer",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 40,
             "rarity": [

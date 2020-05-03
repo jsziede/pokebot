@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Spearow",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 34,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Fearow",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 44,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Ekans",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 34,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Arbok",
-            "field": "Walking",
             "min_level": 44,
             "max_level": 44,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Sandshrew",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 34,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Sandslash",
-            "field": "Walking",
             "min_level": 44,
             "max_level": 44,
             "rarity": [
@@ -88,7 +82,6 @@
         },
         {
             "name": "Mankey",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 34,
             "rarity": [
@@ -102,7 +95,6 @@
         },
         {
             "name": "Primeape",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 42,
             "rarity": [
@@ -113,10 +105,11 @@
             "types": [
                 "Fighting"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -130,7 +123,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -142,10 +134,11 @@
                 "Water",
                 "Psychic"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -156,10 +149,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Poliwag",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -173,7 +167,6 @@
         },
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -187,7 +180,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -198,10 +190,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Poliwag",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -215,7 +208,6 @@
         },
         {
             "name": "Poliwhirl",
-            "field": "Super Rod",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -229,7 +221,6 @@
         },
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -244,7 +235,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -258,7 +248,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 19,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 37,
             "max_level": 40,
             "rarity": [
@@ -28,7 +26,6 @@
         },
         {
             "name": "Lunatone",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 40,
             "rarity": [
@@ -41,7 +38,6 @@
         },
         {
             "name": "Solrock",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 40,
             "rarity": [
@@ -54,7 +50,6 @@
         },
         {
             "name": "Bagon",
-            "field": "Walking",
             "min_level": 37,
             "max_level": 40,
             "rarity": [
@@ -66,7 +61,6 @@
         },
         {
             "name": "Clefairy",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 40,
             "rarity": [
@@ -79,7 +73,6 @@
         },
         {
             "name": "Druddigon",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 40,
             "rarity": [
@@ -92,7 +85,6 @@
         },
         {
             "name": "Deino",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 40,
             "rarity": [
@@ -103,10 +95,11 @@
                 "Dark",
                 "Dragon"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Zubat",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 20,
             "rarity": [
@@ -119,7 +112,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -132,7 +124,6 @@
         },
         {
             "name": "Solrock",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -145,7 +136,6 @@
         },
         {
             "name": "Lunatone",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 40,
             "rarity": [
@@ -155,10 +145,11 @@
                 "Rock",
                 "Psychic"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Goldeen",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 10,
             "rarity": [
@@ -170,7 +161,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 10,
             "rarity": [
@@ -179,10 +169,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -194,7 +185,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -206,7 +196,6 @@
         },
         {
             "name": "Barboach",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -216,10 +205,11 @@
                 "Water",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Barboach",
-            "field": "Super Rod",
             "min_level": 30,
             "max_level": 35,
             "rarity": [
@@ -232,7 +222,6 @@
         },
         {
             "name": "Whiscash",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [

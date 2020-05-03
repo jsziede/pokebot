@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Gloom",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 25,
             "rarity": [
@@ -15,7 +14,6 @@
         },
         {
             "name": "Linoone",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 25,
             "rarity": [
@@ -27,7 +25,6 @@
         },
         {
             "name": "Kecleon",
-            "field": "Walking",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -39,7 +36,6 @@
         },
         {
             "name": "Tropius",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 25,
             "rarity": [
@@ -52,7 +48,6 @@
         },
         {
             "name": "Oddish",
-            "field": "Walking",
             "min_level": 12,
             "max_level": 12,
             "rarity": [
@@ -62,10 +57,11 @@
                 "Grass",
                 "Poison"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 25,
             "rarity": [
@@ -78,7 +74,6 @@
         },
         {
             "name": "Wingull",
-            "field": "Surfing",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -91,7 +86,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Surfing",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -101,10 +95,11 @@
                 "Water",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Tentacool",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -117,7 +112,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 10,
             "max_level": 10,
             "rarity": [
@@ -129,7 +123,6 @@
         },
         {
             "name": "Feebas",
-            "field": "Old Rod",
             "min_level": 15,
             "max_level": 15,
             "rarity": [
@@ -138,10 +131,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -153,7 +147,6 @@
         },
         {
             "name": "Carvanha",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -166,7 +159,6 @@
         },
         {
             "name": "Feebas",
-            "field": "Good Rod",
             "min_level": 25,
             "max_level": 25,
             "rarity": [
@@ -175,10 +167,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Carvanha",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -191,7 +184,6 @@
         },
         {
             "name": "Sharpedo",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -204,7 +196,6 @@
         },
         {
             "name": "Feebas",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 35,
             "rarity": [

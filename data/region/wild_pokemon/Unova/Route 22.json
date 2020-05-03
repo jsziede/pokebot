@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Golduck",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 45,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Marill",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 47,
             "rarity": [
@@ -33,7 +31,6 @@
         },
         {
             "name": "Delibird",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 44,
             "rarity": [
@@ -49,7 +46,6 @@
         },
         {
             "name": "Pelipper",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 45,
             "rarity": [
@@ -65,7 +61,6 @@
         },
         {
             "name": "Lunatone",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 46,
             "rarity": [
@@ -81,7 +76,6 @@
         },
         {
             "name": "Solrock",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 46,
             "rarity": [
@@ -97,7 +91,6 @@
         },
         {
             "name": "Amoonguss",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 44,
             "rarity": [
@@ -113,7 +106,6 @@
         },
         {
             "name": "Mienfoo",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 47,
             "rarity": [
@@ -128,7 +120,6 @@
         },
         {
             "name": "Azumarill",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 42,
             "rarity": [
@@ -144,7 +135,6 @@
         },
         {
             "name": "Audino",
-            "field": "Walking",
             "min_level": 39,
             "max_level": 42,
             "rarity": [
@@ -159,7 +149,6 @@
         },
         {
             "name": "Emolga",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -174,100 +163,7 @@
             ]
         },
         {
-            "name": "Marill",
-            "field": "Surfing",
-            "min_level": 15,
-            "max_level": 40,
-            "rarity": [
-                60,
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Fairy"
-            ]
-        },
-        {
-            "name": "Azumarill",
-            "field": "Surfing",
-            "min_level": 25,
-            "max_level": 45,
-            "rarity": [
-                5,
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Fairy"
-            ]
-        },
-        {
-            "name": "Basculin",
-            "field": "Surfing",
-            "min_level": 15,
-            "max_level": 60,
-            "rarity": [
-                35,
-                35,
-                35,
-                35
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Surfing",
-            "min_level": 40,
-            "max_level": 70,
-            "rarity": [
-                70,
-                70,
-                70,
-                70
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seaking",
-            "field": "Surfing",
-            "min_level": 50,
-            "max_level": 70,
-            "rarity": [
-                10,
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seaking",
-            "field": "Super Rod",
-            "min_level": 45,
-            "max_level": 70,
-            "rarity": [
-                10,
-                10,
-                10,
-                10
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
             "name": "Ledian",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -284,7 +180,6 @@
         },
         {
             "name": "Ariados",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 55,
             "rarity": [
@@ -297,6 +192,96 @@
             "types": [
                 "Bug",
                 "Poison"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Marill",
+            "min_level": 15,
+            "max_level": 40,
+            "rarity": [
+                60,
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Fairy"
+            ]
+        },
+        {
+            "name": "Azumarill",
+            "min_level": 25,
+            "max_level": 45,
+            "rarity": [
+                5,
+                5,
+                5,
+                5
+            ],
+            "types": [
+                "Water",
+                "Fairy"
+            ]
+        },
+        {
+            "name": "Basculin",
+            "min_level": 15,
+            "max_level": 60,
+            "rarity": [
+                35,
+                35,
+                35,
+                35
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Goldeen",
+            "min_level": 40,
+            "max_level": 70,
+            "rarity": [
+                70,
+                70,
+                70,
+                70
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Seaking",
+            "min_level": 50,
+            "max_level": 70,
+            "rarity": [
+                10,
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Seaking",
+            "min_level": 45,
+            "max_level": 70,
+            "rarity": [
+                10,
+                10,
+                10,
+                10
+            ],
+            "types": [
+                "Water"
             ]
         }
     ]

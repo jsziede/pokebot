@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Raticate",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 33,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Spearow",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 31,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Fearow",
-            "field": "Walking",
             "min_level": 34,
             "max_level": 34,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Gloom",
-            "field": "Walking",
             "min_level": 32,
             "max_level": 32,
             "rarity": [
@@ -61,7 +57,6 @@
         },
         {
             "name": "Farfetch'd",
-            "field": "Walking",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -76,7 +71,6 @@
         },
         {
             "name": "Ditto",
-            "field": "Walking",
             "min_level": 31,
             "max_level": 40,
             "rarity": [
@@ -90,7 +84,6 @@
         },
         {
             "name": "Noctowl",
-            "field": "Walking",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -105,7 +98,6 @@
         },
         {
             "name": "Miltank",
-            "field": "Walking",
             "min_level": 35,
             "max_level": 35,
             "rarity": [
@@ -118,8 +110,23 @@
             ]
         },
         {
+            "name": "Ditto",
+            "min_level": 35,
+            "max_level": 35,
+            "rarity": [
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Normal"
+            ]
+        }
+    ],
+    "surfing": [
+        {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -134,7 +141,6 @@
         },
         {
             "name": "Seel",
-            "field": "Surfing",
             "min_level": 10,
             "max_level": 20,
             "rarity": [
@@ -148,7 +154,6 @@
         },
         {
             "name": "Staryu",
-            "field": "Surfing",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -159,156 +164,11 @@
             "types": [
                 "Water"
             ]
-        },
-        {
-            "name": "Tentacool",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                5,
-                5,
-                5
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                95,
-                95,
-                95
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Tentacool",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Shellder",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                3,
-                3,
-                3
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Chinchou",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                7,
-                7,
-                7
-            ],
-            "types": [
-                "Water",
-                "Electric"
-            ]
-        },
-        {
-            "name": "Tentacruel",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                7,
-                7,
-                7
-            ],
-            "types": [
-                "Water",
-                "Poison"
-            ]
-        },
-        {
-            "name": "Shellder",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Chinchou",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water",
-                "Electric"
-            ]
-        },
-        {
-            "name": "Lanturn",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                3,
-                3,
-                3
-            ],
-            "types": [
-                "Water",
-                "Electric"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Metapod",
-            "field": "Headbutt",
             "min_level": 25,
             "max_level": 28,
             "rarity": [
@@ -322,7 +182,6 @@
         },
         {
             "name": "Butterfree",
-            "field": "Headbutt",
             "min_level": 25,
             "max_level": 28,
             "rarity": [
@@ -337,7 +196,6 @@
         },
         {
             "name": "Kakuna",
-            "field": "Headbutt",
             "min_level": 25,
             "max_level": 28,
             "rarity": [
@@ -352,7 +210,6 @@
         },
         {
             "name": "Beedrill",
-            "field": "Headbutt",
             "min_level": 25,
             "max_level": 28,
             "rarity": [
@@ -367,7 +224,6 @@
         },
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 15,
             "max_level": 18,
             "rarity": [
@@ -382,7 +238,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 15,
             "max_level": 18,
             "rarity": [
@@ -397,7 +252,6 @@
         },
         {
             "name": "Ledyba",
-            "field": "Headbutt",
             "min_level": 17,
             "max_level": 18,
             "rarity": [
@@ -412,7 +266,6 @@
         },
         {
             "name": "Spinarak",
-            "field": "Headbutt",
             "min_level": 17,
             "max_level": 18,
             "rarity": [
@@ -427,7 +280,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 15,
             "max_level": 16,
             "rarity": [
@@ -441,7 +293,6 @@
         },
         {
             "name": "Heracross",
-            "field": "Headbutt",
             "min_level": 25,
             "max_level": 30,
             "rarity": [
@@ -453,76 +304,147 @@
                 "Bug",
                 "Fighting"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
-            "name": "Ditto",
-            "field": "Walking",
-            "min_level": 35,
-            "max_level": 35,
+            "name": "Tentacool",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                40,
-                40,
-                40
+                5,
+                5,
+                5
             ],
-            "swarm": true,
             "types": [
-                "Normal"
+                "Water",
+                "Poison"
             ]
         },
         {
-            "name": "Linoone",
-            "field": "Hoenn Sound",
-            "min_level": 31,
-            "max_level": 32,
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Normal"
-            ]
-        },
-        {
-            "name": "Whismur",
-            "field": "Hoenn Sound",
-            "min_level": 33,
-            "max_level": 34,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Normal"
-            ]
-        },
-        {
-            "name": "Bidoof",
-            "field": "Sinnoh Sound",
-            "min_level": 31,
-            "max_level": 32,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Normal"
-            ]
-        },
-        {
-            "name": "Buizel",
-            "field": "Sinnoh Sound",
-            "min_level": 33,
-            "max_level": 34,
-            "rarity": [
-                20,
-                20,
-                20
+                95,
+                95,
+                95
             ],
             "types": [
                 "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Tentacool",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Shellder",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                3,
+                3,
+                3
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Chinchou",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                7,
+                7,
+                7
+            ],
+            "types": [
+                "Water",
+                "Electric"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Tentacruel",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                7,
+                7,
+                7
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Shellder",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                30,
+                30,
+                30
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Chinchou",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water",
+                "Electric"
+            ]
+        },
+        {
+            "name": "Lanturn",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                3,
+                3,
+                3
+            ],
+            "types": [
+                "Water",
+                "Electric"
             ]
         }
     ]

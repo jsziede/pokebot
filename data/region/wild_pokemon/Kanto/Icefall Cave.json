@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Seel",
-            "field": "Walking",
             "min_level": 43,
             "max_level": 47,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 45,
             "max_level": 48,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Dewgong",
-            "field": "Walking",
             "min_level": 49,
             "max_level": 53,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 40,
             "max_level": 40,
             "rarity": [
@@ -61,7 +57,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 41,
             "rarity": [
@@ -75,7 +70,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 41,
             "rarity": [
@@ -90,7 +84,6 @@
         },
         {
             "name": "Swinub",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 31,
             "rarity": [
@@ -105,7 +98,6 @@
         },
         {
             "name": "Delibird",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -120,7 +112,6 @@
         },
         {
             "name": "Sneasel",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 30,
             "rarity": [
@@ -132,10 +123,11 @@
                 "Dark",
                 "Ice"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Seel",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 35,
             "rarity": [
@@ -149,7 +141,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 35,
             "rarity": [
@@ -163,7 +154,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 35,
             "rarity": [
@@ -178,7 +168,6 @@
         },
         {
             "name": "Dewgong",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 40,
             "rarity": [
@@ -193,7 +182,6 @@
         },
         {
             "name": "Wooper",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -208,7 +196,6 @@
         },
         {
             "name": "Marill",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -223,7 +210,6 @@
         },
         {
             "name": "Tentacool",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 45,
             "rarity": [
@@ -238,7 +224,6 @@
         },
         {
             "name": "Tentacruel",
-            "field": "Surfing",
             "min_level": 35,
             "max_level": 45,
             "rarity": [
@@ -253,7 +238,6 @@
         },
         {
             "name": "Lapras",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 45,
             "rarity": [
@@ -265,10 +249,11 @@
                 "Water",
                 "Ice"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
             "name": "Magikarp",
-            "field": "Old Rod",
             "min_level": 5,
             "max_level": 5,
             "rarity": [
@@ -279,10 +264,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "goodRod": [
         {
             "name": "Poliwag",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -296,7 +282,6 @@
         },
         {
             "name": "Goldeen",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -310,7 +295,6 @@
         },
         {
             "name": "Magikarp",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -324,7 +308,6 @@
         },
         {
             "name": "Horsea",
-            "field": "Good Rod",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -338,7 +321,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Good Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -349,10 +331,11 @@
             "types": [
                 "Water"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Poliwag",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -366,7 +349,6 @@
         },
         {
             "name": "Poliwhirl",
-            "field": "Super Rod",
             "min_level": 20,
             "max_level": 30,
             "rarity": [
@@ -380,7 +362,6 @@
         },
         {
             "name": "Gyarados",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -395,7 +376,6 @@
         },
         {
             "name": "Psyduck",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -409,7 +389,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 35,
             "rarity": [
@@ -424,7 +403,6 @@
         },
         {
             "name": "Shellder",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -438,7 +416,6 @@
         },
         {
             "name": "Horsea",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -452,7 +429,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -466,7 +442,6 @@
         },
         {
             "name": "Staryu",
-            "field": "Super Rod",
             "min_level": 15,
             "max_level": 25,
             "rarity": [
@@ -480,7 +455,6 @@
         },
         {
             "name": "Seadra",
-            "field": "Super Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [
@@ -494,7 +468,6 @@
         },
         {
             "name": "Kingler",
-            "field": "Super Rod",
             "min_level": 25,
             "max_level": 35,
             "rarity": [

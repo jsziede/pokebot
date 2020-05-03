@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Pidgey",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Sentret",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -57,10 +53,11 @@
                 "Normal",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Exeggcute",
-            "field": "Headbutt",
             "min_level": 2,
             "max_level": 5,
             "rarity": [
@@ -75,7 +72,6 @@
         },
         {
             "name": "Hoothoot",
-            "field": "Headbutt",
             "min_level": 2,
             "max_level": 5,
             "rarity": [
@@ -90,7 +86,6 @@
         },
         {
             "name": "Ledyba",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 5,
             "rarity": [
@@ -105,7 +100,6 @@
         },
         {
             "name": "Spinarak",
-            "field": "Headbutt",
             "min_level": 4,
             "max_level": 5,
             "rarity": [
@@ -120,7 +114,6 @@
         },
         {
             "name": "Pineco",
-            "field": "Headbutt",
             "min_level": 2,
             "max_level": 3,
             "rarity": [
@@ -130,48 +123,6 @@
             ],
             "types": [
                 "Bug"
-            ]
-        },
-        {
-            "name": "Plusle",
-            "field": "Hoenn Sound",
-            "min_level": 2,
-            "max_level": 3,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Minun",
-            "field": "Hoenn Sound",
-            "min_level": 2,
-            "max_level": 3,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Shinx",
-            "field": "Sinnoh Sound",
-            "min_level": 2,
-            "max_level": 3,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Electric"
             ]
         }
     ]

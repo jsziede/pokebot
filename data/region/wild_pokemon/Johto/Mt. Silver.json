@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Ponyta",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 42,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Rapidash",
-            "field": "Walking",
             "min_level": 44,
             "max_level": 44,
             "rarity": [
@@ -30,7 +28,6 @@
         },
         {
             "name": "Doduo",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 41,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Dodrio",
-            "field": "Walking",
             "min_level": 43,
             "max_level": 43,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Tangela",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 41,
             "rarity": [
@@ -74,7 +69,6 @@
         },
         {
             "name": "Sneasel",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 50,
             "rarity": [
@@ -89,7 +83,6 @@
         },
         {
             "name": "Ursaring",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 50,
             "rarity": [
@@ -103,7 +96,6 @@
         },
         {
             "name": "Donphan",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 50,
             "rarity": [
@@ -117,7 +109,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 45,
             "max_level": 51,
             "rarity": [
@@ -132,7 +123,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Walking",
             "min_level": 41,
             "max_level": 43,
             "rarity": [
@@ -147,7 +137,6 @@
         },
         {
             "name": "Onix",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 48,
             "rarity": [
@@ -162,7 +151,6 @@
         },
         {
             "name": "Teddiursa",
-            "field": "Walking",
             "min_level": 43,
             "max_level": 48,
             "rarity": [
@@ -176,7 +164,6 @@
         },
         {
             "name": "Phanpy",
-            "field": "Walking",
             "min_level": 43,
             "max_level": 48,
             "rarity": [
@@ -190,7 +177,6 @@
         },
         {
             "name": "Larvitar",
-            "field": "Walking",
             "min_level": 15,
             "max_level": 30,
             "rarity": [
@@ -205,7 +191,6 @@
         },
         {
             "name": "Golduck",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 51,
             "rarity": [
@@ -219,7 +204,6 @@
         },
         {
             "name": "Quagsire",
-            "field": "Walking",
             "min_level": 45,
             "max_level": 45,
             "rarity": [
@@ -234,7 +218,6 @@
         },
         {
             "name": "Misdreavus",
-            "field": "Walking",
             "min_level": 42,
             "max_level": 48,
             "rarity": [
@@ -248,7 +231,6 @@
         },
         {
             "name": "Pupitar",
-            "field": "Walking",
             "min_level": 30,
             "max_level": 45,
             "rarity": [
@@ -263,7 +245,6 @@
         },
         {
             "name": "Steelix",
-            "field": "Walking",
             "min_level": 48,
             "max_level": 48,
             "rarity": [
@@ -275,10 +256,11 @@
                 "Steel",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "surfing": [
         {
             "name": "Poliwag",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 40,
             "rarity": [
@@ -292,7 +274,6 @@
         },
         {
             "name": "Goldeen",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 40,
             "rarity": [
@@ -306,7 +287,6 @@
         },
         {
             "name": "Poliwhirl",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 48,
             "rarity": [
@@ -320,7 +300,6 @@
         },
         {
             "name": "Seaking",
-            "field": "Surfing",
             "min_level": 30,
             "max_level": 50,
             "rarity": [
@@ -331,180 +310,11 @@
             "types": [
                 "Water"
             ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                15,
-                15,
-                15
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Old Rod",
-            "min_level": 10,
-            "max_level": 10,
-            "rarity": [
-                85,
-                85,
-                85
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                60,
-                60,
-                60
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                50,
-                50,
-                40
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Goldeen",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                30,
-                30,
-                30
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seaking",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Good Rod",
-            "min_level": 20,
-            "max_level": 20,
-            "rarity": [
-                0,
-                0,
-                10
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
-        {
-            "name": "Poliwag",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                80,
-                80,
-                80
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Magikarp",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Seaking",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                50,
-                50,
-                20
-            ],
-            "types": [
-                "Water"
-            ]
-        },
-        {
-            "name": "Gyarados",
-            "field": "Super Rod",
-            "min_level": 40,
-            "max_level": 40,
-            "rarity": [
-                50,
-                50,
-                80
-            ],
-            "types": [
-                "Water",
-                "Flying"
-            ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Natu",
-            "field": "Headbutt",
             "min_level": 39,
             "max_level": 44,
             "rarity": [
@@ -519,7 +329,6 @@
         },
         {
             "name": "Aipom",
-            "field": "Headbutt",
             "min_level": 39,
             "max_level": 44,
             "rarity": [
@@ -533,7 +342,6 @@
         },
         {
             "name": "Heracross",
-            "field": "Headbutt",
             "min_level": 39,
             "max_level": 44,
             "rarity": [
@@ -545,82 +353,93 @@
                 "Bug",
                 "Fighting"
             ]
-        },
+        }
+    ],
+    "oldRod": [
         {
-            "name": "Linoone",
-            "field": "Hoenn Sound",
-            "min_level": 42,
-            "max_level": 42,
+            "name": "Poliwag",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                15,
+                15,
+                15
             ],
             "types": [
-                "Normal"
+                "Water"
             ]
         },
         {
-            "name": "Whismur",
-            "field": "Hoenn Sound",
-            "min_level": 41,
-            "max_level": 42,
+            "name": "Goldeen",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                15,
+                15,
+                15
             ],
             "types": [
-                "Normal"
+                "Water"
             ]
         },
         {
-            "name": "Makuhita",
-            "field": "Hoenn Sound",
-            "min_level": 43,
-            "max_level": 50,
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 10,
             "rarity": [
-                20,
-                20,
-                20
+                85,
+                85,
+                85
             ],
             "types": [
-                "Fighting"
+                "Water"
+            ]
+        }
+    ],
+    "goodRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 20,
+            "max_level": 20,
+            "rarity": [
+                60,
+                60,
+                60
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
-            "name": "Absol",
-            "field": "Hoenn Sound",
-            "min_level": 42,
-            "max_level": 51,
+            "name": "Magikarp",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
-                20,
-                20,
-                20
+                50,
+                50,
+                40
             ],
             "types": [
-                "Dark"
+                "Water"
             ]
         },
         {
-            "name": "Bidoof",
-            "field": "Sinnoh Sound",
-            "min_level": 42,
-            "max_level": 42,
+            "name": "Goldeen",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
-                20,
-                20,
-                20
+                30,
+                30,
+                30
             ],
             "types": [
-                "Normal"
+                "Water"
             ]
         },
         {
-            "name": "Buizel",
-            "field": "Sinnoh Sound",
-            "min_level": 41,
-            "max_level": 42,
+            "name": "Seaking",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
                 20,
                 20,
@@ -631,32 +450,72 @@
             ]
         },
         {
-            "name": "Chingling",
-            "field": "Sinnoh Sound",
-            "min_level": 43,
-            "max_level": 50,
+            "name": "Gyarados",
+            "min_level": 20,
+            "max_level": 20,
             "rarity": [
-                20,
-                20,
-                20
+                0,
+                0,
+                10
             ],
             "types": [
-                "Psychic"
+                "Water",
+                "Flying"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Poliwag",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                80,
+                80,
+                80
+            ],
+            "types": [
+                "Water"
             ]
         },
         {
-            "name": "Bronzor",
-            "field": "Sinnoh Sound",
-            "min_level": 42,
-            "max_level": 51,
+            "name": "Magikarp",
+            "min_level": 40,
+            "max_level": 40,
             "rarity": [
                 20,
                 20,
                 20
             ],
             "types": [
-                "Steel",
-                "Psychic"
+                "Water"
+            ]
+        },
+        {
+            "name": "Seaking",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                50,
+                50,
+                20
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Gyarados",
+            "min_level": 40,
+            "max_level": 40,
+            "rarity": [
+                50,
+                50,
+                80
+            ],
+            "types": [
+                "Water",
+                "Flying"
             ]
         }
     ]

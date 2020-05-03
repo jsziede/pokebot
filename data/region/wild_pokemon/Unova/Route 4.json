@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Sandile",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 18,
             "rarity": [
@@ -18,7 +17,6 @@
         },
         {
             "name": "Darumaka",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 18,
             "rarity": [
@@ -33,7 +31,6 @@
         },
         {
             "name": "Scraggy",
-            "field": "Walking",
             "min_level": 16,
             "max_level": 17,
             "rarity": [
@@ -49,7 +46,6 @@
         },
         {
             "name": "Trubbish",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 17,
             "rarity": [
@@ -64,7 +60,6 @@
         },
         {
             "name": "Minccino",
-            "field": "Walking",
             "min_level": 14,
             "max_level": 17,
             "rarity": [
@@ -78,8 +73,24 @@
             ]
         },
         {
+            "name": "Hippopotas",
+            "min_level": 15,
+            "max_level": 55,
+            "rarity": [
+                40,
+                40,
+                40,
+                40
+            ],
+            "swarm": true,
+            "types": [
+                "Ground"
+            ]
+        }
+    ],
+    "surfing": [
+        {
             "name": "Frillish",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 15,
             "rarity": [
@@ -95,7 +106,6 @@
         },
         {
             "name": "Alomomola",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 20,
             "rarity": [
@@ -110,7 +120,6 @@
         },
         {
             "name": "Jellicent",
-            "field": "Surfing",
             "min_level": 5,
             "max_level": 20,
             "rarity": [
@@ -123,10 +132,11 @@
                 "Water",
                 "Ghost"
             ]
-        },
+        }
+    ],
+    "superRod": [
         {
             "name": "Krabby",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 55,
             "rarity": [
@@ -141,7 +151,6 @@
         },
         {
             "name": "Finneon",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 70,
             "rarity": [
@@ -156,7 +165,6 @@
         },
         {
             "name": "Lumineon",
-            "field": "Super Rod",
             "min_level": 40,
             "max_level": 60,
             "rarity": [
@@ -171,7 +179,6 @@
         },
         {
             "name": "Qwilfish",
-            "field": "Super Rod",
             "min_level": 50,
             "max_level": 70,
             "rarity": [
@@ -187,7 +194,6 @@
         },
         {
             "name": "Clamperl",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 60,
             "rarity": [
@@ -202,7 +208,6 @@
         },
         {
             "name": "Luvdisc",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 60,
             "rarity": [
@@ -217,7 +222,6 @@
         },
         {
             "name": "Relicanth",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -233,7 +237,6 @@
         },
         {
             "name": "Kingler",
-            "field": "Super Rod",
             "min_level": 35,
             "max_level": 70,
             "rarity": [
@@ -248,7 +251,6 @@
         },
         {
             "name": "Huntail",
-            "field": "Super Rod",
             "min_level": 45,
             "max_level": 70,
             "rarity": [
@@ -263,7 +265,6 @@
         },
         {
             "name": "Gorebyss",
-            "field": "Super Rod",
             "min_level": 45,
             "max_level": 70,
             "rarity": [
@@ -274,22 +275,6 @@
             ],
             "types": [
                 "Water"
-            ]
-        },
-        {
-            "name": "Hippopotas",
-            "field": "Walking",
-            "min_level": 15,
-            "max_level": 55,
-            "rarity": [
-                40,
-                40,
-                40,
-                40
-            ],
-            "swarm": true,
-            "types": [
-                "Ground"
             ]
         }
     ]

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 7,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Spearow",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 6,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Ekans",
-            "field": "Walking",
             "min_level": 7,
             "max_level": 7,
             "rarity": [
@@ -45,7 +42,6 @@
         },
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 4,
             "max_level": 8,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Hoppip",
-            "field": "Walking",
             "min_level": 6,
             "max_level": 8,
             "rarity": [
@@ -72,10 +67,11 @@
                 "Grass",
                 "Flying"
             ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Spearow",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 8,
             "rarity": [
@@ -90,7 +86,6 @@
         },
         {
             "name": "Aipom",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 8,
             "rarity": [
@@ -104,7 +99,6 @@
         },
         {
             "name": "Heracross",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 5,
             "rarity": [
@@ -115,48 +109,6 @@
             "types": [
                 "Bug",
                 "Fighting"
-            ]
-        },
-        {
-            "name": "Plusle",
-            "field": "Hoenn Sound",
-            "min_level": 6,
-            "max_level": 7,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Minun",
-            "field": "Hoenn Sound",
-            "min_level": 6,
-            "max_level": 6,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Shinx",
-            "field": "Sinnoh Sound",
-            "min_level": 6,
-            "max_level": 7,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Electric"
             ]
         }
     ]

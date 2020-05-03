@@ -1,33 +1,7 @@
 {
-    "pokemon": [
-        {
-            "name": "Graveler",
-            "field": "Rock Smash",
-            "min_level": 35,
-            "max_level": 38,
-            "rarity": [
-                85
-            ],
-            "types": [
-                "Rock",
-                "Ground"
-            ]
-        },
-        {
-            "name": "Boldore",
-            "field": "Rock Smash",
-            "min_level": 37,
-            "max_level": 37,
-            "rarity": [
-                15
-            ],
-            "types": [
-                "Rock"
-            ]
-        },
+    "walking": [
         {
             "name": "Unown",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -39,7 +13,6 @@
         },
         {
             "name": "Slowpoke",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -52,7 +25,6 @@
         },
         {
             "name": "Tynamo",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -64,7 +36,6 @@
         },
         {
             "name": "Klink",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -76,7 +47,6 @@
         },
         {
             "name": "Onix",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -89,7 +59,6 @@
         },
         {
             "name": "Excadrill",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -102,7 +71,6 @@
         },
         {
             "name": "Cofagrigus",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -114,7 +82,6 @@
         },
         {
             "name": "Ditto",
-            "field": "Walking",
             "min_level": 36,
             "max_level": 38,
             "rarity": [
@@ -122,6 +89,31 @@
             ],
             "types": [
                 "Normal"
+            ]
+        }
+    ],
+    "rockSmash": [
+        {
+            "name": "Graveler",
+            "min_level": 35,
+            "max_level": 38,
+            "rarity": [
+                85
+            ],
+            "types": [
+                "Rock",
+                "Ground"
+            ]
+        },
+        {
+            "name": "Boldore",
+            "min_level": 37,
+            "max_level": 37,
+            "rarity": [
+                15
+            ],
+            "types": [
+                "Rock"
             ]
         }
     ]

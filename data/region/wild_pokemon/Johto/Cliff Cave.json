@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Zubat",
-            "field": "Walking",
             "min_level": 18,
             "max_level": 18,
             "rarity": [
@@ -17,7 +16,6 @@
         },
         {
             "name": "Golbat",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 22,
             "rarity": [
@@ -32,7 +30,6 @@
         },
         {
             "name": "Machop",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 19,
             "rarity": [
@@ -46,7 +43,6 @@
         },
         {
             "name": "Machoke",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 22,
             "rarity": [
@@ -60,7 +56,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 19,
             "max_level": 19,
             "rarity": [
@@ -75,7 +70,6 @@
         },
         {
             "name": "Graveler",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -90,7 +84,6 @@
         },
         {
             "name": "Onix",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -105,7 +98,6 @@
         },
         {
             "name": "Krabby",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -119,7 +111,6 @@
         },
         {
             "name": "Kingler",
-            "field": "Walking",
             "min_level": 22,
             "max_level": 22,
             "rarity": [
@@ -133,7 +124,6 @@
         },
         {
             "name": "Wooper",
-            "field": "Walking",
             "min_level": 18,
             "max_level": 18,
             "rarity": [
@@ -148,7 +138,6 @@
         },
         {
             "name": "Quagsire",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -163,7 +152,6 @@
         },
         {
             "name": "Misdreavus",
-            "field": "Walking",
             "min_level": 20,
             "max_level": 20,
             "rarity": [
@@ -177,7 +165,6 @@
         },
         {
             "name": "Steelix",
-            "field": "Walking",
             "min_level": 23,
             "max_level": 23,
             "rarity": [
@@ -189,10 +176,11 @@
                 "Steel",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "rockSmash": [
         {
             "name": "Krabby",
-            "field": "Rock Smash",
             "min_level": 20,
             "max_level": 26,
             "rarity": [
@@ -206,7 +194,6 @@
         },
         {
             "name": "Kingler",
-            "field": "Rock Smash",
             "min_level": 28,
             "max_level": 31,
             "rarity": [
@@ -216,63 +203,6 @@
             ],
             "types": [
                 "Water"
-            ]
-        },
-        {
-            "name": "Makuhita",
-            "field": "Hoenn Sound",
-            "min_level": 19,
-            "max_level": 20,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Fighting"
-            ]
-        },
-        {
-            "name": "Absol",
-            "field": "Hoenn Sound",
-            "min_level": 20,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Dark"
-            ]
-        },
-        {
-            "name": "Chingling",
-            "field": "Sinnoh Sound",
-            "min_level": 19,
-            "max_level": 20,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Psychic"
-            ]
-        },
-        {
-            "name": "Bronzor",
-            "field": "Sinnoh Sound",
-            "min_level": 20,
-            "max_level": 22,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Steel",
-                "Psychic"
             ]
         }
     ]

@@ -1,8 +1,7 @@
 {
-    "pokemon": [
+    "walking": [
         {
             "name": "Rattata",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 4,
             "rarity": [
@@ -16,7 +15,6 @@
         },
         {
             "name": "Spearow",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 3,
             "rarity": [
@@ -31,7 +29,6 @@
         },
         {
             "name": "Geodude",
-            "field": "Walking",
             "min_level": 2,
             "max_level": 3,
             "rarity": [
@@ -43,10 +40,11 @@
                 "Rock",
                 "Ground"
             ]
-        },
+        }
+    ],
+    "headbutt": [
         {
             "name": "Spearow",
-            "field": "Headbutt",
             "min_level": 2,
             "max_level": 8,
             "rarity": [
@@ -61,7 +59,6 @@
         },
         {
             "name": "Aipom",
-            "field": "Headbutt",
             "min_level": 3,
             "max_level": 8,
             "rarity": [
@@ -75,7 +72,6 @@
         },
         {
             "name": "Heracross",
-            "field": "Headbutt",
             "min_level": 2,
             "max_level": 5,
             "rarity": [
@@ -86,48 +82,6 @@
             "types": [
                 "Bug",
                 "Fighting"
-            ]
-        },
-        {
-            "name": "Plusle",
-            "field": "Hoenn Sound",
-            "min_level": 2,
-            "max_level": 3,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Minun",
-            "field": "Hoenn Sound",
-            "min_level": 2,
-            "max_level": 2,
-            "rarity": [
-                20,
-                20,
-                20
-            ],
-            "types": [
-                "Electric"
-            ]
-        },
-        {
-            "name": "Shinx",
-            "field": "Sinnoh Sound",
-            "min_level": 2,
-            "max_level": 3,
-            "rarity": [
-                40,
-                40,
-                40
-            ],
-            "types": [
-                "Electric"
             ]
         }
     ]
