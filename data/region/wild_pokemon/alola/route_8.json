@@ -1,0 +1,330 @@
+{
+    "walking": [
+        {
+            "name": "Rattata",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                0,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Rattata",
+                    "chance": 50
+                },
+                {
+                    "name": "Raticate",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Dark",
+                "Normal"
+            ]
+        },
+        {
+            "name": "Fletchinder",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                15,
+                15
+            ],
+            "sos": [
+                {
+                    "name": "Fletchling",
+                    "chance": 50
+                },
+                {
+                    "name": "Fletchinder",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Fire",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Trumbeak",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Pikipek",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Normal",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Yungoos",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                30,
+                0
+            ],
+            "sos": [
+                {
+                    "name": "Yungoos",
+                    "chance": 50
+                },
+                {
+                    "name": "Gumshoos",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Normal"
+            ]
+        },
+        {
+            "name": "Salandit",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Salandit",
+                    "chance": 50
+                },
+                {
+                    "name": "Stufful",
+                    "chance": 50,
+                    "time": "night"
+                }
+            ],
+            "types": [
+                "Poison",
+                "Fire"
+            ]
+        },
+        {
+            "name": "Stufful",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Stufful",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Normal",
+                "Fighting"
+            ]
+        },
+        {
+            "name": "Crabrawler",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Crabrawler",
+                    "chance": 100
+                }
+            ],
+            "pile": true,
+            "types": [
+                "Fighting"
+            ]
+        },
+        {
+            "name": "Wimpod",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                10,
+                10
+            ],
+            "types": [
+                "Bug",
+                "Water"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Tentacool",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                40,
+                40
+            ],
+            "sos": [
+                {
+                    "name": "Tentacool",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Wingull",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Wingull",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Finneon",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                40,
+                40
+            ],
+            "sos": [
+                {
+                    "name": "Finneon",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Mantyke",
+            "min_level": 17,
+            "max_level": 20,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Remoraid",
+                    "chance": 50
+                },
+                {
+                    "name": "Mantyke",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        }
+    ],
+    "superRod": [
+        {
+            "name": "Chinchou",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                35,
+                35
+            ],
+            "sos": [
+                {
+                    "name": "Chinchou",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water",
+                "Electric"
+            ]
+        },
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                79,
+                79
+            ],
+            "sos": [
+                {
+                    "name": "Magikarp",
+                    "chance": 33
+                },
+                {
+                    "name": "Gyarados",
+                    "chance": 66
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Remoraid",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                15,
+                15
+            ],
+            "sos": [
+                {
+                    "name": "Remoraid",
+                    "chance": 50
+                },
+                {
+                    "name": "Octillery",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Wishiwashi",
+            "min_level": 10,
+            "max_level": 20,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Wishiwashi",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ]
+}

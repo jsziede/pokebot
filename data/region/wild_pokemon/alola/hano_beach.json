@@ -1,0 +1,128 @@
+{
+    "walking": [
+        {
+            "name": "Staryu",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                80,
+                80
+            ],
+            "sos": [
+                {
+                    "name": "Staryu",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Sandygast",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Sandygast",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Ghost",
+                "Ground"
+            ]
+        }
+    ],
+    "surfing": [
+        {
+            "name": "Tentacool",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Tentacool",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water",
+                "Poison"
+            ]
+        },
+        {
+            "name": "Wingull",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Wingull",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water",
+                "Flying"
+            ]
+        },
+        {
+            "name": "Finneon",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Finneon",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Pyukumuku",
+            "min_level": 21,
+            "max_level": 25,
+            "rarity": [
+                30,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Pyukumuku",
+                    "chance": 100,
+                    "time": "day"
+                },
+                {
+                    "name": "Wingull",
+                    "chance": 20,
+                    "time": "night"
+                },
+                {
+                    "name": "Pyukumuku",
+                    "chance": 80,
+                    "time": "night"
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,203 @@
+{
+    "walking": [
+        {
+            "name": "Geodude",
+            "min_level": 26,
+            "max_level": 30,
+            "rarity": [
+                30,
+                30
+            ],
+            "sos": [
+                {
+                    "name": "Geodude",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Rock",
+                "Electric"
+            ]
+        },
+        {
+            "name": "Elekid",
+            "min_level": 26,
+            "max_level": 32,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Elekid",
+                    "chance": 34
+                },
+                {
+                    "name": "Electabuzz",
+                    "chance": 33
+                },
+                {
+                    "name": "Chansey",
+                    "chance": 33
+                }
+            ],
+            "types": [
+                "Electric"
+            ]
+        },
+        {
+            "name": "Torkoal",
+            "min_level": 26,
+            "max_level": 32,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Torkoal",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Fire"
+            ]
+        },
+        {
+            "name": "Charjabug",
+            "min_level": 26,
+            "max_level": 32,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Vikavolt",
+                    "chance": 20,
+                    "time": "day"
+                },
+                {
+                    "name": "Grubbin",
+                    "chance": 80,
+                    "time": "day"
+                },
+                {
+                    "name": "Charjabug",
+                    "chance": 100,
+                    "time": "night"
+                }
+            ],
+            "types": [
+                "Bug",
+                "Electric"
+            ]
+        },
+        {
+            "name": "Mudbray",
+            "min_level": 26,
+            "max_level": 32,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Mudbray",
+                    "chance": 50
+                },
+                {
+                    "name": "Mudsdale",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Ground"
+            ]
+        },
+        {
+            "name": "Turtonator",
+            "min_level": 27,
+            "max_level": 32,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Turtonator",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Fire",
+                "Dragon"
+            ]
+        },
+        {
+            "name": "Togedemaru",
+            "min_level": 26,
+            "max_level": 32,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Dedenne",
+                    "chance": 40
+                },
+                {
+                    "name": "Togedemaru",
+                    "chance": 60
+                }
+            ],
+            "types": [
+                "Electric",
+                "Steel"
+            ]
+        },
+        {
+            "name": "Graveler",
+            "min_level": 29,
+            "max_level": 32,
+            "rarity": [
+                20,
+                20
+            ],
+            "sos": [
+                {
+                    "name": "Graveler",
+                    "chance": 100
+                }
+            ],
+            "types": [
+                "Rock",
+                "Electric"
+            ]
+        },
+        {
+            "name": "Dedenne",
+            "min_level": 29,
+            "max_level": 32,
+            "rarity": [
+                10,
+                10
+            ],
+            "sos": [
+                {
+                    "name": "Togedemaru",
+                    "chance": 40
+                },
+                {
+                    "name": "Dedenne",
+                    "chance": 60
+                }
+            ],
+            "types": [
+                "Electric",
+                "Fairy"
+            ]
+        }
+    ]
+}

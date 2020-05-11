@@ -1,0 +1,49 @@
+{
+    "superRod": [
+        {
+            "name": "Magikarp",
+            "min_level": 10,
+            "max_level": 22,
+            "rarity": [
+                99,
+                99
+            ],
+            "sos": [
+                {
+                    "name": "Magikarp",
+                    "chance": 50
+                },
+                {
+                    "name": "Gyarados",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Water"
+            ]
+        },
+        {
+            "name": "Barboach",
+            "min_level": 10,
+            "max_level": 22,
+            "rarity": [
+                60,
+                60
+            ],
+            "sos": [
+                {
+                    "name": "Barboach",
+                    "chance": 50
+                },
+                {
+                    "name": "Whiscash",
+                    "chance": 50
+                }
+            ],
+            "types": [
+                "Water",
+                "Ground"
+            ]
+        }
+    ]
+}
