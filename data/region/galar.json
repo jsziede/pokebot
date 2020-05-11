@@ -1,0 +1,859 @@
+{
+  "name": "Galar",
+  "starterPokemon": [
+    "Grookey",
+    "Scorbunny",
+    "Sobble"
+  ],
+  "startingLocation": "Postwick",
+  "professor": "Magnolia",
+  "locations": [
+    {
+      "name": "Postwick",
+      "description": "A farming town since days of old, where people and their Pokémon live in close harmony.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 1",
+          "direction": "n"
+        },
+        {
+          "region": "Galar",
+          "location": "Slumbering Weald",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Wedgehurst",
+      "description": "Our quiet borough is home to the esteemed Pokémon Research Lab.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 2",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 1",
+          "direction": "s"
+        }
+      ]
+    },
+    {
+      "name": "Motostoke",
+      "description": "An industrial city studded with steam-powered marvels of modern engineering.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 3",
+          "direction": "w"
+        },
+        {
+          "region": "Galar",
+          "location": "Motostoke Outskirts",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "East Lake Axewell",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Turffield",
+      "description": "A town nestled within the nurturing bowl of our many terraced farming fields.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 5",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 4",
+          "direction": "s"
+        }
+      ]
+    },
+    {
+      "name": "Hulbury",
+      "description": "A bustling seaport that many visit to see its lively market stalls and famed restaurant.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 5",
+          "direction": "w"
+        },
+        {
+          "region": "Galar",
+          "location": "Galar Mine No. 2",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Hammerlocke",
+      "description": "A city of great history, living and thriving within castle walls that date back to the middle ages.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 7",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 6",
+          "direction": "w"
+        },
+        {
+          "region": "Galar",
+          "location": "Hammerlocke Hills",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Stow-on-Side",
+      "description": "A vibrant town that has grown up around an ancient mural tucked away in the mountains.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 6",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Glimwood Tangle",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Ballonlea",
+      "description": "A charming town where the people make their homes among the trunks of the towering trees.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Glimwood Tangle",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Circhester",
+      "description": "Buildings from an age long gone still stand about the steaming hot spring that covers the town.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 8",
+          "direction": "s"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 9",
+          "direction": "s"
+        }
+      ]
+    },
+    {
+      "name": "Spikemuth",
+      "description": "This rocking town has a punk vibe and streets crammed with shops lined up cheek by jowl.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 9",
+          "direction": "w"
+        }
+      ]
+    },
+    {
+      "name": "Wyndon",
+      "description": "This booming metropolis was designed and developed by our very own Chairman Rose.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 10",
+          "direction": "s"
+        },
+        {
+          "region": "Galar",
+          "location": "Battle Tower",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Wyndon Stadium",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Route 1",
+      "description": "A quiet and peaceful country raod that connects Postwick to Wedgehurst.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Wedgehurst",
+          "direction": "n"
+        },
+        {
+          "region": "Galar",
+          "location": "Postwick",
+          "direction": "s"
+        }
+      ]
+    },
+    {
+      "name": "Route 2",
+      "description": "Professor Magnolia's research lab is located the end of this Route.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Wedgehurst",
+          "direction": "w"
+        }
+      ]
+    },
+    {
+      "name": "Route 3",
+      "description": "A rocky path that allows easy access to the Galar Mine.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Motostoke",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Galar Mine",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Route 4",
+      "description": "This path is covered in a bed of vibrant, yellow grass.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Turffield",
+          "direction": "n"
+        },
+        {
+          "region": "Galar",
+          "location": "Galar Mine",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Route 5",
+      "description": "Trainers can get a great view of Galar's famous Wild Area from the top of this Route.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Hulbury",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Turffield",
+          "direction": "w"
+        }
+      ]
+    },
+    {
+      "name": "Route 6",
+      "description": "The sunlight shines relentlessly on this part of Galar. Fossils are often found inside rocks scattered throughout the area.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Hulbury",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Turffield",
+          "direction": "w"
+        }
+      ]
+    },
+    {
+      "name": "Route 7",
+      "description": "Travelers come to these crossroads to admire the various bridges that were build to help traverse the mountainous terrain.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 8",
+          "direction": "n"
+        },
+        {
+          "region": "Galar",
+          "location": "Hammerlocke",
+          "direction": "w"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 9 Tunnel",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Route 8",
+      "description": "Split between an upper and lower path, ancient ruins dot the lower section of this road. The upper part is constantly pelted by hail.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Circhester",
+          "direction": "n"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 7",
+          "direction": "s"
+        }
+      ]
+    },
+    {
+      "name": "Route 9",
+      "description": "The bay here is freezing cold. Trainers should take caution when traveling over the water.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Circhester",
+          "direction": "n"
+        },
+        {
+          "region": "Galar",
+          "location": "Spikemuth",
+          "direction": "e"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 9 Tunnel",
+          "direction": "w"
+        }
+      ]
+    },
+    {
+      "name": "Route 10",
+      "description": "Although the hike along this snowy path can be harsh, the luxurious city of Wyndon awaits at the end.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Wyndon",
+          "direction": "n"
+        }
+      ]
+    },
+    {
+      "name": "Slumbering Weald",
+      "description": "The legendary Zacian and Zamazenta sleep in the altar found within this forest.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Postwick",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Galar Mine",
+      "description": "One of the mines in the Galar region. Miners are careful to not harm the Rolycoly that blend in with normal coal.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 3",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 4",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Galar Mine No. 2",
+      "description": "One of the mines in the Galar region. The pools of water attract many different Pokémon.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Hulbury",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Motostoke Outskirts",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Motostoke Outskirts",
+      "description": "This road allows easy access to the Galar Mine No. 2 for the residents of Motostoke.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Motostoke",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Galar Mine No. 2",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Glimwood Tangle",
+      "description": "The mushrooms that grow here are luminescent, making this forest appear like it is part of a fairy tale.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Stow-on-Side",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Ballonlea",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Route 9 Tunnel",
+      "description": "This tunnel was dug to allow access between Routes 7 and 9.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Route 7",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 9",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Battle Tower",
+      "description": "Formerly known as Rose Tower, challengers compete at the roof of the Battle Tower to win as many battles as they can to increase their ranking.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Wyndon",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Energy Plant",
+      "description": "A power plant owned by Chairman Rose, which he uses to help power the Galar region.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Wyndon",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Meetup Spot",
+      "description": "The southernmost point of the wild Area. There is a train station here where Trainers can access the various cities of Galar.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Wedgehurst",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Motostoke",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Hulbury",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Hammerlocke",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Route 10",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Wyndon",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Rolling Fields",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Rolling Fields",
+      "description": "A large central field in the southern end of the Wild Area.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Meetup Spot",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Dappled Grove",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "West Lake Axewell",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "East Lake Axewell",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "South Lake Miloch",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Dappled Grove",
+      "description": "A forested area running along the west wall of the Wild Area next to Lake Axewell.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Rolling Fields",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "West Lake Axewell",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Watchtower Ruins",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "East Lake Axewell",
+      "description": "East Lake Axewell consists of the land around the southern entrance to Motostoke, as well as the eastern part of Lake Axewell.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "West Lake Axewell",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Motostoke",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "North Lake Miloch",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Rolling Fields",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Axew's Eye",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "West Lake Axewell",
+      "description": "West Lake Axewell encompasses the western half of Lake Axewell and parts of the land north and south of the bridge.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Dappled Grove",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Rolling Fields",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "East Lake Axewell",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Watchtower Ruins",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "North Lake Miloch",
+      "description": "The northern end of Lake Miloch, this section connects the southern half of the Wild Area to the northern half.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "East Lake Axewell",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Motostoke Riverbank",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Giant's Seat",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "South Lake Miloch",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "South Lake Miloch",
+      "description": "South Lake Miloch encompasses the majority of Lake Miloch except for its northernmost arm, as well as the section of land that juts into the lake.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Giant's Seat",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "North Lake Miloch",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Rolling Fields",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Watchtower Ruins",
+      "description": "Watchtower Ruins forms a bluff overlooking the northwest part of Lake Axewell. The land starts low at its southwesterly corner, near the waterline.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Dappled Grove",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "West Lake Axewell",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Axew's Eye",
+      "description": "Axew's Eye is a small island in the middle of Lake Axewell in the southern Wild Area, surrounded by water on all sides.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "East Lake Axewell",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Giant's Seat",
+      "description": "Giant's Seat is a stretch of land lying on the east shore of Lake Miloch. A towering spire of rock juts up from the south end near the cliff wall on the east.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "North Lake Miloch",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "South Lake Miloch",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Lake of Outrage",
+      "description": "A small lake in the northwest corner of the Wild Area.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Giant's Cap",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Hammerlocke Hills",
+      "description": "This northernmost section of the Wild Area connects to the city of Hammerlocke.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Hammerlocke",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Giant's Cap",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Dusty Bowl",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Giant's Mirror",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Giant's Cap",
+      "description": "Located in the west of the northern portion of the Wild Area. It connects to the Stony Wilderness to its south and the Hammerlocke Hills to its north.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Stony Wilderness",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Hammerlocke Hills",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Dusty Bowl",
+      "description": "Located in the center of the northern portion of the Wild Area. Sandstorms are occasionally whipped up in this dry area.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Stony Wilderness",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Hammerlocke Hills",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Giant's Mirror",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Giant's Mirror",
+      "description": "Located in the east of the northern portion of the Wild Area. There is a large pond that is highly reflective.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Stony Wilderness",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Hammerlocke Hills",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Dusty Bowl",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Stony Wilderness",
+      "description": "Located in the south of the northern portion of the Wild Area. There are many giant stones.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Bridge Field",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Giant's Cap",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Dusty Bowl",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Giant's Mirror",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Bridge Field",
+      "description": "Located northeast of Motostoke, connecting the southern and northern portions of the Wild Area. Both the north and south ends of this fields are covered by massive bridges.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Motostoke Riverbank",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Stony Wilderness",
+          "direction": "a"
+        }
+      ]
+    },
+    {
+      "name": "Motostoke Riverbank",
+      "description": "Located northeast of Motostoke, connecting the southern and northern portions of the Wild Area. Both the north and south ends of this fields are covered by massive bridges.",
+      "connections": [
+        {
+          "region": "Galar",
+          "location": "Motostoke Riverbank",
+          "direction": "a"
+        },
+        {
+          "region": "Galar",
+          "location": "Stony Wilderness",
+          "direction": "a"
+        }
+      ]
+    }
+  ]
+}
