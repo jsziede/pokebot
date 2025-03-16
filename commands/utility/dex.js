@@ -31,17 +31,19 @@ module.exports = {
         );
     },
     async execute(interaction) {
-        console.log(interaction);
         const option = interaction.options.getString("species").toLowerCase();
-        let selectedPokemon;
+        
         try {
-			selectedPokemon = getOnePokemon(option);
+			const selectedPokemon = await getOnePokemon(option, "Male", null);
+            const thumbo = getPokeImage(option, false, "Male", null);
+            const dexNum = "#" + dexNumberToString(selectedPokemon);
+
             const dexEmbed = new EmbedBuilder()
             .setColor(getTypeColor(selectedPokemon.types[0]))
             .setTitle(selectedPokemon.name)
             .setDescription(selectedPokemon.species)
-            .setAuthor({ name: selectedPokemon.national_id.toString(), iconURL: 'https://github.com/jsziede/pokebot/blob/master/gfx/icons/menu_sprites/001.png?raw=true', url: 'https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(Pok%C3%A9mon)' })
-            .setThumbnail('https://github.com/jsziede/pokebot/blob/master/gfx/models/bulbasaur.gif?raw=true')
+            .setAuthor({ name: dexNum, iconURL: 'https://github.com/jsziede/pokebot/blob/master/gfx/icons/menu_sprites/001.png?raw=true', url: 'https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(Pok%C3%A9mon)' })
+            .setThumbnail(thumbo)
             .addFields(
                 { name: 'Description', value: selectedPokemon.pokedex_entry },
                 { name: 'Type', value: "<:grass:1349950711126822946> Grass\n<:poison:1349950737416847370> Poison", inline: true },
@@ -52,6 +54,7 @@ module.exports = {
 
             await interaction.reply({ embeds: [dexEmbed] });
 		} catch (error) {
+            console.log("ERROR: DEX command did not work for " + option);
 			await interaction.reply({ content: "Pokémon not found." });
 		}
 

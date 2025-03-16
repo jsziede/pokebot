@@ -1,62 +1,55 @@
 const fs = require('node:fs');
+const config = require('../config/my_config');
 
-// String.prototype.toFileName = function (shiny, gender, form) {
-//     let lower = "";
-//     if (this != null) {
-//         this = this.toLowerCase();
-//         /**
-//          * Farfetch'd.
-//          */
-//         this = this.replace(/'/g,"-");
-//         /**
-//          * Multiple Pokemon have names with spaces in it.
-//          */
-//         this = this.replace(/ /g,"-");
-//         /**
-//          * Flabébé.
-//          */
-//         this = this.replace(/é/g,"e");
-//         /**
-//          * Mime Jr.
-//          */
-//         this = this.replace(/./g,"");
-//         /**
-//          * Type: Null
-//          */
-//         this = this.replace(/:/g,"");
+const getPokemonFile = function (name, shiny, gender, form, fileType) {
+    let nameInFile = name.toLowerCase();
 
-//         lower += "-" + this;
-//     }
+    /**
+     * Replace special characters in pokemon name
+     */
+    nameInFile = name.replace(/'/g,"_");
+    nameInFile = name.replace(/ /g,"_");
+    nameInFile = name.replace(/é/g,"e");
+    nameInFile = name.replace(/./g,"");
+    nameInFile = name.replace(/:/g,"");
     
-//     if (form != null) {
-//         form = form.toLowerCase();
-//         /**
-//          * Oricorio has a form name with an apostrophe in it.
-//          */
-//         form = form.replace(/'/g,"-");
-//         /**
-//          * Multiple Pokemon have form names with spaces in it.
-//          */
-//         form = form.replace(/ /g,"-");
-//         /**
-//          * Vivillon has a form name with an acute e in it.
-//          */
-//         form = form.replace(/é/g,"e");
-//         lower += "-" + form;
-//     } else { /* =======================================================================
-//         if (gender === "Female") {
-//             if (hasGenderDifference(this) === true) {
-//                 lower += "-f";
-//             }
-//         } */
-//     }
+    if (form != null) {
+        form = form.toLowerCase();
+        /**
+         * Oricorio has a form name with an apostrophe in it.
+         */
+        form = form.replace(/'/g,"-");
+        /**
+         * Multiple Pokemon have form names with spaces in it.
+         */
+        form = form.replace(/ /g,"-");
+        /**
+         * Vivillon has a form name with an acute e in it.
+         */
+        form = form.replace(/é/g,"e");
+        nameInFile += "-" + form;
+    } else { /* =======================================================================
+        if (gender === "female") {
+            if (hasGenderDifference(this) === true) {
+                nameInFile += "-f";
+            }
+        } */
+    }
 
-//     if (shiny != null) {
-//         lower += "-s";
-//     }
+    if (shiny == true) {
+        nameInFile += "-s";
+    }
 
-//     return lower;
-// };
+    let finalFileName;
+
+    if (fileType == "image") {
+        finalFileName = config.pokemonImageLink + nameInFile + ".png?raw=true";
+    } else if (fileType == "json") {
+        finalFileName = "./data/pokemon/" + nameInFile + ".json";
+    }
+
+    return finalFileName;
+};
 
 module.exports = function() {
     this.getAllPokemon = function(alphabetical) {
@@ -74,12 +67,30 @@ module.exports = function() {
         }); 
     }
 
-    this.getPokeImage = function(name) {
-        //name.toFileName(name, null, null, null);
+    this.getPokeImage = function(name, shiny, gender, form) {
+        return getPokemonFile(name, shiny, gender, form, "image");
+
     }
 
-    this.getOnePokemon = function(name) {
-        return this[name];
+    this.getOnePokemon = function(name, gender, form) {
+        let filePath = getPokemonFile(name, null, gender, form, "json");
+        return new Promise(function(resolve) {
+            fs.readFile(filePath, function(err, data) { 
+                if (err) throw err; 
+                const pokemon = JSON.parse(data);
+                resolve(pokemon);
+            });
+        });
+    }
+
+    this.dexNumberToString = function(name) {
+        let num = String(name.national_id);
+        let zeroes = 4 - num.length;
+        while (zeroes > 0) {
+            num = "0" + num;
+            zeroes--;
+        }
+        return num;
     }
 
     this.getTypeColor = function(type) {
