@@ -49,271 +49,128 @@
         "sp_def": 85,
         "speed": 60
     },
-    "evolution_from": "Snover",
-    "evolutions": [],
+    "evolution_from": [
+        {
+            "name": "Snover",
+            "level": "40"
+        }
+    ],
+    "evolution_to": [],
     "species": "Frost Tree Pokémon",
     "mega_evolves": true,
     "pokedex_entry": "It lives a quiet life on mountains that are perpetually covered in snow. It hides itself by whipping up blizzards.",
-    "move_learnset": [
+    "moves_level": [
         {
             "move": "Ice Punch",
-            "evo": true
-        },
-        {
-            "move": "Ice Punch",
-            "level": 1
-        },
-        {
-            "move": "Aurora Veil",
-            "level": 1
-        },
-        {
-            "move": "Powder Snow",
-            "level": 1
+            "level": "Evo"
         },
         {
             "move": "Leer",
-            "level": 1
-        },
-        {
-            "move": "Leafage",
-            "level": 1
+            "level": "1"
         },
         {
             "move": "Mist",
-            "level": 1
+            "level": "1"
         },
         {
-            "move": "Ice Shard",
-            "level": 15
+            "move": "Blizzard",
+            "level": "49"
         },
         {
             "move": "Razor Leaf",
-            "level": 20
+            "level": "20"
+        },
+        {
+            "move": "Powder Snow",
+            "level": "1"
         },
         {
             "move": "Icy Wind",
-            "level": 25
+            "level": "25"
         },
         {
             "move": "Swagger",
-            "level": 30
+            "level": "30"
         },
         {
             "move": "Ingrain",
-            "level": 35
-        },
-        {
-            "move": "Wood Hammer",
-            "level": 43
-        },
-        {
-            "move": "Blizzard",
-            "level": 49
+            "level": "35"
         },
         {
             "move": "Sheer Cold",
-            "level": 56
+            "level": "56"
         },
         {
-            "move": "Mega Punch",
-            "tm": true
+            "move": "Ice Shard",
+            "level": "15"
         },
         {
-            "move": "Mega Kick",
-            "tm": true
+            "move": "Wood Hammer",
+            "level": "43"
         },
         {
-            "move": "Ice Punch",
-            "tm": true
+            "move": "Leafage",
+            "level": "1"
         },
         {
-            "move": "Hyper Beam",
-            "tm": true
-        },
-        {
-            "move": "Giga Impact",
-            "tm": true
-        },
-        {
-            "move": "Magical Leaf",
-            "tm": true
-        },
-        {
-            "move": "Solar Beam",
-            "tm": true
-        },
-        {
-            "move": "Light Screen",
-            "tm": true
-        },
-        {
-            "move": "Safeguard",
-            "tm": true
-        },
-        {
-            "move": "Rest",
-            "tm": true
-        },
-        {
-            "move": "Rock Slide",
-            "tm": true
-        },
-        {
-            "move": "Snore",
-            "tm": true
-        },
-        {
-            "move": "Protect",
-            "tm": true
-        },
-        {
-            "move": "Icy Wind",
-            "tm": true
-        },
-        {
-            "move": "Giga Drain",
-            "tm": true
-        },
-        {
-            "move": "Attract",
-            "tm": true
-        },
-        {
-            "move": "Rain Dance",
-            "tm": true
-        },
-        {
-            "move": "Hail",
-            "tm": true
-        },
-        {
-            "move": "Facade",
-            "tm": true
-        },
-        {
-            "move": "Brick Break",
-            "tm": true
-        },
-        {
-            "move": "Weather Ball",
-            "tm": true
-        },
-        {
-            "move": "Rock Tomb",
-            "tm": true
-        },
-        {
-            "move": "Bullet Seed",
-            "tm": true
-        },
-        {
-            "move": "Icicle Spear",
-            "tm": true
-        },
-        {
-            "move": "Fling",
-            "tm": true
-        },
-        {
-            "move": "Avalanche",
-            "tm": true
-        },
-        {
-            "move": "Round",
-            "tm": true
-        },
-        {
-            "move": "Bulldoze",
-            "tm": true
-        },
-        {
-            "move": "Stomping Tantrum",
-            "tm": true
-        },
-        {
-            "move": "Swords Dance",
-            "tm": true
-        },
-        {
-            "move": "Ice Beam",
-            "tm": true
-        },
-        {
-            "move": "Blizzard",
-            "tm": true
-        },
-        {
-            "move": "Earthquake",
-            "tm": true
-        },
-        {
-            "move": "Substitute",
-            "tm": true
-        },
-        {
-            "move": "Outrage",
-            "tm": true
-        },
-        {
-            "move": "Endure",
-            "tm": true
-        },
-        {
-            "move": "Sleep Talk",
-            "tm": true
-        },
-        {
-            "move": "Iron Tail",
-            "tm": true
-        },
-        {
-            "move": "Shadow Ball",
-            "tm": true
-        },
-        {
-            "move": "Seed Bomb",
-            "tm": true
-        },
-        {
-            "move": "Focus Blast",
-            "tm": true
-        },
-        {
-            "move": "Energy Ball",
-            "tm": true
-        },
-        {
-            "move": "Earth Power",
-            "tm": true
-        },
-        {
-            "move": "Leaf Storm",
-            "tm": true
-        },
-        {
-            "move": "Grass Knot",
-            "tm": true
-        },
-        {
-            "move": "Leech Seed",
-            "egg_move": true
-        },
-        {
-            "move": "Growth",
-            "egg_move": true
-        },
-        {
-            "move": "Double-Edge",
-            "egg_move": true
-        },
-        {
-            "move": "Stomp",
-            "egg_move": true
-        },
-        {
-            "move": "Skull Bash",
-            "egg_move": true
+            "move": "Aurora Veil",
+            "level": "1"
         }
-    ]
+    ],
+    "moves_tm": [
+        "Ice Punch",
+        "Swords Dance",
+        "Body Slam",
+        "Take Down",
+        "Double-Edge",
+        "Ice Beam",
+        "Blizzard",
+        "Hyper Beam",
+        "Low Kick",
+        "Solar Beam",
+        "Earthquake",
+        "Rest",
+        "Rock Slide",
+        "Substitute",
+        "Curse",
+        "Protect",
+        "Scary Face",
+        "Mud-Slap",
+        "Icy Wind",
+        "Outrage",
+        "Giga Drain",
+        "Endure",
+        "Sleep Talk",
+        "Rain Dance",
+        "Facade",
+        "Focus Punch",
+        "Helping Hand",
+        "Brick Break",
+        "Weather Ball",
+        "Rock Tomb",
+        "Bullet Seed",
+        "Icicle Spear",
+        "Magical Leaf",
+        "Water Pulse",
+        "Fling",
+        "Seed Bomb",
+        "Focus Blast",
+        "Energy Ball",
+        "Earth Power",
+        "Giga Impact",
+        "Avalanche",
+        "Leaf Storm",
+        "Grass Knot",
+        "Bulldoze",
+        "Stomping Tantrum",
+        "Body Press",
+        "Grassy Glide",
+        "Tera Blast",
+        "Ice Spinner",
+        "Snowscape",
+        "Trailblaze",
+        "Chilling Water",
+        "Hard Press"
+    ],
+    "moves_egg": []
 }

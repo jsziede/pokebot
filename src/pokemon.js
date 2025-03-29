@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const config = require('../config/my_config');
+const emojis = require('./emoji.js')();
 
 const getPokemonFile = function (name, shiny, gender, form, fileType) {
     let nameInFile = name.toLowerCase();
@@ -91,6 +92,92 @@ module.exports = function() {
             zeroes--;
         }
         return num;
+    }
+
+    this.getTypeString = function(types) {
+        let i = 0;
+        let typeString = "";
+        while (i < types.length) {
+            typeString += (typeEmoji[types[i].toLowerCase()]);
+            i++;
+        }
+        return typeString;
+    }
+
+    this.getMiscString = function(pokemon) {
+        let miscString = "";
+        miscString += ("Base XP Yield: " + pokemon.base_exp_yield + "\n");
+        miscString += ("Leveling Rate: " + pokemon.leveling_rate + "\n");
+        miscString += ("Base Friendship: " + pokemon.base_friendship + "\n");
+        
+        if (pokemon.gender_ratios == null) {
+            miscString += ("Gender %: ♂️ 0 / ♀️ 0");
+        } else if (!pokemon.gender_ratios.hasOwnProperty("male")) {
+            miscString += ("Gender %: ♂️ 0 / ♀️ 100\n");
+        } else if (!pokemon.gender_ratios.hasOwnProperty("female")) {
+            miscString += ("Gender %: ♂️ 100 / ♀️ 0\n");
+        } else {
+            miscString += ("Gender %: ♂️ " + pokemon.gender_ratios.male + " ♀️ " + pokemon.gender_ratios.female + "\n");
+        }
+
+        miscString += "Egg Groups: ";
+        pokemon.egg_groups.forEach((group) => {
+            miscString += (group + ", ");
+        });
+
+        miscString = miscString.substring(0, miscString.length - 2);
+
+        miscString += "\nHatch Time: WIP";
+
+        return miscString;
+    }
+
+    this.getAbilityString = function(abilities) {
+        let i = 0;
+        let abilityString = "";
+        while (i < abilities.length) {
+            if (abilities[i].hasOwnProperty("hidden")) {
+                abilityString += ("_" + abilities[i].name + "_")
+            } else {
+                abilityString += (abilities[i].name + "\n");
+            }
+            i++;
+        }
+        return abilityString;
+    }
+
+    this.getBaseStatsString = function(stats) {
+        let statsString = "";
+        statsString += ("HP: " + stats.hp + "\n");
+        statsString += ("Attack: " + stats.atk + "\n");
+        statsString += ("Defense: " + stats.def + "\n");
+        statsString += ("SpAtk: " + stats.sp_atk + "\n");
+        statsString += ("SpDef: " + stats.sp_def + "\n");
+        statsString += ("Speed: " + stats.speed);
+        return statsString;
+    }
+
+    this.getEVYieldsString = function(evs) {
+        let evString = "";
+        evString += ("HP: " + evs.hp + "\n");
+        evString += ("Attack: " + evs.atk + "\n");
+        evString += ("Defense: " + evs.def + "\n");
+        evString += ("SpAtk: " + evs.sp_atk + "\n");
+        evString += ("SpDef: " + evs.sp_def + "\n");
+        evString += ("Speed: " + evs.speed);
+        return evString;
+    }
+
+    this.getWildHeldItemsString = function(pokemon) {
+        let itemsString = "";
+        if (pokemon.hasOwnProperty("items")) {
+            pokemon.items.forEach((item) => {
+                itemsString += (item.name + " (" + item.chance + "%)\n");
+            });
+        } else {
+            itemsString = "None";
+        }
+        return itemsString;
     }
 
     this.getTypeColor = function(type) {
@@ -1161,69 +1248,5 @@ module.exports = function() {
         "Iron Crown",
         "Terapagos",
         "Pecharunt"
-    ],
-
-    this.bulbasaur = {
-        "name": "Bulbasaur",
-        "national_id": 1,
-        "types": [
-            "Grass",
-            "Poison"
-        ],
-        "abilities": [
-            {
-                "name": "Overgrow"
-            },
-            {
-                "name": "Chlorophyll",
-                "hidden": true
-            }
-        ],
-        "catch_rate": 45,
-        "gender_ratios": {
-            "male": 87.5,
-            "female": 12.5
-        },
-        "egg_groups": [
-            "Monster",
-            "Grass"
-        ],
-        "hatch_time": [
-            5355,
-            5609
-        ],
-        "height_us": "2'04\"",
-        "height_eu": "0.7 m",
-        "weight_us": "15.2 lbs.",
-        "weight_eu": "6.9 kg",
-        "base_exp_yield": 64,
-        "leveling_rate": "Medium Slow",
-        "base_friendship": 70,
-        "ev_yield": {
-            "hp": 0,
-            "atk": 0,
-            "def": 0,
-            "sp_atk": 1,
-            "sp_def": 0,
-            "speed": 0
-        },
-        "base_stats": {
-            "hp": 45,
-            "atk": 49,
-            "def": 49,
-            "sp_atk": 65,
-            "sp_def": 65,
-            "speed": 45
-        },
-        "evolution_from": null,
-        "evolutions": [
-            {
-                "to": "Ivysaur",
-                "level": 16
-            }
-        ],
-        "species": "Seed Pokémon",
-        "mega_evolves": false,
-        "pokedex_entry": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger."
-    }
+    ]
 }

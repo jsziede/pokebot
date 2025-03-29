@@ -1,6 +1,6 @@
 /**
  *  Pokébot - A simulation of the Pokémon video games that runs in the Discord environment.
- *  Copyright (C) 2019 Joshua Sziede
+ *  Copyright (C) 2025 Joshua Sziede
 */
 
 /**
@@ -17,33 +17,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const moment = require('moment');
-const momentTz = require('moment-timezone');
-const schedule = require('node-schedule');
-const mysql = require('mysql');
-const oak = require('oakdex-pokedex');
-const chalk = require('chalk');
-//const Sim = require('./Pokemon-Showdown/sim');
 
 /**
  *  Connect to Discord.
 */
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-
-/**
- *  MySQL DB Connection
-*/
 const myconfig = require('./config/my_config');
-
-const con = mysql.createConnection(myconfig.database);
-con.connect(function(err) {
-    if (err) {
-        console.log(err);
-        process.exit();
-    }
-    console.log("Connected to MySQL Database.");
-});
 
 client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
